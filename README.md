@@ -1,4 +1,4 @@
-# Personal Website (https://nileshnegi.github.io)
+# Personal Website (https://nicofirst1.github.io)
 
 Version 4:
 
@@ -6,7 +6,6 @@ Version 4:
 * Based on Plain-Academic by Vasilios Mavroudis (https://github.com/mavroudisv/plain-academic).
 * Borrowed certain CSS elements from ©Copyright Kards 2016. Design by Styleshout (http://www.styleshout.com).
 
-I had to discontinue using the earlier template (v3) based on KARDS, due to long load times.
 
 ## Copyright and License
 
