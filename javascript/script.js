@@ -7,6 +7,7 @@
   function load()
   {
     $("#placeholder").load("html/home.html");
+    window.location.hash="#home"
   }
 
   $(window).on('hashchange', function () {
