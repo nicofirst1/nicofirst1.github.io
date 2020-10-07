@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: black;
     font-family: sans-serif;
     font-size: 16px;
     line-height: 1.4;
@@ -20,7 +20,34 @@ body {
 }
 
 
-
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: black;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: gray;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color:orange;
+    color: white;
+  }
 
 @media (min-width: 992px) {
     .container {
@@ -34,10 +61,10 @@ body {
 
 /* Home section */
 #home {
-    margin-bottom: 30px;
     background-color: black;
     color: orange;
     width: auto;
+    padding-left: 20px;
 }
 #home-img {
     grid-column: span 6;
@@ -52,8 +79,22 @@ body {
     grid-column: span 6;
     text-align: center;
     padding-top: 50px;
-    padding-left: 50px;
 }
+
+
+#home-intro {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+
+}
+#home-intro a:link{
+    color: orange;
+}
+
+
+
 @media (max-width: 768px) {
     #home-img {
       grid-column: span 12;
@@ -67,7 +108,6 @@ body {
     #home-about {
     	grid-column: span 12;
         padding-top: 20px;
-        padding-left: 0px;
         text-align: center;
     }
     h1 {
@@ -114,36 +154,21 @@ h2 {
 }
 
 
-#home-intro {
-    padding-left: 190px;
-    grid-column: span 8;
-    margin-bottom: 10px;
-    text-align: justify;
-
-}
-#home-intro a:link{
-    color: white;
-}
 
 hr {
-    height: 1px;
-    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    padding: 0;
-    margin: 20px 0px 20px 0px;
-    border: 0;
+   color:orange; 
+
 }
 
 
 /* Resume section */
 #resume {
-    margin-top: 30px;
-    margin-right: 30px;
-    background-color: white;
-    color:rgb(61, 61, 61);
+    padding-top: 30px;
+    padding-right: 30px;
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     width: auto;
+    height: auto;
 
 }
 
@@ -258,3 +283,5 @@ hr {
 		font-size: 1rem;
 	}
 }
+
+
