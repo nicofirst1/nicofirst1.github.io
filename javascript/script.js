@@ -4,7 +4,10 @@
     $("#nav-placeholder").load("html/navbar.html");
   });
 
-
+  function load()
+  {
+    $("#placeholder").load("html/home.html");
+  }
 
   $(window).on('hashchange', function () {
 

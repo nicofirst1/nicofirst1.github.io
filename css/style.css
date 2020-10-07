@@ -251,6 +251,11 @@ hr {
 	margin-left: 35%;
 	padding-left: 60px;
 }
+
+#resume .timeline-content a:visited{
+    color: orange;
+}
+
 #resume .timeline-content h4 {
 	position: relative;
 }
