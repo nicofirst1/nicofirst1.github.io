@@ -19,7 +19,7 @@ $(window).on('hashchange', function () {
 
   let hash = window.location.hash
   if (hash == '#projects') {
-    $("#placeholder").load("html/projects.html");
+    $("#placeholder").load("html/projects/main.html");
   } else if (hash == "#publications") {
     $("#placeholder").load("html/publications.html");
 
@@ -43,3 +43,29 @@ $(window).on('hashchange', function () {
 
 
 });
+
+// Load project description based on hover
+function show_project(prj) {
+
+  let id = prj.id
+
+  if (id == "ledypi") {
+    $("#project-placeholder").load("../html/projects/ledypi.html");
+
+  } else if (id == "robotic") {
+    $("#project-placeholder").load("../html/projects/robotic.html");
+
+  } else if (id == "motionbot") {
+    $("#project-placeholder").load("../html/projects/motionbot.html");
+
+  } else if (id == "mas-traffic") {
+    $("#project-placeholder").load("../html/projects/mas_traffic.html");
+
+  } else if (id == "ai-notes") {
+    $("#project-placeholder").load("../html/projects/ai_notes.html");
+
+  } else if (id == "rl-werewolf") {
+    $("#project-placeholder").load("../html/projects/rl_werewolf.html");
+
+  }
+}

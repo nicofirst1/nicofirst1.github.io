@@ -1,19 +1,45 @@
+@image-text-width: 250px;
+@list-color:  rgb(194, 193, 193);
+
 .project-list li {
     margin: 20px 0;
-    color: white;
+    color: @list-color;
 }
 
 
 .project-list li a {
     margin: 20px 0;
-    color: white;
+    color: @list-color;
 }
 
 .project-list li a:visited {
-    color: white;
+    color: @list-color;
 }
 
 
 .project-list li a:hover {
+    color: orange;
+}
+
+.project-hover {
+    margin-top: 100px;
+    align-self: center;
+    align-content: center;
+    width: auto;
+}
+
+.project-img {
+    height:  @image-text-width; 
+    align-self: center;
+}
+
+.project-description {
+text-align: justify;
+   margin-left: auto;
+   margin-right: auto;
+   width: 1000px;
+}
+
+.project-title {
     color: orange;
 }
