@@ -1,11 +1,8 @@
-# Personal Website (https://nicofirst1.github.io)
+# Personalization 
 
-Version 4:
-
-* Inspired by Andrej Karpathy's implementation (https://karpathy.ai/) of a lightweight webpage design.
-* Based on Plain-Academic by Vasilios Mavroudis (https://github.com/mavroudisv/plain-academic).
-* Borrowed certain CSS elements from ©Copyright Kards 2016. Design by Styleshout (http://www.styleshout.com).
-
+## Projects
+To add a project you'll need to modify the [script](./javascript/script.js) file in the `show_project` function and add your id.
+Then add a view in a div as the other projects in the [dir](./html/projects/ai_notes.html).
 
 ## Copyright and License
 

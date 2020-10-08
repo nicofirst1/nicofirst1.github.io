@@ -24,7 +24,8 @@ $(window).on('hashchange', function () {
     $("#placeholder").load("html/publications.html");
 
   } else if (hash == "#cv") {
-    $("#placeholder").load("html/cv.html");
+    $("#placeholder").load("html/cv/main.html");
+
 
   } else if (hash == "#about") {
     $("#placeholder").load("html/about.html");
