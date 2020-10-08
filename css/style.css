@@ -9,7 +9,23 @@ body {
 }
 
 
+.title {
 
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 0;
+    background-color: orange;
+    padding: 5px; 
+    align-self: center;
+    color: white;
+
+}
+
+.project-list li {
+    margin: 20px 0;
+    color: white;
+
+}
 
 /* Layout */
 .container {
@@ -21,7 +37,7 @@ body {
 
 
 /* Add a black background color to the top navigation */
-.topnav {
+.navbar {
     background-color: black;
     overflow: auto;
     text-align: center;
@@ -29,7 +45,7 @@ body {
   }
   
   /* Style the links inside the navigation bar */
-  .topnav a {
+  .navbar a {
     float: left;
     text-align: center;
     padding: 12px;
@@ -39,13 +55,13 @@ body {
   }
   
   /* Change the color of links on hover */
-  .topnav a:hover {
+  .navbar a:hover {
     background-color: gray;
     color: black;
   }
   
   /* Add a color to the active/current link */
-  .topnav a.active {
+  .navbar a.active {
     background-color:orange;
     color: white;
   }
@@ -168,6 +184,7 @@ h2 {
 
 
 hr {
+    margin-top: -1px;
    color:orange; 
 
 }
