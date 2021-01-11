@@ -1,0 +1,60 @@
+@import "./colors.less";
+@section-margin :100px;
+@date-margin :100px;
+
+
+customSection {
+  background: white; /*sets the background of this element (here a solid colour)*/
+  color: black;
+  width: 70%;
+   height: 200px;
+
+}
+
+
+
+#section-title i{
+  float: left;
+  margin-left: @section-margin;
+  margin-right: 10px;
+}
+
+#section-title span{
+  font-size: 30px;
+  
+}
+
+#section-title hr{
+ width: 750px;
+ margin-bottom: 20px;
+color: black;
+}
+
+
+#education-entry date{
+  margin-left: @date-margin;
+
+}
+
+#education-entry workplace{
+  margin-left: @date-margin;
+
+}
+
+#education-entry bold{
+  margin-left: @section-margin;
+  font-weight: bold;
+}
+#education-entry ul{
+  margin-left: 400px;
+  list-style-type: '';
+}
+
+#education-entry li::before {
+  content: "○";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color:@dark; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}

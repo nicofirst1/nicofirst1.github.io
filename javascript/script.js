@@ -2,16 +2,31 @@
 
 $(function () {
   $("#nav-placeholder").load("html/navbar.html");
+
 });
 
+
+function no_resize() {
+  //Call a variable to know the width of the window
+  var screenWidth = $(window).width();
+  $('container').css('width', 1200 + 'px');
+  $('container').css('height', 2000 + 'px');
+}
 
 // Load home on first load instance
 
 function load() {
-  $("#placeholder").load("html/home.html");
-  window.location.hash = "#home"
+  $("#placeholder").load("html/cv/main.html");
+  window.location.hash = "#cv"
+
 }
 
+function load_cv(){
+  $("#highlights-placeholder").load("../html/cv/highlights.html");
+  $("#education-placeholder").load("../html/cv/education.html");
+  $("#research-int-placeholder").load("../html/cv/research_int.html");
+
+}
 
 // Function to load correct html based on hash
 
@@ -25,7 +40,6 @@ $(window).on('hashchange', function () {
 
   } else if (hash == "#cv") {
     $("#placeholder").load("html/cv/main.html");
-
 
   } else if (hash == "#about") {
     $("#placeholder").load("html/about.html");
@@ -41,6 +55,7 @@ $(window).on('hashchange', function () {
       $(this).addClass('active');
     }
   });
+
 
 
 });
