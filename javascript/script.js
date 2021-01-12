@@ -1,7 +1,5 @@
 
 // Download CV
-
-//Create PDf from HTML...
 function download_cv(){
   const filename  = 'NicoloBrandizziCV.pdf';
 
@@ -28,6 +26,32 @@ function no_resize() {
   var screenWidth = $(window).width();
   $('container').css('width', 1200 + 'px');
   $('container').css('height', 2000 + 'px');
+}
+
+function init_colors() {
+  document.getElementById("dark_color").value="#2c67fc";
+  document.getElementById("light_color").value="#e2f7ff";
+  document.getElementById("gray_color").value="#bbc6f0";
+  document.getElementById("contrast_color").value="#7f45eb";
+
+}
+
+function modify_color(elem){
+  console.log(elem)
+  let id = elem.id;
+  if (id.includes("light")){
+    less.modifyVars({ light : elem.value });
+  }
+  else if (id.includes("dark")){
+    less.modifyVars({ dark : elem.value });
+  }
+  else if (id.includes("gray")){
+    less.modifyVars({ gray : elem.value });
+  }
+  else if (id.includes("contrast")){
+    less.modifyVars({ other : elem.value });
+  }
+
 }
 
 // Load home on first load instance

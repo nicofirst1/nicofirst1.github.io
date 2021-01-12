@@ -1,12 +1,48 @@
-<body >
+<body>
 	<script type="text/javascript">
 		load_cv();
 		no_resize();
-    </script>
+		init_colors();
+	</script>
 	<div id="nav-placeholder"></div>
-	<button  onclick="download_cv()">Download CV</button>
 
-	<container onresize="no_resize()" id="cv_container">
+
+	<div class="interaction">
+		<div class="download" onclick="download_cv()">
+			<span>Download CV</span>
+		</div>
+		<br>
+		<hr>
+		<b >Color Picker</b>
+		<br>
+
+		<div class="colors">
+			<span>Dark</span>
+			<input type=color  id="dark_color"onchange="modify_color(this)">
+
+		</div>
+		<br>
+		<div class="colors">
+			<span>Light</span>
+			<input type=color  id="light_color" onchange="modify_color(this)">
+
+		</div>
+		<br>
+		<div class="colors">
+			<span>Gray</span>
+			<input type=color  id="gray_color"onchange="modify_color(this)">
+
+		</div>
+		<br>
+		<div class="colors">
+			<span>Contrast</span>
+			<input type=color  id="contrast_color"onchange="modify_color(this)">
+
+		</div>
+
+	</div>
+
+	<container id="cv_container">
 		<headline>
 			<div id="header-title">
 				<h1>Dr. Nicolo' Brandizzi</h1>
@@ -25,6 +61,8 @@
 		<div id="research-int-placeholder"></div>
 		<br>
 		<br>
+
+
 		<pageEnd>
 			<strong>1</strong>
 			<hr>
