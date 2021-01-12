@@ -57,8 +57,8 @@ function modify_color(elem){
 // Load home on first load instance
 
 function load() {
-  $("#placeholder").load("html/cv/main.html");
-  window.location.hash = "#cv"
+  $("#placeholder").load("html/home.html");
+  window.location.hash = "#home"
 
 }
 
