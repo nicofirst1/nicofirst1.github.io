@@ -1,3 +1,21 @@
+
+// Download CV
+
+//Create PDf from HTML...
+function download_cv(){
+  const filename  = 'NicoloBrandizziCV.pdf';
+
+  html2canvas(document.getElementById('cv_container'), 
+              {scale: 1}
+           ).then(canvas => {
+    let pdf = new jsPDF('p', 'mm', 'a4');
+    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+    pdf.save(filename);
+  });
+
+}
+
+
 // Load navbar
 
 $(function () {
@@ -5,9 +23,8 @@ $(function () {
 
 });
 
-
+// disable resizing for cv
 function no_resize() {
-  //Call a variable to know the width of the window
   var screenWidth = $(window).width();
   $('container').css('width', 1200 + 'px');
   $('container').css('height', 2000 + 'px');
@@ -21,11 +38,13 @@ function load() {
 
 }
 
+// load cv parts
 function load_cv(){
   $("#highlights-placeholder").load("../html/cv/highlights.html");
   $("#education-placeholder").load("../html/cv/sections/education.html");
   $("#research-int-placeholder").load("../html/cv/sections/research_int.html");
   $("#publication-placeholder").load("../html/cv/sections/publications.html");
+  $("#experiences-placeholder").load("../html/cv/sections/experiences.html");
 
 }
 
