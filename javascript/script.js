@@ -69,6 +69,7 @@ function load_cv(){
   $("#research-int-placeholder").load("../html/cv/sections/research_int.html");
   $("#publication-placeholder").load("../html/cv/sections/publications.html");
   $("#experiences-placeholder").load("../html/cv/sections/experiences.html");
+  $("#interactions-placeholder").load("../html/cv/interactions.html");
 
 }
 
