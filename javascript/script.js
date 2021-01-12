@@ -1,17 +1,55 @@
-
 // Download CV
-function download_cv(){
-  const filename  = 'NicoloBrandizziCV.pdf';
+function download_cv2() {
+  const filename = 'NicoloBrandizziCV.pdf';
 
-  html2canvas(document.getElementById('cv_container'), 
-              {scale: 1}
-           ).then(canvas => {
+  html2canvas(document.getElementById('cv_container'), {
+    scale: 1
+  }).then(canvas => {
     let pdf = new jsPDF('p', 'mm', 'a4');
-    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 210, 297);
     pdf.save(filename);
   });
 
 }
+
+
+
+function download_cv() {
+  const filename = 'NicoloBrandizziCV.pdf';
+
+  var deferreds = [];
+  let doc = new jsPDF('p', 'mm', 'a4');
+  let container = document.getElementById('cv_container');
+  var children = Array.from(container.children);
+  console.log(children)
+  for (var i = 0; i < children.length; i++) {
+    var deferred = $.Deferred();
+    deferreds.push(deferred.promise());
+    generateCanvas(children[i], doc, deferred);
+  }
+
+  $.when.apply($, deferreds).then(function () { // executes after adding all images
+    doc.save(filename);
+  });
+
+  function generateCanvas(elem, doc, deferred) {
+
+    html2canvas(elem, {
+      scale: 4,
+      onrendered: function (canvas) {
+
+        var img = canvas.toDataURL();
+        doc.addImage(img, 'JPEG', 0, 0, 210, 297);
+        doc.addPage();
+
+        deferred.resolve();
+      }
+    });
+  }
+
+}
+
+
 
 
 // Load navbar
@@ -30,28 +68,33 @@ function no_resize() {
 
 function init_colors() {
   console.log(document.getElementById("dark_color"))
-  document.getElementById("dark_color").value="#2c67fc";
-  document.getElementById("light_color").value="#e2f7ff";
-  document.getElementById("gray_color").value="#bbc6f0";
-  document.getElementById("contrast_color").value="#7f45eb";
+  document.getElementById("dark_color").value = "#2c67fc";
+  document.getElementById("light_color").value = "#e2f7ff";
+  document.getElementById("gray_color").value = "#bbc6f0";
+  document.getElementById("contrast_color").value = "#7f45eb";
 
 }
 
 // modify cv colors
-function modify_color(elem){
+function modify_color(elem) {
   console.log(elem)
   let id = elem.id;
-  if (id.includes("light")){
-    less.modifyVars({ light : elem.value });
-  }
-  else if (id.includes("dark")){
-    less.modifyVars({ dark : elem.value });
-  }
-  else if (id.includes("gray")){
-    less.modifyVars({ gray : elem.value });
-  }
-  else if (id.includes("contrast")){
-    less.modifyVars({ other : elem.value });
+  if (id.includes("light")) {
+    less.modifyVars({
+      light: elem.value
+    });
+  } else if (id.includes("dark")) {
+    less.modifyVars({
+      dark: elem.value
+    });
+  } else if (id.includes("gray")) {
+    less.modifyVars({
+      gray: elem.value
+    });
+  } else if (id.includes("contrast")) {
+    less.modifyVars({
+      other: elem.value
+    });
   }
 
 }
@@ -59,18 +102,20 @@ function modify_color(elem){
 // Load home on first load instance
 
 function load() {
-  $("#placeholder").load("html/home.html");
+  $("#placeholder").load("html/cv/main.html");
   window.location.hash = "#home"
 
 }
 
 // load cv parts
-function load_cv(){
-  $("#highlights-placeholder").load("../html/cv/highlights.html");
+function load_cv() {
+  $("#hl1-placeholder").load("../html/cv/highlights/hl1.html");
+  $("#hl2-placeholder").load("../html/cv/highlights/hl2.html");
   $("#education-placeholder").load("../html/cv/sections/education.html");
   $("#research-int-placeholder").load("../html/cv/sections/research_int.html");
   $("#publication-placeholder").load("../html/cv/sections/publications.html");
   $("#experiences-placeholder").load("../html/cv/sections/experiences.html");
+  $("#headline-placeholder").load("../html/cv/headline.html");
 
 }
 

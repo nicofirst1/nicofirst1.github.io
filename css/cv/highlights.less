@@ -3,27 +3,43 @@
 
 
 
-#cv-icon {
+cv-icon {
   text-align: left;
   float: left;
   width:100%;
   margin-bottom: -10px;
 }
 
-#cv-icon a:link {
+
+cv-icon img{
+  width:30px;
+}
+
+cv-icon a:link {
   color: @dark;
 }
 
-#cv-icon a:visited {
+cv-icon a:visited {
   color: @dark;
 }
 
 
-#cv-icon span {
+cv-icon span {
   font-size: small;
   margin-left: 4px;
   color: @dark;
 }
+
+cv-icon.right span {
+  font-size: 20px;
+  margin-left: 4px;
+  color: @dark;
+}
+
+cv-icon.right  {
+margin-top: 20px;
+}
+
 
 
 
@@ -69,21 +85,42 @@ skills span{
 }
 
 
+
 highlights {
   display: block;
-  margin-top: -23px;
-  height: 915px; /*sets height of element*/
+  height: 100%; /*sets height of element*/
   width: 20%; /*sets height of element*/
   background: @gray; /*sets the background of this element (here a solid colour)*/
   padding-left: 30px; /*sets 'padding'*/
   padding-right: 20px; /*sets 'padding'*/
   line-height: 50px; /*for this, it sets vertical alignment*/
-  color: white;
+  color: @dark;
   font-size: large;
+}
+
+highlights.left {
+  margin-top: -23px;
   border-bottom-right-radius: 5%;
   float: left;
+
 }
+
 
 highlights h3{
   font-size: 30px;
+  margin-top: 19px;
+}
+
+highlights.right {
+  display: block;
+  margin-top: -22px;
+  border-bottom-left-radius: 5%;
+  float: right;
+}
+
+highlights.right li {
+  font-size: 14px;
+  margin-left: 4px;
+  color: @dark;
+  line-height: 20px;
 }

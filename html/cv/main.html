@@ -8,37 +8,34 @@
 
 
 	<container id="cv_container">
-		<headline>
-			<div id="header-title">
-				<h1>Dr. Nicolo' Brandizzi</h1>
-				<h2>PhD student at Sapienza university of Rome.</h2>
-				<h2>Researching Reinforcement Learning application tied to Language Emergence</h2>
-				<h6>Follow the gradient</h6>
-			</div>
-			<div id="header-image">
-				<img src="../resources/images/profile_photo.jpg" alt="" data-holder-rendered="true">
-			</div>
-		</headline>
-		<br>
-		<div id="highlights-placeholder"></div>
-		<div id="education-placeholder"></div>
-		<br>
-		<div id="research-int-placeholder"></div>
-		<br>
-		<br>
+		<singlePage>
+			<div id="headline-placeholder"></div>
+			<br>
+			<div id="hl1-placeholder"></div>
+			<div id="education-placeholder"></div>
+			<br>
+			<div id="research-int-placeholder"></div>
+			<br>
+			<br>
+			<pageEnd>
+				<strong>1</strong>
+				<hr>
+			</pageEnd>
+		</singlePage>
+
+		<singlePage>
+			<div id="hl2-placeholder"></div>
+
+			<div id="publication-placeholder"></div>
+			<br>
+			<div id="experiences-placeholder"></div>
 
 
-		<pageEnd>
-			<strong>1</strong>
-			<hr>
-		</pageEnd>
-
-		<div id="publication-placeholder"></div>
-		<div id="experiences-placeholder"></div>
+		</singlePage>
 
 	</container>
 
-	
+
 
 	<div class="interaction">
 		<div class="download" onclick="download_cv()">
@@ -46,30 +43,30 @@
 		</div>
 		<br>
 		<hr>
-		<b >Color Picker</b>
+		<b>Color Picker</b>
 		<br>
 
 		<div class="colors">
 			<span>Dark</span>
-			<input type=color  id="dark_color" onchange="modify_color(this)">
+			<input type=color id="dark_color" onchange="modify_color(this)">
 
 		</div>
 		<br>
 		<div class="colors">
 			<span>Light</span>
-			<input type=color  id="light_color" onchange="modify_color(this)">
+			<input type=color id="light_color" onchange="modify_color(this)">
 
 		</div>
 		<br>
 		<div class="colors">
 			<span>Gray</span>
-			<input type=color  id="gray_color" onchange="modify_color(this)">
+			<input type=color id="gray_color" onchange="modify_color(this)">
 
 		</div>
 		<br>
 		<div class="colors">
 			<span>Contrast</span>
-			<input type=color  id="contrast_color" onchange="modify_color(this)">
+			<input type=color id="contrast_color" onchange="modify_color(this)">
 
 		</div>
 
