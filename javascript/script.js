@@ -37,6 +37,7 @@ function init_colors() {
 
 }
 
+// modify cv colors
 function modify_color(elem){
   console.log(elem)
   let id = elem.id;
@@ -127,6 +128,9 @@ function show_project(prj) {
 
   } else if (id == "rl-werewolf") {
     $("#project-placeholder").load("../html/projects/rl_werewolf.html");
+
+  } else if (id == "egg") {
+    $("#project-placeholder").load("../html/projects/egg.html");
 
   }
 }
