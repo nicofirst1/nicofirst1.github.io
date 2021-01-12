@@ -38,7 +38,42 @@
 
 	</container>
 
-	<div id="interactions-placeholder"></div>
+	
+
+	<div class="interaction">
+		<div class="download" onclick="download_cv()">
+			<span>Download CV</span>
+		</div>
+		<br>
+		<hr>
+		<b >Color Picker</b>
+		<br>
+
+		<div class="colors">
+			<span>Dark</span>
+			<input type=color  id="dark_color" onchange="modify_color(this)">
+
+		</div>
+		<br>
+		<div class="colors">
+			<span>Light</span>
+			<input type=color  id="light_color" onchange="modify_color(this)">
+
+		</div>
+		<br>
+		<div class="colors">
+			<span>Gray</span>
+			<input type=color  id="gray_color" onchange="modify_color(this)">
+
+		</div>
+		<br>
+		<div class="colors">
+			<span>Contrast</span>
+			<input type=color  id="contrast_color" onchange="modify_color(this)">
+
+		</div>
+
+	</div>
 
 
 </body>

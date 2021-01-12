@@ -29,6 +29,7 @@ function no_resize() {
 }
 
 function init_colors() {
+  console.log(document.getElementById("dark_color"))
   document.getElementById("dark_color").value="#2c67fc";
   document.getElementById("light_color").value="#e2f7ff";
   document.getElementById("gray_color").value="#bbc6f0";
@@ -69,7 +70,6 @@ function load_cv(){
   $("#research-int-placeholder").load("../html/cv/sections/research_int.html");
   $("#publication-placeholder").load("../html/cv/sections/publications.html");
   $("#experiences-placeholder").load("../html/cv/sections/experiences.html");
-  $("#interactions-placeholder").load("../html/cv/interactions.html");
 
 }
 
