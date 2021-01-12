@@ -1,6 +1,8 @@
 @import "./colors.less";
-@section-margin :100px;
-@date-margin :100px;
+@section-margin :20px;
+@date-margin :20px;
+@div-margin :350px;
+@title-margin-right :50px;
 
 customSection {
   background: white; /*sets the background of this element (here a solid colour)*/
@@ -24,6 +26,15 @@ customSection {
   
 }
 
+.vl.left {
+  border-left: 3px solid @other;
+  margin-left: @div-margin;
+}
+.vl.right {
+  border-left: 3px solid @other;
+  margin-left:@title-margin-right;
+  margin-bottom: 10px;
+}
 
 #section-title hr{
  color: @dark;
@@ -32,13 +43,21 @@ customSection {
  #section-title.left hr{
   width: 750px;
   margin-bottom: 20px;
+  margin-left: 10px;
+
  color: @dark;
  }
+
+ #section-title.right{
+  width: 750px;
+  margin-bottom: 20px;
+  margin-left: @title-margin-right;
+ }
+ 
 
  #section-title.right hr{
   width: 750px;
   margin-bottom: 20px;
-  margin-right: 80px;
  color: @dark;
  }
  
@@ -46,7 +65,7 @@ customSection {
 
 #education-entry date{
   margin-left: @date-margin;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 10px;
 
 }
@@ -77,12 +96,12 @@ color: @dark;
 }
 
 #education-entry.left ul{
-  margin-left: 400px;
+  margin-left: @div-margin ;
 
 }
 
 #education-entry.right ul{
-  margin-left: 100px;
+  margin-left:  @title-margin-right;
 
 }
 
