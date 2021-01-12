@@ -2,7 +2,6 @@
 @section-margin :100px;
 @date-margin :100px;
 
-
 customSection {
   background: white; /*sets the background of this element (here a solid colour)*/
   color: black;
@@ -13,10 +12,11 @@ customSection {
 
 
 
-#section-title i{
+#section-title i {
   float: left;
-  margin-left: @section-margin;
   margin-right: 10px;
+  margin-left: @section-margin;
+
 }
 
 #section-title span{
@@ -24,31 +24,69 @@ customSection {
   
 }
 
-#section-title hr{
- width: 750px;
- margin-bottom: 20px;
-color: black;
-}
 
+#section-title hr{
+ color: @dark;
+ }
+
+ #section-title.left hr{
+  width: 750px;
+  margin-bottom: 20px;
+ color: @dark;
+ }
+
+ #section-title.right hr{
+  width: 750px;
+  margin-bottom: 20px;
+  margin-right: 350px;
+ color: @dark;
+ }
+ 
+ 
 
 #education-entry date{
   margin-left: @date-margin;
 
 }
 
+#education-entry a{
+color: @dark;
+}
+#education-entry a:visited{
+  color: @dark;
+  }
+
+
 #education-entry workplace{
   margin-left: @date-margin;
 
 }
 
+
 #education-entry bold{
-  margin-left: @section-margin;
   font-weight: bold;
 }
+
+#education-entry bold{
+  margin-left: @section-margin;
+}
+
+
 #education-entry ul{
-  margin-left: 400px;
   list-style-type: '';
 }
+
+#education-entry.left ul{
+  margin-left: 400px;
+
+}
+
+#education-entry.right ul{
+  margin-left: 100px;
+
+}
+
+
 
 #education-entry li::before {
   content: "○";  /* Add content: \2022 is the CSS Code/unicode for a bullet */

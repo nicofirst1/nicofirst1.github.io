@@ -23,8 +23,9 @@ function load() {
 
 function load_cv(){
   $("#highlights-placeholder").load("../html/cv/highlights.html");
-  $("#education-placeholder").load("../html/cv/education.html");
-  $("#research-int-placeholder").load("../html/cv/research_int.html");
+  $("#education-placeholder").load("../html/cv/sections/education.html");
+  $("#research-int-placeholder").load("../html/cv/sections/research_int.html");
+  $("#publication-placeholder").load("../html/cv/sections/publications.html");
 
 }
 
