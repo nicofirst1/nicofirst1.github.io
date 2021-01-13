@@ -9,7 +9,7 @@ $(function() {
 // Load home on first load instance
 
 function load() {
-    $("#placeholder").load("html/cv/main.html");
+    $("#placeholder").load("html/home.html");
     window.location.hash = "#home"
 
 }
