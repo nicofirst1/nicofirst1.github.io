@@ -65,7 +65,7 @@ var opt = {
 
 
 
-function download_cv() {
+function download_cv2() {
     const filename = 'NicoloBrandizziCV.pdf';
 
 
@@ -84,3 +84,45 @@ function download_cv() {
 
 }
 
+
+
+
+
+function download_cv() {
+    const filename = 'NicoloBrandizziCV.pdf';
+  
+    var deferreds = [];
+    let doc = new jsPDF('p', 'mm', [300,300]);
+    let container = document.getElementById('cv_container');
+    var children = Array.from(container.children);
+    console.log(children)
+    for (var i = 0; i < children.length; i++) {
+        if (children[i].localName == "singlepage") {
+            var deferred = $.Deferred();
+            deferreds.push(deferred.promise());
+            generateCanvas(children[i], doc, deferred);
+        }
+    }
+
+  
+    $.when.apply($, deferreds).then(function () { // executes after adding all images
+      doc.save(filename);
+    });
+  
+    function generateCanvas(elem, doc, deferred) {
+  
+      html2canvas(elem, {
+        scale: 2,
+        onrendered: function (canvas) {
+  
+          var img = canvas.toDataURL();
+          doc.addImage(img, 'JPEG', 0, 0, 210, 297);
+          doc.addPage();
+  
+          deferred.resolve();
+        }
+      });
+    }
+  
+  }
+  
