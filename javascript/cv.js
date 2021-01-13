@@ -49,30 +49,38 @@ function modify_color(elem) {
 
 }
 
+
+var opt = {
+    margin: 0,
+    image: { type: 'jpeg', quality: 1 },
+    html2canvas: {
+        scale: 2,
+
+    },
+    //height, width
+    jsPDF: { unit: 'mm', format:  [300,300], orientation: 'portrait' },
+    enableLinks: true,
+    mode:["avoid-all"],
+};
+
+
+
 function download_cv() {
     const filename = 'NicoloBrandizziCV.pdf';
-    var opt = {
-        margin: 1,
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: {
-            scale: 1,
-            windowWidth: 2000,
-            windowHeight: 1200,
-        },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        enableLinks: true,
-    };
 
 
     let container = document.getElementById('cv_container');
     var children = Array.from(container.children);
     console.log(children)
+    var element = html2pdf(children[0], opt);
+    var element = html2pdf(children[1], opt);
+
     for (var i = 0; i < children.length; i++) {
         if (children[i].localName == "singlepage") {
             opt.filename = "f" + i + ".pdf"
-            var element = html2pdf(children[i], opt);
 
         }
     }
 
 }
+
