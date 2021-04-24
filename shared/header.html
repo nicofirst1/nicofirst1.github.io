@@ -1,0 +1,29 @@
+<header class="header wow animate__fadeInDown">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <button class="menu_on_btn"><i class="fas fa-bars"></i></button>
+                <div class="main_menu">
+                    <button class="menu_off_btn"><i class="fas fa-times"></i></button>
+                    <ul>
+                        <li ><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="publications.html"><i class="fas fa-file"></i> Publications</a></li>
+                        <li><a href="projects.html"><i class="fas fa-fire"></i> Projects</a></li>
+                        <li><a href="cv.html"><i class="fas fa-address-card"></i> CV</a></li>
+                        <li><a href="thesisproposals.html"><i class="fas fa-user"></i> Thesis Proposals</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    //activate the header path
+    [].forEach.call(document.querySelectorAll('a'), function(elem) {
+      if (elem.pathname === window.location.pathname){
+        elem.parentNode.classList.add('active')}
+      else{
+        elem.parentNode.classList.remove('active')}
+    })
+  </script>

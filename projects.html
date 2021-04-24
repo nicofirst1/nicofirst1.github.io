@@ -30,28 +30,16 @@
     <![endif]-->
 </head>
 
+<script> 
+    $(function(){
+      $("#header").load("shared/header.html"); 
+      $("#footer").load("shared/footer.html"); 
+    });
+</script> 
+
 <body>
     <div class="main publications_page">
-        <!--header start-->
-        <header class="header wow animate__fadeInDown">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <button class="menu_on_btn"><i class="fas fa-bars"></i></button>
-                        <div class="main_menu">
-                            <button class="menu_off_btn"><i class="fas fa-times"></i></button>
-                            <ul>
-                                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                                <li><a href="publications.html"><i class="fas fa-file"></i> Publications</a></li>
-                                <li class="active"><a href="projects.html"><i class="fas fa-fire"></i> Projects</a></li>
-                                <li><a href="cv.html"><i class="fas fa-address-card"></i> CV</a></li>
-                                <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <div id="header"></div>
         <!--header end-->
         <!------------ page_title Start------------>
         <section class="page_title section_padding cover_bg overlay">
@@ -292,19 +280,14 @@
         </section>
         <!------------  End------------>
         <!--Footer Start-->
-        <footer class="footer">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-lg-12">
-                        <p>&copy; Copyright 2021, All right Reserved By - Nicolo' Brandizzi</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--Footer  End-->
+        <div id="footer"></div>
+        <!--Footer End-->
+
     </div>
     <!--popper min js-->
     <script src="assets/js/popper.min.js"></script>
+    <!--pdf viewer-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
     <!--Bootstrap min js-->
     <script src="assets/js/bootstrap.min-v4.0.0.js"></script>
     <!--Owl Carousel min js-->
