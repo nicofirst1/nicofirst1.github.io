@@ -499,187 +499,17 @@ p {
     background-color: #201F1D;
 }
 
-.cv_header {
-    background-color: #042F33;
-    color: #fff;
-    padding: 40px 30px;
-}
-
-.cv_header h1 {
-    font-size: 40px;
-    font-weight: 400;
-}
-
-.cv_header h4 {
-    font-weight: 300;
-    font-size: 20px;
-    margin-bottom: 4px;
-}
-
-.cv_header p {
-    margin-top: 30px;
-    font-weight: 300;
-    font-size: 20px;
-}
-
-.cv_header .image {
-    text-align: right;
-}
-
-.cv_header .image img {
-    max-width: 200px;
-}
-
-/*cv_body*/
-
-.cv_body {
-    background-color: #fff;
-    display: flex;
-}
-
-.sidebar_1 {
-    background-color: #CBCDCD;
-    width: 300px;
-    padding: 30px;
-    box-sizing: border-box;
-}
-
-.sidebar_1 h2 {
-    color: #042F33;
-    font-size: 30px;
-    font-weight: 500;
-    border-bottom: 1px solid #042F33;
-    padding-bottom: 5px;
-}
-
-.sidebar_1 h3 {
-    font-size: 18px;
-    color: #06727C;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-.sidebar_1 .contact ul li {
-    margin-bottom: 5px;
-    font-size: 16px;
-}
-
-.sidebar_1 .skill ul {
-    margin-bottom: 15px;
-}
-
-.sidebar_1 .skill ul li {
-    position: relative;
-    font-weight: 400;
-    font-size: 14px;
-    margin-bottom: 3px;
-}
-
-.skill {
-    margin-top: 20px;
-}
-
-.sidebar_1 .skill .stars {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.sidebar_1 .skill .stars svg {
-    color: #06727C;
-    font-size: 10px;
-}
-
-.sidebar_1 .skill .stars svg.fil {
-    color: #042F33;
-}
-
-.sidebar_1 .skill .stars li {
-    display: inline-block;
-}
-
-
-.content_1 {
-    width: calc(100% - 300px);
-    padding: 30px;
-    font-size: 16px;
-}
-
-.content_1 h2 {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    font-size: 30px;
-    font-weight: 400;
-}
-
-.content_1 .part_1 ul li {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.content_1 .part_1 h4 {
-    font-size: 18px;
-    margin-bottom: 0px;
-    margin-top: 5px;
-    font-weight: 500;
-}
-
-.content_1 .part_1 {
-    border-left: 3px solid #53A0A7;
-    padding-left: 10px;
-}
-
-
-.content_1 .part_2 {
-    margin-top: 15px;
-}
-
-.content_1 .part_2 ul {
-    list-style: circle;
-    margin-left: 30px;
-}
-
-.content_1 .part_2 ul li a {
-    color: #201F1D;
-    border-bottom: 1px solid #333;
-}
-
-.single_degre_details {
-    margin-bottom: 50px;
-}
-
-/*cv_body 2*/
-.cv_body_2 {
-    margin-top: 20px;
-}
-
-.cv_body_2 .sidebar_1 ul {
-    list-style: disc;
-    margin-left: 15px;
-    margin-bottom: 15px;
-}
-
-.cv_body_2 .sidebar_1 h3 {
-    color: #042F33;
-    font-size: 20px;
-}
-
-.cv_body_2 .sidebar_1 h3 svg {
-    font-size: 24px;
-}
-
-
 .download_cv {
     display: inline-block;
-    background-color: #042F33;
+    background-color: #868685;
     color: #fff;
     padding: 12px 30px;
     cursor: pointer;
     font-size: 20px;
-    border: 3px solid #042F33;
+    border: 3px solid #868685;
     transition: .5s;
-    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 40px;
 }
 
 .download_cv:hover {
@@ -699,7 +529,7 @@ p {
 }
 
 .cv_section ::-webkit-scrollbar-thumb {
-    background: #042F33;
+    background: #868685;
 }
 
 .cv_section ::-webkit-scrollbar-thumb:hover {
@@ -710,8 +540,8 @@ p {
     width:100%;
     height: 1000px;
 }
-
-.google_doc {
+.bright_doc {
     width:100%;
     height: 1000px;
-}
+    filter: invert(0.8);
+    }
