@@ -509,6 +509,7 @@ p {
     border: 3px solid #868685;
     transition: .5s;
     margin-bottom: 30px;
+    margin-top: 30px;
     margin-left: 40px;
 }
 
@@ -543,5 +544,4 @@ p {
 .bright_doc {
     width:100%;
     height: 1000px;
-    filter: invert(0.8);
     }

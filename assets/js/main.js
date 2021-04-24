@@ -14,3 +14,22 @@
     // mobile menu
 
 }(jQuery));
+
+
+function darkMode(id) {
+    console.log("aia")
+    var elem= document.getElementById(id);
+
+    let light="invert(0)";
+    let dark="invert(0.8)";
+    if (elem.style.filter.includes(light))
+    {
+        elem.style.filter= "invert(0.8)";
+
+    }else{
+        elem.style.filter= "invert(0)";
+
+    }
+    
+
+  }
