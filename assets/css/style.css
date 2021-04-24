@@ -138,7 +138,7 @@ p {
 
 .page_title {
     background-image: url(../images/banner.jpg);
-    padding: 140px 0 100px 0;
+    padding: 100px 0 100px 0;
     text-align: center;
 }
 
@@ -162,7 +162,7 @@ p {
     width: 100%;
     z-index: 100;
     padding: 10px 0;
-    border-bottom: 1px solid #ffffff2e;
+    border-bottom: 1px solid #868685;
 }
 
 .main_menu {}
@@ -184,7 +184,7 @@ p {
 
 .main_menu ul li.active a,
 .main_menu ul li a:hover {
-    color: #FFA500;
+    color: #f7984f;
 }
 
 .main_menu ul li a:after {
@@ -192,7 +192,7 @@ p {
     content: "";
     height: 1px;
     width: calc(100% - 20px);
-    background-color: #FFA500;
+    background-color: #f7984f;
     left: 10px;
     bottom: -11px;
     transition: .3s;
@@ -262,9 +262,9 @@ p {
 }
 
 .intro ul li a:hover {
-    background-color: #FFA500;
-    border-color: #FFA500;
-    color: #000;
+    background-color: #f7984f;
+    border-color: #f7984f;
+    color: #201F1D;
 }
 
 .intro p {
@@ -275,7 +275,7 @@ p {
 }
 
 .intro p a {
-    color: #FFA500;
+    color: #f7984f;
     display: inline-block;
     font-weight: 500;
 }
@@ -298,9 +298,9 @@ p {
 *****************************/
 
 .section_1 {
-    background-color: #000;
+    background-color: #201F1D;
     color: #fff;
-    border-top: 1px solid #ffffff2e;
+    border-top: 1px solid #868685;
 }
 
 .single_deg {
@@ -309,10 +309,10 @@ p {
 
 .single_deg h2 {
     margin-bottom: 10px;
-    background-color: #FFA500;
+    background-color: #f7984f;
     font-size: 24px;
     padding: 10px 15px;
-    color: #000;
+    color: #201F1D;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -339,7 +339,7 @@ p {
 .deg_info {}
 
 .deg_info h3 {
-    color: #FFA500;
+    color: #f7984f;
     font-size: 22px;
     font-weight: 400;
 }
@@ -351,7 +351,7 @@ p {
 }
 
 .deg_info p svg {
-    color: #FFA500;
+    color: #f7984f;
     position: absolute;
     top: 0;
     left: 0;
@@ -360,7 +360,7 @@ p {
 
 .deg_info p a {
     display: inline-block;
-    color: #FFA500;
+    color: #f7984f;
 }
 
 .vote {
@@ -381,8 +381,8 @@ p {
     position: absolute;
     left: 0;
     top: 0px;
-    background-color: #FFA500;
-    color: #000;
+    background-color: #f7984f;
+    color: #201F1D;
     padding: 2px 8px;
     border-radius: 15px;
     transition: .3s;
@@ -420,7 +420,7 @@ p {
 
 .card-header {
     padding: 0;
-    background-color: #000;
+    background-color: #201F1D;
 }
 
 .current_projects {
@@ -449,13 +449,13 @@ p {
 .card_title {
     font-weight: 500;
     font-size: 26px;
-    color: #FFA500;
+    color: #f7984f;
 }
 
 .get_code {
     display: inline-block;
-    background-color: #FFA500;
-    color: #000;
+    background-color: #f7984f;
+    color: #201F1D;
     font-weight: 500;
     padding: 8px 20px;
     border-radius: 4px;
@@ -465,7 +465,7 @@ p {
 
 
 .get_code:hover {
-    background-color: #000;
+    background-color: #201F1D;
     color: #fff;
 }
 
@@ -473,9 +473,9 @@ p {
 
 /*About page*/
 .about_1 {
-    background-color: #000;
+    background-color: #201F1D;
     color: #fff;
-    border-top: 1px solid #ffffff2e;
+    border-top: 1px solid #868685;
 }
 
 .about_1 p {
@@ -496,7 +496,7 @@ p {
 
 /*cv*/
 .cv_section {
-    background-color: #000;
+    background-color: #201F1D;
 }
 
 .cv_header {
@@ -641,7 +641,7 @@ p {
 }
 
 .content_1 .part_2 ul li a {
-    color: #000;
+    color: #201F1D;
     border-bottom: 1px solid #333;
 }
 
