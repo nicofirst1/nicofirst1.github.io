@@ -483,16 +483,6 @@ p {
     text-align: justify;
 }
 
-.about_1 img {
-    border-radius: 10px;
-    transition: .3s;
-    margin-bottom: 30px;
-}
-
-.about_1 img:hover {
-    transform: scale(1.07);
-}
-
 
 /*cv*/
 .cv_section {
