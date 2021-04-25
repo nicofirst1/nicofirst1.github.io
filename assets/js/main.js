@@ -22,12 +22,12 @@ function darkMode(id) {
 
     let light="invert(0)";
     let dark="invert(0.8)";
-    if (elem.style.filter.includes(light))
+    if (elem.style.filter.includes(dark))
     {
-        elem.style.filter= "invert(0.8)";
+        elem.style.filter= light;
 
     }else{
-        elem.style.filter= "invert(0)";
+        elem.style.filter=dark;
 
     }
     
