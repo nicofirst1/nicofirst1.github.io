@@ -17,7 +17,6 @@
 
 
 function darkMode(id) {
-    console.log("aia")
     var elem= document.getElementById(id);
 
     let light="invert(0)";
