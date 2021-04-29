@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
   <head>
+    {% include gtm_head.liquid %}
+
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <meta charset="UTF-8">
@@ -27,6 +29,8 @@
     {% include analytics.html %}
   </head>
   <body>
+    {% include gtm_body.liquid %}
+
     {% include header.html %}
 
     {{ content }}
