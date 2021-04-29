@@ -1,20 +1,18 @@
-(function($) {
-    "use strict";
 
-    // mobile menu
-    $(".menu_on_btn").click(function() {
+
+$(document).ready(function(){
+    $('.menu_on_btn').on('click touchstart', function() {
         $(".main_menu").addClass("on");
         $("body").addClass("fix");
     });
+});
 
-    $(".menu_off_btn").click(function() {
+$(document).ready(function(){
+    $('.menu_off_btn').on('click touchstart', function() {
         $(".main_menu").removeClass("on");
         $("body").removeClass("fix");
     });
-    // mobile menu
-
-}(jQuery));
-
+});
 
 function darkMode(id) {
     var elem= document.getElementById(id);
