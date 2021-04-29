@@ -5,21 +5,33 @@
 
 .card-header {
     padding: 0;
-    background-color: #201F1D;
+    background-color: $darker-color;
 }
 
 .current_projects {
     margin-bottom: 50px;
 }
 
+.project_s_1{
+    background-color: $base-color;
+}
 .project_s_1 .card-link {
-    color: #fff;
+    color: $white-color;
     display: block;
     padding: 10px 15px;
 }
 
+
+.project_s_1 .card-body  {
+    background-color: $darkest-color;
+    color: white;
+
+}
+
+
 .project_s_1 .card-body p {
     margin-bottom: 15px;
+
 }
 
 .project_s_1 .card-body img {
@@ -34,13 +46,13 @@
 .card_title {
     font-weight: 500;
     font-size: 26px;
-    color: #f7984f;
+    color: $light-color;
 }
 
 .get_code {
     display: inline-block;
-    background-color: #f7984f;
-    color: #201F1D;
+    background-color: $light-color;
+    color: $base-color;
     font-weight: 500;
     padding: 8px 20px;
     border-radius: 4px;
@@ -50,6 +62,6 @@
 
 
 .get_code:hover {
-    background-color: #201F1D;
-    color: #fff;
+    background-color: $base-color;
+    color: $white-color;
 }
