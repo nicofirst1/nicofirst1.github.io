@@ -149,12 +149,12 @@
     font-size: 20px;
 }
 
-.deg_info p a {
+.vote p a {
     display: inline-block;
     color: $light-color;
 }
 
-.darker {
+.vote {
     color: currentColor;
     display: inline-block;
     /*  pointer-events: none;
@@ -167,7 +167,7 @@
     z-index: 2;
 }
 
-.darker span {
+.vote span {
     opacity: 0;
     position: absolute;
     left: 0;
@@ -182,14 +182,14 @@
     display: inline-block;
 }
 
-.darker:hover span {
+.vote:hover span {
     opacity: 1;
     top: -30px;
 }
 
 
 /*****************************
-******* darkest Start *******
+******* footer Start *******
 *****************************/
 .footer {
     background-color: $darkest-color;
@@ -204,20 +204,6 @@
     min-height: 100vh;
 }
 
-
-
-
-/*About page*/
-.about_1 {
-    background-color: $base-color;
-    color: $white-color;
-    border-top: 1px solid $darker-color;
-}
-
-.about_1 p {
-    margin-bottom: 15px;
-    text-align: justify;
-}
 
 
 /*cv*/
@@ -254,4 +240,7 @@
 .bright_doc {
     width:100%;
     height: 1000px;
+
     }
+
+
