@@ -7,6 +7,20 @@
     padding: 0;
     background-color: $darker-color;
 }
+.card-title{
+
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: -10px;
+
+}
+
+.card-tag{
+    border-radius: 10%;
+    border-width: 100px;
+    background-color: $darkest-color;
+    color: white;
+}
 
 .current_projects {
     margin-bottom: 50px;
@@ -14,7 +28,9 @@
 
 .project_s_1{
     background-color: $base-color;
+    height: 1000px
 }
+
 .project_s_1 .card-link {
     color: $white-color;
     display: block;

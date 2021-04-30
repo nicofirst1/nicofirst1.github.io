@@ -20,9 +20,11 @@ data_dir            : _data
 includes_dir        : _includes
 sass:
   sass_dir: _sass
+
+
 collections:
-  posts:
-    output          : true
+  news:
+    output: true
 
 # Handling Reading
 safe                : false
@@ -36,12 +38,13 @@ strict_front_matter : false
 # Filtering Content
 show_drafts         : null
 limit_posts         : 0
-future              : false
-unpublished         : false
+future              : true2012-09-12-how-to-write-a-blog.md
+unpublished         : true
 
 # Plugins
 whitelist           : []
-plugins             : []
+plugins:
+  - jekyll-gist
 
 # Conversion
 markdown            : kramdown

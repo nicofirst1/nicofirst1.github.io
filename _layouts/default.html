@@ -30,8 +30,10 @@
     <!--Bootstrap min js-->
     <script src="assets/js/bootstrap.min-v4.0.0.js"></script>
 
-
+    {% if jekyll.environment == 'production'%}
     {% include analytics.html %}
+    {% endif %}
+
   </head>
   <body>
     {% include gtm_body.liquid %}
