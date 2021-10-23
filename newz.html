@@ -10,69 +10,71 @@ title: Newz
 
         {% include page_title.html %}
 
+
         <!------------  Start------------>
-        <section class="project_s_1 section_padding" >
+        <section class="project_s_1 section_padding">
             <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div > 
-                    {% assign sorted = site.news | sort: 'date' | reverse %}
-                    {% for post in sorted %}
-                    <div id="{{post.custom_id}} ">
-                        <div class="card">
-                            <div class="card-header ">
-                                <a class="card-link" data-toggle="collapse" href="#{{post.custom_id}}">
-                                    <div class="row">
-                                        <div class="col">
-                                            {{ post.date | date_to_long_string }}
-                                        </div>
-                                        <div class="col-6 text-center card-title">
-                                            {{ post.title }}
-                                        </div>
-                                        <div class="col text-right ">
-                                            <span class="card-tag">{{ post.tag }}</span>
-                                        </div>
-                                      </div>
-                                      
-                                </a>
+                <h3 style="color:white;">You can click on any newz in order to read more about it!</h3>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div>
+                            {% assign sorted = site.news | sort: 'date' | reverse %}
+                            {% for post in sorted %}
+                            <div id="{{post.custom_id}} ">
+                                <div class="card">
+                                    <div class="card-header ">
+                                        <a class="card-link" data-toggle="collapse" href="#{{post.custom_id}}">
+                                            <div class="row">
+                                                <div class="col">
+                                                    {{ post.date | date_to_long_string }}
+                                                </div>
+                                                <div class="col-6 text-center card-title">
+                                                    {{ post.title }}
+                                                </div>
+                                                <div class="col text-right ">
+                                                    <span class="card-tag">{{ post.tag }}</span>
+                                                </div>
+                                            </div>
 
-                            </div>
-                            <div id="{{post.custom_id}}" class="collapse aro_up" data-parent="#{{post.custom_id}}">
-                                <div class="card-body">
-                                    <h3>         
-                                        <a > {{ post.title }} </a>
-                                    </h3>
+                                        </a>
+
+                                    </div>
+                                    <div id="{{post.custom_id}}" class="collapse aro_up"
+                                        data-parent="#{{post.custom_id}}">
+                                        <div class="card-body">
+                                            <h3>
+                                                <a> {{ post.title }} </a>
+                                            </h3>
 
 
-                                        {% if post.image%}
-                                        <div class="col-lg-3">
-                                            <img src="{{ post.image }}">
+                                            {% if post.image%}
+                                            <div class="col-lg-3">
+                                                <img src="{{ post.image }}">
+                                            </div>
+                                            <br>
+                                            {%endif %}
+
+                                            <div class="col-lg-9 ">
+
+                                                {{ post.content }}
+                                            </div>
+
                                         </div>
-                                        <br>
-                                        {%endif %}
-
-                                        <div class="col-lg-9 ">
-
-                                            {{ post.content }}
-                                        </div>
-                                       
+                                    </div>
                                 </div>
                             </div>
+                            <br>
+                            {% endfor %}
                         </div>
                     </div>
-                    <br>
-                    {% endfor %}
                 </div>
-            </div>
-            </div>
         </section>
-       
 
-        
+
+
 
     </div>
 
 
-  
-</body>
 
+</body>
