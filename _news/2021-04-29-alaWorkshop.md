@@ -2,7 +2,7 @@
 title: ALA 2021 Workshop
 custom_id: ala2021
 custom_url: https://ala2021.vub.ac.be/
-tag: workshop
+tag: PhD
 image: ./assets/images/news/ALA2021.png
 ---
 

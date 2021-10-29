@@ -1,7 +1,7 @@
 ---
 title:  Tutoring Lesson on Twitch
 custom_id: tutoring_twitch
-tag: tutoring
+tag: lectures
 ---
 
 For all my students following my TPD tutoring, we moved to [Twitch](https://www.twitch.tv/dizzibus)!

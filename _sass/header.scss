@@ -3,13 +3,14 @@
 ******* Header Start *******
 *****************************/
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
     padding: 10px 0;
     border-bottom: 1px solid $darker-color;
+    background: rgba($color: #000000, $alpha: 0.6);
 }
 
 .main_menu {}
