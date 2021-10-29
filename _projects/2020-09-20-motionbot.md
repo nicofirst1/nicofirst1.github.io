@@ -1,5 +1,6 @@
 ---
-title: MotionBot; An easy to implement project for home-made security system
+title: MotionBot
+subtitle: An easy to implement project for home-made security system
 custom_id: motionbot
 tag: past
 custom_url: https://github.com/nicofirst1/MotionBot
