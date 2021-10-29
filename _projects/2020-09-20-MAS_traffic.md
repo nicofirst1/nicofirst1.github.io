@@ -1,5 +1,5 @@
 ---
-title:MAS Traffic Control, Interaction between autonomous and human drivers
+title: MAS Traffic Control; Interaction between autonomous and human drivers
 custom_id: masTraffic
 tag: past
 custom_url: https://github.com/nicofirst1/MAS-Traffic-Control
