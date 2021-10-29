@@ -25,6 +25,8 @@ sass:
 collections:
   news:
     output: true
+  projects:
+    output: true
 
 # Handling Reading
 safe                : false

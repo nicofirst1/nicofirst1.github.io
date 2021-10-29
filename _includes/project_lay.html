@@ -1,0 +1,50 @@
+<div id="{{post.custom_id}} ">
+    <div class="card">
+        <div class="card-header ">
+            <a class="card-link" data-toggle="collapse" href="#{{post.custom_id}}">
+
+                <div class="row">
+                    <div class="col-3 card-title text-left">
+                        {{ post.title }}
+                    </div>
+                    <div class="col-7 text-left">
+                        {{ post.subtitle }}
+                    </div>
+                </div>
+
+            </a>
+
+        </div>
+        <div id="{{post.custom_id}}" class="collapse aro_up" data-parent="#{{post.custom_id}}">
+            <div class="card-body ">
+                <h3 class="text-center ">
+                    <a> {{ post.title }} </a>
+                </h3>
+
+                <div class="row">
+                    {% if post.image%}
+                    <div class="col-lg-3 col-md-3 text-center">
+                        <img src="{{ post.image }}">
+                    </div>
+                    <br>
+                    {%endif %}
+
+                    <div class="col-lg-9 col-md-9">
+
+                        {{ post.content }}
+                    </div>
+                    <div class="col-lg-12 text-right">
+                        {% if post.custom_button%}
+                        <a class="get_code" target="_blank" href={{ post.custom_url }}>{{ post.custom_button }} <i
+                                class="fas fa-code"></i></a>
+                        {%else%}
+                        <a class="get_code" target="_blank" href={{ post.custom_url }}>Get Code <i
+                                class="fas fa-code"></i></a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
