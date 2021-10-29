@@ -24,30 +24,62 @@ title: Projects
                         <div class="current_projects">
                             <h3 class="card_title  ">Current Projects</h3>
                             <!--Collapse Start-->
-                            <div id="accordion_1  ">
-                                <div class="card">
-                                    <div class="card-header active">
-                                        <a class="card-link" data-toggle="collapse" href="#current_projects">
-                                            EGG: contributing to the Emergent LanGuage Game repo.
-                                        </a>
-                                    </div>
-                                    <div id="current_projects" class="collapse show aro_up" data-parent="#accordion_1">
-                                        <div class="card-body">
-                                            <h3>EGG: Emergence of lanGuage in Games</h3>
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-3 text-center">
-                                                    <img src="assets/images/egg.png">
-                                                </div>
-                                                <div class="col-lg-9 col-md-9">
-                                                    <p>EGG is a toolkit that allows researchers to quickly implement multi-agent games with discrete channel communication. In such games, the agents are trained to communicate with each other and jointly solve a task. Often, the way they communicate is not explicitly determined, allowing agents to come up with their own 'language' in order to solve the task. Such setup opens a plethora of possibilities in studying emergent language and the impact of the nature of task being solved, the agents' models, etc. This subject is a vibrant area of research often considered as a prerequisite for general AI. The purpose of EGG is to offer researchers an easy and fast entry point into this research area.</p>
-                                                    <p>EGG is based on PyTorch and provides: (a) simple, yet powerful components for implementing communication between agents, (b) a diverse set of pre-implemented games, (c) an interface to analyse the emergent communication protocols.</p>
-                                                </div>
-                                                <div class="col-lg-12 text-right">
-                                                    <a class="get_code" target="_blank" href="https://github.com/facebookresearch/EGG">Get Code <i class="fas fa-code"></i></a>
+                            <div class="col-lg-12">
+                                <div>
+                                    {% assign sorted = site.projects | sort: 'date' | reverse %}
+                                    {% for post in sorted %}
+                                    {% if post.tag!='current' %}
+                                        {% continue %}
+                                    {% endif %}
+                                    <div id="{{post.custom_id}} ">
+                                        <div class="card">
+                                            <div class="card-header ">
+                                                <a class="card-link" data-toggle="collapse" href="#{{post.custom_id}}">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                        </div>
+                                                        <div class="col-6 text-center card-title">
+                                                            {{ post.title }}
+                                                        </div>
+                                                        <div class="col text-right ">
+                                                        </div>
+                                                    </div>
+        
+                                                </a>
+        
+                                            </div>
+                                            <div id="{{post.custom_id}}" class="collapse aro_up"
+                                                data-parent="#{{post.custom_id}}">
+                                                <div class="card-body">
+                                                    <h3>
+                                                        <a> {{ post.title }} </a>
+                                                    </h3>
+        
+                                                    <div class="row">
+                                                        {% if post.image%}
+                                                        <div class="col-lg-3 col-md-3 text-center">
+                                                            <img src="{{ post.image }}">
+                                                        </div>
+                                                        <br>
+                                                        {%endif %}
+
+                                                        <div class="col-lg-9 col-md-9">
+                                                            
+                                                            {{ post.content }}
+                                                        </div>
+                                                        <div class="col-lg-12 text-right">
+                                                            <a class="get_code" target="_blank" href={{ post.custom_url }}>Get Code <i class="fas fa-code"></i></a>
+                                                        </div>
+                                                    </div>
+                                                 
+        
+                                              
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <br>
+                                    {% endfor %}
                                 </div>
                             </div>
                             <!--Collapse End-->
@@ -56,177 +88,69 @@ title: Projects
                     <div class="col-lg-12  ">
                         <div class="past_projects">
                             <h3 class="card_title  ">Past Projects</h3>
-                            <!--Collapse Start-->
-                            <div id="accordion_2  ">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#past_projects">
-                                            LedyPi: control you led strip with RaspberryPi and Python.
-                                        </a>
-                                    </div>
-                                    <div id="past_projects" class="collapse aro_up" data-parent="#accordion_2">
-                                        <div class="card-body">
-                                            <h3>LedyPi</h3>
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-3 text-center">
-                                                    <img src="assets/images/ledypi.gif">
+                                                  <!--Collapse Start-->
+                                                  <div class="col-lg-12">
+                                                    <div>
+                                                        {% assign sorted = site.projects | sort: 'date' | reverse %}
+                                                        {% for post in sorted %}
+                                                        {% if post.tag!='past' %}
+                                                            {% continue %}
+                                                        {% endif %}
+                                                        <div id="{{post.custom_id}} ">
+                                                            <div class="card">
+                                                                <div class="card-header ">
+                                                                    <a class="card-link" data-toggle="collapse" href="#{{post.custom_id}}">
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                            </div>
+                                                                            <div class="col-6 text-center card-title">
+                                                                                {{ post.title }}
+                                                                            </div>
+                                                                            <div class="col text-right ">
+                                                                            </div>
+                                                                        </div>
+                            
+                                                                    </a>
+                            
+                                                                </div>
+                                                                <div id="{{post.custom_id}}" class="collapse aro_up"
+                                                                    data-parent="#{{post.custom_id}}">
+                                                                    <div class="card-body">
+                                                                        <h3>
+                                                                            <a> {{ post.title }} </a>
+                                                                        </h3>
+                            
+                                                                        <div class="row">
+                                                                            {% if post.image%}
+                                                                            <div class="col-lg-3 col-md-3 text-center">
+                                                                                <img src="{{ post.image }}">
+                                                                            </div>
+                                                                            <br>
+                                                                            {%endif %}
+                    
+                                                                            <div class="col-lg-9 col-md-9">
+                                                                                
+                                                                                {{ post.content }}
+                                                                            </div>
+                                                                            <div class="col-lg-12 text-right">
+                                                                                <a class="get_code" target="_blank" href={{ post.custom_url }}>Get Code <i class="fas fa-code"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                     
+                            
+                                                                  
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        {% endfor %}
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-9 col-md-9">
-                                                    
-                                                    <p>Choose from more than 20 pre-made patterns and implement your own.</p>
-                                                    <p>The modular design allows you to add the logic you wish by overriding a single method, then you can choose the pattern either trough ssh or the web interface.</p>
-                                                </div>
-                                                <div class="col-lg-12 text-right">
-                                                    <a class="get_code" target="_blank" href="https://github.com/nicofirst1/ledypi">Get Code <i class="fas fa-code"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Collapse End-->
-                            <!--Collapse Start-->
-                            <div id="accordion_3  ">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#past_projects_2">
-                                            Robotic toolbox: A simple matlab toolbox for first time robotic students
-                                        </a>
-                                    </div>
-                                    <div id="past_projects_2" class="collapse aro_up" data-parent="#accordion_3">
-                                        <div class="card-body">
-                                            <h3>Robotic toolbox</h3>
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-3 text-center">
-                                                    <img src="assets/images/robotic.svg">
-                                                </div>
-                                                <div class="col-lg-9 col-md-9">
-                                                    <p>As a first time robotic student I found myself struggling to understand the basic computations which are fundamental for the study of manipulators.
-                                                        To get myself familiar with this I created this matlab module which is based on the Symbolic toolbox. For the ones that are not familiar with matlab, the symbolic toolbox provides functions for solving, plotting, and manipulating symbolic math equations.</p>
-                                                    <p>Rather than solving equations and outputting numbers, I focused on having a reference between theory and practice. This toolbox is not ment to be used on a real robot, but it should be rather used while solving exercises.</p>
-                                                </div>
-                                                <div class="col-lg-12 text-right">
-                                                    <a class="get_code" target="_blank" href="https://github.com/nicofirst1/Robotic-toolbox">Get Code <i class="fas fa-code"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Collapse End-->
-                            <!--Collapse Start-->
-                            <div id="accordion_4  ">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#past_projects_3">
-                                            MotionBot: An easy to implement project for home-made security system
-                                        </a>
-                                    </div>
-                                    <div id="past_projects_3" class="collapse aro_up" data-parent="#accordion_4">
-                                        <div class="card-body">
-                                            <h3>MotionBot</h3>
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-3 text-center">
-                                                    <img src="assets/images/motionbot.gif">
-                                                </div>
-                                                <div class="col-lg-9 col-md-9">
-                                                    <p>This project combines visual perception, with Opencv, and telegram bots. The goal is to have a cheap, easy to use, surveillance system that you can install effortless in your home. Moreover the famous Darknet framework has been successfully integrated, making the object recognition task fast and secure.</p>
-                                                </div>
-                                                <div class="col-lg-12 text-right">
-                                                    <a class="get_code" target="_blank" href="https://github.com/nicofirst1/MotionBot">Get Code <i class="fas fa-code"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Collapse End-->
-                            <!--Collapse Start-->
-                            <div id="accordion_5  ">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#past_projects_4">
-                                            MAS Traffic Control: Interaction between autonomous and human drivers
-                                        </a>
-                                    </div>
-                                    <div id="past_projects_4" class="collapse aro_up" data-parent="#accordion_5">
-                                        <div class="card-body">
-                                            <h3>MAS Traffic Control</h3>
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-3 text-center">
-                                                    <img src="assets/images/mas-traffic.jpg">
-                                                </div>
-                                                <div class="col-lg-9 col-md-9">
-                                                    <p>The project models the interaction between Autonomous Agents [AA] and Human Agents [HA] in a mixed traffic environment.</p>
-                                                    <p>We simulate various scenarios such as: selfishness vs cooperativeness in AAs, behavior of AAs with varying number of HAs and other.</p>
-                                                </div>
-                                                <div class="col-lg-12 text-right">
-                                                    <a class="get_code" target="_blank" href="https://github.com/nicofirst1/MAS-Traffic-Control">Get Code <i class="fas fa-code"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Collapse End-->
-                            <!--Collapse Start-->
-                            <div id="accordion_6  ">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#past_projects_5">
-                                            Reinforce Lupus: Cooperation through emergent communication in The Werewolf social deduction game
-                                        </a>
-                                    </div>
-                                    <div id="past_projects_5" class="collapse aro_up" data-parent="#accordion_6">
-                                        <div class="card-body">
-                                            <h3>Reinforce Lupus</h3>
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-3 text-center">
-                                                    <img src="assets/images/rl_werewolf.png">
-                                                </div>
-                                                <div class="col-lg-9 col-md-9">
-                                                    <p>Abstract</p>
-                                                    <p>Multi agent deep reinforcement learning (MADRL) has been studied intensively for its ability to develop complex behaviors from a simple set of rules. One of its field is the analysis of emergent communication in articulated environment such as social deduction games.</p>
-                                                    <p>In this thesis we investigate if and how various form of communication channels influence the outcomes of the Werewolf deduction game with deep RL . We first study the game with a wide range of mathematical models drawing the basis for the later analysis.</p>
-                                                    <p>Then we show how the introduction of a communication signal greatly increases the winning rate of the players for two different kind of settings; in particular we analyze the results for diverse game logic and prove that each one is positively influenced by said signal.</p>
-                                                    <p>Finally we study the effect of the channel's length and range on the overall performance and prove a non linear relationship between the two.</p>
-                                                </div>
-                                                <div class="col-lg-12 text-right">
-                                                    <a class="get_code" target="_blank" href="https://github.com/nicofirst1/rl_werewolf">Get Code <i class="fas fa-code"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Collapse End-->
-                            <!--Collapse Start-->
-                            <div id="accordion_7  ">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#past_projects_6">
-                                            Artificial Intelligence Notes: taken from the class Artificial Intelligence at the Sapienza University of Rome.
-                                        </a>
-                                    </div>
-                                    <div id="past_projects_6" class="collapse aro_up" data-parent="#accordion_7">
-                                        <div class="card-body">
-                                            <h3>Artificial Intelligence Notes</h3>
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-3 text-center">
-                                                    <img src="assets/images/ai-notes.png">
-                                                </div>
-                                                <div class="col-lg-9 col-md-9">
-                                                    <p>Notes taken from the Artificial Intelligence class at the Sapienza University of Rome. The lessons are taught by professor Daniele Nardi and are based both on his slides and on the third edition of Artificial Intelligence A Modern Approach by Stuart Russell and Peter Norvig ; plus some other materials.</p>
-                                                </div>
-                                                <div class="col-lg-12 text-right">
-                                                    <a class="get_code" target="_blank" href="https://github.com/nicofirst1/AI_notes">Get Code <i class="fas fa-code"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Collapse End-->
+                                                <!--Collapse End-->
+        
+                       
+                        
                         </div>
                     </div>
                 </div>
