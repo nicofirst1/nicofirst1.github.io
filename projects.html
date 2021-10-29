@@ -11,7 +11,7 @@ title: Projects
         {% include page_title.html %}
 
         <!------------ project_s_1 Start------------>
-        <section class="project_s_1 section_padding" >
+        <section class="project_s_1 section_padding">
             <div class="container">
                 <!-- Section Title -->
                 <div class="row text-center">
@@ -29,7 +29,7 @@ title: Projects
                                     {% assign sorted = site.projects | sort: 'date' | reverse %}
                                     {% for post in sorted %}
                                     {% if post.tag!='current' %}
-                                        {% continue %}
+                                    {% continue %}
                                     {% endif %}
                                     <div id="{{post.custom_id}} ">
                                         <div class="card">
@@ -44,9 +44,9 @@ title: Projects
                                                         <div class="col text-right ">
                                                         </div>
                                                     </div>
-        
+
                                                 </a>
-        
+
                                             </div>
                                             <div id="{{post.custom_id}}" class="collapse aro_up"
                                                 data-parent="#{{post.custom_id}}">
@@ -54,7 +54,7 @@ title: Projects
                                                     <h3>
                                                         <a> {{ post.title }} </a>
                                                     </h3>
-        
+
                                                     <div class="row">
                                                         {% if post.image%}
                                                         <div class="col-lg-3 col-md-3 text-center">
@@ -64,16 +64,17 @@ title: Projects
                                                         {%endif %}
 
                                                         <div class="col-lg-9 col-md-9">
-                                                            
+
                                                             {{ post.content }}
                                                         </div>
                                                         <div class="col-lg-12 text-right">
-                                                            <a class="get_code" target="_blank" href={{ post.custom_url }}>Get Code <i class="fas fa-code"></i></a>
+                                                            <a class="get_code" target="_blank" href={{ post.custom_url
+                                                                }}>Get Code <i class="fas fa-code"></i></a>
                                                         </div>
                                                     </div>
-                                                 
-        
-                                              
+
+
+
                                                 </div>
                                             </div>
                                         </div>
@@ -88,69 +89,70 @@ title: Projects
                     <div class="col-lg-12  ">
                         <div class="past_projects">
                             <h3 class="card_title  ">Past Projects</h3>
-                                                  <!--Collapse Start-->
-                                                  <div class="col-lg-12">
-                                                    <div>
-                                                        {% assign sorted = site.projects | sort: 'date' | reverse %}
-                                                        {% for post in sorted %}
-                                                        {% if post.tag!='past' %}
-                                                            {% continue %}
-                                                        {% endif %}
-                                                        <div id="{{post.custom_id}} ">
-                                                            <div class="card">
-                                                                <div class="card-header ">
-                                                                    <a class="card-link" data-toggle="collapse" href="#{{post.custom_id}}">
-                                                                        <div class="row">
-                                                                            <div class="col">
-                                                                            </div>
-                                                                            <div class="col-6 text-center card-title">
-                                                                                {{ post.title }}
-                                                                            </div>
-                                                                            <div class="col text-right ">
-                                                                            </div>
-                                                                        </div>
-                            
-                                                                    </a>
-                            
-                                                                </div>
-                                                                <div id="{{post.custom_id}}" class="collapse aro_up"
-                                                                    data-parent="#{{post.custom_id}}">
-                                                                    <div class="card-body">
-                                                                        <h3>
-                                                                            <a> {{ post.title }} </a>
-                                                                        </h3>
-                            
-                                                                        <div class="row">
-                                                                            {% if post.image%}
-                                                                            <div class="col-lg-3 col-md-3 text-center">
-                                                                                <img src="{{ post.image }}">
-                                                                            </div>
-                                                                            <br>
-                                                                            {%endif %}
-                    
-                                                                            <div class="col-lg-9 col-md-9">
-                                                                                
-                                                                                {{ post.content }}
-                                                                            </div>
-                                                                            <div class="col-lg-12 text-right">
-                                                                                <a class="get_code" target="_blank" href={{ post.custom_url }}>Get Code <i class="fas fa-code"></i></a>
-                                                                            </div>
-                                                                        </div>
-                                                                     
-                            
-                                                                  
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                            <!--Collapse Start-->
+                            <div class="col-lg-12">
+                                <div>
+                                    {% assign sorted = site.projects | sort: 'date' | reverse %}
+                                    {% for post in sorted %}
+                                    {% if post.tag!='past' %}
+                                    {% continue %}
+                                    {% endif %}
+                                    <div id="{{post.custom_id}} ">
+                                        <div class="card">
+                                            <div class="card-header ">
+                                                <a class="card-link" data-toggle="collapse" href="#{{post.custom_id}}">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                        </div>
+                                                        <div class="col-6 text-center card-title">
+                                                            {{ post.title }}
+                                                        </div>
+                                                        <div class="col text-right ">
+                                                        </div>
+                                                    </div>
+
+                                                </a>
+
+                                            </div>
+                                            <div id="{{post.custom_id}}" class="collapse aro_up"
+                                                data-parent="#{{post.custom_id}}">
+                                                <div class="card-body">
+                                                    <h3>
+                                                        <a> {{ post.title }} </a>
+                                                    </h3>
+
+                                                    <div class="row">
+                                                        {% if post.image%}
+                                                        <div class="col-lg-3 col-md-3 text-center">
+                                                            <img src="{{ post.image }}">
                                                         </div>
                                                         <br>
-                                                        {% endfor %}
+                                                        {%endif %}
+
+                                                        <div class="col-lg-9 col-md-9">
+
+                                                            {{ post.content }}
+                                                        </div>
+                                                        <div class="col-lg-12 text-right">
+                                                            <a class="get_code" target="_blank" href={{ post.custom_url
+                                                                }}>Get Code <i class="fas fa-code"></i></a>
+                                                        </div>
                                                     </div>
+
+
+
                                                 </div>
-                                                <!--Collapse End-->
-        
-                       
-                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!--Collapse End-->
+
+
+
                         </div>
                     </div>
                 </div>
@@ -161,4 +163,3 @@ title: Projects
     </div>
 
 </body>
-
