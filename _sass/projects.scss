@@ -1,7 +1,7 @@
 
 /*Project page*/
 
-/*project_s_1*/
+/*project*/
 
 .card-header {
     padding: 0;
@@ -27,12 +27,12 @@
     margin-bottom: 50px;
 }
 
-.project_s_1{
+.project{
     background-color: $base-color;
-    height: 1000px
+
 }
 
-.project_s_1 .card-link {
+.project .card-link {
     color: $white-color;
     display: block;
     padding: 10px 15px;
@@ -40,23 +40,23 @@
 }
 
 
-.project_s_1 .card-body  {
+.project .card-body  {
     background-color: $darkest-color;
     color: white;
 
 }
 
 
-.project_s_1 .card-body p {
+.project .card-body p {
     margin-bottom: 15px;
 
 }
 
-.project_s_1 .card-body img {
+.project .card-body img {
     /*max-width: 200px;*/
 }
 
-.project_s_1 .card-body h3 {
+.project .card-body h3 {
     font-weight: 500;
     font-size: 22px;
 }
