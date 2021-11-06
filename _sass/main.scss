@@ -8,6 +8,8 @@ body {
     padding: 0px;
 }
 
+
+
 a:focus {
     text-decoration: none;
 }
@@ -41,6 +43,10 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
+
+
+iframe{
+border-style: none;}
 
 a,
 input,
@@ -140,10 +146,16 @@ p {
     background-image: url(../images/background.jpg);
     padding: 100px 0 100px 0;
     text-align: center;
+    height: 25%;
 }
 
 .page_title h2 {
     color: $white-color;
     font-size: 30px;
     text-transform: uppercase;
+}
+
+
+.main{
+    height:88%;
 }
