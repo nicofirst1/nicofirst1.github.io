@@ -28,10 +28,10 @@ title: Projects
                                 <div>
                                     {% assign sorted = site.projects | sort: 'date' | reverse %}
                                     {% for post in sorted %}
-                                        {% if post.tag!='current' %}
-                                            {% continue %}
-                                        {% endif %}
-                                            {% include project_lay.html %}
+                                    {% if post.tag!='current' %}
+                                    {% continue %}
+                                    {% endif %}
+                                    {% include project_lay.html %}
                                     {% endfor %}
                                 </div>
                             </div>
@@ -46,10 +46,10 @@ title: Projects
                                 <div>
                                     {% assign sorted = site.projects | sort: 'date' | reverse %}
                                     {% for post in sorted %}
-                                        {% if post.tag!='past' %}
-                                            {% continue %}
-                                        {% endif %}
-                                            {% include project_lay.html %}
+                                    {% if post.tag!='past' %}
+                                    {% continue %}
+                                    {% endif %}
+                                    {% include project_lay.html %}
                                     {% endfor %}
                                 </div>
                             </div>
