@@ -42,10 +42,14 @@
 }
 
 
-.project .card-body  {
+.card-body  {
     background-color: $darkest-color;
     color: white;
 
+}
+
+.project .card-body a {
+    color: $light-color;
 }
 
 
