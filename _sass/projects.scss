@@ -73,7 +73,7 @@
     color: $light-color;
 }
 
-.get_code {
+.project .card-body .get_code {
     display: inline-block;
     background-color: $light-color;
     color: $base-color;
@@ -85,7 +85,8 @@
 }
 
 
-.get_code:hover {
+.project .card-body .get_code:hover {
     background-color: $base-color;
     color: $white-color;
 }
+
