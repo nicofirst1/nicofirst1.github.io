@@ -4,16 +4,26 @@
       walkthrough = {
         index: 0,
         nextScreen: function() {
-          if (this.index < this.indexMax()) {
+        if (this.index === this.indexMax())
+        {
+            this.index=0;
+        }
+        else{
             this.index++;
+
+        }
             return this.updateScreen();
-          }
+          
         },
         prevScreen: function() {
           if (this.index > 0) {
             this.index--;
-            return this.updateScreen();
           }
+          else{
+              this.index=this.indexMax();
+          }
+          return this.updateScreen();
+
         },
         updateScreen: function() {
           this.reset();
@@ -25,19 +35,11 @@
           $nextBtn = $('.next-screen');
           $prevBtn = $('.prev-screen');
           $lastBtn = $('.finish');
-          if (walkthrough.index === walkthrough.indexMax()) {
-            $nextBtn.prop('disabled', true);
-            $prevBtn.prop('disabled', false);
-            return $lastBtn.addClass('active').prop('disabled', false);
-          } else if (walkthrough.index === 0) {
-            $nextBtn.prop('disabled', false);
-            $prevBtn.prop('disabled', true);
-            return $lastBtn.removeClass('active').prop('disabled', true);
-          } else {
-            $nextBtn.prop('disabled', false);
-            $prevBtn.prop('disabled', false);
-            return $lastBtn.removeClass('active').prop('disabled', true);
-          }
+      
+        $nextBtn.prop('disabled', false);
+        $prevBtn.prop('disabled', false);
+        return $lastBtn.removeClass('active').prop('disabled', true);
+          
         },
         goTo: function(index) {
           $('.screen').eq(index).addClass('active');
