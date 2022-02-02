@@ -42,6 +42,20 @@ jQuery(document).ready(function ($) {
       $('a.control_next').click(function () {
           moveRight();
       });
+      resize_to_fit();
+
   
   });    
   
+
+
+
+
+function resize_to_fit(){
+    var fontsize = $('p#slide span').css('font-size');
+    $('p#slide span').css('fontSize', parseFloat(fontsize) - 1);
+
+    if($('p#slide span').height() >= $('p#slide').height()){
+        resize_to_fit();
+    }
+}

@@ -1,8 +1,6 @@
 
-h1 {
-  color: #fff;
-  text-align: center;
-  font-weight: 300;
+.slides ul{
+  padding: 0;
 }
 
 #slider {
@@ -70,3 +68,37 @@ a.control_next {
   width: 160px;
   font-size: 18px;
 }
+
+.slider_container{
+  position: relative;
+}
+
+.slider_container img{
+  background-color: $base-color;
+  width: 500px;
+  height: 300px;
+  margin: 0; 
+  overflow: hidden; 
+  opacity: 0.7; 
+  transition: transform 0.5s, opacity 0.5s; 
+}
+
+.slider_container .slider-title
+{
+  color: $light-color;
+  margin: 0;
+  transform: translate(0, -130%);
+  font-size: 40px;
+
+}
+
+
+.slider_container span
+{
+  border-radius: 5px;
+  margin: 0;
+  background-color: $base-color;
+  
+}
+
+
