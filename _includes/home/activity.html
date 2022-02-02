@@ -12,27 +12,14 @@
         
     </div>
 
+      <div class="slide-body">
 
-    <div id="slider">
-      <a href="#!" class="control_next">&gt&gt</a>
-      <a href="#!" class="control_prev">&lt &lt</a>
-      <ul class="slides">
-        {% assign sorted = site.news | concat : site.projects | sort: 'date' | reverse %}
-        {% for post in sorted %}
-        {% if  site.news contains post %}
-        {% assign post.url = "aaaa"%}
-        {{ post | inspect }}
-        {% endif %}
         {% include home/slide_container.html %}
-        {% endfor %}
-      </ul>  
-    </div>
-    
-    <div class="slider_option">
-      <input type="checkbox" id="checkbox">
-      <label for="checkbox">Autoplay Slider</label>
-    </div> 
-    
+
+      </div>
+
+   
+
      
 
 </section>

@@ -1,13 +1,40 @@
-<li>
-    <a href="projects.html"  class='slider_container'>
-            <img src="{{ post.image }}"  >
-            <p class="slider-title" id="slide">
-                <span >
-                    {{ post.title }}
-                </span>
-            </p>
+<!-- / A set of walkthrough screens in HTML/CSS/JS. A personal experiment with layering images, CSS3 transitions, & flexbox. -->
+<button class='open-walkthrough'>Start</button>
+<div class='walkthrough show reveal'>
+  <div class='walkthrough-pagination'>
+    {% assign sorted = site.projects | concat: site.news | sort: 'date' | reverse | slice : 0,5 %}
+    <a class='dot active'></a>
+    {% for i in (1..4) %}
 
+    <a class='dot'></a>
 
-    </a>
+    {% endfor %}
 
-</li>
+  </div>
+  <div class='walkthrough-body'>
+    <ul class='screens animate'>
+      {% for post in sorted %}
+
+      <li class='screen active'>
+        <div class='media logo'>
+          <img class='logo' src={{post.image}}>
+        </div>
+        <h3>
+          {{post.title}}
+        </h3>
+        <p>{{post.subtitle}}</p>
+      </li>
+      {% endfor %}
+   
+     
+
+    </ul>
+    <button class='prev-screen'>
+      <i class='icon-angle-left'></i>
+    </button>
+    <button class='next-screen'>
+      <i class='icon-angle-right'></i>
+    </button>
+  </div>
+
+</div>
