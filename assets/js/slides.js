@@ -1,10 +1,12 @@
 jQuery(document).ready(function ($) {
 
-    $('#checkbox').change(function(){
+    function interval(){
       setInterval(function () {
           moveRight();
       }, 3000);
-    });
+    }
+
+    interval()
     
       var slideCount = $('#slider ul li').length;
       var slideWidth = $('#slider ul li').width();
