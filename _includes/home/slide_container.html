@@ -1,5 +1,3 @@
-<!-- / A set of walkthrough screens in HTML/CSS/JS. A personal experiment with layering images, CSS3 transitions, & flexbox. -->
-<button class='open-walkthrough'>Start</button>
 <div class='walkthrough show reveal'>
   <div class='walkthrough-pagination'>
     {% assign sorted = site.projects | concat: site.news | sort: 'date' | reverse | slice : 0,5 %}
