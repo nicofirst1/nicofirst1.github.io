@@ -9,12 +9,13 @@ $bezier: cubic-bezier(.25,.8,.25,1);
   color: white;
 
   font-weight: light;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+
   overflow: hidden;
   position: sticky;
+  flex-basis: auto;
 }
 
 .open-walkthrough {
