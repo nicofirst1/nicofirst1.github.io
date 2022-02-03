@@ -68,16 +68,14 @@ $bezier: cubic-bezier(.25,.8,.25,1);
     .prev-screen,
     .next-screen {
       align-self: stretch;
-      background: none;
       border: 0;
-      margin-top: 40px;
-      color: rgba(white, 0.25);
+      background-color: rgba(255, 255, 255, 0);
       cursor: pointer;
       flex: 0 0 auto;
       font-size: 24px;
       opacity: 1;
       outline: none;
-      padding: 16px;
+      padding: 10px;
       transform: scale(1);
       transition: transform 0.4s $bezier, color 0.4s $bezier, opacity 0.4s $bezier;
       z-index: 1000;

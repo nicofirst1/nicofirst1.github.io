@@ -1,6 +1,15 @@
 (function() {
     $(document).ready(function() {
       var walkthrough;
+      var autoMove=true;
+
+      setInterval(function () {
+        if (autoMove){
+          walkthrough.nextScreen();
+        }
+
+      }, 3000); 
+
       walkthrough = {
         index: 0,
         nextScreen: function() {
@@ -68,9 +77,12 @@
         }
       };
       $('.next-screen').click(function() {
+        autoMove=false;
         return walkthrough.nextScreen();
       });
       $('.prev-screen').click(function() {
+        autoMove=false;
+
         return walkthrough.prevScreen();
       });
       $('.close').click(function() {
