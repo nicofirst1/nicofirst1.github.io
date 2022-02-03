@@ -275,11 +275,14 @@ $bezier: cubic-bezier(.25,.8,.25,1);
       position: absolute;
       transform: translateX(-72px);
       transition: all 0.4s $bezier;
+      pointer-events: none;
 
       &.active {
         opacity: 1;
         transform: translateX(0) scale(1);
         transition-delay: 0.4s;
+        pointer-events: all;
+
 
         ~ .screen {
           opacity: 0;

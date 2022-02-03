@@ -15,16 +15,17 @@
     <ul class='screens animate'>
       {% for post in sorted %}
 
-      <li class='screen active'>
+      <li class='screen'>
         <div class='media logo'>
-          <a href="{{post.url}}">
+          {% assign url = post.url | split: "/" | slice : 0,2 |join:"/"| append: ".html" %}
+          <a href="{{url}}">
             <img class='logo' src={{post.image}}>
           </div>
           </a>
         <h3>
           {{post.title}}
         </h3>
-        <p>{{post.url}}</p>
+        <p>{{post.subtitle}}</p>
       </li>
       {% endfor %}
    
