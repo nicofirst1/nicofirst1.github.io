@@ -4,3 +4,25 @@ $darker-color: #903749;
 $darkest-color: #53354a;
 
 $white-color: #ffff;
+
+/*
+=================
+    bibtextify
+=================
+*/
+$bt-legend-color: white;
+
+// grid colors
+$bt-row-even: $darker-color;
+$bt-row-odd: $darkest-color;
+$bt-grid-text:$white-color;
+
+// square colors
+$bt-conference: #ffc04c;
+$bt-inbook: #f1c40f ;
+$bt-misc: #8b6914;
+$bt-thesis:#9b58b5 ;
+$bt-article:#1674d2;
+$bt-inproceedings:#1bbc9b;
+$bt-techreport:#7e8c8d;
+$bt-unpublished:#e84c3d;

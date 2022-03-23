@@ -5,3 +5,5 @@ _site
 vendor
 
 assets/.DS_Store
+
+.DS_Store
