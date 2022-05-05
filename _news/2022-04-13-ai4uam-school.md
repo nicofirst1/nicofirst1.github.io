@@ -3,7 +3,7 @@ title: Artificial Intelligence for Urban Air Mobility
 custom_id: ai4uam
 custom_url: https://sites.google.com/view/ai4uam/home
 tag: PhD
-image: https://lh5.googleusercontent.com/n-hKBE9itNfctm8m4QchKn9DZlTB3-DceTfSxwFohmgnuwG_pUZvIM5TcUYLYRG6QpNW3vhZrMRcDzQgbx4sW9Q=w16383
+image:  ./assets/images/news/ai4uam.jpg
 ---
 
 The link to the school is available [here](https://sites.google.com/view/ai4uam/home).
