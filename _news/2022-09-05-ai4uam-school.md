@@ -6,7 +6,7 @@ tag: PhD
 image:  ./assets/images/news/ai4uam.jpg
 ---
 
-The link to the school is available [here](https://sites.google.com/view/ai4uam/home).
+I will be joining and organizing the [AI4UAM summerschool](https://sites.google.com/view/ai4uam/home) at Sapienza university or Rome this september.
 
 ## Abstract
 Unmanned Aerial Vehicles (UAVs) are increasingly becoming a key technology to solve a wide range of problems due to their high mobility in three-dimensional space, easy deployment, and relatively low cost. Since UAVs are easily deployable and have a more flexible configuration than terrestrial devices, they can be used in many applications domains.
