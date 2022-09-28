@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    {% include gtm_head.liquid %}
+    {% include imports.html %}
+    
+    {% if jekyll.environment == 'production'%}
+    {% include analytics.html %}
+    {% endif %}
+
+</head>
+
+<body>
+    {% include gtm_body.liquid %}
+    {% include header.html %}
+
+    <div class="main">
+        {% include page_title.html %}
+
+        <section class="project section_padding ">
+            <div class="container">
+
+                {{ content }}
+
+            </div>
+        </section>
+    </div>
+    {% include footer.html %}
+
+</body>
+
+</html>

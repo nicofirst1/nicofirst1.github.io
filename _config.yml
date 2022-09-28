@@ -29,6 +29,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:name
+  hobbies:
+    output: true
+    permalink: /:collection/:name
 
 
 # Handling Reading
