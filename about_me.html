@@ -1,6 +1,6 @@
 ---
 layout: default
-title: News
+title: About me
 ---
 
 
@@ -10,17 +10,18 @@ title: News
 
         {% include page_title.html %}
 
-
         <!------------  Start------------>
         <section class="project section_padding ">
             <div class="container">
+                Here you can find some stories about myself regarding some of my interests and hobbies. I wrote them mainly for my self since I find this practice cathartic, plus it gives me some prospective on my life.
                 <div class="work">
-                    <div class="item" data-fx="5" style="padding-left: 4vw;">                    
+                    <ol class="item gradient-list"  data-fx="5" style="padding-left: 4vw;">       
+                                     
                         {% assign sorted = site.hobbies | sort: 'date' | reverse %}
                         {% for post in sorted %}
                         {% include hobby_lay.html %}
                         {% endfor %}
-                    </div>
+                    </ol>
                     
                    
                 </div>
@@ -32,9 +33,6 @@ title: News
     </div>
 
     <script src="assets/js/myrup.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
-    <script src="assets/js/charming.min.js"></script>
-    <script src="assets/js/jquery.min.v3.1.1.js"></script>
     <script src="assets/js/gsap.min.js"></script>
 
 </body>
