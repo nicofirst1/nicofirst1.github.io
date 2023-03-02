@@ -1,0 +1,55 @@
+---
+layout: default
+title: My Certificates
+---
+
+<script src="assets/js/certificates.js"></script>
+
+<body>
+
+  <div class="main">
+
+    {% include page_title.html %}
+
+  <section class="certificate">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+         
+          
+          <div class="ag-timeline">
+            <div class="ag-timeline_line">
+              <div class="ag-timeline_line-progress"></div>
+            </div>
+            {% for certificate in site.certificates reversed %}
+            <div class="ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">{{ certificate.date | date: "%Y" }}</div>
+                </div>
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">{{ certificate.title }}</div>
+                  <div class="ag-timeline-card_meta">{{ certificate.organization }}</div>
+                </div>
+                <div class="ag-timeline-card_item">
+                  <div class="ag-timeline-card_arrow"></div>
+                  <div class="ag-timeline-card_info">
+                    <h3 class="ag-timeline-card_title">{{ certificate.title }}</h3>
+                    <p class="ag-timeline-card_desc">{{ certificate.description }}</p>
+                  </div>
+                  <div class="ag-timeline-card_img">
+                    <a href="{{ certificate.image }}" target="_blank">
+                      <img src="{{ certificate.image }}" alt="{{ certificate.title }}" />
+                    </a>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+</body>

@@ -29,6 +29,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:name
+  certificates:
+    output: true
+    permalink: /:collection/:name
 
 
 # Handling Reading
