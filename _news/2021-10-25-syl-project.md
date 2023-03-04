@@ -2,7 +2,7 @@
 title: Save Your Life project
 custom_id: syl_project
 custom_url: https://gesvit.webnode.it/
-tag: racrtmm
+tag: extracurriculars
 image: ./assets/images/news/syl.jpg
 ---
 

@@ -1,8 +1,7 @@
 ---
 title:  NVIDIA - Building Transformer-Based Natural Language Processing Applications
 custom_id: btbnlpa
-
-tag: PhD
+tag: extracurriculars
 image: ./assets/images/news/nvidia_trans_certificate.png
 ---
 
