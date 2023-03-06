@@ -21,27 +21,27 @@ title: My Certificates
             <div class="ag-timeline_line">
               <div class="ag-timeline_line-progress"></div>
             </div>
-            {% for certificate in site.certificates reversed %}
+            {% assign sorted = site.certificates | sort: 'end_date' | reverse %}
+
+            {% for certificate in sorted %}
             <div class="ag-timeline_item">
               <div class="ag-timeline-card_box">
                 <div class="ag-timeline-card_point-box">
-                  <div class="ag-timeline-card_point">{{ certificate.date | date: "%Y" }}</div>
-                </div>
+                  <div class="ag-timeline-card_point">{{ certificate.start_date | date: "%m/%Y" }}<br> - <br>{{ certificate.end_date | date: "%m/%Y" }}</div>                </div>
                 <div class="ag-timeline-card_meta-box">
                   <div class="ag-timeline-card_meta">{{ certificate.title }}</div>
                   <div class="ag-timeline-card_meta">{{ certificate.organization }}</div>
                 </div>
                 <div class="ag-timeline-card_item">
-                  <div class="ag-timeline-card_arrow"></div>
                   <div class="ag-timeline-card_info">
-                    <h3 class="ag-timeline-card_title">{{ certificate.title }}</h3>
-                    <p class="ag-timeline-card_desc">{{ certificate.description }}</p>
+                    <h3 class=>{{ certificate.title }}</h3>
+                    <p class="ag-timeline-card_desc">{{ certificate.content }}</p>
                   </div>
                   <div class="ag-timeline-card_img">
                     <a href="{{ certificate.image }}" target="_blank">
                       <img src="{{ certificate.image }}" alt="{{ certificate.title }}" />
                     </a>
-                  </div>                  
+                  </div>                      
                 </div>
               </div>
             </div>
