@@ -1,6 +1,16 @@
 <div class='walkthrough show reveal'>
   <div class='walkthrough-pagination'>
-    {% assign sorted = site.projects | concat: site.news | sort: 'date' | reverse | slice : 0,5 %}
+    {% assign all_items = site.projects | concat: site.news %}
+    {% assign items_with_images = "" | split: "" %}
+
+    {% for item in all_items %}
+    {% if item.image %}
+    {% assign items_with_images = items_with_images | push: item %}
+    {% endif %}
+    {% endfor %}
+
+    {% assign sorted_items = items_with_images | sort: 'date' | reverse | slice: 0, 5 %}
+
     <a class='dot active'></a>
     {% for i in (1..4) %}
 
@@ -11,23 +21,23 @@
   </div>
   <div class='walkthrough-body'>
     <ul class='screens animate'>
-      {% for post in sorted %}
+      {% for post in sorted_items %}
 
       <li class='screen'>
         <div class='media logo'>
           {% assign url = post.url | split: "/" | slice : 0,2 |join:"/"| append: ".html" %}
           <a href="{{url}}">
             <img class='logo' src={{post.image}}>
-          </div>
-          </a>
+        </div>
+        </a>
         <h3>
           {{post.title}}
         </h3>
         <p>{{post.subtitle}}</p>
       </li>
       {% endfor %}
-   
-     
+
+
 
     </ul>
     <button class='prev-screen'>

@@ -117,7 +117,13 @@ img {
   font-size: 1.1rem;
   font-weight: 600;
   white-space: nowrap;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  padding-right: 50px;
+  color: #FFF;
 }
+
 
 .ag-timeline-card_meta {
 
@@ -126,7 +132,6 @@ img {
   font-family: 'ESL Legend', sans-serif;
   font-weight: bold;
   font-size: 20px;
-  color: $darker-color;
 }
 
 .ag-timeline-card_item {

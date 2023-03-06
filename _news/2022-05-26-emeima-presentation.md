@@ -1,5 +1,5 @@
 ---
-title:  CLAIRE Rising Researchers Network - Lightning Talks - Nicolo' Brandizzi 
+title:  CLAIRE R2Net - Lightning Talks
 custom_id: emeima-pres
 custom_url: https://www.youtube.com/watch?v=KHv7rcKDfSg&feature=youtu.be
 tag: PhD
