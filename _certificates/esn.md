@@ -1,5 +1,5 @@
 ---
-title: Esn partner
+title: Volunteer
 start_date: 2021-03-01
 end_date: 2022-10-31
 organization: Erasmus Social Network

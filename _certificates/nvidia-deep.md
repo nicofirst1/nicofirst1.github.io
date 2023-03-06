@@ -1,5 +1,5 @@
 ---
-title: Building Transformer-Based Natural Language Processing Applications 
+title: Traninee 
 start_date: 2022-10-21
 end_date: 2022-10-22
 organization: NVIDIA

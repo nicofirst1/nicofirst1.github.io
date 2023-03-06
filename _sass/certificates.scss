@@ -115,11 +115,11 @@ img {
 }
 
 .ag-timeline-card_meta {
-  margin: 10px 0 0;
+  margin: 0px 0 0;
 
   font-family: 'ESL Legend', sans-serif;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 20px;
   color: $darker-color;
 }
 
@@ -173,6 +173,8 @@ img {
 
 
 
+
+
 .ag-timeline-card_img {
   display: flex;
   justify-content: center;
@@ -180,8 +182,8 @@ img {
   max-width: 50%;
   max-height: 100%;
   object-fit: contain;
+  margin: auto;
 }
-
 
 
 
@@ -220,9 +222,6 @@ img {
 
 
 
-.js-ag-active .ag-timeline-card_meta-box {
-  display: none;
-}
 
 .js-ag-active .ag-timeline-card_item {
   opacity: 1;

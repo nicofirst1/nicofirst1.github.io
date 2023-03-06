@@ -11,52 +11,73 @@ title: My Certificates
 
     {% include page_title.html %}
 
-  <section class="certificate">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-         
-          
-          <div class="ag-timeline">
-            <div class="ag-timeline_line">
-              <div class="ag-timeline_line-progress"></div>
-            </div>
-            {% assign sorted = site.certificates | sort: 'end_date' | reverse %}
+    <section class="certificate">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
 
-            {% assign ongoing = sorted | where: 'end_date', 'ongoing' %}
-            {% assign not_ongoing = sorted | where_exp: 'certificate', 'certificate.end_date != "ongoing"' %}
-            
-            {% assign ongoing_sorted = ongoing | sort: 'start_date' | reverse %}
-            
-            {% assign sorted = not_ongoing | concat: ongoing_sorted %}
-            
-            {% for certificate in sorted %}
-            <div class="ag-timeline_item">
-              <div class="ag-timeline-card_box">
-                <div class="ag-timeline-card_point-box">
-                  <div class="ag-timeline-card_point">{{ certificate.start_date | date: "%m/%Y" }}<br> - <br>{{ certificate.end_date | date: "%m/%Y" }}</div>                </div>
-                <div class="ag-timeline-card_meta-box">
-                  <div class="ag-timeline-card_meta">{{ certificate.title }}</div>
-                  <div class="ag-timeline-card_meta">{{ certificate.organization }}</div>
-                </div>
-                <div class="ag-timeline-card_item">
-                  <div class="ag-timeline-card_info">
-                    <h3 class=>{{ certificate.title }}</h3>
-                    <p class="ag-timeline-card_desc">{{ certificate.content }}</p>
+
+            <div class="ag-timeline">
+              <div class="ag-timeline_line">
+                <div class="ag-timeline_line-progress"></div>
+              </div>
+              {% assign sorted = site.certificates | sort: 'end_date' | reverse %}
+
+              {% assign ongoing = sorted | where: 'end_date', 'Ongoing' %}
+              {% assign not_ongoing = sorted | where_exp: 'certificate', 'certificate.end_date != "Ongoing"' %}
+
+              {% assign ongoing_sorted = ongoing | sort: 'start_date'  %}
+
+              {% assign sorted = ongoing_sorted | concat: not_ongoing %}
+
+              {% for certificate in sorted %}
+              <div class="ag-timeline_item">
+                <div class="ag-timeline-card_box">
+                  <div class="ag-timeline-card_point-box">
+                    <div class="ag-timeline-card_point">{{ certificate.start_date | date: "%m/%Y" }}<br> - <br>{{
+                      certificate.end_date | date: "%m/%Y" }}</div>
                   </div>
-                  <div class="ag-timeline-card_img">
-                    <a href="{{ certificate.image }}" target="_blank">
-                      <img src="{{ certificate.image }}" alt="{{ certificate.title }}" />
-                    </a>
-                  </div>                      
+                  <div class="ag-timeline-card_meta-box">
+                    <div class="ag-timeline-card_meta">{{ certificate.title }} at {{ certificate.organization }}</div>
+                    {% assign start_date = certificate.start_date |  date: "%s"  %}
+                    {% assign end_date = certificate.end_date  %}
+                    {% if end_date == 'Ongoing' %}
+                        {% assign end_date = 'now' %}
+                    {% endif %}
+                    {% assign end_date = end_date | date: "%s" %}
+                    {% assign duration = end_date | minus: start_date  %}
+                    {% assign years = duration | divided_by: 31536000 %}
+                    {% assign months = duration | modulo: 31536000 | divided_by: 2592000 %}
+                    {% assign remaining_months = duration | modulo: 31536000 | modulo: 2592000 | divided_by: 86400 |
+                    divided_by: 30 %}
+
+                    <div class="ag-timeline-card_meta">
+                      for {% if years > 0 %}{{ years }} year{% if years > 1 %}s{% endif %}{% endif %}
+                      {% if years > 0 and months > 0 %}, {% endif %}
+                      {% if months > 0 %}{{ months }} month{% if months > 1 %}s{% endif %}{% endif %}
+                      {% if years == 0 and months == 0 %}less than a month{% endif %}
+
+                    </div>
+
+
+                  </div>
+                  <div class="ag-timeline-card_item">
+                    <div class="ag-timeline-card_info">
+                      <p class="ag-timeline-card_desc">{{ certificate.content }}</p>
+                    </div>
+                    <div class="ag-timeline-card_img">
+                      <a href="{{ certificate.image }}" target="_blank">
+                        <img src="{{ certificate.image }}" alt="{{ certificate.title }}" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
+              {% endfor %}
             </div>
-            {% endfor %}
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   </div>
 </body>

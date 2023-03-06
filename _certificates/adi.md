@@ -1,5 +1,5 @@
 ---
-title: ADI volunteer
+title: Volunteer
 start_date: 2021-11-01
 end_date: Ongoing
 organization: Associazione Dottorandi Italiani
