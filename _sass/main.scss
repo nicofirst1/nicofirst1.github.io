@@ -167,3 +167,23 @@ p {
     display: block;
     /* Other styles here */
 }
+
+.instructions {
+    padding: 20px;
+    border: 1px solid #ccc;
+    color: #FFF;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    .instructions h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+  }
