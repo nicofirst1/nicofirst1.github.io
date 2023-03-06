@@ -31,13 +31,8 @@ window.onload = function () {
   var PADDING = 300;
   // update the active certificate based on the scroll position
   function updateActiveCertificate() {
-    var scrollPosition = container.scrollTop + container.offsetHeight * 0.5 - PADDING;
+    var scrollPosition = container.scrollTop + container.offsetHeight * 0.65 - PADDING;
 
-    var percentageScrolled = (1- scrollPosition / timelineHeight) * 100;
-
-    // Set the background color of the progress line based on the percentage scrolled
-    document.querySelector('.ag-timeline_line-progress').style.backgroundColor = 'hsl(' + percentageScrolled + ', 100%, 50%)';
-    // get the scroll position accounting for padding
 
 
     // add console log with text

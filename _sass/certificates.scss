@@ -3,7 +3,6 @@
   height: 110%;
   width: 100%;
   overflow-y: auto;
-  padding: 300px 0px;
   margin-bottom: 0;
 }
 
@@ -75,7 +74,7 @@ img {
 }
 
 .ag-timeline-card_box {
-  padding: 20px 0 20px 10%;
+  padding: 0px 0 0px 8%;
   position: relative;
 }
 
@@ -112,10 +111,15 @@ img {
 
 .ag-timeline-card_meta-box {
   display: inline-block;
+  width: auto;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .ag-timeline-card_meta {
-  margin: 0px 0 0;
+
+  padding-left: 3%;
 
   font-family: 'ESL Legend', sans-serif;
   font-weight: bold;
@@ -128,7 +132,6 @@ img {
   flex-direction: row;
   width: 200%;
   max-width: 60%;
-  /* adjust the width as needed */
   background-color: $darkest-color;
   color: #FFF;
 
@@ -230,7 +233,8 @@ img {
   -o-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .5);
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, .5);
 
-  margin-left: 0.5rem;
+  margin-left: 4%;
   margin-top: 0.5rem;
+  
   /* adjust this value as needed */
 }
