@@ -1,6 +1,6 @@
 ---
 title: ADI volunteer
-start_date: 2022-10-31
+start_date: 2021-11-01
 end_date: Ongoing
 organization: Associazione Dottorandi Italiani
 image: assets/images/certificates/ADI_cert.jpg

@@ -1,6 +1,6 @@
 ---
 title: Rotaract partner
-start_date: 2022-10-31
+start_date: 2018-04-01
 end_date: Ongoing
 organization: Rotaract Club Roma Capitale
 image: assets/images/certificates/rtmmCert.jpg
