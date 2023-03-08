@@ -16,7 +16,7 @@ title: My Certificates
       <div class="instructions">
         <h3>Scroll Down to display more</h3>
       </div>
-      
+
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -28,18 +28,16 @@ title: My Certificates
               </div>
 
               {% assign ongoing = site.certificates | where: 'end_date', 'Ongoing' %}
-              {% assign not_ongoing = site.certificates | where_exp: 'certificate', 'certificate.end_date != "Ongoing"' %}
+              {% assign not_ongoing = site.certificates | where_exp: 'certificate', 'certificate.end_date != "Ongoing"'
+              %}
 
-              {% assign sorted = site.certificates | sort: 'end_date' | reverse %}
-
-              {% assign ongoing_sorted = ongoing | sort: 'start_date'  %}
+              {% assign ongoing_sorted = ongoing | sort: 'start_date' %}
               {% assign not_ongoing_sorted = not_ongoing | sort: 'end_date' | reverse %}
 
               {% assign sorted = ongoing_sorted | concat: not_ongoing_sorted %}
 
-
               {% for certificate in sorted %}
-                {% include certificate_lay.html %}
+              {% include certificate_lay.html %}
               {% endfor %}
             </div>
           </div>
