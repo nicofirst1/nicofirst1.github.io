@@ -26,14 +26,17 @@ title: My Certificates
               <div class="ag-timeline_line">
                 <div class="ag-timeline_line-progress"></div>
               </div>
+
+              {% assign ongoing = site.certificates | where: 'end_date', 'Ongoing' %}
+              {% assign not_ongoing = site.certificates | where_exp: 'certificate', 'certificate.end_date != "Ongoing"' %}
+
               {% assign sorted = site.certificates | sort: 'end_date' | reverse %}
 
-              {% assign ongoing = sorted | where: 'end_date', 'Ongoing' %}
-              {% assign not_ongoing = sorted | where_exp: 'certificate', 'certificate.end_date != "Ongoing"' %}
-
               {% assign ongoing_sorted = ongoing | sort: 'start_date'  %}
+              {% assign not_ongoing_sorted = not_ongoing | sort: 'end_date' | reverse %}
 
-              {% assign sorted = ongoing_sorted | concat: not_ongoing %}
+              {% assign sorted = ongoing_sorted | concat: not_ongoing_sorted %}
+
 
               {% for certificate in sorted %}
                 {% include certificate_lay.html %}
