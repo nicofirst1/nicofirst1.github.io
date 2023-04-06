@@ -1,4 +1,3 @@
-
 /*==============================================================================================
                                               Base css
 ================================================================================================*/
@@ -15,60 +14,61 @@
 
 .intro {
     color: $white-color;
-}
-
-.intro h1 {
-    font-size: 40px;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.intro h2 {
-    font-size: 24px;
-    font-weight: 300;
-}
 
 
-.intro ul {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
+    h1 {
+        font-size: 40px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
 
-.intro ul li {
-    display: inline-block;
-}
+    h2 {
+        font-size: 24px;
+        font-weight: 300;
+    }
 
-.intro ul li a {
-    color: $white-color;
-    height: 50px;
-    width: 50px;
-    display: inline-block;
-    border: 1px solid $white-color;
-    border-radius: 0px;
-    line-height: 50px;
-    font-size: 24px;
-    margin: 6px;
-    transition: .3s;
-}
 
-.intro ul li a:hover {
-    background-color: $light-color;
-    border-color: $light-color;
-    color: $base-color;
-}
+    ul {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 
-.intro p {
-    max-width: 355px;
-    margin: 0 auto;
-    font-size: 16px;
-    font-weight: 300;
-}
+    ul li {
+        display: inline-block;
+    }
 
-.intro p a {
-    color: $light-color;
-    display: inline-block;
-    font-weight: 500;
+    ul li a {
+        color: $white-color;
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        border: 1px solid $white-color;
+        border-radius: 0px;
+        line-height: 50px;
+        font-size: 24px;
+        margin: 6px;
+        transition: .3s;
+    }
+
+    ul li a:hover {
+        background-color: $light-color;
+        border-color: $light-color;
+        color: $base-color;
+    }
+
+    p {
+        max-width: 355px;
+        margin: 0 auto;
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    p a {
+        color: $light-color;
+        display: inline-block;
+        font-weight: 500;
+    }
 }
 
 .profile_img img {
@@ -82,7 +82,37 @@
     transform: scale(1.08);
 }
 
+.quote {
+    font-size: 2rem; /* Increase the font size */
+    font-style: italic; /* Apply italic style */
+    color: white; /* Set the text color to white */
+    margin-top: 1rem; /* Add some margin to separate the quote from the text above */
+    position: relative; /* Set the position property to relative */
+    display: inline-block; /* Set the display property to inline-block */
+    transition: all 0.3s ease-in-out; /* Add a smooth transition effect for transformations and color changes */
+  }
+  
+  .quote:hover {
+    transform: scale(1.3); /* Scale up the quote slightly on hover */
+    color: $light-color; /* Change the text color on hover */
+  }
+  
+  .quote:before,
+  .quote:after {
+    content: '“'; /* Add opening quotation marks */
+    font-size: 2.5rem; /* Set the font size for quotation marks */
+    position: absolute; /* Set the position property to absolute */
+    top: -0.35em; /* Move the quotation marks to the top of the quote */
+    margin-left: -0.35em; /* Add some space before the opening quotation mark */
+    margin-right: -0.35em;
 
+  }
+  
+  .quote:after {
+    content: '”'; /* Add closing quotation marks */
+    right: 0; /* Position the closing quotation marks at the end of the quote */
+
+  }
 
 /*****************************
 ******* section_1 Start *******
@@ -96,63 +126,73 @@
 
 .single_deg {
     margin-bottom: 30px;
+
+    h2 {
+        margin-bottom: 10px;
+        background-color: $light-color;
+        font-size: 24px;
+        padding: 10px 15px;
+        color: $base-color;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    ul {
+        margin-bottom: 30px;
+    }
+
+    ul li {
+        display: inline-block;
+        width: 49.5%;
+    }
+
+    ul li p {
+        text-align: right;
+        font-style: italic;
+        font-weight: 300;
+    }
+
+    img {
+        max-width: 125px;
+    }
+
+    a {
+        color: $light-color;
+        /* Remove the underline */
+        transition: color 0.3s ease-in-out;
+    }
+
+    a:hover {
+        color: $darker-color;
+        /* Change the link color on hover */
+    }
 }
 
-.single_deg h2 {
-    margin-bottom: 10px;
-    background-color: $light-color;
-    font-size: 24px;
-    padding: 10px 15px;
-    color: $base-color;
-    font-weight: 500;
-    text-transform: uppercase;
-}
+.deg_info {
 
-.single_deg ul {
-    margin-bottom: 30px;
-}
-
-.single_deg ul li {
-    display: inline-block;
-    width: 49.5%;
-}
-
-.single_deg ul li p {
-    text-align: right;
-    font-style: italic;
-    font-weight: 300;
-}
-
-.single_deg img {
-    max-width: 125px;
-}
-
-.deg_info {}
-
-.deg_info h3 {
+ h3 {
     color: $light-color;
     font-size: 22px;
     font-weight: 400;
 }
 
-.deg_info p {
+ p {
     padding-left: 30px;
     position: relative;
     margin-bottom: 15px;
 }
 
-.deg_info p svg {
+ p svg {
     color: $light-color;
     position: absolute;
     top: 0;
     left: 0;
     font-size: 20px;
 }
-
-.vote p a {
-    display: inline-block;
-    color: $light-color;
 }
+
+
+
 
 .vote {
     color: currentColor;
@@ -160,14 +200,19 @@
     /*  pointer-events: none;
   text-decoration: none;*/
     background-color: $darker-color;
-    color: $white-color !important;
+    color: $white-color  !important;
     position: relative;
     padding: 2px 6px;
     border-radius: 15px;
     z-index: 2;
+
+
+ p a {
+    display: inline-block;
+    color: $light-color;
 }
 
-.vote span {
+ span {
     opacity: 0;
     position: absolute;
     left: 0;
@@ -185,6 +230,7 @@
 .vote:hover span {
     opacity: 1;
     top: -30px;
+}
 }
 
 
@@ -237,14 +283,13 @@
 
 
 .cv_pdf {
-    width:100%;
+    width: 100%;
     height: 900px;
 
 }
+
 .bright_doc {
-    width:100%;
+    width: 100%;
     height: 1000px;
 
-    }
-
-
+}

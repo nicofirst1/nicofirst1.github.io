@@ -1,3 +1,6 @@
+var PADDING = 300;
+
+
 // wait for the page to load
 window.onload = function () {
   // get all the timeline items
@@ -28,7 +31,6 @@ window.onload = function () {
 
   var container = document.querySelector('.certificate');
   var timelineHeight = document.querySelector('.ag-timeline').offsetHeight;
-  var PADDING = 300;
   // update the active certificate based on the scroll position
   function updateActiveCertificate() {
     var scrollPosition = container.scrollTop + container.offsetHeight * 0.65 - PADDING;
@@ -67,3 +69,28 @@ window.onload = function () {
   container.addEventListener('scroll', updateActiveCertificate);
 
 };
+
+function scrollToCertificate(event, certificateId) {
+
+  event.preventDefault(); // Prevent the default behavior of the link
+
+  // Get the target element by its ID
+  var targetElement = document.getElementById(certificateId);
+
+  // log all ids in the document
+  var allIds = document.querySelectorAll('[id]');
+  console.log(allIds);
+
+
+
+  // log certificateId and targetElement
+
+  console.log("certificateId: " + certificateId);
+  console.log("targetElement: " + targetElement);
+  
+  // Smoothly scroll the container to the target element
+  document.querySelector('.certificate').scroll({
+    top: targetElement.offsetTop , 
+    behavior: 'smooth'
+  });
+}

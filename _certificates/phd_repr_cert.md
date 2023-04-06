@@ -4,6 +4,7 @@ start_date: 2021-11-01
 end_date: Ongoing 
 organization: Sapienza University
 image: assets/images/certificates/phd_repr_cert.jpg
+id: phd_repr
 ---
 As a PhD student representative at Sapienza University, I have served as a liaison between the student body and the administration. In this role, I have advocated for the needs and concerns of my fellow students and worked towards creating a positive and productive learning environment for all.
 
