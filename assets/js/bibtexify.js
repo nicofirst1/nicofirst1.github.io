@@ -2520,7 +2520,11 @@ var bibtexify = (function($) {
             var authorsStr = '';
             for (var index = 0; index < authorData.length; index++) {
                 if (index > 0) { authorsStr += ", "; }
-                authorsStr += authorData[index].last;
+                if (authorData[index].last.includes("Brandizzi")){
+                    authorsStr += '<strong>' + authorData[index].last + '</strong>';
+
+                }else{
+                authorsStr += authorData[index].last;}
             }
             return authorData ? '<span class="bibtexify-author">' + htmlify(authorsStr) + '<\/span>' : '';
         },
