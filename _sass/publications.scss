@@ -1,0 +1,46 @@
+.social-handles ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-handles li {
+    margin-right: 10px;
+}
+
+.social-handles a {
+    font-size: 40px;
+    color: $white-color;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    border: 1px solid $white-color;
+    border-radius: 0px;
+    line-height: 50px;
+    margin: 6px;
+    transition: .3s;
+}
+
+.social-handles a:hover {
+    color: $darker-color;
+}
+
+
+/*publications page*/
+
+.publications_hero {
+    background-color: $base-color;
+    min-height: 100vh;
+}
+
+.social-handles {
+    text-align: center;
+    margin-bottom: 20px; /* Optional: Add margin at the bottom */
+}
+
+.social-handles img {
+    margin: 0 20px; /* Optional: Add some horizontal spacing between icons */
+}
