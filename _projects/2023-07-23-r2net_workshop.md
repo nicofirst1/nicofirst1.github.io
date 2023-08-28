@@ -2,39 +2,23 @@
 title: R2Net Workshop
 subtitle: Ai Research & Mental Well-Being
 custom_id: r2network
-tag: current
+tag: past
 image: ./assets/images/projects/r2networkshop.png
 custom_url: https://sites.google.com/diag.uniroma1.it/r2net-ai-and-mental-wellness/home
 custom_button: check website
 
-
 ---
-## Description
-
-R2Net AI Research & Mental Well-Being Workshop, in cooperation with the ESSAI Summer School, is a free gathering of academics and researchers dedicated to exploring the intersection of AI research and mental well-being. Organised by CLAIRE \| Rising Research Network, this event aims to inspire and support researchers in their academic pursuits while emphasising the importance of maintaining a healthy mind.
 
 
-## Program
+We are thrilled to announce the successful conclusion of the R2Net AI Research & Mental Well-Being Workshop, held in collaboration with the ESSAI Summer School! This engaging event brought together academics and researchers for a day of insightful discussions, exploring the intersection of AI research and mental well-being. Organized by CLAIRE-Rising Research Network, the workshop aimed to inspire and support researchers in their academic pursuits while highlighting the significance of maintaining a healthy mind.
 
-### Part 1 - 14:45: "My Journey as a Member" by Nicolo' Brandizzi
 
-Gain valuable insights into the structure and opportunities within R2Net as Nicolo' Brandizzi, a kernel member, shares his journey. Engage in an informative presentation that explores the organisational framework of R2Net and the vast possibilities it offers. Aligned with the mission of R2Net, which is to establish an ethical and human-centric approach as the standard practice in AI research, discover how this vibrant community of graduate students, postdocs, and master students is committed to European excellence in AI. 
+With an impressive attendance of **around 100 participants**, the workshop provided a platform for valuable suggestions, tips, and shared experiences to help each other navigate the challenges that accompany a Ph.D. journey.
 
-### Part 2 - 15:00: Ph.D. Life - Panel Discussion
 
-Delve into the realities of pursuing a Ph.D. and gain valuable insights from our panel of experienced postdocs, supervisors, and counselors. Engage in an open conversation about the challenges and triumphs faced during the Ph.D. journey, including coping with critical feedback, publishing research, selecting appropriate venues, dissertation writing, stress management, and effective multitasking.
+## Conclusions
 
-### Break - 16:00
-
-Take this opportunity to connect with fellow researchers during a refreshing break. 
-
-### Part 3 - 16:15: ESA Φ-Lab Presentation
-
-Explore the remarkable opportunities presented by ESA Φ-Lab during this session, offering valuable insights into their groundbreaking research projects. Get a sneak peek into their upcoming tutorial, which will be presented later in the summer school, and discover how ESA Φ-Lab is pushing the boundaries of AI and space exploration.
-
-### Part 4 - 17:00: Food and Drinks
-
-Conclude the event with a Networking Reception, providing a platform for meaningful connections and collaborations among researchers, industry professionals, and experts. Engage in valuable conversations, exchange ideas, and expand your professional network while enjoying refreshments. 
+The R2Net AI Research & Mental Well-Being Workshop was a resounding success, and we extend our heartfelt gratitude to all the participants, speakers, and collaborators who contributed to the event's success. Your engagement and dedication have enriched our academic community and reinforced our commitment to mental well-being while advancing AI research.
 
 ## Acknowledgments
 
