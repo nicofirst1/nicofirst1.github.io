@@ -1,6 +1,6 @@
 ---
 title: R2Net Workshop
-subtitle: Ai Research & Mental Well-Being
+subtitle: AI Research & Mental Well-Being
 custom_id: r2network
 tag: past
 image: ./assets/images/projects/r2networkshop.png
