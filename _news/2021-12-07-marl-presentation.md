@@ -2,7 +2,7 @@
 title: Multi Agent RL presentation
 custom_id: marl_presentation
 custom_url: https://youtu.be/fCWrbDlERlY
-tag: PhD
+tag: Speaker
 image: https://img.youtube.com/vi/fCWrbDlERlY/0.jpg
 ---
 

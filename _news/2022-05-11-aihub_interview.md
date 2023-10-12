@@ -2,7 +2,7 @@
 title: AIHub interview
 custom_id: aihub_interview
 custom_url: https://aihub.org/2022/05/11/new-voices-in-ai-human-ai-collaboration/
-tag: PhD
+tag: Speaker
 image:  ./assets/images/news/aihub_interview.png
 ---
 *"This episode Nicolo’ Brandizzi shares his journey into researching human AI interaction, and about CLAIRE’s rising research network."*
