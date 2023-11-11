@@ -1,55 +1,16 @@
-<!doctype html>
-<html>
-  <head>
-    {% include gtm_head.liquid %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+{%- include head.html -%}
+{%- include header.html -%}
 
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--font awesome-->
-    <link href="assets/css/fontawesome.min-v5.15.1.css" rel="stylesheet">
-    <!--bootstrap min css-->
-    <link href="assets/css/bootstrap.min-v4.0.0.css" rel="stylesheet">
-    <!--owl carousel min css-->
-    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
-    <!--style css-->
-    <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
-    <!--responsive css-->
-    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+<body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDD5X4W" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <!--academia icons css-->
-    <link href="assets/css/academicons.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/academicons.css" rel="stylesheet" type="text/css">
-    
-    <!--jquery min js-->
-    <script src="assets/js/jquery.min.v3.1.1.js"></script>
-    <!--jquery migrate-->
-    <script src="assets/js/jquery-migrate-3.0.1.js"></script>
-    <!--Main js-->
-    <script src="assets/js/main.js"></script>
-    <!--IMPORTS-->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/slides.js"></script>
-    <!--Bootstrap min js-->
-    <script src="assets/js/bootstrap.min-v4.0.0.js"></script>
-
-    {% if jekyll.environment == 'production'%}
-    {% include analytics.html %}
-    {% endif %}
-
-  </head>
-  <body>
-    {% include gtm_body.liquid %}
-
-    {% include header.html %}
-
-    {{ content }}
-
-    {% include footer.html %}
-
-  </body>
+  {{ content }}
+</body>
+{%- include footer.html -%}
 
 </html>

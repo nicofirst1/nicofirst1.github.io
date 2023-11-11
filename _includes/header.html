@@ -1,31 +1,94 @@
-<header class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <button class="menu_on_btn"><i class="fas fa-bars"></i></button>
-                <div class="main_menu">
-                    <button class="menu_off_btn"><i class="fas fa-times"></i></button>
-                    <ul>
-                        <li ><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="projects.html"><i class="fas fa-fire"></i> Projects</a></li>
-                        <li><a href="publications.html"><i class="fas fa-file-alt"></i> Publications</a></li>
-                        <li><a href="cv.html"><i class="fas fa-address-card"></i> CV</a></li>
-                        <!--<li><a href="thesisproposals.html"><i class="fas fa-user"></i> Thesis Proposals</a></li>-->
-                        <li><a href="certificates.html"><i class="fas fa-certificate"></i> Certificates</a></li>
-                        <li><a href="news.html"><i class="fas fa-rss"></i> News</a></li>
-                    </ul>
-                </div>
-            </div>
+<header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+    <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
+        <div class="hamburger item">
+            <span></span>
         </div>
+    </div>
+    <a href="{{site.baseurl}}/" class="logo absolute left-6 top-4 md:top-5">
+        <img src="{{site.baseurl}}/assets/images/logo.png" alt="Logo" class="w-32 dark:invert">
+    </a>
+
+    <div class="container flex gap-6 lg:gap-10 xl:gap-12 mx-auto align-top">
+        <nav class="grid mt-10 md:mt-0 md:flex gap-2 md:gap-3 lg:gap-5 xl:gap-6 justify-center w-full hidden_small slide-in-left" id="nav">
+            {% for n in site.data.navigation %}
+            <a href="{{n.link | relative_url}}" class="dark:text-slate-50 text-base lg:text-xl capitalize{% if n.page_id == page.page_id %} active{% endif %}">{{n.title}}</a>
+            {% endfor %}
+        </nav>
+        <form class="mode-switch absolute right-16 top-5 md:top-7 lg:top-8" data-bss-toggle="mode">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Light</label>
+            <input type="checkbox" class="form-check-input" id="theme-mode" aria-label="dark-mode-switch" style=" background-image: url({{site.baseurl}}/assets/images/svg/circle.svg)">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Dark</label>
+          </form>
     </div>
 </header>
 
 <script>
-    //activate the header path
-    [].forEach.call(document.querySelectorAll('a'), function(elem) {
-      if (elem.pathname === window.location.pathname){
-        elem.parentNode.classList.add('active')}
-      else{
-        elem.parentNode.classList.remove('active')}
-    })
-  </script>
+    //HAMBURGER
+    const hamburger = document.querySelectorAll("#menuToggler .item");
+    function toggleMenu() {
+        document.getElementById("nav").classList.toggle("hidden_small");
+        for (el of hamburger) {
+            el.classList.toggle("active-burger");
+        }
+    }
+    /**
+ * Theme Mode Switch
+ * Switch betwen light/dark mode. The chosen mode is saved to browser's local storage
+*/
+let root = document.getElementsByTagName('html')[0];
+let checkbox = document.getElementById('theme-mode');
+let locMode = getLightingMode();
+let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+if ((!darkMode && locMode == undefined) || (locMode == 'light')) {
+  root.classList.remove('dark');
+  checkbox.checked = false;
+} else {
+  root.classList.add('dark')
+  checkbox.checked = true
+}
+
+function getLightingMode() {
+  const storedPreference = localStorage.getItem('lightingModePreference');
+
+  if (storedPreference) {
+    const parsedPreference = JSON.parse(storedPreference);
+    const currentTime = new Date().getTime();
+
+    if (currentTime < parsedPreference.expires) {
+      return parsedPreference.mode;
+    } else {
+      localStorage.removeItem('lightingModePreference');
+    }
+  }
+  return undefined;
+}
+
+function setLightingMode(mode) {
+  const currentTime = new Date().getTime();
+  const expirationTime = currentTime + 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const preferenceData = {
+    mode: mode,
+    expires: expirationTime,
+  };
+
+  localStorage.setItem('lightingModePreference', JSON.stringify(preferenceData));
+}
+
+const themeModeSwitch = (() => {
+  let modeSwitch = document.querySelector('[data-bss-toggle="mode"]')
+  if (modeSwitch === null) return;
+  let checkbox = modeSwitch.querySelector('.form-check-input')
+
+  modeSwitch.addEventListener('click', (e) => {
+    if (checkbox.checked) {
+      root.classList.add('dark');
+      setLightingMode('dark');
+    } else {
+      root.classList.remove('dark');
+      setLightingMode('light');
+    }
+  });
+})();
+
+</script>

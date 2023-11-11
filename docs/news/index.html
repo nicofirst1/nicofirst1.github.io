@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PDD5X4W');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>News</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="News" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="NICOLO’ BRANDIZZI - recent news" />
+<meta property="og:description" content="NICOLO’ BRANDIZZI - recent news" />
+<link rel="canonical" href="/news/" />
+<meta property="og:url" content="/news/" />
+<meta property="og:image" content="/assets/images/2.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-11-11T13:50:04+01:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/2.jpg" />
+<meta property="twitter:title" content="News" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-11T13:50:04+01:00","datePublished":"2023-11-11T13:50:04+01:00","description":"NICOLO’ BRANDIZZI - recent news","headline":"News","image":"/assets/images/2.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/news/"},"url":"/news/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/%20/assets/css/main.css">
+  <link rel="stylesheet" href="/%20/assets/css/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"></head><header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+    <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
+        <div class="hamburger item">
+            <span></span>
+        </div>
+    </div>
+    <a href="/" class="logo absolute left-6 top-4 md:top-5">
+        <img src="/assets/images/logo.png" alt="Logo" class="w-32 dark:invert">
+    </a>
+
+    <div class="container flex gap-6 lg:gap-10 xl:gap-12 mx-auto align-top">
+        <nav class="grid mt-10 md:mt-0 md:flex gap-2 md:gap-3 lg:gap-5 xl:gap-6 justify-center w-full hidden_small slide-in-left" id="nav">
+            
+            <a href="/" class="dark:text-slate-50 text-base lg:text-xl capitalize">home</a>
+            
+            <a href="/projects" class="dark:text-slate-50 text-base lg:text-xl capitalize">projects</a>
+            
+            <a href="/publications" class="dark:text-slate-50 text-base lg:text-xl capitalize">publications</a>
+            
+            <a href="/cv" class="dark:text-slate-50 text-base lg:text-xl capitalize">CV</a>
+            
+            <a href="/news" class="dark:text-slate-50 text-base lg:text-xl capitalize active">news</a>
+            
+        </nav>
+        <form class="mode-switch absolute right-16 top-5 md:top-7 lg:top-8" data-bss-toggle="mode">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Light</label>
+            <input type="checkbox" class="form-check-input" id="theme-mode" aria-label="dark-mode-switch" style=" background-image: url(/assets/images/svg/circle.svg)">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Dark</label>
+          </form>
+    </div>
+</header>
+
+<script>
+    //HAMBURGER
+    const hamburger = document.querySelectorAll("#menuToggler .item");
+    function toggleMenu() {
+        document.getElementById("nav").classList.toggle("hidden_small");
+        for (el of hamburger) {
+            el.classList.toggle("active-burger");
+        }
+    }
+    /**
+ * Theme Mode Switch
+ * Switch betwen light/dark mode. The chosen mode is saved to browser's local storage
+*/
+let root = document.getElementsByTagName('html')[0];
+let checkbox = document.getElementById('theme-mode');
+let locMode = getLightingMode();
+let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+if ((!darkMode && locMode == undefined) || (locMode == 'light')) {
+  root.classList.remove('dark');
+  checkbox.checked = false;
+} else {
+  root.classList.add('dark')
+  checkbox.checked = true
+}
+
+function getLightingMode() {
+  const storedPreference = localStorage.getItem('lightingModePreference');
+
+  if (storedPreference) {
+    const parsedPreference = JSON.parse(storedPreference);
+    const currentTime = new Date().getTime();
+
+    if (currentTime < parsedPreference.expires) {
+      return parsedPreference.mode;
+    } else {
+      localStorage.removeItem('lightingModePreference');
+    }
+  }
+  return undefined;
+}
+
+function setLightingMode(mode) {
+  const currentTime = new Date().getTime();
+  const expirationTime = currentTime + 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const preferenceData = {
+    mode: mode,
+    expires: expirationTime,
+  };
+
+  localStorage.setItem('lightingModePreference', JSON.stringify(preferenceData));
+}
+
+const themeModeSwitch = (() => {
+  let modeSwitch = document.querySelector('[data-bss-toggle="mode"]')
+  if (modeSwitch === null) return;
+  let checkbox = modeSwitch.querySelector('.form-check-input')
+
+  modeSwitch.addEventListener('click', (e) => {
+    if (checkbox.checked) {
+      root.classList.add('dark');
+      setLightingMode('dark');
+    } else {
+      root.classList.remove('dark');
+      setLightingMode('light');
+    }
+  });
+})();
+
+</script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDD5X4W" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <section class="projects container pt-2 lg:pt-9 mb-12">
+    <h1 class="font-bold text-5xl">News</h1>
+    <div class="news">
+        <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4	">
+            
+                
+                <section class="p-2 w-full">
+    <a href="/news/claire_ro_talk/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">CLAIRE Rome Office Launch</h3>
+                <p>Speaker</p>
+                <p class="text-sm mt-5"> Oct 11, 2023</p>
+            </div><img src="/assets/images/Colosseo.jpg" alt="CLAIRE Rome Office Launch" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/rmm/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">Training School - Representation mediated Multimodality</h3>
+                <p>PhD</p>
+                <p class="text-sm mt-5"> Sep 26, 2022</p>
+            </div><img src="https://codesign-lab.org/school2022/images/banner.jpg" alt="Training School - Representation mediated Multimodality" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/ai4uam-school/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">Artificial Intelligence for Urban Air Mobility</h3>
+                <p>PhD</p>
+                <p class="text-sm mt-5"> Sep 05, 2022</p>
+            </div><img src="/assets/images/news/ai4uam.jpg" alt="Artificial Intelligence for Urban Air Mobility" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/emeima-presentation/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">CLAIRE R2Net - Lightning Talks</h3>
+                <p>Speaker</p>
+                <p class="text-sm mt-5"> May 26, 2022</p>
+            </div><img src="https://img.youtube.com/vi/KHv7rcKDfSg/2.jpg" alt="CLAIRE R2Net - Lightning Talks" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/aihub_interview/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">AIHub interview</h3>
+                <p>Speaker</p>
+                <p class="text-sm mt-5"> May 11, 2022</p>
+            </div><img src="/assets/images/news/aihub_interview.png" alt="AIHub interview" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/uva-visit/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">UvA scientific visit</h3>
+                <p>PhD</p>
+                <p class="text-sm mt-5"> Mar 05, 2022</p>
+            </div><img src="/assets/images/news/uva.jpg" alt="UvA scientific visit" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/deephealth/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">DeepHealth winter school</h3>
+                <p>PhD</p>
+                <p class="text-sm mt-5"> Jan 24, 2022</p>
+            </div><img src="/assets/images/news/deephealth.png" alt="DeepHealth winter school" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/marl-presentation/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">Multi Agent RL presentation</h3>
+                <p>Speaker</p>
+                <p class="text-sm mt-5"> Dec 07, 2021</p>
+            </div><img src="https://img.youtube.com/vi/fCWrbDlERlY/0.jpg" alt="Multi Agent RL presentation" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/syl-project/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">Save Your Life project</h3>
+                <p>extracurriculars</p>
+                <p class="text-sm mt-5"> Oct 25, 2021</p>
+            </div><img src="/assets/images/news/syl.jpg" alt="Save Your Life project" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/acai2021/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">Advanced course on AI on Human Centered AI</h3>
+                <p>PhD</p>
+                <p class="text-sm mt-5"> Oct 11, 2021</p>
+            </div><img src="/assets/images/news/acai_certif.jpg" alt="Advanced course on AI on Human Centered AI" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/alaWorkshop/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">ALA 2021 Workshop</h3>
+                <p>PhD</p>
+                <p class="text-sm mt-5"> Apr 29, 2021</p>
+            </div><img src="/assets/images/news/ALA2021.png" alt="ALA 2021 Workshop" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/newz/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">Newz finally available!</h3>
+                <p>implementation</p>
+                <p class="text-sm mt-5"> Apr 28, 2021</p>
+            </div></div>
+    </a>
+</section>
+                
+                <section class="p-2 w-full">
+    <a href="/news/twitch-lessons/">
+        <div class="project_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
+            <div class="heading p-5">
+                <h3 class="text-2xl">Tutoring Lesson on Twitch</h3>
+                <p>PhD</p>
+                <p class="text-sm mt-5"> Apr 20, 2021</p>
+            </div></div>
+    </a>
+</section>
+                
+            </div>
+    </div>
+</section>
+
+</body><footer class="footer p-9 bg-sky-200 dark:bg-slate-950 dark:text-sky-50 ">
+    <div class="container">
+        <p class="text-center">&copy; Copyright 2023, All right Reserved By - Nicolo' Brandizzi</p>
+    </div>
+</footer></html>

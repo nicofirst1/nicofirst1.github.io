@@ -1,0 +1,15 @@
+- title: home  
+  link: /
+  page_id: home
+- title: projects  
+  link: /projects
+  page_id: projects
+- title: publications  
+  link: /publications
+  page_id: publications
+- title: CV  
+  link: /cv
+  page_id: cv
+- title: news
+  link: /news
+  page_id: news

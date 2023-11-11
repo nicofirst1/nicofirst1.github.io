@@ -1,0 +1,18 @@
+.education h2,
+.education h3,
+.education h4 {
+  line-height: 1.2;
+}
+.education h4 {
+  font-size: 24px;
+}
+.education ul {
+  margin-top: 30px;
+  padding-left: 30px;
+  list-style-image: url(/assets/images/svg/check2-circle.svg);
+}
+
+.dark .education ul {
+  list-style-image: url(/assets/images/svg/check2-circle-light.svg);
+}
+/*# sourceMappingURL=education.css.map */

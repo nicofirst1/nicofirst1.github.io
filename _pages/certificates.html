@@ -1,0 +1,31 @@
+---
+layout: page
+title: MY CERTIFICATES
+page_id: certificates
+---
+
+<section class="w-full md:px-5 mb-12 min-h-[80vh]">
+   <div class="sertificates_grid grid gap-7">
+    {%- assign sorted = site.certificates | sort: "start_date" | reverse -%}
+    {%- for s in sorted -%}
+        <div class="certificate_item grid md:grid-cols-[200px_minmax(300px,_1fr)_100px] gap-8 w-full shadow-sm ">
+            <div class="zoom_outer">
+                <img src="{{s.image | relative_url}}" alt="{{s.organization}}" loading="lazy" width="300" class="certificate_image border shadow-lg shadow-gray-400 dark:shadow-black">
+            </div>
+            <div class="s_text">
+                <h2>{{s.title}} at {{s.organization}}</h2>
+                <div class="sertificate_date from-neutral-700 text-sm mb-5">
+                    {{s.start_date | date: "%b %Y"}} - {{s.end_date | date: "%b %Y"}}
+                </div>
+                <div class="certificate_descr">
+                    {{s.content | markdownify}}
+                </div>
+                <div class="sertificate_tag w-fit py-1 px-4 border border-gray-500">
+                    {{s.s_id}}
+                </div>
+            </div>
+        </div>
+    {%- endfor -%}
+   </div>
+</section>
+{%- include zoom.html -%}

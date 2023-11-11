@@ -1,25 +1,40 @@
-<section class="section_1 section_padding" id="section_1">
-    <div class="container">
-        <!-- Section Title -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <div class="section_title  ">
-                    <h2>Recent Activity <i class="fas fa-code-branch"></i></h2>
-                </div>
-            </div>
-        </div>
-        <!-- Section Title -->
-        
+{% assign all_items = site.projects | concat: site.news %}
+{% assign items_with_images = "" | split: "" %}
+
+{% for item in all_items %}
+{% if item.image %}
+{% assign items_with_images = items_with_images | push: item %}
+{% endif %}
+{% endfor %}
+
+{% assign sorted_items = items_with_images | sort: 'date' | reverse %}
+<section class="activity py-9 bg-gray-50 dark:bg-gray-950">
+    <div class="container mx-auto">
+        <h2 class="text-4xl text-center font-bold">Recent Activity</h2>
     </div>
+    <div class="container_activity mx-auto my-7">
+        <div class="grid md:grid-cols-2 gap-4">
+            {% for i in sorted_items | limit: 4 %}
+            <div
+                class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2 ">
+                <a href="{{i.url}}">
+                    <div class="activity_image gap-5 md:w-4/12">
+                        <img src="{{ i.image | relative_url }}" alt="{{ i.title }}" class="md:p-7 w-full rounded-xl">
+                    </div>
+                    <div class="text pt-6">
+                        <h3 class="text-2xl mt-0">
+                            {{ i.title }}
+                        </h3>
+                        <p class="text-sm mb-3">{{ i.date | date: "%b %d, %Y" }}</p>
 
-      <div class="slide-body">
-
-        {% include home/slide_container.html %}
-
-      </div>
-
-   
-
-     
-
+                    </div>
+                </a>
+            </div>
+            {% if i | modulo: 2 == 0 and not 4 %}
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 </section>

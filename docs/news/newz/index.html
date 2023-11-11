@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PDD5X4W');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Newz finally available!</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Newz finally available!" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="After much work on my side news are finally available and I will post interesting stuff here." />
+<meta property="og:description" content="After much work on my side news are finally available and I will post interesting stuff here." />
+<link rel="canonical" href="/news/newz/" />
+<meta property="og:url" content="/news/newz/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-28T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Newz finally available!" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-04-28T00:00:00+02:00","datePublished":"2021-04-28T00:00:00+02:00","description":"After much work on my side news are finally available and I will post interesting stuff here.","headline":"Newz finally available!","mainEntityOfPage":{"@type":"WebPage","@id":"/news/newz/"},"url":"/news/newz/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/%20/assets/css/main.css">
+  <link rel="stylesheet" href="/%20/assets/css/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"></head><header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+    <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
+        <div class="hamburger item">
+            <span></span>
+        </div>
+    </div>
+    <a href="/" class="logo absolute left-6 top-4 md:top-5">
+        <img src="/assets/images/logo.png" alt="Logo" class="w-32 dark:invert">
+    </a>
+
+    <div class="container flex gap-6 lg:gap-10 xl:gap-12 mx-auto align-top">
+        <nav class="grid mt-10 md:mt-0 md:flex gap-2 md:gap-3 lg:gap-5 xl:gap-6 justify-center w-full hidden_small slide-in-left" id="nav">
+            
+            <a href="/" class="dark:text-slate-50 text-base lg:text-xl capitalize">home</a>
+            
+            <a href="/projects" class="dark:text-slate-50 text-base lg:text-xl capitalize">projects</a>
+            
+            <a href="/publications" class="dark:text-slate-50 text-base lg:text-xl capitalize">publications</a>
+            
+            <a href="/cv" class="dark:text-slate-50 text-base lg:text-xl capitalize">CV</a>
+            
+            <a href="/news" class="dark:text-slate-50 text-base lg:text-xl capitalize">news</a>
+            
+        </nav>
+        <form class="mode-switch absolute right-16 top-5 md:top-7 lg:top-8" data-bss-toggle="mode">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Light</label>
+            <input type="checkbox" class="form-check-input" id="theme-mode" aria-label="dark-mode-switch" style=" background-image: url(/assets/images/svg/circle.svg)">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Dark</label>
+          </form>
+    </div>
+</header>
+
+<script>
+    //HAMBURGER
+    const hamburger = document.querySelectorAll("#menuToggler .item");
+    function toggleMenu() {
+        document.getElementById("nav").classList.toggle("hidden_small");
+        for (el of hamburger) {
+            el.classList.toggle("active-burger");
+        }
+    }
+    /**
+ * Theme Mode Switch
+ * Switch betwen light/dark mode. The chosen mode is saved to browser's local storage
+*/
+let root = document.getElementsByTagName('html')[0];
+let checkbox = document.getElementById('theme-mode');
+let locMode = getLightingMode();
+let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+if ((!darkMode && locMode == undefined) || (locMode == 'light')) {
+  root.classList.remove('dark');
+  checkbox.checked = false;
+} else {
+  root.classList.add('dark')
+  checkbox.checked = true
+}
+
+function getLightingMode() {
+  const storedPreference = localStorage.getItem('lightingModePreference');
+
+  if (storedPreference) {
+    const parsedPreference = JSON.parse(storedPreference);
+    const currentTime = new Date().getTime();
+
+    if (currentTime < parsedPreference.expires) {
+      return parsedPreference.mode;
+    } else {
+      localStorage.removeItem('lightingModePreference');
+    }
+  }
+  return undefined;
+}
+
+function setLightingMode(mode) {
+  const currentTime = new Date().getTime();
+  const expirationTime = currentTime + 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const preferenceData = {
+    mode: mode,
+    expires: expirationTime,
+  };
+
+  localStorage.setItem('lightingModePreference', JSON.stringify(preferenceData));
+}
+
+const themeModeSwitch = (() => {
+  let modeSwitch = document.querySelector('[data-bss-toggle="mode"]')
+  if (modeSwitch === null) return;
+  let checkbox = modeSwitch.querySelector('.form-check-input')
+
+  modeSwitch.addEventListener('click', (e) => {
+    if (checkbox.checked) {
+      root.classList.add('dark');
+      setLightingMode('dark');
+    } else {
+      root.classList.remove('dark');
+      setLightingMode('light');
+    }
+  });
+})();
+
+</script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDD5X4W" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <main class="min-h-[80vh] flex flex-col gap-6" >
+<section class="pt-24">
+  <div class="container pb-6">
+    <h1 class="text-5xl font-bold">
+        Newz finally available!
+    </h1>
+    <b>implementation</b>
+    <p class="text-sm mb-3">Apr 28, 2021</p><div class="page_content "><p>After much work on my side news are finally available and I will post interesting stuff here.</p>
+
+<p>Stay tuned!</p>
+</div>
+  </div>
+</section>
+<div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/twitch-lessons/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Tutoring Lesson on Twitch</a><a href="/news/alaWorkshop/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">ALA 2021 Workshop →</a></div>
+</main><script>
+const clicableImages = document.querySelectorAll(".zoom_outer");
+if (clicableImages.length > 0) {
+  clicableImages.forEach((el) => {
+    el.addEventListener("click", (e) => {
+       e.currentTarget.classList.toggle("wide_image")
+    })
+    }
+  );
+}
+</script>
+</body><footer class="footer p-9 bg-sky-200 dark:bg-slate-950 dark:text-sky-50 ">
+    <div class="container">
+        <p class="text-center">&copy; Copyright 2023, All right Reserved By - Nicolo' Brandizzi</p>
+    </div>
+</footer></html>

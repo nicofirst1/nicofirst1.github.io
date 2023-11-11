@@ -1,0 +1,11 @@
+<script>
+const clicableImages = document.querySelectorAll(".zoom_outer");
+if (clicableImages.length > 0) {
+  clicableImages.forEach((el) => {
+    el.addEventListener("click", (e) => {
+       e.currentTarget.classList.toggle("wide_image")
+    })
+    }
+  );
+}
+</script>

@@ -1,94 +1,47 @@
+lang: en
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "" # the name of your site, e.g. ACME Corp.
+plugins:
+  - jekyll-postcss-v2
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
 
-# --- Required options --- #
-
-# Name of website
-title: Nicolo' Brandizzi Website
-
-# Your name to show in the footer
-author: Nicolo' Brandizzi
-
-# Google Analytics
-google_analytics: G-W2MPFHELZG
-
-# Where things are
-source              : .
-destination         : ./_site
-collections_dir     : .
-plugins_dir         : _plugins 
-layouts_dir         : _layouts
-data_dir            : _data
-includes_dir        : _includes
-sass:
-  sass_dir: _sass
-
+#scholar:
+#  style: modern-language-association
+#  source: ./assets/publications
+postcss:
+  cache: false
 
 collections:
+  pages:
+    output: true
+    permalink: /:title/
   news:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:title/
   projects:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:title/
+  education:
+    output: false
   certificates:
-    output: true
-    permalink: /:collection/:name
-
-
-# Handling Reading
-safe                : false
-include             : [".htaccess"]
-exclude             : ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
-keep_files          : [".git", ".svn"]
-encoding            : "utf-8"
-markdown_ext        : "markdown,mkdown,mkdn,mkd,md"
-strict_front_matter : false
-
-# Filtering Content
-show_drafts         : null
-limit_posts         : 0
-future              : true2012-09-12-how-to-write-a-blog.md
-unpublished         : true
-
-# Plugins
-whitelist           : []
-plugins:
-  - jekyll-gist
-
-# Conversion
-markdown            : kramdown
-highlighter         : rouge
-lsi                 : false
-excerpt_separator   : "\n\n"
-incremental         : false
-
-# Serving
-detach              : false
-port                : 4000
-host                : 127.0.0.1
-baseurl             : "" # does not include hostname
-show_dir_listing    : false
-
-# Outputting
-permalink           : date
-paginate_path       : /page:num
-timezone            : null
-
-quiet               : false
-verbose             : false
-defaults            : []
-
-liquid:
-  error_mode        : warn
-  strict_filters    : false
-  strict_variables  : false
-
-# Markdown Processors
-kramdown:
-  auto_ids          : true
-  entity_output     : as_char
-  toc_levels        : [1, 2, 3, 4, 5, 6]
-  smart_quotes      : lsquo,rsquo,ldquo,rdquo
-  input             : GFM
-  hard_wrap         : false
-  footnote_nr       : 1
-  show_warnings     : false
+    output: false
+  experience:
+    output: false
+defaults:
+  -
+    scope:
+      path: "_projects" 
+    values:
+      layout: "projects"
+  -
+    scope:
+      path: "_news" 
+    values:
+      layout: "news"
+destignation: "docs"
+exclude:
+- yarn.lock
+- package.json

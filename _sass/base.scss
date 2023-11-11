@@ -1,287 +1,348 @@
-/*==============================================================================================
-                                              Base css
-================================================================================================*/
+$backgroundColor: #ffffff;
+$bodyColor: #000000;
+$bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-
-/*****************************
-******* Hero area Start *******
-*****************************/
-
-.hero_area {
-    background-image: url(../images/background.jpg);
-    background-attachment: fixed;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.intro {
-    color: $white-color;
-
-
-    h1 {
-        font-size: 40px;
-        font-weight: 400;
-        text-transform: uppercase;
-        margin-bottom: 5px;
-    }
-
-    h2 {
-        font-size: 24px;
-        font-weight: 300;
-    }
-
-
-    ul {
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    ul li {
-        display: inline-block;
-    }
-
-    ul li a {
-        color: $white-color;
-        height: 50px;
-        width: 50px;
-        display: inline-block;
-        border: 1px solid $white-color;
-        border-radius: 0px;
-        line-height: 50px;
-        font-size: 24px;
-        margin: 6px;
-        transition: .3s;
-    }
-
-    ul li a:hover {
-        background-color: $light-color;
-        border-color: $light-color;
-        color: $base-color;
-    }
-
-    p {
-        max-width: 355px;
-        margin: 0 auto;
-        font-size: 16px;
-        font-weight: 300;
-    }
-
-    p a {
-        color: $light-color;
-        display: inline-block;
-        font-weight: 500;
-    }
+h1 {
+  font-size: 36px;
 }
 
-.profile_img img {
-    height: 280px;
-    width: 280px;
-    border-radius: 50%;
-    transition: .5s;
+h2 {
+  font-size: 32px;
 }
 
-.profile_img img:hover {
-    transform: scale(1.08);
+h3 {
+  font-size: 28px;
 }
 
-.quote {
-    font-size: 2rem; /* Increase the font size */
-    font-style: italic; /* Apply italic style */
-    color: white; /* Set the text color to white */
-    margin-top: 1rem; /* Add some margin to separate the quote from the text above */
-    position: relative; /* Set the position property to relative */
-    display: inline-block; /* Set the display property to inline-block */
-    transition: all 0.3s ease-in-out; /* Add a smooth transition effect for transformations and color changes */
-  }
-  
-  .quote:hover {
-    transform: scale(1.3); /* Scale up the quote slightly on hover */
-    color: $light-color; /* Change the text color on hover */
-  }
-  
-  .quote:before,
-  .quote:after {
-    content: '“'; /* Add opening quotation marks */
-    font-size: 2.5rem; /* Set the font size for quotation marks */
-    position: absolute; /* Set the position property to absolute */
-    top: -0.35em; /* Move the quotation marks to the top of the quote */
-    margin-left: -0.35em; /* Add some space before the opening quotation mark */
-    margin-right: -0.35em;
+h4 {
+  font-size: 24px;
+}
 
-  }
-  
-  .quote:after {
-    content: '”'; /* Add closing quotation marks */
-    right: 0; /* Position the closing quotation marks at the end of the quote */
+h5 {
+  flex: 22;
+}
 
+h6 {
+  font-size: 20px;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+.education a {
+  color: blue;
+}
+
+@media(min-width: 768px) {
+  h1 {
+    font-size: 48px;
   }
 
-/*****************************
-******* section_1 Start *******
-*****************************/
+  h2 {
+    font-size: 40px;
+  }
 
-.section_1 {
-    background-color: $base-color;
-    color: $white-color;
-    border-top: 1px solid $darker-color;
-}
+  h3 {
+    font-size: 36px;
+  }
 
-.single_deg {
-    margin-bottom: 30px;
+  h4 {
+    font-size: 30px;
+  }
 
-    h2 {
-        margin-bottom: 10px;
-        background-color: $light-color;
-        font-size: 24px;
-        padding: 10px 15px;
-        color: $base-color;
-        font-weight: 500;
-        text-transform: uppercase;
-    }
+  h5 {
+    font-size: 24px;
+  }
 
-    ul {
-        margin-bottom: 30px;
-    }
-
-    ul li {
-        display: inline-block;
-        width: 49.5%;
-    }
-
-    ul li p {
-        text-align: right;
-        font-style: italic;
-        font-weight: 300;
-    }
-
-    img {
-        max-width: 125px;
-    }
-
-    a {
-        color: $light-color;
-        /* Remove the underline */
-        transition: color 0.3s ease-in-out;
-    }
-
-    a:hover {
-        color: $darker-color;
-        /* Change the link color on hover */
-    }
-}
-
-.deg_info {
-
- h3 {
-    color: $light-color;
+  h6 {
     font-size: 22px;
-    font-weight: 400;
+  }
+
+  .certificate_item {
+    grid-template-columns: repeat(300px 1fr);
+    align-items: center;
+  }
 }
 
- p {
-    padding-left: 30px;
-    position: relative;
-    margin-bottom: 15px;
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+
 }
 
- p svg {
-    color: $light-color;
+.page_content a{
+  color: blue;
+}
+
+.container_activity  {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+body {
+  background: $backgroundColor;
+  color: $bodyColor;
+  font-family: $bodyFont;
+}
+
+li {
+  margin-bottom: 16px;
+}
+
+.hidden_small {
+  @media(max-width: 767.5px) {
+    display: none;
+  }
+}
+
+.menu_toggler {
+  position: fixed;
+  right: 20px;
+  top: 24px;
+
+  @media(min-width: 768px) {
+    display: none;
+  }
+}
+
+.hamburger {
+  position: relative;
+  width: 24px;
+  height: 20px;
+}
+
+.hamburger span {
+  position: absolute;
+  background-color: #000;
+  position: absolute;
+  width: 100%;
+  height: 3.4px;
+  left: 0;
+  top: 8px;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+.hamburger:before,
+.hamburger:after {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+.dark {
+  .education a {
+    color: rgb(187, 255, 0);
+  }
+
+  .hamburger span,
+  .hamburger:before,
+  .hamburger:after {
+    background-color: #fff;
+  }
+}
+
+.hamburger:before {
+  height: 3.4px;
+  top: 0;
+  border-radius: 10px;
+}
+
+.hamburger:after {
+  bottom: 0;
+}
+
+.hamburger.active-burger:before {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+.hamburger.active-burger:after {
+  transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+.hamburger.active-burger span {
+  transform: scale(0);
+}
+
+.social_item {
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.heading_image {
+  filter: invert(1);
+}
+
+.hero_section {
+  overflow: hidden;
+
+  .hero_bg {
+    z-index: -1;
+
+   
+  }
+}
+
+.dark {
+  .hero_section .hero_bg img,
+  .heading_image {
+    filter: invert(1);
+  }
+}
+
+.activity_item h2 {
+  font-size: 30px;
+}
+
+@media(min-width: 768px) {
+  .activity_item {
+    &:nth-child(2n) {
+      .activity_image {
+        //order: 2;
+        float: left;
+      }
+    }
+    .md\:w-4\/12{
+      width: 50%;
+    }
+
+    &:nth-child(2n+1) {
+      .activity_image {
+        //order: 2;
+        float: right;
+      }
+    }
+
+    .text::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+.active {
+  position: relative;
+
+  &::after {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 20px;
-}
-}
-
-
-
-
-.vote {
-    color: currentColor;
-    display: inline-block;
-    /*  pointer-events: none;
-  text-decoration: none;*/
-    background-color: $darker-color;
-    color: $white-color  !important;
-    position: relative;
-    padding: 2px 6px;
-    border-radius: 15px;
-    z-index: 2;
-
-
- p a {
-    display: inline-block;
-    color: $light-color;
+    display: table;
+    width: 100%;
+    height: 16px;
+    bottom: -4px;
+    background-color: rgba(100, 100, 255, 0.3);
+  }
 }
 
- span {
+@media(max-width: 767.5px){
+  .slide-in-left {
+  	animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+  .slide-out-left {
+  	animation: slide-out-left 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    }
+  }
+
+/**
+ * ----------------------------------------
+ * animation slide-in-left
+ * ----------------------------------------
+ */
+ @keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
     opacity: 0;
-    position: absolute;
-    left: 0;
-    top: 0px;
-    background-color: $light-color;
-    color: $base-color;
-    padding: 2px 8px;
-    border-radius: 15px;
-    transition: .3s;
-    min-width: 81px;
-    text-align: center;
-    display: inline-block;
-}
+  }
 
-.vote:hover span {
+  100% {
+    transform: translateX(0);
     opacity: 1;
-    top: -30px;
-}
-}
-
-
-/*****************************
-******* footer Start *******
-*****************************/
-.footer {
-    background-color: $darkest-color;
-    color: $white-color;
-    padding: 5px 0;
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
+  }
 }
 
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
-/*cv*/
-.cv_section {
-    background-color: $base-color;
+  100% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
 }
 
-.download_cv {
-    display: inline-block;
-    background-color: $darker-color;
-    color: $white-color;
-    padding: 12px 30px;
-    cursor: pointer;
-    font-size: 20px;
-    border: 3px solid $darker-color;
-    transition: .5s;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    margin-left: 40px;
+.zoom_outer {
+  z-index: 2;
+  position: relative;
+    img {
+      z-index: 1;
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      cursor: zoom-in;
+    }
+
+   &.wide_image  {
+    z-index: 20;
+      position: fixed;
+      margin: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(220,220,250,0.95);
+      img {
+        cursor: zoom-out;
+        max-width: 90% !important;
+        max-height: 90% !important;
+        width: auto;
+        height: 90%;
+        position: fixed;
+        z-index: 20;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .figure-caption {
+      display: none;
+    }
+  }
 }
 
-.download_cv:hover {
-    background-color: transparent;
-    border-color: $white-color;
-    color: $white-color;
-}
-
-
-.cv_pdf {
-    width: 100%;
-    height: 900px;
-
-}
-
-.bright_doc {
-    width: 100%;
-    height: 1000px;
-
+.dark .zoom_outer.wide_image {
+  background-color: rgba(50,50,90,0.95);
 }

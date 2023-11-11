@@ -1,0 +1,34 @@
+---
+layout: page
+title: Publications
+style: /assets/css/bibtable.css
+page_id: publications
+image: /assets/images/books.jpg
+---
+
+<div class="publications mb-9">
+    <table id="pubTable" class="display"></table>
+</div>
+
+<script src="{{'/assets/js/jquery.min.v3.1.1.js' | relative_url}}"></script>
+<!--jquery migrate-->
+<script src="{{'/assets/js/jquery-migrate-3.0.1.js' | relative_url}}"></script>
+
+<script src="{{'/assets/js/bibtexify.js' | relative_url}}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        var options = {
+        "sorting": [[0, 'desc']], // Column indices start at 0; 'desc' means descending
+        "datatable": {
+            // Any other DataTable options you want to set
+        },
+        "bib2html": {
+            // Any other bib2html options you want to set
+        }
+    };
+
+    bibtexify('{{site.baseurl}}/assets/publications.bib', 'pubTable', options);
+    document.getElementById('pubTable').style.width = '100%';
+});
+</script>
+  
