@@ -132,14 +132,27 @@
         height: 22px;
     }
 
-    .article {
-        background-color: #1674d2;
-    }
-
+   
+   
     .pub {
         border: 1px solid #fbfbfb;
-        background-color: #3598db;
+        background-color: #1674d2;
+
     }
+
+    .pub.workshop {
+        background-color: #d27416;
+    }
+    .pub.article {
+        background-color: #1674d2;
+    }
+    .pub.conference {
+        background-color: #1bbc9b;
+    }
+    .pub.preprint {
+        background-color: #8b6914;
+    }
+
 
     .inproceedings {
         background-color: #1bbc9b;

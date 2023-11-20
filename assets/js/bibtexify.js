@@ -890,6 +890,8 @@ function BibTex(options) {
         'misc',
         'phdthesis',
         'proceedings',
+        'workshop',
+        'preprint',
         'techreport',
         'unpublished'
     );
@@ -1133,6 +1135,7 @@ BibTex.prototype = {
             //Parsing cite and entry type
             var arr = entry.split('{');
             ret['cite'] = trim(arr[1]);
+            ret['customType'] = ret['keywords'];
             ret['entryType'] = strtolower(trim(arr[0]));
             //alert(array_keys(ret));
             if ('@' == ret['entryType'].substring(0, 1)) {
@@ -4699,7 +4702,7 @@ var bibtexify = (function ($) {
                         itemStr += value[index].last + ", " + value[index].first;
                     }
                     itemStr += ' },\n';
-                } else if (key != 'entryType' && key != 'cite') {
+                } else if (key != 'entryType' && key != 'cite' && key != 'keywords' && key != 'customType') {
                     itemStr += '  ' + key + " = { " + value + " },\n";
                 }
             });
@@ -4797,8 +4800,10 @@ var bibtexify = (function ($) {
             'TITLE': 9999,
             'misc': 0,
             'manual': 10,
+            'preprint': 15,
             'techreport': 20,
             'mastersthesis': 30,
+            'workshop': 35,
             'inproceedings': 40,
             'incollection': 50,
             'proceedings': 60,
@@ -4822,6 +4827,8 @@ var bibtexify = (function ($) {
             'misc': 'Misc',
             'phdthesis': 'PhD Thesis',
             'proceedings': 'Conference proceeding',
+            'workshop': 'Workshop',
+            'preprint': 'Preprint',
             'techreport': 'Technical report',
             'unpublished': 'Unpublished'
         }
@@ -4830,6 +4837,8 @@ var bibtexify = (function ($) {
     bib2html.phdthesis = bib2html.mastersthesis;
     // conference is the same as inproceedings
     bib2html.conference = bib2html.inproceedings;
+    bib2html.workshop = bib2html.inproceedings;
+    bib2html.preprint = bib2html.inproceedings;
 
     // event handlers for the bibtex links
     var EventHandlers = {
@@ -4867,8 +4876,8 @@ var bibtexify = (function ($) {
                 item.year = this.options.defaultYear || "To Appear";
             }
             var html = bib2html.entry2html(item, this);
-            bibentries.push([item.year, bib2html.labels[item.entryType], html]);
-            entryTypes[bib2html.labels[item.entryType]] = item.entryType;
+            bibentries.push([item.year, bib2html.labels[item.customType], html]);
+            entryTypes[bib2html.labels[item.customType]] = item.customType;
             this.updateStats(item);
         }
         jQuery.fn.dataTableExt.oSort['type-sort-asc'] = function (x, y) {
@@ -4934,13 +4943,13 @@ var bibtexify = (function ($) {
                 'count': 1,
                 'types': {}
             };
-            this.stats[item.year].types[item.entryType] = 1;
+            this.stats[item.year].types[item.customType] = 1;
         } else {
             this.stats[item.year].count += 1;
-            if (this.stats[item.year].types[item.entryType]) {
-                this.stats[item.year].types[item.entryType] += 1;
+            if (this.stats[item.year].types[item.customType]) {
+                this.stats[item.year].types[item.customType] += 1;
             } else {
-                this.stats[item.year].types[item.entryType] = 1;
+                this.stats[item.year].types[item.customType] = 1;
             }
         }
     };
