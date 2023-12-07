@@ -112,12 +112,21 @@
 .publications #pubTablepubchart .pub {
   height: 22px;
 }
-.publications .article {
-  background-color: #1674d2;
-}
 .publications .pub {
   border: 1px solid #fbfbfb;
-  background-color: #3598db;
+  background-color: #1674d2;
+}
+.publications .pub.workshop {
+  background-color: #d27416;
+}
+.publications .pub.article {
+  background-color: #1674d2;
+}
+.publications .pub.conference {
+  background-color: #1bbc9b;
+}
+.publications .pub.preprint {
+  background-color: #8b6914;
 }
 .publications .inproceedings {
   background-color: #1bbc9b;

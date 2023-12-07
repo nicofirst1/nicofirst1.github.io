@@ -17,9 +17,6 @@ CorpusCompass is designed with your linguistic research needs in mind:
 - **Accuracy & Consistency**: Beyond creating structured datasets from your annotated text, CorpusCompass prioritizes error-checking to maintain data integrity.
 - **Make More of Your Data**: CorpusCompass supports you to explore correlations, identify dependencies, and unveil the effects of social dynamics on language use.
 
+Check out our website for more infos!
+[CorpusCompass.com](https://www.corpuscompass.com/home)
 
-### Updates
-
-- **Nov 2023** - CorpusCompass article has been accepted at the [Ninth Italian Conference on Computational Linguistics](https://clic2023.ilc.cnr.it/accepted-papers/).
-- **Jun 2023** - CorpusCompass won a [DSC 2023 Research Engineering Support Grant](https://dsc.uva.nl/programmes/research-software-engineering-support/research-software-engineering.html) from the University Van Amsterdam.
-- **Nov 2022** - CorpusCompass Version 1.0.0 is published on GitHub CorpusCompass won the 
