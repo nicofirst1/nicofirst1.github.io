@@ -3,8 +3,9 @@ title: MAS Traffic Control
 subtitle: Interaction between autonomous and human drivers
 custom_id: masTraffic
 tag: past
-custom_url: https://github.com/nicofirst1/MAS-Traffic-Control
 image: /assets/images/projects/mas-traffic.jpg
+button_link: https://github.com/nicofirst1/MAS-Traffic-Control
+button_name: get code
 ---
 
 ### Summary
@@ -22,4 +23,4 @@ In "Simulating Autonomous and Human-Driven Vehicles in Traffic Intersections" th
 
 ### Our project
 
-[Our project](https://github.com/nicofirst1/MAS-Traffic-Contr) is focus on investigating different behavior for AA in this context. Specifically we want to model a context in which there are self-centeredness vs cooperative agents. Self-centered agents would behave more Humans Agents [HA] (no communication whatsoever) but with faster reflexes and wider FOVs.
+Our project is focus on investigating different behavior for AA in this context. Specifically we want to model a context in which there are self-centeredness vs cooperative agents. Self-centered agents would behave more Humans Agents [HA] (no communication whatsoever) but with faster reflexes and wider FOVs.

@@ -2,10 +2,10 @@
 title: R2Net Kernel
 subtitle:  Rising Researchers Network - Kernel Member
 custom_id: r2netKernel
-custom_url: https://claire-ai.org/r2network/
 tag: current
 image: /assets/images/projects/r2net_kernel.jpg
-custom_button: join us!
+button_link: https://claire-ai.org/r2network/
+button_name: Join us!
 ---
 
 ## CLAIRE
