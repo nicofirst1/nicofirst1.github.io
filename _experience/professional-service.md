@@ -1,7 +1,7 @@
 ---
-title: PROFESSIONAL SERVICE
+title: RESEARCH COLLABORATOR
 image: /assets/images/sapienza_logo.png
-period: 07/2021 - 09/2021
+period: 02/2021 - 09/2021
 order: 1
 ---
 

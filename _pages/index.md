@@ -18,5 +18,5 @@ style: /assets/css/education.css
 
 {% include home/hero.html %}
 {% include home/activity.html %}
-{% include home/education.html data='education' title='EDUCATION' %}
 {% include home/education.html data='experience' title='WORKING EXPERIENCES ' %}
+{% include home/education.html data='education' title='EDUCATION' %}

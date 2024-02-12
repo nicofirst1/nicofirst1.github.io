@@ -1,7 +1,7 @@
 ---
 title: Doctor of Philosophy
 image: /assets/images/sapienza_logo.png
-period: 2020 - Ongoing
+period: 2020 - 2024
 order: 3
 ---
 #### Ph.D. in Computer Science
