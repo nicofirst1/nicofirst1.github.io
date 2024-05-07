@@ -4,7 +4,7 @@ _site
 .jekyll-metadata
 .bundle
 vendor
-
+node_modules
 assets/.DS_Store
 
-.DS_Store
+*.DS_Store

@@ -152,7 +152,10 @@
     .pub.preprint {
         background-color: #8b6914;
     }
-
+    .pub.phdthesis {
+        background-color: #b813de;
+    }
+ 
 
     .inproceedings {
         background-color: #1bbc9b;
@@ -168,8 +171,16 @@
         box-sizing: border-box;
     }
 
+    // #pubTablepubchart .year {
+    //     width: 20%;
+    // }
+
+
+    
     #pubTablepubchart .year {
-        width: 33.333333333333336%;
+        flex: 1 0 20%;            /* Flex grow, flex shrink, and basis set to 20% */
+        max-width: 20%;           /* Max width set to 20% to enforce uniformity */
+        box-sizing: border-box;   /* Include padding and border in the element's width */
     }
 
     .year {

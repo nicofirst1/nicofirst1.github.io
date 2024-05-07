@@ -1,15 +1,14 @@
 --- 
 layout: default
-title: Nicolo' Brandizzi
+title: Dr. Nicolo' Brandizzi
 subtitle: Computer Science Engineer
 image: /assets/images/profile_picture.jpg
 hero_bg: /assets/images/hero.jpg
 description: |
-  PhD Candidate researching
+  AI Researcher focusing on   Reinforcement Learning 
+
+  and Natural Language Processing
   
-  Reinforcement Learning and Language (NLP) 
-  
-  at DIAG, Sapienza University of Rome, IT.
   
 page_id: home
 permalink: /

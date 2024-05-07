@@ -128,6 +128,9 @@
 .publications .pub.preprint {
   background-color: #8b6914;
 }
+.publications .pub.phdthesis {
+  background-color: #b813de;
+}
 .publications .inproceedings {
   background-color: #1bbc9b;
 }
@@ -140,7 +143,9 @@
   box-sizing: border-box;
 }
 .publications #pubTablepubchart .year {
-  width: 33.3333333333%;
+  flex: 1 0 20%; /* Flex grow, flex shrink, and basis set to 20% */
+  max-width: 20%; /* Max width set to 20% to enforce uniformity */
+  box-sizing: border-box; /* Include padding and border in the element's width */
 }
 .publications .year {
   position: relative;

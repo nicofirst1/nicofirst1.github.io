@@ -688,6 +688,9 @@ video {
 .w-full {
   width: 100%;
 }
+.shrink {
+  flex-shrink: 1;
+}
 .grow {
   flex-grow: 1;
 }
