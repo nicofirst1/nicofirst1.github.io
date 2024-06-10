@@ -7,4 +7,6 @@ vendor
 node_modules
 assets/.DS_Store
 
+
 *.DS_Store
+node_modules/

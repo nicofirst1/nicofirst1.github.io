@@ -17,7 +17,7 @@ The website is made with [Jekyll](https://jekyllrb.com/). To start the server in
 While in the current directory.
 
 If you have some dependency issue you first need to install them with:
-```
+```bash
 bundle install 
 ```
 
