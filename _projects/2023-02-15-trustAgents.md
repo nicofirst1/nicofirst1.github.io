@@ -2,7 +2,7 @@
 title: Trust Your Agents
 subtitle: Mixed Human-Machine Cooperation Based on Model-Based, Hierarchical and Communication-Augmented Reinforcement Learning
 custom_id: trust-agents
-tag: current
+tag: past
 image: /assets/images/projects/trustyouragent.png
 button_link: https://sites.google.com/diag.uniroma1.it/trust-your-agents/home
 button_name: go to website
