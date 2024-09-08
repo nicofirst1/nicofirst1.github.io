@@ -21,7 +21,7 @@ If you have some dependency issue you first need to install them with:
 bundle install 
 ```
 
-### Local build
+
 
 1. `yarn && bundle` or `npm i && bundle` - only the first time
 2. after some edits
