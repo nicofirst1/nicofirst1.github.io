@@ -359,6 +359,14 @@ li {
   color: #fff;
 }
 
+.dark a {
+  color: #9ae1ff;
+  text-decoration: underline;
+}
+.dark a:hover {
+  color: #7fcdff;
+}
+
 @media (min-width: 600px) {
   .mode-switch {
     align-content: center;
