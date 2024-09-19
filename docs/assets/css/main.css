@@ -937,6 +937,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.underline {
+  text-decoration-line: underline;
+}
 .opacity-20 {
   opacity: 0.2;
 }
