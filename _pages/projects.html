@@ -5,31 +5,33 @@ description: NICOLO' BRANDIZZI - current and past projects
 image: /assets/images/big-data.jpg
 page_id: projects
 ---
+
 <section class="projects container pt-2 lg:pt-9">
     <h1 class="font-bold text-5xl">{{page.title}}</h1>
-    <div class="current_projects">
-        <h2 class="current_title  ">Current Projects</h2>
-            <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4	">
-                {% assign sorted = site.projects | sort: 'date' | reverse %}
-                {% for post in sorted %}
-                {% if post.tag!='current' %}
-                {% continue %}
+    
+    <!-- Current Projects -->
+    <div class="current_projects my-10">
+        <h2 class="current_title text-3xl">Current Projects</h2>
+        <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {% assign sorted = site.projects | sort: 'date' | reverse %}
+            {% for post in sorted %}
+                {% if post.tag == 'current' %}
+                    {% include project_card.html %}
                 {% endif %}
-                {% include project_card.html %}
-                {% endfor %}
-            </div>
+            {% endfor %}
+        </div>
     </div>
-</section>
-
-<section class="past_projects container my-10">
-    <h2 class="current_title">Past Projects</h2>
-    <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {% assign sorted = site.projects | sort: 'date' | reverse %}
-        {% for post in sorted %}
-        {% if post.tag!='past' %}
-        {% continue %}
-        {% endif %}
-        {% include project_card.html %}
-        {% endfor %}
+    
+    <!-- Past Projects -->
+    <div class="past_projects my-10">
+        <h2 class="current_title text-3xl">Past Projects</h2>
+        <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {% assign sorted = site.projects | sort: 'date' | reverse %}
+            {% for post in sorted %}
+                {% if post.tag == 'past' %}
+                    {% include project_card.html %}
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </section>

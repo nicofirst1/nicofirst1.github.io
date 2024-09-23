@@ -1,24 +1,35 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-W2MPFHELZG');
+  <!-- Conditionally load Google Analytics -->
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost") {
+      // Google Analytics Global Site Tag (gtag.js)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function() {
+        gtag('config', 'G-W2MPFHELZG');
+      };
+    }
   </script>
 
   {% seo %}
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{site.baseurl}}/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{site.baseurl}}/favicon-16x16.png">
-  <link rel="manifest" href="{{site.baseurl}}/site.webmanifest">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicon-16x16.png">
+  <link rel="manifest" href="{{ site.baseurl }}/site.webmanifest">
   {%- if page.style -%}
-  <link rel="stylesheet" href="{{page.style | relative_url}}">
+  <link rel="stylesheet" href="{{ page.style | relative_url }}">
   {%- endif -%}
 </head>

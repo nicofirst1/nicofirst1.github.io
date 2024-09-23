@@ -1,13 +1,15 @@
 <section class="p-2 w-full h-full">
     <a href="{{post.url}}">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">{{post.title}}</h3>
                 <p>{{post.subtitle}}</p>
                 <p class="text-sm my-4">{{post.date | date: ' %b %d, %Y' }}</p>
             </div>
             {%- if post.image -%}
-            <img src="{{post.image | relative_url}}" alt="{{post.title}}" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            <div class="project-image">
+                <img src="{{post.image | relative_url}}" alt="{{post.title}}" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div>
             {%- endif -%}
         </div>
     </a>
