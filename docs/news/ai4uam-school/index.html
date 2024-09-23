@@ -2,14 +2,25 @@
 <html lang="en"><head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-W2MPFHELZG');
+  <!-- Conditionally load Google Analytics -->
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost") {
+      // Google Analytics Global Site Tag (gtag.js)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function() {
+        gtag('config', 'G-W2MPFHELZG');
+      };
+    }
   </script>
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -36,7 +47,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest"></head><header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+  <link rel="manifest" href="/site.webmanifest"></head>
+<header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
     <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
         <div class="hamburger item">
             <span></span>
@@ -138,14 +150,17 @@ const themeModeSwitch = (() => {
 })();
 
 </script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
-  <main class="min-h-[80vh] flex flex-col gap-6" >
-<section class="pt-24">
-  <div class="container pb-6">
-    <h1 class="text-5xl font-bold">
+  <main class="news-post min-h-[80vh] flex flex-col gap-6">
+  <section class="pt-24">
+    <div class="container pb-6">
+      <h1 class="text-5xl font-bold">
         Artificial Intelligence for Urban Air Mobility
-    </h1>
-    <b>PhD</b>
-    <p class="text-sm mb-3">Sep 05, 2022</p><div class="zoom_outer"><img src="/assets/images/news/ai4uam.jpg" alt="hero image" class="w-full md:pr-8 pb-8 md:w-1/2 xl:w-1/3 float-left"></div><div class="page_content "><p>I will be joining and organizing the <a href="https://sites.google.com/view/ai4uam/home">AI4UAM summerschool</a> at Sapienza university or Rome this september.</p>
+      </h1>
+      <b>PhD</b>
+      <p class="text-sm mb-3">Sep 05, 2022</p><div class="post-image">
+        <img src="/assets/images/news/ai4uam.jpg" alt="hero image">
+      </div><div class="page_content">
+          <p>I will be joining and organizing the <a href="https://sites.google.com/view/ai4uam/home">AI4UAM summerschool</a> at Sapienza university or Rome this september.</p>
 
 <h2 id="abstract">Abstract</h2>
 
@@ -160,11 +175,13 @@ const themeModeSwitch = (() => {
 <p>AI4UAM has been organized within the BUBBLES UE project.</p>
 
 <p>BUBBLES is aimed to contribute to the safe and efficient use of UAS in the European Sky supported by SESAR JU. This project will define U-space services enabling the safe and efficient operation of large numbers of drones without adversely affecting manned aviation.</p>
-</div>
+
+      </div>
+
       
-  </div>
-</section>
-<div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/emeima-presentation/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← CLAIRE R2Net - Lightning Talks</a><a href="/news/rmm/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">Training School - Representation mediated Multimodality →</a></div>
+    </div>
+  </section>
+  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/emeima-presentation/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← CLAIRE R2Net - Lightning Talks</a><a href="/news/rmm/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">Training School - Representation mediated Multimodality →</a></div>
 </main><script>
 const clicableImages = document.querySelectorAll(".zoom_outer");
 if (clicableImages.length > 0) {

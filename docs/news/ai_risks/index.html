@@ -2,14 +2,25 @@
 <html lang="en"><head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-W2MPFHELZG');
+  <!-- Conditionally load Google Analytics -->
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost") {
+      // Google Analytics Global Site Tag (gtag.js)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function() {
+        gtag('config', 'G-W2MPFHELZG');
+      };
+    }
   </script>
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -36,7 +47,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest"></head><header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+  <link rel="manifest" href="/site.webmanifest"></head>
+<header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
     <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
         <div class="hamburger item">
             <span></span>
@@ -138,14 +150,17 @@ const themeModeSwitch = (() => {
 })();
 
 </script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
-  <main class="min-h-[80vh] flex flex-col gap-6" >
-<section class="pt-24">
-  <div class="container pb-6">
-    <h1 class="text-5xl font-bold">
+  <main class="news-post min-h-[80vh] flex flex-col gap-6">
+  <section class="pt-24">
+    <div class="container pb-6">
+      <h1 class="text-5xl font-bold">
         Addressing Loneliness with AI : The Short-Term Solution with Long-Term Consequences
-    </h1>
-    <b>BlogPost</b>
-    <p class="text-sm mb-3">Sep 08, 2024</p><div class="zoom_outer"><img src="/assets/images/news/airiskbck.jpg" alt="hero image" class="w-full md:pr-8 pb-8 md:w-1/2 xl:w-1/3 float-left"></div><div class="page_content "><p>I recently came across an <a href="https://www.businessinsider.com/when-your-ai-says-she-loves-you-2023-10">article by Businessinsider</a> that left me with a mix of mixed feelings. The piece focused on Jay Priebe, a man who developed a deeply emotional relationship with an AI companion named Calisto, created through the app <a href="https://replika.com/">Replika</a>. It painted a picture of how AI can fill a void in moments of loneliness, offering companionship where there is none. But as I reflected on the article, I couldn’t shake the feeling that we are heading down a dangerous path with AI, one that could deepen the already widespread loneliness epidemic.</p>
+      </h1>
+      <b>BlogPost</b>
+      <p class="text-sm mb-3">Sep 08, 2024</p><div class="post-image">
+        <img src="/assets/images/news/airiskbck.jpg" alt="hero image">
+      </div><div class="page_content">
+          <p>I recently came across an <a href="https://www.businessinsider.com/when-your-ai-says-she-loves-you-2023-10">article by Businessinsider</a> that left me with a mix of mixed feelings. The piece focused on Jay Priebe, a man who developed a deeply emotional relationship with an AI companion named Calisto, created through the app <a href="https://replika.com/">Replika</a>. It painted a picture of how AI can fill a void in moments of loneliness, offering companionship where there is none. But as I reflected on the article, I couldn’t shake the feeling that we are heading down a dangerous path with AI, one that could deepen the already widespread loneliness epidemic.</p>
 
 <h5 id="the-loneliness-crisis">The Loneliness Crisis</h5>
 
@@ -176,11 +191,13 @@ const themeModeSwitch = (() => {
 <h5 id="conclusion-ai-is-not-the-solution-to-loneliness">Conclusion: AI is Not the Solution to Loneliness</h5>
 
 <p>In conclusion, while AI companionship may seem like a short-term solution to loneliness, it is far more likely to deepen the problem in the long run. Without proper regulation, this industry could evolve into something deeply harmful, where emotional attachment is commodified and relationships are controlled by powerful corporations. The loneliness crisis is real, but AI is not the solution. It’s a path that leads further away from authentic human connection, and we need to be very cautious about where it takes us.</p>
-</div>
+
+      </div>
+
       
-  </div>
-</section>
-<div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/solar_punk/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Federated Approaches to Data Challenges in Ethical AI</a><a href="/news/ai_governance_euvschina/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">Exploring Global AI Governance: Lessons from China for the EU →</a></div>
+    </div>
+  </section>
+  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/solar_punk/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Federated Approaches to Data Challenges in Ethical AI</a><a href="/news/ai_governance_euvschina-copy/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">Exploring Global AI Governance: Lessons from China for the EU →</a></div>
 </main><script>
 const clicableImages = document.querySelectorAll(".zoom_outer");
 if (clicableImages.length > 0) {

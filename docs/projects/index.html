@@ -2,14 +2,25 @@
 <html lang="en"><head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-W2MPFHELZG');
+  <!-- Conditionally load Google Analytics -->
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost") {
+      // Google Analytics Global Site Tag (gtag.js)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function() {
+        gtag('config', 'G-W2MPFHELZG');
+      };
+    }
   </script>
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -23,12 +34,12 @@
 <meta property="og:url" content="/projects/" />
 <meta property="og:image" content="/assets/images/big-data.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-09-19T14:50:06+02:00" />
+<meta property="article:published_time" content="2024-09-23T17:12:29+02:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="/assets/images/big-data.jpg" />
 <meta property="twitter:title" content="Projects" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-19T14:50:06+02:00","datePublished":"2024-09-19T14:50:06+02:00","description":"NICOLO’ BRANDIZZI - current and past projects","headline":"Projects","image":"/assets/images/big-data.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/projects/"},"url":"/projects/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-23T17:12:29+02:00","datePublished":"2024-09-23T17:12:29+02:00","description":"NICOLO’ BRANDIZZI - current and past projects","headline":"Projects","image":"/assets/images/big-data.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/projects/"},"url":"/projects/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -36,7 +47,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest"></head><header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+  <link rel="manifest" href="/site.webmanifest"></head>
+<header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
     <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
         <div class="hamburger item">
             <span></span>
@@ -140,300 +152,383 @@ const themeModeSwitch = (() => {
 </script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
   <section class="projects container pt-2 lg:pt-9">
     <h1 class="font-bold text-5xl">Projects</h1>
-    <div class="current_projects">
-        <h2 class="current_title  ">Current Projects</h2>
-            <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4	">
+    
+    <!-- Current Projects -->
+    <div class="current_projects my-10">
+        <h2 class="current_title text-3xl">Current Projects</h2>
+        <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            
                 
-                
-                
-                <section class="p-2 w-full h-full">
+                    <section class="p-2 w-full h-full">
     <a href="/projects/fraunhofer_projects/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">Responsibilities at Fraunhofer IAIS</h3>
                 <p></p>
                 <p class="text-sm my-4"> Sep 08, 2024</p>
-            </div><img src="/assets/images/projects/fraunhofer_icon.jpg" alt="Responsibilities at Fraunhofer IAIS" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/fraunhofer_icon.jpg" alt="Responsibilities at Fraunhofer IAIS" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
+
                 
+            
                 
+            
                 
-                
-                <section class="p-2 w-full h-full">
+                    <section class="p-2 w-full h-full">
     <a href="/projects/ai_mental_wellbeing/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">Addressing Mental Health in AI Research</h3>
                 <p>Raising awareness</p>
                 <p class="text-sm my-4"> Jul 01, 2024</p>
-            </div><img src="/assets/images/projects/ai-mental-wellbeing.jpg" alt="Addressing Mental Health in AI Research" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/ai-mental-wellbeing.jpg" alt="Addressing Mental Health in AI Research" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
+
                 
+            
                 
-                <section class="p-2 w-full h-full">
+                    <section class="p-2 w-full h-full">
     <a href="/projects/corpus_compass/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">CorpusCompass</h3>
                 <p>A tool for linguistic dataset creation</p>
                 <p class="text-sm my-4"> Oct 12, 2023</p>
-            </div><img src="/assets/images/projects/corpusCompassLogo.jpg" alt="CorpusCompass" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/corpusCompassLogo.jpg" alt="CorpusCompass" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
+
                 
+            
                 
+            
                 
+            
                 
+            
                 
+            
                 
-                
-                
-                
-                
-                <section class="p-2 w-full h-full">
+                    <section class="p-2 w-full h-full">
     <a href="/projects/r2netKernel/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">R2Net Kernel</h3>
                 <p>Rising Researchers Network - Kernel Member</p>
                 <p class="text-sm my-4"> Jan 20, 2023</p>
-            </div><img src="/assets/images/projects/r2net_kernel.jpg" alt="R2Net Kernel" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/r2net_kernel.jpg" alt="R2Net Kernel" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-            </div>
-    </div>
-</section>
 
-<section class="past_projects container my-10">
-    <h2 class="current_title">Past Projects</h2>
-    <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        
-        
-        
-        
-        
-        <section class="p-2 w-full h-full">
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+    </div>
+    
+    <!-- Past Projects -->
+    <div class="past_projects my-10">
+        <h2 class="current_title text-3xl">Past Projects</h2>
+        <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/r2net_workshop2/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">R2Net Workshop 2.0</h3>
                 <p>AI Research & Mental Well-Being</p>
                 <p class="text-sm my-4"> Jul 14, 2024</p>
-            </div><img src="/assets/images/projects/r2networkshop.png" alt="R2Net Workshop 2.0" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/r2networkshop.png" alt="R2Net Workshop 2.0" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        
-        
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+            
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/r2net_workshop/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">R2Net Workshop</h3>
                 <p>AI Research & Mental Well-Being</p>
                 <p class="text-sm my-4"> Jul 23, 2023</p>
-            </div><img src="/assets/images/projects/r2networkshop.png" alt="R2Net Workshop" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/r2networkshop.png" alt="R2Net Workshop" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/multitrust_workshop/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">MultiTTrust Workshop</h3>
                 <p>Workshop on Multidisciplinary Perspectives on Human-AI Team Trust</p>
                 <p class="text-sm my-4"> Jul 23, 2023</p>
-            </div><img src="/assets/images/projects/handshake.png" alt="MultiTTrust Workshop" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/handshake.png" alt="MultiTTrust Workshop" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/slayler/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">Speaking the Language of Your Listener</h3>
                 <p>Audience-Aware Adaptation via Plug-and-Play Theory of Mind</p>
                 <p class="text-sm my-4"> Jun 01, 2023</p>
-            </div><img src="/assets/images/projects/slayler_poster.svg" alt="Speaking the Language of Your Listener" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/slayler_poster.svg" alt="Speaking the Language of Your Listener" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/trustAgents/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">Trust Your Agents</h3>
                 <p>Mixed Human-Machine Cooperation Based on Model-Based, Hierarchical and Communication-Augmented Reinforcement Learning</p>
                 <p class="text-sm my-4"> Feb 15, 2023</p>
-            </div><img src="/assets/images/projects/trustyouragent.png" alt="Trust Your Agents" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/trustyouragent.png" alt="Trust Your Agents" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/sophia/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">SOPhIA</h3>
                 <p>Sustainable Oncologic Prevention through Artificial Intelligence</p>
                 <p class="text-sm my-4"> Jul 01, 2022</p>
-            </div><img src="/assets/images/news/sophia_onor.png" alt="SOPhIA" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/news/sophia_onor.png" alt="SOPhIA" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/atcenv/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">AtcEnv</h3>
                 <p>Conflict resolution for Autonomous Drones</p>
                 <p class="text-sm my-4"> Mar 10, 2022</p>
-            </div><img src="/assets/images/projects/eurocontrol_logo.svg" alt="AtcEnv" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/eurocontrol_logo.svg" alt="AtcEnv" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/mambrl/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">MAMBRL</h3>
                 <p>Multi agent model based reinforcement learning</p>
                 <p class="text-sm my-4"> Oct 01, 2021</p>
-            </div><img src="/assets/images/projects/mambrl_logo.png" alt="MAMBRL" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/mambrl_logo.png" alt="MAMBRL" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/syl/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">SYL</h3>
                 <p>Save Your Life project</p>
                 <p class="text-sm my-4"> Sep 20, 2021</p>
-            </div><img src="/assets/images/news/syl.jpg" alt="SYL" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/news/syl.jpg" alt="SYL" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/egg/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">EGG</h3>
                 <p>Emergence of lanGuage in Games</p>
                 <p class="text-sm my-4"> Jan 09, 2021</p>
-            </div><img src="/assets/images/projects/egg.png" alt="EGG" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/egg.png" alt="EGG" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/ledyPi/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">LedyPi</h3>
                 <p>Control you led strip with RaspberryPi and Python.</p>
                 <p class="text-sm my-4"> Sep 30, 2020</p>
-            </div><img src="/assets/images/projects/ledypi.gif" alt="LedyPi" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/ledypi.gif" alt="LedyPi" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/RLupus/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">Reinforce Lupus</h3>
                 <p>Cooperation through emergent communication in The Werewolf social deduction game</p>
                 <p class="text-sm my-4"> Sep 26, 2020</p>
-            </div><img src="/assets/images/projects/rl_werewolf.png" alt="Reinforce Lupus" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/rl_werewolf.png" alt="Reinforce Lupus" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/MAS_traffic/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">MAS Traffic Control</h3>
                 <p>Interaction between autonomous and human drivers</p>
                 <p class="text-sm my-4"> Oct 03, 2019</p>
-            </div><img src="/assets/images/projects/mas-traffic.jpg" alt="MAS Traffic Control" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/mas-traffic.jpg" alt="MAS Traffic Control" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/robotic_toolbox/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">Robotic toolbox</h3>
                 <p>A simple matlab toolbox for first time robotic students</p>
                 <p class="text-sm my-4"> Sep 13, 2019</p>
-            </div><img src="/assets/images/projects/robotic.svg" alt="Robotic toolbox" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/robotic.svg" alt="Robotic toolbox" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/motionbot/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">MotionBot</h3>
                 <p>An easy to implement project for home-made security system</p>
                 <p class="text-sm my-4"> Feb 19, 2019</p>
-            </div><img src="/assets/images/projects/motionbot.gif" alt="MotionBot" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/motionbot.gif" alt="MotionBot" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
-        
-        <section class="p-2 w-full h-full">
+
+                
+            
+                
+                    <section class="p-2 w-full h-full">
     <a href="/projects/AiNotes/">
         <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="heading p-5">
+            <div class="project_heading p-5">
                 <h3 class="text-2xl mt-0">AI Notes</h3>
                 <p>Taken from the class Artificial Intelligence at the Sapienza University of Rome.</p>
                 <p class="text-sm my-4"> Feb 12, 2019</p>
-            </div><img src="/assets/images/projects/ai-notes.png" alt="AI Notes" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg"></div>
+            </div><div class="project-image">
+                <img src="/assets/images/projects/ai-notes.png" alt="AI Notes" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
+            </div></div>
     </a>
 </section>
-        
+
+                
+            
+        </div>
     </div>
 </section>
 

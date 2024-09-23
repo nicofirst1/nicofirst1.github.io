@@ -620,9 +620,6 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
-.mt-5 {
-  margin-top: 1.25rem;
-}
 .mt-auto {
   margin-top: auto;
 }
@@ -649,9 +646,6 @@ video {
 }
 .hidden {
   display: none;
-}
-.h-40 {
-  height: 10rem;
 }
 .h-8 {
   height: 2rem;
@@ -690,9 +684,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.flex-shrink-0 {
-  flex-shrink: 0;
 }
 .shrink {
   flex-shrink: 1;
