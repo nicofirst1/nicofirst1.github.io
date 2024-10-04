@@ -1,0 +1,25 @@
+---
+layout: default
+title: EU AI Landscape
+description: Visualization of AI activities and connections in the EU
+page_id: euai_graph
+---
+<section class="graph" style="display: flex; width: 100vw; height: 100vh; margin: 0; padding: 0;">
+    <!-- Sidebar for node information -->
+    <div id="info-sidebar" style="width: 400px; height: 100%; padding: 20px; border-right: 1px solid #ddd; background-color: #f9f9f9; overflow-y: auto;">
+        <h2 class="font-bold text-3xl" style="margin-bottom: 20px;">Node Information</h2>
+        <h3 id="node-info-title" style="font-size: 15px; font-weight: italic;">(Click on  a Node to check it's information)</h3>
+        <div id="node-info-content" style="font-size: 17px; line-height: 1.5;"></div>
+    </div>
+
+    <!-- Graph Container for D3 Visualization -->
+    <div id="graph-container" style="flex: 1; width: 100%; height: 100%;">    </div>
+</section>
+
+<!-- Load the D3.js Library -->
+<script>
+    const euAIdataUrl = "{{ '/assets/data/euai_data.json' | relative_url }}";
+</script>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- Load the custom JavaScript file from the js directory -->
+<script src="{{ 'assets/js/euai_graph.js' | relative_url }}"></script>

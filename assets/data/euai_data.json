@@ -1,0 +1,455 @@
+{
+    "nodes": [
+        {
+            "id": "CPoAI",
+            "fullname": "Coordinated Plan on Artificial Intelligence",
+            "showname": "Coordinated Plan on AI",
+            "category": "Policy",
+            "url": ""
+        },
+        {
+            "id": "enablingAi",
+            "fullname": "Enabling conditions for AI\u2019s development and uptake",
+            "showname": "Enabling AI",
+            "category": "Policy",
+            "url": ""
+        },
+        {
+            "id": "aifactories",
+            "fullname": "AI Factories",
+            "showname": "AI Factories",
+            "category": "Policy",
+            "url": ""
+        },
+        {
+            "id": "EUHPCJU",
+            "fullname": "EU HPC Joint Undertaking",
+            "showname": "EU HPC JU",
+            "category": "??",
+            "url": ""
+        },
+        {
+            "id": "GenAI4EU",
+            "fullname": "GenAI4EU",
+            "showname": "GenAI4EU",
+            "category": "",
+            "url": ""
+        },
+        {
+            "id": "aiLabMarket",
+            "fullname": "Thriving from the Lab to the Market",
+            "showname": "AI Lab Market",
+            "category": "",
+            "url": ""
+        },
+        {
+            "id": "ADRA",
+            "fullname": "AI Data Robotics Association",
+            "showname": "ADRA",
+            "category": "Organization",
+            "url": ""
+        },
+        {
+            "id": "GreenDgt",
+            "fullname": "Green Digital",
+            "showname": "Green Digital",
+            "category": "Policy",
+            "url": ""
+        },
+        {
+            "id": "aiPeople",
+            "fullname": "Ensuring that AI works for people",
+            "showname": "AI People",
+            "category": "Policy",
+            "url": ""
+        },
+        {
+            "id": "europesDigitalDecade",
+            "fullname": "Digital Decade",
+            "showname": "Europe's Digital Decade",
+            "category": "Framework",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade"
+        },
+        {
+            "id": "internationalOutreachAi",
+            "fullname": "International outreach for human-centric artificial intelligence initiative",
+            "showname": "International Outreach AI",
+            "category": "Project",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/international-outreach-ai"
+        },
+        {
+            "id": "MSCA",
+            "fullname": "Sk\u0142odowska-Curie actions",
+            "showname": "MSCA",
+            "category": "Fund",
+            "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/"
+        },
+        {
+            "id": "SkillAgenda",
+            "fullname": "Skill Agenda",
+            "showname": "Skill Agenda",
+            "category": "Agenda",
+            "url": "https://ec.europa.eu/social/main.jsp?catId=1223&langId=en"
+        },
+        {
+            "id": "buildLeadershipAi",
+            "fullname": "Build strategic leadership in high-impact sectors",
+            "showname": "Build Leadership AI",
+            "category": "",
+            "url": ""
+        },
+        {
+            "id": "BDVA",
+            "fullname": "Big Data Value Association",
+            "showname": "BDVA",
+            "category": "Organization",
+            "url": ""
+        },
+        {
+            "id": "CLAIRE",
+            "fullname": "Confederation of Laboratories for Artificial Intelligence Research in Europe",
+            "showname": "CLAIRE",
+            "category": "Organization",
+            "url": ""
+        },
+        {
+            "id": "ELLIS",
+            "fullname": "European Laboratory for Learning and Intelligent Systems",
+            "showname": "ELLIS",
+            "category": "Organization",
+            "url": ""
+        },
+        {
+            "id": "EurAI",
+            "fullname": "European Association for Artificial Intelligence",
+            "showname": "EurAI",
+            "category": "Organization",
+            "url": ""
+        },
+        {
+            "id": "euRobotics",
+            "fullname": "European Robotic Forum",
+            "showname": "euRobotics",
+            "category": "Organization",
+            "url": ""
+        },
+        {
+            "id": "NoEs",
+            "fullname": "Networks of Excellence Centres",
+            "showname": "NoEs",
+            "category": "Network",
+            "url": ""
+        },
+        {
+            "id": "AI4media",
+            "fullname": "AI4media",
+            "showname": "AI4media",
+            "category": "Project",
+            "url": "https://www.ai4media.eu/"
+        },
+        {
+            "id": "ELISE",
+            "fullname": "European Network of AI Excellence Centres",
+            "showname": "ELISE",
+            "category": "Project",
+            "url": "https://www.elise-ai.eu/"
+        },
+        {
+            "id": "HumaneAInet",
+            "fullname": "Humane-AI net",
+            "showname": "Humane AI net",
+            "category": "Project",
+            "url": "https://www.humane-ai.eu/"
+        },
+        {
+            "id": "TAILOR",
+            "fullname": "Trustworthy AI through the integration of learning, optimisation and reasoning",
+            "showname": "TAILOR",
+            "category": "Project",
+            "url": "https://tailor-network.eu/"
+        },
+        {
+            "id": "ELSA",
+            "fullname": "European Lighthouse on Secure and Safe AI",
+            "showname": "ELSA",
+            "category": "Project",
+            "url": "https://elsa-ai.eu/"
+        },
+        {
+            "id": "HorizonEU",
+            "fullname": "Horizon Europe",
+            "showname": "Horizon EU",
+            "category": "Fund",
+            "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en"
+        },
+        {
+            "id": "euROBIN",
+            "fullname": "euROBIN",
+            "showname": "euROBIN",
+            "category": "Project",
+            "url": "https://www.eurobin-project.eu/"
+        },
+        {
+            "id": "ELIAS",
+            "fullname": "European Lighthouse of AI for Sustainability",
+            "showname": "ELIAS",
+            "category": "Project",
+            "url": "https://elias-ai.eu/"
+        },
+        {
+            "id": "dAIedge",
+            "fullname": "A network of excellence for distributed, trustworthy, efficient and scalable AI at the Edge",
+            "showname": "dAIedge",
+            "category": "Project",
+            "url": "https://www.daiedge.eu/"
+        },
+        {
+            "id": "Enfield",
+            "fullname": "European Lighthouse to Manifest Trustworthy and Green AI",
+            "showname": "Enfield",
+            "category": "Project",
+            "url": "https://www.enfield-project.eu/"
+        },
+        {
+            "id": "EnablingAI",
+            "fullname": "Enabling conditions for AI’s development and uptake",
+            "showname": "Enabling AI",
+            "category": "Policy",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/enabling-ai"
+        },
+        {
+            "id": "DEAP",
+            "fullname": "Digital Education Action Plan",
+            "showname": "DEAP",
+            "category": "Plan",
+            "url": "https://education.ec.europa.eu/focus-topics/digital-education/action-plan"
+        }
+    ],
+    "links": [
+        {
+            "source": "CPoAI",
+            "target": "EnablingAI",
+            "reason": "funds"
+        },
+        {
+            "source": "CPoAI",
+            "target": "aiLabMarket",
+            "reason": "funds"
+        },
+        {
+            "source": "CPoAI",
+            "target": "aiPeople",
+            "reason": "funds"
+        },
+        {
+            "source": "CPoAI",
+            "target": "buildLeadershipAi",
+            "reason": "funds"
+        },
+        {
+            "source": "CPoAI",
+            "target": "GreenDgt",
+            "reason": "in line with"
+        },
+        {
+            "source": "enablingAi",
+            "target": "aifactories",
+            "reason": "creates"
+        },
+        {
+            "source": "enablingAi",
+            "target": "GenAI4EU",
+            "reason": "creates"
+        },
+        {
+            "source": "aifactories",
+            "target": "EUHPCJU",
+            "reason": "part of"
+        },
+        {
+            "source": "aifactories",
+            "target": "EnablingAI",
+            "reason": "created by"
+        },
+        {
+            "source": "EUHPCJU",
+            "target": "aifactories",
+            "reason": "coordinates"
+        },
+        {
+            "source": "GenAI4EU",
+            "target": "EnablingAI",
+            "reason": "created by"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "ADRA",
+            "reason": "creates"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "BDVA",
+            "reason": "cooperates with (for ADRA)"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "CLAIRE",
+            "reason": "cooperates with (for ADRA)"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "EurAI",
+            "reason": "cooperates with (for ADRA)"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "euRobotics",
+            "reason": "cooperates with (for ADRA)"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "ELLIS",
+            "reason": "cooperates with (for ADRA)"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "CPoAI",
+            "reason": "funded by"
+        },
+        {
+            "source": "ADRA",
+            "target": "aiLabMarket",
+            "reason": "created by"
+        },
+        {
+            "source": "ADRA",
+            "target": "NoEs",
+            "reason": "connected to"
+        },
+        {
+            "source": "aiPeople",
+            "target": "DEAP",
+            "reason": "supported by"
+        },
+        {
+            "source": "aiPeople",
+            "target": "NoEs",
+            "reason": "supports"
+        },
+        {
+            "source": "aiPeople",
+            "target": "MSCA",
+            "reason": "supports"
+        },
+        {
+            "source": "aiPeople",
+            "target": "SkillAgenda",
+            "reason": "supports"
+        },
+        {
+            "source": "aiPeople",
+            "target": "europesDigitalDecade",
+            "reason": "in line with"
+        },
+        {
+            "source": "aiPeople",
+            "target": "internationalOutreachAi",
+            "reason": "in line with"
+        },
+        {
+            "source": "NoEs",
+            "target": "AI4media",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "ELISE",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "HumaneAInet",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "TAILOR",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "ELSA",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "euROBIN",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "ELIAS",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "dAIedge",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "Enfield",
+            "reason": "contains"
+        },
+        {
+            "source": "AI4media",
+            "target": "NoEs",
+            "reason": "Part of"
+        },
+        {
+            "source": "ELISE",
+            "target": "NoEs",
+            "reason": "Part of"
+        },
+        {
+            "source": "HumaneAInet",
+            "target": "NoEs",
+            "reason": "Part of"
+        },
+        {
+            "source": "TAILOR",
+            "target": "NoEs",
+            "reason": "Part of"
+        },
+        {
+            "source": "ELSA",
+            "target": "NoEs",
+            "reason": "Part of"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "CPoAI",
+            "reason": "funds"
+        },
+        {
+            "source": "euROBIN",
+            "target": "NoEs",
+            "reason": "Part of"
+        },
+        {
+            "source": "ELIAS",
+            "target": "NoEs",
+            "reason": "Part of"
+        },
+        {
+            "source": "dAIedge",
+            "target": "NoEs",
+            "reason": "Part of"
+        },
+        {
+            "source": "Enfield",
+            "target": "NoEs",
+            "reason": "Part of"
+        }
+    ]
+}

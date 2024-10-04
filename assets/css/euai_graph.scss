@@ -1,0 +1,101 @@
+/* assets/css/ai_policy_graph.scss */
+
+/* Full-width and height for the graph container */
+#graph-container {
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  border: 1px solid #ddd; /* Optional border for visibility */
+  overflow: auto; /* Allow scrolling */
+}
+
+/* Style for nodes */
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+/* Style for links */
+.link {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+/* Style for node labels */
+.node-label {
+  font-size: 12px;
+  fill: #333;
+  pointer-events: none; /* Prevent interaction */
+}
+
+/* Style for link labels */
+.link-label {
+  font-size: 10px;
+  fill: #666;
+  pointer-events: none; /* Prevent interaction */
+}
+
+/* Tooltip styling */
+.tooltip {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for hovered nodes or links */
+.node:hover,
+.link:hover {
+  stroke: #ffa500; /* Change color on hover */
+  cursor: pointer;
+}
+
+/* HTML-based tooltip styling */
+.html-tooltip {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 10; /* Ensure tooltip is on top of other elements */
+  pointer-events: auto; /* Enable interaction with tooltip content */
+}
+
+.html-tooltip div {
+  margin-bottom: 5px; /* Space between fields */
+}
+
+.html-tooltip ul {
+  list-style: none; /* Remove default bullet points */
+  padding-left: 0;
+}
+
+.html-tooltip li {
+  margin-bottom: 5px; /* Space between list items */
+}
+
+.html-tooltip a {
+  color: blue; /* Make links blue */
+  text-decoration: underline; /* Underline clickable links */
+}
+
+/* Close button style for tooltip */
+#close-tooltip {
+  color: red; /* Style close button */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Style for the connections list in the sidebar */
+#node-info-content ul {
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 0; /* Remove default padding */
+  margin: 0;
+}
+
+#node-info-content li {
+  background: #f1f1f1;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+}
