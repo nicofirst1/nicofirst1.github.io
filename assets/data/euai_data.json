@@ -1,38 +1,69 @@
 {
     "nodes": [
         {
-            "id": "CPoAI",
+            "id": "planAi",
             "fullname": "Coordinated Plan on Artificial Intelligence",
             "showname": "Coordinated Plan on AI",
             "category": "Policy",
-            "url": ""
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/plan-ai"
         },
         {
-            "id": "enablingAi",
-            "fullname": "Enabling conditions for AI\u2019s development and uptake",
-            "showname": "Enabling AI",
-            "category": "Policy",
-            "url": ""
+            "id": "recoveryResilienceFacility",
+            "fullname": "Recovery and Resilience Facility",
+            "showname": "Recovery and Resilience Facility",
+            "category": "Fund",
+            "url": "https://next-generation-eu.europa.eu/recovery-and-resilience-facility_en"
         },
+        {
+            "id": "euaioffice",
+            "fullname": "European Union Artificial Intelligence Office",
+            "showname": "EU AI Office",
+            "category": "Organization",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-office"
+        },
+        {
+            "id": "transitionpathways",
+            "fullname": "Transition pathways for European industrial ecosystems",
+            "showname": "Transition Pathways",
+            "category": "Strategy",
+            "url": "https://single-market-economy.ec.europa.eu/industry/transition-pathways_en"
+        },
+        {
+            "id": "DIGITAL",
+            "fullname": "The Digital Europe Programme",
+            "showname": "Digital Programme",
+            "category": "Activity",
+            "url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme"
+        },
+       
         {
             "id": "aifactories",
             "fullname": "AI Factories",
             "showname": "AI Factories",
-            "category": "Policy",
-            "url": ""
+            "category": "Initiative",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-factories",
+            "start date": "2025",
+            "description": ""
         },
         {
             "id": "EUHPCJU",
-            "fullname": "EU HPC Joint Undertaking",
-            "showname": "EU HPC JU",
+            "fullname": "The European High Performance Computing Joint Undertaking",
+            "showname": "EuroHPC JU",
             "category": "??",
             "url": ""
         },
         {
+            "id": "InvestEU",
+            "fullname": "InvestEU",
+            "showname": "InvestEU",
+            "category": "Fund",
+            "url": "https://investeu.europa.eu/index_en"
+        },
+        {
             "id": "GenAI4EU",
             "fullname": "GenAI4EU",
-            "showname": "GenAI4EU",
-            "category": "",
+            "showname": "GenAI4EU", 
+            "category": "Initiative",
             "url": ""
         },
         {
@@ -218,6 +249,13 @@
             "url": "https://digital-strategy.ec.europa.eu/en/policies/enabling-ai"
         },
         {
+            "id": "dataspaces",
+            "fullname": "Common European Data Spaces",
+            "showname": "Data Spaces",
+            "category": "Policy",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/data-spaces"
+        },
+        {
             "id": "DEAP",
             "fullname": "Digital Education Action Plan",
             "showname": "DEAP",
@@ -227,44 +265,94 @@
     ],
     "links": [
         {
-            "source": "CPoAI",
+            "source": "recoveryResilienceFacility",
+            "target": "planAi",
+            "reason": "funds"
+        },
+        {
+            "source": "DIGITAL",
+            "target": "planAi",
+            "reason": "funds"
+        },
+        {
+            "source": "planAi",
             "target": "EnablingAI",
             "reason": "funds"
         },
         {
-            "source": "CPoAI",
+            "source": "planAi",
             "target": "aiLabMarket",
             "reason": "funds"
         },
         {
-            "source": "CPoAI",
+            "source": "InvestEU",
+            "target": "aifactories",
+            "reason": "funds"
+        },
+        {
+            "source": "planAi",
             "target": "aiPeople",
             "reason": "funds"
         },
         {
-            "source": "CPoAI",
+            "source": "planAi",
             "target": "buildLeadershipAi",
             "reason": "funds"
         },
         {
-            "source": "CPoAI",
+            "source": "planAi",
             "target": "GreenDgt",
             "reason": "in line with"
         },
         {
-            "source": "enablingAi",
+            "source": "EnablingAI",
             "target": "aifactories",
             "reason": "creates"
         },
         {
-            "source": "enablingAi",
+            "source": "EnablingAI",
             "target": "GenAI4EU",
             "reason": "creates"
         },
         {
+            "source": "HorizonEU",
+            "target": "GenAI4EU",
+            "reason": "funds"
+        },
+        {
+            "source": "dataspaces",
+            "target": "GenAI4EU",
+            "reason": "cooperates"
+        },
+        {
+            "source": "aifactories",
+            "target": "GenAI4EU",
+            "reason": "cooperates"
+        },
+        {
+            "source": "euaioffice",
+            "target": "GenAI4EU",
+            "reason": "monitors"
+        },
+        {
+            "source": "transitionpathways",
+            "target": "GenAI4EU",
+            "reason": "monitors"
+        },
+        {
+            "source": "GenAI4EU",
+            "target": "aifactories",
+            "reason": "cooperates"
+        },
+        {
+            "source": "DIGITAL",
+            "target": "GenAI4EU",
+            "reason": "funds"
+        },
+        {
             "source": "aifactories",
             "target": "EUHPCJU",
-            "reason": "part of"
+            "reason": "amend"
         },
         {
             "source": "aifactories",
@@ -313,7 +401,7 @@
         },
         {
             "source": "aiLabMarket",
-            "target": "CPoAI",
+            "target": "planAi",
             "reason": "funded by"
         },
         {
@@ -428,7 +516,7 @@
         },
         {
             "source": "HorizonEU",
-            "target": "CPoAI",
+            "target": "planAi",
             "reason": "funds"
         },
         {
