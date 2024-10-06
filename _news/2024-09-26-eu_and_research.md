@@ -19,6 +19,7 @@ Well, let's begin.
 # Coordinated Plan on Artificial Intelligence
 The PlanAI was first published in 2018 and then [reviewed in 2021](https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review) when the EU (and the world) realized the potential that AI can have. 
 The changes between the two versions are mainly in the direction of:
+
 - Planning: the 2021 version put an emphasis on human-centric, sustainable and secure AI. It also aims to achieve EU digital sovereignty.
 - Funding: the main difference. The original plan was to invest at least €20 billion by 2020 using the Horizon 2020 and Horizon EU. The new plan upped the number quite a bit and amies now for €145 billion by 2023 using the Horizon EU, the [Digital Europe Programme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme) and the [Recovery and Resilience Facility](https://next-generation-eu.europa.eu/recovery-and-resilience-facility_en).
 - Funding: the main difference. The original plan was to invest at least €20 billion by 2020 using the Horizon 2020 and Horizon EU. The new plan upped the number quite a bit and amies now for €145 billion by 2023 using the Horizon EU, the [Digital Europe Programme](ht
@@ -40,40 +41,96 @@ Well, the commission and member states will invest an additional €2.1 billion 
 
 ### 1.2 GenAI4EU
 Honestly I couldn't find much on what these are supposed to be. The description is "aims to support the development of novel use cases and emerging applications in Europe's 14 industrial ecosystems, as well as the public sector. Application areas include robotics, health, biotech, manufacturing, mobility, climate and virtual worlds." 
-What I could find is that the commission is planning to use the Horizon Europe and the Digital Europe programmes to fund projects that are connected to industry application of GenAI (in the above field) for a total of €500 million [^1].
+What I could find is that the commission is planning to use the Horizon Europe and the Digital Europe programmes to fund projects that are connected to industry application of GenAI (in the above field) for a total of €500 million[^1].
 Also these initiatives will cooperate with the AI Factories and the [Common European Data Spaces](https://digital-strategy.ec.europa.eu/en/policies/data-spaces). I guess the latter will provide compute/experts and the former data.
 Finally, the [EU AI Office](https://digital-strategy.ec.europa.eu/en/policies/ai-office) toghether with the [European Transition Pathways Platform will](https://single-market-economy.ec.europa.eu/industry/transition-pathways_en) monitor GenAI4EU's progress. 
 
 
-[^1] : [Euractive article](https://www.euractiv.com/section/artificial-intelligence/news/leak-eu-commission-prepares-strategic-framework-to-boost-ai-start-ups-generative-ai-uptake/). I can't access the [science business one](https://sciencebusiness.net/news/r-d-funding/commission-shaping-eu500m-generative-artificial-intelligence-calls) :(
+[^1]: [Euractive article](https://www.euractiv.com/section/artificial-intelligence/news/leak-eu-commission-prepares-strategic-framework-to-boost-ai-start-ups-generative-ai-uptake/). I can't access the [science business one](https://sciencebusiness.net/news/r-d-funding/commission-shaping-eu500m-generative-artificial-intelligence-calls) :(
 
 ## 2. Thriving from the lab to the market
+While point 1. was busy with describing the material necessities to build AI (mainly compute and experts), the [aiLabMarket](https://diorganisationsgital-strategy.ec.europa.eu/en/policies/ai-lab-market) focuses on fostering Puplic-Private-Partnerships (PPP). Specifically, the commission will provide a €1 billion per year investments in AI coming from our friends: Horizon Europe and the Digital Europe. Another €20 billions will be provided from Member states and the private sector. Finally The whole thing can use [The Recovery and Resilience Facility (RRF)](https://commission.europa.eu/business-economy-euro/economic-recovery/recovery-and-resilience-facility_en) funds [^2], which amount to €134 billions.
 
-Also knows as [aiLabMarket](https://diorganisationsgital-strategy.ec.europa.eu/en/policies/ai-lab-market), it basically they want to foster cooperation in AI in europe to attract talents and foster PPP. 
-With this in mind:
--  they created [ADRA](https://adr-association.eu/) in june 2021, which is mostly related to PPP.
-- It also created the [European Networks of Excellence in AI (NoEs) ](https://www.vision4ai.eu/community/) 
-- from jan 2024, they also created the  [testing and experimentation facilities (TEFs)](https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities)
-- Then they decided to create the [AI-on-demand platform (AIoD)](https://www.ai4europe.eu/) which is the communication channel between researchers, industry and public services
-- European Digital Innovation Hubs
-- Fund and scale innovative ideas and solutions for AI where the eu plans to invest 1 billion per year in AI 
+[^2]: The RRF allocated the €134 billions for project that aim to digitalize the EU. So these funds are not directly and only allocated to AI initiatives, however it is the case that AI initiatives are contained in the aim.
+
+Of course, to do so you need to intervene in various aspects:
+- The actual coordination between experts (academia) and private sector -> Enter [The AI,Data and Robotic Association (ADRA)](https://adr-association.eu/) (more about it later).
+- What happens when ADRA is not enough? If you are a small player with a big idea, you can just hop on the  [AI-on-demand platform (AIoD)](https://www.ai4europe.eu/) and check what kind of available resources (algorithms, data and compute) you can use for your goals! 
+- Just to be sure, let's also add a network of [European Digital Innovation Hubs (EDIHs)](https://european-digital-innovation-hubs.ec.europa.eu/home) which can help on a **regional-level**.
+- How do you coordinate between experts and private sector if you have no experts? Well, you need a network of (academic) organizations that foster AI research of course -> that's why the [European Networks of Excellence in AI (NoEs)](https://www.vision4ai.eu/community/)  exits.
+- Ok, you have the experts and the private partners. They come up with a nice idea and implement it. Will it be in line with the never-ending, always-changing EU regulations? Why don't you try your idea out in the newly created [testing and experimentation facilities (TEFs)](https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities)!
 
 
+In the next parts, we will check each of these points out. 
 
-#####  AI, Data and Robotics Association (ADRA)
-Adra was awarded 2.6B euros from the Horizon 2020 (2014-2020) and Horizon Europe (2021-2027). It's objective is to promote PPP and was created by the join effort of :
+
+###  AI, Data and Robotics Association (ADRA)
+As mentioned before, ADRA is an association with the aim of promoting PPP by accessing €2.6 billion euros from the Horizon 2020 and Horizon Europe funds (and additional contributions by [private partners](https://adr-association.eu/why-join-adra)). It's called association right? So who are the members? Well, the initial ones were: 
 1. [Big Data Value Association (BDVA)](https://bdva.eu/)
 2. [Confederation of Laboratories for Artificial Intelligence Research in Europe (CLAIRE)](https://claire-ai.org/)
 3. [European Laboratory for Learning and Intelligent Systems (ELLIS)](https://ellis.eu/)
 4. [European Association for Artificial Intelligence (EurAI)](https://www.eurai.org/)
 5. [European Robotic Forum (euRobotics)](https://eu-robotics.net/)
 
-They now have two taskforce, one for GenAI and won for GenAI applications in robotics. 
-their Focus is Mainly on fostering PPPs, thus linking academic research with industrial application to create synergies and accelerate AI and robotics innovation.
+Hopefully, we'll have time and energies to figure out where these guys come from later. As now (06/10/2024) there are a total of 140 Members: 88 Research, 47 industry, 4 associate (?) and 1 strategic (Sweden AI). Not bad considering the project is 3 years old (created in May 2021) and they managed to get big players on board (e.g. BMW, Decathlon, Bosch...).
+
+##### Goals
+
+Going back the ADRA's goals, as stated in the [Partnership Proposal](https://adr-association.eu/sites/default/files/2024-04/Partnership-application-2020-submitted.pdf) they have 3 *general objectives* divided in 7 specific ones (see Figure, ADRA plz don't sue me for sing your picture)
+![ADRA objectives](/assets/images/news/eu_landscape/adra_objectives.png)
+
+Apart from the usual suspects (securing European sovereignty), we can see a specific aim in promoting the creation of innovative[^3] initiatives[^4] aimed at maximizing societal[^5] and economical[^6] benefits. To me, it seems that ADRA has the most challenging objective of balancing EU values for societal benefits (no risky upcases), with regulatory/market fragmentation and uncertainty, with companies objectives. Good luck.
+
+[^3]: Innovative in the sense that the idea most likely originates from an academic context.
+[^4]: The private sector part of the idea. Here the aim is to guide the private sector offering expertise in both the technical (the previous point) and the regulatory part.
+[^5]: Societal and environmental will have to align with the strict EU regulations and AI ACT. This will prevent the implementation of risky AI upcases. 
+[^6]: Companies chase money -> AI can make money. 
+
+
+##### How?
+ADRA's proposal ([Section 3](https://adr-association.eu/sites/default/files/2024-04/Partnership-application-2020-submitted.pdf)) lists a number of activities in order to achieve its goals.
+
+Basically they can be divided in support for innovation (lighthouses, mission-based challenges, cascade actions, actions to simulate uptake and market/innovation enablers) or for ecosystems (community building, business models/organizations, regulation/standards and taskforce)
+
+##### Current status
+Currently, ADRA released the fourth edition of the[Strategic Research, Innovation, and Deployment Agenda (SRIDA)](https://adr-association.eu/news/adra-releases-strategic-research-innovation-and-deployment-agenda)  where they outline "the long-term vision for the development and deployment of trustworthy AI, Data, and Robotics technologies in Europe and provides key recommendations to guide future European work programs.".
+I highly suggest to read it.
+ADRA also has a series of forum going on, the latest being [last November](https://adr-association.eu/news/announcing-european-ai-data-robotics-forum-4-5-november-2024) (i missed it!).
 
 
 
-#####  Networks of Excellence Centres (NoEs)
+### AI-on-demand platform (AIoD)
+While ADRA actively put effort in connecting public and primate sector, it cannot materially help all possible Small Medium sized Enterprises (SMEs).  For these, a federated approach is more appropriate, meaning that they need to help themselves. How can they do that? How can **you**, with a nice business idea, look around and see what others are offering (algorithm, data, compute, expertise) and use those resources to your advantage?
+Well, have you heard of the [AI-on-demand platform](https://aiod.eu/)?
+
+Apart from having the slowest website ever which seems to be created by a particularly skilled 15 old teen, the platform is host of several services:
+- An assets catalogue, aka [MyLibrary](https://mylibrary.aiod.eu/marketplace) where you can get access to AI models, datasets and experiments. On the dataset parts it seems to have only stuff from Hugging Face, while the models seems to come from [Bonseyes](https://www.bonseyes.eu/) (a marketplace for AI in cloud and edge) and [OpenML](https://www.openml.org/) (another platform for AI stuff).
+- [Research Bundles](https://www.ai4europe.eu/research/research-bundles) : give you a space in the AI on-demand platform where you can collect and publish the outputs of a small research project in a compact way. A research bundle collects in a single place all the assets (code, data, tutorials, examples, ...) produced by your project and published on the AI on-demand platform. Of course, you can also put links to assets published elsewhere, like Github or Zenodo.
+- An [AI builder](https://aiexp.ai4europe.eu/#/home) in partnership with Eclispe built at Fraunhofer IAIS (wink wink).
+- [Research and Innovation AI Lab (RAIL)](https://rail.aiod.eu/docs/about) a beta version of what seems to be an educational oriented platform to use AioD assets.
+
+
+Speaking of funds, the platform is supported by Horizon 2020, Horizon Europe, and Digital Europe programme (focus on industry and public administration), but I couldn't find any specific numbers. 
+
+
+####  European Digital Innovation Hubs (EDIHs)
+
+So, if you got this far, you know know that: if you're a big company, ADRA will carry your hand through the EU regulations[^7] and if you're small but independent, that you can check what's the AIoD has to offer. 
+
+[^7]: As we saw before ADRA does much more, but stick with me for this example. 
+
+What happens when mamma ADRA has no time for you and you don't understand what AIoD is about (I feel you)?
+In this case, you can run towards the closest [European Digital Innovation Hubs (EDIHs)](https://european-digital-innovation-hubs.ec.europa.eu/home). EDIHs are **regional** hubs that promote digitalization for both the [public](https://european-digital-innovation-hubs.ec.europa.eu/knowledge-hub/thematic-groups/public-administration-main-focus-artificial-intelligence) and private sectors. There are currently [150 working in AI](https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue) and their objectives are defined on the website as "EDIHs help all companies seeking to use AI technologies to become more competitive on business/production processes, products or services."
+If we choose a [random one](https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue/edih-rheinland-website) from the catalog we see how they mostly provide support(check the [services](https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue/edih-rheinland-website/services)).
+While 50% of their costs are funded by the EU and member states, the remaining needs to be covered by private contributions and reginal funding. I like this approach because it forces the EDIH to be active on a regional level, hopefully solving (small but very real) problems.
+
+On the website several more initiatives are presented, I will just give a brief list here and we will see if they pop out again:
+- [Digital Transformation Accelerator (DTA)](https://digital-strategy.ec.europa.eu/en/funding/digital-transformation-accelerator-network-edih-cnect2021op0004): a project that aims to support the creation, development, and growth of the pan-European DIH network, and facilitate intra/inter-regional collaboration between EDIHs. It finished in March 2022
+-  [Digital Maturity Assessment Tool (DMAT)](https://european-digital-innovation-hubs.ec.europa.eu/open-dma): Developed by the European Commission Joint Research Centre (JRC), it is a framework to measure maturity  EDIH customers across Europe.
+-  [Key Performance Indicators (KPIs)](https://road-safety.transport.ec.europa.eu/european-road-safety-observatory/data-and-analysis/key-performance-indicators-kpis_en):  it is a reporting tool used by EDIH to report their progress to the commission.
+
+
+###  Networks of Excellence Centres (NoEs)
 
 Funded under Horizon2020 and newly Horizon Europe. And includes 9 projects: 
 1. [AI4media](https://www.ai4media.eu/)
@@ -95,7 +152,7 @@ The focus is Mainly academic, fostering research excellence and creating a criti
 
 
 
-##### Testing and experimentation facilities (TEFs)
+### Testing and experimentation facilities (TEFs)
 
 Of course you need to give spaces to SME (small and medium buisinesses), aka the startups in the PPP the eu wants to promote, space to test their ais. 
 For this reason they created the [Testing and Experimentation Facilities (TEFs) for AI.](https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities) (220 million) for t4 sectors : 
@@ -107,22 +164,7 @@ For this reason they created the [Testing and Experimentation Facilities (TEFs) 
 Apparently they where tested in march 2024 and deemed to be ready to test SMEs.
 
 
-##### AI-on-demand platform (AIoD)
-Apart from having the slowest website ever which seems to be created by a particularly skilled 15 old teen, the platform is supported by an ecosystem of projects funded under Horizon 2020 and Horizon Europe (focus on research), and Digital Europe programme (focus on industry and public administration). The current version of the platform includes several services:
-- An assets catalogue, aka the [MyLibrary](https://mylibrary.aiod.eu/marketplace) where you can get access to AI models, datasets and experiments on the dataset parts it seems to have only stuff from HF. The models seems to come from [Bonseyes](https://www.bonseyes.eu/) (a marketplace for AI in cloud and edge) and [OpenML](https://www.openml.org/) (another platform for AI stuff)
-- [Research Bundles](https://www.ai4europe.eu/research/research-bundles) : give you a space in the AI on-demand platform where you can collect and publish the outputs of a small research project in a compact way. A research bundle collects in a single place all the assets (code, data, tutorials, examples, ...) produced by your project and published on the AI on-demand platform. Of course, you can also put links to assets published elsewhere, like Github or Zenodo.
-- An [AI builder](https://aiexp.ai4europe.eu/#/home)  in partnership with Eclispe built at fraunohfer iais
-- [Research and Innovation AI Lab (RAIL)](https://rail.aiod.eu/docs/about) a beta version of what seems to be an educational orietned platform to use AioD assets
 
-
-
-
-
-#####  European Digital Innovation Hubs (EDIHs)
-Seems to be another network dedicated to helping SME and PSO to digitalise and adhere to EU guidelines. Not really sure what's the difference between this and ADRA/NoES. The websites says "EDIHs help all companies seeking to use AI technologies to become more competitive on business/production processes, products or services."
-This newtork also seems interested in [bringing AI in the public administration](https://european-digital-innovation-hubs.ec.europa.eu/knowledge-hub/thematic-groups/public-administration-main-focus-artificial-intelligence)
-
-Unlike ADRA and NoEs, which focus more on research and innovation, EDIHs are focused on practical applications of AI technologies for businesses and public administration. They are key to promoting the digitalization of European industries.
 
 
 
@@ -154,3 +196,4 @@ This point is more about making Eu leader in regulations on ai. It follows the d
 
 
 # A European strategy for data
+# Footnotes

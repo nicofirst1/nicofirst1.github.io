@@ -22,6 +22,13 @@
             "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-office"
         },
         {
+            "id": "aiod",
+            "fullname": "AI on Demand Platform",
+            "showname": "AIoD",
+            "category": "Activity",
+            "url": "https://aiod.eu/"
+        },
+        {
             "id": "transitionpathways",
             "fullname": "Transition pathways for European industrial ecosystems",
             "showname": "Transition Pathways",
@@ -35,7 +42,6 @@
             "category": "Activity",
             "url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme"
         },
-       
         {
             "id": "aifactories",
             "fullname": "AI Factories",
@@ -60,9 +66,16 @@
             "url": "https://investeu.europa.eu/index_en"
         },
         {
+            "id": "edihs",
+            "fullname": "European Digital Innovation Hubs",
+            "showname": "EDIHs",
+            "category": "Network",
+            "url": "https://european-digital-innovation-hubs.ec.europa.eu/home"
+        },
+        {
             "id": "GenAI4EU",
             "fullname": "GenAI4EU",
-            "showname": "GenAI4EU", 
+            "showname": "GenAI4EU",
             "category": "Initiative",
             "url": ""
         },
@@ -77,8 +90,15 @@
             "id": "ADRA",
             "fullname": "AI Data Robotics Association",
             "showname": "ADRA",
-            "category": "Organization",
-            "url": ""
+            "category": "Association",
+            "url": "https://adr-association.eu/"
+        },
+        {
+            "id": "horizon2020",
+            "fullname": "Horizon 2020",
+            "showname": "Horizon 2020",
+            "category": "Fund",
+            "url": "https://wayback.archive-it.org/12090/20220124075100/https:/ec.europa.eu/programmes/horizon2020/"
         },
         {
             "id": "GreenDgt",
@@ -277,12 +297,12 @@
         {
             "source": "planAi",
             "target": "EnablingAI",
-            "reason": "funds"
+            "reason": "creates"
         },
         {
             "source": "planAi",
             "target": "aiLabMarket",
-            "reason": "funds"
+            "reason": "creates"
         },
         {
             "source": "InvestEU",
@@ -292,12 +312,12 @@
         {
             "source": "planAi",
             "target": "aiPeople",
-            "reason": "funds"
+            "reason": "creates"
         },
         {
             "source": "planAi",
             "target": "buildLeadershipAi",
-            "reason": "funds"
+            "reason": "creates"
         },
         {
             "source": "planAi",
@@ -315,8 +335,28 @@
             "reason": "creates"
         },
         {
+            "source": "recoveryResilienceFacility",
+            "target": "aiLabMarket",
+            "reason": "funds"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "aiLabMarket",
+            "reason": "funds"
+        },
+        {
+            "source": "DIGITAL",
+            "target": "aiLabMarket",
+            "reason": "funds"
+        },
+        {
             "source": "HorizonEU",
             "target": "GenAI4EU",
+            "reason": "funds"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "aiLabMarket",
             "reason": "funds"
         },
         {
@@ -365,6 +405,35 @@
             "reason": "coordinates"
         },
         {
+            "source": "aiLabMarket",
+            "target": "aiod",
+            "reason": "creates"
+        },
+        {
+            "source": "DIGITAL",
+            "target": "edihs",
+            "reason": "creates"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "edihs",
+            "reason": "supports"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "aiod",
+            "reason": "funds"
+        },{
+            "source": "DIGITAL",
+            "target": "aiod",
+            "reason": "funds"
+        },
+        {
+            "source": "horizon2020",
+            "target": "aiod",
+            "reason": "funds"
+        },
+        {
             "source": "GenAI4EU",
             "target": "EnablingAI",
             "reason": "created by"
@@ -375,34 +444,29 @@
             "reason": "creates"
         },
         {
-            "source": "aiLabMarket",
-            "target": "BDVA",
-            "reason": "cooperates with (for ADRA)"
+            "source": "BDVA",
+            "target": "ADRA",
+            "reason": "member of"
         },
         {
-            "source": "aiLabMarket",
-            "target": "CLAIRE",
-            "reason": "cooperates with (for ADRA)"
+            "source": "CLAIRE",
+            "target": "ADRA",
+            "reason": "member of"
         },
         {
-            "source": "aiLabMarket",
-            "target": "EurAI",
-            "reason": "cooperates with (for ADRA)"
+            "source": "EurAI",
+            "target": "ADRA",
+            "reason": "member of"
         },
         {
-            "source": "aiLabMarket",
-            "target": "euRobotics",
-            "reason": "cooperates with (for ADRA)"
+            "source": "euRobotics",
+            "target": "ADRA",
+            "reason": "member of"
         },
         {
-            "source": "aiLabMarket",
-            "target": "ELLIS",
-            "reason": "cooperates with (for ADRA)"
-        },
-        {
-            "source": "aiLabMarket",
-            "target": "planAi",
-            "reason": "funded by"
+            "source": "ELLIS",
+            "target": "ADRA",
+            "reason": "member of"
         },
         {
             "source": "ADRA",
