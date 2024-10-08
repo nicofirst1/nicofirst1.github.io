@@ -141,10 +141,9 @@ function setupGraphContainer(margin, width, height) {
   return g; // Return the group element for further use
 }
 
-// Set up the node information panel to show details on click
-function setupInfoPanel(node, data) {
+
   // Show detailed node information in the sidebar
-  function showInfo(d) {
+  function showInfo(d,data) {
     const sidebar = d3.select("#node-info-content"); // Select the sidebar element
     let info = "";
 
@@ -235,8 +234,6 @@ function setupInfoPanel(node, data) {
     sidebar.html(info); // Update the sidebar with the constructed HTML content
   }
 
-  node.on("click", (event, d) => showInfo(d)); // Attach click event to nodes for showing info
-}
 
 // Set up drag functionality to move nodes around
 function setupDrag(simulation, node) {
@@ -350,6 +347,167 @@ function addNodesToSimulation(simulation, data, link, node) {
   });
 }
 
+
+
+// Function to add a legend for toggling categories
+function addLegend(g, nodes) {
+    const categories = Array.from(new Set(nodes.map((node) => node.category)));
+  
+    // add active to categories
+    activeFilters.forEach((category) => {
+      if (!categories.includes(category)) {
+        categories.push(category);
+      }
+    });
+  
+    // sort alphabetically
+    categories.sort();
+  
+    const legend = g
+      .append("g")
+      .attr("class", "legend")
+      .attr("transform", "translate(10, 10)");
+    // Add a surrounding rectangle to the legend
+    const legendWidth = 200;
+    const legendHeight = categories.length * 20 + 70;
+    legend
+      .append("rect")
+      .attr("width", legendWidth)
+      .attr("height", legendHeight)
+      .style("fill", "none")
+      .style("stroke", "#444")
+      .style("stroke-width", "1px");
+  
+    // Add legend title
+    legend
+      .append("text")
+      .attr("x", 10)
+      .attr("y", 15)
+      .attr("font-weight", "bold")
+      .text("Legend");
+  
+    legend.append("text").attr("x", 10).attr("y", 35).text("(Click to toggle)");
+  
+    categories.forEach((category, index) => {
+      const legendRow = legend
+        .append("g")
+        .attr("class", "legend-item")
+        .attr("transform", `translate(10, ${index * 20 + 45})`)
+        .style("cursor", "pointer")
+        .on("click", () => toggleCategoryFilter(category)); // Toggle category filter on click
+  
+      legendRow
+        .append("rect")
+        .attr("width", 12)
+        .attr("height", 12)
+        .style("fill", categoryColorMap[category])
+        .style("opacity", activeFilters.has(category) ? 0.3 : 1) // Set opacity if category is filtered
+        .style("stroke", "#444");
+  
+      legendRow.append("text").attr("x", 20).attr("y", 10).text(category);
+    });
+  }
+  
+  // Function to filter nodes and links by active categories and update graph
+  function updateGraphByActiveFilters() {
+    var originalDataCopy = JSON.parse(JSON.stringify(originalData));
+  
+    // If no active filters, show the original graph
+    if (activeFilters.size === 0) {
+      createGraph(JSON.parse(JSON.stringify(originalDataCopy)));
+      return;
+    }
+  
+    // Filter nodes based on active filters
+    const filteredNodes = originalDataCopy.nodes.filter(
+      (node) => !activeFilters.has(node.category)
+    );
+    const filteredNodeIds = new Set(filteredNodes.map((node) => node.id));
+  
+    // Filter links based on filtered nodes
+    const filteredLinks = originalDataCopy.links.filter(
+      (link) =>
+        filteredNodeIds.has(link.source) && filteredNodeIds.has(link.target)
+    );
+  
+    // console.log("Filtered Nodes:")
+    // console.log(filteredNodes);
+    // console.log("Filtered ids:")
+    // console.log(filteredNodeIds);
+    // console.log("Filtered Links:")
+    // console.log(filteredLinks);
+    // console.log("Active filters:")
+    // console.log(activeFilters);
+  
+    createGraph({ nodes: filteredNodes, links: filteredLinks });
+  }
+  // Toggle category filter and update the graph
+  function toggleCategoryFilter(category) {
+    //console.log("Toggling category filter:", category);
+    // Toggle the category in the active filter set
+    if (activeFilters.has(category)) {
+      activeFilters.delete(category);
+    } else {
+      activeFilters.add(category);
+    }
+  
+    // Update the graph based on active filters
+    updateGraphByActiveFilters();
+  }
+  // Function to set up click highlight functionality and show node info
+function setupClickHighlight(node, link, data) {
+    node.on("click", function (event, d) {
+      // Show node information in the sidebar
+      showInfo(d, data);
+  
+      // Reset opacity for nodes, links, and labels
+      node.style("opacity", 0.1);
+      link.style("opacity", 0.1);
+      d3.selectAll(".node-label").style("opacity", 0.1);
+      d3.selectAll(".link-label").style("opacity", 0.1);
+  
+      // Highlight clicked node
+      d3.select(this).style("opacity", 1);
+  
+      // Highlight connected links and nodes
+      link
+        .filter((l) => l.source.id === d.id || l.target.id === d.id)
+        .style("opacity", 1)
+        .each(function (l) {
+          d3.select(`#node-${l.source.id}`).style("opacity", 1);
+          d3.select(`#node-${l.target.id}`).style("opacity", 1);
+        });
+  
+      // Highlight connected nodes
+      node.filter((n) =>
+        link.filter((l) => l.source.id === d.id || l.target.id === d.id)
+          .data()
+          .some((l) => l.source.id === n.id || l.target.id === n.id)
+      ).style("opacity", 1);
+  
+      // Highlight labels of connected nodes and links
+      d3.selectAll(".node-label")
+        .filter((n) => n.id === d.id || link.data().some((l) => (l.source.id === d.id || l.target.id === d.id) && (l.source.id === n.id || l.target.id === n.id)))
+        .style("opacity", 1);
+  
+      d3.selectAll(".link-label")
+        .filter((l) => l.source.id === d.id || l.target.id === d.id)
+        .style("opacity", 1);
+    });
+  
+    // Reset highlight when clicking on the background
+    d3.select("#graph-container").on("click", function (event) {
+      if (event.target.tagName === "svg") {
+        node.style("opacity", 1);
+        link.style("opacity", 1);
+        d3.selectAll(".node-label").style("opacity", 1);
+        d3.selectAll(".link-label").style("opacity", 1);
+      }
+    });
+  }
+  
+  
+
 // Create and render the entire graph with nodes, links, and additional elements
 function createGraph(data) {
   // Clear previous graph elements, if any
@@ -395,8 +553,7 @@ function createGraph(data) {
 
   // Attach tooltip functionality to nodes
   setupTooltip(node);
-  // Attach information panel display to nodes on click
-  setupInfoPanel(node, data);
+
   // Attach drag functionality to nodes
   setupDrag(simulation, node);
 
@@ -405,110 +562,6 @@ function createGraph(data) {
 
   // Add legend for toggling categories
   addLegend(g, data.nodes);
-}
+  setupClickHighlight(node, link,data);
 
-// Function to add a legend for toggling categories
-function addLegend(g, nodes) {
-  const categories = Array.from(new Set(nodes.map((node) => node.category)));
-
-  // add active to categories
-  activeFilters.forEach((category) => {
-    if (!categories.includes(category)) {
-      categories.push(category);
-    }
-  });
-
-  // sort alphabetically
-  categories.sort();
-
-  const legend = g
-    .append("g")
-    .attr("class", "legend")
-    .attr("transform", "translate(10, 10)");
-  // Add a surrounding rectangle to the legend
-  const legendWidth = 200;
-  const legendHeight = categories.length * 20 + 70;
-  legend
-    .append("rect")
-    .attr("width", legendWidth)
-    .attr("height", legendHeight)
-    .style("fill", "none")
-    .style("stroke", "#444")
-    .style("stroke-width", "1px");
-
-  // Add legend title
-  legend
-    .append("text")
-    .attr("x", 10)
-    .attr("y", 15)
-    .attr("font-weight", "bold")
-    .text("Legend");
-
-  legend.append("text").attr("x", 10).attr("y", 35).text("(Click to toggle)");
-
-  categories.forEach((category, index) => {
-    const legendRow = legend
-      .append("g")
-      .attr("class", "legend-item")
-      .attr("transform", `translate(10, ${index * 20 + 45})`)
-      .style("cursor", "pointer")
-      .on("click", () => toggleCategoryFilter(category)); // Toggle category filter on click
-
-    legendRow
-      .append("rect")
-      .attr("width", 12)
-      .attr("height", 12)
-      .style("fill", categoryColorMap[category])
-      .style("opacity", activeFilters.has(category) ? 0.3 : 1) // Set opacity if category is filtered
-      .style("stroke", "#444");
-
-    legendRow.append("text").attr("x", 20).attr("y", 10).text(category);
-  });
-}
-
-// Function to filter nodes and links by active categories and update graph
-function updateGraphByActiveFilters() {
-  var originalDataCopy = JSON.parse(JSON.stringify(originalData));
-
-  // If no active filters, show the original graph
-  if (activeFilters.size === 0) {
-    createGraph(JSON.parse(JSON.stringify(originalDataCopy)));
-    return;
-  }
-
-  // Filter nodes based on active filters
-  const filteredNodes = originalDataCopy.nodes.filter(
-    (node) => !activeFilters.has(node.category)
-  );
-  const filteredNodeIds = new Set(filteredNodes.map((node) => node.id));
-
-  // Filter links based on filtered nodes
-  const filteredLinks = originalDataCopy.links.filter(
-    (link) =>
-      filteredNodeIds.has(link.source) && filteredNodeIds.has(link.target)
-  );
-
-  // console.log("Filtered Nodes:")
-  // console.log(filteredNodes);
-  // console.log("Filtered ids:")
-  // console.log(filteredNodeIds);
-  // console.log("Filtered Links:")
-  // console.log(filteredLinks);
-  // console.log("Active filters:")
-  // console.log(activeFilters);
-
-  createGraph({ nodes: filteredNodes, links: filteredLinks });
-}
-// Toggle category filter and update the graph
-function toggleCategoryFilter(category) {
-  //console.log("Toggling category filter:", category);
-  // Toggle the category in the active filter set
-  if (activeFilters.has(category)) {
-    activeFilters.delete(category);
-  } else {
-    activeFilters.add(category);
-  }
-
-  // Update the graph based on active filters
-  updateGraphByActiveFilters();
 }
