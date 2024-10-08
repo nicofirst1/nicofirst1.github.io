@@ -1,3 +1,8 @@
+// Global variables for original data and category filters
+let originalData;
+const categoryColorMap = {};
+let activeFilters = new Set(); // Track active category filters
+
 // Fetch and load the JSON data for nodes and links from the specified URL
 fetch(euAIdataUrl)
   .then((response) => response.json()) // Parse JSON response
@@ -6,6 +11,12 @@ fetch(euAIdataUrl)
 
 // Function to initialize the graph with validated data
 function initializeGraph(data) {
+  originalData = JSON.parse(JSON.stringify(data)); // Store the original data
+  // console.log("Original Data at init:")
+  // console.log(originalData);
+  // Initialize category color map globally
+  initializeCategoryColors(data.nodes);
+
   if (data && Array.isArray(data.nodes) && Array.isArray(data.links)) {
     const { nodes, links } = validateData(data); // Validate and filter nodes and links
     createGraph({ nodes, links }); // Call createGraph with validated data
@@ -14,6 +25,19 @@ function initializeGraph(data) {
       "Error: Data format is incorrect or nodes/links are missing."
     );
   }
+}
+
+// Function to initialize the category colors
+function initializeCategoryColors(nodes) {
+  const categories = Array.from(new Set(nodes.map((node) => node.category))); // Get unique categories
+
+  // Define a color scale
+  const colorScale = d3.scaleOrdinal(d3.schemePaired);
+
+  // Assign colors to each category in the global categoryColorMap
+  categories.forEach((category, index) => {
+    categoryColorMap[category] = colorScale(index);
+  });
 }
 
 // Validate nodes and links to ensure consistency and return only valid links
@@ -58,8 +82,6 @@ function setupTooltip(node) {
     .attr("class", "tooltip")
     .style("position", "absolute")
     .style("padding", "8px")
-    .style("background", "#f9f9f9")
-    .style("border", "1px solid #ddd")
     .style("border-radius", "5px")
     .style("pointer-events", "none")
     .style("opacity", 0);
@@ -125,16 +147,67 @@ function setupInfoPanel(node, data) {
   function showInfo(d) {
     const sidebar = d3.select("#node-info-content"); // Select the sidebar element
     let info = "";
-    if (d.fullname)
-      info += `<div><strong>Name:</strong> ${d.fullname}</div><br>`;
-    if (d.showname)
-      info += `<div><strong>Aka:</strong> ${d.showname}</div><br>`;
-    if (d.category)
-      info += `<div><strong>Category:</strong> ${d.category}</div><br>`;
-    if (d.url)
-      info += `<div><strong>URL:</strong> <a href="${d.url}" target="_blank" style="color: blue;">${d.url}</a></div><br>`;
-    if (d.description)
-      info += `<div><strong>Description:</strong> ${d.description}</div><br>`;
+
+    // Define a mapping for field names to display labels and formatters
+    const fieldMappings = {
+      fullname: {
+        label: "Name",
+        format: (value) => value,
+      },
+      showname: {
+        label: "Aka",
+        format: (value) => value,
+      },
+      category: {
+        label: "Category",
+        format: (value) => value,
+      },
+      url: {
+        label: "URL",
+        format: (value) => (
+          `<a href="${value}" target="_blank">
+            ${value}
+          </a>`
+        ),
+      },
+      startDate: {
+        label: "Start Date",
+        format: (value) => value,
+      },
+      endDate: {
+        label: "End Date",
+        format: (value) => value,
+      },
+      budget: {
+        label: "Budget",
+        format: (value) => `€ ${value}`,
+      },
+      proposalUrl: {
+        label: "Proposal URL",
+        format: (value) => (
+          `<a href="${value}" target="_blank">
+            ${value}
+          </a>`
+        ),
+      },
+      coordinator: {
+        label: "Coordinator",
+        format: (value) => value,
+      },
+      coordinatingInstitution: {
+        label: "Coordinating Institution",
+        format: (value) => value,
+      },
+    };
+
+    // Build the HTML content dynamically based on the mapping
+    Object.keys(fieldMappings).forEach((key) => {
+      if (d[key]) {
+        // Check if the field is present in the data
+        const { label, format } = fieldMappings[key];
+        info += `<div><strong>${label}:</strong> ${format(d[key])}</div><br>`;
+      }
+    });
 
     // Group connections by their 'reason' field and display them
     const groupedConnections = data.links
@@ -226,8 +299,6 @@ function setupLinks(g, data) {
 
 // Set up and render nodes with category-based colors and labels
 function setupNodes(g, data) {
-  const color = d3.scaleOrdinal(d3.schemePaired); // Color scale for different categories
-
   // Create node elements (circles) for each data node
   const node = g
     .append("g")
@@ -238,7 +309,7 @@ function setupNodes(g, data) {
     .append("circle")
     .attr("class", "node")
     .attr("r", 10)
-    .style("fill", (d) => color(d.category)); // Apply category-specific colors
+    .style("fill", (d) => categoryColorMap[d.category]); // Apply category-specific colors
 
   // Add labels (text) to each node based on their 'showname'
   g.append("g")
@@ -279,10 +350,20 @@ function addNodesToSimulation(simulation, data, link, node) {
   });
 }
 
-
-
 // Create and render the entire graph with nodes, links, and additional elements
 function createGraph(data) {
+  // Clear previous graph elements, if any
+  d3.select("#graph-container").select("svg").remove();
+
+  // log the active filters
+  // console.log("Graph created, Active filters:");
+  // console.log(activeFilters);
+  // console.log("Data:");
+  // console.log(data);
+  // console.log("Original Data:");
+  // console.log(originalData);
+  // console.log("Original Data:")
+  // console.log(originalData);
   const margin = {
     top: 20,
     right: 20,
@@ -322,6 +403,112 @@ function createGraph(data) {
   // Add nodes and links to simulation and handle tick updates
   addNodesToSimulation(simulation, data, link, node);
 
+  // Add legend for toggling categories
+  addLegend(g, data.nodes);
+}
 
-  
+// Function to add a legend for toggling categories
+function addLegend(g, nodes) {
+  const categories = Array.from(new Set(nodes.map((node) => node.category)));
+
+  // add active to categories
+  activeFilters.forEach((category) => {
+    if (!categories.includes(category)) {
+      categories.push(category);
+    }
+  });
+
+  // sort alphabetically
+  categories.sort();
+
+  const legend = g
+    .append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(10, 10)");
+  // Add a surrounding rectangle to the legend
+  const legendWidth = 200;
+  const legendHeight = categories.length * 20 + 70;
+  legend
+    .append("rect")
+    .attr("width", legendWidth)
+    .attr("height", legendHeight)
+    .style("fill", "none")
+    .style("stroke", "#444")
+    .style("stroke-width", "1px");
+
+  // Add legend title
+  legend
+    .append("text")
+    .attr("x", 10)
+    .attr("y", 15)
+    .attr("font-weight", "bold")
+    .text("Legend");
+
+  legend.append("text").attr("x", 10).attr("y", 35).text("(Click to toggle)");
+
+  categories.forEach((category, index) => {
+    const legendRow = legend
+      .append("g")
+      .attr("class", "legend-item")
+      .attr("transform", `translate(10, ${index * 20 + 45})`)
+      .style("cursor", "pointer")
+      .on("click", () => toggleCategoryFilter(category)); // Toggle category filter on click
+
+    legendRow
+      .append("rect")
+      .attr("width", 12)
+      .attr("height", 12)
+      .style("fill", categoryColorMap[category])
+      .style("opacity", activeFilters.has(category) ? 0.3 : 1) // Set opacity if category is filtered
+      .style("stroke", "#444");
+
+    legendRow.append("text").attr("x", 20).attr("y", 10).text(category);
+  });
+}
+
+// Function to filter nodes and links by active categories and update graph
+function updateGraphByActiveFilters() {
+  var originalDataCopy = JSON.parse(JSON.stringify(originalData));
+
+  // If no active filters, show the original graph
+  if (activeFilters.size === 0) {
+    createGraph(JSON.parse(JSON.stringify(originalDataCopy)));
+    return;
+  }
+
+  // Filter nodes based on active filters
+  const filteredNodes = originalDataCopy.nodes.filter(
+    (node) => !activeFilters.has(node.category)
+  );
+  const filteredNodeIds = new Set(filteredNodes.map((node) => node.id));
+
+  // Filter links based on filtered nodes
+  const filteredLinks = originalDataCopy.links.filter(
+    (link) =>
+      filteredNodeIds.has(link.source) && filteredNodeIds.has(link.target)
+  );
+
+  // console.log("Filtered Nodes:")
+  // console.log(filteredNodes);
+  // console.log("Filtered ids:")
+  // console.log(filteredNodeIds);
+  // console.log("Filtered Links:")
+  // console.log(filteredLinks);
+  // console.log("Active filters:")
+  // console.log(activeFilters);
+
+  createGraph({ nodes: filteredNodes, links: filteredLinks });
+}
+// Toggle category filter and update the graph
+function toggleCategoryFilter(category) {
+  //console.log("Toggling category filter:", category);
+  // Toggle the category in the active filter set
+  if (activeFilters.has(category)) {
+    activeFilters.delete(category);
+  } else {
+    activeFilters.add(category);
+  }
+
+  // Update the graph based on active filters
+  updateGraphByActiveFilters();
 }
