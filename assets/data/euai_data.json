@@ -18,21 +18,21 @@
             "id": "euaioffice",
             "fullname": "European Union Artificial Intelligence Office",
             "showname": "EU AI Office",
-            "category": "Organization",
+            "category": "Organization/Network",
             "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-office"
         },
         {
             "id": "aiod",
             "fullname": "AI on Demand Platform",
             "showname": "AIoD",
-            "category": "Activity",
+            "category": "Project/Initiative",
             "url": "https://aiod.eu/"
         },
         {
             "id": "tefs",
             "fullname": "Testing and Experimentation Facilities (for AI)",
             "showname": "TEFs",
-            "category": "Activity",
+            "category": "Project/Initiative",
             "url": "https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities",
             "startDate": "01.01.2023",
             "endDate": "01.01.2028",
@@ -43,8 +43,43 @@
             "id": "transitionpathways",
             "fullname": "Transition Pathways for European Industrial Ecosystems",
             "showname": "Transition Pathways",
-            "category": "Strategy",
+            "category": "Project/Initiative",
             "url": "https://single-market-economy.ec.europa.eu/industry/transition-pathways_en"
+        },
+        {
+            "id": "ai4eosc",
+            "fullname": "Artificial Intelligence for the European Open Science Cloud",
+            "showname": "AI4Eosc",
+            "category": "Project/Initiative",
+            "url": "https://ai4eosc.eu/"
+        },
+        {
+            "id": "mylibrary",
+            "fullname": "MyLibrary",
+            "showname": "MyLibrary",
+            "category": "Project/Initiative",
+            "url": "https://mylibrary.aiod.eu/"
+        },
+        {
+            "id": "researchBundles",
+            "fullname": "Research Bundles",
+            "showname": "Research Bundles",
+            "category": "Project/Initiative",
+            "url": "https://www.ai4europe.eu/research/research-bundles"
+        },
+        {
+            "id": "aibuilder",
+            "fullname": "AI builder",
+            "showname": "AI builder",
+            "category": "Project/Initiative",
+            "url": "https://aiexp.ai4europe.eu/#/home"
+        },
+        {
+            "id": "rail",
+            "fullname": "Research and Innovation AI Lab",
+            "showname": "RAIL",
+            "category": "Project/Initiative",
+            "url": "https://rail.aiod.eu/docs/about"
         },
         {
             "id": "digitalprogramme",
@@ -65,14 +100,14 @@
             "id": "digitalCompass",
             "fullname": "Digital Compass",
             "showname": "Digital Compass",
-            "category": "??",
+            "category": "Policy",
             "url": ""
         },
         {
             "id": "digitalStrategy",
             "fullname": "Digital Strategy",
             "showname": "Digital Strategy",
-            "category": "??",
+            "category": "Policy",
             "url": "https://digital-strategy.ec.europa.eu/en",
             "startDate": "2020",
             "endDate": "2050"
@@ -82,7 +117,7 @@
             "id": "vision4ai",
             "fullname": "Value and Impact through Synergy, Interaction and coOperation of Networks of AI Excellence Centres",
             "showname": "VISION4AI",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://www.vision4ai.eu/community/",
             "startDate": "01.09.2020",
             "endDate": "31.08.2024",
@@ -95,7 +130,7 @@
             "id": "aifactories",
             "fullname": "AI Factories",
             "showname": "AI Factories",
-            "category": "Initiative",
+            "category": "Project/Initiative",
             "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-factories",
             "start date": "2025",
             "description": ""
@@ -104,7 +139,7 @@
             "id": "EUHPCJU",
             "fullname": "The European High Performance Computing Joint Undertaking",
             "showname": "EuroHPC JU",
-            "category": "??",
+            "category": "Organization/Network",
             "url": ""
         },
         {
@@ -118,28 +153,28 @@
             "id": "edihs",
             "fullname": "European Digital Innovation Hubs",
             "showname": "EDIHs",
-            "category": "Network",
+            "category": "Organization/Network",
             "url": "https://european-digital-innovation-hubs.ec.europa.eu/home"
         },
         {
             "id": "GenAI4EU",
             "fullname": "GenAI4EU",
             "showname": "GenAI4EU",
-            "category": "Initiative",
+            "category": "Project/Initiative",
             "url": ""
         },
         {
             "id": "aiLabMarket",
             "fullname": "Thriving from the Lab to the Market",
             "showname": "AI Lab Market",
-            "category": "??",
+            "category": "Project/Initiative",
             "url": ""
         },
         {
             "id": "ADRA",
             "fullname": "AI Data Robotics Association",
             "showname": "ADRA",
-            "category": "Association",
+            "category": "Organization/Network",
             "url": "https://adr-association.eu/"
         },
         {
@@ -148,6 +183,13 @@
             "showname": "Horizon 2020",
             "category": "Fund",
             "url": "https://wayback.archive-it.org/12090/20220124075100/https:/ec.europa.eu/programmes/horizon2020/"
+        },
+        {
+            "id": "mariecurie",
+            "fullname": "Marie Sk\u0142odowska-Curie Actions",
+            "showname": "Marie Curie",
+            "category": "Project/Initiative",
+            "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/"
         },
         {
             "id": "GreenDgt",
@@ -163,12 +205,40 @@
             "category": "Policy",
             "url": ""
         },
+        {
+            "id": "gpai",
+            "fullname": "Global Partnership on Artificial Intelligence",
+            "showname": "Global Partnership AI",
+            "category": "Policy",
+            "url": "https://gpai.ai/"
+        },
+        {
+            "id": "oecd",
+            "fullname": "Organisation for Economic Co-operation and Development",
+            "showname": "OECD",
+            "category": "Organization/Network",
+            "url": "https://www.oecd.org/en.html"
+        },
+        {
+            "id": "aiWatch",
+            "fullname": "AI Watch",
+            "showname": "AI Watch",
+            "category": "Observatory",
+            "url": "https://ai-watch.ec.europa.eu/index_en"
+        },
+        {
+            "id": "oneaigroup",
+            "fullname": "ONE-AI Expert Group",
+            "showname": "ONE-AI Group",
+            "category": "Organization/Network",
+            "url": "https://oecd.ai/en/network-of-experts/working-group/1137"
+        },
        
         {
             "id": "internationalOutreachAi",
             "fullname": "International outreach for human-centric artificial intelligence initiative",
             "showname": "International Outreach AI",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://digital-strategy.ec.europa.eu/en/policies/international-outreach-ai"
         },
         {
@@ -182,28 +252,28 @@
             "id": "SkillAgenda",
             "fullname": "Skill Agenda",
             "showname": "Skill Agenda",
-            "category": "Agenda",
+            "category": "Policy",
             "url": "https://ec.europa.eu/social/main.jsp?catId=1223&langId=en"
         },
         {
             "id": "buildLeadershipAi",
             "fullname": "Build strategic leadership in high-impact sectors",
             "showname": "Build Leadership AI",
-            "category": "??",
+            "category": "Policy",
             "url": ""
         },
         {
             "id": "BDVA",
             "fullname": "Big Data Value Association",
             "showname": "BDVA",
-            "category": "Organization",
+            "category": "Organization/Network",
             "url": ""
         },
         {
             "id": "EBDVF",
             "fullname": "European Big Data Value Form",
             "showname": "EBDVF",
-            "category": "Organization",
+            "category": "Organization/Network",
             "url": "https://european-big-data-value-forum.eu/",
             "coordinator": "David Bisset"
         },
@@ -211,42 +281,42 @@
             "id": "CLAIRE",
             "fullname": "Confederation of Laboratories for Artificial Intelligence Research in Europe",
             "showname": "CLAIRE",
-            "category": "Organization",
+            "category": "Organization/Network",
             "url": ""
         },
         {
             "id": "ELLIS",
             "fullname": "European Laboratory for Learning and Intelligent Systems",
             "showname": "ELLIS",
-            "category": "Organization",
+            "category": "Organization/Network",
             "url": ""
         },
         {
             "id": "EurAI",
             "fullname": "European Association for Artificial Intelligence",
             "showname": "EurAI",
-            "category": "Organization",
+            "category": "Organization/Network",
             "url": ""
         },
         {
             "id": "euRobotics",
             "fullname": "European Robotic Forum",
             "showname": "euRobotics",
-            "category": "Organization",
+            "category": "Organization/Network",
             "url": ""
         },
         {
             "id": "NoEs",
             "fullname": "Networks of Excellence Centres",
             "showname": "NoEs",
-            "category": "Network",
+            "category": "Organization/Network",
             "url": ""
         },
         {
             "id": "AI4media",
             "fullname": "AI4media",
             "showname": "AI4media",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://www.ai4media.eu/",
             "startDate": "01.09.2020",
             "endDate": "31.08.2024",
@@ -259,7 +329,7 @@
             "id": "ELISE",
             "fullname": "European Network of AI Excellence Centres",
             "showname": "ELISE",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://www.elise-ai.eu/",
             "startDate": "01.09.2020",
             "endDate": "31.08.2024",
@@ -273,7 +343,7 @@
             "id": "HumaneAInet",
             "fullname": "Humane-AI net",
             "showname": "Humane AI net",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://www.humane-ai.eu/",
             "startDate": "01.09.2020",
             "endDate": "31.08.2024",
@@ -286,7 +356,7 @@
             "id": "TAILOR",
             "fullname": "Trustworthy AI through the integration of learning, optimisation and reasoning",
             "showname": "TAILOR",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://tailor-network.eu/",
             "startDate": "01.09.2020",
             "endDate": "31.08.2024",
@@ -299,7 +369,7 @@
             "id": "ELSA",
             "fullname": "European Lighthouse on Secure and Safe AI",
             "showname": "ELSA",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://elsa-ai.eu/",
             "startDate": "01.09.2022",
             "endDate": "31.08.2025",
@@ -319,7 +389,7 @@
             "id": "euROBIN",
             "fullname": "The European Excellence Network on AI-Powered Robotics",
             "showname": "euROBIN",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://www.eurobin-project.eu/",
             "startDate": "01.07.2022",
             "endDate": "31.06.2026",
@@ -332,7 +402,7 @@
             "id": "ELIAS",
             "fullname": "European Lighthouse of AI for Sustainability",
             "showname": "ELIAS",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://elias-ai.eu/",
             "startDate": "01.09.2023",
             "endDate": "31.08.2027",
@@ -345,7 +415,7 @@
             "id": "dAIedge",
             "fullname": "A network of excellence for distributed, trustworthy, efficient and scalable AI at the Edge",
             "showname": "dAIedge",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://www.daiedge.eu/",
             "startDate": "01.09.2023",
             "endDate": "31.08.2026",
@@ -358,7 +428,7 @@
             "id": "Enfield",
             "fullname": "European Lighthouse to Manifest Trustworthy and Green AI",
             "showname": "Enfield",
-            "category": "Project",
+            "category": "Project/Initiative",
             "url": "https://www.enfield-project.eu/",
             "startDate": "01.09.2023",
             "endDate": "31.08.2026",
@@ -386,7 +456,7 @@
             "id": "DEAP",
             "fullname": "Digital Education Action Plan",
             "showname": "DEAP",
-            "category": "Plan",
+            "category": "Policy",
             "url": "https://education.ec.europa.eu/focus-topics/digital-education/action-plan"
         }
     ],
@@ -471,6 +541,7 @@
             "target": "aiLabMarket",
             "reason": "funds"
         },
+        
         {
             "source": "digitalprogramme",
             "target": "aiLabMarket",
@@ -502,6 +573,31 @@
             "reason": "monitors"
         },
         {
+            "source": "aiod",
+            "target": "mylibrary",
+            "reason": "creates"
+        },
+        {
+            "source": "aiod",
+            "target": "researchBundles",
+            "reason": "creates"
+        },
+        {
+            "source": "aiod",
+            "target": "rail",
+            "reason": "creates"
+        },
+        {
+            "source": "aiod",
+            "target": "aibuilder",
+            "reason": "creates"
+        },
+        {
+            "source": "ai4eosc",
+            "target": "mylibrary",
+            "reason": "powers"
+        },
+        {
             "source": "transitionpathways",
             "target": "GenAI4EU",
             "reason": "monitors"
@@ -531,11 +627,7 @@
             "target": "EUHPCJU",
             "reason": "amend"
         },
-        {
-            "source": "aifactories",
-            "target": "EnablingAI",
-            "reason": "created by"
-        },
+
         {
             "source": "EUHPCJU",
             "target": "aifactories",
@@ -571,9 +663,9 @@
             "reason": "funds"
         },
         {
-            "source": "GenAI4EU",
-            "target": "EnablingAI",
-            "reason": "created by"
+            "source": "EnablingAI",
+            "target": "GenAI4EU",
+            "reason": "creates"
         },
         {
             "source": "aiLabMarket",
@@ -606,9 +698,9 @@
             "reason": "member of"
         },
         {
-            "source": "ADRA",
-            "target": "aiLabMarket",
-            "reason": "created by"
+            "source": "aiLabMarket",
+            "target": "ADRA",
+            "reason": "creates"
         },
         {
             "source": "ADRA",
@@ -616,9 +708,39 @@
             "reason": "connected to"
         },
         {
+            "source": "DEAP",
+            "target": "aiPeople",
+            "reason": "supports"
+        },
+        {
+            "source": "aiWatch",
+            "target": "oecd",
+            "reason": "collaborates"
+        },
+        {
+            "source": "oecd",
+            "target": "oneaigroup",
+            "reason": "creates"
+        },
+        {
             "source": "aiPeople",
-            "target": "DEAP",
-            "reason": "supported by"
+            "target": "oneaigroup",
+            "reason": "collaborates"
+        },
+        {
+            "source": "aiPeople",
+            "target": "oecd",
+            "reason": "collaborates"
+        },
+        {
+            "source": "aiPeople",
+            "target": "gpai",
+            "reason": "lunched"
+        },
+        {
+            "source": "mariecurie",
+            "target": "aiPeople",
+            "reason": "supports"
         },
         {
             "source": "aiPeople",

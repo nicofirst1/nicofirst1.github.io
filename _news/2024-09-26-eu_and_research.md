@@ -5,223 +5,265 @@ tag: BlogPost
 image: /assets/images/news/eu_landscape.png
 ---
 
-In the [previous post](https://nicofirst1.github.io/news/horizon-fragmentation/) we figured out that the Horizon Europe project contains some redundancies in (AI-related) project. My next step was to try and figure out how to suggest a fix to this problem, but in order to do so I had to dig deep in how EU handles AI projects and agendas. 
-I started easy, asking chatgpt to provide a list of EU  policies/organizations and whatever related to AI. Of course the first one was the [EU AI Act](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence) which I'm now familiar with and this just made me cocky in thinking I was already an expert in this. 
+In the [previous post](https://nicofirst1.github.io/news/horizon-fragmentation/) we figured out that the Horizon Europe project contains some redundancies in AI-related project. My next step was to figure out a fix to this problem, but in order to do so, I had to dig deep into how the EU handles AI projects and agendas. 
+I started off easy, asking ChatGPT to provide a list of EU  policies,organizations and anything else related to AI. Of course, the first suggestion was the [EU AI Act](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence) which I'm now familiar with, and this just made me feel a bit cocky, thinking I was already an expert. 
 Well, the second suggestion was the [Coordinated Plan on Artificial Intelligence (PlanAI)](https://digital-strategy.ec.europa.eu/en/policies/plan-ai). It's just a plan, how complicated can it be? 
-Well, let's just say the rabit hole was deeper than expected. 
+Well, let's just say the rabbit hole was deeper than expected. 
 
-So, join me in this journey of dead-links and never-ending references. With this post (probably the first of a series), we'll sviscerate the PlanAI and see how many projects are connected to it. 
-If you prefer a visual approach, I made this [nice graph](https://nicofirst1.github.io/euai_graph) where all these initiatives are connected and can be interacted with. The graph will be continuously updated so don't worry if some info is missing right now. 
+So, join me in this journey of dead links and never-ending references. In this post (probably the first of a series), we'll dissect the PlanAI and see how many projects are connected to it. 
+If you prefer a visual approach, I made this [nice graph](https://nicofirst1.github.io/euai_graph) where all these initiatives are connected and can be interacted with. The graph will be continuously updated, so don't worry if some info is missing right now. 
 
-Well, let's begin.
+Let's begin.
 
 
 # Coordinated Plan on Artificial Intelligence
-The PlanAI was first published in 2018 and then [reviewed in 2021](https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review) when the EU (and the world) realized the potential that AI can have. 
-The changes between the two versions are mainly in the direction of:
+The PlanAI was first published in 2018 and then [reviewed in 2021](https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review)[^1], when the EU (and the world) realized the potential impact of AI. 
+The changes between the two versions mainly focus on:
 
-- Planning: the 2021 version put an emphasis on human-centric, sustainable and secure AI. It also aims to achieve EU digital sovereignty.
-- Funding: the main difference. The original plan was to invest at least €20 billion by 2020 using the Horizon 2020 and Horizon EU. The new plan upped the number quite a bit and amies now for €145 billion by 2023 using the Horizon EU, the [Digital Europe Programme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme) and the [Recovery and Resilience Facility](https://next-generation-eu.europa.eu/recovery-and-resilience-facility_en).
-- Funding: the main difference. The original plan was to invest at least €20 billion by 2020 using the Horizon 2020 and Horizon EU. The new plan upped the number quite a bit and amies now for €145 billion by 2023 using the Horizon EU, the [Digital Europe Programme](ht
-- tps://digital-strategy.ec.europa.eu/en/activities/digital-programme) and the [Recovery and Resilience Facility](https://next-generation-eu.europa.eu/recovery-and-resilience-facility_en).
+[^1]: You can read the complete review [here](https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review).
 
-For everything else, the new PlanAI is based on 4 policies reflecting key objectives in AI. 
+- **Planning**: The 2021 version emphasizes  human-centric, sustainable and secure AI. It also aims to achieve EU digital sovereignty.
+- **Funding**: This is the most significant difference.  The original plan was to invest at least €20 billion by 2020 using the Horizon 2020 and Horizon EU. The new plan increased the target quite a bit, now aiming for €145 billion by 2023 through Horizon EU, the [Digital Europe Programme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme) and the [Recovery and Resilience Facility](https://next-generation-eu.europa.eu/recovery-and-resilience-facility_en).
 
 
-## 1. Enabling conditions for AI’s development and uptake
+For everything else, the new PlanAI is based on four policies reflecting key objectives in AI. 
+
+
+## <a name="enablingai"></a>1. Enabling Conditions for AI’s Development and Uptake
+
 Let's abbreviate it to [EnablingAI](https://digital-strategy.ec.europa.eu/en/policies/enabling-ai).
-Here the aim is to actually have the resources necessary to have AI in EU. This translates in starting two new initiatives: AI Factories and GenAI4EU.
+Here, the aim is to actually have the resources necessary to make AI a reality in EU. This translates in launching two new initiatives: AI Factories and GenAI4EU.
 
 ### AI Factories
-[Announced in Jan 2024](https://ec.europa.eu/commission/presscorner/detail/en/ip_24_383), The AI Factories will come to life in 2025 and are (for now), just an [amend](https://digital-strategy.ec.europa.eu/en/news/setting-ai-factories-now-possible-after-eurohpc-regulation-amendment) to the [The European High Performance Computing Joint Undertaking (EuroHPC JU)](https://digital-strategy.ec.europa.eu/en/policies/high-performance-computing-joint-undertaking). 
-So, for now, we only have a vague description of what a factory will look like. Specifically it will include a mix of hardware (supercomputer and data centers), "human capital" (I guess they mean experts from academia and research institutes) and startups/SMEs. 
+[Announced in January 2024](https://ec.europa.eu/commission/presscorner/detail/en/ip_24_383), the AI Factories will come to life in 2025 and are currently just an [amendment](https://digital-strategy.ec.europa.eu/en/news/setting-ai-factories-now-possible-after-eurohpc-regulation-amendment) to the [The European High Performance Computing Joint Undertaking (EuroHPC JU)](https://digital-strategy.ec.europa.eu/en/policies/high-performance-computing-joint-undertaking). 
+So, for now, we only have a vague description of what a factory will look like. Specifically, it will include a mix of hardware (supercomputers and data centers), "human capital" (I guess they mean experts from academia and research institutes), and startups/SMEs. 
 
 But how?
-Well, the commission and member states will invest an additional €2.1 billion to acquire more compute. On top of that the commission will provide financial support for startups (min €100 million) with a cap of €1 billion coming from [InvestEU](https://investeu.europa.eu/index_en).
+Well, the commission and member states will invest an additional €2.1 billion to acquire more computing power. On top of that, the commission will provide financial support for startups (at least €100 million) with a cap of €1 billion coming from [InvestEU](https://investeu.europa.eu/index_en).
 
 ### GenAI4EU
-Honestly I couldn't find much on what these are supposed to be. The description is "aims to support the development of novel use cases and emerging applications in Europe's 14 industrial ecosystems, as well as the public sector. Application areas include robotics, health, biotech, manufacturing, mobility, climate and virtual worlds." 
-What I could find is that the commission is planning to use the Horizon Europe and the Digital Europe programmes to fund projects that are connected to industry application of GenAI (in the above field) for a total of €500 million[^1].
+Honestly, I couldn't find much on what these are supposed to be. The description states it "aims to support the development of novel use cases and emerging applications in Europe's 14 industrial ecosystems, as well as the public sector. Application areas include robotics, health, biotech, manufacturing, mobility, climate and virtual worlds." 
+What I could find is that the commission is planning to use the Horizon Europe and the Digital Europe programmes to fund projects that are connected to industry application of GenAI (in the above field) for a total of €500 million[^2].
 Also these initiatives will cooperate with the AI Factories and the [Common European Data Spaces](https://digital-strategy.ec.europa.eu/en/policies/data-spaces). I guess the latter will provide compute/experts and the former data.
-Finally, the [EU AI Office](https://digital-strategy.ec.europa.eu/en/policies/ai-office) toghether with the [European Transition Pathways Platform will](https://single-market-economy.ec.europa.eu/industry/transition-pathways_en) monitor GenAI4EU's progress. 
+Finally, the [EU AI Office](https://digital-strategy.ec.europa.eu/en/policies/ai-office) together with the [European Transition Pathways Platform will](https://single-market-economy.ec.europa.eu/industry/transition-pathways_en), will monitor GenAI4EU's progress. 
 
 
-[^1]: [Euractive article](https://www.euractiv.com/section/artificial-intelligence/news/leak-eu-commission-prepares-strategic-framework-to-boost-ai-start-ups-generative-ai-uptake/). I can't access the [science business one](https://sciencebusiness.net/news/r-d-funding/commission-shaping-eu500m-generative-artificial-intelligence-calls) :(
+[^2]: [Euractive article](https://www.euractiv.com/section/artificial-intelligence/news/leak-eu-commission-prepares-strategic-framework-to-boost-ai-start-ups-generative-ai-uptake/). I can't access the [science business one](https://sciencebusiness.net/news/r-d-funding/commission-shaping-eu500m-generative-artificial-intelligence-calls) :(
 
-## 2. Thriving from the lab to the market
-While point 1. was busy with describing the material necessities to build AI (mainly compute and experts), the [aiLabMarket](https://diorganisationsgital-strategy.ec.europa.eu/en/policies/ai-lab-market) focuses on fostering Puplic-Private-Partnerships (PPP). Specifically, the commission will provide a €1 billion per year investments in AI coming from our friends: Horizon Europe and the Digital Europe. Another €20 billions will be provided from Member states and the private sector. Finally The whole thing can use [The Recovery and Resilience Facility (RRF)](https://commission.europa.eu/business-economy-euro/economic-recovery/recovery-and-resilience-facility_en) funds [^2], which amount to €134 billions.
+## <a name="aiLabMarket"></a>2. Thriving From the Lab to the Market
 
-[^2]: The RRF allocated the €134 billions for project that aim to digitalize the EU. So these funds are not directly and only allocated to AI initiatives, however it is the case that AI initiatives are contained in the aim.
+While point 1 focused on the material necessities to build AI (mainly computing resources and experts), the [aiLabMarket](https://diorganisationsgital-strategy.ec.europa.eu/en/policies/ai-lab-market) focuses on fostering Public-Private Partnerships (PPP). Specifically, the Commission will provide a €1 billion per year in investments in AI through our friends: Horizon Europe and the Digital Europe. Another €20 billion will be provided by member states and the private sector. Finally, the whole initiative can utilize the [Recovery and Resilience Facility (RRF)](https://commission.europa.eu/business-economy-euro/economic-recovery/recovery-and-resilience-facility_en) funds[^3], which amount to €134 billion.
 
-Of course, to do so you need to intervene in various aspects:
-- The actual coordination between experts (academia) and private sector -> Enter [The AI,Data and Robotic Association (ADRA)](https://adr-association.eu/) (more about it later).
-- What happens when ADRA is not enough? If you are a small player with a big idea, you can just hop on the  [AI-on-demand platform (AIoD)](https://www.ai4europe.eu/) and check what kind of available resources (algorithms, data and compute) you can use for your goals! 
-- Just to be sure, let's also add a network of [European Digital Innovation Hubs (EDIHs)](https://european-digital-innovation-hubs.ec.europa.eu/home) which can help on a **regional-level**.
-- How do you coordinate between experts and private sector if you have no experts? Well, you need a network of (academic) organizations that foster AI research of course -> that's why the [European Networks of Excellence in AI (NoEs)](https://www.vision4ai.eu/community/)  exits.
+[^3]: The RRF allocated these €134 billions for project aiming to digitalize the EU. So, while these funds are not exclusively allocated to AI initiatives, AI initiatives are indeed included.
+
+Of course, to do so, you need to intervene in various aspects:
+- The actual **coordination between experts (academia) and private sector**: Enter [The AI, Data and Robotic Association (ADRA)](https://adr-association.eu/) (more about it later).
+- **Support for smaller players**: If you're a small player with a big idea, you can hop on the (https://www.ai4europe.eu/)  and check what available resources (algorithms, data, and computing power) you can use to achieve your goals!
+- **Regional-level support**: The (https://european-digital-innovation-hubs.ec.europa.eu/home) can help at a regional level.
+- How do you coordinate between experts and private sector if you have no experts?  You need a **network of** (academic) **organizations** that foster AI research of course. That's why the [European Networks of Excellence in AI (NoEs)](https://www.vision4ai.eu/community/)  exits.
 - Ok, you have the experts and the private partners. They come up with a nice idea and implement it. Will it be in line with the never-ending, always-changing EU regulations? Why don't you try your idea out in the newly created [testing and experimentation facilities (TEFs)](https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities)!
 
 
-In the next parts, we will check each of these points out. 
+In the next parts, we will explore each of these points in detail.
 
 
 ###  AI, Data and Robotics Association (ADRA)
-As mentioned before, ADRA is an association with the aim of promoting PPP by accessing €2.6 billion euros from the Horizon 2020 and Horizon Europe funds (and additional contributions by [private partners](https://adr-association.eu/why-join-adra)). It's called association right? So who are the members? Well, the initial ones were: 
+As mentioned before, ADRA is an association with the aim of promoting PPP by accessing €2.6 billion euros from the Horizon 2020 and Horizon Europe funds (with additional contributions by [private partners](https://adr-association.eu/why-join-adra)). It's called association right? So who are the members? Well, the initial ones were: 
 1. [Big Data Value Association (BDVA)](https://bdva.eu/)
-2. [Confederation of Laboratories for Artificial Intelligence Research in Europe (CLAIRE)](https://claire-ai.org/)
+2. [Confederation of Laboratories for Artificial Intelligence Research in Europe (CAIRNE)](https://cairne.eu/)[^4]
 3. [European Laboratory for Learning and Intelligent Systems (ELLIS)](https://ellis.eu/)
 4. [European Association for Artificial Intelligence (EurAI)](https://www.eurai.org/)
 5. [European Robotic Forum (euRobotics)](https://eu-robotics.net/)
 
-Hopefully, we'll have time and energies to figure out where these guys come from later. As now (06/10/2024) there are a total of 140 Members: 88 Research, 47 industry, 4 associate (?) and 1 strategic (Sweden AI). Not bad considering the project is 3 years old (created in May 2021) and they managed to get big players on board (e.g. BMW, Decathlon, Bosch...).
+[^4]: Previously called CLAIRE.
+
+Hopefully, we'll have time and energies to figure out where these organizations come from later. As now (06/10/2024) there are a total of 140 Members: 88 Research, 47 industry, 4 associate and 1 strategic (Sweden AI). Not bad, considering the project is 3 years old (created in May 2021) and they managed to get major players on board (e.g. BMW, Decathlon, Bosch...).
 
 ##### Goals
 
-Going back the ADRA's goals, as stated in the [Partnership Proposal](https://adr-association.eu/sites/default/files/2024-04/Partnership-application-2020-submitted.pdf) they have 3 *general objectives* divided in 7 specific ones (see Figure, ADRA plz don't sue me for sing your picture)
+Going back the ADRA's goals, as stated in the [Partnership Proposal](https://adr-association.eu/sites/default/files/2024-04/Partnership-application-2020-submitted.pdf) they have three *general objectives* divided in seven specific ones (see Figure —ADRA, please don't sue me for using your picture).
 ![ADRA objectives](/assets/images/news/eu_landscape/adra_objectives.png)
 
-Apart from the usual suspects (securing European sovereignty), we can see a specific aim in promoting the creation of innovative[^3] initiatives[^4] aimed at maximizing societal[^5] and economical[^6] benefits. To me, it seems that ADRA has the most challenging objective of balancing EU values for societal benefits (no risky upcases), with regulatory/market fragmentation and uncertainty, with companies objectives. Good luck.
+Apart from the usual suspects (securing European sovereignty), we can see a specific aim to promote the creation of innovative[^5] initiatives[^6] aimed at maximizing societal[^7] and economical[^8] benefits. To me, it seems that ADRA has the most challenging objective: balancing EU values for societal benefits (avoiding risky use cases), with regulatory/market fragmentation and uncertainty, and companies objectives. Good luck.
 
-[^3]: Innovative in the sense that the idea most likely originates from an academic context.
-[^4]: The private sector part of the idea. Here the aim is to guide the private sector offering expertise in both the technical (the previous point) and the regulatory part.
-[^5]: Societal and environmental will have to align with the strict EU regulations and AI ACT. This will prevent the implementation of risky AI upcases. 
-[^6]: Companies chase money -> AI can make money. 
+[^5]: The term "innovative" here refers to ideas that likely originate from an academic context.
+[^6]: The private sector part of the idea. This refers to guiding the private sector by offering expertise in both technical (previous point) and regulatory areas.
+[^7]:  Societal and environmental considerations will need to align with strict EU regulations and the AI Act, which aims to prevent the implementation of risky AI use cases.
+[^8]: The goal for companies is profit, and AI has the potential to generate significant financial returns.
 
 
 ##### How?
 ADRA's proposal ([Section 3](https://adr-association.eu/sites/default/files/2024-04/Partnership-application-2020-submitted.pdf)) lists a number of activities in order to achieve its goals.
 
-Basically they can be divided in support for innovation (lighthouses, mission-based challenges, cascade actions, actions to simulate uptake and market/innovation enablers) or for ecosystems (community building, business models/organizations, regulation/standards and taskforce)
+Basically, these activities can be divided into support for innovation (lighthouses, mission-based challenges, cascade actions, actions to stimulate uptake, and market/innovation enablers) or support for ecosystems (community building, business models/organizations, regulatory/standards and task forces).
 
 ##### Current status
 Currently, ADRA released the fourth edition of the[Strategic Research, Innovation, and Deployment Agenda (SRIDA)](https://adr-association.eu/news/adra-releases-strategic-research-innovation-and-deployment-agenda)  where they outline "the long-term vision for the development and deployment of trustworthy AI, Data, and Robotics technologies in Europe and provides key recommendations to guide future European work programs.".
-I highly suggest to read it.
-ADRA also has a series of forum going on, the latest being [last November](https://adr-association.eu/news/announcing-european-ai-data-robotics-forum-4-5-november-2024) (i missed it!).
+I highly suggest reading it.
+ADRA also has a series of forums ongoing, the latest being [last November](https://adr-association.eu/news/announcing-european-ai-data-robotics-forum-4-5-november-2024) (which I missed it!).
 
 
-
-### AI-on-demand platform (AIoD)
-While ADRA actively put effort in connecting public and primate sector, it cannot materially help all possible Small Medium sized Enterprises (SMEs).  For these, a federated approach is more appropriate, meaning that they need to help themselves. How can they do that? How can **you**, with a nice business idea, look around and see what others are offering (algorithm, data, compute, expertise) and use those resources to your advantage?
+### <a name="aiod"></a>AI-on-demand platform (AIoD)
+While ADRA actively works on connecting the public and private sectors, it cannot materially help all possible small and medium-sized enterprises (SMEs). For these SMEs, a federated approach is more suitable, meaning that they need to help themselves. How can they do that? How can **you**, with a great business idea, look around and see what others are offering (algorithms, data, compute, expertise), and use those resources to your advantage?
 Well, have you heard of the [AI-on-demand platform](https://aiod.eu/)?
 
-Apart from having the slowest website ever which seems to be created by a particularly skilled 15 old teen, the platform is host of several services:
-- An assets catalogue, aka [MyLibrary](https://mylibrary.aiod.eu/marketplace) where you can get access to AI models, datasets and experiments. On the dataset parts it seems to have only stuff from Hugging Face, while the models seems to come from [Bonseyes](https://www.bonseyes.eu/) (a marketplace for AI in cloud and edge) and [OpenML](https://www.openml.org/) (another platform for AI stuff). It also says "powered by AI4Eosc" which stands for [Artificial Intelligence for the European Open Science Cloud](https://ai4eosc.eu/) ([todo](https://ai4eosc.eu/) add to graph).
-- [Research Bundles](https://www.ai4europe.eu/research/research-bundles) : give you a space in the AI on-demand platform where you can collect and publish the outputs of a small research project in a compact way. A research bundle collects in a single place all the assets (code, data, tutorials, examples, ...) produced by your project and published on the AI on-demand platform. Of course, you can also put links to assets published elsewhere, like Github or Zenodo.
-- An [AI builder](https://aiexp.ai4europe.eu/#/home) in partnership with Eclispe built at Fraunhofer IAIS (wink wink).
-- [Research and Innovation AI Lab (RAIL)](https://rail.aiod.eu/docs/about) a beta version of what seems to be an educational oriented platform to use AioD assets.
+Besides having a slow website that seems to have been created by a particularly skilled 15-year-old, the platform hosts several services:
+- **Assets Catalogue**, aka [MyLibrary](https://mylibrary.aiod.eu/marketplace), where you can access AI models, datasets, and experiments. In the dataset section, it mainly features content from Hugging Face, while the models seem to come from [Bonseyes](https://www.bonseyes.eu/) (a marketplace for AI in cloud and edge) and [OpenML](https://www.openml.org/) (another platform for AI stuff). It also mentions "powered by AI4Eosc", which stands for [Artificial Intelligence for the European Open Science Cloud](https://ai4eosc.eu/).
+- [**Research Bundles**](https://www.ai4europe.eu/research/research-bundles) give you a space on the AI on-demand platform to collect and publish the outputs of a small research project in a compact way. A research bundle gathers in one place all the assets (code, data, tutorials, examples, etc.) produced by your project and published on the AIoD platform. Of course, you can also include links to assets published elsewhere, like GitHub or Zenodo.
+- An [**AI builder**](https://aiexp.ai4europe.eu/#/home) created in partnership with Eclispe and built at Fraunhofer IAIS (wink wink).
+- The [**Research and Innovation AI Lab (RAIL)**](https://rail.aiod.eu/docs/about), a beta version of what seems to be an educational-oriented platform to use AIoD assets.
 
-
-Speaking of funds, the platform is supported by Horizon 2020, Horizon Europe, and Digital Europe programme (focus on industry and public administration), but I couldn't find any specific numbers. 
+Speaking of funding, the platform is supported by Horizon 2020, Horizon Europe, and the Digital Europe programme (focused on industry and public administration), but I couldn't find any specific numbers.
 
 
 ###  European Digital Innovation Hubs (EDIHs)
 
-So, if you got this far, you know know that: if you're a big company, ADRA will carry your hand through the EU regulations[^7] and if you're small but independent, that you can check what's the AIoD has to offer. 
+So, if you got this far, you now know that if you're a big company, ADRA will carry your hand through the EU regulations[^9], and if you're small but independent, you can explore what AIoD has to offer.
 
-[^7]: As we saw before ADRA does much more, but stick with me for this example. 
+[^9]: As we discussed before, ADRA does much more, but stick with me for this example.
 
-What happens when mamma ADRA has no time for you and you don't understand what AIoD is about (I feel you)?
-In this case, you can run towards the closest [European Digital Innovation Hubs (EDIHs)](https://european-digital-innovation-hubs.ec.europa.eu/home). EDIHs are **regional** hubs that promote digitalization for both the [public](https://european-digital-innovation-hubs.ec.europa.eu/knowledge-hub/thematic-groups/public-administration-main-focus-artificial-intelligence) and private sectors. There are currently [150 working in AI](https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue) and their objectives are defined on the website as "EDIHs help all companies seeking to use AI technologies to become more competitive on business/production processes, products or services."
-If we choose a [random one](https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue/edih-rheinland-website) from the catalog we see how they mostly provide support(check the [services](https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue/edih-rheinland-website/services)).
-While 50% of their costs are funded by the EU and member states, the remaining needs to be covered by private contributions and reginal funding. I like this approach because it forces the EDIH to be active on a regional level, hopefully solving (small but very real) problems.
+But what happens when mamma ADRA has no time for you and you don't understand what AIoD is all about (I feel you)?
+In that case, you can turn to your nearest [European Digital Innovation Hubs (EDIHs)](https://european-digital-innovation-hubs.ec.europa.eu/home). EDIHs are **regional** hubs that promote digitalization for both the [public](https://european-digital-innovation-hubs.ec.europa.eu/knowledge-hub/thematic-groups/public-administration-main-focus-artificial-intelligence) and private sectors. There are currently [150 working in AI](https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue), with their objectives defined on the website as: "EDIHs help all companies seeking to use AI technologies to become more competitive on business/production processes, products or services."
+If we choose a [random one](https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue/edih-rheinland-website) from the catalog, we see that they mostly provide support (check the [services](https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue/edih-rheinland-website/services)).
+While 50% of their costs are funded by the EU and member states, the remaining portion must be covered by private contributions and regional funding. I like this approach because it forces EDIHs to be active at the regional level, hopefully solving smaller but very real problems.
 
-On the website several more initiatives are presented, I will just give a brief list here and we will see if they pop out again:
-- [Digital Transformation Accelerator (DTA)](https://digital-strategy.ec.europa.eu/en/funding/digital-transformation-accelerator-network-edih-cnect2021op0004): a project that aims to support the creation, development, and growth of the pan-European DIH network, and facilitate intra/inter-regional collaboration between EDIHs. It finished in March 2022
--  [Digital Maturity Assessment Tool (DMAT)](https://european-digital-innovation-hubs.ec.europa.eu/open-dma): Developed by the European Commission Joint Research Centre (JRC), it is a framework to measure maturity  EDIH customers across Europe.
--  [Key Performance Indicators (KPIs)](https://road-safety.transport.ec.europa.eu/european-road-safety-observatory/data-and-analysis/key-performance-indicators-kpis_en):  it is a reporting tool used by EDIH to report their progress to the commission.
+The website presents several more initiatives, which I'll briefly list here, and we can see if they come up again:
+- [Digital Transformation Accelerator (DTA)](https://digital-strategy.ec.europa.eu/en/funding/digital-transformation-accelerator-network-edih-cnect2021op0004): A project that aims to support the creation, development, and growth of the pan-European DIH network, and facilitate intra/inter-regional collaboration between EDIHs. It ended in March 2022
+-  [Digital Maturity Assessment Tool (DMAT)](https://european-digital-innovation-hubs.ec.europa.eu/open-dma): Developed by the European Commission Joint Research Centre (JRC), it's a framework to measure the digital maturity of EDIH customers across Europe[^10].
+-  [Key Performance Indicators (KPIs)](https://road-safety.transport.ec.europa.eu/european-road-safety-observatory/data-and-analysis/key-performance-indicators-kpis_en): A reporting tool used by EDIH to report their progress to the commission.
 
+[^10]: If you wonder how the DMAT compares to the Technology Readiness Level (more about it later), basically the DMAT is about how ready an organization is to adopt digital transformation, whereas TRL focuses on how ready a particular technology is for implementation.
 
-###  Networks of Excellence Centres (NoEs)
+### <a name="noes"></a>Networks of Excellence Centres (NoEs)
 
-Until now, we covered the initiatives dedicated to realizing the innovations brought to life by experts. But what do you bring to life with no experts? 
+Until now, we've covered initiatives dedicated to bringing innovations to life with the support of experts. But what happens if there are no experts to rely on?
 
-That's why the [Networks of Excellence Centres (NoEs)](https://www.vision4ai.eu/community/) exists. The attentive reader will see that the link for NoEs is actually redirecting to the Vision4Ai website. Digging around I found that the [VISION project](https://cordis.europa.eu/project/id/952070) was given ~ €2 million from Horizon 2020, and it lasted from September 1st 2020 until this August (31st, 2024). Its main objective was to coordinate the NoEs which they seem to have accomplished. 
-So, now it is unclear to me who will take on the task of coordinating the NoEs, but it also might be the case that this is not needed anymore as the centers are already in contact with each other. 
+This is where the [Networks of Excellence Centres (NoEs)](https://www.vision4ai.eu/community/) come into play. Attentive readers may notice that the link for NoEs actually redirects to the Vision4Ai website. Digging around, I found that the [VISION project](https://cordis.europa.eu/project/id/952070) was allocated ~ €2 million from Horizon 2020, and it lasted from September 1st 2020 until this August (31st, 2024). Its main objective was to coordinate the NoEs, and it appears they have achieved this goal.
+At this point, it's unclear who will take on the role of coordinating the NoEs, but it could also be the case that such coordination is no longer necessary, as the centres are already in contact with each other.
 
 Speaking of centers, these are the current ones:
 
 | Start Year 	|                                      	|                                            	|                                            	|                                      	|
 |------------	|--------------------------------------	|--------------------------------------------	|--------------------------------------------	|--------------------------------------	|
-| 2020       	| [AI4media](https://www.ai4media.eu/) 	| [ELISE](https://www.elise-ai.eu/)[^8]          	| [Humane-AI net](https://www.humane-ai.eu/) 	| [TAILOR](https://tailor-network.eu/) 	|
+| 2020       	| [AI4media](https://www.ai4media.eu/) 	| [ELISE](https://www.elise-ai.eu/)[^11]          	| [Humane-AI net](https://www.humane-ai.eu/) 	| [TAILOR](https://tailor-network.eu/) 	|
 | 2022       	| [ELSA](https://elsa-ai.eu/)          	| [euROBIN](https://www.eurobin-project.eu/) 	|                                            	|                                      	|
 | 2023       	| [ELIAS](https://elias-ai.eu/)        	| [dAIedge](https://daiedge.eu/)             	| [Enfield](https://www.enfield-project.eu/) 	|                                      	|                         |
 
+*Note: All centres established in 2020 ended in August 2024.*
 
-[^8]: Fun fact, ELISE it used to be called European Learning and Intelligent Systems Excellence ([according to the proposal](https://cordis.europa.eu/project/id/951847)).
+[^11]: Fun fact, ELISE it used to be called European Learning and Intelligent Systems Excellence ([according to the proposal](https://cordis.europa.eu/project/id/951847)).
 
+NoEs reports to be strongly linked to ADRA and wants all the projects to communicate via the  [AIoD](#aiod) platform.
 
-Where all the ones started in 2020 have ended this August. 
+As mentioned before, the primary focus here is on academia: "fostering research excellence and creating a critical mass of European AI knowledge and talent."
 
+### <a name="tefs"></a>Testing and Experimentation Facilities (TEFs)
 
-NoEs reports to be strongly linked to ADRA and wants all the projects to communicate via the  [AI-on-demand platform (AIoD)](https://www.ai4europe.eu/) platform.
-
-As previously said, the focus here is mainly academic: "fostering research excellence and creating a critical mass of European AI knowledge and talent".
-
-
-### Testing and experimentation facilities (TEFs)
-
-We've come to the last one, finally. For you it's a 10 min read, but I've been digging around for days now...
-The last piece of aiLabMarket, is related to the last step in the line: testing. 
-For this purpose, the commission invested €200 million to create 4 sectorial [Testing and Experimentation Facilities (TEFs) for AI.](https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities), specifically for:
+Finally, we've reached the last initiative in aiLabMarket, which is related to the last step in the line: testing. 
+For this purpose, the Commission has invested €200 million to create four sector-specific [Testing and Experimentation Facilities (TEFs) for AI.](https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities), specifically for:
 - Healthcare with [TEF-Health](https://tefhealth.eu/home)
 - Agri-food with [AgrifoodTEF](https://www.agrifoodtef.eu/)
 - Manufacturing with [AI Matters](https://ai-matters.eu/)
 - Smart Cities & Communities with [Citcom.ai](https://citcom.ai/?trk=article-ssr-frontend-pulse_little-text-block)
 
-But what are these facilities? How is testing performed? Let's see.
-We'll take Citcom as an example since it relates to a filed I'm more or less familiar with (smart-cities).
-By looking and their website, we can see that they offer [several services](https://citcom.ai/services) ranging from access to data too testing in real life situation (you can [deploy your system in belgium](https://citcom.ai/services/deploy-and-test-traffic-solution-in-a-real-life-traffic-environment)). All of these services have a [Technology Rediness Level](https://en.wikipedia.org/wiki/Technology_readiness_level) (TRL) threshold of 6 to 8, meaning that your system needs to be at least demonstrated in a relevant environment. 
+But what exactly are these facilities, and how does testing work? Let's take a closer look.
 
-Overall TEFs are not so complex. They are places where you can bring your system to be tested in a close-to-final environment. The official EU page also mention that, after the 5 years funding, the TEFs are expected "to achieve long-term financial sustainability", which probably mean that as a company you need to pay for these services. And since you need to test your system to deploy it on a EU level, this will become a must for the companies willing to bring their products to the EU. The real question is : will the additional costs of testing be transferred to the end user (us)?
+We'll use Citcom as an example since it relates to a filed I'm somewhat familiar with (smart-cities).
+Based on their website, they offer [several services](https://citcom.ai/services), ranging from providing access to data to conduct tests in real-life situation (e.g., [deploying systems in Belgium](https://citcom.ai/services/deploy-and-test-traffic-solution-in-a-real-life-traffic-environment)). All of these services have a [Technology Rediness Level](https://en.wikipedia.org/wiki/Technology_readiness_level) (TRL) threshold of 6 to 8, meaning that your system must to be at least be demonstrated in a relevant environment. 
 
-
-
-## 3. Ensuring that AI works for people (AI-People)
-
-To recap (I need this more than you):  EnablingAI focuses on supporting the creation of "physical" AI stuff (e.g. compute centers), aiLabMarket focuses instead of creating synergies between innovation (e.g. research), the market (SMEs) and the public sector (PPP).  
-So what's left? Well, society!
-
-The third policy pillar is [ensuring that AI works for people](https://digital-strategy.ec.europa.eu/en/policies/ai-people) (which we will abbreviate with *aiPeople*). This pillar covers all the parts related to: (i) educating/training people on AI (this includes [keeping experts from fleeing to the US](https://op.europa.eu/en/publication-detail/-/publication/9e39b4bd-843c-11ee-99ba-01aa75ed71a1/language-en)), (ii) keeping society afloat, (iii) and making EU a leader in AI regulations. 
-
-To really understand what these guys are about, we need to first "partire per la tangente" and introduce the EU digital Strategy\|Decade\|Programme\|Compass (yes these are all different things, and there are more[^9]).
-
-[^9]: I made it a challenge with myself to find as many initiatives that start with digital. Here is a decently not complete list: (1) [Digital Economy and Society Index](https://digital-strategy.ec.europa.eu/en/policies/desi), (2) [Digital Services Act](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-services-act_en), (3) [Digital Markets Act](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-markets-act-ensuring-fair-and-open-digital-markets_en), (4) [Digital Agenda for Europe](https://www.europarl.europa.eu/factsheets/en/sheet/64/digital-agenda-for-europe),(5) [Digital Action Day](https://digital-strategy.ec.europa.eu/en/library/digital-action-day-report), (6) [Digital Euro](https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html)
+Overall, TEFs are not overly complex. They are places where you can bring your system to be tested in a near-final environment. The official EU page also mentions that, after the initial five-year funding, the TEFs are expected "to achieve long-term financial sustainability", which likely means companies need to pay for these services. Since testing is necessary to deploy your system at the EU level, it could become mandatory for companies looking to bring their products to the European market. The real question is whether these additional testing costs will be passed on to end users.
 
 
-##### EU Digital ***
-So, let's start with the [European Digital Strategy (EDS)](https://digital-strategy.ec.europa.eu/en). The EDS is the superset/umbrella under which all the other digital stuff reside. It was first introduced in 2020 in [this press release](https://ec.europa.eu/commission/presscorner/detail/en/ip_20_416) as a successor to the [Digital Agenda](https://www.europarl.europa.eu/factsheets/en/sheet/64/digital-agenda-for-europe) and has BIIIG objectives. Among those, the one that I'm most excited for is the "single digital market" which addressed the fragmentation problem we discussed in here and in previous posts. 
 
-In March 2021, the commission [proposed](https://ec.europa.eu/commission/presscorner/api/files/document/print/en/qanda_21_4631/QANDA_21_4631_EN.pdf) the [Digital Decade (DigiDec)](https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade) as a structured policy programme to implements the goals of the EDS. So basically the EDS had big plans and the DigiDec layout a way to achieve them. However the DigiDec is still not accurate enough, e.g. it does not provide metrics in order to measure if the goals are achieved. 
+## 3. Ensuring That AI Works for People
+
+To recap (I need this more than you):  [EnablingAI](#enablingai) focuses on supporting the creation of "physical" AI infrastructures (e.g., compute centers), while [aiLabMarket](#aiLabMarket) aims at creating synergies between innovation (e.g., research), the market (SMEs), and the public sector (PPP).  
+So, what's left? Well, society!
+
+The third policy pillar is [ensuring that AI works for people](https://digital-strategy.ec.europa.eu/en/policies/ai-people) (which we will abbreviate as *aiPeople*). This pillar covers all the parts related to: (i) educating and training people on AI (including efforts to prevent[experts from fleeing to the US](https://op.europa.eu/en/publication-detail/-/publication/9e39b4bd-843c-11ee-99ba-01aa75ed71a1/language-en)), (ii) maintaining social cohesion, and (iii) making the EU a leader in AI regulation.
+
+To fully understand what these efforts are about, we need to first ["partire per la tangente"](https://dictionary.cambridge.org/dictionary/english-italian/go-off-at-a-tangent) and introduce the EU digital Strategy\|Decade\|Programme\|Compass (yes, these are all different things, and there are more[^12]).
+
+[^12]: I challenged myself to find as many EU initiatives starting with "digital" as possible. Here is a (still incomplete) list: (1) [Digital Economy and Society Index](https://digital-strategy.ec.europa.eu/en/policies/desi), (2) [Digital Services Act](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-services-act_en), (3) [Digital Markets Act](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-markets-act-ensuring-fair-and-open-digital-markets_en), (4) [Digital Agenda for Europe](https://www.europarl.europa.eu/factsheets/en/sheet/64/digital-agenda-for-europe),(5) [Digital Action Day](https://digital-strategy.ec.europa.eu/en/library/digital-action-day-report), (6) [Digital Euro](https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html), (7) [Digital Education Action Plan](https://education.ec.europa.eu/focus-topics/digital-education/action-plan), (8) [Digital Opportunity Traineeships](https://digital-skills-jobs.europa.eu/en/actions/european-initiatives/digital-opportunity-traineeships)
+
+
+##### EU Digital Initiatives
+Let's start with the [European Digital Strategy (EDS)](https://digital-strategy.ec.europa.eu/en). The EDS is the overarching framework under which all other digital initiatives reside. It was first introduced in 2020 in [this press release](https://ec.europa.eu/commission/presscorner/detail/en/ip_20_416) as a successor to the [Digital Agenda](https://www.europarl.europa.eu/factsheets/en/sheet/64/digital-agenda-for-europe) and has BIIIG objectives. Among those, the one that I'm most excited for is the "single digital market", which addresses the fragmentation problem we've discussed before. 
+
+In March 2021, the Commission [proposed](https://ec.europa.eu/commission/presscorner/api/files/document/print/en/qanda_21_4631/QANDA_21_4631_EN.pdf) the [Digital Decade (DigiDec)](https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade) as a structured policy programme to implement the goals of the EDS. Essentially, the EDS had big plans, and the DigiDec laid out a way to achieve them. However, the DigiDec is still not specific enough; for example, it does not provide metrics to measure whether the goals have been achieved.
 
 Enter the [Digital Compass (DigiCompass)](https://eur-lex.europa.eu/legal-content/en/TXT/?uri=CELEX%3A52021DC0118).
-If you clicked on the link for the DigiCompass, you will notice that it is one of those boring, long EU commission document. This document is where all the metrics and objectives from the DigiDec are defined. If you have time to waste, you can scroll all the way down to the annex, where you'll see a table of "cardinal points", aka objectives. Among those we finally see something related to AI, mainly:
-- At least 20 million (against the current 7.8 million) employed Information and Communications Technology (ICT) specialists, some of which will be in AI. 
-- At least 20% word production in value for semiconductors, cough cough AI factories.
-- At least 75% of European enterprises have taken up AI
-
-Ok, all very cool, but where is the money coming from? You might have guessed that the last piece of the puzzle is indeed the [Digital Europe Programme (DigiProg)](https://digital-strategy.ec.europa.eu/en/activities/digital-programme). You don't know, but we have encountered this friend already. It has a budget of €7.9 billion and it is the responsible for the financing of EDIH, GenAI4EU and AIoD.
+If you click on the link for the DigiCompass, you will notice that it is one of those long, detailed EU Commission document. This is where all the metrics and objectives from the DigiDec are defined. If you have time to spare, you can scroll all the way down to the annex, where you'll find a table of "cardinal points", aka objectives. Among those, we finally see goals related to AI, such as:
+- Increasing the number of employed ICT specialists to at least 20 million, some of whom will focus on AI.
+- Achieving 20% of global semiconductor production value in Europe, including those for AI factories.
+- Ensuring that at least 75% of European enterprises have adopted AI.
 
 
-
-### Nurturing talent and improving skills
-Basically they want to create and KEEP talents in AI in Europe.  They want to do so by: 
-- Supporting traineeships in digital areas. They cite the [Digital Education Action Plan (DEAP)](https://education.ec.europa.eu/focus-topics/digital-education/action-plan) but it is unclear to which of the 13 articles this refers to. Or if the DEAP is part ot the coordinated plan (unlikely)
-- Launch a call for specialised education programmes and courses in key areas, under the Digital Europe Programme. This is probably part of the [Action 8 of DEAP](https://education.ec.europa.eu/focus-topics/digital-education/action-plan/action-8?) which aims to educate and train professionals in all sectors to use AI in their work. It interestingly mentions the [Digital Competence Framework v2.2](https://publications.jrc.ec.europa.eu/repository/handle/JRC128415), which seems to be yet another piece of the puzzle. 
-- support networks of AI excellence centres to retain talent and develop PhD programmes and AI modules under the Horizon Europe programme. this is probably connected with the NoEs mentioned above
-- und doctoral networks, postdoctoral fellowships and staff exchange projects in AI under the Marie Skłodowska-Curie actions. 
-- support the development of new skills under the [Skills Agenda](https://ec.europa.eu/social/main.jsp?catId=1223&langId=en). 
+Ok, all very cool, but where does the money come from? You guessed it, the last piece of the puzzle is the [Digital Europe Programme (DigiProg)](https://digital-strategy.ec.europa.eu/en/activities/digital-programme). It has a budget of €7.9 billion and is responsible for financing EDIH, GenAI4EU, and AIoD.
 
 
-### Developing a policy framework to ensure trust in AI systems
+
+### Nurturing Talent and Improving Skills
+This point is quite straightforward. The EU aims to develop AI literacy and expertise among its citizens. There are two levels at which they approach this, depending on the level of specialization desired:
+1. **Basic Level**: Covers AI literacy, i.e. knowing AI exists and how to use it. This is formulated as "teaching professionals in all sector about AI" (as part of the [Skills Agenda](https://ec.europa.eu/social/main.jsp?catId=1223&langId=e)), hoping they will use AI in their work[^13]. It's also nice to see a focus on integrating AI education in schools and supporting the use of AI to [enhance teaching](https://school-education.ec.europa.eu/en/discover/news/ai-teaching-and-learning).
+2. **Expert Level**:  Involves creating AI experts, aka PhDs. This is done both by funding the creation of new experts (e.g. [Marie Skłodowska-Curie Actions](https://marie-sklodowska-curie-actions.ec.europa.eu/)) and facilitating their mobility across EU (e.g., through the [NoEs](#noes) we saw before)
+
+[^13]: Part of the work done in the Digital Education Action Plan ([Action 8](https://education.ec.europa.eu/focus-topics/digital-education/action-plan/action-8)) was to update the Digital Competence Framework to its [2.2 version](https://publications.jrc.ec.europa.eu/repository/handle/JRC128415) to include AI.
+
+
+### Developing a Policy Framework to Ensure Trust in AI Systems
 Basically ensuring that AI doesn't screw up society. 
-Again we have more points here, with zero links but we can take guesses:
-- a proposal for a horizontal framework for AI, focusing on safety and respect for fundamental rights specific to AI technologies. This smells alot like the [EU AI ACT](https://artificialintelligenceact.eu/)
-- EU measures adapting the liability framework to the challenges of new technologies, including AI.
-- revisions to existing sectoral safety legislation
-- security operation centres, powered by AI, to act as a 'cybershield’ for the EU, able to detect signs of a cyberattack early enough and to enable proactive action
+It all started in 2018, when the [High-level expert group on artificial intelligence (AI HLEG)](https://digital-strategy.ec.europa.eu/en/policies/expert-group-ai) wrote the guidelines of trustworthy AI (you can find them [here](https://ec.europa.eu/newsroom/dae/document.cfm?doc_id=60419)). These guideline were then expanded upon in the [White Paper on AI ](https://commission.europa.eu/publications/white-paper-artificial-intelligence-european-approach-excellence-and-trust_en) in 2020, and realistically served as the basis for parts of the [EU AI ACT](https://artificialintelligenceact.eu/).
+Interestingly, these guidelines also cover measures to adapt liability frameworks for AI and to enhance cybersecurity defenses against attacks[^14], which are [bound to become a bigger issue with AI](https://www.ncsc.gov.uk/report/impact-of-ai-on-cyber-threat)).
 
-### Promoting the EU vision on sustainable and trustworthy AI in the world
-This point is more about making Eu leader in regulations on ai. It follows the direction of the [Digital Compass](https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade) and the [International outreach for human-centric artificial intelligence initiative](https://digital-strategy.ec.europa.eu/en/policies/international-outreach-ai)
+[^14]: In the [EU Cybersecurity Strategy for the Digital Decade](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=JOIN:2020:18:FIN) it's written "Cybersecurity must be integrated into all these digital investments, particularly key technologies like Artificial Intelligence (AI), encryption and quantum computing [...]"
 
+
+
+###  Promoting the EU Vision on Sustainable and Trustworthy AI in the World
+Unlike the other two pillars, this one looks beyond the EU and aims to establish the EU as a leader in human-centric AI policies.  Following the principles found in the [Digital Compass](https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade) the EU launched the [International outreach for human-centric artificial intelligence initiative](https://digital-strategy.ec.europa.eu/en/policies/international-outreach-ai).  Its aim is to involve as many international partners as possible, including the UN, UNESCO, OECD, Council of Europe, G7, and G20, to work together on AI. 
+Specifically the EU: 
+- Is a funding member of the [Global Partnership on AI (GPAI)](https://gpai.ai/), launched in July 2020.
+- Collaborates with the [Organisation for Economic Co-operation and Development (OECD)](https://www.oecd.org/en.html) through the [ONE-AI experts group](https://oecd.ai/en/network-of-experts/working-group/1137) and the [AI watch](https://ai-watch.ec.europa.eu/index_en) 
+- "Support international standadization bodies in their work to define common standards in the global governance of AI".  
+
+On the last point we need to open a small parenthesis. The EU is not doing this purely out of altruism. The country that manages to set a standard that is later accepted internationally often [has an intrinsic advantage on the competitors](https://link.springer.com/article/10.1007/s10961-021-09871-4). That is why in the Coordinate Plan for AI (Annex 1, Chapter 10) mentions both the [International Organisation for Standardisation (ISO)](https://www.iso.org/home.html) and the [Institute of Electrical and Electronics Engineers (IEEE)](https://www.ieee.org/), which are engaged in a wide range of standardization activities.
+
+
+## 4. Build Strategic Leadership in High-Impact Sectors
+We finally reached  the last point. 
+ This one focuses more on the sectors where AI can (and will) have a significant impact. Since it's pretty straightforward, I'll list them here and provide some context:
+1. **Environment** : You probably know about the [Green Deal](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en), where the EU aims to become climate neutral by 2050. Here, they mention that AI can help in several ways (e.g., energy/resource efficiency, finding solutions to climate change), but they also acknowledge its environmental footprint[^15], thus promoting research and development in *green AI* initiatives[^16].
+2. **Health** : It's no surprise that the healthcare system needs to undergo [serious changes to survive](https://www.theguardian.com/society/2022/dec/14/a-ticking-time-bomb-healthcare-under-threat-across-western-europe) in the coming decades. In this light, the EU aims to digitize health data with the [European Health Data Spaces](https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space_en) to use AI to support the whole system.
+3. **Robotics** : You've probably seen the [Figure 02 Robot](https://www.youtube.com/watch?v=0SRVJaOg9Co&ab_channel=Figure) and heard about all the promises regarding "automating service sectors". That's the whole point[^17].
+4. **Public sector** : This is something I'm super excited about! We are all painfully aware of the inefficiencies and excessive bureaucracy (looking at you, Deutschland) that plague our systems. The introduction of AI can streamline bureaucratic processes (I sound like ChatGPT now) and potentially enhance democratic system. The first studies on AI supporting democracy are already [looking good](https://pubmed.ncbi.nlm.nih.gov/33583994/) (cough cough [Multi Agent Systems](https://link.springer.com/article/10.1007/s11518-021-5497-1)). 
+5. **Home affairs** : Unlike the previous point, this one makes me a bit uneasy. It discusses the use of AI in law enforcement. They do mention that the AI should never have the final say, but the whole narrative is primarily centered around terrorism. This has often been used as a justification to introduce laws and policies that restrict citizens' privacy and liberty. Because, of course, no one wants terrorism.[^18].
+6. **Transport** : Since moving to Germany, I've noticed how the traffic lights work based on how many cars are waiting. I love it. While this is not the AI we often imagine for "smart mobility," it does contribute to more efficient transport. The actual initiative for transport goes more in detail (covering aviation, rail, inland waterways and road transport sectors), basically revolving around the [Mobility Strategy](https://transport.ec.europa.eu/transport-themes/mobility-strategy_en)
+7. **Agriculture** : The EU has recognized that the "AI-enabled precision farming is estimated to grow and [reach EUR 11.8 billion by 2025](https://monitor-industrial-ecosystems.ec.europa.eu/reports/other-reports/technological-trends-agri-food-industry)" and they want a piece of the cake.
+
+To summarize, these initiatives are sector-specific and are also tied to the [Testing and Experimentation Facilities](#tefs) we discussed earlier.
+
+
+
+[^15]: Short rant on what the former CEO of Google said a few days ago, namely ["that pursuit of AI should take precedence over climate change"](https://www.computing.co.uk/news/2024/ai/former-google-ceo-eric-schmidt-urges-ai-acceleration-dismisses-climate#:~:text=Former%20Google%20CEO%20Eric%20Schmidt%20has%20ignited%20a%20debate%20within,precedence%20over%20climate%20change%20goals.). While I do understand his point that AI can drive innovation and ultimately address climate issues, what happens if AI does NOT fideliver a solution in time? Are we seriously betting the future of our planet on this hope? [Bah](https://dictionary.cambridge.org/dictionary/italian-english/bah).
+[^16]: The complete proposal ([Chapter 11 here](https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review)) suggests a number of cool initiative, along with R&D efforts. These include the creation of green data spaces and AI-supported digital simulation of the planet through the [Destination Earth](https://destination-earth.eu/) initiative.
+[^17]: One aspect that was depressing to read is how the document mentions demographic challenges as a reason for needing automation. Sure, automation could help, but you know what else could address this issue? Immigration. It feels like we're prioritizing robots over people, instead of leveraging human potential. I'd rather see people of diverse backgrounds on the streets than robots.
+[^18]: After the 9/11 terrorist attack, the U.S. introduced the [USA PATRIOT Act](https://en.wikipedia.org/wiki/Patriot_Act#:~:text=An%20Act%20to%20deter%20and,Patriot%20Act) (lol the name), which expanded surveillance power of law enforcement. This later led to controversies like the NSA  surveillance exposed by Edward Snowden, showing that these powers were used to  [monitor U.S. citizens](https://www.theguardian.com/world/2013/jun/09/edward-snowden-nsa-whistleblower-surveillance)).
+
+
+## Conclusion
+
+And we're finally done. For you, this might have been a 20-minute read (according to the [average reading speed](https://scholarwithin.com/average-reading-speed#:~:text=read%2020%20pages.-,Adult%20Average%20Reading%20Speed,of%20300%20words%20per%20minute.)) , but for me, it took three weeks of my "free time" (I really should find a new hobby).
+
+This deep dive has taught me a lot about the EU AI landscape (even though we only covered one plan from four years ago), and I hope it helps you understand just how complex this whole ecosystem is.  In my previous post, I showed how the Horizon projects have overlaps and inefficiencies, particularly in AI-related initiatives. My aim here was to summarize how the EU is managing AI, potentially highlight some reasons behind these inefficiencies, and suggest solutions. While I still aim to do that, I was naive to think the answer could come from just a few weeks of research. 
+
+Interestingly, the word "fragmentation" appeared repeatedly in many of the documents I read while writing this blog post. The EU is painfully aware that fragmentation is one of its most significant issues, one that could slowly kill the Union if left unaddressed (as pointed out in Mario Draghi's report). However, it's clear that this is not an easy problem to solve. 
+
+
+That said, I'm still committed to finding a solution to the inefficiencies within Horizon projects, and I'll continue investigating how the entire funding process works, particularly for AI initiatives. s. This research is also essential for working on the CAIRNE proposal for a [CERN-like hub for AI](https://cairne.eu/wp-content/uploads/2023/11/Moonshot-proposal.pdf), which aims to address these fragmentation issues more comprehensively. In future posts, you can expect more content along these lines, and I'll also keep updating the [AI initiatives graph](https://nicofirst1.github.io/euai_graph).
+
+
+Lastly, while I write these blog posts because I genuinely believe that teaching others is the best way to fully understand a topic, it does take time and effort. So, if you appreciated this post, please let me know by leaving a comment and engaging. 
 
 
 # Footnotes
