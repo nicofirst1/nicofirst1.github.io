@@ -1,0 +1,877 @@
+{
+    "nodes": [
+        {
+            "id": "planAi",
+            "fullname": "Coordinated Plan on Artificial Intelligence",
+            "showname": "Coordinated Plan on AI",
+            "category": "Policy",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/plan-ai"
+        },
+        {
+            "id": "recoveryResilienceFacility",
+            "fullname": "Recovery and Resilience Facility",
+            "showname": "Recovery and Resilience Facility",
+            "category": "Fund",
+            "url": "https://next-generation-eu.europa.eu/recovery-and-resilience-facility_en"
+        },
+        {
+            "id": "euaioffice",
+            "fullname": "European Union Artificial Intelligence Office",
+            "showname": "EU AI Office",
+            "category": "Organization/Network",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-office"
+        },
+        {
+            "id": "aiod",
+            "fullname": "AI on Demand Platform",
+            "showname": "AIoD",
+            "category": "Project/Initiative",
+            "url": "https://aiod.eu/"
+        },
+        {
+            "id": "tefs",
+            "fullname": "Testing and Experimentation Facilities (for AI)",
+            "showname": "TEFs",
+            "category": "Project/Initiative",
+            "url": "https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities",
+            "startDate": "01.01.2023",
+            "endDate": "01.01.2028",
+            "budget": "220.000.000"
+
+        },
+        {
+            "id": "transitionpathways",
+            "fullname": "Transition Pathways for European Industrial Ecosystems",
+            "showname": "Transition Pathways",
+            "category": "Project/Initiative",
+            "url": "https://single-market-economy.ec.europa.eu/industry/transition-pathways_en"
+        },
+        {
+            "id": "ai4eosc",
+            "fullname": "Artificial Intelligence for the European Open Science Cloud",
+            "showname": "AI4Eosc",
+            "category": "Project/Initiative",
+            "url": "https://ai4eosc.eu/"
+        },
+        {
+            "id": "mylibrary",
+            "fullname": "MyLibrary",
+            "showname": "MyLibrary",
+            "category": "Project/Initiative",
+            "url": "https://mylibrary.aiod.eu/"
+        },
+        {
+            "id": "researchBundles",
+            "fullname": "Research Bundles",
+            "showname": "Research Bundles",
+            "category": "Project/Initiative",
+            "url": "https://www.ai4europe.eu/research/research-bundles"
+        },
+        {
+            "id": "aibuilder",
+            "fullname": "AI builder",
+            "showname": "AI builder",
+            "category": "Project/Initiative",
+            "url": "https://aiexp.ai4europe.eu/#/home"
+        },
+        {
+            "id": "rail",
+            "fullname": "Research and Innovation AI Lab",
+            "showname": "RAIL",
+            "category": "Project/Initiative",
+            "url": "https://rail.aiod.eu/docs/about"
+        },
+        {
+            "id": "digitalprogramme",
+            "fullname": "The Digital Europe Programme",
+            "showname": "Digital Programme",
+            "category": "Fund",
+            "url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
+            "budget": "7.900.000.000"
+        },
+        {
+            "id": "digitalDecade",
+            "fullname": "Digital Decade",
+            "showname": "Europe's Digital Decade",
+            "category": "Policy",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade"
+        },
+        {
+            "id": "digitalCompass",
+            "fullname": "Digital Compass",
+            "showname": "Digital Compass",
+            "category": "Policy",
+            "url": ""
+        },
+        {
+            "id": "digitalStrategy",
+            "fullname": "Digital Strategy",
+            "showname": "Digital Strategy",
+            "category": "Policy",
+            "url": "https://digital-strategy.ec.europa.eu/en",
+            "startDate": "2020",
+            "endDate": "2050"
+        },
+
+        {
+            "id": "vision4ai",
+            "fullname": "Value and Impact through Synergy, Interaction and coOperation of Networks of AI Excellence Centres",
+            "showname": "VISION4AI",
+            "category": "Project/Initiative",
+            "url": "https://www.vision4ai.eu/community/",
+            "startDate": "01.09.2020",
+            "endDate": "31.08.2024",
+            "budget": "1.998.910",
+            "proposalUrl": "https://cordis.europa.eu/project/id/952070",
+            "coordinator": "Holger Hoos",
+            "coordinatingInstitution": "Universiteit Leiden, Netherlands"
+        },
+        {
+            "id": "aifactories",
+            "fullname": "AI Factories",
+            "showname": "AI Factories",
+            "category": "Project/Initiative",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-factories",
+            "start date": "2025",
+            "description": ""
+        },
+        {
+            "id": "EUHPCJU",
+            "fullname": "The European High Performance Computing Joint Undertaking",
+            "showname": "EuroHPC JU",
+            "category": "Organization/Network",
+            "url": ""
+        },
+        {
+            "id": "InvestEU",
+            "fullname": "InvestEU",
+            "showname": "InvestEU",
+            "category": "Fund",
+            "url": "https://investeu.europa.eu/index_en"
+        },
+        {
+            "id": "edihs",
+            "fullname": "European Digital Innovation Hubs",
+            "showname": "EDIHs",
+            "category": "Organization/Network",
+            "url": "https://european-digital-innovation-hubs.ec.europa.eu/home"
+        },
+        {
+            "id": "GenAI4EU",
+            "fullname": "GenAI4EU",
+            "showname": "GenAI4EU",
+            "category": "Project/Initiative",
+            "url": ""
+        },
+        {
+            "id": "aiLabMarket",
+            "fullname": "Thriving from the Lab to the Market",
+            "showname": "AI Lab Market",
+            "category": "Project/Initiative",
+            "url": ""
+        },
+        {
+            "id": "ADRA",
+            "fullname": "AI Data Robotics Association",
+            "showname": "ADRA",
+            "category": "Organization/Network",
+            "url": "https://adr-association.eu/"
+        },
+        {
+            "id": "horizon2020",
+            "fullname": "Horizon 2020",
+            "showname": "Horizon 2020",
+            "category": "Fund",
+            "url": "https://wayback.archive-it.org/12090/20220124075100/https:/ec.europa.eu/programmes/horizon2020/"
+        },
+        {
+            "id": "mariecurie",
+            "fullname": "Marie Sk\u0142odowska-Curie Actions",
+            "showname": "Marie Curie",
+            "category": "Project/Initiative",
+            "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/"
+        },
+        {
+            "id": "GreenDgt",
+            "fullname": "Green Digital",
+            "showname": "Green Digital",
+            "category": "Policy",
+            "url": ""
+        },
+        {
+            "id": "aiPeople",
+            "fullname": "Ensuring that AI works for people",
+            "showname": "AI People",
+            "category": "Policy",
+            "url": ""
+        },
+        {
+            "id": "gpai",
+            "fullname": "Global Partnership on Artificial Intelligence",
+            "showname": "Global Partnership AI",
+            "category": "Policy",
+            "url": "https://gpai.ai/"
+        },
+        {
+            "id": "oecd",
+            "fullname": "Organisation for Economic Co-operation and Development",
+            "showname": "OECD",
+            "category": "Organization/Network",
+            "url": "https://www.oecd.org/en.html"
+        },
+        {
+            "id": "aiWatch",
+            "fullname": "AI Watch",
+            "showname": "AI Watch",
+            "category": "Observatory",
+            "url": "https://ai-watch.ec.europa.eu/index_en"
+        },
+        {
+            "id": "oneaigroup",
+            "fullname": "ONE-AI Expert Group",
+            "showname": "ONE-AI Group",
+            "category": "Organization/Network",
+            "url": "https://oecd.ai/en/network-of-experts/working-group/1137"
+        },
+       
+        {
+            "id": "internationalOutreachAi",
+            "fullname": "International outreach for human-centric artificial intelligence initiative",
+            "showname": "International Outreach AI",
+            "category": "Project/Initiative",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/international-outreach-ai"
+        },
+        {
+            "id": "MSCA",
+            "fullname": "Sk\u0142odowska-Curie actions",
+            "showname": "MSCA",
+            "category": "Fund",
+            "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/"
+        },
+        {
+            "id": "SkillAgenda",
+            "fullname": "Skill Agenda",
+            "showname": "Skill Agenda",
+            "category": "Policy",
+            "url": "https://ec.europa.eu/social/main.jsp?catId=1223&langId=en"
+        },
+        {
+            "id": "buildLeadershipAi",
+            "fullname": "Build strategic leadership in high-impact sectors",
+            "showname": "Build Leadership AI",
+            "category": "Policy",
+            "url": ""
+        },
+        {
+            "id": "BDVA",
+            "fullname": "Big Data Value Association",
+            "showname": "BDVA",
+            "category": "Organization/Network",
+            "url": ""
+        },
+        {
+            "id": "EBDVF",
+            "fullname": "European Big Data Value Form",
+            "showname": "EBDVF",
+            "category": "Organization/Network",
+            "url": "https://european-big-data-value-forum.eu/",
+            "coordinator": "David Bisset"
+        },
+        {
+            "id": "CLAIRE",
+            "fullname": "Confederation of Laboratories for Artificial Intelligence Research in Europe",
+            "showname": "CLAIRE",
+            "category": "Organization/Network",
+            "url": ""
+        },
+        {
+            "id": "ELLIS",
+            "fullname": "European Laboratory for Learning and Intelligent Systems",
+            "showname": "ELLIS",
+            "category": "Organization/Network",
+            "url": ""
+        },
+        {
+            "id": "EurAI",
+            "fullname": "European Association for Artificial Intelligence",
+            "showname": "EurAI",
+            "category": "Organization/Network",
+            "url": ""
+        },
+        {
+            "id": "euRobotics",
+            "fullname": "European Robotic Forum",
+            "showname": "euRobotics",
+            "category": "Organization/Network",
+            "url": ""
+        },
+        {
+            "id": "NoEs",
+            "fullname": "Networks of Excellence Centres",
+            "showname": "NoEs",
+            "category": "Organization/Network",
+            "url": ""
+        },
+        {
+            "id": "AI4media",
+            "fullname": "AI4media",
+            "showname": "AI4media",
+            "category": "Project/Initiative",
+            "url": "https://www.ai4media.eu/",
+            "startDate": "01.09.2020",
+            "endDate": "31.08.2024",
+            "budget": "11.999.722",
+            "proposalUrl": "https://cordis.europa.eu/project/id/951911",
+            "coordinator": "Ethniko Kentro Erevnas Kai Technologikis Anaptyxis, Greece",
+            "coordinatingInstitution": "??"
+        },
+        {
+            "id": "ELISE",
+            "fullname": "European Network of AI Excellence Centres",
+            "showname": "ELISE",
+            "category": "Project/Initiative",
+            "url": "https://www.elise-ai.eu/",
+            "startDate": "01.09.2020",
+            "endDate": "31.08.2024",
+            "budget": "11.984.405",
+            "proposalUrl": "https://cordis.europa.eu/project/id/951847",
+            "coordinator": "??",
+            "coordinatingInstitution": "Aalto Korkeakoulusaatio SR, Finland"
+            
+        },
+        {
+            "id": "HumaneAInet",
+            "fullname": "Humane-AI net",
+            "showname": "Humane AI net",
+            "category": "Project/Initiative",
+            "url": "https://www.humane-ai.eu/",
+            "startDate": "01.09.2020",
+            "endDate": "31.08.2024",
+            "budget": "12.135.769,13",
+            "proposalUrl": "https://cordis.europa.eu/project/id/952026/",
+            "coordinator": "George Kampis",
+            "coordinatingInstitution": "DFKI GmbH, Germany"
+        },
+        {
+            "id": "TAILOR",
+            "fullname": "Trustworthy AI through the integration of learning, optimisation and reasoning",
+            "showname": "TAILOR",
+            "category": "Project/Initiative",
+            "url": "https://tailor-network.eu/",
+            "startDate": "01.09.2020",
+            "endDate": "31.08.2024",
+            "budget": "12.000.000",
+            "proposalUrl": "https://cordis.europa.eu/project/id/952215",
+            "coordinator": "Fredrik Heintz",
+            "coordinatingInstitution": "Campus Valla, Sweden"
+        },
+        {
+            "id": "ELSA",
+            "fullname": "European Lighthouse on Secure and Safe AI",
+            "showname": "ELSA",
+            "category": "Project/Initiative",
+            "url": "https://elsa-ai.eu/",
+            "startDate": "01.09.2022",
+            "endDate": "31.08.2025",
+            "budget": "7.434.058,50",
+            "proposalUrl": "https://cordis.europa.eu/project/id/101070617",
+            "coordinator": "Mario Fritz",
+            "coordinatingInstitution": "Cispa - Helmholtz-Zentrum Fur Informationssicherheit Ggmbh, Germany"
+        },
+        {
+            "id": "HorizonEU",
+            "fullname": "Horizon Europe",
+            "showname": "Horizon EU",
+            "category": "Fund",
+            "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en"
+        },
+        {
+            "id": "euROBIN",
+            "fullname": "The European Excellence Network on AI-Powered Robotics",
+            "showname": "euROBIN",
+            "category": "Project/Initiative",
+            "url": "https://www.eurobin-project.eu/",
+            "startDate": "01.07.2022",
+            "endDate": "31.06.2026",
+            "budget": "12.500.272,75",
+            "proposalUrl": "https://cordis.europa.eu/project/id/101070596",
+            "coordinator": "??",
+            "coordinatingInstitution": "Deutsches Zentrum Fur Luft (DLR)- UND Raumfahrt EV, Germany"
+        },
+        {
+            "id": "ELIAS",
+            "fullname": "European Lighthouse of AI for Sustainability",
+            "showname": "ELIAS",
+            "category": "Project/Initiative",
+            "url": "https://elias-ai.eu/",
+            "startDate": "01.09.2023",
+            "endDate": "31.08.2027",
+            "budget": "11.030.575",
+            "proposalUrl": "https://cordis.europa.eu/project/id/101120237",
+            "coordinator": "Nicu Sebe",
+            "coordinatingInstitution": "Universita' degli Studi di Trento, Italy"
+        },
+        {
+            "id": "dAIedge",
+            "fullname": "A network of excellence for distributed, trustworthy, efficient and scalable AI at the Edge",
+            "showname": "dAIedge",
+            "category": "Project/Initiative",
+            "url": "https://www.daiedge.eu/",
+            "startDate": "01.09.2023",
+            "endDate": "31.08.2026",
+            "budget": "10.746.872",
+            "proposalUrl": "https://cordis.europa.eu/project/id/101120726",
+            "coordinator": "??",
+            "coordinatingInstitution": "Deutsches Forschungszentrum Fur Kunstliche Intelligenz Gmbh, Germany"
+        },
+        {
+            "id": "Enfield",
+            "fullname": "European Lighthouse to Manifest Trustworthy and Green AI",
+            "showname": "Enfield",
+            "category": "Project/Initiative",
+            "url": "https://www.enfield-project.eu/",
+            "startDate": "01.09.2023",
+            "endDate": "31.08.2026",
+            "budget": "11.262.750",
+            "proposalUrl": "https://cordis.europa.eu/project/id/101120657",
+            "coordinator": "??",
+            "coordinatingInstitution": "Norges Teknisk-Naturvitenskapelige Universitet Ntnu, Norway"
+
+        },
+        {
+            "id": "EnablingAI",
+            "fullname": "Enabling conditions for AI’s development and uptake",
+            "showname": "Enabling AI",
+            "category": "Policy",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/enabling-ai"
+        },
+        {
+            "id": "dataspaces",
+            "fullname": "Common European Data Spaces",
+            "showname": "Data Spaces",
+            "category": "Policy",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/data-spaces"
+        },
+        {
+            "id": "DEAP",
+            "fullname": "Digital Education Action Plan",
+            "showname": "DEAP",
+            "category": "Policy",
+            "url": "https://education.ec.europa.eu/focus-topics/digital-education/action-plan"
+        }
+    ],
+    "links": [
+        {
+            "source": "recoveryResilienceFacility",
+            "target": "planAi",
+            "reason": "funds"
+        },
+        {
+            "source": "digitalprogramme",
+            "target": "planAi",
+            "reason": "funds"
+        },
+        {
+            "source": "planAi",
+            "target": "EnablingAI",
+            "reason": "creates"
+        },
+        {
+            "source": "planAi",
+            "target": "aiLabMarket",
+            "reason": "creates"
+        },
+        {
+            "source": "InvestEU",
+            "target": "aifactories",
+            "reason": "funds"
+        },
+        {
+            "source": "digitalStrategy",
+            "target": "digitalDecade",
+            "reason": "includes"
+        },
+        {
+            "source": "digitalCompass",
+            "target": "digitalDecade",
+            "reason": "guides"
+        },
+        {
+            "source": "digitalprogramme",
+            "target": "digitalStrategy",
+            "reason": "funds"
+        },
+        {
+            "source": "BDVA",
+            "target": "EBDVF",
+            "reason": "organizes"
+        },
+        {
+            "source": "planAi",
+            "target": "aiPeople",
+            "reason": "creates"
+        },
+        {
+            "source": "planAi",
+            "target": "buildLeadershipAi",
+            "reason": "creates"
+        },
+        {
+            "source": "planAi",
+            "target": "GreenDgt",
+            "reason": "in line with"
+        },
+        {
+            "source": "EnablingAI",
+            "target": "aifactories",
+            "reason": "creates"
+        },
+        {
+            "source": "EnablingAI",
+            "target": "GenAI4EU",
+            "reason": "creates"
+        },
+        {
+            "source": "recoveryResilienceFacility",
+            "target": "aiLabMarket",
+            "reason": "funds"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "aiLabMarket",
+            "reason": "funds"
+        },
+        
+        {
+            "source": "digitalprogramme",
+            "target": "aiLabMarket",
+            "reason": "funds"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "GenAI4EU",
+            "reason": "funds"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "aiLabMarket",
+            "reason": "funds"
+        },
+        {
+            "source": "dataspaces",
+            "target": "GenAI4EU",
+            "reason": "cooperates"
+        },
+        {
+            "source": "aifactories",
+            "target": "GenAI4EU",
+            "reason": "cooperates"
+        },
+        {
+            "source": "euaioffice",
+            "target": "GenAI4EU",
+            "reason": "monitors"
+        },
+        {
+            "source": "aiod",
+            "target": "mylibrary",
+            "reason": "creates"
+        },
+        {
+            "source": "aiod",
+            "target": "researchBundles",
+            "reason": "creates"
+        },
+        {
+            "source": "aiod",
+            "target": "rail",
+            "reason": "creates"
+        },
+        {
+            "source": "aiod",
+            "target": "aibuilder",
+            "reason": "creates"
+        },
+        {
+            "source": "ai4eosc",
+            "target": "mylibrary",
+            "reason": "powers"
+        },
+        {
+            "source": "transitionpathways",
+            "target": "GenAI4EU",
+            "reason": "monitors"
+        },
+        {
+            "source": "GenAI4EU",
+            "target": "aifactories",
+            "reason": "cooperates"
+        },
+        {
+            "source": "digitalprogramme",
+            "target": "GenAI4EU",
+            "reason": "funds"
+        },
+        {
+            "source": "horizon2020",
+            "target": "vision4ai",
+            "reason": "funds"
+        },
+        {
+            "source": "vision4ai",
+            "target": "NoEs",
+            "reason": "coordinates"
+        },
+        {
+            "source": "aifactories",
+            "target": "EUHPCJU",
+            "reason": "amend"
+        },
+
+        {
+            "source": "EUHPCJU",
+            "target": "aifactories",
+            "reason": "coordinates"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "aiod",
+            "reason": "creates"
+        },
+        {
+            "source": "digitalDecade",
+            "target": "edihs",
+            "reason": "creates"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "edihs",
+            "reason": "supports"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "aiod",
+            "reason": "funds"
+        },{
+            "source": "digitalprogramme",
+            "target": "aiod",
+            "reason": "funds"
+        },
+        {
+            "source": "horizon2020",
+            "target": "aiod",
+            "reason": "funds"
+        },
+        {
+            "source": "EnablingAI",
+            "target": "GenAI4EU",
+            "reason": "creates"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "ADRA",
+            "reason": "creates"
+        },
+        {
+            "source": "BDVA",
+            "target": "ADRA",
+            "reason": "member of"
+        },
+        {
+            "source": "CLAIRE",
+            "target": "ADRA",
+            "reason": "member of"
+        },
+        {
+            "source": "EurAI",
+            "target": "ADRA",
+            "reason": "member of"
+        },
+        {
+            "source": "euRobotics",
+            "target": "ADRA",
+            "reason": "member of"
+        },
+        {
+            "source": "ELLIS",
+            "target": "ADRA",
+            "reason": "member of"
+        },
+        {
+            "source": "aiLabMarket",
+            "target": "ADRA",
+            "reason": "creates"
+        },
+        {
+            "source": "ADRA",
+            "target": "NoEs",
+            "reason": "connected to"
+        },
+        {
+            "source": "DEAP",
+            "target": "aiPeople",
+            "reason": "supports"
+        },
+        {
+            "source": "aiWatch",
+            "target": "oecd",
+            "reason": "collaborates"
+        },
+        {
+            "source": "oecd",
+            "target": "oneaigroup",
+            "reason": "creates"
+        },
+        {
+            "source": "aiPeople",
+            "target": "oneaigroup",
+            "reason": "collaborates"
+        },
+        {
+            "source": "aiPeople",
+            "target": "oecd",
+            "reason": "collaborates"
+        },
+        {
+            "source": "aiPeople",
+            "target": "gpai",
+            "reason": "lunched"
+        },
+        {
+            "source": "mariecurie",
+            "target": "aiPeople",
+            "reason": "supports"
+        },
+        {
+            "source": "aiPeople",
+            "target": "NoEs",
+            "reason": "supports"
+        },
+        {
+            "source": "aiPeople",
+            "target": "MSCA",
+            "reason": "supports"
+        },
+        {
+            "source": "aiPeople",
+            "target": "SkillAgenda",
+            "reason": "supports"
+        },
+        {
+            "source": "aiPeople",
+            "target": "digitalDecade",
+            "reason": "in line with"
+        },
+        {
+            "source": "aiPeople",
+            "target": "internationalOutreachAi",
+            "reason": "in line with"
+        },
+        {
+            "source": "NoEs",
+            "target": "AI4media",
+            "reason": "contains"
+        },
+        {
+            "source": "digitalprogramme",
+            "target": "tefs",
+            "reason": "funds"
+        },
+        {
+            "source": "NoEs",
+            "target": "ELISE",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "HumaneAInet",
+            "reason": "contains"
+        },
+        {
+            "source": "horizon2020",
+            "target": "HumaneAInet",
+            "reason": "funds"
+        },
+        {
+            "source": "horizon2020",
+            "target": "ELISE",
+            "reason": "funds"
+        },
+        {
+            "source": "horizon2020",
+            "target": "AI4media",
+            "reason": "funds"
+        },
+        {
+            "source": "HumaneAInet",
+            "target": "aiod",
+            "reason": "worked on"
+        },
+        {
+            "source": "NoEs",
+            "target": "TAILOR",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "ELSA",
+            "reason": "contains"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "ELSA",
+            "reason": "funds"
+        },
+        {
+            "source": "NoEs",
+            "target": "euROBIN",
+            "reason": "contains"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "dAIedge",
+            "reason": "funds"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "euROBIN",
+            "reason": "funds"
+        },
+        {
+            "source": "ELIAS",
+            "target": "ELLIS",
+            "reason": "collaborates with"
+        },
+        {
+            "source": "NoEs",
+            "target": "ELIAS",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "dAIedge",
+            "reason": "contains"
+        },
+        {
+            "source": "NoEs",
+            "target": "Enfield",
+            "reason": "contains"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "planAi",
+            "reason": "funds"
+        },
+        {
+            "source": "HorizonEU",
+            "target": "NoEs",
+            "reason": "funds"
+        },
+        {
+            "source": "horizon2020",
+            "target": "NoEs",
+            "reason": "funds"
+        }
+        
+    ]
+}

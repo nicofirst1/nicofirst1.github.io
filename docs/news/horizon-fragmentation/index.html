@@ -6,7 +6,7 @@
   <!-- Conditionally load Google Analytics -->
   <script>
     var host = window.location.hostname;
-    if (host !== "localhost") {
+    if (host !== "localhost" && host !== "127.0.0.1") {
       // Google Analytics Global Site Tag (gtag.js)
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -20,6 +20,8 @@
       gaScript.onload = function() {
         gtag('config', 'G-W2MPFHELZG');
       };
+    }else{
+      console.log("Google Analytics is disabled on localhost");
     }
   </script>
 
@@ -573,7 +575,7 @@ First of all, we see that we are in a saving range between €28.3M and €552.2
       
     </div>
   </section>
-  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/ai_governance_euvschina-copy/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Exploring Global AI Governance: Lessons from China for the EU</a></div>
+  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/ai_governance_euvschina-copy/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Exploring Global AI Governance: Lessons from China for the EU</a><a href="/news/eu_and_research/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">Mapping the EU AI Landscape : Coordinated Plan on AI  (Part 1)  →</a></div>
 </main><script>
 const clicableImages = document.querySelectorAll(".zoom_outer");
 if (clicableImages.length > 0) {

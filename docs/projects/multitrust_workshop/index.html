@@ -6,7 +6,7 @@
   <!-- Conditionally load Google Analytics -->
   <script>
     var host = window.location.hostname;
-    if (host !== "localhost") {
+    if (host !== "localhost" && host !== "127.0.0.1") {
       // Google Analytics Global Site Tag (gtag.js)
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -20,6 +20,8 @@
       gaScript.onload = function() {
         gtag('config', 'G-W2MPFHELZG');
       };
+    }else{
+      console.log("Google Analytics is disabled on localhost");
     }
   </script>
 
