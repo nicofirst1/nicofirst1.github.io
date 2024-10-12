@@ -26,3 +26,13 @@ jobs:
     - name: Build Jekyll site
       run: |
         bundle exec jekyll build -d docs
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add docs
+        git commit -m "Build site"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
