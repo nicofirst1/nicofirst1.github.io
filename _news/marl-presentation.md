@@ -4,6 +4,7 @@ custom_id: marl_presentation
 custom_url: https://youtu.be/fCWrbDlERlY
 tag: Speaker
 image: https://img.youtube.com/vi/fCWrbDlERlY/0.jpg
+date: 2021.12.07
 ---
 
 *“A multi-agent system is a system composed of multiple interacting intelligent agents”* 

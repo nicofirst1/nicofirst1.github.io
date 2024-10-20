@@ -2,6 +2,7 @@
 title:  Tutoring Lesson on Twitch
 custom_id: tutoring_twitch
 tag: PhD
+date: 2021.04.20
 ---
 
 For all my students following my TPD tutoring, we moved to [Twitch](https://www.twitch.tv/dizzibus)!

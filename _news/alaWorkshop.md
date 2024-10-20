@@ -4,6 +4,7 @@ custom_id: ala2021
 custom_url: https://ala2021.vub.ac.be/
 tag: PhD
 image: /assets/images/news/ALA2021.png
+date: 2021.04.29
 ---
 
 After spending the past month implementing the reviews from the ALA workshop, I finally got accepted!

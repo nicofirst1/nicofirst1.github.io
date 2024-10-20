@@ -4,6 +4,7 @@ custom_id: syl_project
 custom_url: https://gesvit.webnode.it/
 tag: extracurriculars
 image: /assets/images/news/syl.jpg
+date: 2021.10.25
 ---
 
 Per ulteriori informazioni sulla prevenzione del tumore della mammella visita [il nostro sito](https://gesvit.webnode.it/).

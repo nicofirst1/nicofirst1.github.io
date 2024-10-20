@@ -4,6 +4,7 @@ custom_id: blogpost_horizon_analysis
 tag: BlogPost
 image: /assets/images/news/horizon_fragmentation.png
 section_numbering: true
+date: 2024.09.23
 ---
 
 ## Preface(?)

@@ -3,6 +3,7 @@ title: "Addressing Loneliness with AI : The Short-Term Solution with Long-Term C
 custom_id: blogpost1_airisks
 tag: BlogPost
 image: /assets/images/news/airiskbck.jpg
+date: 2024.09.08
 ---
 
 

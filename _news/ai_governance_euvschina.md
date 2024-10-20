@@ -3,6 +3,7 @@ title: "Exploring Global AI Governance: Lessons from China for the EU"
 custom_id: blogpost1_china_eu
 tag: BlogPost
 image: /assets/images/news/global_governance.jpg
+date: 2024.09.18
 ---
 
 

@@ -2,6 +2,7 @@
 title:  Newz finally available!
 custom_id: newz
 tag: implementation
+date: 2021.04.28
 ---
 
 After much work on my side news are finally available and I will post interesting stuff here.

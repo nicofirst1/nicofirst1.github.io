@@ -4,6 +4,7 @@ custom_id: deephealth
 custom_url: https://github.com/deephealthproject/winter-school
 tag: PhD
 image: /assets/images/news/deephealth.png
+date: 2022.01.24
 ---
 
 

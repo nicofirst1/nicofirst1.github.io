@@ -5,6 +5,7 @@ tag: PhD
 image: /assets/images/news/phd_defended.jpeg
 button_link: https://www.youtube.com/watch?v=0tHulf-et6M&t=1s&ab_channel=Nicolo
 button_name: Watch Presentation
+date: 2024.04.10
 ---
 
 I have successfully defended my thesis titled "Conversational Agents in Human-Machine Interaction: Reinforcement Learning and Theory of Mind in Language Modeling". This milestone marks the culmination of years of hard work, research, and learning, all of which I am eager to share with you. For those interested, the thesis is available in an open access format [on the Sapienza Library System IRIS](https://hdl.handle.net/11573/1709118), an extended abstract is available on [Research Gate](https://www.researchgate.net/publication/380396634_Extended_Abstract_Conversational_Agents_in_Human-Machine_Interaction_Reinforcement_Learning_and_Theory_of_Mind_in_Language_Modeling), and you can watch [the presentation on YouTube](https://youtu.be/0tHulf-et6M).

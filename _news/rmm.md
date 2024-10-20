@@ -4,6 +4,7 @@ custom_id: rmm
 custom_url: https://codesign-lab.org/school2022/
 tag: PhD
 image: https://codesign-lab.org/school2022/images/banner.jpg
+date: 2022.09.26
 ---
 
  

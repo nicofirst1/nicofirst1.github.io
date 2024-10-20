@@ -1,8 +1,9 @@
 ---
-title: "Mapping the EU AI Landscape : Coordinated Plan on AI  (Part 1) "
+title: "Mapping the EU AI Landscape : Coordinated Plan on AI  (Part 1)"
 custom_id: blogpost_horizon_analysis
 tag: BlogPost
 image: /assets/images/news/eu_landscape.png
+date: 2024.10.13
 ---
 
 In the [previous post](https://nicofirst1.github.io/news/horizon-fragmentation/) we figured out that the Horizon Europe project contains some redundancies in AI-related project. My next step was to figure out a fix to this problem, but in order to do so, I had to dig deep into how the EU handles AI projects and agendas. 
@@ -11,7 +12,7 @@ Well, the second suggestion was the [Coordinated Plan on Artificial Intelligence
 Well, let's just say the rabbit hole was deeper than expected. 
 
 So, join me in this journey of dead links and never-ending references. In this post (probably the first of a series), we'll dissect the PlanAI and see how many projects are connected to it. 
-If you prefer a visual approach, I made this [nice graph](https://nicofirst1.github.io/euai_graph) where all these initiatives are connected and can be interacted with. The graph will be continuously updated, so don't worry if some info is missing right now. 
+If you prefer a visual approach, I made this [nice graph](/euai_graph) where all these initiatives are connected and can be interacted with. The graph will be continuously updated, so don't worry if some info is missing right now. 
 
 Let's begin.
 

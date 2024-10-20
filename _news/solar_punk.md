@@ -5,6 +5,7 @@ tag: Speaker
 image: /assets/images/news/Solarpunk_logo.png
 button_link: https://www.youtube.com/watch?v=-MElMojmgxk&t=7833s&ab_channel=SolarpunkConference
 button_name: Watch Presentation
+date: 2024.07.07
 ---
 #### Federated Approaches to Data Challenges in Ethical AI
 

@@ -4,6 +4,7 @@ custom_id: emeima-pres
 custom_url: https://www.youtube.com/watch?v=KHv7rcKDfSg&feature=youtu.be
 tag: Speaker
 image: https://img.youtube.com/vi/KHv7rcKDfSg/2.jpg
+date: 2022.05.26
 ---
 
 Check the talk on Youtube by clicking on the image or [this link]( https://www.youtube.com/watch?v=KHv7rcKDfSg&feature=youtu.be).

@@ -3,6 +3,7 @@ title: Fraunhofer IAIS NetMedia Lecture
 custom_id: fraunhofer_lecture
 tag: Lecture
 image: https://www.iais.fraunhofer.de/content/dam/iais/iais.svg
+date: 2023.11.07
 ---
 
 I was honored to be invited to give a lecture at [Fraunhofer IAIS NetMedia](https://www.iais.fraunhofer.de/de/institut/abteilungen/netmedia.html), where I had the opportunity to present my work titled *Minds and Machines: Towards Aligned Human-AI Interaction*. 
