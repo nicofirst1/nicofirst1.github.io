@@ -4,6 +4,8 @@ layout: default
 
 <main class="news-post min-h-[80vh] flex flex-col gap-6">
   <section class="pt-24">
+    <div id="reading-progress" class="reading-progress"></div>
+
     <div class="container pb-6">
       <h1 class="text-5xl font-bold">
         {{page.title}}
@@ -40,3 +42,6 @@ layout: default
   </div>
 </main>
 {%- include zoom.html -%}
+
+<!-- Load the custom JavaScript file from the js directory -->
+<script src="{{ 'assets/js/reading_progress.js' | relative_url }}"></script>
