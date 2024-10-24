@@ -20,7 +20,7 @@ collections:
     permalink: /:title/
   news:
     output: true
-    permalink: /:collection/:title/
+    permalink: /:collection/:slug/
   projects:
     output: true
     permalink: /:collection/:title/
