@@ -30,12 +30,20 @@ collections:
     output: false
   experience:
     output: false
+  secret_drafts:
+    output: true
+    permalink: /secret-drafts/:slug/
 defaults:
   -
     scope:
       path: "_projects" 
     values:
       layout: "projects"
+  -
+    scope:
+      path: "_secret_drafts" # This applies to all files in the _secret_drafts folder
+    values:
+      layout: "news" # Use the same layout as the news collection
   -
     scope:
       path: "_news" 
