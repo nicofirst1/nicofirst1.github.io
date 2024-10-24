@@ -6,7 +6,6 @@ Available at [nicofirst1.github.io](https://nicofirst1.github.io/)
 
 On mac you will need to run the following:
 ```bash
-
 brew install yarn node
 bundle
 ```

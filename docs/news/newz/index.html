@@ -152,6 +152,8 @@ const themeModeSwitch = (() => {
 </script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
   <main class="news-post min-h-[80vh] flex flex-col gap-6">
   <section class="pt-24">
+    <div id="reading-progress" class="reading-progress"></div>
+
     <div class="container pb-6">
       <h1 class="text-5xl font-bold">
         Newz finally available!
@@ -167,7 +169,7 @@ const themeModeSwitch = (() => {
       
     </div>
   </section>
-  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/twitch-lessons/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Tutoring Lesson on Twitch</a><a href="/news/alaWorkshop/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">ALA 2021 Workshop →</a></div>
+  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/tutoring-twitch/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Tutoring Lesson on Twitch</a><a href="/news/ala2021/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">ALA 2021 Workshop →</a></div>
 </main><script>
 const clicableImages = document.querySelectorAll(".zoom_outer");
 if (clicableImages.length > 0) {
@@ -178,7 +180,9 @@ if (clicableImages.length > 0) {
     }
   );
 }
-</script>
+</script><!-- Load the custom JavaScript file from the js directory -->
+<script src="/assets/js/reading_progress.js"></script>
+
 </body><footer class="footer p-9 bg-sky-200 dark:bg-slate-950 dark:text-sky-50 ">
     <div class="container">
         <p class="text-center">&copy; Copyright 2024, All right Reserved By - Nicolo' Brandizzi</p>

@@ -14,7 +14,7 @@ var categoryColorMap = {};
 var activeFilters = new Set(); // Track active category filters
 // Fetch and load the JSON data for nodes and links from the specified URL
 
-fetch(euAIdataUrl).then(function (response) {
+fetch(euai_data_url).then(function (response) {
   return response.json();
 }) // Parse JSON response
 .then(function (data) {

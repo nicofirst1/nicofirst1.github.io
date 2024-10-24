@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <!-- Conditionally load Google Analytics -->
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" && host !== "127.0.0.1") {
+      // Google Analytics Global Site Tag (gtag.js)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function() {
+        gtag('config', 'G-W2MPFHELZG');
+      };
+    }else{
+      console.log("Google Analytics is disabled on localhost");
+    }
+  </script>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mapping the EU AI Landscape (Part 1): Coordinated Plan on AI</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Mapping the EU AI Landscape (Part 1): Coordinated Plan on AI" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="In the previous post we figured out that the Horizon Europe project contains some redundancies in AI-related project. My next step was to figure out a fix to this problem, but in order to do so, I had to dig deep into how the EU handles AI projects and agendas. I started off easy, asking ChatGPT to provide a list of EU policies,organizations and anything else related to AI. Of course, the first suggestion was the EU AI Act which I’m now familiar with, and this just made me feel a bit cocky, thinking I was already an expert. Well, the second suggestion was the Coordinated Plan on Artificial Intelligence (PlanAI). It’s just a plan, how complicated can it be? Well, let’s just say the rabbit hole was deeper than expected." />
+<meta property="og:description" content="In the previous post we figured out that the Horizon Europe project contains some redundancies in AI-related project. My next step was to figure out a fix to this problem, but in order to do so, I had to dig deep into how the EU handles AI projects and agendas. I started off easy, asking ChatGPT to provide a list of EU policies,organizations and anything else related to AI. Of course, the first suggestion was the EU AI Act which I’m now familiar with, and this just made me feel a bit cocky, thinking I was already an expert. Well, the second suggestion was the Coordinated Plan on Artificial Intelligence (PlanAI). It’s just a plan, how complicated can it be? Well, let’s just say the rabbit hole was deeper than expected." />
+<link rel="canonical" href="/news/eu-and-research/" />
+<meta property="og:url" content="/news/eu-and-research/" />
+<meta property="og:image" content="/assets/images/news/eu_landscape/eu_landscape_p1.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-10-13T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/news/eu_landscape/eu_landscape_p1.png" />
+<meta property="twitter:title" content="Mapping the EU AI Landscape (Part 1): Coordinated Plan on AI" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-10-13T00:00:00+02:00","datePublished":"2024-10-13T00:00:00+02:00","description":"In the previous post we figured out that the Horizon Europe project contains some redundancies in AI-related project. My next step was to figure out a fix to this problem, but in order to do so, I had to dig deep into how the EU handles AI projects and agendas. I started off easy, asking ChatGPT to provide a list of EU policies,organizations and anything else related to AI. Of course, the first suggestion was the EU AI Act which I’m now familiar with, and this just made me feel a bit cocky, thinking I was already an expert. Well, the second suggestion was the Coordinated Plan on Artificial Intelligence (PlanAI). It’s just a plan, how complicated can it be? Well, let’s just say the rabbit hole was deeper than expected.","headline":"Mapping the EU AI Landscape (Part 1): Coordinated Plan on AI","image":"/assets/images/news/eu_landscape/eu_landscape_p1.png","mainEntityOfPage":{"@type":"WebPage","@id":"/news/eu-and-research/"},"url":"/news/eu-and-research/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"></head>
+<header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+    <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
+        <div class="hamburger item">
+            <span></span>
+        </div>
+    </div>
+    <a href="/" class="logo absolute left-6 top-4 md:top-5">
+        <img src="/assets/images/logo2.png" alt="Logo" style="width: 40px;" class="w-32 dark:invert">
+    </a>
+
+    <div class="container flex gap-6 lg:gap-10 xl:gap-12 mx-auto align-top">
+        <nav class="grid mt-10 md:mt-0 md:flex gap-2 md:gap-3 lg:gap-5 xl:gap-6 justify-center w-full hidden_small slide-in-left" id="nav">
+            
+            <a href="/" class="dark:text-slate-50 text-base lg:text-xl capitalize">home</a>
+            
+            <a href="/projects" class="dark:text-slate-50 text-base lg:text-xl capitalize">projects</a>
+            
+            <a href="/publications" class="dark:text-slate-50 text-base lg:text-xl capitalize">publications</a>
+            
+            <a href="/cv" class="dark:text-slate-50 text-base lg:text-xl capitalize">CV</a>
+            
+            <a href="/news" class="dark:text-slate-50 text-base lg:text-xl capitalize">news</a>
+            
+        </nav>
+        <form class="mode-switch absolute right-16 top-5 md:top-7 lg:top-8" data-bss-toggle="mode">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Light</label>
+            <input type="checkbox" class="form-check-input" id="theme-mode" aria-label="dark-mode-switch" style=" background-image: url(/assets/images/svg/circle.svg)">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Dark</label>
+          </form>
+    </div>
+</header>
+
+<script>
+    //HAMBURGER
+    const hamburger = document.querySelectorAll("#menuToggler .item");
+    function toggleMenu() {
+        document.getElementById("nav").classList.toggle("hidden_small");
+        for (el of hamburger) {
+            el.classList.toggle("active-burger");
+        }
+    }
+    /**
+ * Theme Mode Switch
+ * Switch betwen light/dark mode. The chosen mode is saved to browser's local storage
+*/
+let root = document.getElementsByTagName('html')[0];
+let checkbox = document.getElementById('theme-mode');
+let locMode = getLightingMode();
+let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+if ((!darkMode && locMode == undefined) || (locMode == 'light')) {
+  root.classList.remove('dark');
+  checkbox.checked = false;
+} else {
+  root.classList.add('dark')
+  checkbox.checked = true
+}
+
+function getLightingMode() {
+  const storedPreference = localStorage.getItem('lightingModePreference');
+
+  if (storedPreference) {
+    const parsedPreference = JSON.parse(storedPreference);
+    const currentTime = new Date().getTime();
+
+    if (currentTime < parsedPreference.expires) {
+      return parsedPreference.mode;
+    } else {
+      localStorage.removeItem('lightingModePreference');
+    }
+  }
+  return undefined;
+}
+
+function setLightingMode(mode) {
+  const currentTime = new Date().getTime();
+  const expirationTime = currentTime + 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const preferenceData = {
+    mode: mode,
+    expires: expirationTime,
+  };
+
+  localStorage.setItem('lightingModePreference', JSON.stringify(preferenceData));
+}
+
+const themeModeSwitch = (() => {
+  let modeSwitch = document.querySelector('[data-bss-toggle="mode"]')
+  if (modeSwitch === null) return;
+  let checkbox = modeSwitch.querySelector('.form-check-input')
+
+  modeSwitch.addEventListener('click', (e) => {
+    if (checkbox.checked) {
+      root.classList.add('dark');
+      setLightingMode('dark');
+    } else {
+      root.classList.remove('dark');
+      setLightingMode('light');
+    }
+  });
+})();
+
+</script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
+  <main class="news-post min-h-[80vh] flex flex-col gap-6">
+  <section class="pt-24">
+    <div id="reading-progress" class="reading-progress"></div>
+
+    <div class="container pb-6">
+      <h1 class="text-5xl font-bold">
+        Mapping the EU AI Landscape (Part 1): Coordinated Plan on AI
+      </h1>
+      <b>BlogPost</b>
+      <p class="text-sm mb-3">Oct 13, 2024</p><div class="post-image">
+        <img src="/assets/images/news/eu_landscape/eu_landscape_p1.png" alt="hero image">
+      </div><div class="page_content">
+          <p>In the <a href="https://nicofirst1.github.io/news/horizon-fragmentation/">previous post</a> we figured out that the Horizon Europe project contains some redundancies in AI-related project. My next step was to figure out a fix to this problem, but in order to do so, I had to dig deep into how the EU handles AI projects and agendas. 
+I started off easy, asking ChatGPT to provide a list of EU  policies,organizations and anything else related to AI. Of course, the first suggestion was the <a href="https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence">EU AI Act</a> which I’m now familiar with, and this just made me feel a bit cocky, thinking I was already an expert. 
+Well, the second suggestion was the <a href="https://digital-strategy.ec.europa.eu/en/policies/plan-ai">Coordinated Plan on Artificial Intelligence (PlanAI)</a>. It’s just a plan, how complicated can it be? 
+Well, let’s just say the rabbit hole was deeper than expected.</p>
+
+<p>So, join me in this journey of dead links and never-ending references. In this post (probably the first of a series), we’ll dissect the PlanAI and see how many projects are connected to it. 
+If you prefer a visual approach, I made this <a href="/euai_graph">nice graph</a> where all these initiatives are connected and can be interacted with. The graph will be continuously updated, so don’t worry if some info is missing right now.</p>
+
+<p>Let’s begin.</p>
+
+<h1 id="coordinated-plan-on-artificial-intelligence">Coordinated Plan on Artificial Intelligence</h1>
+<p>The PlanAI was first published in 2018 and then <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review">reviewed in 2021</a><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, when the EU (and the world) realized the potential impact of AI. 
+The changes between the two versions mainly focus on:</p>
+
+<ul>
+  <li><strong>Planning</strong>: The 2021 version emphasizes  human-centric, sustainable and secure AI. It also aims to achieve EU digital sovereignty.</li>
+  <li><strong>Funding</strong>: This is the most significant difference.  The original plan was to invest at least €20 billion by 2020 using the Horizon 2020 and Horizon EU. The new plan increased the target quite a bit, now aiming for €145 billion by 2023 through Horizon EU, the <a href="https://digital-strategy.ec.europa.eu/en/activities/digital-programme">Digital Europe Programme</a> and the <a href="https://next-generation-eu.europa.eu/recovery-and-resilience-facility_en">Recovery and Resilience Facility</a>.</li>
+</ul>
+
+<p>For everything else, the new PlanAI is based on four policies reflecting key objectives in AI.</p>
+
+<h2 id="1-enabling-conditions-for-ais-development-and-uptake"><a name="enablingai"></a>1. Enabling Conditions for AI’s Development and Uptake</h2>
+
+<p>Let’s abbreviate it to <a href="https://digital-strategy.ec.europa.eu/en/policies/enabling-ai">EnablingAI</a>.
+Here, the aim is to actually have the resources necessary to make AI a reality in EU. This translates in launching two new initiatives: AI Factories and GenAI4EU.</p>
+
+<h3 id="ai-factories">AI Factories</h3>
+<p><a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_24_383">Announced in January 2024</a>, the AI Factories will come to life in 2025 and are currently just an <a href="https://digital-strategy.ec.europa.eu/en/news/setting-ai-factories-now-possible-after-eurohpc-regulation-amendment">amendment</a> to the <a href="https://digital-strategy.ec.europa.eu/en/policies/high-performance-computing-joint-undertaking">The European High Performance Computing Joint Undertaking (EuroHPC JU)</a>. 
+So, for now, we only have a vague description of what a factory will look like. Specifically, it will include a mix of hardware (supercomputers and data centers), “human capital” (I guess they mean experts from academia and research institutes), and startups/SMEs.</p>
+
+<p>But how?
+Well, the commission and member states will invest an additional €2.1 billion to acquire more computing power. On top of that, the commission will provide financial support for startups (at least €100 million) with a cap of €1 billion coming from <a href="https://investeu.europa.eu/index_en">InvestEU</a>.</p>
+
+<h3 id="genai4eu">GenAI4EU</h3>
+<p>Honestly, I couldn’t find much on what these are supposed to be. The description states it “aims to support the development of novel use cases and emerging applications in Europe’s 14 industrial ecosystems, as well as the public sector. Application areas include robotics, health, biotech, manufacturing, mobility, climate and virtual worlds.” 
+What I could find is that the commission is planning to use the Horizon Europe and the Digital Europe programmes to fund projects that are connected to industry application of GenAI (in the above field) for a total of €500 million<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.
+Also these initiatives will cooperate with the AI Factories and the <a href="https://digital-strategy.ec.europa.eu/en/policies/data-spaces">Common European Data Spaces</a>. I guess the latter will provide compute/experts and the former data.
+Finally, the <a href="https://digital-strategy.ec.europa.eu/en/policies/ai-office">EU AI Office</a> together with the <a href="https://single-market-economy.ec.europa.eu/industry/transition-pathways_en">European Transition Pathways Platform will</a>, will monitor GenAI4EU’s progress.</p>
+
+<h2 id="2-thriving-from-the-lab-to-the-market"><a name="aiLabMarket"></a>2. Thriving From the Lab to the Market</h2>
+
+<p>While point 1 focused on the material necessities to build AI (mainly computing resources and experts), the <a href="https://diorganisationsgital-strategy.ec.europa.eu/en/policies/ai-lab-market">aiLabMarket</a> focuses on fostering Public-Private Partnerships (PPP). Specifically, the Commission will provide a €1 billion per year in investments in AI through our friends: Horizon Europe and the Digital Europe. Another €20 billion will be provided by member states and the private sector. Finally, the whole initiative can utilize the <a href="https://commission.europa.eu/business-economy-euro/economic-recovery/recovery-and-resilience-facility_en">Recovery and Resilience Facility (RRF)</a> funds<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>, which amount to €134 billion.</p>
+
+<p>Of course, to do so, you need to intervene in various aspects:</p>
+<ul>
+  <li>The actual <strong>coordination between experts (academia) and private sector</strong>: Enter <a href="https://adr-association.eu/">The AI, Data and Robotic Association (ADRA)</a> (more about it later).</li>
+  <li><strong>Support for smaller players</strong>: If you’re a small player with a big idea, you can hop on the (https://www.ai4europe.eu/)  and check what available resources (algorithms, data, and computing power) you can use to achieve your goals!</li>
+  <li><strong>Regional-level support</strong>: The (https://european-digital-innovation-hubs.ec.europa.eu/home) can help at a regional level.</li>
+  <li>How do you coordinate between experts and private sector if you have no experts?  You need a <strong>network of</strong> (academic) <strong>organizations</strong> that foster AI research of course. That’s why the <a href="https://www.vision4ai.eu/community/">European Networks of Excellence in AI (NoEs)</a>  exits.</li>
+  <li>Ok, you have the experts and the private partners. They come up with a nice idea and implement it. Will it be in line with the never-ending, always-changing EU regulations? Why don’t you try your idea out in the newly created <a href="https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities">testing and experimentation facilities (TEFs)</a>!</li>
+</ul>
+
+<p>In the next parts, we will explore each of these points in detail.</p>
+
+<h3 id="ai-data-and-robotics-association-adra">AI, Data and Robotics Association (ADRA)</h3>
+<p>As mentioned before, ADRA is an association with the aim of promoting PPP by accessing €2.6 billion euros from the Horizon 2020 and Horizon Europe funds (with additional contributions by <a href="https://adr-association.eu/why-join-adra">private partners</a>). It’s called association right? So who are the members? Well, the initial ones were:</p>
+<ol>
+  <li><a href="https://bdva.eu/">Big Data Value Association (BDVA)</a></li>
+  <li><a href="https://cairne.eu/">Confederation of Laboratories for Artificial Intelligence Research in Europe (CAIRNE)</a><sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></li>
+  <li><a href="https://ellis.eu/">European Laboratory for Learning and Intelligent Systems (ELLIS)</a></li>
+  <li><a href="https://www.eurai.org/">European Association for Artificial Intelligence (EurAI)</a></li>
+  <li><a href="https://eu-robotics.net/">European Robotic Forum (euRobotics)</a></li>
+</ol>
+
+<p>Hopefully, we’ll have time and energies to figure out where these organizations come from later. As now (06/10/2024) there are a total of 140 Members: 88 Research, 47 industry, 4 associate and 1 strategic (Sweden AI). Not bad, considering the project is 3 years old (created in May 2021) and they managed to get major players on board (e.g. BMW, Decathlon, Bosch…).</p>
+
+<h5 id="goals">Goals</h5>
+
+<p>Going back the ADRA’s goals, as stated in the <a href="https://adr-association.eu/sites/default/files/2024-04/Partnership-application-2020-submitted.pdf">Partnership Proposal</a> they have three <em>general objectives</em> divided in seven specific ones (see Figure —ADRA, please don’t sue me for using your picture).
+<img src="/assets/images/news/eu_landscape/adra_objectives.png" alt="ADRA objectives" /></p>
+
+<p>Apart from the usual suspects (securing European sovereignty), we can see a specific aim to promote the creation of innovative<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> initiatives<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup> aimed at maximizing societal<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> and economical<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup> benefits. To me, it seems that ADRA has the most challenging objective: balancing EU values for societal benefits (avoiding risky use cases), with regulatory/market fragmentation and uncertainty, and companies objectives. Good luck.</p>
+
+<h5 id="how">How?</h5>
+<p>ADRA’s proposal (<a href="https://adr-association.eu/sites/default/files/2024-04/Partnership-application-2020-submitted.pdf">Section 3</a>) lists a number of activities in order to achieve its goals.</p>
+
+<p>Basically, these activities can be divided into support for innovation (lighthouses, mission-based challenges, cascade actions, actions to stimulate uptake, and market/innovation enablers) or support for ecosystems (community building, business models/organizations, regulatory/standards and task forces).</p>
+
+<h5 id="current-status">Current status</h5>
+<p>Currently, ADRA released the fourth edition of the<a href="https://adr-association.eu/news/adra-releases-strategic-research-innovation-and-deployment-agenda">Strategic Research, Innovation, and Deployment Agenda (SRIDA)</a>  where they outline “the long-term vision for the development and deployment of trustworthy AI, Data, and Robotics technologies in Europe and provides key recommendations to guide future European work programs.”.
+I highly suggest reading it.
+ADRA also has a series of forums ongoing, the latest being <a href="https://adr-association.eu/news/announcing-european-ai-data-robotics-forum-4-5-november-2024">last November</a> (which I missed it!).</p>
+
+<h3 id="ai-on-demand-platform-aiod"><a name="aiod"></a>AI-on-demand platform (AIoD)</h3>
+<p>While ADRA actively works on connecting the public and private sectors, it cannot materially help all possible small and medium-sized enterprises (SMEs). For these SMEs, a federated approach is more suitable, meaning that they need to help themselves. How can they do that? How can <strong>you</strong>, with a great business idea, look around and see what others are offering (algorithms, data, compute, expertise), and use those resources to your advantage?
+Well, have you heard of the <a href="https://aiod.eu/">AI-on-demand platform</a>?</p>
+
+<p>Besides having a slow website that seems to have been created by a particularly skilled 15-year-old, the platform hosts several services:</p>
+<ul>
+  <li><strong>Assets Catalogue</strong>, aka <a href="https://mylibrary.aiod.eu/marketplace">MyLibrary</a>, where you can access AI models, datasets, and experiments. In the dataset section, it mainly features content from Hugging Face, while the models seem to come from <a href="https://www.bonseyes.eu/">Bonseyes</a> (a marketplace for AI in cloud and edge) and <a href="https://www.openml.org/">OpenML</a> (another platform for AI stuff). It also mentions “powered by AI4Eosc”, which stands for <a href="https://ai4eosc.eu/">Artificial Intelligence for the European Open Science Cloud</a>.</li>
+  <li><a href="https://www.ai4europe.eu/research/research-bundles"><strong>Research Bundles</strong></a> give you a space on the AI on-demand platform to collect and publish the outputs of a small research project in a compact way. A research bundle gathers in one place all the assets (code, data, tutorials, examples, etc.) produced by your project and published on the AIoD platform. Of course, you can also include links to assets published elsewhere, like GitHub or Zenodo.</li>
+  <li>An <a href="https://aiexp.ai4europe.eu/#/home"><strong>AI builder</strong></a> created in partnership with Eclispe and built at Fraunhofer IAIS (wink wink).</li>
+  <li>The <a href="https://rail.aiod.eu/docs/about"><strong>Research and Innovation AI Lab (RAIL)</strong></a>, a beta version of what seems to be an educational-oriented platform to use AIoD assets.</li>
+</ul>
+
+<p>Speaking of funding, the platform is supported by Horizon 2020, Horizon Europe, and the Digital Europe programme (focused on industry and public administration), but I couldn’t find any specific numbers.</p>
+
+<h3 id="european-digital-innovation-hubs-edihs">European Digital Innovation Hubs (EDIHs)</h3>
+
+<p>So, if you got this far, you now know that if you’re a big company, ADRA will carry your hand through the EU regulations<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>, and if you’re small but independent, you can explore what AIoD has to offer.</p>
+
+<p>But what happens when mamma ADRA has no time for you and you don’t understand what AIoD is all about (I feel you)?
+In that case, you can turn to your nearest <a href="https://european-digital-innovation-hubs.ec.europa.eu/home">European Digital Innovation Hubs (EDIHs)</a>. EDIHs are <strong>regional</strong> hubs that promote digitalization for both the <a href="https://european-digital-innovation-hubs.ec.europa.eu/knowledge-hub/thematic-groups/public-administration-main-focus-artificial-intelligence">public</a> and private sectors. There are currently <a href="https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue">150 working in AI</a>, with their objectives defined on the website as: “EDIHs help all companies seeking to use AI technologies to become more competitive on business/production processes, products or services.”
+If we choose a <a href="https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue/edih-rheinland-website">random one</a> from the catalog, we see that they mostly provide support (check the <a href="https://european-digital-innovation-hubs.ec.europa.eu/edih-catalogue/edih-rheinland-website/services">services</a>).
+While 50% of their costs are funded by the EU and member states, the remaining portion must be covered by private contributions and regional funding. I like this approach because it forces EDIHs to be active at the regional level, hopefully solving smaller but very real problems.</p>
+
+<p>The website presents several more initiatives, which I’ll briefly list here, and we can see if they come up again:</p>
+<ul>
+  <li><a href="https://digital-strategy.ec.europa.eu/en/funding/digital-transformation-accelerator-network-edih-cnect2021op0004">Digital Transformation Accelerator (DTA)</a>: A project that aims to support the creation, development, and growth of the pan-European DIH network, and facilitate intra/inter-regional collaboration between EDIHs. It ended in March 2022</li>
+  <li><a href="https://european-digital-innovation-hubs.ec.europa.eu/open-dma">Digital Maturity Assessment Tool (DMAT)</a>: Developed by the European Commission Joint Research Centre (JRC), it’s a framework to measure the digital maturity of EDIH customers across Europe<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>.</li>
+  <li><a href="https://road-safety.transport.ec.europa.eu/european-road-safety-observatory/data-and-analysis/key-performance-indicators-kpis_en">Key Performance Indicators (KPIs)</a>: A reporting tool used by EDIH to report their progress to the commission.</li>
+</ul>
+
+<h3 id="networks-of-excellence-centres-noes"><a name="noes"></a>Networks of Excellence Centres (NoEs)</h3>
+
+<p>Until now, we’ve covered initiatives dedicated to bringing innovations to life with the support of experts. But what happens if there are no experts to rely on?</p>
+
+<p>This is where the <a href="https://www.vision4ai.eu/community/">Networks of Excellence Centres (NoEs)</a> come into play. Attentive readers may notice that the link for NoEs actually redirects to the Vision4Ai website. Digging around, I found that the <a href="https://cordis.europa.eu/project/id/952070">VISION project</a> was allocated ~ €2 million from Horizon 2020, and it lasted from September 1st 2020 until this August (31st, 2024). Its main objective was to coordinate the NoEs, and it appears they have achieved this goal.
+At this point, it’s unclear who will take on the role of coordinating the NoEs, but it could also be the case that such coordination is no longer necessary, as the centres are already in contact with each other.</p>
+
+<p>Speaking of centers, these are the current ones:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start Year</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2020</td>
+      <td><a href="https://www.ai4media.eu/">AI4media</a></td>
+      <td><a href="https://www.elise-ai.eu/">ELISE</a><sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup></td>
+      <td><a href="https://www.humane-ai.eu/">Humane-AI net</a></td>
+      <td><a href="https://tailor-network.eu/">TAILOR</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td><a href="https://elsa-ai.eu/">ELSA</a></td>
+      <td><a href="https://www.eurobin-project.eu/">euROBIN</a></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td><a href="https://elias-ai.eu/">ELIAS</a></td>
+      <td><a href="https://daiedge.eu/">dAIedge</a></td>
+      <td><a href="https://www.enfield-project.eu/">Enfield</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Note: All centres established in 2020 ended in August 2024.</em></p>
+
+<p>NoEs reports to be strongly linked to ADRA and wants all the projects to communicate via the  <a href="#aiod">AIoD</a> platform.</p>
+
+<p>As mentioned before, the primary focus here is on academia: “fostering research excellence and creating a critical mass of European AI knowledge and talent.”</p>
+
+<h3 id="testing-and-experimentation-facilities-tefs"><a name="tefs"></a>Testing and Experimentation Facilities (TEFs)</h3>
+
+<p>Finally, we’ve reached the last initiative in aiLabMarket, which is related to the last step in the line: testing. 
+For this purpose, the Commission has invested €200 million to create four sector-specific <a href="https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities">Testing and Experimentation Facilities (TEFs) for AI.</a>, specifically for:</p>
+<ul>
+  <li>Healthcare with <a href="https://tefhealth.eu/home">TEF-Health</a></li>
+  <li>Agri-food with <a href="https://www.agrifoodtef.eu/">AgrifoodTEF</a></li>
+  <li>Manufacturing with <a href="https://ai-matters.eu/">AI Matters</a></li>
+  <li>Smart Cities &amp; Communities with <a href="https://citcom.ai/?trk=article-ssr-frontend-pulse_little-text-block">Citcom.ai</a></li>
+</ul>
+
+<p>But what exactly are these facilities, and how does testing work? Let’s take a closer look.</p>
+
+<p>We’ll use Citcom as an example since it relates to a filed I’m somewhat familiar with (smart-cities).
+Based on their website, they offer <a href="https://citcom.ai/services">several services</a>, ranging from providing access to data to conduct tests in real-life situation (e.g., <a href="https://citcom.ai/services/deploy-and-test-traffic-solution-in-a-real-life-traffic-environment">deploying systems in Belgium</a>). All of these services have a <a href="https://en.wikipedia.org/wiki/Technology_readiness_level">Technology Rediness Level</a> (TRL) threshold of 6 to 8, meaning that your system must to be at least be demonstrated in a relevant environment.</p>
+
+<p>Overall, TEFs are not overly complex. They are places where you can bring your system to be tested in a near-final environment. The official EU page also mentions that, after the initial five-year funding, the TEFs are expected “to achieve long-term financial sustainability”, which likely means companies need to pay for these services. Since testing is necessary to deploy your system at the EU level, it could become mandatory for companies looking to bring their products to the European market. The real question is whether these additional testing costs will be passed on to end users.</p>
+
+<h2 id="3-ensuring-that-ai-works-for-people">3. Ensuring That AI Works for People</h2>
+
+<p>To recap (I need this more than you):  <a href="#enablingai">EnablingAI</a> focuses on supporting the creation of “physical” AI infrastructures (e.g., compute centers), while <a href="#aiLabMarket">aiLabMarket</a> aims at creating synergies between innovation (e.g., research), the market (SMEs), and the public sector (PPP).<br />
+So, what’s left? Well, society!</p>
+
+<p>The third policy pillar is <a href="https://digital-strategy.ec.europa.eu/en/policies/ai-people">ensuring that AI works for people</a> (which we will abbreviate as <em>aiPeople</em>). This pillar covers all the parts related to: (i) educating and training people on AI (including efforts to prevent<a href="https://op.europa.eu/en/publication-detail/-/publication/9e39b4bd-843c-11ee-99ba-01aa75ed71a1/language-en">experts from fleeing to the US</a>), (ii) maintaining social cohesion, and (iii) making the EU a leader in AI regulation.</p>
+
+<p>To fully understand what these efforts are about, we need to first <a href="https://dictionary.cambridge.org/dictionary/english-italian/go-off-at-a-tangent">“partire per la tangente”</a> and introduce the EU digital Strategy|Decade|Programme|Compass (yes, these are all different things, and there are more<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup>).</p>
+
+<h5 id="eu-digital-initiatives">EU Digital Initiatives</h5>
+<p>Let’s start with the <a href="https://digital-strategy.ec.europa.eu/en">European Digital Strategy (EDS)</a>. The EDS is the overarching framework under which all other digital initiatives reside. It was first introduced in 2020 in <a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_20_416">this press release</a> as a successor to the <a href="https://www.europarl.europa.eu/factsheets/en/sheet/64/digital-agenda-for-europe">Digital Agenda</a> and has BIIIG objectives. Among those, the one that I’m most excited for is the “single digital market”, which addresses the fragmentation problem we’ve discussed before.</p>
+
+<p>In March 2021, the Commission <a href="https://ec.europa.eu/commission/presscorner/api/files/document/print/en/qanda_21_4631/QANDA_21_4631_EN.pdf">proposed</a> the <a href="https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade">Digital Decade (DigiDec)</a> as a structured policy programme to implement the goals of the EDS. Essentially, the EDS had big plans, and the DigiDec laid out a way to achieve them. However, the DigiDec is still not specific enough; for example, it does not provide metrics to measure whether the goals have been achieved.</p>
+
+<p>Enter the <a href="https://eur-lex.europa.eu/legal-content/en/TXT/?uri=CELEX%3A52021DC0118">Digital Compass (DigiCompass)</a>.
+If you click on the link for the DigiCompass, you will notice that it is one of those long, detailed EU Commission document. This is where all the metrics and objectives from the DigiDec are defined. If you have time to spare, you can scroll all the way down to the annex, where you’ll find a table of “cardinal points”, aka objectives. Among those, we finally see goals related to AI, such as:</p>
+<ul>
+  <li>Increasing the number of employed ICT specialists to at least 20 million, some of whom will focus on AI.</li>
+  <li>Achieving 20% of global semiconductor production value in Europe, including those for AI factories.</li>
+  <li>Ensuring that at least 75% of European enterprises have adopted AI.</li>
+</ul>
+
+<p>Ok, all very cool, but where does the money come from? You guessed it, the last piece of the puzzle is the <a href="https://digital-strategy.ec.europa.eu/en/activities/digital-programme">Digital Europe Programme (DigiProg)</a>. It has a budget of €7.9 billion and is responsible for financing EDIH, GenAI4EU, and AIoD.</p>
+
+<h3 id="nurturing-talent-and-improving-skills">Nurturing Talent and Improving Skills</h3>
+<p>This point is quite straightforward. The EU aims to develop AI literacy and expertise among its citizens. There are two levels at which they approach this, depending on the level of specialization desired:</p>
+<ol>
+  <li><strong>Basic Level</strong>: Covers AI literacy, i.e. knowing AI exists and how to use it. This is formulated as “teaching professionals in all sector about AI” (as part of the <a href="https://ec.europa.eu/social/main.jsp?catId=1223&amp;langId=e">Skills Agenda</a>), hoping they will use AI in their work<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">13</a></sup>. It’s also nice to see a focus on integrating AI education in schools and supporting the use of AI to <a href="https://school-education.ec.europa.eu/en/discover/news/ai-teaching-and-learning">enhance teaching</a>.</li>
+  <li><strong>Expert Level</strong>:  Involves creating AI experts, aka PhDs. This is done both by funding the creation of new experts (e.g. <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/">Marie Skłodowska-Curie Actions</a>) and facilitating their mobility across EU (e.g., through the <a href="#noes">NoEs</a> we saw before)</li>
+</ol>
+
+<h3 id="developing-a-policy-framework-to-ensure-trust-in-ai-systems">Developing a Policy Framework to Ensure Trust in AI Systems</h3>
+<p>Basically ensuring that AI doesn’t screw up society. 
+It all started in 2018, when the <a href="https://digital-strategy.ec.europa.eu/en/policies/expert-group-ai">High-level expert group on artificial intelligence (AI HLEG)</a> wrote the guidelines of trustworthy AI (you can find them <a href="https://ec.europa.eu/newsroom/dae/document.cfm?doc_id=60419">here</a>). These guideline were then expanded upon in the <a href="https://commission.europa.eu/publications/white-paper-artificial-intelligence-european-approach-excellence-and-trust_en">White Paper on AI </a> in 2020, and realistically served as the basis for parts of the <a href="https://artificialintelligenceact.eu/">EU AI ACT</a>.
+Interestingly, these guidelines also cover measures to adapt liability frameworks for AI and to enhance cybersecurity defenses against attacks<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">14</a></sup>, which are <a href="https://www.ncsc.gov.uk/report/impact-of-ai-on-cyber-threat">bound to become a bigger issue with AI</a>).</p>
+
+<h3 id="promoting-the-eu-vision-on-sustainable-and-trustworthy-ai-in-the-world">Promoting the EU Vision on Sustainable and Trustworthy AI in the World</h3>
+<p>Unlike the other two pillars, this one looks beyond the EU and aims to establish the EU as a leader in human-centric AI policies.  Following the principles found in the <a href="https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade">Digital Compass</a> the EU launched the <a href="https://digital-strategy.ec.europa.eu/en/policies/international-outreach-ai">International outreach for human-centric artificial intelligence initiative</a>.  Its aim is to involve as many international partners as possible, including the UN, UNESCO, OECD, Council of Europe, G7, and G20, to work together on AI. 
+Specifically the EU:</p>
+<ul>
+  <li>Is a funding member of the <a href="https://gpai.ai/">Global Partnership on AI (GPAI)</a>, launched in July 2020.</li>
+  <li>Collaborates with the <a href="https://www.oecd.org/en.html">Organisation for Economic Co-operation and Development (OECD)</a> through the <a href="https://oecd.ai/en/network-of-experts/working-group/1137">ONE-AI experts group</a> and the <a href="https://ai-watch.ec.europa.eu/index_en">AI watch</a></li>
+  <li>“Support international standadization bodies in their work to define common standards in the global governance of AI”.</li>
+</ul>
+
+<p>On the last point we need to open a small parenthesis. The EU is not doing this purely out of altruism. The country that manages to set a standard that is later accepted internationally often <a href="https://link.springer.com/article/10.1007/s10961-021-09871-4">has an intrinsic advantage on the competitors</a>. That is why in the Coordinate Plan for AI (Annex 1, Chapter 10) mentions both the <a href="https://www.iso.org/home.html">International Organisation for Standardisation (ISO)</a> and the <a href="https://www.ieee.org/">Institute of Electrical and Electronics Engineers (IEEE)</a>, which are engaged in a wide range of standardization activities.</p>
+
+<h2 id="4-build-strategic-leadership-in-high-impact-sectors">4. Build Strategic Leadership in High-Impact Sectors</h2>
+<p>We finally reached  the last point. 
+ This one focuses more on the sectors where AI can (and will) have a significant impact. Since it’s pretty straightforward, I’ll list them here and provide some context:</p>
+<ol>
+  <li><strong>Environment</strong> : You probably know about the <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en">Green Deal</a>, where the EU aims to become climate neutral by 2050. Here, they mention that AI can help in several ways (e.g., energy/resource efficiency, finding solutions to climate change), but they also acknowledge its environmental footprint<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">15</a></sup>, thus promoting research and development in <em>green AI</em> initiatives<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">16</a></sup>.</li>
+  <li><strong>Health</strong> : It’s no surprise that the healthcare system needs to undergo <a href="https://www.theguardian.com/society/2022/dec/14/a-ticking-time-bomb-healthcare-under-threat-across-western-europe">serious changes to survive</a> in the coming decades. In this light, the EU aims to digitize health data with the <a href="https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space_en">European Health Data Spaces</a> to use AI to support the whole system.</li>
+  <li><strong>Robotics</strong> : You’ve probably seen the <a href="https://www.youtube.com/watch?v=0SRVJaOg9Co&amp;ab_channel=Figure">Figure 02 Robot</a> and heard about all the promises regarding “automating service sectors”. That’s the whole point<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote" rel="footnote">17</a></sup>.</li>
+  <li><strong>Public sector</strong> : This is something I’m super excited about! We are all painfully aware of the inefficiencies and excessive bureaucracy (looking at you, Deutschland) that plague our systems. The introduction of AI can streamline bureaucratic processes (I sound like ChatGPT now) and potentially enhance democratic system. The first studies on AI supporting democracy are already <a href="https://pubmed.ncbi.nlm.nih.gov/33583994/">looking good</a> (cough cough <a href="https://link.springer.com/article/10.1007/s11518-021-5497-1">Multi Agent Systems</a>).</li>
+  <li><strong>Home affairs</strong> : Unlike the previous point, this one makes me a bit uneasy. It discusses the use of AI in law enforcement. They do mention that the AI should never have the final say, but the whole narrative is primarily centered around terrorism. This has often been used as a justification to introduce laws and policies that restrict citizens’ privacy and liberty. Because, of course, no one wants terrorism.<sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">18</a></sup>.</li>
+  <li><strong>Transport</strong> : Since moving to Germany, I’ve noticed how the traffic lights work based on how many cars are waiting. I love it. While this is not the AI we often imagine for “smart mobility,” it does contribute to more efficient transport. The actual initiative for transport goes more in detail (covering aviation, rail, inland waterways and road transport sectors), basically revolving around the <a href="https://transport.ec.europa.eu/transport-themes/mobility-strategy_en">Mobility Strategy</a></li>
+  <li><strong>Agriculture</strong> : The EU has recognized that the “AI-enabled precision farming is estimated to grow and <a href="https://monitor-industrial-ecosystems.ec.europa.eu/reports/other-reports/technological-trends-agri-food-industry">reach EUR 11.8 billion by 2025</a>” and they want a piece of the cake.</li>
+</ol>
+
+<p>To summarize, these initiatives are sector-specific and are also tied to the <a href="#tefs">Testing and Experimentation Facilities</a> we discussed earlier.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>And we’re finally done. For you, this might have been a 20-minute read (according to the <a href="https://scholarwithin.com/average-reading-speed#:~:text=read%2020%20pages.-,Adult%20Average%20Reading%20Speed,of%20300%20words%20per%20minute.">average reading speed</a>) , but for me, it took three weeks of my “free time” (I really should find a new hobby).</p>
+
+<h3 id="take-aways-if-you-didnt-read-heres-the-comprehensive-list">Take-Aways: If You Didn’t Read, Here’s the Comprehensive List</h3>
+<p>If you’re in a rush, here are the key points from this post, along with the insights from digging into the EU AI policies:</p>
+
+<ol>
+  <li><strong>Coordinated Plan on Artificial Intelligence (PlanAI)</strong>:
+    <ul>
+      <li>Initially published in 2018 and reviewed in 2021 to emphasize human-centric AI, sustainability, and achieving EU digital sovereignty.</li>
+      <li>Significant funding increase, aiming for €145 billion by 2023 through various EU initiatives like Horizon Europe and Digital Europe Programme.</li>
+    </ul>
+  </li>
+  <li><strong>AI Factories</strong>:
+    <ul>
+      <li>Announced for 2025, AI Factories will combine supercomputers, data centers, and human expertise to boost AI development across industries, supported by €2.1 billion in investments.</li>
+    </ul>
+  </li>
+  <li><strong>GenAI4EU</strong>:
+    <ul>
+      <li>Focuses on industrial and public sector AI applications with €500 million in funding, closely tied to AI Factories and Common European Data Spaces for infrastructure support.</li>
+    </ul>
+  </li>
+  <li><strong>Thriving From the Lab to the Market</strong>:
+    <ul>
+      <li>Aiming to foster public-private partnerships (PPP) through €1 billion per year investments, with additional funding from member states and private sectors.</li>
+    </ul>
+  </li>
+  <li><strong>AI-on-Demand (AIoD) Platform</strong>:
+    <ul>
+      <li>A central marketplace for AI assets (datasets, models), research bundles, and services like AI builders and innovation labs.</li>
+    </ul>
+  </li>
+  <li><strong>European Digital Innovation Hubs (EDIHs)</strong>:
+    <ul>
+      <li>These regional hubs support digital transformation and AI adoption at the local level, with around 150 hubs currently in operation.</li>
+    </ul>
+  </li>
+  <li><strong>Testing and Experimentation Facilities (TEFs)</strong>:
+    <ul>
+      <li>Sector-specific facilities for testing AI applications in real-life environments (e.g., healthcare, agriculture, smart cities), helping startups and SMEs bring their innovations to market.</li>
+    </ul>
+  </li>
+  <li><strong>ADRA (AI, Data, and Robotics Association)</strong>:
+    <ul>
+      <li>A critical body managing the collaboration between academia, startups, and industry, driving European AI advancements while balancing societal and economic goals.</li>
+    </ul>
+  </li>
+  <li><strong>Educational and Societal Focus</strong>:
+    <ul>
+      <li>The EU aims to boost AI literacy for professionals and develop new AI experts through PhD programs, while ensuring AI applications align with EU values and benefit society as a whole.</li>
+    </ul>
+  </li>
+  <li><strong>Global AI Leadership</strong>:
+    <ul>
+      <li>The EU is positioning itself as a global leader in human-centric AI through collaborations with international organizations like the UN and OECD, while also setting standards for trustworthy AI development.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>The PlanAI is vast and interconnected, with many moving parts. By understanding these frameworks, we get a clearer picture of how the EU intends to achieve digital sovereignty and ensure that AI works for both industry and society.</p>
+
+<h3 id="personal-considerations">Personal Considerations</h3>
+
+<p>This deep dive has taught me a lot about the EU AI landscape (even though we only covered one plan from four years ago), and I hope it helps you understand just how complex this whole ecosystem is.  In my previous post, I showed how the Horizon projects have overlaps and inefficiencies, particularly in AI-related initiatives. My aim here was to summarize how the EU is managing AI, potentially highlight some reasons behind these inefficiencies, and suggest solutions. While I still aim to do that, I was naive to think the answer could come from just a few weeks of research.</p>
+
+<p>Interestingly, the word “fragmentation” appeared repeatedly in many of the documents I read while writing this blog post. The EU is painfully aware that fragmentation is one of its most significant issues, one that could slowly kill the Union if left unaddressed (as pointed out in Mario Draghi’s report). However, it’s clear that this is not an easy problem to solve.</p>
+
+<p>That said, I’m still committed to finding a solution to the inefficiencies within Horizon projects, and I’ll continue investigating how the entire funding process works, particularly for AI initiatives. s. This research is also essential for working on the CAIRNE proposal for a <a href="https://cairne.eu/wp-content/uploads/2023/11/Moonshot-proposal.pdf">CERN-like hub for AI</a>, which aims to address these fragmentation issues more comprehensively. In future posts, you can expect more content along these lines, and I’ll also keep updating the <a href="https://nicofirst1.github.io/euai_graph">AI initiatives graph</a>.</p>
+
+<p>Lastly, while I write these blog posts because I genuinely believe that teaching others is the best way to fully understand a topic, it does take time and effort. So, if you appreciated this post, please let me know by leaving a comment and engaging.</p>
+
+<h1 id="footnotes">Footnotes</h1>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>You can read the complete review <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review">here</a>. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://www.euractiv.com/section/artificial-intelligence/news/leak-eu-commission-prepares-strategic-framework-to-boost-ai-start-ups-generative-ai-uptake/">Euractive article</a>. I can’t access the <a href="https://sciencebusiness.net/news/r-d-funding/commission-shaping-eu500m-generative-artificial-intelligence-calls">science business one</a> :( <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>The RRF allocated these €134 billions for project aiming to digitalize the EU. So, while these funds are not exclusively allocated to AI initiatives, AI initiatives are indeed included. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>Previously called CLAIRE. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>The term “innovative” here refers to ideas that likely originate from an academic context. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>The private sector part of the idea. This refers to guiding the private sector by offering expertise in both technical (previous point) and regulatory areas. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>Societal and environmental considerations will need to align with strict EU regulations and the AI Act, which aims to prevent the implementation of risky AI use cases. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>The goal for companies is profit, and AI has the potential to generate significant financial returns. <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>As we discussed before, ADRA does much more, but stick with me for this example. <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>If you wonder how the DMAT compares to the Technology Readiness Level (more about it later), basically the DMAT is about how ready an organization is to adopt digital transformation, whereas TRL focuses on how ready a particular technology is for implementation. <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:11" role="doc-endnote">
+      <p>Fun fact, ELISE it used to be called European Learning and Intelligent Systems Excellence (<a href="https://cordis.europa.eu/project/id/951847">according to the proposal</a>). <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:12" role="doc-endnote">
+      <p>I challenged myself to find as many EU initiatives starting with “digital” as possible. Here is a (still incomplete) list: (1) <a href="https://digital-strategy.ec.europa.eu/en/policies/desi">Digital Economy and Society Index</a>, (2) <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-services-act_en">Digital Services Act</a>, (3) <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-markets-act-ensuring-fair-and-open-digital-markets_en">Digital Markets Act</a>, (4) <a href="https://www.europarl.europa.eu/factsheets/en/sheet/64/digital-agenda-for-europe">Digital Agenda for Europe</a>,(5) <a href="https://digital-strategy.ec.europa.eu/en/library/digital-action-day-report">Digital Action Day</a>, (6) <a href="https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html">Digital Euro</a>, (7) <a href="https://education.ec.europa.eu/focus-topics/digital-education/action-plan">Digital Education Action Plan</a>, (8) <a href="https://digital-skills-jobs.europa.eu/en/actions/european-initiatives/digital-opportunity-traineeships">Digital Opportunity Traineeships</a> <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:13" role="doc-endnote">
+      <p>Part of the work done in the Digital Education Action Plan (<a href="https://education.ec.europa.eu/focus-topics/digital-education/action-plan/action-8">Action 8</a>) was to update the Digital Competence Framework to its <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC128415">2.2 version</a> to include AI. <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:14" role="doc-endnote">
+      <p>In the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=JOIN:2020:18:FIN">EU Cybersecurity Strategy for the Digital Decade</a> it’s written “Cybersecurity must be integrated into all these digital investments, particularly key technologies like Artificial Intelligence (AI), encryption and quantum computing […]” <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:15" role="doc-endnote">
+      <p>Short rant on what the former CEO of Google said a few days ago, namely <a href="https://www.computing.co.uk/news/2024/ai/former-google-ceo-eric-schmidt-urges-ai-acceleration-dismisses-climate#:~:text=Former%20Google%20CEO%20Eric%20Schmidt%20has%20ignited%20a%20debate%20within,precedence%20over%20climate%20change%20goals.">“that pursuit of AI should take precedence over climate change”</a>. While I do understand his point that AI can drive innovation and ultimately address climate issues, what happens if AI does NOT fideliver a solution in time? Are we seriously betting the future of our planet on this hope? <a href="https://dictionary.cambridge.org/dictionary/italian-english/bah">Bah</a>. <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:16" role="doc-endnote">
+      <p>The complete proposal (<a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review">Chapter 11 here</a>) suggests a number of cool initiative, along with R&amp;D efforts. These include the creation of green data spaces and AI-supported digital simulation of the planet through the <a href="https://destination-earth.eu/">Destination Earth</a> initiative. <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:17" role="doc-endnote">
+      <p>One aspect that was depressing to read is how the document mentions demographic challenges as a reason for needing automation. Sure, automation could help, but you know what else could address this issue? Immigration. It feels like we’re prioritizing robots over people, instead of leveraging human potential. I’d rather see people of diverse backgrounds on the streets than robots. <a href="#fnref:17" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:18" role="doc-endnote">
+      <p>After the 9/11 terrorist attack, the U.S. introduced the <a href="https://en.wikipedia.org/wiki/Patriot_Act#:~:text=An%20Act%20to%20deter%20and,Patriot%20Act">USA PATRIOT Act</a> (lol the name), which expanded surveillance power of law enforcement. This later led to controversies like the NSA  surveillance exposed by Edward Snowden, showing that these powers were used to  <a href="https://www.theguardian.com/world/2013/jun/09/edward-snowden-nsa-whistleblower-surveillance">monitor U.S. citizens</a>). <a href="#fnref:18" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+      </div>
+
+      
+    </div>
+  </section>
+  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/blogpost-horizon-analysis/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Horizon AI Fragmentation: Challenges and Budget Efficiency</a><a href="/news/data-strategy/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">Mapping the EU AI Landscape (Part 2): Data Strategy →</a></div>
+</main><script>
+const clicableImages = document.querySelectorAll(".zoom_outer");
+if (clicableImages.length > 0) {
+  clicableImages.forEach((el) => {
+    el.addEventListener("click", (e) => {
+       e.currentTarget.classList.toggle("wide_image")
+    })
+    }
+  );
+}
+</script><!-- Load the custom JavaScript file from the js directory -->
+<script src="/assets/js/reading_progress.js"></script>
+
+</body><footer class="footer p-9 bg-sky-200 dark:bg-slate-950 dark:text-sky-50 ">
+    <div class="container">
+        <p class="text-center">&copy; Copyright 2024, All right Reserved By - Nicolo' Brandizzi</p>
+    </div>
+</footer></html>

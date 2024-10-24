@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <!-- Conditionally load Google Analytics -->
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" && host !== "127.0.0.1") {
+      // Google Analytics Global Site Tag (gtag.js)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function() {
+        gtag('config', 'G-W2MPFHELZG');
+      };
+    }else{
+      console.log("Google Analytics is disabled on localhost");
+    }
+  </script>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Featured in Science Article on Mental Health in Academia</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Featured in Science Article on Mental Health in Academia" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="I had the privilege of contributing to Science’s insightful article, “How to nurture your mental health in science and academia amid challenging times” by Elisabeth Pain." />
+<meta property="og:description" content="I had the privilege of contributing to Science’s insightful article, “How to nurture your mental health in science and academia amid challenging times” by Elisabeth Pain." />
+<link rel="canonical" href="/news/mental-health-science/" />
+<meta property="og:url" content="/news/mental-health-science/" />
+<meta property="og:image" content="/assets/images/news/science_mh.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-12-14T00:00:00+01:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/news/science_mh.jpeg" />
+<meta property="twitter:title" content="Featured in Science Article on Mental Health in Academia" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-14T00:00:00+01:00","datePublished":"2023-12-14T00:00:00+01:00","description":"I had the privilege of contributing to Science’s insightful article, “How to nurture your mental health in science and academia amid challenging times” by Elisabeth Pain.","headline":"Featured in Science Article on Mental Health in Academia","image":"/assets/images/news/science_mh.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"/news/mental-health-science/"},"url":"/news/mental-health-science/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"></head>
+<header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+    <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
+        <div class="hamburger item">
+            <span></span>
+        </div>
+    </div>
+    <a href="/" class="logo absolute left-6 top-4 md:top-5">
+        <img src="/assets/images/logo2.png" alt="Logo" style="width: 40px;" class="w-32 dark:invert">
+    </a>
+
+    <div class="container flex gap-6 lg:gap-10 xl:gap-12 mx-auto align-top">
+        <nav class="grid mt-10 md:mt-0 md:flex gap-2 md:gap-3 lg:gap-5 xl:gap-6 justify-center w-full hidden_small slide-in-left" id="nav">
+            
+            <a href="/" class="dark:text-slate-50 text-base lg:text-xl capitalize">home</a>
+            
+            <a href="/projects" class="dark:text-slate-50 text-base lg:text-xl capitalize">projects</a>
+            
+            <a href="/publications" class="dark:text-slate-50 text-base lg:text-xl capitalize">publications</a>
+            
+            <a href="/cv" class="dark:text-slate-50 text-base lg:text-xl capitalize">CV</a>
+            
+            <a href="/news" class="dark:text-slate-50 text-base lg:text-xl capitalize">news</a>
+            
+        </nav>
+        <form class="mode-switch absolute right-16 top-5 md:top-7 lg:top-8" data-bss-toggle="mode">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Light</label>
+            <input type="checkbox" class="form-check-input" id="theme-mode" aria-label="dark-mode-switch" style=" background-image: url(/assets/images/svg/circle.svg)">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Dark</label>
+          </form>
+    </div>
+</header>
+
+<script>
+    //HAMBURGER
+    const hamburger = document.querySelectorAll("#menuToggler .item");
+    function toggleMenu() {
+        document.getElementById("nav").classList.toggle("hidden_small");
+        for (el of hamburger) {
+            el.classList.toggle("active-burger");
+        }
+    }
+    /**
+ * Theme Mode Switch
+ * Switch betwen light/dark mode. The chosen mode is saved to browser's local storage
+*/
+let root = document.getElementsByTagName('html')[0];
+let checkbox = document.getElementById('theme-mode');
+let locMode = getLightingMode();
+let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+if ((!darkMode && locMode == undefined) || (locMode == 'light')) {
+  root.classList.remove('dark');
+  checkbox.checked = false;
+} else {
+  root.classList.add('dark')
+  checkbox.checked = true
+}
+
+function getLightingMode() {
+  const storedPreference = localStorage.getItem('lightingModePreference');
+
+  if (storedPreference) {
+    const parsedPreference = JSON.parse(storedPreference);
+    const currentTime = new Date().getTime();
+
+    if (currentTime < parsedPreference.expires) {
+      return parsedPreference.mode;
+    } else {
+      localStorage.removeItem('lightingModePreference');
+    }
+  }
+  return undefined;
+}
+
+function setLightingMode(mode) {
+  const currentTime = new Date().getTime();
+  const expirationTime = currentTime + 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const preferenceData = {
+    mode: mode,
+    expires: expirationTime,
+  };
+
+  localStorage.setItem('lightingModePreference', JSON.stringify(preferenceData));
+}
+
+const themeModeSwitch = (() => {
+  let modeSwitch = document.querySelector('[data-bss-toggle="mode"]')
+  if (modeSwitch === null) return;
+  let checkbox = modeSwitch.querySelector('.form-check-input')
+
+  modeSwitch.addEventListener('click', (e) => {
+    if (checkbox.checked) {
+      root.classList.add('dark');
+      setLightingMode('dark');
+    } else {
+      root.classList.remove('dark');
+      setLightingMode('light');
+    }
+  });
+})();
+
+</script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
+  <main class="news-post min-h-[80vh] flex flex-col gap-6">
+  <section class="pt-24">
+    <div id="reading-progress" class="reading-progress"></div>
+
+    <div class="container pb-6">
+      <h1 class="text-5xl font-bold">
+        Featured in Science Article on Mental Health in Academia
+      </h1>
+      <b>Speaker</b>
+      <p class="text-sm mb-3">Dec 14, 2023</p><div class="post-image">
+        <img src="/assets/images/news/science_mh.jpeg" alt="hero image">
+      </div><div class="page_content">
+          <p>I had the privilege of contributing to Science’s insightful article, <a href="https://www.science.org/content/article/how-nurture-your-mental-health-science-and-academia-amid-challenging-times"><em>“How to nurture your mental health in science and academia amid challenging times”</em></a> by Elisabeth Pain.</p>
+
+<h3 id="interview-highlights">Interview Highlights</h3>
+<p>In this crucial discussion, I share my experiences and approaches to managing stress and the pressures of comparison during my Ph.D. journey. The article emphasizes the importance of open conversations about mental health in academic settings, showcasing various perspectives from early-career scientists. My insights focus on navigating the competitive and fast-paced environment of academia, balancing self-expectations, and adopting strategies for mental well-being.</p>
+
+<p>Check out the full article for a deeper dive into mental health challenges and solutions in the scientific community.</p>
+
+
+      </div>
+
+      
+    </div>
+  </section>
+  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/fraunhofer-lecture/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Fraunhofer IAIS NetMedia Lecture</a><a href="/news/thesis-defend/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">PhD Thesis Defended! →</a></div>
+</main><script>
+const clicableImages = document.querySelectorAll(".zoom_outer");
+if (clicableImages.length > 0) {
+  clicableImages.forEach((el) => {
+    el.addEventListener("click", (e) => {
+       e.currentTarget.classList.toggle("wide_image")
+    })
+    }
+  );
+}
+</script><!-- Load the custom JavaScript file from the js directory -->
+<script src="/assets/js/reading_progress.js"></script>
+
+</body><footer class="footer p-9 bg-sky-200 dark:bg-slate-950 dark:text-sky-50 ">
+    <div class="container">
+        <p class="text-center">&copy; Copyright 2024, All right Reserved By - Nicolo' Brandizzi</p>
+    </div>
+</footer></html>

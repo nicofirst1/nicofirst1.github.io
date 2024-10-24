@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <!-- Conditionally load Google Analytics -->
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" && host !== "127.0.0.1") {
+      // Google Analytics Global Site Tag (gtag.js)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function() {
+        gtag('config', 'G-W2MPFHELZG');
+      };
+    }else{
+      console.log("Google Analytics is disabled on localhost");
+    }
+  </script>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mapping the EU AI Landscape (Part 3): Can you Train on my Data?</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Mapping the EU AI Landscape (Part 3): Can you Train on my Data?" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Intro" />
+<meta property="og:description" content="Intro" />
+<link rel="canonical" href="/secret-drafts/data-strategy-questions/" />
+<meta property="og:url" content="/secret-drafts/data-strategy-questions/" />
+<meta property="og:image" content="/assets/images/news/eu_landscape/eu_landscape_p3.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-10-23T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/news/eu_landscape/eu_landscape_p3.png" />
+<meta property="twitter:title" content="Mapping the EU AI Landscape (Part 3): Can you Train on my Data?" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-10-23T00:00:00+02:00","datePublished":"2024-10-23T00:00:00+02:00","description":"Intro","headline":"Mapping the EU AI Landscape (Part 3): Can you Train on my Data?","image":"/assets/images/news/eu_landscape/eu_landscape_p3.png","mainEntityOfPage":{"@type":"WebPage","@id":"/secret-drafts/data-strategy-questions/"},"url":"/secret-drafts/data-strategy-questions/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"></head>
+<header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+    <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
+        <div class="hamburger item">
+            <span></span>
+        </div>
+    </div>
+    <a href="/" class="logo absolute left-6 top-4 md:top-5">
+        <img src="/assets/images/logo2.png" alt="Logo" style="width: 40px;" class="w-32 dark:invert">
+    </a>
+
+    <div class="container flex gap-6 lg:gap-10 xl:gap-12 mx-auto align-top">
+        <nav class="grid mt-10 md:mt-0 md:flex gap-2 md:gap-3 lg:gap-5 xl:gap-6 justify-center w-full hidden_small slide-in-left" id="nav">
+            
+            <a href="/" class="dark:text-slate-50 text-base lg:text-xl capitalize">home</a>
+            
+            <a href="/projects" class="dark:text-slate-50 text-base lg:text-xl capitalize">projects</a>
+            
+            <a href="/publications" class="dark:text-slate-50 text-base lg:text-xl capitalize">publications</a>
+            
+            <a href="/cv" class="dark:text-slate-50 text-base lg:text-xl capitalize">CV</a>
+            
+            <a href="/news" class="dark:text-slate-50 text-base lg:text-xl capitalize">news</a>
+            
+        </nav>
+        <form class="mode-switch absolute right-16 top-5 md:top-7 lg:top-8" data-bss-toggle="mode">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Light</label>
+            <input type="checkbox" class="form-check-input" id="theme-mode" aria-label="dark-mode-switch" style=" background-image: url(/assets/images/svg/circle.svg)">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Dark</label>
+          </form>
+    </div>
+</header>
+
+<script>
+    //HAMBURGER
+    const hamburger = document.querySelectorAll("#menuToggler .item");
+    function toggleMenu() {
+        document.getElementById("nav").classList.toggle("hidden_small");
+        for (el of hamburger) {
+            el.classList.toggle("active-burger");
+        }
+    }
+    /**
+ * Theme Mode Switch
+ * Switch betwen light/dark mode. The chosen mode is saved to browser's local storage
+*/
+let root = document.getElementsByTagName('html')[0];
+let checkbox = document.getElementById('theme-mode');
+let locMode = getLightingMode();
+let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+if ((!darkMode && locMode == undefined) || (locMode == 'light')) {
+  root.classList.remove('dark');
+  checkbox.checked = false;
+} else {
+  root.classList.add('dark')
+  checkbox.checked = true
+}
+
+function getLightingMode() {
+  const storedPreference = localStorage.getItem('lightingModePreference');
+
+  if (storedPreference) {
+    const parsedPreference = JSON.parse(storedPreference);
+    const currentTime = new Date().getTime();
+
+    if (currentTime < parsedPreference.expires) {
+      return parsedPreference.mode;
+    } else {
+      localStorage.removeItem('lightingModePreference');
+    }
+  }
+  return undefined;
+}
+
+function setLightingMode(mode) {
+  const currentTime = new Date().getTime();
+  const expirationTime = currentTime + 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const preferenceData = {
+    mode: mode,
+    expires: expirationTime,
+  };
+
+  localStorage.setItem('lightingModePreference', JSON.stringify(preferenceData));
+}
+
+const themeModeSwitch = (() => {
+  let modeSwitch = document.querySelector('[data-bss-toggle="mode"]')
+  if (modeSwitch === null) return;
+  let checkbox = modeSwitch.querySelector('.form-check-input')
+
+  modeSwitch.addEventListener('click', (e) => {
+    if (checkbox.checked) {
+      root.classList.add('dark');
+      setLightingMode('dark');
+    } else {
+      root.classList.remove('dark');
+      setLightingMode('light');
+    }
+  });
+})();
+
+</script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
+  <main class="news-post min-h-[80vh] flex flex-col gap-6">
+  <section class="pt-24">
+    <div id="reading-progress" class="reading-progress"></div>
+
+    <div class="container pb-6">
+      <h1 class="text-5xl font-bold">
+        Mapping the EU AI Landscape (Part 3): Can you Train on my Data?
+      </h1>
+      <b>BlogPost</b>
+      <p class="text-sm mb-3">Oct 23, 2024</p><div class="post-image">
+        <img src="/assets/images/news/eu_landscape/eu_landscape_p3.png" alt="hero image">
+      </div><div class="page_content">
+          <h1 id="intro">Intro</h1>
+
+<p>Let me ask you a question (or a few). Let’s imagine you are a business, or even more general, you are in an EU project that is using data for, let’s say, training a LLM. Do you know :</p>
+<ol>
+  <li>How to you handle Personal Identification Information (PII) in your data?</li>
+  <li>What about licensed and copyrighted material?
+    <ul>
+      <li>Both the DGA and Data actexplicitly state that they do not affect existing intellectual property rights (IPR) and these are dependent on existing laws, which ones?</li>
+    </ul>
+  </li>
+  <li>If you plan to release your data, which format do you need to use? What kind of metadata are sufficent?
+    <ul>
+      <li>The Data act only states that format must be machine readable (no paper basically) and “commonly used”.</li>
+      <li>Metadata on the other hand has to be “relevant” and “necessary to interpret use”. It is also specified that this metaata needs to include description of the data structure, format, vocabularies (?) and access mechanism.</li>
+    </ul>
+  </li>
+  <li>What the hell are data spaces?</li>
+</ol>
+
+<p>While I cannot tell the specific answers to these problem, we can still infer where they might be (it feels like a treasure hunt at this point).</p>
+
+<ol>
+  <li>Ansers to PII are definetly in the <a href="https://gdpr-info.eu/">GDPR</a> and maybe in the AI ACT</li>
+  <li>IPR are probably either <a href="https://intellectual-property-helpdesk.ec.europa.eu/regional-helpdesks/european-ip-helpdesk_en">on the Euripean IP helpdesk</a> or <a href="https://europa.eu/youreurope/business/running-business/intellectual-property/rights/index_en.htm#:~:text=If%20you%20protect%20your%20invention,and%20its%20origin%20is%20clear.">here</a></li>
+  <li>Metadata… maybe finding out more about <a href="https://knowledge-base.inspire.ec.europa.eu/index_en">INSPIRE</a> or the EDIB would be a good starting point</li>
+  <li>Data spaces are <a href="https://digital-strategy.ec.europa.eu/en/policies/data-spaces">here</a></li>
+</ol>
+
+<p>You know what this mean?
+We are not done yet!</p>
+
+<h1 id="answering-questions">Answering Questions</h1>
+<h2 id="ai-data-and-pii">AI, Data and PII</h2>
+
+<p>The first thing we are interested in is to find out how to handle data with PII. To this end we need to check both in the AI act and GDPR.</p>
+
+<h3 id="use-of-personal-data-for-ai">Use of personal data for AI</h3>
+
+<p>By looking for the key word “personal data” in the AI act we are given these (and many other ignored) matches..
+Most of the relevant one refer to the GDPR (Regulation (EU) 2016/679), <a href="https://eur-lex.europa.eu/eli/reg/2018/1725/oj">New Data Protection Framework</a> (Regulation (EU) 2018/1725) and the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32016L0680">Law Enforcment Directive</a> (Directive (EU) 2016/680).</p>
+
+<ul>
+  <li>Article 1:
+    <ul>
+      <li>Point 10<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">1</a></sup> : The fundamental righs to data protection from the GDPR still applies.</li>
+      <li>Point 67<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">2</a></sup>:  You should always mention how and where you got your data.</li>
+      <li>Point 69 <sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote" rel="footnote">3</a></sup>: You should follow the principles of <strong>data minimisation and protection</strong> defined in the GDPR. Also you should ate least anonymise and encrypt the data you are using, better if you don’t even access the data, but transfer your algorithm to where the data is located. This seems to be a pretty solid reference to federated learning.</li>
+      <li>Point 140 : Talks about data sandboxes, and says how you can use personal data collected for other purposes in your ai system only in accordance with various articles <sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">4</a></sup></li>
+    </ul>
+  </li>
+  <li>Article 10 is all about data governance and includes a number of musts if you are working with data<sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote" rel="footnote">5</a></sup></li>
+  <li>Article 59 is all about personal data in data sandboxoes. Basically if you are in a data sandbox you are allowed to process “lawfully” gathered personal data only if you are doing healthcare, enironment, transport or efficiency of public sectors. Also you have to delete the data once you used it.</li>
+</ul>
+
+<p>To summarize, you should always psydo/ananymize personal data, and in the reare cases when you don’t you have to show that you need the personal data for mitigating biases.</p>
+
+<h4 id="data-features">Data Features</h4>
+
+<p>Point 67 of Article 1 mentioned the priciple of “data minimisation and protection”, what are we talking about? Also, according to article 66 in the AI act, data should also be of “high-quality” (what does that even mean).
+In general, the data used for ai has to have a set of features or adhere to some pricinples.</p>
+
+<h5 id="principle-of-data-minimisation">Principle of Data Minimisation</h5>
+
+<p>The EU data protection supervisor <a href="https://www.edps.europa.eu/data-protection/data-protection/glossary/d_en#:~:text=The%20principle%20of%20%E2%80%9Cdata%20minimisation,necessary%20to%20fulfil%20that%20purpose.">defines</a> the principle of <em>data minimisation</em> to be “data controllers should collect only the personal data they really need, and should keep it only for as long as they need it.”. 
+Working with large quantities of data myself, the question of “how much data is enough” often pops out. In th scope of training language modeles, it seems that no data is enought. This would imply that, as long as you’re doing llms, you don’t really need to agree to this principle and you can collect all the data available on the internet. 
+If we also take into account Article 10 point 5 of the AI Act, which says that you can collect personal informatino in the cases where you need it to reduce bias, we can find a loopwhole where we can access personal data in enourmous quantitiies, wihtout anonymized all for the purpose of diminishng biases in LLMs training<sup id="fnref:20" role="doc-noteref"><a href="#fn:20" class="footnote" rel="footnote">6</a></sup></p>
+
+<h5 id="high-quality-data">High-quality Data</h5>
+<p>At work, we recently published <a href="https://arxiv.org/abs/2410.08800">an article</a> on how we process data for one of our projects. In the article we also discuss how the field does not have a standard definition of high-quality and various techiniqes are emerging around different proprieties of the text. To this end, it surprised me when i read about high-quality data in the AI-Act. Reading trhough, i noticed that the definitons are indeed pretty generic and they revolve around the concept of:</p>
+
+<ul>
+  <li><strong>Biases</strong>: we talked about this alreday. The one thing we can add on this point is that the ai act ackoleges the problem of feedback loops where biased data lead to bias models that create more biased data, feeding the loop (Point 67)</li>
+  <li><strong>Relevance and Representativeness</strong>: High-quality data should be relevant to the AI system’s intended purpose and sufficiently representative of the real-world scenarios the system is expected to operate in. You could argue that if you’re trying to build artificial genreal intellicenge all data is relevant.</li>
+  <li><strong>Error-Free and Complete</strong>: I don’t even know how to interpret this from a techincal prospective. What is an error in a text? A grammatical mistake? A syntatic error? A conspiracy theory (non-factual)? At least this requirement is preceded by “to the best extent possible” (article 10 point h).</li>
+  <li><strong>Appropriate Statistical Properties</strong> (again article 10 point h): another very generic point. <strong>However</strong> If you manage to define a statistical propriety to be a “quality signal” (e.g. factual correcteness, average word lenght, toxic content), then you would be able to define actual numbers for each of this signals.</li>
+</ul>
+
+<h3 id="back-to-pii">Back to PII</h3>
+<p>This section was about PII, did you forget? I certaly did and had to reread from the start.</p>
+
+<p>So, did we managed to find an anwer to how handle PII in your data?  Actually yes.</p>
+
+<p>You should always anonymise your data! Deleting PII in text is an active field of research right<sup id="fnref:21" role="doc-noteref"><a href="#fn:21" class="footnote" rel="footnote">7</a></sup> now with some enstablished methodologies. 
+In addition, if you really want to be a pro-player, considere never accessing the data, and instead using a <a href="https://research.ibm.com/blog/what-is-federated-learning">federated approach</a> (wink wink <a href="https://gaia-x.eu/">GaiaX</a>).</p>
+
+<p>Finally, if you did nothing of what we just talked about, just mention the fact that you need PII and all this data to mitigate biases! While recent literature will probably prove you wrong, you can try to spin it to take into account some <a href="https://arxiv.org/abs/2402.17193">scailng law</a>.</p>
+
+<h2 id="copyright-and-intellectual-propriety">Copyright and Intellectual propriety</h2>
+
+<p>So, one question down a few more to go. Let’s take a look at copyright and intellectual propriety now.</p>
+
+<p>What are we interested here? 
+In the scope of AI system i would say we want to know:</p>
+<ol>
+  <li>If I train a system on copyrighted material (let’s say copyright that include non commercial clauses), can i then use the system for commercial purposes?</li>
+  <li>What about intellectual propriety. If my model copies the input data, who’s propriety is that? if it gets modified? how much should it be different from the initial data to not be IP anymore?</li>
+</ol>
+
+<h3 id="train-on-copyrighted-material">Train on Copyrighted Material</h3>
+
+<p>So, let’s dive into the AI Act and clear up some copyright confusion, shall we? You might think, “Hey, I’m doing AI research, I can use whatever data I want, right?” Well, for research purposes, you’re generally safe—you can train on pretty much anything. But, if you’re working on something for commercial purposes, things get trickier.</p>
+
+<h4 id="opting-out-of-ai-training">Opting Out of AI Training</h4>
+
+<p>If you’re training a model for commercial use, Point 105 of the AI Act tells us you need to check if the data owner <strong>specifically</strong> says, “Hey, don’t use this for AI”. If they don’t say anything, or fail to mention it explicitly, you’re in the clear to use that data. But if they have thrown in a clear “no AI training” clause, you’d better back off.</p>
+
+<p>Now, how do owners opt out of having their data fed into your AI machine? Well, the Act doesn’t exactly spell it out clearly, but Point 106 gives us a clue: the EU says it’s on <strong>you</strong>, the AI provider, to identify and respect any copyright reservations. Fun, right?</p>
+
+<p>So, how does a data owner tell the world they don’t want their stuff used in AI training? Good question. The AI Act suggests a  <strong>Machine-readable formats</strong> (for online content):  Embedding specific tags or codes within the data that signal the reservation of rights or maybe Including clear and explicit clauses on a website or service prohibiting TDM for AI training.</p>
+
+<h4 id="whose-job-is-this-anyway">Whose Job Is This, Anyway?</h4>
+
+<p>Here’s where it gets fun: the EU puts the responsibility on <strong>AI providers</strong> to <strong>figure out</strong> if the data is off-limits (point 106). You’re expected to use “state-of-the-art technology” to spot any copyright warnings. No pressure, right?</p>
+
+<p>But here’s a key point: if the data hasn’t been marked as “do not train on this” in a proper way (like machine-readable tags), it doesn’t mean copyright magically disappears. It just means you’re free to use it <strong>unless</strong> the owner opts out. Copyright still exists, but the rules let you proceed if nobody says otherwise.</p>
+
+<h4 id="summary">Summary:</h4>
+
+<ul>
+  <li><strong>Check before you train</strong>: If you’re working on a commercial AI, it’s on you to make sure the data is free to use. Look for opt-out tags or warnings.</li>
+  <li><strong>Opting out is possible</strong>: Data owners can make it clear their data is off-limits with metadata, terms, contracts, or even public statements.</li>
+  <li><strong>Stay responsible</strong>: The EU wants a balance between innovation and protecting rights, so don’t think you can ignore these rules and use everything freely.</li>
+</ul>
+
+<p>And, just to keep things safe: <strong>always seek proper legal advice</strong> if you’re unsure about the specifics.</p>
+
+<h3 id="derivate-works">Derivate works</h3>
+
+<p>This one is hard. you know why? Because it goes in the philosophical domain. 
+What if i copyright this blogpost with no derivate work?  what does this even mean?</p>
+
+<h4 id="the-blurry-line-of-similarity-no-universal-rules">The Blurry Line of Similarity: No Universal Rules</h4>
+
+<p>When it comes to determining what’s too similar or derivative, the lines are anything but clear. Copyright and trademark laws don’t follow universal rules—it all depends on context, interpretation, and, often, a court’s judgment.</p>
+
+<p>For example, let’s look at some cases that explored this gray area:</p>
+
+<ul>
+  <li>
+    <p>DC Comics vs. Gotham Garage (2015): DC Comics sued a car manufacturer <a href="https://www.hollywoodreporter.com/business/business-news/batmobile-lawsuit-warner-bros-wins-419661/">for creating replicas of the Batmobile</a>. Although the Batmobile is “just a car”, the court ruled it was a protected character due to its unique design and connection to Batman’s world. This shows that even vehicles can be characters under copyright law when they are distinctive enough.</p>
+  </li>
+  <li>
+    <p><a href="https://en.wikipedia.org/wiki/Universal_City_Studios,_Inc._v._Nintendo_Co.,_Ltd.">Universal vs. Nintendo (1982)</a>: Universal claimed Nintendo’s Donkey Kong was too similar to King Kong. However, the court sided with Nintendo, ruling that the broad idea of a giant ape was public domain, and Donkey Kong was distinct in its own way. Here, the court acknowledged similar themes, but differences in characterization and execution allowed Nintendo to win.</p>
+  </li>
+  <li>
+    <p><a href="https://www.latimes.com/business/la-xpm-2011-aug-05-la-fi-mattel-bratz-20110805-story.html">Mattel vs. MGA Entertainment (2011)</a>: Mattel, the maker of Barbie, sued MGA, claiming the Bratz dolls were derivative of Barbie. After years of litigation, the court ruled in favor of MGA, noting that while the two products shared similarities as fashion dolls, the distinctive style and design of Bratz dolls made them original enough. The case highlighted how styling and branding can create separation, even within similar categories of products.</p>
+  </li>
+</ul>
+
+<p>In each case, there’s no universal rule for what’s considered “too similar”. Courts look at key characteristics, overall design, and whether the new work transforms or borrows too much from the original. 
+What does this mean for our AI model? The anwer is that I don’t know and neither does anyone else<sup id="fnref:21:1" role="doc-noteref"><a href="#fn:21" class="footnote" rel="footnote">7</a></sup>.</p>
+
+<h3 id="summary-1">Summary</h3>
+<p>So what does this mean for AI? We can say for certain that if your ai system is spitting out the exact same input data, then you will defenetly get sued for copyright infringement.
+For everything else, we’ll have to wait.</p>
+
+<h2 id="metadata">Metadata</h2>
+<p>Finally, we reached the last point. 
+Here we are wondering how you should structure your metadata when releaseing a dataset.</p>
+
+<p>By looking at the AI ACT we get two general directions, your metadata has to be:</p>
+<ul>
+  <li>Metadata should provide a clear explanation of how the data is organized, including the relationships between different data elements (point 23)</li>
+  <li>You shold specify the format of your data in the metadata (point 24)</li>
+</ul>
+
+<h1 id="next">next</h1>
+<ul>
+  <li>common European Data Spaces</li>
+  <li>Data Spaces Support Centre</li>
+</ul>
+
+<h1 id="hours-worked-on-this">Hours worked on this</h1>
+<p>4
+8 
+1
+4</p>
+
+<h1 id="footnotes">Footnotes</h1>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:15" role="doc-endnote">
+      <p>The fundamental right to the protection of personal data is safeguarded in particular by Regulations (EU) 2016/679 and (EU) 2018/1725 of the European Parliament and of the Council and Directive (EU) 2016/680 of the European Parliament and of the Council13 <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:16" role="doc-endnote">
+      <p>In order to facilitate compliance with Union data protection law, such as Regulation (EU) 2016/679, data governance and management practices should include, in the case of personal data, transparency about the original purpose of the data collection <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:17" role="doc-endnote">
+      <p>The right to privacy and to protection of personal data must be guaranteed throughout the entire lifecycle of the AI system. In this regard, the principles of data minimisation and data protection by design and by default, as set out in Union data protection law, are applicable when personal data are processed. Measures taken by providers to ensure compliance with those principles may include not only anonymisation and encryption, but also the use of technology that permits algorithms to be brought to the data and allows training of AI systems without the transmission between parties or copying of the raw or structured data themselves, without prejudice to the requirements on data governance provided for in this Regulation. <a href="#fnref:17" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:18" role="doc-endnote">
+      <p>The statement refers to the following articles: (i) <strong>Article 6(4) GDPR</strong>: This article deals with the legal basis for processing personal data, requiring that processing be “necessary for compliance with a legal obligation to which the controller is subject.” This emphasizes that any processing of personal data for law enforcement or judicial cooperation purposes must have a solid legal basis under EU or Member State law. (ii) <strong>Article 9(2)(g) GDPR</strong>: This provision concerns the processing of special categories of personal data, which are considered more sensitive and require higher levels of protection. Point (g) specifically allows processing such data when “necessary for reasons of substantial public interest, on the basis of Union or Member State law which shall be proportionate to the aim pursued.” This is relevant because law enforcement activities often involve sensitive data like criminal records or biometric information. (iii) <strong>Articles 5, 6, and 10 of Regulation (EU) 2018/1725</strong>: These articles mirror the principles of lawfulness, fairness, and transparency in data processing, the legal basis for processing, and limitations on processing sensitive data, respectively, as outlined in the GDPR. Their inclusion emphasizes that these principles also apply to EU institutions and bodies, ensuring consistent data protection standards. (iv) <strong>Article 4(2) and Article 10 of Directive (EU) 2016/680</strong>: While not explicitly stated, the reference to these articles without prejudice suggests that the statement does not intend to limit or restrict the application of these provisions. Article 4(2) defines “competent authority,” which is crucial for determining which entities are subject to the directive’s rules. Article 10 deals with data protection principles, requiring that processing be “necessary and proportionate” and carried out “with due regard for the legitimate interests of the data subject.” This reinforces the need for a balanced approach that protects both individual rights and law enforcement needs. <a href="#fnref:18" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:19" role="doc-endnote">
+      <p>Among the musts we can see: (2.b) alwasy discole where your data came from and how you collected it; (2.c) how you processed your data before use; (2.d) formulate assumption in respect of what you expect to find in your data; (2.f) examine possible biases; (2.g) given the biases you are suspecting to find implement measure to detect and mitigate them; (4) data should be geographical, contextual and behavirousal appropriate for the intended purpose (aka if you want an LMM for eu, don’t train it on american data only); (5) if you really cannot do anything for biases with your current data you are exceptionally allowed to process other categories of personal data; (5.c) in this case you have to document who has access to the data; (5.d) you cannot transfer them and (5.c) you have to detele them once you’re done. <a href="#fnref:19" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:20" role="doc-endnote">
+      <p>However, recent studies (<a href="https://www.semanticscholar.org/paper/Disclosure-and-Mitigation-of-Gender-Bias-in-LLMs-Dong-Wang/8a515a6510e209f1ab9e53d70c291c7e007716d5">Dong et al. 2024</a> and <a href="https://www.semanticscholar.org/paper/Bias-Testing-and-Mitigation-in-LLM-based-Code-Huang-Bu/148134fac202889ff6256b6b7d574cb714941887">Huang et al. 2023</a>) have showen that increasing the quantity of data is not the most effective technique for bias mitigation. <a href="#fnref:20" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:21" role="doc-endnote">
+      <p>There are various court cases open: <a href="https://www.loeb.com/en/insights/publications/2023/11/andersen-v-stability-ai-ltd">Sarah Andersen et al. vs. Stability AI, Midjourney, and DeviantArt (2023)</a>, <a href="https://www.pinsentmasons.com/out-law/analysis/getty-images-v-stability-ai-implications-copyright-law-licensing">Getty Images vs. Stability AI (2023)</a>, <a href="https://www.businessinsider.com/openai-dalle-opt-out-process-artists-enraging-2023-9">Artists Against OpenAI’s DALL-E</a>. <a href="#fnref:21" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:21:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+      </div>
+
+      
+    </div>
+  </section>
+  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"></div>
+</main><script>
+const clicableImages = document.querySelectorAll(".zoom_outer");
+if (clicableImages.length > 0) {
+  clicableImages.forEach((el) => {
+    el.addEventListener("click", (e) => {
+       e.currentTarget.classList.toggle("wide_image")
+    })
+    }
+  );
+}
+</script><!-- Load the custom JavaScript file from the js directory -->
+<script src="/assets/js/reading_progress.js"></script>
+
+</body><footer class="footer p-9 bg-sky-200 dark:bg-slate-950 dark:text-sky-50 ">
+    <div class="container">
+        <p class="text-center">&copy; Copyright 2024, All right Reserved By - Nicolo' Brandizzi</p>
+    </div>
+</footer></html>

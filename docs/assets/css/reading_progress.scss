@@ -1,0 +1,11 @@
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #007acc; // You can change this color to suit your theme
+    z-index: 1000;
+    transition: width 0.25s ease-out;
+  }
+  
