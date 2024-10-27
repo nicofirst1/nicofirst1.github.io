@@ -2,39 +2,47 @@
 {% assign items_with_images = "" | split: "" %}
 
 {% for item in all_items %}
-{% if item.image %}
-{% assign items_with_images = items_with_images | push: item %}
-{% endif %}
+  {% if item.image %}
+    {% assign items_with_images = items_with_images | push: item %}
+  {% endif %}
 {% endfor %}
 
 {% assign sorted_items = items_with_images | sort: 'date' | reverse %}
-<section class="activity py-9 bg-gray-50 dark:bg-gray-950">
+{% assign page_size = 4 %}
+{% assign total_pages = sorted_items.size | divided_by: page_size | ceil %}
+
+<section class="activity py-9 bg-gray-50" data-total-pages="{{ total_pages }}">
     <div class="container mx-auto">
         <h2 class="text-4xl text-center font-bold">Recent Activity</h2>
     </div>
-    <div class="container_activity mx-auto my-7">
-        <div class="grid md:grid-cols-2 gap-4">
-            {% for i in sorted_items | limit: 4 %}
-            <div
-                class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2 ">
-                <a href="{{i.url}}">
-                    <div class="activity_image gap-5 md:w-4/12">
-                        <img src="{{ i.image | relative_url }}" alt="{{ i.title }}" class="md:p-7 w-full rounded-xl">
+    <div class="container_activity mx-auto my-7 relative">
+        <div id="carousel" class="carousel-inner">
+            {% for page in (1..total_pages) %}
+                {% assign offset = page | minus: 1 | times: page_size %}
+                <div class="carousel-item{% if forloop.first %} active{% endif %}" data-page="{{ forloop.index0 }}">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        {% for item in sorted_items limit: page_size offset: offset %}
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="{{ item.url }}">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" class="md:p-7 w-full rounded-xl">
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">{{ item.title }}</h3>
+                                        <p class="text-sm mb-3">{{ item.date | date: "%b %d, %Y" }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
                     </div>
-                    <div class="text pt-6">
-                        <h3 class="text-2xl mt-0">
-                            {{ i.title }}
-                        </h3>
-                        <p class="text-sm mb-3">{{ i.date | date: "%b %d, %Y" }}</p>
-
-                    </div>
-                </a>
-            </div>
-            {% if i | modulo: 2 == 0 and not 4 %}
-        </div>
-        <div class="grid md:grid-cols-2 gap-4">
-            {% endif %}
+                </div>
             {% endfor %}
         </div>
+
+        <!-- Navigation Arrows -->
+        <button class="carousel-control-prev" onclick="prevPage()">❮</button>
+        <button class="carousel-control-next" onclick="nextPage()">❯</button>
     </div>
 </section>
+
+<script src="{{ 'assets/js/carousel_activity.js' | relative_url }}"></script>
