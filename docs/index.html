@@ -36,12 +36,12 @@
 <meta property="og:url" content="/" />
 <meta property="og:image" content="/assets/images/profile_picture.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-10-24T16:45:14+02:00" />
+<meta property="article:published_time" content="2024-10-28T09:51:28+01:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="/assets/images/profile_picture.jpg" />
 <meta property="twitter:title" content="Dr. Nicolo’ Brandizzi" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","dateModified":"2024-10-24T16:45:14+02:00","datePublished":"2024-10-24T16:45:14+02:00","description":"AI Researcher focusing on Reinforcement Learning and Natural Language Processing","headline":"Dr. Nicolo’ Brandizzi","image":"/assets/images/profile_picture.jpg","url":"/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","dateModified":"2024-10-28T09:51:28+01:00","datePublished":"2024-10-28T09:51:28+01:00","description":"AI Researcher focusing on Reinforcement Learning and Natural Language Processing","headline":"Dr. Nicolo’ Brandizzi","image":"/assets/images/profile_picture.jpg","url":"/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -184,80 +184,573 @@ const themeModeSwitch = (() => {
     </div>
 </section>
 
-<section class="activity py-9 bg-gray-50 dark:bg-gray-950">
+<section class="activity py-9 bg-gray-50" data-total-pages="10">
     <div class="container mx-auto">
         <h2 class="text-4xl text-center font-bold">Recent Activity</h2>
     </div>
-    <div class="container_activity mx-auto my-7">
-        <div class="grid md:grid-cols-2 gap-4">
+    <div class="container_activity mx-auto my-7 relative">
+        <div id="carousel" class="carousel-inner">
             
-            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2 ">
-                <a href="/news/data-strategy/">
-                    <div class="activity_image gap-5 md:w-4/12">
-                        <img src="/assets/images/news/eu_landscape/eu_landscape_p2.png" alt="Mapping the EU AI Landscape (Part 2): Data Strategy" class="md:p-7 w-full rounded-xl" />
+                
+                <div class="carousel-item active" data-page="0">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/data-strategy-questions/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/eu_landscape/eu_landscape_p3.png" alt="Mapping the EU AI Landscape (Part 3): Can you Train on my Data?" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Mapping the EU AI Landscape (Part 3): Can you Train on my Data?</h3>
+                                        <p class="text-sm mb-3">Oct 28, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/data-strategy/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/eu_landscape/eu_landscape_p2.png" alt="Mapping the EU AI Landscape (Part 2): Data Strategy" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Mapping the EU AI Landscape (Part 2): Data Strategy</h3>
+                                        <p class="text-sm mb-3">Oct 23, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/eu-and-research/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/eu_landscape/eu_landscape_p1.png" alt="Mapping the EU AI Landscape (Part 1): Coordinated Plan on AI" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Mapping the EU AI Landscape (Part 1): Coordinated Plan on AI</h3>
+                                        <p class="text-sm mb-3">Oct 13, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/blogpost-horizon-analysis/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/horizon_fragmentation.png" alt="Horizon AI Fragmentation: Challenges and Budget Efficiency" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Horizon AI Fragmentation: Challenges and Budget Efficiency</h3>
+                                        <p class="text-sm mb-3">Sep 23, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
                     </div>
-                    <div class="text pt-6">
-                        <h3 class="text-2xl mt-0">
-                            Mapping the EU AI Landscape (Part 2): Data Strategy
-                        </h3>
-                        <p class="text-sm mb-3">Oct 23, 2024</p>
-
-                    </div>
-                </a>
-            </div>
+                </div>
             
-            
-            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2 ">
-                <a href="/news/eu-and-research/">
-                    <div class="activity_image gap-5 md:w-4/12">
-                        <img src="/assets/images/news/eu_landscape/eu_landscape_p1.png" alt="Mapping the EU AI Landscape (Part 1): Coordinated Plan on AI" class="md:p-7 w-full rounded-xl" />
+                
+                <div class="carousel-item" data-page="1">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/blogpost1-china-eu/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/global_governance.jpg" alt="Exploring Global AI Governance: Lessons from China for the EU" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Exploring Global AI Governance: Lessons from China for the EU</h3>
+                                        <p class="text-sm mb-3">Sep 18, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/blogpost1-airisks/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/airiskbck.jpg" alt="Addressing Loneliness with AI : The Short-Term Solution with Long-Term Consequences" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Addressing Loneliness with AI : The Short-Term Solution with Long-Term Consequences</h3>
+                                        <p class="text-sm mb-3">Sep 08, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/fraunhofer_projects/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/fraunhofer_icon.jpg" alt="Responsibilities at Fraunhofer IAIS" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Responsibilities at Fraunhofer IAIS</h3>
+                                        <p class="text-sm mb-3">Sep 08, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/r2net_workshop2/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/r2networkshop.png" alt="R2Net Workshop 2.0" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">R2Net Workshop 2.0</h3>
+                                        <p class="text-sm mb-3">Jul 14, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
                     </div>
-                    <div class="text pt-6">
-                        <h3 class="text-2xl mt-0">
-                            Mapping the EU AI Landscape (Part 1): Coordinated Plan on AI
-                        </h3>
-                        <p class="text-sm mb-3">Oct 13, 2024</p>
-
-                    </div>
-                </a>
-            </div>
+                </div>
             
-            
-            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2 ">
-                <a href="/news/blogpost-horizon-analysis/">
-                    <div class="activity_image gap-5 md:w-4/12">
-                        <img src="/assets/images/news/horizon_fragmentation.png" alt="Horizon AI Fragmentation: Challenges and Budget Efficiency" class="md:p-7 w-full rounded-xl" />
+                
+                <div class="carousel-item" data-page="2">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/solar-punk/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/Solarpunk_logo.png" alt="Federated Approaches to Data Challenges in Ethical AI" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Federated Approaches to Data Challenges in Ethical AI</h3>
+                                        <p class="text-sm mb-3">Jul 07, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/ai_mental_wellbeing/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/ai-mental-wellbeing.jpg" alt="Addressing Mental Health in AI Research" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Addressing Mental Health in AI Research</h3>
+                                        <p class="text-sm mb-3">Jul 01, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/tailor-poster/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/tailor_poster.jpg" alt="Poster Presentation at TAILOR" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Poster Presentation at TAILOR</h3>
+                                        <p class="text-sm mb-3">Jun 04, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/multittrustsi/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/trustyouragent.png" alt="MultiTTrust Special Issue at Journal of Interaction Studies" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">MultiTTrust Special Issue at Journal of Interaction Studies</h3>
+                                        <p class="text-sm mb-3">May 01, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
                     </div>
-                    <div class="text pt-6">
-                        <h3 class="text-2xl mt-0">
-                            Horizon AI Fragmentation: Challenges and Budget Efficiency
-                        </h3>
-                        <p class="text-sm mb-3">Sep 23, 2024</p>
-
-                    </div>
-                </a>
-            </div>
+                </div>
             
-            
-            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2 ">
-                <a href="/news/blogpost1-china-eu/">
-                    <div class="activity_image gap-5 md:w-4/12">
-                        <img src="/assets/images/news/global_governance.jpg" alt="Exploring Global AI Governance: Lessons from China for the EU" class="md:p-7 w-full rounded-xl" />
+                
+                <div class="carousel-item" data-page="3">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/thesis-defend/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/phd_defended.jpeg" alt="PhD Thesis Defended!" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">PhD Thesis Defended!</h3>
+                                        <p class="text-sm mb-3">Apr 10, 2024</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/mental-health-science/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/science_mh.jpeg" alt="Featured in Science Article on Mental Health in Academia" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Featured in Science Article on Mental Health in Academia</h3>
+                                        <p class="text-sm mb-3">Dec 14, 2023</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/fraunhofer-lecture/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="https://www.iais.fraunhofer.de/content/dam/iais/iais.svg" alt="Fraunhofer IAIS NetMedia Lecture" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Fraunhofer IAIS NetMedia Lecture</h3>
+                                        <p class="text-sm mb-3">Nov 07, 2023</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/corpus_compass/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/corpusCompassLogo.jpg" alt="CorpusCompass" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">CorpusCompass</h3>
+                                        <p class="text-sm mb-3">Oct 12, 2023</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
                     </div>
-                    <div class="text pt-6">
-                        <h3 class="text-2xl mt-0">
-                            Exploring Global AI Governance: Lessons from China for the EU
-                        </h3>
-                        <p class="text-sm mb-3">Sep 18, 2024</p>
-
-                    </div>
-                </a>
-            </div>
+                </div>
             
+                
+                <div class="carousel-item" data-page="4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/claire-rol/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/Colosseo.jpg" alt="CLAIRE Rome Office Launch" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">CLAIRE Rome Office Launch</h3>
+                                        <p class="text-sm mb-3">Oct 11, 2023</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/multitrust_workshop/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/handshake.png" alt="MultiTTrust Workshop" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">MultiTTrust Workshop</h3>
+                                        <p class="text-sm mb-3">Jul 23, 2023</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/r2net_workshop/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/r2networkshop.png" alt="R2Net Workshop" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">R2Net Workshop</h3>
+                                        <p class="text-sm mb-3">Jul 23, 2023</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/slayler/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/slayler_poster.svg" alt="Speaking the Language of Your Listener" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Speaking the Language of Your Listener</h3>
+                                        <p class="text-sm mb-3">Jun 01, 2023</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                    </div>
+                </div>
+            
+                
+                <div class="carousel-item" data-page="5">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/trustAgents/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/trustyouragent.png" alt="Trust Your Agents" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Trust Your Agents</h3>
+                                        <p class="text-sm mb-3">Feb 15, 2023</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/r2netKernel/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/r2net_kernel.jpg" alt="R2Net Kernel" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">R2Net Kernel</h3>
+                                        <p class="text-sm mb-3">Jan 20, 2023</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/rmm/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="https://codesign-lab.org/school2022/images/banner.jpg" alt="Training School - Representation mediated Multimodality" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Training School - Representation mediated Multimodality</h3>
+                                        <p class="text-sm mb-3">Sep 26, 2022</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/ai4uam/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/ai4uam.jpg" alt="Artificial Intelligence for Urban Air Mobility" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Artificial Intelligence for Urban Air Mobility</h3>
+                                        <p class="text-sm mb-3">Sep 05, 2022</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                    </div>
+                </div>
+            
+                
+                <div class="carousel-item" data-page="6">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/sophia/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/sophia_onor.png" alt="SOPhIA" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">SOPhIA</h3>
+                                        <p class="text-sm mb-3">Jul 01, 2022</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/emeima-pres/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="https://img.youtube.com/vi/KHv7rcKDfSg/2.jpg" alt="CLAIRE R2Net - Lightning Talks" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">CLAIRE R2Net - Lightning Talks</h3>
+                                        <p class="text-sm mb-3">May 26, 2022</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/aihub-interview/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/aihub_interview.png" alt="AIHub interview" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">AIHub interview</h3>
+                                        <p class="text-sm mb-3">May 11, 2022</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/atcenv/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/eurocontrol_logo.svg" alt="AtcEnv" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">AtcEnv</h3>
+                                        <p class="text-sm mb-3">Mar 10, 2022</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                    </div>
+                </div>
+            
+                
+                <div class="carousel-item" data-page="7">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/uva-visit/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/uva.jpg" alt="UvA scientific visit" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">UvA scientific visit</h3>
+                                        <p class="text-sm mb-3">Mar 05, 2022</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/deephealth/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/deephealth.png" alt="DeepHealth winter school" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">DeepHealth winter school</h3>
+                                        <p class="text-sm mb-3">Jan 24, 2022</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/marl-presentation/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="https://img.youtube.com/vi/fCWrbDlERlY/0.jpg" alt="Multi Agent RL presentation" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Multi Agent RL presentation</h3>
+                                        <p class="text-sm mb-3">Dec 07, 2021</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/syl-project/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/syl.jpg" alt="Save Your Life project" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Save Your Life project</h3>
+                                        <p class="text-sm mb-3">Oct 25, 2021</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                    </div>
+                </div>
+            
+                
+                <div class="carousel-item" data-page="8">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/mambrl/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/mambrl_logo.png" alt="MAMBRL" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">MAMBRL</h3>
+                                        <p class="text-sm mb-3">Oct 01, 2021</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/syl/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/syl.jpg" alt="SYL" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">SYL</h3>
+                                        <p class="text-sm mb-3">Sep 20, 2021</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/news/ala2021/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/news/ALA2021.png" alt="ALA 2021 Workshop" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">ALA 2021 Workshop</h3>
+                                        <p class="text-sm mb-3">Apr 29, 2021</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/egg/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/egg.png" alt="EGG" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">EGG</h3>
+                                        <p class="text-sm mb-3">Jan 09, 2021</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                    </div>
+                </div>
+            
+                
+                <div class="carousel-item" data-page="9">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/ledyPi/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/ledypi.gif" alt="LedyPi" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">LedyPi</h3>
+                                        <p class="text-sm mb-3">Sep 30, 2020</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/RLupus/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/rl_werewolf.png" alt="Reinforce Lupus" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Reinforce Lupus</h3>
+                                        <p class="text-sm mb-3">Sep 26, 2020</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/MAS_traffic/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/mas-traffic.jpg" alt="MAS Traffic Control" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">MAS Traffic Control</h3>
+                                        <p class="text-sm mb-3">Oct 03, 2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
+                                <a href="/projects/robotic_toolbox/">
+                                    <div class="activity_image gap-5 md:w-4/12">
+                                        <img src="/assets/images/projects/robotic.svg" alt="Robotic toolbox" class="md:p-7 w-full rounded-xl" />
+                                    </div>
+                                    <div class="text pt-6">
+                                        <h3 class="text-2xl mt-0">Robotic toolbox</h3>
+                                        <p class="text-sm mb-3">Sep 13, 2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                    </div>
+                </div>
             
         </div>
+
+        <!-- Navigation Arrows -->
+        <button class="carousel-control-prev" onclick="prevPage()">❮</button>
+        <button class="carousel-control-next" onclick="nextPage()">❯</button>
     </div>
 </section>
+
+<script src="/assets/js/carousel_activity.js"></script>
+
 <section class="education py-9 bg-sky-50 dark:bg-sky-950">
     <div class="mx-auto">
         <h2 class="text-center text-3xl font-bold	 ">
