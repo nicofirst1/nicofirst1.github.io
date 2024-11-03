@@ -565,3 +565,30 @@ function createGraph(data) {
   setupClickHighlight(node, link,data);
 
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.getElementById('info-sidebar');
+  const handle = document.getElementById('resize-handle');
+  let isResizing = false;
+
+  handle.addEventListener('mousedown', (event) => {
+      isResizing = true;
+      document.addEventListener('mousemove', resizeSidebar);
+      document.addEventListener('mouseup', stopResizing);
+      event.preventDefault();
+  });
+
+  function resizeSidebar(event) {
+      if (isResizing) {
+          const newWidth = event.clientX;
+          sidebar.style.width = newWidth + 'px';
+      }
+  }
+
+  function stopResizing() {
+      isResizing = false;
+      document.removeEventListener('mousemove', resizeSidebar);
+      document.removeEventListener('mouseup', stopResizing);
+  }
+});

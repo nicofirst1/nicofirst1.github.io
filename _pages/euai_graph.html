@@ -7,11 +7,13 @@ page_id: euai_graph
 <section class="graph" style="display: flex; width: 100vw; height: 100vh; margin: 0; padding: 0;">
     <!-- Sidebar for node information -->
     <div id="info-sidebar" class="info-sidebar">
+        <div id="resize-handle" style="width: 5px; height: 100%; background: #ccc; cursor: ew-resize; float: right;"></div>
         <h2 class="font-bold text-3xl">Node Information</h2>
-        <h7 id="node-info-title">(Click on a Node to check its information. Click on the background to restore colors. If nothing works reload)</h7>
-        <hr> <!-- Adds a line after the text -->
+        <h7 id="node-info-title">(Click on a Node to check its information. Click on the background to restore colors. If nothing works, reload)</h7>
+        <hr>
         <div id="node-info-content"></div>
     </div>
+    
     <br>
 
     <!-- Graph Container for D3 Visualization -->
