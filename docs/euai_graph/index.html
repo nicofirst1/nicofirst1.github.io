@@ -35,11 +35,11 @@
 <link rel="canonical" href="/euai_graph/" />
 <meta property="og:url" content="/euai_graph/" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-10-28T09:51:28+01:00" />
+<meta property="article:published_time" content="2024-11-03T14:28:15+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="EU AI Landscape - Graph" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-10-28T09:51:28+01:00","datePublished":"2024-10-28T09:51:28+01:00","description":"Visualization of AI activities and connections in the EU","headline":"EU AI Landscape - Graph","mainEntityOfPage":{"@type":"WebPage","@id":"/euai_graph/"},"url":"/euai_graph/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-03T14:28:15+01:00","datePublished":"2024-11-03T14:28:15+01:00","description":"Visualization of AI activities and connections in the EU","headline":"EU AI Landscape - Graph","mainEntityOfPage":{"@type":"WebPage","@id":"/euai_graph/"},"url":"/euai_graph/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -151,13 +151,17 @@ const themeModeSwitch = (() => {
 
 </script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
   <section class="graph" style="display: flex; width: 100vw; height: 100vh; margin: 0; padding: 0;">
+    
+    
     <!-- Sidebar for node information -->
     <div id="info-sidebar" class="info-sidebar">
+        <div id="resize-handle" style="width: 5px; height: 100%; background: #ccc; cursor: ew-resize; float: right;"></div>
         <h2 class="font-bold text-3xl">Node Information</h2>
-        <h7 id="node-info-title">(Click on a Node to check its information. Click on the background to restore colors. If nothing works reload)</h7>
-        <hr> <!-- Adds a line after the text -->
+        <h7 id="node-info-title">(Click on a Node to check its information. Click on the background to restore colors. If nothing works, reload)</h7>
+        <hr>
         <div id="node-info-content"></div>
     </div>
+    
     <br>
 
     <!-- Graph Container for D3 Visualization -->

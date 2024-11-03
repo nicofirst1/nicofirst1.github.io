@@ -14,7 +14,7 @@ var categoryColorMap = {};
 var activeFilters = new Set(); // Track active category filters
 // Fetch and load the JSON data for nodes and links from the specified URL
 
-fetch(euai_data_url).then(function (response) {
+fetch(euAIdataUrl).then(function (response) {
   return response.json();
 }) // Parse JSON response
 .then(function (data) {
@@ -510,3 +510,28 @@ function createGraph(data) {
   addLegend(g, data.nodes);
   setupClickHighlight(node, link, data);
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  var sidebar = document.getElementById('info-sidebar');
+  var handle = document.getElementById('resize-handle');
+  var isResizing = false;
+  handle.addEventListener('mousedown', function (event) {
+    isResizing = true;
+    document.addEventListener('mousemove', resizeSidebar);
+    document.addEventListener('mouseup', stopResizing);
+    event.preventDefault();
+  });
+
+  function resizeSidebar(event) {
+    if (isResizing) {
+      var newWidth = event.clientX;
+      sidebar.style.width = newWidth + 'px';
+    }
+  }
+
+  function stopResizing() {
+    isResizing = false;
+    document.removeEventListener('mousemove', resizeSidebar);
+    document.removeEventListener('mouseup', stopResizing);
+  }
+});

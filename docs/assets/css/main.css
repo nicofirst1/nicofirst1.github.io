@@ -691,6 +691,9 @@ video {
 .shrink {
   flex-shrink: 1;
 }
+.flex-grow {
+  flex-grow: 1;
+}
 .grow {
   flex-grow: 1;
 }
@@ -1020,10 +1023,6 @@ video {
 :is(.dark .dark\:bg-blue-950) {
   --tw-bg-opacity: 1;
   background-color: rgb(23 37 84 / var(--tw-bg-opacity));
-}
-:is(.dark .dark\:bg-gray-950) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(3 7 18 / var(--tw-bg-opacity));
 }
 :is(.dark .dark\:bg-sky-950) {
   --tw-bg-opacity: 1;

@@ -902,6 +902,23 @@ li {
   text-decoration: underline;
 }
 
+#info-sidebar {
+  width: 300px; /* Default width */
+  height: 100%;
+  background-color: #f4f4f4;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  position: relative;
+}
+
+#resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: ew-resize;
+}
+
 /* Dark Mode Styles */
 .dark #graph-container {
   border: 1px solid #444;
@@ -1307,7 +1324,7 @@ li {
 .container_activity {
   position: relative;
   padding: 0 0rem;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   overflow: visible;
 }
