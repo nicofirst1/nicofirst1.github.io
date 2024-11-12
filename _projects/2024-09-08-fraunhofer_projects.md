@@ -1,5 +1,6 @@
 ---
-title: Responsibilities at Fraunhofer IAIS
+title: Fraunhofer IAIS
+subtitle: Responsibilities
 custom_id: fraunhoferprojects
 tag: current
 image: /assets/images/projects/fraunhofer_icon.jpg
@@ -22,3 +23,4 @@ The following is a non-comprehensive list of the projects I’m currently (09/20
 - **[TrustLLM](https://trustllm.eu/)**: I support the data governance aspect of this project, helping to ensure that all data used is managed responsibly and aligns with governance standards.
 
 - **Data Task-Force Team**: As the lead of this team, I work to achieve vertical synchronization across our department, ensuring that our data strategies and practices are aligned and efficient.
+- **[OpenFLaaS](https://openflaas.de/)**: I serve as the lead for Fraunhofer side

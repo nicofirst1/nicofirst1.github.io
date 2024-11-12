@@ -1,6 +1,6 @@
 ---
 title: CorpusCompass
-subtitle: A tool for linguistic dataset creation
+subtitle: Lead Developer
 custom_id: corpuscompass
 tag: current
 image: /assets/images/projects/corpusCompassLogo.jpg
@@ -18,3 +18,12 @@ CorpusCompass is designed with your linguistic research needs in mind:
 - **Accuracy & Consistency**: Beyond creating structured datasets from your annotated text, CorpusCompass prioritizes error-checking to maintain data integrity.
 - **Make More of Your Data**: CorpusCompass supports you to explore correlations, identify dependencies, and unveil the effects of social dynamics on language use.
 
+
+## Responsibilities
+As the Lead Developer for CorpusCompass, I am responsible for:
+
+- Overseeing the technical development of the platform, ensuring it aligns with the specific needs of linguistic research.
+- Designing and implementing core features for data extraction, annotation, and dataset generation, tailored to enhance usability for researchers.
+- Ensuring high data integrity by integrating robust error-checking and data validation processes.
+- Collaborating with a multidisciplinary team of linguists, computer scientists, and project managers to refine tool functionalities based on user feedback.
+- Providing ongoing support and improvements to optimize CorpusCompass for analyzing complex linguistic data and supporting advanced research applications.

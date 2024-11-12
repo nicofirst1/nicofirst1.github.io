@@ -8,7 +8,7 @@ layout: projects
 button_link: https://forms.gle/u24g89FdK48hFSF88
 button_name: Fill Out the Survey
 ---
-#### Addressing Mental Health in AI Research
+### Addressing Mental Health in AI Research
 Recently, I finished my PhD and finally had some time to reflect on my experience. Over these years, I had a lot of fun and grew in ways that are impossible to summarize in this short post. However, I also experienced severe mental states that brought me down to places I never realized I could be. It was a profound and changing period, from which I was able to recover thanks to the support of the people around me, especially my partner, who also went through the same challenges during her PhD.
 
 During my last year, I started asking around, trying to understand if this was a general feeling or just me. And wouldn't you know, many of the peers I asked shared the same feelings. Some more, some less, but we were all going through a tough period. Every time I talked to someone new, I could sense a feeling of relief, like they were finally able to open up about it. This widespread experience motivated me to dig deeper and see if there was any existing research on the topic.

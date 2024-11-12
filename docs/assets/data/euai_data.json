@@ -897,11 +897,6 @@
             "reason": "creates"
         },
         {
-            "source": "dga",
-            "target": "eidb",
-            "reason": "creates"
-        },
-        {
             "source": "eudatastrategy",
             "target": "joinup",
             "reason": "uses"

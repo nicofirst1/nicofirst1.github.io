@@ -43,6 +43,9 @@ function initializeGraph(data) {
       nodes: nodes,
       links: links
     }); // Call createGraph with validated data
+    // Call selectRandomNode with data to auto-select a random node on page load
+
+    selectRandomNode(data);
   } else {
     console.error("Error: Data format is incorrect or nodes/links are missing.");
   }
@@ -356,7 +359,7 @@ function addLegend(g, nodes) {
 
   var legendWidth = 200;
   var legendHeight = categories.length * 20 + 70;
-  legend.append("rect").attr("width", legendWidth).attr("height", legendHeight).style("fill", "none").style("stroke", "#444").style("stroke-width", "1px"); // Add legend title
+  legend.append("rect").attr("width", legendWidth).attr("height", legendHeight).style("stroke", "#444").style("stroke-width", "1px"); // Add legend title
 
   legend.append("text").attr("x", 10).attr("y", 15).attr("font-weight", "bold").text("Legend");
   legend.append("text").attr("x", 10).attr("y", 35).text("(Click to toggle)");
@@ -535,3 +538,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.removeEventListener('mouseup', stopResizing);
   }
 });
+
+function selectRandomNode(data) {
+  var randomNode = data.nodes[Math.floor(Math.random() * data.nodes.length)];
+  console.log("Selected random node");
+  console.log(randomNode); // simulate click on the random node
+
+  d3.select("#node-".concat(randomNode.id)).dispatch('click');
+}

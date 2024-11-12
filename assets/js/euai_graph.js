@@ -20,6 +20,9 @@ function initializeGraph(data) {
   if (data && Array.isArray(data.nodes) && Array.isArray(data.links)) {
     const { nodes, links } = validateData(data); // Validate and filter nodes and links
     createGraph({ nodes, links }); // Call createGraph with validated data
+
+  // Call selectRandomNode with data to auto-select a random node on page load
+  selectRandomNode(data);
   } else {
     console.error(
       "Error: Data format is incorrect or nodes/links are missing."
@@ -374,7 +377,6 @@ function addLegend(g, nodes) {
       .append("rect")
       .attr("width", legendWidth)
       .attr("height", legendHeight)
-      .style("fill", "none")
       .style("stroke", "#444")
       .style("stroke-width", "1px");
   
@@ -592,3 +594,15 @@ document.addEventListener('DOMContentLoaded', () => {
       document.removeEventListener('mouseup', stopResizing);
   }
 });
+
+
+function selectRandomNode(data) {
+  const randomNode = data.nodes[Math.floor(Math.random() * data.nodes.length)];
+  console.log("Selected random node")
+  console.log(randomNode);
+
+  // simulate click on the random node
+  d3.select(`#node-${randomNode.id}`).dispatch('click');  
+   
+}
+
