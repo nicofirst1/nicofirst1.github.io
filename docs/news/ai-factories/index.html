@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <!-- Conditionally load Google Analytics -->
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" && host !== "127.0.0.1") {
+      // Google Analytics Global Site Tag (gtag.js)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function() {
+        gtag('config', 'G-W2MPFHELZG');
+      };
+    }else{
+      console.log("Google Analytics is disabled on localhost");
+    }
+  </script>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mapping the EU AI Landscape (Part 4): AI Factories</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Mapping the EU AI Landscape (Part 4): AI Factories" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="DISCALIMER: The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, Fraunhofer or any of its affiliates. All content is based on my personal insights, experiences, and research, and should not be construed as representing official positions or policies of Fraunhofer." />
+<meta property="og:description" content="DISCALIMER: The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, Fraunhofer or any of its affiliates. All content is based on my personal insights, experiences, and research, and should not be construed as representing official positions or policies of Fraunhofer." />
+<link rel="canonical" href="/news/ai-factories/" />
+<meta property="og:url" content="/news/ai-factories/" />
+<meta property="og:image" content="/assets/images/news/eu_landscape/eu_landscape_p4.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-12-17T00:00:00+01:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/news/eu_landscape/eu_landscape_p4.png" />
+<meta property="twitter:title" content="Mapping the EU AI Landscape (Part 4): AI Factories" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-17T00:00:00+01:00","datePublished":"2024-12-17T00:00:00+01:00","description":"DISCALIMER: The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, Fraunhofer or any of its affiliates. All content is based on my personal insights, experiences, and research, and should not be construed as representing official positions or policies of Fraunhofer.","headline":"Mapping the EU AI Landscape (Part 4): AI Factories","image":"/assets/images/news/eu_landscape/eu_landscape_p4.png","mainEntityOfPage":{"@type":"WebPage","@id":"/news/ai-factories/"},"url":"/news/ai-factories/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"></head>
+<header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+    <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
+        <div class="hamburger item">
+            <span></span>
+        </div>
+    </div>
+    <a href="/" class="logo absolute left-6 top-4 md:top-5">
+        <img src="/assets/images/logo2.png" alt="Logo" style="width: 40px;" class="w-32 dark:invert">
+    </a>
+
+    <div class="container flex gap-6 lg:gap-10 xl:gap-12 mx-auto align-top">
+        <nav class="grid mt-10 md:mt-0 md:flex gap-2 md:gap-3 lg:gap-5 xl:gap-6 justify-center w-full hidden_small slide-in-left" id="nav">
+            
+            <a href="/" class="dark:text-slate-50 text-base lg:text-xl capitalize">home</a>
+            
+            <a href="/projects" class="dark:text-slate-50 text-base lg:text-xl capitalize">projects</a>
+            
+            <a href="/publications" class="dark:text-slate-50 text-base lg:text-xl capitalize">publications</a>
+            
+            <a href="/cv" class="dark:text-slate-50 text-base lg:text-xl capitalize">CV</a>
+            
+            <a href="/news" class="dark:text-slate-50 text-base lg:text-xl capitalize">news</a>
+            
+        </nav>
+        <form class="mode-switch absolute right-16 top-5 md:top-7 lg:top-8" data-bss-toggle="mode">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Light</label>
+            <input type="checkbox" class="form-check-input" id="theme-mode" aria-label="dark-mode-switch" style=" background-image: url(/assets/images/svg/circle.svg)">
+            <label class="form-check-label collapse lg:visible" for="theme-mode">Dark</label>
+          </form>
+    </div>
+</header>
+
+<script>
+    //HAMBURGER
+    const hamburger = document.querySelectorAll("#menuToggler .item");
+    function toggleMenu() {
+        document.getElementById("nav").classList.toggle("hidden_small");
+        for (el of hamburger) {
+            el.classList.toggle("active-burger");
+        }
+    }
+    /**
+ * Theme Mode Switch
+ * Switch betwen light/dark mode. The chosen mode is saved to browser's local storage
+*/
+let root = document.getElementsByTagName('html')[0];
+let checkbox = document.getElementById('theme-mode');
+let locMode = getLightingMode();
+let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+if ((!darkMode && locMode == undefined) || (locMode == 'light')) {
+  root.classList.remove('dark');
+  checkbox.checked = false;
+} else {
+  root.classList.add('dark')
+  checkbox.checked = true
+}
+
+function getLightingMode() {
+  const storedPreference = localStorage.getItem('lightingModePreference');
+
+  if (storedPreference) {
+    const parsedPreference = JSON.parse(storedPreference);
+    const currentTime = new Date().getTime();
+
+    if (currentTime < parsedPreference.expires) {
+      return parsedPreference.mode;
+    } else {
+      localStorage.removeItem('lightingModePreference');
+    }
+  }
+  return undefined;
+}
+
+function setLightingMode(mode) {
+  const currentTime = new Date().getTime();
+  const expirationTime = currentTime + 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const preferenceData = {
+    mode: mode,
+    expires: expirationTime,
+  };
+
+  localStorage.setItem('lightingModePreference', JSON.stringify(preferenceData));
+}
+
+const themeModeSwitch = (() => {
+  let modeSwitch = document.querySelector('[data-bss-toggle="mode"]')
+  if (modeSwitch === null) return;
+  let checkbox = modeSwitch.querySelector('.form-check-input')
+
+  modeSwitch.addEventListener('click', (e) => {
+    if (checkbox.checked) {
+      root.classList.add('dark');
+      setLightingMode('dark');
+    } else {
+      root.classList.remove('dark');
+      setLightingMode('light');
+    }
+  });
+})();
+
+</script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
+  <main class="news-post min-h-[80vh] flex flex-col gap-6">
+  <section class="pt-24">
+    <div id="reading-progress" class="reading-progress"></div>
+
+    <div class="container pb-6">
+      <h1 class="text-5xl font-bold">
+        Mapping the EU AI Landscape (Part 4): AI Factories
+      </h1>
+      <b>BlogPost</b>
+      <p class="text-sm mb-3">Dec 17, 2024</p><div class="post-image">
+        <img src="/assets/images/news/eu_landscape/eu_landscape_p4.png" alt="hero image">
+      </div><div class="page_content">
+          <p><code class="language-plaintext highlighter-rouge">DISCALIMER: The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, Fraunhofer or any of its affiliates. All content is based on my personal insights, experiences, and research, and should not be construed as representing official positions or policies of Fraunhofer.</code></p>
+
+<blockquote>
+  <p><strong>TLDR;</strong> AI Factories are Europe’s bet to <strong>centralize AI resources and boost innovation</strong>. Acting as <strong>one-stop shops</strong>, they offer supercomputing power, datasets, and expertise to startups, SMEs, and researchers. The initiative is funded up to <strong>50% by the EU</strong> and split into three tracks: appointing, upgrading, or building AI-optimized supercomputers. Factories integrate with <strong>existing EU initiatives</strong> like EDIHs, EDICs, and TEFs. Challenges remain in <strong>coordination</strong> and fostering <strong>healthy competition</strong>, but success could transform Europe’s AI ecosystem.</p>
+</blockquote>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Here we go again!
+Another deep dive into the ever-evolving EU AI landscape.</p>
+
+<p>This time, I set out to understand <strong>AI Factories</strong>, a new initiative that aims to scale Europe’s AI capabilities and innovation. And what better way to figure it out than by writing a blog post?</p>
+
+<p>Why now? Well, the EU recently announced the selection of <a href="https://eurohpc-ju.europa.eu/selection-first-seven-ai-factories-drive-europes-leadership-ai-2024-12-10_en">seven brand new AI Factories</a> across Europe, marking a significant step forward in building state-of-the-art infrastructure to support AI innovation. It seemed like the perfect time to investigate what these factories are, what they’re supposed to do, and, of course, what this all means for Europe’s AI ambitions.</p>
+
+<p>We briefly touched on AI Factories in the <a href="/_news/22.eu_and_research.md">first post of this series</a>. Now that we have real-world progress to discuss, let’s focus on what AI Factories actually are, what they’re supposed to achieve, and why this matters for Europe’s AI future.</p>
+
+<p>For the curious reader, my sources include:</p>
+<ul>
+  <li>The official <a href="https://eurohpc-ju.europa.eu/call-expression-interest-select-hosting-entities-acquiring-or-upgrading-eurohpc-supercomputers-ai_en">Call for Expression of Interest.</a></li>
+  <li>The <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1173">2021 regulation</a> (2021/1173) that established the High Performance computing Joint Undertaking (EuroHPC JU).</li>
+  <li>The <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1732">2024 amendment</a> (2024/1732) that introduced the AI Factories as a priority.</li>
+  <li>And, of course, the newly announced <a href="https://eurohpc-ju.europa.eu/selection-first-seven-ai-factories-drive-europes-leadership-ai-2024-12-10_en">list of accepted proposals</a></li>
+</ul>
+
+<p>So, let’s dive in! 🚀</p>
+
+<h2 id="current-status-europes-seven-ai-factories">Current Status: Europe’s Seven AI Factories</h2>
+
+<p>If you’ve been following AI developments over the past 4–5 years, you’ll know we’re living in a pivotal moment. AI has brought both <strong>hope</strong> – with advances in medicine, science, and productivity – and <strong>concern</strong>, particularly around <a href="https://www.brookings.edu/articles/ais-impact-on-income-inequality-in-the-us/?">growing inequality</a>. Economically, though, the impact is undeniable. By 2030, PwC estimates <a href="https://www.pwc.com/gx/en/issues/artificial-intelligence/publications/artificial-intelligence-study.html?">AI will contribute $15.7 trillion</a> to the global economy and boost GDP by <strong>26%</strong> in some regions.</p>
+
+<p>Europe, however, has struggled to keep up. Despite its strengths in <strong>regulatory leadership</strong> and ethical AI, it lags in terms of AI companies and funding. To put it into perspective:</p>
+
+<ul>
+  <li>Europe accounts for only <strong><a href="https://www.statista.com/statistics/1413456/major-economies-ai-companies-worldwide/?">14.5% of global AI companies</a></strong> compared to <strong>36.5% in the US</strong> and <strong>26.8% in China</strong>.</li>
+  <li>AI spending in the EU stands at <strong><a href="https://sciencebusiness.net/news/ai-funding-and-research-china-and-us-outperform-europe?">€45 billion annually</a></strong>, far behind the <strong>€300 billion in the US</strong> and <strong>€91 billion in China</strong>.</li>
+  <li>Programs like <strong>Horizon Europe</strong> have been crucial, but their average **€3 million contributions **haven’t been enough to ignite large-scale AI industry adoption (<a href="/_news/21.horizon-fragmentation.md">check out my full analysis here</a>).</li>
+</ul>
+
+<p>To address this, the European Commission announced the first <strong>seven AI Factories</strong> on <strong>December 10, 2024</strong>, with €1.5 billion in investments. These Factories are located in:</p>
+
+<ul>
+  <li><strong>Finland</strong>: <em>LUMI AI Factory</em> in Kajaani.</li>
+  <li><strong>Germany</strong>: <em>HammerHAI</em>  in Stuttgart.</li>
+  <li><strong>Greece</strong>: <em>Pharos</em> in Athens.</li>
+  <li><strong>Italy</strong>: <em>IT4LIA</em> in Bologna.</li>
+  <li><strong>Luxembourg</strong>: <em>L-AI Factory</em> in Bissen.</li>
+  <li><strong>Spain</strong>: <em>BSC AI Factory</em> in Barcellona.</li>
+  <li><strong>Sweden</strong>: <em>MIMER</em> in Linkǒping.</li>
+</ul>
+
+<p>The goal? To create hubs of innovation where startups, SMEs, researchers, and industry can collaborate, access critical infrastructure, and develop AI solutions.</p>
+
+<p>This is Europe’s answer to scaling up its AI ecosystem. Instead of relying on scattered small-scale funding, the AI Factories aim to centralize resources and close the gap with global leaders like the US and China.</p>
+
+<h1 id="whats-an-ai-factory">What’s an AI Factory?</h1>
+
+<p>Let’s start with the easy part: <strong>What’s an AI Factory (AIF for short)</strong>?</p>
+
+<p>At first, I’ll admit, I had a completely different idea of what an AI Factory would look like. I imagined something more project-oriented – like a company such as OpenAI or Anthropic – spitting out generative AI models that are bigger, shinier, and fancier than anyone else’s<sup id="fnref:eval_rant" role="doc-noteref"><a href="#fn:eval_rant" class="footnote" rel="footnote">1</a></sup>.
+Turns out, I was wrong.</p>
+
+<h4 id="the-factory-analogy">The “Factory” Analogy</h4>
+
+<p>What I was missing was the “factory” part of AI Factory. Think of it like this (thanks to ChatGPT, which I’m shamelessly stealing this from):</p>
+<ul>
+  <li><strong>Workers</strong>: Researchers, companies, and developers.</li>
+  <li><strong>Machinery</strong>: Supercomputers and high-performance infrastructure.</li>
+  <li><strong>Raw Materials</strong>: Datasets, algorithms, and software tools.</li>
+  <li><strong>Production Process</strong>: AI training, fine-tuning, and experimentation workflows.</li>
+  <li><strong>Final Product</strong>: AI applications, solutions, and models ready to be deployed.</li>
+</ul>
+
+<p>Easy, right? Well… <strong>ish</strong>.</p>
+
+<h4 id="its-a-physical-place">It’s a Physical Place</h4>
+
+<p>What really escaped me at the start was the sheer <strong>physicality</strong> of an AI Factory. This isn’t just some software program in the cloud or a collection of models sitting on a server. It’s a real, tangible place – a building you can walk into, touch the walls, and open doors too.</p>
+
+<p>And with that physicality comes <strong>real-world problems</strong> – things you never think about when you’re running an AI model on your laptop. For example, a factory needs (<a href="https://www.youtube.com/watch?v=mNyethAqJzk&amp;ab_channel=Lo-FiGoliardica">long list incoming</a>):</p>
+<ul>
+  <li><strong>Land</strong> : Either build a brand-new facility (think <a href="https://blogs.helmholtz.de/research-field-information/en/2024/01/25/next-milestone-for-jupiter-high-tech-base-for-the-european-exascale-supercomputer/?">2300 square meters of high-tech centers</a>), or retrofit an existing structure. That’s offices, server rooms, restrooms, meeting spaces – the whole package.</li>
+  <li><strong>Infrastructure</strong>: Infrastructure: Cooling systems (water and air), enough electricity to power your supercomputers, internet connectivity (at least 100 Gbit/s to connect to other HPC systems), roads for employees, and backup diesel generators for when the power grid fails.</li>
+  <li><strong>Personnel</strong>:
+    <ul>
+      <li>Security teams to keep systems safe (and shoot down anyone who tries training on copyrighted data kidding, obviously).</li>
+      <li>Engineers to install and maintain hardware.</li>
+      <li>System admins to keep everything running smoothly.</li>
+      <li>Cleaning staff (because, you know, people work there).</li>
+    </ul>
+  </li>
+  <li><strong>Technical Equipment</strong>:
+    <ul>
+      <li>Supercomputers and GPUs (the sweet, sweet GPUs).</li>
+      <li>Storage systems for enormous datasets.</li>
+      <li>High-resolution monitors, servers, and all the peripherals you need.</li>
+      <li>And as Italians say, <a href="https://www.wordreference.com/iten/Chi%20pi%C3%B9%20ne%20ha%20pi%C3%B9%20ne%20metta">“chi più ne ha più ne metta”</a> – “the more, the better.”</li>
+    </ul>
+  </li>
+</ul>
+
+<p>And that’s just the <strong>physical setup</strong>. We haven’t even started talking about what an AI Factory actually <strong>does</strong>!</p>
+
+<h1 id="what-is-it-supposed-to-do">What is it supposed to do?</h1>
+<p>Good question! To answer that, let’s take a step back and look around. 👀</p>
+
+<p>What do we see? Oh, look, it’s an LLM. It can process text and images? It speaks and understands speech?? OMG, it’s basically agentic now!</p>
+
+<p>AI’s capabilities have exploded in the past few years, and that growth has sparked a need for something bigger – something centralized, powerful, and accessible.</p>
+
+<p>Enter the <strong>AI Factory</strong>.</p>
+
+<h2 id="the-purpose-of-an-ai-factory">The Purpose of an AI Factory</h2>
+
+<!-- 
+For this reason the proposal puts alot on emphasis on how you connect the factory with preexisting netwroks (such as the EIDCs and EIDHs) and align it's goal with the national ones. The factory is more than one project, is a place where pp go when they need ai solutions. This solution include both access to fundational (multimodal)models, but also particular datasets on which you want to train your system,experteese when it comes to ai and hpc al the way to the actual hpc resources themselves. -->
+
+<p>According to the call for proposals, an AI Factory “shall create a one-stop shop for the users, including startups, small and medium-sized enterprises, and scientific users, to facilitate access to its support services.”</p>
+
+<p>Let’s break that down.</p>
+
+<p>This isn’t just about putting a big shiny supercomputer somewhere. An AI Factory is where <strong>AI innovation meets its users</strong> and <strong>turns ideas into solutions</strong>. It connects resources, tools, and expertise under one roof, enabling users to:</p>
+<ul>
+  <li>Access foundational models and specialized datasets.</li>
+  <li>Train and fine-tune AI systems on high-performance computing (HPC) infrastructure.</li>
+  <li>Collaborate with AI and HPC experts to solve technical challenges.</li>
+</ul>
+
+<p>What makes these factories unique is their emphasis on <strong>integration</strong>. They aren’t isolated projects; they are part of a larger ecosystem. To succeed, AI Factories need to plug into existing EU initiatives like the <strong>European Digital Innovation Hubs</strong> (<a href="https://digital-strategy.ec.europa.eu/en/activities/edihs">EDIHs</a>), <strong>European Digital Infrastructure Consortiums</strong> (<a href="https://digital-strategy.ec.europa.eu/en/policies/edic">EDICs</a>), the <strong>Common European Data Spaces</strong> (<a href="https://digital-strategy.ec.europa.eu/en/policies/data-spaces">CEDS</a>) and the Testing and Experimentation Facilities (<a href="https://digital-strategy.ec.europa.eu/en/faqs/testing-and-experimentation-facilities-tefs-questions-and-answers">TEFs</a>)<sup id="fnref:cover" role="doc-noteref"><a href="#fn:cover" class="footnote" rel="footnote">2</a></sup>. These connections ensure that AI Factories don’t just exist – they thrive, align with national strategies, and drive innovation across the continent.</p>
+
+<p>Now, I know this still sounds abstract. So let’s bring it to life with a story.</p>
+
+<h3 id="lilbits-a-story-of-ai-innovation">Lil’Bits: A Story of AI Innovation</h3>
+
+<p>You are the proud CEO of Lil’Bits, a cozy local restaurant that serves <strong>extremely tiny portions</strong> (you call it “artisanal minimalism,” others call it “eating air with a spoon.”). One day, you hear about an <strong>EU Innovation Conference</strong> happening nearby<sup id="fnref:locality" role="doc-noteref"><a href="#fn:locality" class="footnote" rel="footnote">3</a></sup> and decide to check it out. Why not? Maybe AI can help you make those portions even smaller.</p>
+
+<p>The conference is buzzing. Talks about AI’s potential are everywhere: efficiency this, accuracy that. By the end of the day, your brain feels like mush, but you’re intrigued. Over coffee, you strike up a conversation with someone from an <strong>EDIH</strong> – a regional hub for AI adoption – who’s thrilled to hear about Lil’Bits. He claims AI can revolutionize your business. “We can make your portions so small they’re invisible!” he says, only half-joking.</p>
+
+<p>He then introduces you to a colleague from the local <strong>AI Factory</strong>, who assures you they have everything you need: <strong>HPC resources, AI expertise</strong>, and access to <strong>consortium partnerships</strong>. You nod politely, still skeptical, until the magic words hit: “<em>AI-reduced culinary portions</em>”. 
+Your eyes light up.</p>
+
+<h5 id="a-trip-to-the-ai-factory">A Trip to the AI Factory</h5>
+<p>Fast forward to a sunny spring morning. You find yourself at the gates of the <strong>AI Factory campus</strong>. It’s bustling with activity – developers in hoodies, researchers in lab coats, and businesspeople who look like they just stepped off a plane. You think to yourself: <em>this is where the future happens</em>.</p>
+
+<p>Your EDIH contact greets you and leads you through the facility. It’s a maze of rooms, each with its own purpose:</p>
+<ul>
+  <li><strong>Server rooms</strong> hum with the sound of supercomputers crunching data.</li>
+  <li><strong>Co-working spaces</strong> bring together developers, industry experts, and academics in lively discussions<sup id="fnref:co-working-spaces" role="doc-noteref"><a href="#fn:co-working-spaces" class="footnote" rel="footnote">4</a></sup>.</li>
+  <li><strong>Student areas</strong> feel like modern dorms, with young talent working on exciting projects<sup id="fnref:student-rooms" role="doc-noteref"><a href="#fn:student-rooms" class="footnote" rel="footnote">5</a></sup>.</li>
+</ul>
+
+<p>Finally, you reach a sleek conference room, where a team of experts is waiting. You pitch your vision: “I want to make food portions even smaller – smaller than anyone thought possible.”</p>
+
+<p>They love it. A woman from <strong>business model development</strong> explains how you could turn Lil’Bits into a global chain<sup id="fnref:business-model" role="doc-noteref"><a href="#fn:business-model" class="footnote" rel="footnote">6</a></sup>. Another expert from the <strong>Agri-food EDIC</strong><sup id="fnref:agri-food-edic" role="doc-noteref"><a href="#fn:agri-food-edic" class="footnote" rel="footnote">7</a></sup> nods enthusiastically: “Micro-portions are revolutionary!” She mentions the <strong>ShrinkiFood Innovation Hub</strong>  and how they specialize in AI solutions for food minimization.</p>
+
+<p>You pause. “But do you even have the data to train a model for shrinking food?”</p>
+
+<p>The expert grins. “Funny you ask. The AI Factory has access to a <strong>Common European Data Space</strong><sup id="fnref:data-space" role="doc-noteref"><a href="#fn:data-space" class="footnote" rel="footnote">8</a></sup> for food innovation, where researchers and companies contribute high-quality datasets<sup id="fnref:data-sharing" role="doc-noteref"><a href="#fn:data-sharing" class="footnote" rel="footnote">9</a></sup>. Your dream of micro-sized dishes? The data you need is right here, sitting in our server room.”</p>
+
+<h5 id="the-inevitable-question">The Inevitable Question</h5>
+<p>It all sounds too good to be true. You’re ecstatic, but doubts creep in. “What about regulations? I’ve heard about the AI Act, and I’m pretty sure invisible food might break some rules…”</p>
+
+<p>The room goes quiet. Finally, a representative from the <strong>TEF for Agrifood Innovation</strong> speaks up. He assures you they have facilities to <strong>test and validate</strong> AI systems under simulated, real-world conditions<sup id="fnref:tef_food" role="doc-noteref"><a href="#fn:tef_food" class="footnote" rel="footnote">10</a></sup>. “We’ll make sure your AI model meets all ethical and trustworthiness standards,” he adds confidently<sup id="fnref:trust_tef" role="doc-noteref"><a href="#fn:trust_tef" class="footnote" rel="footnote">11</a></sup>.</p>
+
+<h5 id="the-future-is-small">The Future is Small</h5>
+<p>You leave the meeting overwhelmed but inspired. With the help of the AI Factory, you can finally make your grandfather’s dream come true: serving food portions so small they’re practically theoretical. You shake hands with the team and walk out with a smile, imagining millions of satisfied customers worldwide eating a meal they swear they saw, if only for a moment<sup id="fnref:ending" role="doc-noteref"><a href="#fn:ending" class="footnote" rel="footnote">12</a></sup>.</p>
+
+<h4 id="overview-and-takeaways"><strong>Overview and Takeaways</strong></h4>
+
+<p>Hopefully, the <em>Lil’Bits</em> story was entertaining (and absurd) enough to keep you reading, but more importantly, it illustrated a key point: an <strong>AI Factory thrives on connections</strong>.</p>
+
+<p>The purpose is to create a space where <strong>startups, researchers, SMEs, public institutions</strong>, and <strong>industry players</strong> can <strong>collaborate and innovate</strong>. These factories are designed to integrate into existing EU initiatives – like EDIHs, EDICs, CEDS, and TEFs – to ensure no one has to tackle AI challenges alone.</p>
+
+<p>While the story focused on SMEs (because who doesn’t want AI-optimized culinary portions?), the <strong>AI Factory ecosystem</strong> serves a much broader range of users:</p>
+<ul>
+  <li><strong>Researchers and Academics</strong> can leverage HPC resources, datasets, and training to drive AI research.</li>
+  <li><strong>Public Sector Organizations</strong> benefit from AI adoption expertise offered through EDIHs.</li>
+  <li><strong>Startups and SMEs</strong> gain access to business accelerators (like the EIC), data, and infrastructure to scale their AI solutions.</li>
+  <li><strong>Large Industry Players</strong> can collaborate with experts and access advanced resources for AI development and training.</li>
+</ul>
+
+<p>The key takeaway? AI Factories bring these groups together under one roof, providing the tools, knowledge, and physical space needed to turn ideas into real-world solutions.</p>
+
+<p>And let’s not forget: <strong>skills and education</strong> are at the heart of this ecosystem. AI Factories will play a critical role in training the next generation of AI developers and researchers, ensuring that Europe remains competitive in the global AI race.</p>
+
+<h1 id="types-of-factories-tracks">Types of Factories Tracks</h1>
+
+<p>Now that we’ve covered what an AI Factory does and why it matters, let’s look at how they’re actually implemented. Because, as impressive as these hubs of innovation sound, <strong>not all AI Factories are built from scratch</strong>. The EU proposal splits AI Factories into <strong>three tracks</strong>, depending on how “ready-to-go” your infrastructure already is.</p>
+
+<p>You can think of it like renovating a house:</p>
+
+<ul>
+  <li><strong>Track 1</strong>: Use what you’ve got – a quick clean-up and some new furniture.</li>
+  <li><strong>Track 2</strong>: Give the place a serious upgrade – new floors, walls, and appliances.</li>
+  <li><strong>Track 3</strong>: Build from the ground up – lay the foundation, choose a plot of land, and go full architect mode.</li>
+</ul>
+
+<p>Here’s a quick breakdown:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Track</th>
+      <th>Description</th>
+      <th>EU Contribution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>(1) AI Factories Track</td>
+      <td>Use existing EuroHPC systems.</td>
+      <td>Partial funding for costs.</td>
+    </tr>
+    <tr>
+      <td>(2) Upgraded Supercomputer Track</td>
+      <td>Upgrade existing EuroHPC infrastructure.</td>
+      <td>Covers upgrade costs.</td>
+    </tr>
+    <tr>
+      <td>(3) New AI Supercomputer Track</td>
+      <td>Build new AI-optimized infrastructure.</td>
+      <td>Highest funding allocation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="ai-factories-track">“AI Factories” Track</h2>
+<p>This track is the <strong>fastest and least construction-heavy option</strong>. If you already have a EuroHPC supercomputer humming away in your facility, you can apply to have it <strong>appointed as an AI Factory</strong>.</p>
+
+<p>The requirements are relatively straightforward: you need to prove that your system has enough computing resources to handle the train general-purpose AI models.</p>
+
+<p>The call doesn’t spell out strict benchmarks, but we can make some educated guesses:</p>
+<ul>
+  <li>Computing Power: Your system will likely be judged on existing benchmarks like <a href="https://hpl-mxp.org/">HPL-MxP</a> or <a href="https://github.com/mlcommons/training">MLPerf Training</a>, which measure HPC performance.</li>
+  <li>Time-to-Solution: Another measure is the time it takes to train a specific large language model, for example, training a 10-billion parameter model within 45 days.</li>
+</ul>
+
+<p>If you meet these requirements, congratulations – you’ve got yourself an AI Factory. Just make sure you cover all the activities we discussed earlier (data, models, expertise) to keep the “factory” running smoothly.</p>
+
+<h2 id="upgraded-ai-optimised-supercomputer-track">Upgraded AI Optimised Supercomputer Track</h2>
+
+<p>If you already have a EuroHPC supercomputer, but it’s not quite <strong>AI Factory-ready</strong>, this is your track. Here, you don’t just <strong>appoint</strong> a system – you** upgrade it** with enhanced AI capabilities.</p>
+
+<p>This track adds a little more work to the mix. In addition to meeting all the usual AI Factory requirements, you need to:</p>
+
+<ol>
+  <li><strong>Specify the Upgrades</strong>: Show exactly what improvements are needed – for example, new GPUs, additional storage, or faster networking.</li>
+  <li><strong>Prove Eligibility</strong>: Outline how these upgrades will make the system capable of hosting AI Factory activities.</li>
+</ol>
+
+<h2 id="ai-optimised-supercomputer-track">AI Optimised Supercomputer Track</h2>
+
+<p>Finally we get to the big one. 
+This track involves <strong>acquiring a brand-new AI-optimized supercomputer</strong> and setting up the infrastructure to host the factory. It’s also the most complex, for obvious reasons:</p>
+<ul>
+  <li>You need to find the <strong>perfect location</strong> – balancing factors like cooling efficiency, energy availability, and connectivity<sup id="fnref:choosing_location" role="doc-noteref"><a href="#fn:choosing_location" class="footnote" rel="footnote">13</a></sup>.</li>
+  <li>If you’re working with a consortium (which you probably are), get ready for a tug-of-war between partners, since everyone will want the factory in their country. It brings prestige, jobs, and economic benefits – but also hefty responsibilities.</li>
+</ul>
+
+<h1 id="budgets-what-does-the-eu-cover">Budgets: What Does the EU Cover?</h1>
+
+<p>Now that we’ve covered the types of AI Factory tracks and their activities, let’s take a closer look at <strong>how the EU plans to fund them</strong>.</p>
+
+<p>First things first, the <strong>AI Factory initiative</strong> draws on significant funding from the <strong>multiannual financial framework (2021-2027)</strong>, which prioritizes the development and deployment of digital technologies, including AI.</p>
+
+<p>Here’s how funding is structured:</p>
+<ul>
+  <li><strong><a href="https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en">Horizon Europe</a></strong>: Focuses on R&amp;D&amp;I projects and scaling up AI startups.</li>
+  <li><strong><a href="https://digital-strategy.ec.europa.eu/en/activities/digital-programme">Digital Europe Programme</a></strong>: Expected to be the primary framework supporting AI Factories by funding technology deployment and training.</li>
+  <li><strong>EuroHPC</strong>: As part of the AI Innovation Package, the amendment to the EuroHPC regulation has made AI Factories a new priority in terms of investments.</li>
+</ul>
+
+<p>Funding will also come from <strong>member states and private companies</strong> to complement EU contributions.</p>
+
+<p>In summary, the EU covers <strong>up to 50% of acquisition, operation, and upgrade costs</strong> for AI Factories, while member states and private partners fund the remainder.</p>
+
+<p>This also translates in different allocation for the tracks:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Track</strong></th>
+      <th><strong>EU Contribution</strong></th>
+      <th><strong>Hosting Entity Responsibility</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Existing EuroHPC Supercomputing Systems as AI Factories Track</strong></td>
+      <td>Up to 50% of operational costs</td>
+      <td>Remainder of operational costs</td>
+    </tr>
+    <tr>
+      <td><strong>Upgraded AI Optimised Supercomputer Track</strong></td>
+      <td>Up to 50% of acquisition costs for upgrades (depreciated lifetime), Up to 35% of additional operating costs</td>
+      <td>Remainder of acquisition and operating costs</td>
+    </tr>
+    <tr>
+      <td><strong>New AI-Optimized Supercomputer Track</strong></td>
+      <td>Up to 50% of acquisition costs for new supercomputers, Up to 50% of operating costs</td>
+      <td>Remainder of acquisition and operating costs</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="national-strategy-and-networking">National Strategy and Networking</h1>
+
+<p>To maximize their impact, AI Factories must <strong>align closely with the national AI strategies</strong> of the hosting country or consortium of countries. Applicants are expected to outline:</p>
+<ul>
+  <li><strong>National AI Strategy Linkage</strong>: Describe how the AI Factory integrates into and advances the objectives outlined in the hosting country’s national AI strategy.</li>
+  <li><strong>National Data Policies</strong>: Provide an overview of the current national data policies, including access to large datasets and knowledge corpora, with a focus on open, FAIR (Findable, Accessible, Interoperable, and Reusable) data<sup id="fnref:absent_policy" role="doc-noteref"><a href="#fn:absent_policy" class="footnote" rel="footnote">14</a></sup>.</li>
+  <li><strong>National Access Policy for AI Community</strong>: Applicants should develop user-friendly access policies for allocating national computing time on EuroHPC supercomputers.</li>
+</ul>
+
+<p>The task is no small feat. It requires knowing the **national AI landscape **inside out and finding ways to integrate the factory’s goals with the broader ecosystem. Done right, the AI Factory becomes the nucleus for AI innovation – building momentum, fostering collaboration, and benefiting everything around it.</p>
+
+<h2 id="ai-factory-coordination">AI Factory coordination</h2>
+
+<p>So, let’s say you’ve set up your AI Factory. You’ve got the hardware, the datasets, and a steady stream of users. But there’s still one big question: <strong>how do these factories coordinate with each other?</strong></p>
+
+<p>The call for proposals and its amendment outline several strategies for collaboration:</p>
+<ul>
+  <li><strong>Knowledge Sharing</strong>: Factories are expected to share best practices, lessons learned, and technical expertise, ensuring everyone benefits from what works (and what doesn’t).</li>
+  <li><strong>Specialization</strong>: Each AI Factory should carve out a specific domain or expertise – this avoids duplicating efforts and maximizes efficiency.</li>
+  <li><strong>Asset Reutilization</strong>: Sharing tools, datasets, or even specific resources across factories to make the most of existing investments.</li>
+  <li><strong>Support and Training</strong>: Factories will collaborate on programs to train AI professionals, organize workshops, and upskill users.</li>
+  <li><strong>Staff Exchange</strong>: Facilitating staff exchanges to promote knowledge transfer, collaboration, and cross-pollination of ideas.</li>
+  <li><strong>Homogeneous End-to-End User Experience</strong>: For projects spanning multiple factories, the experience should be seamless and consistent for users, no matter where they access resources.</li>
+</ul>
+
+<p>These are all great strategies on paper. They encourage cooperation, reduce redundancy, and create a networked AI ecosystem where everyone shares the benefits. But here’s where I get a little skeptical.</p>
+
+<p>The EuroHPC Joint Undertaking (JU) is tasked with <strong>overseeing these coordination efforts</strong> – facilitating networks, developing standards, and ensuring alignment between factories. Don’t get me wrong, this is a well-thought-out approach. But the EuroHPC JU already has a <strong>ton of responsibilities</strong> on its plate, from managing supercomputing projects to supporting HPC innovation across Europe. Adding “coordinate the AI Factories” on top of that feels like it might stretch their capacity thin.</p>
+
+<p>This is just my take, of course, but I can’t help wondering: <strong>is this enough?</strong> Later on, I’ll suggest a few alternatives.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Here we are, at the end of another blog post. This one has been especially close to my heart because it touches on something fundamental: centralizing AI resources while fostering innovation across Europe. The AI Factories initiative is ambitious, and if done right, it could be a game-changer for Europe’s AI ecosystem.</p>
+
+<p>For those who skipped straight to the bottom (no hard feelings), here’s a quick summary.
+Here’s the final, polished version of the <strong>Conclusion</strong>, complete with a filled-out summary and improved flow. I’ve kept your style intact, added clarity, and ensured the section ties everything together neatly.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>The AI Factories are Europe’s bold bet on scaling up AI infrastructure and innovation:</p>
+<ul>
+  <li>They act as <strong>one-stop shops</strong> for startups, SMEs, researchers, and public-sector users to access <strong>supercomputing resources, datasets, and expertise</strong>.</li>
+  <li>They are designed to be <strong>interconnected</strong> with existing EU initiatives, such as European Digital Innovation Hubs (EDIHs), European Digital Infrastructure Consortiums (EDICs), Common European Data Spaces (CEDS), and Testing and Experimentation Facilities (TEFs), ensuring alignment and collaboration across the continent.</li>
+  <li>Factories are implemented through <strong>three tracks</strong>: appointing existing EuroHPC systems, upgrading current infrastructure, or building new AI-optimized supercomputers.</li>
+  <li>Funding comes from <strong>Horizon Europe</strong>, the <strong>Digital Europe Programme</strong>, and the <strong>EuroHPC Joint Undertaking</strong>, with up to <strong>50% of costs covered</strong> by the EU.</li>
+  <li>AI Factories must align with <strong>national AI strategies</strong> and integrate into broader EU initiatives like EDIHs, EDICs, and TEFs to maximize their impact.</li>
+  <li>Coordination between factories remains a challenge, as the EuroHPC JU is tasked with managing this, despite its already heavy workload.</li>
+</ul>
+
+<p>While the initiative has tremendous potential, a few questions remain:</p>
+<ul>
+  <li><strong>Who ensures effective coordination?</strong></li>
+  <li><strong>Can competition between factories drive even more innovation?</strong></li>
+</ul>
+
+<h2 id="open-questions-and-suggestions">Open Questions and Suggestions</h2>
+
+<h3 id="coordination-between-factories">Coordination Between Factories</h3>
+
+<p>One of the main concerns I have is the <strong>coordination challenge</strong>. The EuroHPC JU is currently tasked with supervising and connecting AI Factories, but this feels like adding too much weight to an already full plate.</p>
+
+<p>So, what could be done differently?</p>
+
+<ol>
+  <li>
+    <p><strong>Factory-Level Coordination Groups</strong>:<br />
+Each AI Factory could be required to establish a dedicated <strong>coordination group</strong> responsible for networking with other factories. Their progress could be evaluated through specific <strong>KPIs</strong> (Key Performance Indicators), ensuring that collaboration and knowledge sharing don’t fall through the cracks.</p>
+
+    <p>While this decentralized approach gives factories more autonomy, it’s not explicit in the current setup. Making it a formal requirement could make a big difference.</p>
+  </li>
+  <li>
+    <p><strong>A Centralized Coordination Entity (CERN4AI)</strong>:<br />
+Alternatively, I remain a firm believer in creating a <strong>superseding entity</strong> – call it <em>CERN for AI</em>, if you like. The AI Office is currently the closest thing to this idea, but it’s stretched thin with responsibilities like developing standards and aligning with the AI Act.</p>
+
+    <p>A dedicated entity focused <strong>solely</strong> on coordinating AI Factories could provide the oversight and direction needed to ensure these hubs work together effectively. This could be the missing piece to make Europe’s AI efforts truly cohesive.</p>
+  </li>
+</ol>
+
+<h3 id="what-about-competition">What About Competition?**</h3>
+
+<p>It’s well-documented that <a href="https://www.oecd.org/en/publications/competition-and-innovation-a-theoretical-perspective_4632227c-en.html">competition fuels innovation</a><sup id="fnref:competition" role="doc-noteref"><a href="#fn:competition" class="footnote" rel="footnote">15</a></sup>. But looking at the current setup, we don’t see much competition between AI Factories.</p>
+
+<p>Here’s an idea: <strong>introduce healthy competition through challenges</strong>.</p>
+
+<ul>
+  <li>Factories (or groups of factories) could compete on specific <strong>AI-related projects</strong> with clear, measurable KPIs.</li>
+  <li>To ensure fairness, introduce one or two <strong>secret benchmarks</strong> to evaluate outcomes.</li>
+  <li>Periodic evaluations could filter out underperforming projects while rewarding the best ones.</li>
+</ul>
+
+<p>The rewards? Successful factories could receive additional funding, favorable conditions from EuroHPC JU, or even priority access to resources. This would drive innovation, foster collaboration, and create incentives to <strong>push boundaries</strong>.</p>
+
+<p>Competition doesn’t have to mean isolation. In fact, it could encourage factories to form alliances, share expertise, and strive for excellence. After all, who doesn’t love a bit of friendly rivalry?</p>
+
+<h3 id="final-thoughts">Final Thoughts</h3>
+
+<p>The AI Factories initiative is an ambitious move to centralize Europe’s AI efforts, address resource fragmentation, and provide real opportunities for innovation. It’s a bold bet – and while the framework is promising, there are still challenges to overcome.</p>
+
+<p>From improving coordination to exploring competition as a driver of innovation, there’s room for improvement. But if Europe gets this right, AI Factories could become the cornerstone of its AI strategy, transforming ideas into solutions that benefit everyone.</p>
+
+<p>Let’s keep an eye on how this unfolds – I, for one, will be watching closely.</p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:eval_rant" role="doc-endnote">
+      <p>Side note: I’m planning another post (read: rant) about why we need secret eval benchmarks. Currently, no one’s stopping companies from training on benchmarks themselves, which undermines scientific progress. Also, profit margins and science are way too aligned lately. Cutting corners for flashy papers? It’s happening. Let me know if you’d like me to dig into this! <a href="#fnref:eval_rant" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:cover" role="doc-endnote">
+      <p>I covered all of these entities in my blogpost on the <a href="/_news/22.eu_and_research.md">Coordinated Plan for AI</a>. <a href="#fnref:cover" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:locality" role="doc-endnote">
+      <p><strong>European Digital Innovation Hubs (EDIHs)</strong> are regional hubs specifically designed to address the needs of <strong>local businesses</strong>. Each EDIH focuses on its designated region, offering tailored support for <strong>digital transformation</strong>. For example, an SME in a rural area might lack the resources to experiment with AI – but their local EDIH can provide access to <strong>technology testing</strong>, <strong>training</strong>, and even connections to European-level initiatives. The local focus ensures that innovation isn’t just centralized in big cities but reaches every corner of the EU. <a href="#fnref:locality" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:co-working-spaces" role="doc-endnote">
+      <p>AI Factories are designed to foster <strong>collaboration</strong>. This includes <strong>co-working spaces</strong> where <strong>industry professionals</strong>, <strong>researchers</strong>, and <strong>developers</strong> work side-by-side. These shared spaces are meant to <strong>break silos</strong> and encourage knowledge exchange, ensuring that innovation happens where it’s needed most. <a href="#fnref:co-working-spaces" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:student-rooms" role="doc-endnote">
+      <p>The AI Factory is also a hub for <strong>students and young talent</strong>. Facilities often include dedicated <strong>workspaces</strong>, labs, and even dormitories where students can work on AI projects, develop new ideas, or participate in research collaborations. This setup is part of the EU’s long-term vision to <strong>build AI skills</strong> and <strong>foster the next generation</strong> of AI developers and researchers. <a href="#fnref:student-rooms" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:business-model" role="doc-endnote">
+      <p>The <strong>European Innovation Council (<a href="https://eic.ec.europa.eu/index_en">EIC</a>)</strong> plays a role in supporting AI startups and SMEs. One of its key offerings is <strong>business model development and acceleration services</strong>. Through programs like the <a href="https://eic.ec.europa.eu/eic-funding-opportunities/bas_en">EIC Accelerator</a>, businesses receive support to <strong>scale their operations</strong>, attract investment, and access new markets. In the AI Factory context, EIC services could help a niche AI solution evolve into a scalable business model – whether it’s shrinking food portions (à la Lil’Bits) or developing cutting-edge AI tools for industry. <a href="#fnref:business-model" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:agri-food-edic" role="doc-endnote">
+      <p>The <strong>Agri-food EDIC</strong> is a <a href="https://ncpflanders.be/infosheets/european-digital-infrastructure-consortia-edics-under-digital-europe">planned European Digital Infrastructure Consortium</a> focusing on <strong>agriculture and food innovation</strong>.  By collaborating with AI Factories, the Agri-food EDIC can ensure that agriculture-specific AI solutions get the compute power and expertise they need to thrive. <a href="#fnref:agri-food-edic" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:data-space" role="doc-endnote">
+      <p>The <strong>Common European Data Spaces</strong> (CEDS) are collections of high-quality, purpose-driven datasets that serve specific sectors or applications.These datasets are designed to be <strong>Findable, Accessible, Interoperable, and Reusable</strong> (FAIR principles), which makes them perfect raw material for training AI models. According to the AI Factory call, high-speed access to these spaces is <strong>mandatory</strong>, and hosting the data on-site is strongly encouraged. Why? Because it makes the factory a centralized hub for both data storage and AI development. Bonus points if access to the data is provided in a <strong>trustworthy and secure way</strong> – think <strong><a href="https://gaia-x.eu/">Gaia-X</a> federation</strong> and similar EU-led data initiatives. <a href="#fnref:data-space" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:data-sharing" role="doc-endnote">
+      <p>Data sharing in an AI Factory is both a <strong>natural consequence</strong> of bringing together so many different actors – startups, SMEs, researchers, and industry players – and a <strong>clear priority</strong> for the EU. When you put all these people in one place with access to powerful infrastructure, sharing data becomes both <strong>practical</strong> and <strong>incentivized</strong>. Moreover, the <strong>Data Act</strong>, which I covered in detail in my <a href="/_news/23.eu_data_strategy.md">blogpost on the EU Data Strategy</a>, actively pushes for secure and standardized data sharing between businesses (B2B), governments (G2B), and public sectors. <a href="#fnref:data-sharing" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:tef_food" role="doc-endnote">
+      <p>AI Factories must have strong ties to <strong>Testing and Experimentation Facilities (TEFs)</strong>, which play a crucial role in validating AI systems. TEFs are specialized environments (both physical and virtual) where AI solutions can be tested <strong>under realistic conditions</strong> before hitting the market. For example, if your AI system promises to optimize food production or, you know, <em>shrink portions to microscopic sizes</em>, the <strong>Agrifood TEF</strong> can simulate real-world agricultural and industrial settings to check if it actually works. This setup allows the AI Factory to focus on building and refining models while a <strong>dedicated entity</strong> (the TEF) handles testing and evaluation – a beautiful division of labor. <a href="#fnref:tef_food" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:trust_tef" role="doc-endnote">
+      <p>At the moment, there’s no single TEF dedicated to <strong>trustworthiness and ethical assessments</strong> of AI systems – which is a bit of a gap, considering the rapid pace of AI development and how quickly regulations like the AI Act are evolving. Trust and ethics are often tacked on as smaller components of broader TEF programs. Personally, I think there’s room for an <strong>ad hoc TEF</strong> specializing in ethical AI. Such a facility could focus exclusively on evaluating AI systems against fairness, transparency, and safety benchmarks, helping businesses navigate the tricky intersection of innovation and regulation. <a href="#fnref:trust_tef" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:ending" role="doc-endnote">
+      <p>Fast forward 30 years: you’re standing on stage, holding the prestigious <a href="https://en.wikipedia.org/wiki/Ernst_%26_Young_Entrepreneur_of_the_Year_Award">EY Entrepreneur of the Year award</a>. The crowd cheers. Journalists swarm around you to get a glimpse of your groundbreaking achievement: the <strong>plankton-sized pizza</strong>. On the <strong><a href="/assets/images/news/plankton_pizza.png">cover of Time magazine</a></strong>,  a dish so small it requires a magnifying glass to see. The caption reads: <em>“Smaller than a Atom: The Plankton Pizza Revolution”</em> <a href="#fnref:ending" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:choosing_location" role="doc-endnote">
+      <p>Supercomputer site selection involves balancing factors like <a href="https://www.wired.com/story/big-tech-data-centers-cheap-energy?">energy cost and availability</a>, climate for <a href="https://www.datacenterknowledge.com/data-center-site-selection/5-factors-to-consider-when-selecting-a-data-center-location?">cooling efficiency</a>, and <a href="https://www.datacenters.com/news/considerations-for-data-center-site-selection?">connectivity to high-speed networks</a>. <a href="https://datacentercatalog.com/news/2023/10-data-center-location-strategy-considerations?">Risk of natural disasters</a> and <a href="https://www.wired.com/story/big-tech-data-centers-cheap-energy?">regulatory incentives</a> also play key roles, alongside <a href="https://blog.equinix.com/blog/2024/08/06/5-considerations-for-choosing-data-center-locations/?">proximity to talent pools and end-users</a>. Sustainability is critical, focusing on <a href="https://en.wikipedia.org/wiki/Data_center?">renewable energy and green cooling</a>, as is <a href="https://www.flexential.com/resources/blog/essential-considerations-effective-data-center-site-selection?">scalability</a> for future growth. <a href="#fnref:choosing_location" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:absent_policy" role="doc-endnote">
+      <p>If no policy exist, the applicants must present a clear plan for making large datasets accessible to the AI Factory ecosystem! This includes mechanisms for accessing proprietary data with potential fee schemes for AI training, fine-tuning, and inference. <a href="#fnref:absent_policy" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:competition" role="doc-endnote">
+      <p>This applies when “the market is contestable, in the sense that innovators can successfully escape competition, and whether the innovation is appropriable, meaning that successful innovators can capture the benefit from innovation, at least temporarily.” <a href="#fnref:competition" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+      </div>
+
+      
+    </div>
+  </section>
+  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/data-strategy-questions/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Mapping the EU AI Landscape (Part 3): Can you Train on my Data?</a></div>
+</main><script>
+const clicableImages = document.querySelectorAll(".zoom_outer");
+if (clicableImages.length > 0) {
+  clicableImages.forEach((el) => {
+    el.addEventListener("click", (e) => {
+       e.currentTarget.classList.toggle("wide_image")
+    })
+    }
+  );
+}
+</script><!-- Load the custom JavaScript file from the js directory -->
+<script src="/assets/js/reading_progress.js"></script>
+
+</body><footer class="footer p-9 bg-sky-200 dark:bg-slate-950 dark:text-sky-50 ">
+    <div class="container">
+        <p class="text-center">&copy; Copyright 2024, All right Reserved By - Nicolo' Brandizzi</p>
+    </div>
+</footer></html>

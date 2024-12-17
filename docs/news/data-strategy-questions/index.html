@@ -30,8 +30,8 @@
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Mapping the EU AI Landscape (Part 3): Can you Train on my Data?" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="TLDR; When training AI systems in the EU, you must anonymize personal data unless it’s essential for bias reduction, and can use copyrighted material for training unless owners explicitly opt out (though there’s no standard opt-out system yet). For AI-generated content, ownership depends on human creativity - pure AI outputs are public domain, while significant human involvement enables copyright claims. The rules are intentionally broad and lack specific standards, leading to potential interpretation differences across EU countries." />
-<meta property="og:description" content="TLDR; When training AI systems in the EU, you must anonymize personal data unless it’s essential for bias reduction, and can use copyrighted material for training unless owners explicitly opt out (though there’s no standard opt-out system yet). For AI-generated content, ownership depends on human creativity - pure AI outputs are public domain, while significant human involvement enables copyright claims. The rules are intentionally broad and lack specific standards, leading to potential interpretation differences across EU countries." />
+<meta name="description" content="DISCLAIMER: The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, Fraunhofer or any of its affiliates. All content is based on my personal insights, experiences, and research, and should not be construed as representing official positions or policies of Fraunhofer." />
+<meta property="og:description" content="DISCLAIMER: The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, Fraunhofer or any of its affiliates. All content is based on my personal insights, experiences, and research, and should not be construed as representing official positions or policies of Fraunhofer." />
 <link rel="canonical" href="/news/data-strategy-questions/" />
 <meta property="og:url" content="/news/data-strategy-questions/" />
 <meta property="og:image" content="/assets/images/news/eu_landscape/eu_landscape_p3.png" />
@@ -41,7 +41,7 @@
 <meta property="twitter:image" content="/assets/images/news/eu_landscape/eu_landscape_p3.png" />
 <meta property="twitter:title" content="Mapping the EU AI Landscape (Part 3): Can you Train on my Data?" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-10-28T00:00:00+01:00","datePublished":"2024-10-28T00:00:00+01:00","description":"TLDR; When training AI systems in the EU, you must anonymize personal data unless it’s essential for bias reduction, and can use copyrighted material for training unless owners explicitly opt out (though there’s no standard opt-out system yet). For AI-generated content, ownership depends on human creativity - pure AI outputs are public domain, while significant human involvement enables copyright claims. The rules are intentionally broad and lack specific standards, leading to potential interpretation differences across EU countries.","headline":"Mapping the EU AI Landscape (Part 3): Can you Train on my Data?","image":"/assets/images/news/eu_landscape/eu_landscape_p3.png","mainEntityOfPage":{"@type":"WebPage","@id":"/news/data-strategy-questions/"},"url":"/news/data-strategy-questions/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-10-28T00:00:00+01:00","datePublished":"2024-10-28T00:00:00+01:00","description":"DISCLAIMER: The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, Fraunhofer or any of its affiliates. All content is based on my personal insights, experiences, and research, and should not be construed as representing official positions or policies of Fraunhofer.","headline":"Mapping the EU AI Landscape (Part 3): Can you Train on my Data?","image":"/assets/images/news/eu_landscape/eu_landscape_p3.png","mainEntityOfPage":{"@type":"WebPage","@id":"/news/data-strategy-questions/"},"url":"/news/data-strategy-questions/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -164,9 +164,11 @@ const themeModeSwitch = (() => {
       <p class="text-sm mb-3">Oct 28, 2024</p><div class="post-image">
         <img src="/assets/images/news/eu_landscape/eu_landscape_p3.png" alt="hero image">
       </div><div class="page_content">
-          <p><strong>TLDR;</strong> When training AI systems in the EU, you must anonymize personal data unless it’s essential for bias reduction, and can use copyrighted material for training unless owners explicitly opt out (though there’s no standard opt-out system yet). For AI-generated content, ownership depends on human creativity - pure AI outputs are public domain, while significant human involvement enables copyright claims. The rules are intentionally broad and lack specific standards, leading to potential interpretation differences across EU countries.</p>
+          <p><code class="language-plaintext highlighter-rouge">DISCLAIMER: The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, Fraunhofer or any of its affiliates. All content is based on my personal insights, experiences, and research, and should not be construed as representing official positions or policies of Fraunhofer.</code></p>
 
-<p><strong>DISCALIMER:</strong> The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, Fraunhofer or any of its affiliates. All content is based on my personal insights, experiences, and research, and should not be construed as representing official positions or policies of Fraunhofer.</p>
+<blockquote>
+  <p><strong>TLDR;</strong> In the EU, anonymize personal data unless necessary to reduce bias, and ensure compliance with data minimization principles. For copyrighted material, you can train models unless owners explicitly opt out using appropriate machine-readable tags. Outputs generated by AI systems are public domain unless human creativity is involved, which allows copyright claims. The rules remain broad, creating ambiguity across member states.</p>
+</blockquote>
 
 <h1 id="intro">Intro</h1>
 
@@ -248,7 +250,7 @@ But if you really want to play at pro level, consider never even touching the da
 
 <p>Finally, if none of this appeals and you’re doing nothing to address PII, just say you need it all to mitigate bias! Sure, recent research might call this out as ineffective, but you can try to spin it using <a href="https://arxiv.org/abs/2402.17193">scaling law</a>.</p>
 
-<h1 id="copyright-and-intellectual-propriety">Copyright and Intellectual propriety</h1>
+<h1 id="copyright-and-intellectual-property">Copyright and Intellectual Property</h1>
 
 <p>Now let’s dig into copyright and intellectual property (IP).</p>
 
@@ -280,7 +282,7 @@ Finally, since this post is hosted on my website, which is also hosted on <a hre
 
 <h3 id="opting-out-of-ai-training">Opting Out of AI Training</h3>
 
-<p>f you’re training a model for commercial use, Recital 105 makes it clear: you need to check if the data owner has <strong>explicitly</strong> said,  “Hey, don’t use this for AI”. If there’s no specific mention or opt-out, you’re technically in the clear to use the data.</p>
+<p>If you’re training a model for commercial use, Recital 105 makes it clear: you need to check if the data owner has <strong>explicitly</strong> said,  “Hey, don’t use this for AI”. If there’s no specific mention or opt-out, you’re technically in the clear to use the data.</p>
 
 <p>So, how do data owners actually opt out of having their content fed into an AI? Well, the Act doesn’t lay it out in exact terms but points<sup id="fnref:pointing" role="doc-noteref"><a href="#fn:pointing" class="footnote" rel="footnote">9</a></sup> us to Article 4.3 of DC790, which says that rights holders need to express their wishes in an “[…] <strong>appropriate manner</strong>, such as machine-readable means in the case of content made publicly available online.”.</p>
 
@@ -304,7 +306,7 @@ But let’s clarify something important: if the data isn’t labeled properly wi
 <p>For everyone else, data use is allowed if the data doesn’t explicitly prohibit TDM and if you’ve accessed it lawfully (i.e., no hacking). In that case, Article 4 of DC790 exempts you too.</p>
 
 <p>So you might think you’re covered by opting out of TDM and keeping your data safe, right? Well, yes and no.
-Remember how I mentioned that there’s no standardized opt-out? This is a <a href="https://copyrightblog.kluweriplaw.com/2023/11/23/generative-ai-and-copyright-convergence-of-opt-outs/">well docuemnted problem</a> and hasn’t been solved yet. As it stands, there’s no universally recognized method for opting out.</p>
+Remember how I mentioned that there’s no standardized opt-out? This is a <a href="https://copyrightblog.kluweriplaw.com/2023/11/23/generative-ai-and-copyright-convergence-of-opt-outs/">well documented problem</a> and hasn’t been solved yet. As it stands, there’s no universally recognized method for opting out.</p>
 
 <h3 id="whose-job-is-this">Whose Job Is This?</h3>
 
@@ -420,7 +422,7 @@ Yes, this is a place where AI could actually help. In an ideal future, I’d lov
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:proper_citation" role="doc-endnote">
-      <p>I actually found that the proper citation style is in the form <em>Article X(Y)(Z)</em>, but that looks awful to me. To many parenthesis… <a href="#fnref:proper_citation" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>I actually found that the proper citation style is in the form <em>Article X(Y)(Z)</em>, but that looks awful to me. Too many parenthesis… <a href="#fnref:proper_citation" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:r67" role="doc-endnote">
       <p>In order to facilitate compliance with Union data protection law, such as the GDPR, data governance and management practices should include, in the case of personal data, transparency about the original purpose of the data collection. <a href="#fnref:r67" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
@@ -441,7 +443,7 @@ Yes, this is a place where AI could actually help. In an ideal future, I’d lov
       <p>However, recent studies (<a href="https://www.semanticscholar.org/paper/Disclosure-and-Mitigation-of-Gender-Bias-in-LLMs-Dong-Wang/8a515a6510e209f1ab9e53d70c291c7e007716d5">Dong et al. 2024</a> and <a href="https://www.semanticscholar.org/paper/Bias-Testing-and-Mitigation-in-LLM-based-Code-Huang-Bu/148134fac202889ff6256b6b7d574cb714941887">Huang et al. 2023</a>) have shown that increasing the quantity of data is not necessarily the most effective technique for reducing bias. <a href="#fnref:data_quantity" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:deindentification" role="doc-endnote">
-      <p>Look up “de-indentification” on <a href="https://scholar.google.com/">google scholar</a>. <a href="#fnref:deindentification" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>Look up “de-identification” on <a href="https://scholar.google.com/">google scholar</a>. <a href="#fnref:deindentification" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:pointing" role="doc-endnote">
       <p>Recital 106: “[…] comply with the reservation of rights expressed by rightsholders pursuant to Article 4(3) of Directive (EU) 2019/790.”. <a href="#fnref:pointing" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
@@ -450,7 +452,7 @@ Yes, this is a place where AI could actually help. In an ideal future, I’d lov
       <p>Specifically, this article exempts data use under Article 5.a (giving authors control over reproducing their database content) and Article 7.1 (protecting against data extraction and re-utilization) from DD96, Article 2 of CH29 (protecting authors’ copyright), and Article 15.1 of DC790 (covering press publications and online use). <a href="#fnref:copyright_exemption" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:research_inst" role="doc-endnote">
-      <p>But to be clear, these exemptions are limited to “research organizations and cultural heritage institutions”. DC790 defines a research organization as “a university, including its libraries, a research institute or any other entity, the primary goal of which is to conduct scientific research or to carry out educational activities involving also the conduct of scientific research: (a) on a not-for-profit basis or by reinvesting all the profits in its scientific research; (b) pursuant to a public interest mission recognised by a Member State”. <a href="#fnref:research_inst" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>But to be clear, these exemptions are limited to “research organizations and cultural heritage institutions”. DC790 defines a research organization as “a university, including its libraries, a research institute or any other entity, the primary goal of which is to conduct scientific research or to carry out educational activities involving also the conduct of scientific research: (a) on a not-for-profit basis or by reinvesting all the profits in its scientific research; (b) pursuant to a public interest mission recognized by a Member State”. <a href="#fnref:research_inst" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:dataset_market" role="doc-endnote">
       <p>According to <a href="https://www.fortunebusinessinsights.com/ai-training-dataset-market-109241">Fortune Business Insider</a>, the AI training dataset market is projected to grow from $2.39 bullion in 2023 to $17.04 billion by 2032 with a compound annual growth rate of 24.7%! <a href="#fnref:dataset_market" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
@@ -478,7 +480,7 @@ Yes, this is a place where AI could actually help. In an ideal future, I’d lov
       
     </div>
   </section>
-  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/data-strategy/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Mapping the EU AI Landscape (Part 2): Data Strategy</a></div>
+  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/data-strategy/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Mapping the EU AI Landscape (Part 2): Data Strategy</a><a href="/news/ai-factories/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">Mapping the EU AI Landscape (Part 4): AI Factories →</a></div>
 </main><script>
 const clicableImages = document.querySelectorAll(".zoom_outer");
 if (clicableImages.length > 0) {
