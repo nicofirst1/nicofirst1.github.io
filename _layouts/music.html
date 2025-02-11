@@ -1,0 +1,138 @@
+---
+layout: default
+---
+
+<!-- Swiper CSS (CDN) -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+
+<!-- Your music-specific CSS -->
+<link
+  rel="stylesheet"
+  href="{{ '/assets/css/music.scss' | relative_url }}"
+>
+
+<main class="music-post min-h-[88vh]">
+  <section class="pt-24">
+    <div class="container mb-20">
+
+      <!-- Page title / subtitle / date -->
+      <h1 class="text-5xl font-bold">{{ page.title }}</h1>
+      {% if page.subtitle %}
+        <p class="text-xl font-semibold">{{ page.subtitle }}</p>
+      {% endif %}
+      <p class="text-sm mb-3">{{ page.date | date: "%b %d, %Y" }}</p>
+
+      <!-- Hero image if present -->
+      {% if page.image %}
+      <div class="project-image mb-5">
+        <img
+          src="{{ page.image | relative_url }}"
+          alt="{{ page.title }}"
+          class="w-full md:w-1/2 xl:w-1/3 float-left md:pr-8 pb-8"
+        />
+      </div>
+      {% endif %}
+
+      {% if page.description %}
+        <div class="mb-6 clear-both">
+          {{ page.description }}
+        </div>
+      {% endif %}
+
+      <!-- .md content -->
+      <div class="page_content mb-8 clear-both">
+        {{ content }}
+      </div>
+
+      <!-- ALBUMS by ID -->
+      {% if page.albums %}
+        {% for album_id in page.albums %}
+          {% assign album = site.data.music_albums | where: "id", album_id | first %}
+          {% if album %}
+            <div class="album-block mb-10 clear-both">
+
+              <!-- Album header: cover + info -->
+              <div class="album-header">
+                {% if album.album_cover %}
+                  <div class="album-cover">
+                    <img src="{{ album.album_cover | relative_url }}" alt="album cover" />
+                  </div>
+                {% endif %}
+                <div class="album-info">
+                  <h2 class="album-title">{{ album.title }}</h2>
+                  {% if album.description %}
+                    <p class="album-desc">{{ album.description }}</p>
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Swiper container for the album -->
+              <div class="swiper swiper-album-{{ forloop.index }} mb-6">
+                <div class="swiper-wrapper">
+                  {% for song_id in album.songs %}
+                    {% assign songFile = site.data.music_songs[ song_id ] %}
+                    {% if songFile %}
+                    <div class="swiper-slide p-4">
+                      <!-- Song title + genre in parentheses -->
+                      <h3 class="text-xl font-semibold mb-2 song-title">
+                        {{ songFile.title }}
+                        {% if songFile.genre %}
+                          <span style="font-size: 0.9em; color: #666;">({{ songFile.genre }})</span>
+                        {% endif %}
+                      </h3>
+
+                      <!-- Context if any -->
+                      {% if songFile.context %}
+                        <p class="song-context text-sm text-gray-600 mb-3">
+                          {{ songFile.context }}
+                        </p>
+                      {% endif %}
+
+                      <!-- Audio player -->
+                      <audio controls class="audio-player mb-4">
+                        <source src="{{ songFile.audio_url | relative_url }}" type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                      </audio>
+
+                      <!-- LYRICS (left) + EXPLANATION (right) -->
+                      <div class="lyrics-explanation-row">
+                        <div class="lyrics-area">
+                          {% for line in songFile.lyrics %}
+                            <!-- Insert raw HTML from 'explanation' if you want links -->
+                            <p class="lyric-line mb-2" data-explanation="{{ line.explanation }}">
+                              {{ line.text }}
+                            </p>
+                          {% endfor %}
+                        </div>
+                        <div class="explanation-area">
+                          <p class="placeholder-text italic text-gray-500">
+                            Click a lyric to see its explanation.
+                          </p>
+                        </div>
+                      </div><!-- end row -->
+                    </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+
+                <!-- Swiper pagination & arrows -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div><!-- end .album-block -->
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+    </div>
+  </section>
+</main>
+
+<!-- Swiper JS (CDN) -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Our music JS -->
+<script src="{{ '/assets/js/music.js' | relative_url }}"></script>

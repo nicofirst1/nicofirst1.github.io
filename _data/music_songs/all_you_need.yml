@@ -1,0 +1,43 @@
+id: "all_you_need"
+title: "All you need"
+audio_url: /assets/audio/album1/All_you_need.mp3
+genre: "Trap"
+context: "This song explains the key concepts behind transformer architectures, a breakthrough in artificial intelligence. Transformers revolutionized the way machines process data, particularly in natural language processing (NLP) tasks. Unlike older models like Recurrent Neural Networks (RNNs), which process data sequentially, transformers use a mechanism called self-attention to analyze entire sequences simultaneously. This allows for faster, more efficient data processing and a better understanding of complex patterns. The song covers the limitations of earlier models, introduces the parallel processing capability of transformers, and explains concepts like keys, queries, and self-attention, making these advanced topics more accessible through rhythmic, engaging lyrics."
+lyrics:
+  - text: "Once upon a time, models tried to learn<br>Recurrent nets took turns, got burned"
+    explanation: "<a href='https://www.ibm.com/think/topics/recurrent-neural-networks'>Recurrent Neural Networks (RNNs)</a> were early models used for sequence data like text and speech. They relied on loops to process data one step at a time, which made them inefficient and prone to forgetting earlier information in long sequences."
+
+  - text: "Word by word, movin’ too slow<br>Lost the past, couldn’t keep the flow"
+    explanation: "RNNs processed information sequentially, word by word, causing slow performance. They also struggled with 'long-term dependencies,' making it hard to retain important information from earlier parts of the sequence."
+
+  - text: "Transformers came, they changed the way<br>No more steps, they see the whole play"
+    explanation: "Transformers revolutionized AI by allowing parallel processing of data. Instead of handling words one at a time, they analyze entire sequences simultaneously, making them faster and more efficient."
+
+  - text: "Keys and queries, they align<br>Self-attention, now it shines"
+    explanation: "Transformers use a mechanism called self-attention, where 'keys' and 'queries' help the model determine which words in a sentence are most important, allowing it to focus on relevant information regardless of its position in the text."
+
+  - text: "Ain’t no line-by-line, they scan it all<br>Spot the meaning, no time to stall"
+    explanation: "Unlike RNNs, transformers can process all words in a sequence at once. This parallel processing helps them quickly identify relationships and meaning within the data without delays."
+
+  - text: "Self-attention, makin’ the call<br>Focus locked, they never fall"
+    explanation: "Self-attention mechanisms allow transformers to maintain focus on critical data points, making them reliable in understanding complex contexts within large datasets."
+
+  - text: "Transformers came, they changed the way<br>No more steps, they see the whole play"
+    explanation: "Transformers revolutionized AI by allowing parallel processing of data. Instead of handling words one at a time, they analyze entire sequences simultaneously, making them faster and more efficient."
+
+  - text: "Keys and queries, they align<br>Self-attention, now it shines"
+    explanation: "Transformers use a mechanism called self-attention, where 'keys' and 'queries' help the model determine which words in a sentence are most important, allowing it to focus on relevant information regardless of its position in the text."
+
+  - text: "Now they everywhere, big and small<br>Chatbots talkin’, powerin’ all"
+    explanation: "Transformers are used in a wide range of AI applications, from small devices to large-scale models. They power technologies like chatbots, virtual assistants, and recommendation systems."
+
+  - text: "From text to vision, they run the game<br>AI’s voice, never the same"
+    explanation: "Transformers are versatile and not limited to text. They are also used in image recognition, natural language processing, and other AI tasks, transforming how AI interacts with the world."
+
+  - text: "Transformers came, they changed the way<br>No more steps, they see the whole play"
+    explanation: "Transformers revolutionized AI by allowing parallel processing of data. Instead of handling words one at a time, they analyze entire sequences simultaneously, making them faster and more efficient."
+
+
+  - text: "Funny thing, a transformer wrote this too<br>Guess it knows a thing or two<br>Patterns locked, line by line<br>Like it does—every time"
+    explanation: "This meta-reference highlights that the lyrics themselves were generated with the help of AI, potentially using transformer-based models, showcasing their capability in creative tasks."
+

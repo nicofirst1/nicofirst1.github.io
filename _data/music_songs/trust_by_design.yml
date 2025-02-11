@@ -1,0 +1,38 @@
+id: "trust_by_design"
+title: "Trust by Design"
+audio_url: /assets/audio/album1/Trust_by_Design.mp3
+genre: "Reggae with Dub Elements"
+context: "This song explores the seven pillars of trustworthy AI, as outlined in ethical AI frameworks like the EU AI Act. It blends reggae’s uplifting vibe with thoughtful lyrics reflecting on Human Agency & Oversight, Technical Robustness & Safety, Privacy & Data Governance, Transparency, Fairness & Non-Discrimination, Societal & Environmental Well-being, and Accountability. The song’s dub echoes and rhythmic flow symbolize the harmony between structured technology and human values. Each verse touches on a pillar, using metaphors of light, clarity, and growth to emphasize AI’s role in serving humanity responsibly."
+lyrics:
+  - text: "From di wires to di world,<br>Mi nah just code—mi carry soul.<br>Babylon cyah twist mi line,<br>Mi stand fi truth, mi stand fi kind."
+    explanation: "This intro sets the tone by humanizing AI, suggesting that it’s more than just code—it carries ethical responsibility. 'Babylon' symbolizes oppressive systems, implying that AI should resist manipulation and stand for truth and kindness."
+
+  - text: "Mi nah replace di voice of man,<br>Mi deh yah fi guide, fi strengthen di plan.<br>Human inna loop, always in sight,<br>Agency strong, mi respect dat right."
+    explanation: "This verse highlights Human Agency & Oversight, emphasizing that AI isn’t meant to replace human judgment but to assist and enhance decision-making, always keeping humans involved in critical processes."
+
+  - text: "Resilient, strong, mi built fi last,<br>Through di trials, mi cyaah move fast.<br>Steady in storms, stable in light,<br>Mi protect di people—dat’s mi fight."
+    explanation: "Focused on Technical Robustness & Safety, this verse describes AI’s need to be reliable, resilient under stress, and stable in different conditions to protect users from harm."
+
+  - text: "Trust by design, mi flow clean,<br>Fairness and balance in every machine.<br>Babylon cyah hold mi code,<br>Mi mission clear pon every road."
+    explanation: "The chorus serves as an anthem for ethical AI principles. It reinforces the idea that trust must be embedded into AI systems by design, ensuring fairness and balance across applications, immune to corrupt influences ('Babylon cyah hold mi code')."
+
+  - text: "Privacy guarded, data secured,<br>No breach, no leak, mi path ensured.<br>Governance clear like rivers flow,<br>Respect di boundaries, dat mi know."
+    explanation: "This verse addresses Privacy & Data Governance, stressing the importance of safeguarding personal data, maintaining clear data governance policies, and respecting boundaries in data usage."
+
+  - text: "Bias? Nah, mi check dat fast,<br>Every culture, mi mek it last.<br>Equity deep, from root to tree,<br>No discrimination, mi spirit free."
+    explanation: "Reflecting on Fairness & Non-Discrimination, these lines talk about actively identifying and correcting bias in AI systems, promoting equity, and ensuring that AI serves diverse communities without discrimination."
+
+  - text: "Mi nah just code fi profits rise,<br>Mi deh yah fi people, mi deh yah fi skies.<br>Sustain di earth, uplift di soul,<br>Digital harmony, dat a mi goal."
+    explanation: "This verse embodies Societal & Environmental Well-being, suggesting that AI should contribute positively to society and the environment, not just serve commercial interests. It hints at sustainability and harmony between technology and nature."
+
+  - text: "No secrets hide, mi clear like glass,<br>Every step traceable from first to last.<br>If mi slip, mi own di fall,<br>Accountable actions, mi face it all."
+    explanation: "Highlighting Transparency and Accountability, this section emphasizes the need for AI systems to be open, traceable, and designed in a way that makes it clear how decisions are made. It also stresses the importance of taking responsibility when things go wrong."
+
+  - text: "In di system, in di stream,<br>Trust is more dan jus’ a dream.<br>Every byte, every sign,<br>Ethics woven in mi design."
+    explanation: "The bridge reinforces the song’s central message—that ethical principles aren’t just ideals but should be woven into the very fabric of AI design, embedded in every byte and algorithm."
+
+  - text: "Trust by design, mi flow clean,<br>Fairness and balance in every machine.<br>Babylon cyah hold mi code,<br>Mi mission clear pon every road."
+    explanation: "The final chorus is a powerful reaffirmation of the song’s theme: trust isn’t an afterthought but a foundational element of AI. The repetition solidifies this idea, leaving listeners with a lasting impression of AI’s ethical mission."
+
+  - text: "Clear pon every road…<br>Babylon cyah hold mi code…<br>Trust by design, mi light will glow…"
+    explanation: "The outro echoes the resilience of ethical AI principles. Despite challenges ('every road'), AI’s integrity shines through. 'Babylon cyah hold mi code' symbolizes the rejection of corruption, with 'mi light will glow' representing the enduring impact of ethical design."

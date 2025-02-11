@@ -19,5 +19,6 @@
   },
   "scripts": {
     "build": "postcss css/tailwind.css -o dist/styles.css"
-  }
+  },
+  "dependencies": {}
 }

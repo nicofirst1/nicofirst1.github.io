@@ -1,0 +1,10 @@
+- id: "album1"
+  title: "Album One"
+  album_cover: "/assets/images/coming_soon.jpg"
+  description: "A concept album about personal growth."
+  songs:
+    - "all_you_need"
+    - "reward_me_wrong"
+    - "divine_mosaic"
+    - "trust_by_design"
+

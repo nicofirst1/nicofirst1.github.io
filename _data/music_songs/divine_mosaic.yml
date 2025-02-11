@@ -1,0 +1,57 @@
+id: "divine_mosaic"
+title: "The Divine Mosaic"
+audio_url: /assets/audio/album1/The_Divine_Mosaic.mp3
+genre: "Medieval Electro-Ballad"
+context: "This song narrates the groundbreaking development of convolutional neural networks (CNNs), inspired by Alex Krizhevsky's creation of AlexNet. It explores the transition from traditional, handcrafted feature extraction methods to deep learning models that automatically learn patterns from data. Through the metaphor of an enchanted mosaic, the song illustrates the struggle of early AI researchers who manually crafted vision systems, contrasted with Alex's revolutionary idea of letting the system learn on its own. The Divine Mosaic symbolizes the CNN’s layers, gradually revealing hidden patterns as the model learns from experience, ultimately transforming the field of computer vision."
+lyrics:
+- text: "For decades, they shaped the glass.<br>Not with wisdom, but with will."
+  explanation: "This introduces the early era of AI research, where scientists manually designed systems for image recognition, relying on their own intuition and rules rather than data-driven learning."
+
+- text: "Edge by edge, hand by hand,<br>They carved the world they wished to see."
+  explanation: "A reference to handcrafted feature extraction, where researchers manually defined visual elements like edges, shapes, and textures in an attempt to teach machines how to see."
+
+- text: "Yet the light… would not obey."
+  explanation: "Despite their efforts, the models couldn’t fully capture the complexity of real-world visual data. The ‘light’ symbolizes the elusive nature of true understanding."
+
+- text: "It danced, defied, refused to be tamed.<br>For sight is not given—<br>It must be learned."
+  explanation: "This highlights the limitations of traditional methods. True visual recognition cannot be hard-coded; it must emerge through learning from data, paving the way for deep learning."
+
+- text: "The Scholars of Vision, with patient hands,<br>Carved the glass to their commands."
+  explanation: "Represents early AI researchers meticulously building models with fixed rules, believing they could control and define how machines interpret the world."
+
+- text: "Each piece they shaped, each line they drew,<br>To craft the sight they thought was true."
+  explanation: "They designed every feature manually, confident that their crafted algorithms could fully capture visual perception, though this approach was inherently limited."
+
+- text: "No, no! the young one cries,<br>The glass must learn with its own eyes!"
+  explanation: "The emergence of Alex Krizhevsky’s revolutionary idea: instead of hard-coding features, let the model learn to identify patterns autonomously through data."
+
+- text: "Not rigid hands, nor carver’s blade,<br>But light itself shall weave its shade!"
+  explanation: "Alex challenges the old paradigm, advocating for data-driven learning, where the system’s understanding is shaped by the information it processes, not by human-designed rules."
+
+- text: "O, mosaic, wake and see!<br>Light shall teach thee, not just we!"
+  explanation: "The chorus symbolizes the ‘awakening’ of the neural network. The mosaic (CNN) begins to learn from data, guided by patterns within the information itself."
+
+- text: "Shapes emerge, behold the signs,<br>A world revealed through glass divine!"
+  explanation: "As the CNN trains, it starts recognizing complex patterns and objects. What once seemed chaotic now forms clear, meaningful structures—like images emerging from stained glass."
+
+- text: "At first, the shards saw naught but haze,<br>Just flickering lights in tangled maze."
+  explanation: "Describes the initial stages of CNN training, where the model struggles to make sense of data, similar to blurry, fragmented images."
+
+- text: "Yet piece by piece, a form took hold,<br>Contours bright, like scripts of old."
+  explanation: "Through learning (adjusting weights and filters), the model starts identifying basic features like edges and shapes, much like ancient scripts becoming legible."
+
+- text: "Each flaw revealed, the glass grew wise,<br>Until it saw through its own eyes."
+  explanation: "Refers to the backpropagation process, where errors help the model improve its performance, allowing it to learn autonomously and ‘see’ with increasing accuracy."
+
+- text: "A folly, Alex, this cannot be,<br>The glass must shape to our decree!"
+  explanation: "Reflects the skepticism from traditional researchers who doubted deep learning’s potential, insisting that handcrafted models were superior."
+
+- text: "But still, it grew, and learned anew,<br>Each shard aligned, the vision true."
+  explanation: "Despite criticism, AlexNet proved its worth, outperforming traditional methods. The model learned on its own, aligning its internal structure to accurately process visual data."
+
+- text: "O, mosaic, bright and wise!<br>Patterns gleam in newfound eyes!"
+  explanation: "The final chorus celebrates the success of CNNs. The mosaic (model) has become ‘wise,’ capable of recognizing patterns with clarity and depth."
+
+- text: "No hand did carve, no mind confined,<br>The glass hath learned—by its design!"
+  explanation: "A tribute to the self-learning nature of deep neural networks. The model’s ability to learn isn’t the result of direct human intervention but of its inherent design to adapt and evolve from data."
+
