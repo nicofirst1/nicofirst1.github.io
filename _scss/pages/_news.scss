@@ -1,11 +1,17 @@
+// _news.scss
+
+/* Global News Post Styles */
 .news-post {
-  font-family: "Georgia", serif;
+  font-family: 'Georgia', serif;
   line-height: 1.7;
   color: #333;
 }
 
-.news-post h1, .news-post h2, .news-post h3 {
-  font-family: "Helvetica", "Arial", sans-serif;
+/* Headings */
+.news-post h1,
+.news-post h2,
+.news-post h3 {
+  font-family: 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
   line-height: 1.2;
 }
@@ -25,12 +31,14 @@
   margin-bottom: 0.75rem;
 }
 
+/* Paragraphs */
 .news-post p {
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
   letter-spacing: 0.03em;
 }
 
+/* Blockquotes */
 .news-post blockquote {
   border-left: 4px solid #ccc;
   padding-left: 1rem;
@@ -39,6 +47,7 @@
   margin: 1.5rem 0;
 }
 
+/* Images */
 .news-post img {
   display: block;
   max-width: 100%;
@@ -59,6 +68,7 @@
   margin: 0 auto;
 }
 
+/* Links */
 .news-post a {
   color: #1a73e8;
   text-decoration: none;
@@ -71,6 +81,7 @@
   border-bottom-color: #0047ab;
 }
 
+/* Button CTA */
 .news-post a.button {
   display: inline-block;
   background-color: #000;
@@ -87,35 +98,35 @@
   background-color: #333;
 }
 
-.news-post pre, .news-post code {
+/* Code Blocks */
+.news-post pre,
+.news-post code {
   background-color: #f6f8fa;
   padding: 0.5rem;
   border-radius: 5px;
   font-size: 0.95rem;
   overflow-x: auto;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
+/* Lists */
 .news-post ul {
   list-style-type: disc;
-  /* Bullet points for unordered lists */
   padding-left: 2rem;
-  /* Indentation */
   margin-bottom: 1.5rem;
 }
 
 .news-post ol {
   list-style-type: decimal;
-  /* Numbered list for ordered lists */
   padding-left: 2rem;
   margin-bottom: 1.5rem;
 }
 
 .news-post li {
   margin-bottom: 0.75rem;
-  /* Space between list items */
 }
 
+/* Layout */
 .news-post .container {
   padding: 2rem;
 }
@@ -131,6 +142,7 @@
   margin-right: auto;
 }
 
+/* Footer */
 .news-post footer {
   margin-top: 3rem;
   text-align: center;
@@ -143,12 +155,13 @@
   text-decoration: none;
 }
 
+/* Superscript */
 .news-post sup {
   font-size: 0.75rem;
-  /* Smaller superscript for footnotes */
   vertical-align: super;
 }
 
+/* Footnotes */
 .news-post .footnotes {
   font-size: 0.875rem;
   color: #666;
@@ -164,103 +177,98 @@
   margin-bottom: 0.5rem;
 }
 
-/* Base Table Styles */
+/* Tables */
 .news-post table {
   width: 100%;
   border-collapse: collapse;
-  /* Remove spacing between cells */
   margin: 2rem 0;
-  /* Space above and below the table */
   border: none;
-  /* No outer table border */
   border-top: 2px solid #333;
-  /* Line above the table header */
 }
 
-/* Table Cells and Headers */
-.news-post th, .news-post td {
+.news-post th,
+.news-post td {
   padding: 12px 15px;
-  /* Padding inside cells */
   text-align: center;
-  /* Center the text */
   border-bottom: 1px solid #ddd;
-  /* Line below each cell */
 }
 
-/* Header Styles */
 .news-post th {
   border-bottom: 2px solid #333;
-  /* Thicker line for headers */
   font-weight: bold;
-  /* Bold header text */
 }
 
-/* Last row bottom border */
 .news-post tr:last-child td {
   border-bottom: 2px solid #333;
-  /* Thicker line at the end of the table */
 }
 
+/* Dark Mode Overrides for News Post */
 .dark a {
   color: #9ae1ff;
 }
 .dark a:hover {
   color: #7fcdff;
 }
+
 .dark .news-post {
   color: #e5e7eb;
 }
-.dark .news-post h1, .dark .news-post h2, .dark .news-post h3 {
+
+.dark .news-post h1,
+.dark .news-post h2,
+.dark .news-post h3 {
   color: #ffffff;
 }
+
 .dark .news-post blockquote {
   color: #b3b3b3;
   border-left-color: #4b5563;
 }
+
 .dark .news-post a {
   color: #9ae1ff;
 }
-.dark .news-post pre, .dark .news-post code {
+
+.dark .news-post pre,
+.dark .news-post code {
   background-color: #1f2937;
   color: #e2e8f0;
 }
-.dark .news-post ul li, .dark .news-post ol li {
+
+.dark .news-post li {
   color: #e5e7eb;
 }
+
 .dark .news-post footer {
   color: #a1a1aa;
 }
+
 .dark .news-post .footnotes {
   color: #d1d5db;
 }
+
 .dark .news-post .footnotes a {
   color: #9ae1ff;
 }
 
 .dark .news-post table {
   border-top: 2px solid #c2c0c0;
-  /* Darker line for the header */
 }
 
-.dark .news-post th, .dark .news-post td {
+.dark .news-post th,
+.dark .news-post td {
   border-bottom: 1px solid #555;
-  /* Darker line below each cell */
 }
 
 .dark .news-post th {
   border-bottom: 2px solid #c2c0c0;
-  /* Darker header line */
   color: #e5e7eb;
-  /* Light text for headers */
 }
 
 .dark .news-post td {
   color: #e5e7eb;
-  /* Light text for table content */
 }
 
-/* Last row in dark mode */
 .dark .news-post tr:last-child td {
   border-bottom: 2px solid #c2c0c0;
-  /* Darker line at the end of the table */
 }

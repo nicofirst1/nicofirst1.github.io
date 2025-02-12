@@ -1,0 +1,47 @@
+---
+---
+
+/* Import Tailwind (make sure your PostCSS/Tailwind build is set up) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Now import our custom SCSS */
+
+/* Abstracts */
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/functions";
+
+/* Base */
+@import "base/reset";
+@import "base/typography";
+@import "base/base";
+
+/* Layout */
+@import "layout/header";
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/navigation";
+
+
+/* Pages */
+@import "pages/home";
+@import "pages/news";
+@import "pages/projects";
+@import "pages/education";
+@import "pages/music";
+@import "pages/euai_graph";
+@import "pages/publications";
+
+/* Themes */
+@import "themes/light";
+
+/* Utilities */
+@import "utilities/utilities";
+
+/* Components */
+@import "components/cards";
+@import "components/buttons";
+@import "components/carousel";
+@import "components/mode-switch";

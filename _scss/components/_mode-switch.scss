@@ -1,3 +1,4 @@
+// _mode-switch.scss
 .mode-switch {
   padding-left: 0;
   min-height: 1.6rem;
@@ -39,7 +40,7 @@
 
 .dark .mode-switch .form-check-input {
   background-color: #184FA9;
-  background-image: url(/assets/images/svg/moon.svg);
+  background-image: url("/assets/images/svg/moon.svg");
   background-position: right center;
 }
 
@@ -55,19 +56,8 @@
   color: #fff;
 }
 
-.dark a {
-  color: #9ae1ff;
-  text-decoration: underline;
-}
-.dark a:hover {
-  color: #7fcdff;
-}
-
 @media (min-width: 600px) {
   .mode-switch {
-    align-content: center;
-    justify-content: center;
-    display: grid;
     grid-template-columns: 1fr auto 1fr;
     gap: 5px;
     align-items: center;

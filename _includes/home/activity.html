@@ -24,7 +24,7 @@
                         {% for item in sorted_items limit: page_size offset: offset %}
                             <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
                                 <a href="{{ item.url }}">
-                                    <div class="activity_image gap-5 md:w-4/12">
+                                    <div class="activity_image gap-5 md:w-6/12">
                                         <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" class="md:p-7 w-full rounded-xl">
                                     </div>
                                     <div class="text pt-6">

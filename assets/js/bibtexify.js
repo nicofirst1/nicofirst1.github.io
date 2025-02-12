@@ -1990,16 +1990,16 @@ BibTex.prototype = {
                 nNext.title = oSettings.oLanguage.oPaginate.sNext;
                 nPaging.appendChild(nPrevious);
                 nPaging.appendChild(nNext);
-                $(nPrevious).click(function () {
+                $(nPrevious).on("click",(function () {
                     if (oSettings.oApi._fnPageChange(oSettings, "previous")) {
                         fnCallbackDraw(oSettings)
                     }
-                });
-                $(nNext).click(function () {
+                }));
+                $(nNext).on("click",(function () {
                     if (oSettings.oApi._fnPageChange(oSettings, "next")) {
                         fnCallbackDraw(oSettings)
                     }
-                });
+                }));
                 $(nPrevious).bind("selectstart", function () {
                     return false
                 });
@@ -2047,26 +2047,26 @@ BibTex.prototype = {
                 nPaging.appendChild(nList);
                 nPaging.appendChild(nNext);
                 nPaging.appendChild(nLast);
-                $(nFirst).click(function () {
+                $(nFirst).on("click",(function () {
                     if (oSettings.oApi._fnPageChange(oSettings, "first")) {
                         fnCallbackDraw(oSettings)
                     }
-                });
-                $(nPrevious).click(function () {
+                }));
+                $(nPrevious).on("click",(function () {
                     if (oSettings.oApi._fnPageChange(oSettings, "previous")) {
                         fnCallbackDraw(oSettings)
                     }
-                });
-                $(nNext).click(function () {
+                }));
+                $(nNext).on("click",(function () {
                     if (oSettings.oApi._fnPageChange(oSettings, "next")) {
                         fnCallbackDraw(oSettings)
                     }
-                });
-                $(nLast).click(function () {
+                }));
+                $(nLast).on("click",(function () {
                     if (oSettings.oApi._fnPageChange(oSettings, "last")) {
                         fnCallbackDraw(oSettings)
                     }
-                });
+                }));
                 $("span", nPaging).bind("mousedown", function () {
                     return false
                 }).bind("selectstart", function () {
@@ -2132,7 +2132,7 @@ BibTex.prototype = {
                     }
                     nPaginateList = an[i].childNodes[2];
                     nPaginateList.innerHTML = sList;
-                    $("span", nPaginateList).click(fnClick).bind("mousedown", fnFalse).bind("selectstart", fnFalse);
+                    $("span", nPaginateList).on("click",(fnClick)).bind("mousedown", fnFalse).bind("selectstart", fnFalse);
                     anButtons = an[i].getElementsByTagName("span");
                     anStatic = [anButtons[0], anButtons[1], anButtons[anButtons.length - 2], anButtons[anButtons.length - 1]];
                     $(anStatic).removeClass(oClasses.sPageButton + " " + oClasses.sPageButtonActive + " " + oClasses.sPageButtonStaticDisabled);
@@ -3010,14 +3010,14 @@ BibTex.prototype = {
                         $(oSettings.aoColumns[i].nTh).addClass(oSettings.oClasses.sSortableNone)
                     }
                 }
-                $("thead:eq(0) th", oSettings.nTable).mousedown(function (e) {
+                $("thead:eq(0) th", oSettings.nTable).on( "mousedown",(function (e) {
                     if (e.shiftKey) {
                         this.onselectstart = function () {
                             return false
                         };
                         return false
                     }
-                })
+                }))
             }
             var nTfoot = oSettings.nTable.getElementsByTagName("tfoot");
             if (nTfoot.length !== 0) {
@@ -3364,7 +3364,7 @@ BibTex.prototype = {
             nFilter.innerHTML = oSettings.oLanguage.sSearch + sSpace + '<input type="text" />';
             var jqFilter = $("input", nFilter);
             jqFilter.val(oSettings.oPreviousSearch.sSearch.replace('"', "&quot;"));
-            jqFilter.keyup(function (e) {
+            jqFilter.on("keyup",(function (e) {
                 var n = oSettings.aanFeatures.f;
                 for (var i = 0, iLen = n.length; i < iLen; i++) {
                     if (n[i] != this.parentNode) {
@@ -3375,12 +3375,12 @@ BibTex.prototype = {
                     sSearch: this.value,
                     bEscapeRegex: oSettings.oPreviousSearch.bEscapeRegex
                 })
-            });
-            jqFilter.keypress(function (e) {
+            }));
+            jqFilter.on("keypress",(function (e) {
                 if (e.keyCode == 13) {
                     return false
                 }
-            });
+            }));
             return nFilter
         }
 
@@ -3569,7 +3569,7 @@ BibTex.prototype = {
         }
 
         function _fnSortAttachListener(oSettings, nNode, iDataIndex, fnCallback) {
-            $(nNode).click(function (e) {
+            $(nNode).on("click", (function (e) {
                 if (oSettings.aoColumns[iDataIndex].bSortable === false) {
                     return
                 }
@@ -3624,7 +3624,7 @@ BibTex.prototype = {
                 if (typeof fnCallback == "function") {
                     fnCallback(oSettings)
                 }
-            })
+            }))
         }
 
         function _fnSortingClasses(oSettings) {
@@ -4911,7 +4911,7 @@ var bibtexify = (function ($) {
         if (this.options.visualization) {
             this.addBarChart();
         }
-        $("th", this.$pubTable).unbind("click").click(function (e) {
+        $("th", this.$pubTable).off("click").on("click",(function (e) {
             var $this = $(this),
                 $thElems = $this.parent().find("th"),
                 index = $thElems.index($this);
@@ -4931,7 +4931,7 @@ var bibtexify = (function ($) {
                     [0, $thElems.eq(0).hasClass("sorting_asc") ? "asc" : "desc"]
                 ]);
             }
-        });
+        }));
         // attach the event handlers to the bib items
         $(".biblink", this.$pubTable).on('click', EventHandlers.showbib);
         $(".bibclose", this.$pubTable).on('click', EventHandlers.hidebib);
@@ -5045,9 +5045,9 @@ var bibtexify = (function ($) {
             },
             opts);
         var $pubTable = $("#" + bibElemId).addClass("bibtable");
-        if ($("#shutter").size() === 0) {
+        if ($("#shutter").length === 0) {
             $pubTable.before('<div id="shutter" class="hidden"></div>');
-            $("#shutter").click(EventHandlers.hidebib);
+            $("#shutter").on("click",(EventHandlers.hidebib));
         }
         if (options.visualization) {
             $pubTable.before('<div id="' + bibElemId + 'pubchart" class="bibchart"></div>');

@@ -1,0 +1,15 @@
+// _buttons.scss
+.read-more-btn {
+  background-color: #1a73e8;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #0056b3;
+}

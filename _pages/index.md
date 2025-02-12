@@ -12,7 +12,6 @@ description: |
   
 page_id: home
 permalink: /
-style: /assets/css/education.css
 ---
 
 {% include home/hero.html %}

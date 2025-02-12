@@ -1,0 +1,65 @@
+// _header.scss
+.menu_toggler {
+  position: fixed;
+  right: 20px;
+  top: 24px;
+  @include respond-to("medium") {
+    display: none;
+  }
+}
+
+.hamburger {
+  position: relative;
+  width: 24px;
+  height: 20px;
+}
+
+.hamburger span {
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  height: 3.4px;
+  left: 0;
+  top: 8px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:before,
+.hamburger:after {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:before {
+  top: 0;
+  height: 3.4px;
+}
+
+.hamburger:after {
+  bottom: 0;
+}
+
+.hamburger.active-burger:before {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+.hamburger.active-burger:after {
+  transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+.hamburger.active-burger span {
+  transform: scale(0);
+}
+
+.logo-img {
+  width: 40px;
+}

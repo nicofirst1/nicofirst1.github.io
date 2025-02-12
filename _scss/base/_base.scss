@@ -1,0 +1,24 @@
+// _base.scss
+body {
+  background: $backgroundColor;
+  color: $bodyColor;
+  font-family: $bodyFont;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container_activity {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Global link colors (used in multiple sections) */
+.page_content a,
+.education a {
+  color: blue;
+}

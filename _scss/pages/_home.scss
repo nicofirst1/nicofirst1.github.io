@@ -1,0 +1,15 @@
+// _home.scss
+/* Home page specific styles */
+.hero_section {
+  overflow: hidden;
+}
+
+.hero_section .hero_bg {
+  z-index: -1;
+}
+
+
+.social_item svg{
+  width: 30px;
+  height: 30px;
+}

@@ -1,0 +1,100 @@
+// _carousel.scss
+.container_activity {
+  position: relative;
+  padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  display: none;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+
+.carousel-item.active {
+  position: relative;
+  display: block;
+  transform: translateX(0);
+}
+
+.carousel-item::after {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.carousel-item .grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  @include respond-to("medium") {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-item .grid > *:not(:first-child) {
+    display: none;
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-control-prev:active,
+.carousel-control-next:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}

@@ -13,6 +13,8 @@ plugins:
 #  source: ./assets/publications
 postcss:
   cache: false
+sass:
+  sass_dir: _scss
 
 collections:
   pages:
