@@ -2,13 +2,13 @@ id: "divine_mosaic"
 title: "The Divine Mosaic"
 audio_url: /assets/audio/album1/The_Divine_Mosaic.mp3
 genre: "Medieval Electro-Ballad"
-context: "This song narrates the groundbreaking development of convolutional neural networks (CNNs), inspired by Alex Krizhevsky's creation of AlexNet. It explores the transition from traditional, handcrafted feature extraction methods to deep learning models that automatically learn patterns from data. Through the metaphor of an enchanted mosaic, the song illustrates the struggle of early AI researchers who manually crafted vision systems, contrasted with Alex's revolutionary idea of letting the system learn on its own. The Divine Mosaic symbolizes the CNN’s layers, gradually revealing hidden patterns as the model learns from experience, ultimately transforming the field of computer vision."
+context: "This song narrates the development of convolutional neural networks (CNNs), inspired by Alex Krizhevsky's creation of <a href='https://viso.ai/deep-learning/alexnet/' target='_blank'>AlexNet</a>. It explores the transition from traditional, handcrafted feature extraction methods to deep learning models that automatically learn patterns from data. Through the metaphor of an enchanted mosaic, the song illustrates the struggle of early AI researchers who manually crafted vision systems, contrasted with Alex's revolutionary idea of letting the system learn on its own. The Divine Mosaic symbolizes the CNN’s layers, gradually revealing hidden patterns as the model learns from experience, ultimately transforming the field of computer vision."
 lyrics:
 - text: "For decades, they shaped the glass.<br>Not with wisdom, but with will."
   explanation: "This introduces the early era of AI research, where scientists manually designed systems for image recognition, relying on their own intuition and rules rather than data-driven learning."
 
 - text: "Edge by edge, hand by hand,<br>They carved the world they wished to see."
-  explanation: "A reference to handcrafted feature extraction, where researchers manually defined visual elements like edges, shapes, and textures in an attempt to teach machines how to see."
+  explanation: "A reference to <a href='https://datascience.stackexchange.com/questions/54390/what-is-the-difference-between-handcrafted-and-learned-features' target='_blank'>handcrafted feature extraction</a>, where researchers manually defined visual elements like edges, shapes, and textures in an attempt to teach machines how to see."
 
 - text: "Yet the light… would not obey."
   explanation: "Despite their efforts, the models couldn’t fully capture the complexity of real-world visual data. The ‘light’ symbolizes the elusive nature of true understanding."
@@ -23,12 +23,12 @@ lyrics:
   explanation: "They designed every feature manually, confident that their crafted algorithms could fully capture visual perception, though this approach was inherently limited."
 
 - text: "No, no! the young one cries,<br>The glass must learn with its own eyes!"
-  explanation: "The emergence of Alex Krizhevsky’s revolutionary idea: instead of hard-coding features, let the model learn to identify patterns autonomously through data."
+  explanation: "The emergence of <a href='https://en.wikipedia.org/wiki/Alex_Krizhevsky' target='_blank'>Alex Krizhevsky’s</a> revolutionary idea: instead of hard-coding features, let the model learn to identify patterns autonomously through data."
 
 - text: "Not rigid hands, nor carver’s blade,<br>But light itself shall weave its shade!"
   explanation: "Alex challenges the old paradigm, advocating for data-driven learning, where the system’s understanding is shaped by the information it processes, not by human-designed rules."
 
-- text: "O, mosaic, wake and see!<br>Light shall teach thee, not just we!"
+- text: "Oh, mosaic, wake and see!<br>Light shall teach thee, not just we!"
   explanation: "The chorus symbolizes the ‘awakening’ of the neural network. The mosaic (CNN) begins to learn from data, guided by patterns within the information itself."
 
 - text: "Shapes emerge, behold the signs,<br>A world revealed through glass divine!"
@@ -38,10 +38,10 @@ lyrics:
   explanation: "Describes the initial stages of CNN training, where the model struggles to make sense of data, similar to blurry, fragmented images."
 
 - text: "Yet piece by piece, a form took hold,<br>Contours bright, like scripts of old."
-  explanation: "Through learning (adjusting weights and filters), the model starts identifying basic features like edges and shapes, much like ancient scripts becoming legible."
+  explanation: "Through learning (adjusting weights and filters), the model starts identifying basic features like edges and shapes, much like early researchers' handcrafted features."
 
 - text: "Each flaw revealed, the glass grew wise,<br>Until it saw through its own eyes."
-  explanation: "Refers to the backpropagation process, where errors help the model improve its performance, allowing it to learn autonomously and ‘see’ with increasing accuracy."
+  explanation: "Refers to the <a href='https://www.ibm.com/think/topics/backpropagation' target='_blank'>backpropagation process</a>, where errors help the model improve its performance, allowing it to learn autonomously and ‘see’ with increasing accuracy."
 
 - text: "A folly, Alex, this cannot be,<br>The glass must shape to our decree!"
   explanation: "Reflects the skepticism from traditional researchers who doubted deep learning’s potential, insisting that handcrafted models were superior."

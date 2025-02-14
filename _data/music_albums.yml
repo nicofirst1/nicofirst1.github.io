@@ -1,10 +1,11 @@
 - id: "album1"
-  title: "Album One"
-  album_cover: "/assets/images/coming_soon.jpg"
-  description: "A concept album about personal growth."
+  title: "AlgoRhythms"
+  album_cover: "/assets/images/projects/music/album1.jpg"
+  description: "Soe album description"
   songs:
     - "all_you_need"
     - "reward_me_wrong"
     - "divine_mosaic"
     - "trust_by_design"
+    - "just_an_ai"
 

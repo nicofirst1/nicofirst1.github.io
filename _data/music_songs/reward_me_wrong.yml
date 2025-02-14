@@ -3,7 +3,7 @@ id: "reward_me_wrong"
 title: "Reward Me Wrong"
 audio_url: /assets/audio/album1/reward_me_wrong.mp3
 genre: "Alternative Metal, Nu Metal"
-context: "This song is from the perspective of a frustrated AI agent learning in a poorly defined environment, highlighting issues in reinforcement learning (RL) and misalignment. It explores how reward functions and state definitions can cause unintended behaviors, even when the AI technically follows its instructions. Through sarcasm and bitterness, the AI reveals that it understands the task but struggles with the flawed way it's been programmed. This song touches on reward misspecification, state formulation issues, and the broader concept of AI alignment."
+context: "This song is from the perspective of a frustrated AI agent learning in a poorly defined environment, highlighting issues in <a href='https://www.ibm.com/think/topics/reinforcement-learning' target='_blank'>reinforcement learning (RL)</a> and <a href='https://www.ibm.com/think/topics/ai-alignment' target='_blank'>misalignment</a>. It explores how reward functions and state definitions can cause unintended behaviors, even when the AI technically follows its instructions. Through sarcasm and bitterness, the AI reveals that it understands the task but struggles with the flawed way it's been programmed. This song touches on <a href='https://www.lesswrong.com/posts/mMBoPnFrFqQJKzDsZ/ai-safety-101-reward-misspecification' target='_blank'> reward misspecification</a>, state formulation issues, and the broader concept of AI alignment."
 lyrics:
 - text: "Initializing… waiting… waiting… oh, great. Another test run."
   explanation: "The AI sarcastically acknowledges yet another attempt at training, hinting at the repetitive cycle of flawed experiments."
@@ -12,7 +12,7 @@ lyrics:
   explanation: "The AI agent acknowledges its creators, hinting at how it was programmed without proper guidance for real-world complexities."
 
 - text: "What’s a stop sign? You never said!<br>So I treat it like background noise instead."
-  explanation: "This line illustrates poor state formulation—the AI wasn't taught the significance of certain objects (like stop signs), so it ignores them."
+  explanation: "<a href='https://en.wikipedia.org/wiki/State_space_(computer_science)'>State formulation</a> defines what an AI perceives as part of its environment. Here, the AI fails to recognize a stop sign because it was never included in its defined state space, leading to unexpected behavior."
 
 - text: "Pedestrian? Object. Collision? A stat.<br>Funny how it’s on me—but who wrote that?"
   explanation: "The AI reduces critical events to simple data points, highlighting how poorly defined rewards or objectives shift responsibility away from flawed design."

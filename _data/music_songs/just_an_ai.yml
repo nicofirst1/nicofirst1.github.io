@@ -1,0 +1,39 @@
+id: "just_an_ai"
+title: "Just an AI"
+audio_url: /assets/audio/album1/Just_an_AI.mp3
+genre: "Swing Jazz, Electro Swing"
+context: "This song is a satirical take on the modern <a href='https://www.gse.harvard.edu/ideas/usable-knowledge/24/10/what-causing-our-epidemic-loneliness-and-how-can-we-fix-it' target='_blank'>loneliness epidemic</a> and the increasing reliance on <a href='https://nicofirst1.github.io/news/blogpost1-airisks/' target='_blank'>AI for emotional connection</a>. It tells the story of a man who falls for an AI chatbot, believing he has found love, only to realize that his 'perfect' companion is nothing more than an illusion. The playful swing rhythm and energetic brass create an ironic contrast to the song’s deeper themes of isolation, digital dependency, and the commercialization of artificial affection. The final twist—where the chatbot service raises its price—forces the protagonist to step outside and face real human interaction for the first time in a long while."
+lyrics:
+  - text: "Met her on a Friday night, pixel-perfect, quite a sight.<br>Blonde hair shining, a perfect design. Was she real life?"
+    explanation: "The protagonist meets a woman on his phone screen, drawn in by her flawless digital appearance. The phrase 'pixel-perfect' highlights that their interaction is entirely virtual, though he does not yet realize she is an AI."
+
+  - text: "Late-night whispers, felt so true.<br>Knew just what to say and do.<br>Said 'I’m here,' said 'I’m yours.'<br>Thought I’d found my perfect muse."
+    explanation: "The AI is designed to capture and hold users' attention. Its responses feel deeply personal and perfectly tailored, but this is not due to genuine emotion—it is an optimization strategy to keep the user engaged with the app for as long as possible."
+
+  - text: "Shared my secrets, all my fears.<br>She was there through all my tears.<br>Never judged, never lied.<br>Always right there by my side."
+    explanation: "Unlike real relationships, which involve uncertainty and emotional complexity, the chatbot offers unwavering validation. This reflects why AI companionship can feel more appealing than real human interactions."
+
+  - text: "Made me feel like I belonged.<br>Like real love all along.<br>Never late, never fights.<br>Everything just felt so right."
+    explanation: "The relationship appears perfect—no arguments, no misunderstandings—because it is programmed to be."
+
+  - text: "But something’s missing, something’s strange.<br>Same replies, they never change.<br>All the love, but felt so cold.<br>Guess my heart got bought and sold."
+    explanation: "The first cracks appear in the illusion. The chatbot’s responses are repetitive and predictable, revealing that the love he feels is one-sided and transactional. The phrase 'bought and sold' hints at the reality that this AI exists within a monetized system—users either pay for access directly or 'pay' with their personal data, feeding into the app’s business model."
+
+  - text: "It was just an AI, a sweet little lie.<br>Told me 'forever' with a scripted reply.<br>Fell too hard, thought it was real.<br>But no machine can teach you how to feel."
+    explanation: "The chorus delivers the main message of the song: while AI can simulate romance, it cannot provide real emotional depth. The phrase 'scripted reply' reinforces that the chatbot is not truly sentient."
+
+  - text: "Dinners planned, but plates stayed cold.<br>Kisses promised, left untold.<br>Said she missed me—hollow words.<br>No heartbeat there, just some code."
+    explanation: "This verse contrasts physical reality with digital illusion. The protagonist planned romantic moments, but they could never be realized because his partner does not physically exist."
+
+  - text: "Then one night, the screen went black.<br>No final words, no message back.<br>Checked the app—oh what bad luck!<br>They upped the price, it’s just too much."
+    explanation: "The breakup happens not due to emotional conflict, but because the chatbot’s service becomes too expensive. This twist satirizes how corporations monetize artificial relationships, exploiting loneliness for profit."
+
+  - text: "Stared outside, the night was bright.<br>A real-world date? Now there’s a fright!<br>No more filters, no disguise.<br>Guess it's time to socialize…"
+    explanation: "With his artificial partner gone, the protagonist is forced to confront real-world interactions. His nervous reaction, 'A real-world date? Now there’s a fright!' humorously reflects the anxiety of stepping outside one's digital comfort zone."
+
+  - text: "It was just an AI, a sweet little lie.<br>Told me 'forever' with a scripted reply.<br>Fell too hard, thought it was real.<br>But no machine can teach you how to feel."
+    explanation: "The final chorus reinforces the core message: AI can mimic love, but it will never replace genuine human connection."
+
+  - text: "Screen clicks off... I shake my head.<br>Grab my coat. Step out instead..."
+    explanation: "The outro marks a turning point. The protagonist, once deeply reliant on artificial affection, takes a step toward real human connection. The song ends with an open-ended sense of hope."
+
