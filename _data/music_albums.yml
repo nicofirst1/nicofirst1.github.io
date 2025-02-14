@@ -1,7 +1,7 @@
 - id: "album1"
   title: "AlgoRhythms"
   album_cover: "/assets/images/projects/music/album1.jpg"
-  description: "Soe album description"
+  description: "Album description"
   songs:
     - "all_you_need"
     - "reward_me_wrong"

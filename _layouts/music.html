@@ -32,16 +32,13 @@ layout: default
       </div>
       {% endif %}
 
-      {% if page.description %}
-        <div class="mb-6 clear-both">
-          {{ page.description }}
-        </div>
-      {% endif %}
 
-      <!-- .md content -->
-      <div class="page_content mb-8 clear-both">
-        {{ content }}
+    
+      {% if page.description %}
+      <div class="mb-6 clear-both">
+        {{ page.description }}
       </div>
+    {% endif %}
 
       <!-- ALBUMS by ID -->
       {% if page.albums %}
@@ -125,7 +122,18 @@ layout: default
         {% endfor %}
       {% endif %}
 
+
+      <!-- .md content -->
+      <div class="page_content mb-8 clear-both">
+        {{ content }}
+      </div>
+
     </div>
+
+
+
+
+
   </section>
 </main>
 
