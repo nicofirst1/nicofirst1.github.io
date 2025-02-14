@@ -45,7 +45,6 @@
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -57,7 +56,7 @@
         </div>
     </div>
     <a href="/" class="logo absolute left-6 top-4 md:top-5">
-        <img src="/assets/images/logo2.png" alt="Logo" style="width: 40px;" class="w-32 dark:invert">
+        <img src="/assets/images/logo2.png" alt="Logo" class="logo-img">
     </a>
 
     <div class="container flex gap-6 lg:gap-10 xl:gap-12 mx-auto align-top">
@@ -74,11 +73,7 @@
             <a href="/news" class="dark:text-slate-50 text-base lg:text-xl capitalize">news</a>
             
         </nav>
-        <form class="mode-switch absolute right-16 top-5 md:top-7 lg:top-8" data-bss-toggle="mode">
-            <label class="form-check-label collapse lg:visible" for="theme-mode">Light</label>
-            <input type="checkbox" class="form-check-input" id="theme-mode" aria-label="dark-mode-switch" style=" background-image: url(/assets/images/svg/circle.svg)">
-            <label class="form-check-label collapse lg:visible" for="theme-mode">Dark</label>
-          </form>
+
     </div>
 </header>
 
@@ -91,66 +86,6 @@
             el.classList.toggle("active-burger");
         }
     }
-    /**
- * Theme Mode Switch
- * Switch betwen light/dark mode. The chosen mode is saved to browser's local storage
-*/
-let root = document.getElementsByTagName('html')[0];
-let checkbox = document.getElementById('theme-mode');
-let locMode = getLightingMode();
-let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-if ((!darkMode && locMode == undefined) || (locMode == 'light')) {
-  root.classList.remove('dark');
-  checkbox.checked = false;
-} else {
-  root.classList.add('dark')
-  checkbox.checked = true
-}
-
-function getLightingMode() {
-  const storedPreference = localStorage.getItem('lightingModePreference');
-
-  if (storedPreference) {
-    const parsedPreference = JSON.parse(storedPreference);
-    const currentTime = new Date().getTime();
-
-    if (currentTime < parsedPreference.expires) {
-      return parsedPreference.mode;
-    } else {
-      localStorage.removeItem('lightingModePreference');
-    }
-  }
-  return undefined;
-}
-
-function setLightingMode(mode) {
-  const currentTime = new Date().getTime();
-  const expirationTime = currentTime + 7 * 24 * 60 * 60 * 1000; // 7 days
-
-  const preferenceData = {
-    mode: mode,
-    expires: expirationTime,
-  };
-
-  localStorage.setItem('lightingModePreference', JSON.stringify(preferenceData));
-}
-
-const themeModeSwitch = (() => {
-  let modeSwitch = document.querySelector('[data-bss-toggle="mode"]')
-  if (modeSwitch === null) return;
-  let checkbox = modeSwitch.querySelector('.form-check-input')
-
-  modeSwitch.addEventListener('click', (e) => {
-    if (checkbox.checked) {
-      root.classList.add('dark');
-      setLightingMode('dark');
-    } else {
-      root.classList.remove('dark');
-      setLightingMode('light');
-    }
-  });
-})();
-
 </script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
   <main class="news-post min-h-[80vh] flex flex-col gap-6">
   <section class="pt-24">
