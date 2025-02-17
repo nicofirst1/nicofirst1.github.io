@@ -1,4 +1,4 @@
-- id: "album1"
+- id: "draft"
   title: "AlgoRhythms"
   album_cover: "/assets/images/projects/music/album1.jpg"
   description: "Album description"
@@ -8,4 +8,13 @@
     - "divine_mosaic"
     - "trust_by_design"
     - "just_an_ai"
+    - "speed_of_thought"
+
+- id: "album1"
+  title: "AlgoRhythms"
+  album_cover: "/assets/images/projects/music/album1.jpg"
+  description: "Album description"
+  songs:
+    - "speed_of_thought"
+    - "draft"
 

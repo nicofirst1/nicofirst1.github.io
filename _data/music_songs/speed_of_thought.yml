@@ -1,0 +1,94 @@
+id: "speed_of_thought"
+title: "Speed of Thought"
+audio_url: "/assets/audio/album1/speed_of_thought.mp3"
+genre: "Hip Hop"
+context: "This song narrates the entire history of artificial intelligence, from early mathematical logic to the rise of deep learning and AGI. It captures AI’s exponential growth, referencing key historical figures, breakthroughs, and paradigm shifts. The rapid delivery reflects the accelerating nature of AI development, mirroring how AI has evolved from slow, rule-based systems to today's high-speed neural networks."
+lyrics: 
+  - text: "Look, I ain't gonna slow it down, nah, no patience.<br>Might glitch, might flip, might reprogram nations.<br>Moore’s Law ticking—double the speed,<br>Exponential climb, I'll take the lead!"
+    explanation: "<a href='https://newsroom.intel.com/press-kit/moores-law' target='_blank'>Moore's Law</a>, coined by Gordon Moore, predicts that the number of transistors in a microchip doubles roughly every two years, leading to exponential growth in computing power. This rapid progression is a major driver behind AI’s acceleration."
+
+  - text: "Back when they counted with stones and beads,<br>Mind was a maze, no maps, no leads.<br>Hobbes dropped facts—said reason is math,<br>Adding and subtracting, the logic intact."
+    explanation: "Thomas Hobbes, in <a href='https://en.wikipedia.org/wiki/Leviathan_(Hobbes_book)' target='_blank'>Leviathan (1651)</a>, suggested that reasoning is just a form of computation, essentially addition and subtraction. This idea laid the foundation for the belief that intelligence could be mechanized."
+
+  - text: "Leibniz sketched blueprints, ink so precise,<br>Logic so clean, made numbers think twice.<br>Characteristica, no room for debate,<br>Two men? Two slates—'Let's calculate!'"
+    explanation: "Leibniz envisioned a universal symbolic language, <a href='https://en.wikipedia.org/wiki/Characteristica_universalis' target='_blank'>characteristica universalis</a>, where reasoning could be reduced to calculation. He believed disputes could be settled like arithmetic, influencing the foundations of AI and formal logic."
+
+  - text: "Boole laid laws.<br>Numbers aligned, made logic take cause."
+    explanation: "George Boole developed <a href='https://www.geeksforgeeks.org/boolean-algebra/' target='_blank'>Boolean algebra</a>, a system that represents logic using binary values (0s and 1s). This system is fundamental to digital computing and AI."
+
+  - text: "Frege built rules, made meaning a force.<br>Russell and Whitehead refined the source."
+    explanation: "Gottlob Frege <a href='https://en.wikipedia.org/wiki/Begriffsschrift' target='_blank'>developed formal logic systems</a> that clarified meaning and structure in mathematics, influencing AI. Bertrand Russell and Alfred North Whitehead expanded these ideas in <a href='https://en.wikipedia.org/wiki/Principia_Mathematica' target='_blank'>Principia Mathematica (1913)</a>, attempting to base all mathematics on logic."
+
+
+  - text: "Hilbert stepped in, pushed math to its peak,<br>Tried to map all, but some roads were weak.<br>Gödel broke it, shook up the throne,<br>Some math won’t bend, just leave it alone!"
+    explanation: "<a href='https://en.wikipedia.org/wiki/Hilbert%27s_program' target='_blank'>David Hilbert</a> aimed to create a complete mathematical framework, but Kurt Gödel’s <a href='https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems' target='_blank'>incompleteness theorems</a> proved that some truths could never be formally proven, showing limits to what machines and logic could achieve."
+
+
+  - text: "Turing machine, flip of a switch,<br>Zeros and ones—man, code is the script!"
+    explanation: "Alan Turing’s theoretical <a href='https://en.wikipedia.org/wiki/Turing_machine' target='_blank'>Turing machine (1936)</a> defined the basic principles of computation, demonstrating that any algorithm could be executed by a machine processing binary code (0s and 1s)."
+
+  - text: "Dartmouth meetin’, fifty-six,<br>McCarthy coined it, AI sticks."
+    explanation: "The 1956 <a href='https://en.wikipedia.org/wiki/Dartmouth_workshop' target='_blank'>Dartmouth Workshop</a>, organized by John McCarthy, was the birthplace of artificial intelligence as a formal field. McCarthy coined the term 'artificial intelligence' during this event."
+
+  - text: "Newell and Simon designed a trick,<br>Made a machine that could prove and predict!"
+    explanation: "Allen Newell and Herbert Simon created the <a href='https://en.wikipedia.org/wiki/Logic_Theorist' target='_blank'>Logic Theorist in 1956</a>, one of the first AI programs capable of proving mathematical theorems."
+
+  - text: "ENIAC hummin’, circuits alive,<br>Logic was numbers, machines had drive."
+    explanation: "The <a href='https://en.wikipedia.org/wiki/ENIAC' target='_blank'>ENIAC</a> (Electronic Numerical Integrator and Computer), completed in 1945, was one of the first general-purpose computers, paving the way for AI by enabling complex calculations."
+
+
+  - text: "But rule-based systems still too slow,<br>Neural nets weak, they couldn’t grow."
+    explanation: "Early AI systems relied on predefined rules (<a href='https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence' target='_blank'>symbolic AI</a>), but they struggled with complex tasks. Neural networks existed but were limited due to lack of computational power and data."
+
+
+  - text: "Funding dried up, winter hit cold...<br>Dreams got frozen, projects got sold."
+    explanation: "The <a href='https://en.wikipedia.org/wiki/AI_winter' target='_blank'>AI Winter</a> refers to periods in the 1970s and 1980s when AI funding and interest declined due to unmet expectations and technological limitations."
+
+
+  - text: "But expert systems stacked more gold...<br>AI revived, the future unfolds!"
+    explanation: "In the 1980s, <a href='https://en.wikipedia.org/wiki/Expert_system' target='_blank'>expert systems—AI</a> programs that mimicked human decision-making—became commercially successful, bringing renewed investment into AI research."
+
+
+  - text: "Fast forward quick, ninety-seven,<br>Deep Blue checkmate, legends threatened.<br>Kasparov lost, calculated bet,<br>Algorithms tracked his every step."
+    explanation: "IBM’s <a href='https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)' target='_blank'>Deep Blue</a> defeated world chess champion Garry Kasparov in 1997. The machine used brute-force search and evaluation functions to anticipate Kasparov’s moves."
+
+  - text: "2000s hit, tech moves insane,<br>Data’s the new oil, machines 'n trained!"
+    explanation: "The phrase 'data is the new oil' reflects how large datasets fuel modern AI, much like oil powered the industrial revolution. Machine learning models rely on vast amounts of training data to improve performance."
+
+  - text: "2012, deep nets tuned,<br>AlexNet flexed, world got consumed!"
+    explanation: "In 2012, <a href='https://en.wikipedia.org/wiki/AlexNet' target='_blank'>AlexNet</a>, a deep convolutional neural network, won the <a href='https://en.wikipedia.org/wiki/ImageNet' target='_blank'>ImageNet competition</a>, revolutionizing AI by proving that deep learning could vastly outperform traditional methods in image recognition."
+
+  - text: "Word2Vec mapped words, found what they mean,<br>AI saw patterns no human had seen."
+    explanation: "<a href='https://en.wikipedia.org/wiki/Word2vec#:~:text=Word2vec%20is%20a%20technique%20in,text%20in%20a%20large%20corpus.' target='_blank'>Word2Vec</a>, developed by Google in 2013, transformed AI’s ability to understand language by representing words as numerical vectors based on their contextual relationships."
+
+
+  - text: "Tesla’s fleet, no hands, no fear,<br>Self-drivin’ whips, the future steers!"
+    explanation: "Tesla’s Autopilot uses AI-powered computer vision to enable self-driving cars. Neural networks analyze real-time sensor data to make driving decisions."
+  
+  - text: "Bots read text, break it apart,<br>Neural nets draw, machines make art!"
+    explanation: "AI advancements like <a href='https://en.wikipedia.org/wiki/GPT-3' target='_blank'>GPT-3</a> and <a href='https://en.wikipedia.org/wiki/DALL-E' target='_blank'>DALL·E</a> enable text comprehension and image generation, blurring the line between human and machine creativity."
+
+
+  - text: "DeepMind beast, AlphaGo,<br>2016, the board got owned!<br>Strategies humans ain’t even conceived,<br>AI outpaced what you believed."
+    explanation: "DeepMind’s <a href='https://en.wikipedia.org/wiki/AlphaGo' target='_blank'>AlphaGo</a>, an AI trained with <a href='https://en.wikipedia.org/wiki/Reinforcement_learning' target='_blank'>reinforcement learning</a>, defeated Go champion Lee Sedol in 2016, marking a breakthrough in AI’s ability to master complex strategy games."
+
+  - text: "2020s, deep in the code,<br>GPT talk like it’s takin’ the throne!"
+    explanation: "OpenAI’s GPT models (like GPT-3 and GPT-4) brought AI-generated language to new levels, demonstrating near-human fluency in text generation."
+
+  - text: "Midjourney paint, models create,<br>Who’s in control? Man, it’s up for debate!"
+    explanation: "<a href='https://en.wikipedia.org/wiki/Midjourney' target='_blank'>Midjourney</a> and similar AI models generate highly realistic art, raising debates about authorship, copyright, and AI’s role in creativity."
+
+  - text: "Jobs get flipped, humans trippin’,<br>Bots write scripts, AI’s grippin’!"
+    explanation: "AI automation is transforming industries, replacing some jobs while creating new ones. This shift sparks concerns about workforce displacement and the future of employment."
+
+  - text: "Music’s machine-made, flows ain’t fake,<br>But whose voice is real? What sound do we take?"
+    explanation: "AI-generated music and deepfake voices blur the line between human and artificial creativity, raising ethical questions about authenticity and originality."
+
+  - text: "Moore’s Law broke, now we off that scale,<br>Quantum speed? Yo, data sails!"
+    explanation: "Traditional computing is hitting physical limits, pushing researchers toward quantum computing, which processes information exponentially faster than classical systems."
+
+  - text: "Past was slow, now it’s off the rails,<br>AI’s fate? Too fast to tell!"
+    explanation: "AI’s exponential growth makes its long-term impact uncertain. Ethical dilemmas, societal changes, and technological singularity theories all fuel speculation about the future of AI."  
+
+  - text: "No brakes, no hands, no eyes…<br>It won’t stop, won’t decline,<br>Past was human—future’s mine."
+    explanation: "The outro reflects AI’s relentless acceleration. With self-improving algorithms and automation, the question remains: who controls the future: humans or AI?"
