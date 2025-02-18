@@ -1,6 +1,6 @@
 id: "speed_of_thought"
 title: "Speed of Thought"
-audio_url: "/assets/audio/album1/speed_of_thought.mp3"
+audio_url: "assets/audio/album1/speed_of_thought.mp3"
 genre: "Hip Hop"
 context: "This song narrates the entire history of artificial intelligence, from early mathematical logic to the rise of deep learning and AGI. It captures AI’s exponential growth, referencing key historical figures, breakthroughs, and paradigm shifts. The rapid delivery reflects the accelerating nature of AI development, mirroring how AI has evolved from slow, rule-based systems to today's high-speed neural networks."
 lyrics: 
