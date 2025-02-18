@@ -86,8 +86,8 @@ layout: default
 
                       <!-- Audio player -->
                       <audio controls class="audio-player mb-4">
-                        <source src="{{ songFile.audio_url | prepend: site.baseurl }}" type="audio/mp3" />
-                        Your browser does not support the audio element.
+                        <source src="{{ songFile.audio_url | relative_url | absolute_url }}" type="audio/mp3" />
+                        Your browser does not support the audio element!
                       </audio>
                       <span style="font-size: 0.9em; color: #666;">(Click lyrics to see explanation)</span>
 
