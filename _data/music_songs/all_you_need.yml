@@ -1,6 +1,6 @@
 id: "all_you_need"
 title: "All you need"
-audio_url: /assets/audio/album1/All_you_need.mp3
+audio_url: /assets/audio/album1/all_you_need.mp3
 genre: "Trap"
 context: "This song explains the key concepts behind transformer architectures, a breakthrough in AI. Transformers revolutionized the way machines process data, particularly in natural language processing (NLP) tasks. Unlike older models like Recurrent Neural Networks (RNNs), which process data sequentially, transformers use a mechanism called self-attention to analyze entire sequences simultaneously. This allows for faster, more efficient data processing and a better understanding of complex patterns. The song covers the limitations of earlier models, introduces the parallel processing capability of transformers, and explains concepts like keys, queries, and self-attention."
 lyrics:

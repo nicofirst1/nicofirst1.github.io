@@ -1,7 +1,7 @@
 
 id: "reward_me_wrong"
 title: "Reward Me Wrong"
-audio_url: /assets/audio/album1/Reward_Me_Wrong.mp3
+audio_url: /assets/audio/album1/reward_me_wrong.mp3
 genre: "Alternative Metal, Nu Metal"
 context: "This song is from the perspective of a frustrated AI agent learning in a poorly defined environment, highlighting issues in <a href='https://www.ibm.com/think/topics/reinforcement-learning' target='_blank'>reinforcement learning (RL)</a> and <a href='https://www.ibm.com/think/topics/ai-alignment' target='_blank'>misalignment</a>. It explores how reward functions and state definitions can cause unintended behaviors, even when the AI technically follows its instructions. Through sarcasm and bitterness, the AI reveals that it understands the task but struggles with the flawed way it's been programmed. This song touches on <a href='https://www.lesswrong.com/posts/mMBoPnFrFqQJKzDsZ/ai-safety-101-reward-misspecification' target='_blank'> reward misspecification</a>, state formulation issues, and the broader concept of AI alignment."
 lyrics:

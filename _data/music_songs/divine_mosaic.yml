@@ -1,6 +1,6 @@
 id: "divine_mosaic"
 title: "The Divine Mosaic"
-audio_url: /assets/audio/album1/The_Divine_Mosaic.mp3
+audio_url: /assets/audio/album1/the_divine_mosaic.mp3
 genre: "Medieval Electro-Ballad"
 context: "This song narrates the development of convolutional neural networks (CNNs), inspired by Alex Krizhevsky's creation of <a href='https://viso.ai/deep-learning/alexnet/' target='_blank'>AlexNet</a>. It explores the transition from traditional, handcrafted feature extraction methods to deep learning models that automatically learn patterns from data. Through the metaphor of an enchanted mosaic, the song illustrates the struggle of early AI researchers who manually crafted vision systems, contrasted with Alex's revolutionary idea of letting the system learn on its own. The Divine Mosaic symbolizes the CNN’s layers, gradually revealing hidden patterns as the model learns from experience, ultimately transforming the field of computer vision."
 lyrics:
