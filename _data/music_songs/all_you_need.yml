@@ -1,8 +1,8 @@
 id: "all_you_need"
 title: "All you need"
-audio_url: /assets/audio/album1/All_you_need.mp3
+audio_url: /assets/audio/album1/all_you_need.mp3
 genre: "Trap"
-context: "This song explains the key concepts behind transformer architectures, a breakthrough in AI. Transformers revolutionized the way machines process data, particularly in natural language processing (NLP) tasks. Unlike older models like Recurrent Neural Networks (RNNs), which process data sequentially, transformers use a mechanism called self-attention to analyze entire sequences simultaneously. This allows for faster, more efficient data processing and a better understanding of complex patterns. The song covers the limitations of earlier models, introduces the parallel processing capability of transformers, and explains concepts like keys, queries, and self-attention."
+context: "This song explains the key concepts behind transformer architectures, a breakthrough in AI. Transformers revolutionized the way machines process data, particularly in natural language processing (NLP) tasks. Unlike older models like Recurrent Neural Networks (RNNs), which process data sequentially, transformers use a mechanism called self-attention to analyze entire sequences simultaneously. This allows for faster, more efficient data processing and a better understanding of complex patterns. The song covers the limitations of earlier models, introduces the parallel processing capability of transformers, and explains concepts like keys, queries, and self-attention. This song is also available on <a href='https://youtu.be/6CP7mkj-fxA' target='_blank'>youtube</a>."
 lyrics:
   - text: "Once upon a time, models tried to learn<br>Recurrent nets took turns, got burned"
     explanation: "<a href='https://www.ibm.com/think/topics/recurrent-neural-networks' target='_blank' >Recurrent Neural Networks (RNNs)</a> were early models used for sequence data like text and speech. They relied on loops to process data one step at a time, which made them inefficient and prone to forgetting earlier information in long sequences."
