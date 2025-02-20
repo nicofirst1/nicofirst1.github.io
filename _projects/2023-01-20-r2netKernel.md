@@ -10,7 +10,7 @@ button_name: Join us!
 
 ## CAIRNE
 
-[CAIRNE](https://claire-ai.org/) (formerly CAIRNE)  seeks to strengthen European excellence in AI research and innovation. The network forms a pan-European Confederation of Laboratories for Artificial Intelligence Research in Europe. Its member groups and organizations are committed to working together towards realizing the vision of CAIRNE: European excellence across all of AI, for all of Europe, with a human-centred focus.
+[CAIRNE](https://claire-ai.org/) (formerly CLAIRE)  seeks to strengthen European excellence in AI research and innovation. The network forms a pan-European Confederation of Laboratories for Artificial Intelligence Research in Europe. Its member groups and organizations are committed to working together towards realizing the vision of CAIRNE: European excellence across all of AI, for all of Europe, with a human-centred focus.
 
 CAIRNE (Confederation of Laboratories for Artificial Intelligence Research in Europe ) has more than 435 labs in 37 countries, counting 24k researchers.
 
