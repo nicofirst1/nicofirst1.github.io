@@ -3,17 +3,16 @@
   album_cover: "/assets/images/projects/music/album1.jpg"
   description: "Album description"
   songs:
-    - "all_you_need"
     - "reward_me_wrong"
-    - "trust_by_design"
     - "just_an_ai"
-    - "speed_of_thought"
+    - "trust_by_design"
 
 - id: "album1"
   title: "AlgoRhythms"
   album_cover: "/assets/images/projects/music/album1.jpg"
   description: "Album description"
   songs:
+    - "all_you_need"
     - "divine_mosaic"
     - "speed_of_thought"
     - "draft"
