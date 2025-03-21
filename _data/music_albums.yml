@@ -3,7 +3,6 @@
   album_cover: "/assets/images/projects/music/album1.jpg"
   description: "Album description"
   songs:
-    - "just_an_ai"
     - "trust_by_design"
 
 - id: "album1"
@@ -11,6 +10,7 @@
   album_cover: "/assets/images/projects/music/album1.jpg"
   description: "Album description"
   songs:
+    - "just_an_ai"
     - "reward_me_wrong"
     - "all_you_need"
     - "divine_mosaic"
