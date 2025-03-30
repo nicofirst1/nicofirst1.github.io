@@ -3,17 +3,16 @@
   album_cover: "/assets/images/projects/music/album1.jpg"
   description: "Album description"
   songs:
-    - "trust_by_design"
 
 - id: "album1"
   title: "AlgoRhythms"
   album_cover: "/assets/images/projects/music/album1.jpg"
-  description: "Album description"
+  description: "AlgoRhythms is an album about the foundations and challenges of artificial intelligence. Each song introduces a key concept: transformers, convolutional networks, reinforcement learning, alignment, AI ethics—through accessible music and lyrics. The goal is to make technical ideas understandable without simplifying their meaning."
   songs:
+    - "trust_by_design"
     - "just_an_ai"
     - "reward_me_wrong"
     - "all_you_need"
     - "divine_mosaic"
     - "speed_of_thought"
-    - "draft"
 
