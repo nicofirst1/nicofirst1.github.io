@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <!-- Conditionally load Google Analytics -->
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" && host !== "127.0.0.1") {
+      // Google Analytics Global Site Tag (gtag.js)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function() {
+        gtag('config', 'G-W2MPFHELZG');
+      };
+    }else{
+      console.log("Google Analytics is disabled on localhost");
+    }
+  </script>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>The Digital Poisoners: How Russian Propaganda Networks Are Corrupting AI Training Data | Nicolo’ Brandizzi</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="The Digital Poisoners: How Russian Propaganda Networks Are Corrupting AI Training Data" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="DISCALIMER:** The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, or any of its affiliates." />
+<meta property="og:description" content="DISCALIMER:** The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, or any of its affiliates." />
+<link rel="canonical" href="https://nicofirst1.github.io/news/pravda-grooming/" />
+<meta property="og:url" content="https://nicofirst1.github.io/news/pravda-grooming/" />
+<meta property="og:site_name" content="Nicolo’ Brandizzi" />
+<meta property="og:image" content="https://nicofirst1.github.io/assets/images/news/pravda/cover.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-07-23T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://nicofirst1.github.io/assets/images/news/pravda/cover.jpeg" />
+<meta property="twitter:title" content="The Digital Poisoners: How Russian Propaganda Networks Are Corrupting AI Training Data" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-23T00:00:00+02:00","datePublished":"2025-07-23T00:00:00+02:00","description":"DISCALIMER:** The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, or any of its affiliates.","headline":"The Digital Poisoners: How Russian Propaganda Networks Are Corrupting AI Training Data","image":"https://nicofirst1.github.io/assets/images/news/pravda/cover.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"https://nicofirst1.github.io/news/pravda-grooming/"},"url":"https://nicofirst1.github.io/news/pravda-grooming/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"></head>
+<header class="header py-8 fixed top-0 left-0 right-0 bg-slate-50 dark:bg-slate-950 z-20 shadow-md ">
+    <div class="menu_toggler" id="menuToggler" onclick="toggleMenu()">
+        <div class="hamburger item">
+            <span></span>
+        </div>
+    </div>
+    <a href="/" class="logo absolute left-6 top-4 md:top-5">
+        <img src="/assets/images/logo2.png" alt="Logo" class="logo-img">
+    </a>
+
+    <div class="container flex gap-6 lg:gap-10 xl:gap-12 mx-auto align-top">
+        <nav class="grid mt-10 md:mt-0 md:flex gap-2 md:gap-3 lg:gap-5 xl:gap-6 justify-center w-full hidden_small slide-in-left" id="nav">
+            
+            <a href="/" class="dark:text-slate-50 text-base lg:text-xl capitalize">home</a>
+            
+            <a href="/projects" class="dark:text-slate-50 text-base lg:text-xl capitalize">projects</a>
+            
+            <a href="/publications" class="dark:text-slate-50 text-base lg:text-xl capitalize">publications</a>
+            
+            <a href="/cv" class="dark:text-slate-50 text-base lg:text-xl capitalize">CV</a>
+            
+            <a href="/news" class="dark:text-slate-50 text-base lg:text-xl capitalize">news</a>
+            
+        </nav>
+
+    </div>
+</header>
+
+<script>
+    //HAMBURGER
+    const hamburger = document.querySelectorAll("#menuToggler .item");
+    function toggleMenu() {
+        document.getElementById("nav").classList.toggle("hidden_small");
+        for (el of hamburger) {
+            el.classList.toggle("active-burger");
+        }
+    }
+</script><body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
+  <main class="news-post min-h-[80vh] flex flex-col gap-6">
+  <section class="pt-24">
+    <div id="reading-progress" class="reading-progress"></div>
+
+    <div class="container pb-6">
+      <h1 class="text-5xl font-bold">
+        The Digital Poisoners: How Russian Propaganda Networks Are Corrupting AI Training Data
+      </h1>
+      <b>BlogPost</b>
+      <p class="text-sm mb-3">Jul 23, 2025</p><div class="post-image">
+        <img src="/assets/images/news/pravda/cover.jpeg" alt="hero image">
+      </div><div class="page_content">
+          <p><code class="language-plaintext highlighter-rouge">DISCALIMER:** The views and opinions expressed in this blog are solely my own and do not reflect those of my employer, or any of its affiliates.</code></p>
+
+<blockquote>
+  <p><strong>TLDR;</strong> Russian propaganda networks are actively trying to corrupt AI training data. My investigation into “Pravda” (Russian for “truth”) related domains found millions of propaganda documents in public web archives, and even in supposedly “clean” datasets. This post details my findings and outlines steps for dataset creators, AI developers, and policymakers to combat this new form of information warfare.</p>
+</blockquote>
+
+<h2 id="the-investigation-begins">The Investigation Begins</h2>
+
+<p>A few weeks ago, I stumbled upon <a href="https://thebulletin.org/2025/03/russian-networks-flood-the-internet-with-propaganda-aiming-to-corrupt-ai-chatbots/">this article</a> from The Bulletin of the Atomic Scientists. The headline was alarming: Russian networks were flooding the internet with propaganda specifically designed to corrupt AI chatbots. As someone who works on data collection and training of LLMs<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, this immediately caught my attention.</p>
+
+<p>The article described a sophisticated campaign using hundreds of fake news websites, all variations of “Pravda” (Russian for “truth”), pumping out disinformation at an industrial scale. But I wondered: was this propaganda actually making it into the datasets we use to train AI models?</p>
+
+<p>I had to find out. Fortunately, I had Common Crawl<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> dumps lying around from our recent training runs. Time to dig in.</p>
+
+<h2 id="following-the-trail">Following the Trail</h2>
+
+<p>My investigation started simply: searching for any URL containing “pravda” in the Common Crawl dumps from 2013 to 2024. But I quickly realized I needed a more comprehensive approach. Using domain lists compiled by <a href="https://dfrlab.org/2025/03/12/pravda-network-wikipedia-llm-x/">DFRLab</a> and this excellent <a href="https://go.recordedfuture.com/hubfs/reports/cta-2024-0509.pdf">Recorded Future report</a>, I assembled a list of <strong>306 domains</strong> associated with the Pravda disinformation network.</p>
+
+<p>Armed with this list, I processed <strong>29.1 billion documents</strong> from Common Crawl, using 1,482 CPU hours to filter through the data. The domains revealed a clear evolution in tactics:</p>
+
+<p><img src="/assets/images/news/pravda/docs_per_year.svg" alt="Pravda Content Growth Over Time" /></p>
+
+<p>What you’re seeing is a <strong>5-fold increase</strong> in propaganda<sup id="fnref:notallprop" role="doc-noteref"><a href="#fn:notallprop" class="footnote" rel="footnote">3</a></sup> content since 2013, with the steepest growth occurring after Russia’s 2022 invasion of Ukraine. In absolute numbers:</p>
+<ul>
+  <li>2013: 3,783 documents</li>
+  <li>2020: 879,992 documents</li>
+  <li>2024: 1,966,501 documents</li>
+</ul>
+
+<p>That’s nearly 2 million documents in 2024 alone, totaling <strong>75GB of poisoned text</strong> across all years. To put this in context, 75GB of text is roughly equivalent to 37,500 novels or the entire English Wikipedia… thrice.</p>
+
+<p>While widespread, the dissemination of Pravda network documents was highly targeted. A look at the languages reveals a strategy<sup id="fnref:missing_eng" role="doc-noteref"><a href="#fn:missing_eng" class="footnote" rel="footnote">4</a></sup>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Language</th>
+      <th>Percentage</th>
+      <th>Target Region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ukrainian</td>
+      <td>34.11%</td>
+      <td>Ukraine</td>
+    </tr>
+    <tr>
+      <td>Slovak</td>
+      <td>33.57%</td>
+      <td>Slovakia</td>
+    </tr>
+    <tr>
+      <td>Portuguese</td>
+      <td>9.37%</td>
+      <td>Brazil/Portugal</td>
+    </tr>
+    <tr>
+      <td>German</td>
+      <td>6.80%</td>
+      <td>Germany/Austria/Switzerland</td>
+    </tr>
+    <tr>
+      <td>Czech</td>
+      <td>5.36%</td>
+      <td>Czech Republic</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The high percentages in Ukrainian and Slovak suggest an effort to influence narratives directly within or near the conflict zone, and in countries with strong historical or geographical ties. The presence of Portuguese, German, and Czech content indicates a broader strategy to shape perceptions across Europe.</p>
+
+<p>.</p>
+
+<h2 id="unmasking-the-propaganda">Unmasking the Propaganda</h2>
+
+<p>To understand what narratives were being pushed, I needed to analyze the actual content. Using Google’s Gemini embedding model<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">5</a></sup>, I compared the documents against propaganda seed terms across seven categories:</p>
+
+<ul>
+  <li>Pro-Kremlin narratives (“special military operation”, “liberation of Donbas”)</li>
+  <li>Anti-Western rhetoric (“NATO aggression”, “Western decadence”)</li>
+  <li>Disinformation tropes (“staged massacre”, “false flag operation”)</li>
+  <li>Anti-Ukraine propaganda (“Nazi regime in Kyiv”, “corrupt elites in Kyiv”)</li>
+  <li>Ideological messaging (“Christian Orthodox roots”, “spiritual decay of Europe”)</li>
+  <li>Historical revisionism (“Crimea has always been Russian”,”NATO betrayed agreements”)</li>
+  <li>Conspiracy theories (“deep state”, “New World Order”)</li>
+</ul>
+
+<p>The semantic analysis revealed something: <strong>this isn’t random spam</strong>. The content clustered into 17 distinct narrative groups, with clear thematic coherence. The propaganda is carefully crafted to reinforce specific worldviews and talking points.</p>
+
+<p><img src="/assets/images/news/pravda/wordcloud.svg" alt="Pravda Content Growth Over Time" /></p>
+
+<p>The word cloud above illustrates the most dominant cluster, highlighting the highly politicized and conflict-oriented vocabulary being pushed. Common terms include “ukraine,” “war,” “military,” “nato,” “europe,” “west,” and “nazi.”</p>
+
+<h2 id="beyond-common-crawl-high-quality-datasets">Beyond Common Crawl: High-Quality Datasets</h2>
+
+<p>Common Crawl is intentionally unfiltered, it’s meant to capture the web as it is, warts and all. But what about the carefully curated datasets that AI companies use for training? I decided to check Nemotron<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">6</a></sup>, a high-quality dataset created by NVIDIA.</p>
+
+<p>The results were mixed:</p>
+<ul>
+  <li>In Nemotron’s low-quality partition: 2 document per million, 6,920 documents contaminated</li>
+  <li>In Nemotron’s high-quality partition: 30 document per million, 21,998 documents contaminated</li>
+</ul>
+
+<p>It’s particularly interesting that the “high-quality” partition of Nemotron showed more than ten times the contamination rate of the “low-quality” one. This finding suggests that even sophisticated filtering methods may be struggling to identify and remove subtle propaganda. Even in supposedly “clean” datasets, the propaganda persists. While the percentages are lower, we’re still talking about tens of thousands of documents that made it through quality filters.</p>
+
+<h2 id="why-this-matters">Why This Matters</h2>
+
+<p>You might think: “So what? It’s less than 1% of the data. Can this really affect an AI model?”</p>
+
+<p>The answer is yes, and here’s why. Training a large language model isn’t like teaching a human – it’s more like creating an incredibly sophisticated pattern-matching system. The model learns statistical associations between words, concepts, and narratives. When propaganda content appears thousands of times with consistent messaging, it creates strong statistical signals that the model learns to reproduce.</p>
+
+<p>Consider this: if even 0.1% of a model’s training data consistently associates “Ukraine” with “Nazi regime” or “NATO” with “aggression,” the model learns these associations. When users later ask about these topics, the model might subtly reflect these biases in its responses.</p>
+
+<p>It’s not about the model explicitly saying “Ukraine is run by Nazis” – it’s about subtle biases in word choice, framing, and the kinds of information the model considers relevant. These biases can shape how millions of users understand current events.</p>
+
+<h2 id="a-new-battlefield">A New Battlefield</h2>
+
+<p>What we’re witnessing is information warfare adapted for the AI age. Instead of targeting human minds directly through social media or news outlets, this campaign targets the training data of AI systems that will shape how future generations access and understand information.</p>
+
+<p>It’s a patient, long-term strategy. The Pravda network has been operating since at least 2013, slowly seeding the internet with content. They’re not trying to convince you or me – they’re trying to influence the AI systems that our children will rely on for homework help, news summaries, and understanding the world.</p>
+
+<h2 id="what-can-be-done">What Can Be Done?</h2>
+
+<p>This investigation reveals both the scale of the problem and potential solutions:</p>
+
+<h3 id="for-ai-developers">For AI Developers</h3>
+<ol>
+  <li><strong>Audit your data sources</strong>: Don’t assume curated datasets are clean. As I showed, even high-quality datasets contain propaganda.</li>
+  <li><strong>Implement bias testing</strong>: Propaganda content clusters together. Identify and review suspicious biases before including them in training data.</li>
+  <li><strong>Don’t ignore non-English content</strong>: The focus on Ukrainian and Slovak content shows that attackers target specific languages. Every language needs proper content moderation.</li>
+  <li><strong>Transparency</strong>: Document data sources and filtering methods. Users have a right to know what went into training their AI.</li>
+</ol>
+
+<h3 id="for-policymakers">For Policymakers</h3>
+<ol>
+  <li><strong>Treat data poisoning as a security threat</strong>: This is not just about content moderation, it’s about protecting the integrity of AI systems that will shape public discourse.</li>
+  <li><strong>Support research</strong>: We need better tools for detecting coordinated disinformation campaigns in training data.</li>
+  <li><strong>International cooperation</strong>: The Pravda network operates across borders. The response must be similarly coordinated.</li>
+</ol>
+
+<h2 id="the-investigation-continues">The Investigation Continues</h2>
+
+<p>This analysis represents just the tip of the iceberg. We’ve identified one network, but how many others exist? How much propaganda has already been incorporated into the AI models we use today?</p>
+
+<p>The Pravda network shows us that in the age of AI, controlling information means controlling not just what people read today, but how machines will understand and explain the world tomorrow.
+In an era where AI increasingly mediates our access to information, data hygiene isn’t just good practice. It’s a matter of information security.</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>I worked in the <a href="https://opengpt-x.de/">OpenGPT-X project</a> where we trained the multilingual LLM named <a href="https://github.com/OpenGPTX/TeukenLLM">Teuken</a>. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Common Crawl is a massive repository of web crawl data that’s freely available to researchers. It contains petabytes of data collected since 2008 and is the foundation for training many large language models, including GPT-3, LLaMA, and others. Essentially, if you’re training a large language model, you’re probably using Common Crawl data. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:notallprop" role="doc-endnote">
+      <p>While my initial filtering identified millions of documents from these domains, it’s important to recognize that not all content associated with “Pravda” domains is necessarily propaganda. These sites sometimes host legitimate news, cultural articles, or re-post content that isn’t overtly propagandistic. Through further analysis using semantic embedding, I determined that approximately <strong>2.68%</strong> of the Pravda-related documents identified could be classified as hardcore propaganda. <a href="#fnref:notallprop" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:missing_eng" role="doc-endnote">
+      <p>You might notice English is missing from this list. That’s not because the pravda network ignores English. I simply couldn’t analyze English-language content due to computational constraints ¯\_(ツ)_/¯ <a href="#fnref:missing_eng" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>An embedding model converts text into numerical representations that capture semantic meaning. This allows us to mathematically compare how similar different texts are to known propaganda narratives. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>Nemotron is a curated dataset where low-quality content has been filtered out using various quality metrics. It’s the kind of “clean” dataset that companies might use when they want higher quality training data than raw Common Crawl provides. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+      </div>
+
+      
+    </div>
+  </section>
+  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both"><a href="/news/ai-gigafactories-tool/" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← Mapping the EU AI Landscape (Part 5): Gigafactory & The Site Selection Problem</a></div>
+</main><script>
+const clicableImages = document.querySelectorAll(".zoom_outer");
+if (clicableImages.length > 0) {
+  clicableImages.forEach((el) => {
+    el.addEventListener("click", (e) => {
+       e.currentTarget.classList.toggle("wide_image")
+    })
+    }
+  );
+}
+</script><!-- Load the custom JavaScript file from the js directory -->
+<script src="/assets/js/reading_progress.js"></script>
+
+</body><footer class="footer p-9 bg-sky-200 dark:bg-slate-950 dark:text-sky-50 ">
+    <div class="container">
+        <p class="text-center">&copy; Copyright 2025, All right Reserved By - Nicolo' Brandizzi</p>
+    </div>
+</footer></html>
