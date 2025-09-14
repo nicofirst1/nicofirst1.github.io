@@ -1,0 +1,16 @@
+---
+layout: none
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url={{ page.redirect_to | escape }}">
+  <link rel="canonical" href="{{ page.redirect_to | absolute_url }}">
+  <title>Redirecting…</title>
+</head>
+<body>
+  <p>Redirecting to <a href="{{ page.redirect_to | escape }}">{{ page.redirect_to }}</a>…</p>
+  <script>location.replace("{{ page.redirect_to | escape }}");</script>
+</body>
+</html>

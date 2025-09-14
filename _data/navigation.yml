@@ -13,3 +13,6 @@
 - title: news
   link: /news
   page_id: news
+- title: Blog
+  link: /blog
+  page_id: blog

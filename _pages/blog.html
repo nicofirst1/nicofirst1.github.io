@@ -1,0 +1,17 @@
+---
+layout: default
+title: Blog
+description: NICOLO' BRANDIZZI - Blog posts
+page_id: blog
+---
+<section class="projects container pt-2 lg:pt-9 mb-12">
+    <h1 class="font-bold text-5xl">{{page.title}}</h1>
+    <div class="blog">
+        <div class="blog_grid sm:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1">
+            {% assign sorted = site.blog | sort: 'date' | reverse %}
+            {% for post in sorted %}
+                {% include news_card.html %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

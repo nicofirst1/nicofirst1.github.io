@@ -7,6 +7,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 #scholar:
 #  style: modern-language-association
@@ -17,6 +18,9 @@ sass:
   sass_dir: _scss
 
 collections:
+  blog:
+    output: true
+    permalink: /blog/:slug/
   pages:
     output: true
     permalink: /:title/
@@ -36,22 +40,24 @@ collections:
     output: true
     permalink: /secret-drafts/:slug/
 defaults:
-  -
-    scope:
-      path: "_projects" 
+  - scope:
+      path: "_projects"
     values:
       layout: "projects"
-  -
-    scope:
+  - scope:
       path: "_secret_drafts" # This applies to all files in the _secret_drafts folder
     values:
       layout: "news" # Use the same layout as the news collection
-  -
-    scope:
-      path: "_news" 
+  - scope:
+      path: "_news"
     values:
       layout: "news"
-destignation: "docs"
+  - scope:
+      path: ""
+      type: blog
+    values:
+      layout: "news"
+destination: _site
 exclude:
-- yarn.lock
-- package.json
+  - yarn.lock
+  - package.json
