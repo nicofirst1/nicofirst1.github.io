@@ -1,7 +1,8 @@
 lang: en
-url: "https://nicofirst1.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
-title: "Nicolo' Brandizzi" # the name of your site, e.g. ACME Corp.
+url: "https://nicofirst1.github.io"
+baseurl: "" # user site => empty
+title: "Nicolo' Brandizzi"
+
 plugins:
   - jekyll-postcss-v2
   - jekyll-seo-tag
@@ -9,27 +10,25 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 
-#scholar:
-#  style: modern-language-association
-#  source: ./assets/publications
-postcss:
-  cache: false
 sass:
   sass_dir: _scss
+
+# OUTPUT: let Actions upload _site (don’t write to docs/)
+destination: _site
 
 collections:
   blog:
     output: true
     permalink: /blog/:slug/
-  pages:
-    output: true
-    permalink: /:title/
   news:
     output: true
     permalink: /:collection/:slug/
   projects:
     output: true
     permalink: /:collection/:title/
+  pages:
+    output: true
+    permalink: /:title/
   education:
     output: false
   certificates:
@@ -39,25 +38,16 @@ collections:
   secret_drafts:
     output: true
     permalink: /secret-drafts/:slug/
+
 defaults:
-  - scope:
-      path: "_projects"
-    values:
-      layout: "projects"
-  - scope:
-      path: "_secret_drafts" # This applies to all files in the _secret_drafts folder
-    values:
-      layout: "news" # Use the same layout as the news collection
-  - scope:
-      path: "_news"
-    values:
-      layout: "news"
-  - scope:
-      path: ""
-      type: blog
-    values:
-      layout: "news"
-destination: _site
+  - scope: { path: "_news" }
+    values: { layout: "news" }
+  - scope: { path: "", type: blog }
+    values: { layout: "news" }
+
 exclude:
+  - node_modules
+  - _site
+  - docs
+  - package-lock.json
   - yarn.lock
-  - package.json
