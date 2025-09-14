@@ -1,13 +1,13 @@
 --- 
 layout: default
 title: Dr. Nicolo' Brandizzi
-subtitle: Computer Science Engineer
+subtitle: "AI Research Scientist"
 image: /assets/images/profile_picture.jpg
 hero_bg: /assets/images/hero.jpg
-description: |
-  AI Researcher focusing on   Reinforcement Learning 
-
-  and Natural Language Processing
+description: >
+  I build HPC-scale data pipelines
+  for LLMs (703 TB, 24 languages), develop dataset-quality & reproducibility
+  methods, and work on AI governance. PhD in RL (RLHF) & multi-agent systems.
   
   
 page_id: home

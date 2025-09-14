@@ -1,12 +1,11 @@
 ---
-title: RESEARCH SCIENTIST
+title: Research Scientist
 image: /assets/images/basis_logo.png
 period: 10/2022 - 04/2023
 order: 3
 ---
 
-Research Scientist at [Basis Health](https://basishealth.io/).
+Research Scientist at [Basis Health](https://basishealth.io/).  
 
-- I worked in the analysis of wearable data for the purpose of improving personal health.
-- I was responsible for reading and analyzing relevant research papers, and collaborated with team members to develop new approaches and techniques.
-
+- Conducted research on **wearable health data analysis** to enable personalized health improvement.  
+- Reviewed academic literature and developed innovative methods in collaboration with interdisciplinary teams.  

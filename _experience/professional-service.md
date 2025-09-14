@@ -1,9 +1,9 @@
 ---
-title: RESEARCH COLLABORATOR
+title: Research Collaborator
 image: /assets/images/sapienza_logo.png
 period: 02/2021 - 09/2021
 order: 1
 ---
 
-- I was hired by Sapienza as part of the MBDA project - Artificial Intelligence Techniques for Assisted Mission Planning (Tecniche di Intelligenza Artificiale per una Pianificazione Assistita della Missione).
-- I authored a technical report on ”Multi-agent Model Based Reinforcement Learning” showcasing my expertise in this field and demonstrating my ability to effectively communicate technical concepts and results.
+- Collaborated on the [MBDA Project](https://www.consorzio-cini.it/index.php/en/component/attachments/download/1534) (AI for Assisted Mission Planning).  
+- Authored a technical report on **multi-agent model-based reinforcement learning**, demonstrating expertise in cooperative RL for mission planning.  
