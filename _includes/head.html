@@ -2,6 +2,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
 
+
   <!-- Conditionally load Google Analytics -->
   <script>
     var host = window.location.hostname;
@@ -25,6 +26,17 @@
   </script>
 
   {% seo %}
+  {% if page.seo_title %}
+    <title>{{ page.seo_title }}</title>
+    <meta property="og:title" content="{{ page.seo_title }}">
+    <meta name="twitter:title" content="{{ page.seo_title }}">
+  {% endif %}
+
+  {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+  {% endif %}
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon-32x32.png">

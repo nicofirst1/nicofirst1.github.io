@@ -1,0 +1,15 @@
+# Block AI training and bulk scrapers that honor robots.txt
+User-agent: GPTBot            # OpenAI training crawler
+Disallow: /
+
+User-agent: ChatGPT-User      # OpenAI on-demand browser
+Disallow: /
+
+User-agent: CCBot             # Common Crawl
+Disallow: /
+
+User-agent: ClaudeBot         # Anthropic
+Disallow: /
+
+User-agent: Google-Extended   # Google’s training/grounding control
+Disallow: /
