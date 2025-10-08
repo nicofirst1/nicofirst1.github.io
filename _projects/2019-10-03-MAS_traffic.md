@@ -5,7 +5,9 @@ custom_id: masTraffic
 tag: past
 image: /assets/images/projects/mas-traffic.jpg
 button_link: https://github.com/nicofirst1/MAS-Traffic-Control
-button_name: get code
+button_name: Get Code
+layout: projects
+
 ---
 
 ### Summary

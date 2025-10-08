@@ -6,6 +6,8 @@ tag: past
 image: /assets/images/projects/r2networkshop.png
 button_link: https://claire-ai.org/r2net-essai24/
 button_name: check website
+layout: projects
+
 ---
 
 Join us for the second edition of the CAIRNE Rising Research Network workshop on AI Research and Mental Well-Being on the 14 July 2024 from 09:45 until 17:30 at ESSAI2024 in Athens. This event aims to support and inspire AI researchers across Europe, focusing on the unique challenges faced during Ph.D. studies. Engage in interactive sessions on mental well-being and academic success, benefit from expert panels, and connect with industry leaders through insightful presentations.

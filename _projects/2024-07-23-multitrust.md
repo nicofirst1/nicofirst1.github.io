@@ -6,6 +6,7 @@ tag: current
 image: /assets/images/projects/handshake.png
 button_link:  https://multittrust.github.io/
 button_name: check website
+layout: projects
 
 ---
 

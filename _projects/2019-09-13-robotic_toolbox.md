@@ -5,7 +5,9 @@ custom_id: robotics
 tag: past
 image: /assets/images/projects/robotic.svg
 button_link: https://github.com/nicofirst1/Robotic-toolbox
-button_name: get code
+button_name: Get Code
+layout: projects
+
 ---
 As a first time robotic student I found myself struggling to understand the basic computations which are fundamental for the study of manipulators.
 

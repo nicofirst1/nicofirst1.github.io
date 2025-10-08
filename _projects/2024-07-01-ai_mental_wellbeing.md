@@ -7,6 +7,8 @@ image: /assets/images/projects/ai-mental-wellbeing.jpg
 layout: projects
 button_link: https://forms.gle/u24g89FdK48hFSF88
 button_name: Fill Out the Survey
+layout: projects
+
 ---
 ### Addressing Mental Health in AI Research
 Recently, I finished my PhD and finally had some time to reflect on my experience. Over these years, I had a lot of fun and grew in ways that are impossible to summarize in this short post. However, I also experienced severe mental states that brought me down to places I never realized I could be. It was a profound and changing period, from which I was able to recover thanks to the support of the people around me, especially my partner, who also went through the same challenges during her PhD.

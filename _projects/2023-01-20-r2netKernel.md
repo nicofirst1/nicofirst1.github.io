@@ -6,6 +6,8 @@ tag: current
 image: /assets/images/projects/r2net_kernel.jpg
 button_link: https://claire-ai.org/r2network/
 button_name: Join us!
+layout: projects
+
 ---
 
 ## CAIRNE

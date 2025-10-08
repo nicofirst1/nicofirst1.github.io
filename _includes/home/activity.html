@@ -1,4 +1,4 @@
-{% assign all_items = site.projects | concat: site.news %}
+{% assign all_items = site.projects | concat: site.news | concat: site.blog %}
 {% assign items_with_images = "" | split: "" %}
 
 {% for item in all_items %}

@@ -5,7 +5,9 @@ custom_id: trust-agents
 tag: past
 image: /assets/images/projects/trustyouragent.png
 button_link: https://sites.google.com/diag.uniroma1.it/trust-your-agents/home
-button_name: go to website
+button_name: Go To Website
+layout: projects
+
 ---
 
 

@@ -7,6 +7,8 @@ image: /assets/images/projects/corpusCompassLogo.jpg
 layout: projects
 button_link: https://www.corpuscompass.com/
 button_name: Check Website
+layout: projects
+
 ---
 
 ## Description
