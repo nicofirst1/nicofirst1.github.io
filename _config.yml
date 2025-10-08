@@ -42,8 +42,8 @@ collections:
 defaults:
   - scope: { path: "_news" }
     values: { layout: "news" }
-  - scope: { path: "", type: blog }
-    values: { layout: "news" }
+  - scope: { path: "_blog", type: blog }
+    values: { layout: "blogs" }
 
 exclude:
   - node_modules

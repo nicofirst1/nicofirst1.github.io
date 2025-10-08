@@ -1,0 +1,18 @@
+// Reading progress bar
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  z-index: 9999;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  transition: width 0.1s ease-out; // smooth movement
+
+  // Optional: light/dark mode variants if you're using Tailwind's dark class toggle
+  body.dark & {
+    background: linear-gradient(90deg, #60a5fa, #22d3ee);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.15);
+  }
+}

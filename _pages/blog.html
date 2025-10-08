@@ -10,7 +10,7 @@ page_id: blog
         <div class="blog_grid sm:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1">
             {% assign sorted = site.blog | sort: 'date' | reverse %}
             {% for post in sorted %}
-                {% include news_card.html %}
+                {% include blog_card.html %}
             {% endfor %}
         </div>
     </div>

@@ -1,0 +1,21 @@
+<section class="p-2 w-full">
+    <a href="{{ post.url | relative_url }}">
+        <div class="news_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer flex">
+            <div class="image-wrapper w-1/2">
+                {% if post.image %}
+                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" class="rounded-lg w-full drop-shadow-lg" style="object-position: 50% {{ post.image_align | default: '50%' }}%;">
+                {% endif %}
+            </div>
+            <div class="heading p-5 w-1/2">
+                {% if post.h1 %}
+                    <h1 class="text-3xl">{{ post.h1 }}</h1> 
+                {% else %}
+                    <h1 class="text-3xl">{{ post.title }}</h1>
+                {% endif %}
+
+                <p>{{ post.tag }}</p>
+                <p class="date">{{ post.date | date: '%b %d, %Y' }}</p>
+            </div>
+        </div>
+    </a>
+</section>
