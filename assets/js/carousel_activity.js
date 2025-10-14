@@ -36,6 +36,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const isNext = direction === 'next';
         prepareSlide(nextItem, 'next');
         prepareSlide(currentItem, 'active');
+        nextItem.style.position = 'absolute';
+        nextItem.style.top = '0';
+        nextItem.style.left = '0';
+        nextItem.style.width = '100%';
         setCarouselHeight(nextItem);
 
         requestAnimationFrame(() => {
@@ -70,6 +74,10 @@ document.addEventListener("DOMContentLoaded", function() {
             nextItem.style.opacity = '';
             nextItem.style.filter = '';
             nextItem.style.display = '';
+            nextItem.style.position = '';
+            nextItem.style.top = '';
+            nextItem.style.left = '';
+            nextItem.style.width = '';
             nextItem.classList.add('active');
             setCarouselHeight(nextItem);
             isAnimating = false;
