@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: " en-US" }}">
 {%- include head.html -%}
-{%- include header.html -%}
 
-<body class="bg-blue-50 text-black dark:bg-blue-950 dark:text-blue-50 pt-24">
-  {{ content }}
+<body class="site_body">
+  {%- include header.html -%}
+  <main class="site_main{% if page.page_id == 'home' %} site_main--home{% endif %}">
+    {{ content }}
+  </main>
+  {%- include footer.html -%}
 </body>
-{%- include footer.html -%}
 
 </html>

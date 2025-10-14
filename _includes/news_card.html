@@ -1,16 +1,25 @@
-<section class="p-2 w-full">
-    <a href="{{ post.url | relative_url }}">
-        <div class="news_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer flex">
-            <div class="image-wrapper w-1/2">
-                {% if post.image %}
-                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" class="rounded-lg w-full drop-shadow-lg" style="object-position: 50% {{ post.image_align | default: '50%' }}%;">
+{% assign item = include.post %}
+{% assign summary_source = item.excerpt | default: item.subtitle | default: item.description %}
+{% assign summary = summary_source | strip_html | truncate: 140 %}
+<article class="article_card">
+    <a href="{{ item.url | relative_url }}" class="article_card_link">
+        {% if item.image %}
+            <div class="article_card_media">
+                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+            </div>
+        {% endif %}
+        <div class="article_card_body">
+            <span class="article_card_meta">
+                {{ item.date | date: "%b %d, %Y" }}
+                {% if item.tag %}
+                    · {{ item.tag }}
                 {% endif %}
-            </div>
-            <div class="heading p-5 w-1/2">
-                <h3 class="text-2xl">{{ post.title }}</h3>
-                <p>{{ post.tag }}</p>
-                <p class="date">{{ post.date | date: '%b %d, %Y' }}</p>
-            </div>
+            </span>
+            <h3 class="article_card_title">{{ item.title }}</h3>
+            {% if summary %}
+                <p class="article_card_summary">{{ summary }}</p>
+            {% endif %}
+            <span class="article_card_cta">Read update →</span>
         </div>
     </a>
-</section>
+</article>

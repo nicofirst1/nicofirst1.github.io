@@ -5,6 +5,40 @@ body {
   font-family: $bodyFont;
 }
 
+.site_body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff7ed 0%, #fef2f2 35%, #fff7ed 70%, #fef3c7 100%);
+  color: #44210a;
+}
+
+.site_body.dark,
+.dark .site_body,
+body.dark {
+  background: linear-gradient(180deg, #0f172a 0%, #111827 45%, #1f2937 85%);
+  color: #fef3c7;
+}
+
+.site_main {
+  padding-top: 5rem;
+}
+
+.site_main--home {
+  padding-top: 0;
+}
+
+.detail_section {
+  padding-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .site_main {
+    padding-top: 4rem;
+  }
+  .detail_section {
+    padding-top: 2rem;
+  }
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -12,13 +46,18 @@ body {
 }
 
 .container_activity {
-  max-width: 900px;
+  max-width: 1020px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Global link colors (used in multiple sections) */
+/* Global link colors */
 .page_content a,
 .education a {
-  color: blue;
+  color: #ea580c;
+}
+
+.page_content a:hover,
+.education a:hover {
+  color: #c2410c;
 }

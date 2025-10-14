@@ -11,8 +11,8 @@
   cursor: pointer;
   height: 1.5rem;
   width: 2.875em;
-  background-color: #6366f1;
-  box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(99, 102, 241, 0.9);
+  background-color: #f97316;
+  box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(249, 115, 22, 0.65);
   background-position: left center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -39,7 +39,7 @@
 }
 
 .dark .mode-switch .form-check-input {
-  background-color: #184FA9;
+  background-color: #facc15;
   background-image: url("/assets/images/svg/moon.svg");
   background-position: right center;
 }

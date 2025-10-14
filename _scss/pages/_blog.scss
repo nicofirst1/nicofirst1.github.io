@@ -1,0 +1,38 @@
+.blog_intro .page_intro_bg {
+  background: radial-gradient(circle at top right, rgba(196, 181, 253, 0.55), transparent 60%),
+    radial-gradient(circle at bottom left, rgba(147, 197, 253, 0.48), transparent 62%);
+}
+
+body.dark .blog_intro .page_intro_bg {
+  background: radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%),
+    radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.28), transparent 62%);
+}
+
+.blog_articles {
+  background: linear-gradient(180deg, rgba(250, 245, 255, 0.95), rgba(239, 246, 255, 0.85));
+  border-radius: 32px;
+  box-shadow: 0 38px 80px -58px rgba(129, 140, 248, 0.35);
+  padding: 3.5rem clamp(1.5rem, 5vw, 3.5rem);
+  margin: 2.5rem auto 2.5rem;
+}
+
+.blog_articles .articles_grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.blog_articles .article_card_link {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+body.dark .blog_articles {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.9), rgba(30, 41, 59, 0.78));
+  box-shadow: 0 45px 95px -60px rgba(79, 70, 229, 0.55);
+}
+
+@media (max-width: 768px) {
+  .blog_articles {
+    padding: 3rem 1.4rem;
+    border-radius: 26px;
+  }
+}

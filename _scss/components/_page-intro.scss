@@ -1,0 +1,67 @@
+.page_intro {
+  position: relative;
+  overflow: hidden;
+  padding: 5.5rem 0 3.5rem;
+}
+
+.page_intro_bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.65), rgba(253, 186, 116, 0.35));
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.dark .page_intro_bg {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.78));
+}
+
+.page_intro_inner {
+  position: relative;
+  z-index: 1;
+  width: min(1080px, calc(100% - 3rem));
+  margin: 0 auto;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.page_intro_title {
+  font-size: clamp(2.6rem, 5vw, 3.75rem);
+  line-height: 1.07;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #7c2d12;
+  max-width: 16ch;
+}
+
+.page_intro_text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 60ch;
+  color: #7f1d1d;
+  margin: 0;
+}
+
+body.dark .page_intro_title {
+  color: #fef3c7;
+}
+
+body.dark .page_intro_text {
+  color: rgba(253, 224, 71, 0.78);
+}
+
+.page_section {
+  width: min(1080px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 3.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .page_intro {
+    padding: 6rem 0 3.5rem;
+  }
+
+  .page_section {
+    padding: 3rem 0;
+  }
+}

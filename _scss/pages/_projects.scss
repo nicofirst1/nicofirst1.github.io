@@ -1,4 +1,90 @@
 // _projects.scss
-/* Projects page specific styles */
-/* Add any additional projects page styles here if needed */
 
+.projects_intro .page_intro_bg {
+  background: radial-gradient(circle at top left, rgba(253, 230, 138, 0.55), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(253, 186, 116, 0.5), transparent 60%);
+}
+
+body.dark .projects_intro .page_intro_bg {
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.25), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.28), transparent 60%);
+}
+
+.projects_section {
+  background: linear-gradient(180deg, rgba(255, 251, 235, 0.95), rgba(255, 247, 237, 0.85));
+  border-radius: 40px;
+  box-shadow: 0 45px 90px -60px rgba(248, 113, 113, 0.45);
+  padding: 3.5rem clamp(1.5rem, 5vw, 4rem);
+  margin-top: -1.5rem;
+}
+
+body.dark .projects_section {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.85), rgba(15, 23, 42, 0.78));
+  box-shadow: 0 45px 100px -70px rgba(79, 70, 229, 0.5);
+}
+
+.projects_group + .projects_group {
+  margin-top: 3.75rem;
+  padding-top: 3.5rem;
+  border-top: 1px dashed rgba(248, 113, 113, 0.25);
+}
+
+.projects_group_header {
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.projects_group_header h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  color: #7c2d12;
+}
+
+.projects_group_header p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #9a3412;
+  max-width: 60ch;
+}
+
+.projects_grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.projects_empty {
+  font-size: 1rem;
+  color: #a16207;
+  font-style: italic;
+}
+
+body.dark .projects_group + .projects_group {
+  border-top-color: rgba(253, 224, 71, 0.22);
+}
+
+body.dark .projects_group_header h2 {
+  color: #fef3c7;
+}
+
+body.dark .projects_group_header p {
+  color: rgba(253, 224, 71, 0.72);
+}
+
+body.dark .projects_empty {
+  color: rgba(253, 224, 71, 0.7);
+}
+
+@media (max-width: 768px) {
+  .projects_section {
+    padding: 3rem 1.5rem;
+    border-radius: 28px;
+  }
+
+  .projects_group + .projects_group {
+    margin-top: 3rem;
+    padding-top: 3rem;
+  }
+}

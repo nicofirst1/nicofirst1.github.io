@@ -1,0 +1,46 @@
+.articles_section {
+  display: grid;
+  gap: 2.75rem;
+}
+
+.articles_header {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 60ch;
+}
+
+.articles_header h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  color: #7c2d12;
+}
+
+.articles_header p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #9f1239;
+}
+
+.articles_grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.articles_empty {
+  font-size: 1rem;
+  font-style: italic;
+  color: #be123c;
+}
+
+body.dark .articles_header h2 {
+  color: #fef3c7;
+}
+
+body.dark .articles_header p {
+  color: rgba(253, 224, 71, 0.75);
+}
+
+body.dark .articles_empty {
+  color: rgba(253, 224, 71, 0.72);
+}

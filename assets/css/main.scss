@@ -33,6 +33,7 @@
 @import "pages/music";
 @import "pages/euai_graph";
 @import "pages/publications";
+@import "pages/blog";
 @import "pages/reading_progress";
 
 /* Themes */
@@ -45,4 +46,6 @@
 @import "components/cards";
 @import "components/buttons";
 @import "components/carousel";
+@import "components/page-intro";
+@import "components/article-list";
 @import "components/mode-switch";

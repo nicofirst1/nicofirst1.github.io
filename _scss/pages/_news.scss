@@ -71,13 +71,13 @@
 /* Links */
 .news-post a {
   text-decoration: none;
-  border-bottom: 1px solid #1a73e8;
+  border-bottom: 1px solid #fb7185;
   transition: color 0.2s ease, border-bottom-color 0.2s ease;
 }
 
 .news-post a:hover {
-  color: #0047ab;
-  border-bottom-color: #0047ab;
+  color: #be123c;
+  border-bottom-color: #be123c;
 }
 
 /* Button CTA */
@@ -270,4 +270,49 @@
 
 .dark .news-post tr:last-child td {
   border-bottom: 2px solid #c2c0c0;
+}
+
+.news_intro .page_intro_bg {
+  background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.55), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.45), transparent 60%);
+}
+
+body.dark .news_intro .page_intro_bg {
+  background: radial-gradient(circle at top left, rgba(236, 72, 153, 0.35), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.28), transparent 60%);
+}
+
+.news_articles {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 247, 237, 0.78));
+  border-radius: 32px;
+  box-shadow: 0 40px 80px -55px rgba(236, 72, 153, 0.35);
+  padding: 3.5rem clamp(1.5rem, 5vw, 3.5rem);
+  margin: 2.5rem auto 2.5rem;
+}
+
+.news_articles .articles_grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.news_articles .article_card_link {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.news_articles .article_card_media {
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+body.dark .news_articles {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.85), rgba(15, 23, 42, 0.75));
+  box-shadow: 0 45px 95px -60px rgba(99, 102, 241, 0.45);
+}
+
+@media (max-width: 768px) {
+  .news_articles {
+    padding: 3rem 1.4rem;
+    border-radius: 26px;
+  }
 }

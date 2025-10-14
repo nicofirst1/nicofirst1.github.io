@@ -1,21 +1,44 @@
-<section class="education py-9 bg-sky-50 dark:bg-sky-950">
-    <div class="mx-auto">
-        <h2 class="text-center text-3xl font-bold	 ">
-            {{include.title}}
-        </h2>
-        <div class="education_grid flex flex-wrap justify-center gap-7 p-6 pt-5">
+{% assign section_description = include.description %}
+{% if section_description %}
+  {% assign section_blurb = section_description %}
+{% elsif include.data == 'experience' %}
+  {% assign section_blurb = "A curated look at labs, institutes, and collaborations that shaped my hands-on leadership in responsible AI." %}
+{% else %}
+  {% assign section_blurb = "Academic foundations spanning reinforcement learning, multi-agent systems, and socio-technical design principles." %}
+{% endif %}
+
+<section class="experience_section py-20" id="{{ include.data }}">
+    <div class="container mx-auto px-6 lg:px-10">
+        <div class="section_header text-center">
+            <span class="section_kicker text-sm uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">Trajectory</span>
+            <h2 class="mt-4 text-3xl md:text-4xl font-semibold text-slate-900 dark:text-slate-50">{{ include.title }}</h2>
+            <p class="mt-4 max-w-3xl mx-auto text-base md:text-lg text-slate-600 dark:text-slate-300">
+                {{ section_blurb }}
+            </p>
+        </div>
+
+        <div class="experience_grid mt-12 grid gap-8 lg:grid-cols-2">
             {%- assign ed = site[include.data] | sort: 'order' | reverse -%}
             {%- for i in ed -%}
-                <div class="education_item w-full md:w-5/12 2xl:w-3/12 mb-7 p-4 border rounded-xl border-slate-300 dark:border-slate-700 shadow-lg shadow-slate-300 dark:shadow-slate-700">
-                    <h3 class="font-semibold text-2xl">
-                        {{i.title}}
-                    </h3>
-                    <div class="heading flex gap-4 items-center justify-start mb-3">
-                        <img src="{{i.image | relative_url}}" alt="{{i.title}}" loading="lazy" class="heading_image p-4 shadow-sm shadow-blue-50 rounded w-1/2 ">
-                        <span class="text-sm grid gap-8">{{i.period}}</span>
+                <article class="experience_card">
+                    <div class="experience_card_inner">
+                        <div class="experience_logo">
+                            <div class="logo_blur" aria-hidden="true"></div>
+                            <img src="{{ i.image | relative_url }}" alt="{{ i.title }}" loading="lazy" class="logo_image">
+                        </div>
+                        <div class="experience_info">
+                            <div class="experience_meta">
+                                {{ i.period }}
+                            </div>
+                            <h3>
+                                {{ i.title }}
+                            </h3>
+                            <div class="experience_copy">
+                                {{ i.content | markdownify }}
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-md">{{i.content | markdownify}}</div>
-                </div>
+                </article>
             {%- endfor -%}
         </div>
     </div>
