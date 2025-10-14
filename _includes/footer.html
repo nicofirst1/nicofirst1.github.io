@@ -1,5 +1,11 @@
-<footer class="footer p-9 bg-sky-200 dark:bg-slate-950 dark:text-sky-50 ">
-    <div class="container">
-        <p class="text-center">&copy; Copyright {{'now' | date: "%Y"}}, All right Reserved By - Nicolo' Brandizzi</p>
+<footer class="site_footer">
+    <div class="site_footer_bg" aria-hidden="true"></div>
+    <div class="site_footer_inner">
+        <p class="site_footer_note">© {{ 'now' | date: "%Y" }} Dr. Nicolo' Brandizzi — exploring responsible AI, with curiosity.</p>
+        <div class="site_footer_links">
+            {% for s in site.data.social %}
+                <a href="{{ s.link }}" class="site_footer_link" target="_blank" rel="noopener">{% include {{ s.icon }} %}</a>
+            {% endfor %}
+        </div>
     </div>
 </footer>

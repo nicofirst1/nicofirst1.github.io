@@ -1,0 +1,14 @@
+.articles_grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.articles_empty {
+  font-size: 1rem;
+  font-style: italic;
+  color: #be123c;
+}
+
+body.dark .articles_empty {
+  color: rgba(253, 224, 71, 0.72);
+}

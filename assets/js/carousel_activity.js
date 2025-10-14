@@ -3,31 +3,52 @@
 document.addEventListener("DOMContentLoaded", function() {
     let currentPage = 0;
     let isAnimating = false;
-    const animationDuration = 500;
+    const animationDuration = 700;
+    let autoSlideTimer = null;
 
-    const totalPages = parseInt(document.querySelector('.activity').getAttribute('data-total-pages'), 10) || 1;
+    const activitySection = document.querySelector('.activity');
+    if (!activitySection) return;
+
+    const totalPages = parseInt(activitySection.getAttribute('data-total-pages'), 10) || 1;
     const carouselItems = document.querySelectorAll(".carousel-item");
-    
-    // Initialize first page
-    carouselItems[0].classList.add('active');
+    const carousel = document.querySelector('.carousel-inner');
+    if (!carousel || carouselItems.length === 0) return;
 
-    function setInitialPosition(element, direction) {
-        element.style.transition = 'none';
-        element.style.transform = `translateX(${direction === 'next' ? '100%' : '-100%'})`;
-        // Force reflow
-        void element.offsetWidth;
-        element.style.transition = 'transform 0.5s ease';
+    const setCarouselHeight = (item) => {
+        if (!item) return;
+        const targetHeight = item.offsetHeight;
+        if (targetHeight) {
+            carousel.style.height = `${targetHeight}px`;
+        }
+    };
+
+    function prepareSlide(item, state) {
+        item.style.display = 'block';
+        item.style.transition = 'none';
+        item.style.opacity = state === 'active' ? '1' : '0';
+        item.style.transform = state === 'active' ? 'translateX(0)' : `translateX(${state === 'next' ? '8%' : '-8%'})`;
+        item.style.filter = state === 'active' ? 'blur(0)' : 'blur(14px)';
+        void item.offsetWidth;
+        item.style.transition = 'transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease, filter 0.7s ease';
     }
 
     function animateSlide(currentItem, nextItem, direction) {
-        // Set initial position of the next item
-        nextItem.style.display = 'block';
-        setInitialPosition(nextItem, direction);
+        const isNext = direction === 'next';
+        prepareSlide(nextItem, 'next');
+        prepareSlide(currentItem, 'active');
+        nextItem.style.position = 'absolute';
+        nextItem.style.top = '0';
+        nextItem.style.left = '0';
+        nextItem.style.width = '100%';
+        setCarouselHeight(nextItem);
 
-        // Animate both items
         requestAnimationFrame(() => {
-            currentItem.style.transform = `translateX(${direction === 'next' ? '-100%' : '100%'})`;
+            currentItem.style.transform = `translateX(${isNext ? '-8%' : '8%'})`;
+            currentItem.style.opacity = '0';
+            currentItem.style.filter = 'blur(16px)';
             nextItem.style.transform = 'translateX(0)';
+            nextItem.style.opacity = '1';
+            nextItem.style.filter = 'blur(0)';
         });
     }
 
@@ -40,42 +61,56 @@ document.addEventListener("DOMContentLoaded", function() {
 
         animateSlide(currentItem, nextItem, direction);
 
-        // Update classes and clean up
-        currentItem.classList.remove('active');
-        nextItem.classList.add('active');
-
         setTimeout(() => {
             currentItem.style.display = 'none';
+            currentItem.style.transition = '';
             currentItem.style.transform = '';
+            currentItem.style.opacity = '';
+            currentItem.style.filter = '';
+            currentItem.classList.remove('active');
+
+            nextItem.style.transition = '';
             nextItem.style.transform = '';
+            nextItem.style.opacity = '';
+            nextItem.style.filter = '';
+            nextItem.style.display = '';
+            nextItem.style.position = '';
+            nextItem.style.top = '';
+            nextItem.style.left = '';
+            nextItem.style.width = '';
+            nextItem.classList.add('active');
+            setCarouselHeight(nextItem);
             isAnimating = false;
         }, animationDuration);
     }
 
-    function nextPage() {
+    function scheduleAutoSlide() {
+        if (autoSlideTimer) clearInterval(autoSlideTimer);
+        autoSlideTimer = setInterval(() => nextPage(true), 9000);
+    }
+
+    function nextPage(fromAuto = false) {
         if (isAnimating) return;
         const nextPageIndex = (currentPage + 1) % totalPages;
         showPage(nextPageIndex, 'next');
         currentPage = nextPageIndex;
+        if (!fromAuto) scheduleAutoSlide();
     }
-    // Auto-slide every 10 seconds
-    setInterval(nextPage, 10000);
-
 
     function prevPage() {
         if (isAnimating) return;
         const prevPageIndex = (currentPage - 1 + totalPages) % totalPages;
         showPage(prevPageIndex, 'prev');
         currentPage = prevPageIndex;
+        scheduleAutoSlide();
     }
 
     // Touch support
     let touchStartX = 0;
     let touchEndX = 0;
-    const carousel = document.querySelector('.carousel-inner');
-
     carousel.addEventListener('touchstart', e => {
         if (isAnimating) return;
+        if (autoSlideTimer) clearInterval(autoSlideTimer);
         touchStartX = e.changedTouches[0].screenX;
     }, false);
 
@@ -83,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isAnimating) return;
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
+        scheduleAutoSlide();
     }, false);
 
     function handleSwipe() {
@@ -101,4 +137,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Attach next/prev functions to global scope for buttons
     window.nextPage = nextPage;
     window.prevPage = prevPage;
+
+    carouselItems[0].classList.add('active');
+    carouselItems[0].style.display = 'block';
+    setCarouselHeight(carouselItems[0]);
+    window.addEventListener('resize', () => {
+        const activeItem = document.querySelector('.carousel-item.active');
+        setCarouselHeight(activeItem);
+    });
+    scheduleAutoSlide();
 });

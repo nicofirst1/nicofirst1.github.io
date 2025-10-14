@@ -1,25 +1,77 @@
-<section class="hero_section relative pt-9 bg-transparent shadow-md">
-    <div class="hero_bg absolute top-0 left-0 right-0 opacity-20">
-        <img src="{{site.baseurl}}/assets/images/background.png" alt="hero-bg" >
+<section class="hero_section">
+    <div class="hero_bg" aria-hidden="true">
+        <div class="hero_wash"></div>
+        <div class="hero_scribble hero_scribble--one"></div>
+        <div class="hero_scribble hero_scribble--two"></div>
     </div>
 
-    <div class="container z-10 mx-auto grid md:grid-cols-2 ">
-        <div class="hero_text flex flex-col pb-9 justify-center items-center gap-5 text-center">
-            <h1 class="text-5xl md:text-6xl text-blue-950 dark:text-blue-50 font-black">{{page.title}}</h1>
-            <h2 class="text-4xl">{{page.subtitle}}</h2>
-            <div class="description">
-                {{page.description | markdownify}}
+    <div class="container mx-auto px-6 lg:px-12 py-16 md:py-24">
+        <div class="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+            <div class="hero_content">
+                {% if page.greeting %}
+                    <p class="hero_greeting">{{ page.greeting }}</p>
+                {% endif %}
+
+                <h1 class="hero_title">
+                    {{ page.title }}
+                </h1>
+
+                {% if page.subtitle %}
+                    <p class="hero_subtitle">{{ page.subtitle }}</p>
+                {% endif %}
+
+                <div class="hero_description">
+                    {{ page.description | markdownify }}
+                </div>
+
+                {% if page.hero_highlights %}
+                    <div class="hero_list">
+                        {% if page.hero_highlights_title %}
+                            <p class="hero_list_label">{{ page.hero_highlights_title }}</p>
+                        {% endif %}
+                        <ul>
+                            {% for highlight in page.hero_highlights %}
+                                <li>
+                                    <span class="hero_list_icon" aria-hidden="true">✶</span>
+                                    <span>{{ highlight }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <div class="hero_actions">
+                    {% if page.primary_cta %}
+                        <a href="{{ page.primary_cta.url | relative_url }}" class="btn btn-primary">
+                            {{ page.primary_cta.label }}
+                        </a>
+                    {% endif %}
+                    {% if page.secondary_cta %}
+                        <a href="{{ page.secondary_cta.url | relative_url }}" class="btn btn-secondary">
+                            {{ page.secondary_cta.label }}
+                        </a>
+                    {% endif %}
+                </div>
+
+                <div class="hero_social">
+                    <span class="hero_social_label">Find me elsewhere</span>
+                    <div class="hero_social_links">
+                        {%- for s in site.data.social -%}
+                            <a href="{{ s.link }}" class="social_item" target="_blank" aria-label="{{ s.title }}">
+                                {%- include {{ s.icon }} -%}
+                            </a>
+                        {%- endfor -%}
+                    </div>
+                </div>
             </div>
-            <div class="social flex gap-5 justify-center my-8">
-                {%- for s in site.data.social -%}
-                    <a href="{{s.link}}" class="social_item w-8 h-8" target="_blank">
-                        {%- include {{s.icon}} -%}
-                    </a>
-                {%- endfor -%}
+
+            <div class="hero_visual">
+                <div class="hero_portrait_wrap">
+                    <div class="hero_portrait_frame">
+                        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="hero_image grid items-center justify-center mb-9 lg:mb-14">
-            <img src="{{page.image | relative_url}}" alt="{{page.title}}" class="rounded-full  w-8/12 block mx-auto">
         </div>
     </div>
 </section>

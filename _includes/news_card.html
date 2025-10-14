@@ -1,16 +1,18 @@
-<section class="p-2 w-full">
-    <a href="{{ post.url | relative_url }}">
-        <div class="news_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer flex">
-            <div class="image-wrapper w-1/2">
-                {% if post.image %}
-                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" class="rounded-lg w-full drop-shadow-lg" style="object-position: 50% {{ post.image_align | default: '50%' }}%;">
-                {% endif %}
-            </div>
-            <div class="heading p-5 w-1/2">
-                <h3 class="text-2xl">{{ post.title }}</h3>
-                <p>{{ post.tag }}</p>
-                <p class="date">{{ post.date | date: '%b %d, %Y' }}</p>
-            </div>
+{% assign item = include.post %}
+{% assign summary_source = item.description | default: item.subtitle | default: item.excerpt %}
+{% assign summary = summary_source | strip_html | truncate: 120 %}
+<article class="news_list_item">
+    <a href="{{ item.url | relative_url }}" class="news_list_link">
+        <div class="news_list_meta">
+            <span class="news_list_date">{{ item.date | date: "%b %d, %Y" }}</span>
+            {% if item.tag %}
+                <span class="news_list_tag">{{ item.tag }}</span>
+            {% endif %}
         </div>
+        <h3 class="news_list_title">{{ item.title }}</h3>
+        {% if summary %}
+            <p class="news_list_summary">{{ summary }}</p>
+        {% endif %}
+        <span class="news_list_cta">Open update →</span>
     </a>
-</section>
+</article>

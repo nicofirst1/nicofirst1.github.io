@@ -1,15 +1,98 @@
 // _buttons.scss
 .read-more-btn {
-  background-color: #1a73e8;
-  color: #fff;
+  background-color: #f97316;
+  color: #431407;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   text-decoration: none;
   font-weight: 500;
   margin-top: 1rem;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .read-more-btn:hover {
-  background-color: #0056b3;
+  background-color: #fb923c;
+  box-shadow: 0 14px 30px -20px rgba(249, 115, 22, 0.65);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.9rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 35px -24px rgba(249, 115, 22, 0.65);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #facc15 100%);
+  color: #431407;
+  border: none;
+  box-shadow: 0 22px 48px -26px rgba(248, 113, 113, 0.7);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 26px 55px -22px rgba(248, 113, 113, 0.75);
+}
+
+body.dark .btn-primary {
+  color: #1f2937;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.85);
+  color: #7f1d1d;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  box-shadow: 0 18px 40px -28px rgba(248, 113, 113, 0.45);
+}
+
+.btn-secondary:hover {
+  background: rgba(254, 226, 226, 0.95);
+  box-shadow: 0 22px 46px -30px rgba(248, 113, 113, 0.5);
+}
+
+body.dark .btn-secondary {
+  background: rgba(15, 23, 42, 0.7);
+  color: #fdebeb;
+  border: 1px solid rgba(252, 211, 77, 0.25);
+  box-shadow: 0 22px 48px -34px rgba(253, 224, 71, 0.4);
+}
+
+body.dark .btn-secondary:hover {
+  background: rgba(94, 64, 21, 0.65);
+}
+
+.btn-outline {
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #7c2d12;
+  background: transparent;
+  backdrop-filter: blur(4px);
+  padding: 0.8rem 1.75rem;
+}
+
+.btn-outline:hover {
+  border-color: rgba(248, 113, 113, 0.55);
+  color: #9a3412;
+  box-shadow: 0 18px 38px -28px rgba(248, 113, 113, 0.55);
+  background: rgba(254, 215, 170, 0.35);
+}
+
+body.dark .btn-outline {
+  color: #fde68a;
+  border-color: rgba(253, 224, 71, 0.35);
+}
+
+body.dark .btn-outline:hover {
+  color: #fef3c7;
+  background: rgba(253, 224, 71, 0.2);
 }

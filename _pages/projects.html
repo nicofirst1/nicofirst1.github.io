@@ -4,34 +4,61 @@ title: Projects
 description: NICOLO' BRANDIZZI - current and past projects
 image: /assets/images/big-data.jpg
 page_id: projects
+intro_title: Projects & Collaborations
+intro_blurb: >
+  A collection of collaborations, prototypes, and research studies I've pursued out of curiosity.
+current_label: Work in motion
+current_blurb: >
+  Active initiatives, from long-running research programmes to fresh experiments with partners.
+past_label: Archives
+past_blurb: >
+  Earlier projects that still inform how I build today.
 ---
 
-<section class="projects container pt-2 lg:pt-9">
-    <h1 class="font-bold text-5xl">{{page.title}}</h1>
-    
-    <!-- Current Projects -->
-    <div class="current_projects my-10">
-        <h2 class="current_title text-3xl">Current Projects</h2>
-        <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {% assign sorted = site.projects | sort: 'date' | reverse %}
-            {% for post in sorted %}
-                {% if post.tag == 'current' %}
-                    {% include project_card.html %}
-                {% endif %}
-            {% endfor %}
+{% assign projects_sorted = site.projects | sort: 'date' | reverse %}
+{% assign current_projects = projects_sorted | where: 'tag', 'current' %}
+{% assign past_projects = projects_sorted | where: 'tag', 'past' %}
+
+<section class="page_intro projects_intro">
+    <div class="page_intro_bg" aria-hidden="true"></div>
+    <div class="page_intro_inner">
+        <h1 class="page_intro_title">{{ page.intro_title | default: page.title }}</h1>
+        <p class="page_intro_text">
+            {{ page.intro_blurb }}
+        </p>
+    </div>
+</section>
+
+<section class="projects_section page_section">
+    <div class="projects_group">
+        <div class="projects_group_header">
+            <h2>{{ page.current_label | default: "Current projects" }}</h2>
+            <p>{{ page.current_blurb }}</p>
+        </div>
+        <div class="projects_grid">
+            {% if current_projects.size > 0 %}
+                {% for post in current_projects %}
+                    {% include project_card.html post=post %}
+                {% endfor %}
+            {% else %}
+                <p class="projects_empty">More projects coming soon.</p>
+            {% endif %}
         </div>
     </div>
-    
-    <!-- Past Projects -->
-    <div class="past_projects my-10">
-        <h2 class="current_title text-3xl">Past Projects</h2>
-        <div class="grid justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {% assign sorted = site.projects | sort: 'date' | reverse %}
-            {% for post in sorted %}
-                {% if post.tag == 'past' %}
-                    {% include project_card.html %}
-                {% endif %}
-            {% endfor %}
+
+    <div class="projects_group">
+        <div class="projects_group_header">
+            <h2>{{ page.past_label | default: "Past projects" }}</h2>
+            <p>{{ page.past_blurb }}</p>
+        </div>
+        <div class="projects_grid">
+            {% if past_projects.size > 0 %}
+                {% for post in past_projects %}
+                    {% include project_card.html post=post %}
+                {% endfor %}
+            {% else %}
+                <p class="projects_empty">Archive updates are on the way.</p>
+            {% endif %}
         </div>
     </div>
 </section>

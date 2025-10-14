@@ -3,15 +3,29 @@ layout: default
 title: Blog
 description: NICOLO' BRANDIZZI - Blog posts
 page_id: blog
+intro_title: Blog Posts
+intro_blurb: >
+  Occasional essays and research updates. Thoughts I write down to make sense of the systems, people, and policies shaping AI.
 ---
-<section class="projects container pt-2 lg:pt-9 mb-12">
-    <h1 class="font-bold text-5xl">{{page.title}}</h1>
-    <div class="blog">
-        <div class="blog_grid sm:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1">
-            {% assign sorted = site.blog | sort: 'date' | reverse %}
-            {% for post in sorted %}
-                {% include blog_card.html %}
+
+{% assign blog_sorted = site.blog | sort: 'date' | reverse %}
+
+<section class="page_intro blog_intro">
+    <div class="page_intro_bg" aria-hidden="true"></div>
+    <div class="page_intro_inner">
+        <h1 class="page_intro_title">{{ page.intro_title | default: page.title }}</h1>
+        <p class="page_intro_text">{{ page.intro_blurb }}</p>
+    </div>
+</section>
+
+<section class="articles_section page_section blog_articles">
+    <div class="articles_grid">
+        {% if blog_sorted.size > 0 %}
+            {% for post in blog_sorted %}
+                {% include blog_card.html post=post %}
             {% endfor %}
-        </div>
+        {% else %}
+            <p class="articles_empty">Fresh writing coming soon.</p>
+        {% endif %}
     </div>
 </section>

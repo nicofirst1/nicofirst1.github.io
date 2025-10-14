@@ -1,21 +1,31 @@
-<section class="p-2 w-full">
-    <a href="{{ post.url | relative_url }}">
-        <div class="news_card mb-6 border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700 h-fit hover:scale-105 cursor-pointer flex">
-            <div class="image-wrapper w-1/2">
-                {% if post.image %}
-                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" class="rounded-lg w-full drop-shadow-lg" style="object-position: 50% {{ post.image_align | default: '50%' }}%;">
-                {% endif %}
+{% assign item = include.post %}
+{% assign summary_source = item.description | default: item.subtitle | default: item.excerpt %}
+{% assign summary = summary_source | strip_html | truncate: 150 %}
+<article class="article_card">
+    <a href="{{ item.url | relative_url }}" class="article_card_link">
+        {% if item.image %}
+            <div class="article_card_media">
+                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
             </div>
-            <div class="heading p-5 w-1/2">
-                {% if post.h1 %}
-                    <h1 class="text-3xl">{{ post.h1 }}</h1> 
+        {% endif %}
+        <div class="article_card_body">
+            <span class="article_card_meta">
+                {{ item.date | date: "%b %d, %Y" }}
+                {% if item.tag %}
+                    · {{ item.tag }}
+                {% endif %}
+            </span>
+            <h3 class="article_card_title">
+                {% if item.h1 %}
+                    {{ item.h1 }}
                 {% else %}
-                    <h1 class="text-3xl">{{ post.title }}</h1>
+                    {{ item.title }}
                 {% endif %}
-
-                <p>{{ post.tag }}</p>
-                <p class="date">{{ post.date | date: '%b %d, %Y' }}</p>
-            </div>
+            </h3>
+            {% if summary %}
+                <p class="article_card_summary">{{ summary }}</p>
+            {% endif %}
+            <span class="article_card_cta">Read essay →</span>
         </div>
     </a>
-</section>
+</article>

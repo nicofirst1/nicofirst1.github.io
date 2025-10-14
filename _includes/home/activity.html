@@ -8,40 +8,66 @@
 {% endfor %}
 
 {% assign sorted_items = items_with_images | sort: 'date' | reverse %}
-{% assign page_size = 4 %}
+{% assign page_size = 3 %}
 {% assign total_pages = sorted_items.size | divided_by: page_size | ceil %}
 
-<section class="activity py-9 bg-gray-50" data-total-pages="{{ total_pages }}">
-    <div class="container mx-auto">
-        <h2 class="text-4xl text-center font-bold">Recent Activity</h2>
-    </div>
-    <div class="container_activity mx-auto my-7 relative">
-        <div id="carousel" class="carousel-inner">
-            {% for page in (1..total_pages) %}
-                {% assign offset = page | minus: 1 | times: page_size %}
-                <div class="carousel-item{% if forloop.first %} active{% endif %}" data-page="{{ forloop.index0 }}">
-                    <div class="grid md:grid-cols-2 gap-4">
-                        {% for item in sorted_items limit: page_size offset: offset %}
-                            <div class="activity_item my-2 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-md p-3 md:p-2">
-                                <a href="{{ item.url }}">
-                                    <div class="activity_image gap-5 md:w-6/12">
-                                        <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" class="md:p-7 w-full rounded-xl">
-                                    </div>
-                                    <div class="text pt-6">
-                                        <h3 class="text-2xl mt-0">{{ item.title }}</h3>
-                                        <p class="text-sm mb-3">{{ item.date | date: "%b %d, %Y" }}</p>
-                                    </div>
-                                </a>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endfor %}
+<section id="activity" class="activity activity_section relative py-20" data-total-pages="{{ total_pages }}">
+    <div class="activity_backdrop absolute inset-0" aria-hidden="true"></div>
+    <div class="container relative mx-auto px-6 lg:px-10">
+        <div class="section_header mx-auto max-w-3xl text-center">
+            <span class="section_kicker text-sm uppercase tracking-[0.4em] text-indigo-500 dark:text-indigo-300">From the notebook</span>
+            <h2 class="mt-4 text-3xl md:text-4xl font-semibold text-slate-900 dark:text-slate-50">What I've been up to lately</h2>
+            <p class="mt-4 text-base md:text-lg text-slate-600 dark:text-slate-300">
+                These are the stories, prototypes, and collaborations currently keeping me curious. Dip in to see how the research journey unfolds in real time.
+            </p>
         </div>
 
-        <!-- Navigation Arrows -->
-        <button class="carousel-control-prev" onclick="prevPage()">❮</button>
-        <button class="carousel-control-next" onclick="nextPage()">❯</button>
+        <div class="container_activity relative mt-14">
+            <div id="carousel" class="carousel-inner">
+                {% for page in (1..total_pages) %}
+                    {% assign offset = page | minus: 1 | times: page_size %}
+                    <div class="carousel-item{% if forloop.first %} active{% endif %}" data-page="{{ forloop.index0 }}">
+                        <div class="grid gap-6 lg:grid-cols-3">
+                            {% for item in sorted_items limit: page_size offset: offset %}
+                                {% assign summary = item.subtitle | default: item.description | default: item.excerpt %}
+                                {% assign summary = summary | strip_html | truncate: 130 %}
+                                <article class="activity_card group h-full">
+                                    <a href="{{ item.url | relative_url }}" class="flex h-full flex-col">
+                                        <div class="activity_media relative overflow-hidden rounded-3xl">
+                                            <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy" class="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]">
+                                            <div class="activity_tag">
+                                                <span>
+                                                    {% if item.collection %}
+                                                        {{ item.collection | replace: '_', ' ' | capitalize }}
+                                                    {% else %}
+                                                        Update
+                                                    {% endif %}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="activity_body flex flex-1 flex-col">
+                                            <p class="activity_meta">{{ item.date | date: "%b %d, %Y" }}</p>
+                                            <h3 class="activity_title">{{ item.title }}</h3>
+                                            {% if summary %}
+                                                <p class="activity_summary">{{ summary }}</p>
+                                            {% endif %}
+                                            <span class="activity_link mt-6 text-sm font-semibold tracking-wide">Open update →</span>
+                                        </div>
+                                    </a>
+                                </article>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <button class="carousel-control-prev" onclick="prevPage()" aria-label="Previous updates">❮</button>
+            <button class="carousel-control-next" onclick="nextPage()" aria-label="Next updates">❯</button>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="{{ '/blog' | relative_url }}" class="btn btn-outline">Browse the full timeline</a>
+        </div>
     </div>
 </section>
 

@@ -1,16 +1,22 @@
-<section class="p-2 w-full h-full">
-    <a href="{{post.url}}">
-        <div class="project_card border border-slate-300 dark:border-slate-700 rounded-lg shadow-lg shadow-slate-300 dark:shadow-slate-700  hover:scale-105 cursor-pointer h-full flex flex-col justify-between">
-            <div class="project_heading p-5">
-                <h3 class="text-2xl mt-0">{{post.title}}</h3>
-                <p>{{post.subtitle}}</p>
-                <p class="text-sm my-4">{{post.date | date: ' %b %d, %Y' }}</p>
+{% assign item = include.post %}
+{% assign summary_source = item.subtitle | default: item.description | default: item.excerpt %}
+{% assign summary = summary_source | strip_html | truncate: 140 %}
+<article class="project_card">
+    <a href="{{ item.url | relative_url }}" class="project_card_link">
+        {% if item.image %}
+            <div class="project_card_media">
+                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
             </div>
-            {%- if post.image -%}
-            <div class="project-image">
-                <img src="{{post.image | relative_url}}" alt="{{post.title}}" loading="lazy" class="rounded-b-lg w-full drop-shadow-lg">
-            </div>
-            {%- endif -%}
+        {% endif %}
+        <div class="project_card_body">
+            <span class="project_card_meta">
+                {{ item.date | date: "%b %Y" }}
+            </span>
+            <h3 class="project_card_title">{{ item.title }}</h3>
+            {% if summary %}
+                <p class="project_card_summary">{{ summary }}</p>
+            {% endif %}
+            <span class="project_card_cta">Dive in →</span>
         </div>
     </a>
-</section>
+</article>

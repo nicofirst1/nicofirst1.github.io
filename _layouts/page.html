@@ -4,9 +4,11 @@ layout: default
 <main class="min-h-[88vh] " >
 <section class="pt-4">
   <div class="container">
-    <h1 class="text-5xl font-bold mb-9">
-        {{page.title}}
-    </h1>
+    {% unless page.title_hidden %}
+      <h1 class="text-5xl font-bold mb-9">
+          {{page.title}}
+      </h1>
+    {% endunless %}
     {%- if page.subtitle -%}
     <b>{{page.subtitle}}</b>
     {%- endif -%}
