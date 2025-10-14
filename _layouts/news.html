@@ -2,35 +2,41 @@
 layout: default
 ---
 <main class="news-post min-h-[80vh] flex flex-col gap-6">
-  <section class="detail_section">
-
-    <div class="container pb-6">
-      <h1 class="text-5xl font-bold">
-        {{page.title}}
-      </h1>
-      <b>{{page.tag}}</b>
-      <p class="text-sm mb-3">{{page.date | date: "%b %d, %Y" }}</p>
-
-      {%- if page.image -%}
-      <div class="post-image">
-        <img src="{{page.image}}" alt="hero image">
+  <section class="page_intro news_post_intro">
+      <div class="page_intro_bg" aria-hidden="true"></div>
+      <div class="page_intro_inner">
+        <span class="page_intro_meta">
+          <span>{{ page.date | date: "%b %d, %Y" }}</span>
+          {% if page.tag %}
+            <span>{{ page.tag }}</span>
+          {% endif %}
+        </span>
+        <h1 class="page_intro_title">{{page.title}}</h1>
+        {% if page.subtitle %}
+          <p class="page_intro_text">{{ page.subtitle }}</p>
+        {% endif %}
+        {% if page.button_name %}
+        <div class="page_intro_actions">
+          <a href="{{page.button_link}}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            {{page.button_name}}
+          </a>
+        </div>
+        {% endif %}
       </div>
-      {%- endif -%}
+  </section>
 
+  {%- if page.image -%}
+  <div class="news_post_image">
+    <img src="{{page.image}}" alt="{{ page.title }}">
+  </div>
+  {%- endif -%}
+
+  <section class="news_post_body detail_section">
+    <div class="container">
       <div class="page_content">
           {{ content }}
       </div>
-
-      {% if page.button_name %}
-      <div class="text-right mt-4">
-        <a href="{{page.button_link}}" target="_blank" rel="noopener noreferrer" class="capitalize btn btn-primary">
-          {{page.button_name}}
-        </a>
-      </div>
-      {% endif %}
     </div>
-  
-
   </section>
   <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both">
     {%- if page.previous -%}

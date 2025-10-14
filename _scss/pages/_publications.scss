@@ -4,6 +4,13 @@
     radial-gradient(circle at bottom right, rgba(253, 186, 116, 0.5), transparent 60%);
 }
 
+.publications_intro .page_intro_inner,
+.publications .page_section {
+  width: 100%;
+  margin: 0;
+  padding-inline: clamp(2rem, 6vw, 4rem);
+}
+
 body.dark .publications_intro .page_intro_bg {
   background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.25), transparent 55%),
     radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.28), transparent 60%);
