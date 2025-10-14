@@ -1,18 +1,18 @@
 --- 
 layout: default
 title: Dr. Nicolo' Brandizzi
-subtitle: "Curious about how humans and machines learn together."
+subtitle: "Building bridges between data, language, and society."
 image: /assets/images/profile_picture.jpg
 hero_bg: /assets/images/hero.jpg
-greeting: "Ciao! I'm Nicolo."
+greeting: "Ciao! I'm Nicolo'."
 description: >
-  I'm an AI researcher who loves pairing rigorous systems work with the messy, human side of technology.
-  On this site I share the experiments, collaborations, and field notes that help me make sense of responsible AI.
+ My research moves between AI, data governance, and social systems. I’m interested in how structure and meaning evolve when humans and machines learn together. This site is a record of the work, collaborations, and side investigations that follow from that curiosity.
+
 hero_highlights_title: Things that light me up lately
 hero_highlights:
-  - Co-designing evaluation rituals that make aligned AI feel trustworthy in practice.
-  - Partnering with policy makers to bridge technical findings and real-world governance.
-  - Exploring creative tools that keep multilingual teams playful while shipping serious systems.
+  - Shaping evaluation methods that capture reasoning and reliability in multilingual models.
+  - Connecting AI governance frameworks with the technical realities of training and deployment.
+  - Coordinating European efforts toward open, large-scale AI infrastructure.
 current_focus: "Sketching kinder evaluation loops for large language models and mentoring teams on trustworthy deployment."
 primary_cta:
   label: See what I'm working on

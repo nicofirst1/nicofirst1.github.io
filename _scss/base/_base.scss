@@ -55,10 +55,12 @@ body.dark {
 /* Global link colors */
 .page_content a,
 .education a {
-  color: #ea580c;
+  color: #c026d3;
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 .page_content a:hover,
 .education a:hover {
-  color: #c2410c;
+  color: #86198f;
 }

@@ -147,7 +147,7 @@ body.dark .nav_toggle span {
   opacity: 0;
   visibility: hidden;
   transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
-  padding: 1.6rem 2rem;
+  padding: 1.6rem 2.2rem;
   backdrop-filter: blur(18px);
 }
 
@@ -231,7 +231,7 @@ body.menu-open {
     opacity: 1;
     visibility: visible;
     transform: none;
-    padding: 0;
+    padding: 0 0.5rem;
     width: auto;
   }
 

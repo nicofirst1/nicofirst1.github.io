@@ -5,6 +5,30 @@ page_id: publications
 image: /assets/images/books.jpg
 ---
 
+<section class="page_intro publications_intro">
+    <div class="page_intro_bg" aria-hidden="true"></div>
+    <div class="page_intro_inner">
+        <h1 class="page_intro_title">{{ page.title }}</h1>
+        <p class="page_intro_text">
+            Curated research output spanning trustworthy AI, evaluation pipelines, and policy alignment. Explore external profiles for full publication lists and ongoing collaborations.
+        </p>
+        <div class="publications_links">
+            <a href="https://scholar.google.com/citations?hl=en&user=7brL8DoAAAAJ" target="_blank" rel="noopener" class="publications_link">
+                {% include svg/scholar.svg %}
+                <span>Google Scholar</span>
+            </a>
+            <a href="https://orcid.org/0000-0002-3191-6623" target="_blank" rel="noopener" class="publications_link">
+                {% include svg/orcid.svg %}
+                <span>ORCID</span>
+            </a>
+            <a href="https://www.researchgate.net/profile/Nicolo_Brandizzi?ev=hdr_xprf&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InByb2ZpbGVEaXJlY3RvcnkiLCJwYWdlIjoicHJvZmlsZURpcmVjdG9yeSIsInBvc2l0aW9uIjoiZ2xvYmFsSGVhZGVyIn19" target="_blank" rel="noopener" class="publications_link">
+                {% include svg/researchgate.svg %}
+                <span>ResearchGate</span>
+            </a>
+        </div>
+    </div>
+</section>
+
 <div class="publications mb-9">
     <table id="pubTable" class="display"></table>
 </div>

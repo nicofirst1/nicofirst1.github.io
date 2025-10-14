@@ -22,10 +22,6 @@ list_blurb: >
 </section>
 
 <section class="articles_section page_section news_articles">
-    <div class="articles_header">
-        <h2>{{ page.list_label }}</h2>
-        <p>{{ page.list_blurb }}</p>
-    </div>
     <div class="articles_grid">
         {% if news_sorted.size > 0 %}
             {% for post in news_sorted %}

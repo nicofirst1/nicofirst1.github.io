@@ -273,33 +273,6 @@ body.dark .hero_social .social_item {
   object-fit: cover;
 }
 
-.hero_note {
-  position: absolute;
-  right: -1.25rem;
-  bottom: -1.5rem;
-  width: min(280px, 85%);
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(248, 113, 113, 0.3);
-  padding: 1.3rem 1.5rem;
-  box-shadow: 0 20px 60px -30px rgba(240, 149, 171, 0.65);
-}
-
-.hero_note_label {
-  display: inline-block;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #f97316;
-}
-
-.hero_note_text {
-  margin-top: 0.65rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #475569;
-}
-
 body.dark .hero_portrait_frame {
   background: rgba(8, 20, 45, 0.85);
   box-shadow: 0 26px 65px -45px rgba(59, 130, 246, 0.55);
@@ -309,27 +282,9 @@ body.dark .hero_portrait_frame::after {
   border-color: rgba(165, 180, 252, 0.3);
 }
 
-body.dark .hero_note {
-  background: rgba(15, 23, 42, 0.95);
-  border-color: rgba(147, 197, 253, 0.25);
-  box-shadow: 0 24px 60px -38px rgba(59, 130, 246, 0.45);
-}
-
-body.dark .hero_note_label {
-  color: #60a5fa;
-}
-
-body.dark .hero_note_text {
-  color: rgba(226, 232, 240, 0.78);
-}
-
 @media (max-width: 1024px) {
   .hero_portrait_wrap {
     max-width: 360px;
-  }
-
-  .hero_note {
-    right: 0;
   }
 }
 
@@ -348,11 +303,6 @@ body.dark .hero_note_text {
 
   .hero_portrait_frame {
     padding: 0.75rem;
-  }
-
-  .hero_note {
-    position: static;
-    margin: 1.5rem auto 0;
   }
 }
 
@@ -629,12 +579,24 @@ body.dark .experience_section {
   color: #475569;
 }
 
-.experience_copy p {
-  margin: 0;
+.experience_copy ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  list-style: disc;
 }
 
-.experience_copy p + p {
-  margin-top: 0.65rem;
+.experience_copy li {
+  margin-bottom: 0.35rem;
+}
+
+.experience_copy a {
+  color: #c026d3;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.experience_copy a:hover {
+  color: #86198f;
 }
 
 body.dark .experience_card {
@@ -658,6 +620,14 @@ body.dark .experience_info h3 {
 
 body.dark .experience_copy {
   color: rgba(226, 232, 240, 0.78);
+}
+
+body.dark .experience_copy a {
+  color: rgba(253, 224, 71, 0.85);
+}
+
+body.dark .experience_copy a:hover {
+  color: rgba(253, 224, 71, 0.7);
 }
 
 @media (max-width: 1024px) {
