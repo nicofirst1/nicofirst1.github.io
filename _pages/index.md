@@ -13,7 +13,7 @@ hero_highlights:
   - Shaping evaluation methods that capture reasoning and reliability in multilingual models.
   - Connecting AI governance frameworks with the technical realities of training and deployment.
   - Coordinating European efforts toward open, large-scale AI infrastructure.
-current_focus: "Sketching kinder evaluation loops for large language models and mentoring teams on trustworthy deployment."
+
 primary_cta:
   label: See what I'm working on
   url: /projects

@@ -1,4 +1,6 @@
 {% assign item = include.post %}
+{% assign summary_source = item.subtitle | default: item.description | default: item.excerpt %}
+{% assign summary = summary_source | strip_html | truncate: 140 %}
 <article class="project_card">
     <a href="{{ item.url | relative_url }}" class="project_card_link">
         {% if item.image %}
@@ -11,8 +13,8 @@
                 {{ item.date | date: "%b %Y" }}
             </span>
             <h3 class="project_card_title">{{ item.title }}</h3>
-            {% if item.subtitle %}
-                <p class="project_card_summary">{{ item.subtitle }}</p>
+            {% if summary %}
+                <p class="project_card_summary">{{ summary }}</p>
             {% endif %}
             <span class="project_card_cta">Dive in →</span>
         </div>
