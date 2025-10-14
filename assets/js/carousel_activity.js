@@ -59,10 +59,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
         setTimeout(() => {
             currentItem.style.display = 'none';
-            currentItem.removeAttribute('style');
+            currentItem.style.transition = '';
+            currentItem.style.transform = '';
+            currentItem.style.opacity = '';
+            currentItem.style.filter = '';
             currentItem.classList.remove('active');
 
-            nextItem.removeAttribute('style');
+            nextItem.style.transition = '';
+            nextItem.style.transform = '';
+            nextItem.style.opacity = '';
+            nextItem.style.filter = '';
+            nextItem.style.display = '';
             nextItem.classList.add('active');
             setCarouselHeight(nextItem);
             isAnimating = false;

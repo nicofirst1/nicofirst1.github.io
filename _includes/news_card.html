@@ -1,5 +1,5 @@
 {% assign item = include.post %}
-{% assign summary_source = item.excerpt | default: item.subtitle | default: item.description %}
+{% assign summary_source = item.description | default: item.subtitle | default: item.excerpt %}
 {% assign summary = summary_source | strip_html | truncate: 140 %}
 <article class="article_card">
     <a href="{{ item.url | relative_url }}" class="article_card_link">

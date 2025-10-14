@@ -140,14 +140,14 @@ body.dark .nav_toggle span {
   left: 0;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(248, 113, 113, 0.25);
-  border-radius: 20px;
-  box-shadow: 0 25px 50px -40px rgba(248, 113, 113, 0.5);
+  border-radius: 28px;
+  box-shadow: 0 30px 60px -42px rgba(248, 113, 113, 0.5);
   transform-origin: top;
   transform: scaleY(0.6);
   opacity: 0;
   visibility: hidden;
   transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
-  padding: 1.2rem 1.5rem;
+  padding: 1.6rem 2rem;
   backdrop-filter: blur(18px);
 }
 
@@ -162,14 +162,14 @@ body.dark .nav_toggle span {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.9rem;
+  gap: 1.1rem;
 }
 
 .site_nav_link {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  font-size: 0.95rem;
+  gap: 0.55rem;
+  font-size: 0.98rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -238,12 +238,12 @@ body.menu-open {
   .site_nav_list {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 
   .site_nav_link {
     color: #7c2d12;
-    padding: 0.6rem 0;
+    padding: 0.65rem 0;
   }
 
   body.dark .site_nav_link {

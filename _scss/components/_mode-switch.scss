@@ -2,9 +2,11 @@
 .mode-switch {
   padding-left: 0;
   min-height: 1.6rem;
-  align-content: center;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  display: grid;
+  gap: 0.25rem;
+  margin: 0;
 }
 
 .mode-switch .form-check-input {
@@ -28,6 +30,8 @@
   transition: color 0.15s ease-in-out;
   font-size: 1rem;
   line-height: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .mode-switch .form-check-label:first-of-type {
@@ -57,11 +61,6 @@
 }
 
 @media (min-width: 600px) {
-  .mode-switch {
-    grid-template-columns: 1fr auto 1fr;
-    gap: 5px;
-    align-items: center;
-  }
   .mode-switch .form-check-label {
     display: inline-block;
   }

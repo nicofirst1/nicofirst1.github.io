@@ -14,7 +14,7 @@ body.dark .projects_intro .page_intro_bg {
   background: linear-gradient(180deg, rgba(255, 251, 235, 0.95), rgba(255, 247, 237, 0.85));
   border-radius: 40px;
   box-shadow: 0 45px 90px -60px rgba(248, 113, 113, 0.45);
-  padding: 3.5rem clamp(1.5rem, 5vw, 4rem);
+  padding: 3.5rem 0;
   margin-top: -1.5rem;
 }
 
@@ -79,7 +79,7 @@ body.dark .projects_empty {
 
 @media (max-width: 768px) {
   .projects_section {
-    padding: 3rem 1.5rem;
+    padding: 3rem 0;
     border-radius: 28px;
   }
 

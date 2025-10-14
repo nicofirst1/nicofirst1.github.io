@@ -18,8 +18,9 @@ body.dark {
   color: #fef3c7;
 }
 
+
 .site_main {
-  padding-top: 5rem;
+  padding-top: 0;
 }
 
 .site_main--home {
@@ -27,15 +28,15 @@ body.dark {
 }
 
 .detail_section {
-  padding-top: 2.5rem;
+  padding-top: 0;
 }
 
 @media (max-width: 768px) {
   .site_main {
-    padding-top: 4rem;
+    padding-top: 0;
   }
   .detail_section {
-    padding-top: 2rem;
+    padding-top: 0;
   }
 }
 
