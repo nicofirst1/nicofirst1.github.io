@@ -30,6 +30,11 @@ past_blurb: >
 </section>
 
 <section class="projects_section page_section">
+       <div class="listing_search">
+        <label for="projects-search-input" class="listing_search_label">Search projects</label>
+        <input type="search" id="projects-search-input" class="listing_search_input" placeholder="Type to filter projects..." autocomplete="off">
+        <p id="projects-search-empty" class="listing_search_empty">No projects found.</p>
+    </div>
     <div class="projects_group">
         <div class="projects_group_header">
             <h2>{{ page.current_label | default: "Current projects" }}</h2>
@@ -62,3 +67,13 @@ past_blurb: >
         </div>
     </div>
 </section>
+<script src="{{ '/assets/js/listing_search.js' | relative_url }}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    initListingSearch({
+      inputSelector: '#projects-search-input',
+      cardsSelector: '.projects_section .project_card',
+      emptySelector: '#projects-search-empty'
+    });
+  });
+</script>

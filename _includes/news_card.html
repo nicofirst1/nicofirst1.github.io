@@ -1,8 +1,9 @@
 {% assign item = include.post %}
 {% assign summary_source = item.description | default: item.subtitle | default: item.excerpt %}
 {% assign summary = summary_source | strip_html | truncate: 120 %}
-<article class="news_list_item">
-    <a href="{{ item.url | relative_url }}" class="news_list_link">
+{% assign content_text = item.content | strip_html | truncate: 160 %}
+{% assign search_text = item.title | append: ' ' | append: summary | append: ' ' | append: content_text %}
+<article class="news_list_item" data-search-text="{{ search_text | replace: '\"', ' ' | escape }}">    <a href="{{ item.url | relative_url }}" class="news_list_link">
         <div class="news_list_meta">
             <span class="news_list_date">{{ item.date | date: "%b %d, %Y" }}</span>
             {% if item.tag %}

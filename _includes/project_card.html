@@ -1,8 +1,9 @@
 {% assign item = include.post %}
 {% assign summary_source = item.subtitle | default: item.description | default: item.excerpt %}
 {% assign summary = summary_source | strip_html | truncate: 140 %}
-<article class="project_card">
-    <a href="{{ item.url | relative_url }}" class="project_card_link">
+{% assign content_text = item.content | strip_html | truncate: 160 %}
+{% assign search_text = item.title | append: ' ' | append: summary | append: ' ' | append: content_text %}
+<article class="project_card" data-search-text="{{ search_text | replace: '\"', ' ' | escape }}">    <a href="{{ item.url | relative_url }}" class="project_card_link">
         {% if item.image %}
             <div class="project_card_media">
                 <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">

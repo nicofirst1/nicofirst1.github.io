@@ -19,6 +19,11 @@ intro_blurb: >
 </section>
 
 <section class="articles_section page_section news_articles">
+    <div class="listing_search">
+        <label for="news-search-input" class="listing_search_label">Search updates</label>
+        <input type="search" id="news-search-input" class="listing_search_input" placeholder="Type to filter news..." autocomplete="off">
+        <p id="news-search-empty" class="listing_search_empty">No updates found.</p>
+    </div>
     <div class="articles_grid">
         {% if news_sorted.size > 0 %}
             {% for post in news_sorted %}
@@ -29,3 +34,13 @@ intro_blurb: >
         {% endif %}
     </div>
 </section>
+<script src="{{ '/assets/js/listing_search.js' | relative_url }}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    initListingSearch({
+      inputSelector: '#news-search-input',
+      cardsSelector: '.news_articles .news_list_item',
+      emptySelector: '#news-search-empty'
+    });
+  });
+</script>

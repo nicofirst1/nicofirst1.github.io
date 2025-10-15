@@ -12,10 +12,36 @@
   z-index: 0;
 }
 
+.page_intro_actions {
+  display: inline-flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.page_intro_meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #be123c;
+  font-weight: 600;
+}
+.page_intro_meta span + span::before {
+  content: "•";
+  margin: 0 0.5rem;
+  color: currentColor;
+}
+
 body.dark .page_intro_bg {
   background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.78));
 }
 
+body.dark .page_intro_meta {
+  color: rgba(253, 224, 71, 0.75);
+}
 .page_intro_inner {
   position: relative;
   z-index: 1;
