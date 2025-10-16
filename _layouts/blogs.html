@@ -7,11 +7,22 @@ layout: default
     <div id="reading-progress" class="reading-progress"></div>
 
     <div class="container pb-6">
+      {% assign plain_text = content | strip_html %}
+      {% assign word_count = plain_text | number_of_words %}
+      {% assign reading_time_minutes = word_count | plus: 199 | divided_by: 200 %}
+      {% if reading_time_minutes < 1 %}
+        {% assign reading_time_minutes = 1 %}
+      {% endif %}
       <h1 class="text-5xl font-bold">
           {{page.title}}
       </h1>
       <b>{{page.tag}}</b>
       <p class="text-sm mb-3">{{page.date | date: "%b %d, %Y" }}</p>
+      <div class="post_metrics flex flex-wrap items-center gap-3 text-sm text-slate-600 dark:text-slate-300 mb-4" data-post-metrics data-word-count="{{ word_count }}" data-reading-time="{{ reading_time_minutes }}">
+        <span class="post_metrics_item inline-flex items-center gap-1" data-word-count-text><strong>{{ word_count }}</strong> words</span>
+        <span class="post_metrics_item inline-flex items-center gap-1" data-reading-time-text><strong>{{ reading_time_minutes }}</strong> min read</span>
+        <span class="post_metrics_item inline-flex items-center gap-1" data-reading-ease>Reading ease: <strong>…</strong></span>
+      </div>
 
       {%- if page.image -%}
       <div class="post-image">
@@ -53,5 +64,6 @@ layout: default
 </main>
 {%- include zoom.html -%}
 
+<script src="{{ 'assets/js/post_metrics.js' | relative_url }}"></script>
 <!-- Load the custom JavaScript file from the js directory -->
 <script src="{{ 'assets/js/reading_progress.js' | relative_url }}"></script>
