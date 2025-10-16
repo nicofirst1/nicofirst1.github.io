@@ -69,7 +69,7 @@
     };
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function initPostMetrics() {
     var metricsContainer = document.querySelector('[data-post-metrics]');
     if (!metricsContainer) return;
 
@@ -109,5 +109,84 @@
         timeEl.textContent = metrics.readingTimeMinutes;
       }
     }
+  }
+
+  function slugify(text) {
+    if (!text) return '';
+    return text
+      .toString()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  }
+
+  function initHeadingAnchors() {
+    var contentEl = document.querySelector('.page_content');
+    if (!contentEl) return;
+
+    var headings = contentEl.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    if (!headings.length) return;
+
+    var used = {};
+
+    for (var i = 0; i < headings.length; i += 1) {
+      var existingId = headings[i].id;
+      if (existingId) {
+        used[existingId] = true;
+      }
+    }
+
+    for (var j = 0; j < headings.length; j += 1) {
+      var heading = headings[j];
+      var id = heading.id;
+
+      if (!id) {
+        var base = slugify(heading.textContent);
+        if (!base) continue;
+
+        var unique = base;
+        var counter = 2;
+        while (used[unique]) {
+          unique = base + '-' + counter;
+          counter += 1;
+        }
+
+        id = unique;
+        heading.id = id;
+      }
+
+      used[id] = true;
+
+      if (heading.classList.contains('has-anchor')) continue;
+      if (heading.querySelector('.heading_anchor_link')) continue;
+
+      var anchor = document.createElement('a');
+      anchor.className = 'heading_anchor_link';
+      anchor.href = '#' + id;
+
+      var label = heading.textContent ? heading.textContent.trim() : '';
+      anchor.setAttribute('aria-label', label ? label + ' (section link)' : 'Section link');
+
+      anchor.innerHTML = heading.innerHTML;
+      heading.innerHTML = '';
+      heading.appendChild(anchor);
+
+      var icon = document.createElement('span');
+      icon.className = 'heading_anchor_icon';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = '#';
+
+      anchor.appendChild(icon);
+      heading.classList.add('has-anchor');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initPostMetrics();
+    initHeadingAnchors();
   });
 })();
