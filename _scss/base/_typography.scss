@@ -5,11 +5,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
 }
 
-h1 { font-size: 36px; }
-h2 { font-size: 32px; }
-h3 { font-size: 28px; }
-h4 { font-size: 24px; }
-h6 { font-size: 20px; }
+h1 { font-size: 2.25rem; } /* 36px */
+h2 { font-size: 1.875rem; } /* 30px */
+h3 { font-size: 1.5rem; } /* 24px */
+h4 { font-size: 1.25rem; } /* 20px */
+h5 { font-size: 1.125rem; } /* 18px */
+h6 { font-size: 1rem; } /* 16px */
 
 p {
   margin-bottom: 16px;
@@ -20,9 +21,10 @@ li {
 }
 
 @media (min-width: 768px) {
-  h1 { font-size: 48px; }
-  h2 { font-size: 40px; }
-  h3 { font-size: 36px; }
-  h4 { font-size: 30px; }
-  h6 { font-size: 22px; }
+  h1 { font-size: 2.85rem; } /* ~46px */
+  h2 { font-size: 2.35rem; } /* ~38px */
+  h3 { font-size: 1.95rem; } /* ~31px */
+  h4 { font-size: 1.6rem; } /* ~26px */
+  h5 { font-size: 1.35rem; } /* ~22px */
+  h6 { font-size: 1.2rem; } /* ~19px */
 }

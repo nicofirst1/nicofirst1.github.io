@@ -53,14 +53,15 @@ body.dark {
 }
 
 /* Global link colors */
-.page_content a,
+.page_content a:not(.heading_anchor_link),
 .education a {
-  color: #c026d3;
-  text-decoration: underline;
+  color: #b91c1c;
+  text-decoration: none;
   font-weight: 500;
 }
 
-.page_content a:hover,
+.page_content a:not(.heading_anchor_link):hover,
 .education a:hover {
-  color: #86198f;
+  color: #7f1d1d;
+  text-decoration: none;
 }

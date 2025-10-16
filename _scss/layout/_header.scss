@@ -163,6 +163,14 @@ body.dark .nav_toggle span {
   padding: 0;
   display: grid;
   gap: 1.1rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.site_nav_list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .site_nav_link {
@@ -238,6 +246,7 @@ body.menu-open {
   .site_nav_list {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.75rem;
   }
 

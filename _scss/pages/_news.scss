@@ -71,13 +71,11 @@
 /* Links */
 .news-post a {
   text-decoration: none;
-  border-bottom: 1px solid #fb7185;
-  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .news-post a:hover {
   color: #be123c;
-  border-bottom-color: #be123c;
 }
 
 /* Button CTA */
