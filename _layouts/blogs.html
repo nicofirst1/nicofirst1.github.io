@@ -21,7 +21,11 @@ layout: default
       <div class="post_metrics flex flex-wrap items-center gap-3 text-sm text-slate-600 dark:text-slate-300 mb-4" data-post-metrics data-word-count="{{ word_count }}" data-reading-time="{{ reading_time_minutes }}">
         <span class="post_metrics_item inline-flex items-center gap-1" data-word-count-text><strong>{{ word_count }}</strong> words</span>
         <span class="post_metrics_item inline-flex items-center gap-1" data-reading-time-text><strong>{{ reading_time_minutes }}</strong> min read</span>
-        <span class="post_metrics_item inline-flex items-center gap-1" data-reading-ease>Reading ease: <strong>…</strong></span>
+        <span class="post_metrics_item inline-flex items-center gap-1" data-reading-ease>
+          <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests" target="_blank" rel="noopener noreferrer">
+            Reading ease: <strong>…</strong>
+          </a>
+        </span>
       </div>
 
       {%- if page.image -%}

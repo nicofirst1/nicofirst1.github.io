@@ -88,6 +88,18 @@ body.dark .blog_articles {
   line-height: 1.7;
 }
 
+.page_content hr {
+  border: none;
+  height: 2px;
+  margin: 3rem auto;
+  width: 72%;
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0), rgba(249, 115, 22, 0.55), rgba(249, 115, 22, 0));
+}
+
+body.dark .page_content hr {
+  background: linear-gradient(90deg, rgba(253, 224, 71, 0), rgba(253, 224, 71, 0.6), rgba(253, 224, 71, 0));
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page_content .heading_anchor_icon {
     transition: none;
