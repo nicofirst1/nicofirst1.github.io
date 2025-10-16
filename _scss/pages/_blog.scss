@@ -82,6 +82,12 @@ body.dark .blog_articles {
   transform: translateY(0);
 }
 
+.page_content ul,
+.page_content ol {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page_content .heading_anchor_icon {
     transition: none;
