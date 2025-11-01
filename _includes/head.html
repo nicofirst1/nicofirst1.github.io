@@ -2,6 +2,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
 
+  <script id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/a4ec8d76c6a8f3dbf860aed02/2254c462cd60bbbb345158f12.js");
+  </script>
+
 
   <!-- Conditionally load Google Analytics -->
   <script>
@@ -9,7 +12,7 @@
     if (host !== "localhost" && host !== "127.0.0.1") {
       // Google Analytics Global Site Tag (gtag.js)
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
 
       var gaScript = document.createElement('script');
@@ -17,19 +20,22 @@
       gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
       document.head.appendChild(gaScript);
 
-      gaScript.onload = function() {
+      gaScript.onload = function () {
         gtag('config', 'G-W2MPFHELZG');
       };
-    }else{
+    } else {
       console.log("Google Analytics is disabled on localhost");
     }
   </script>
 
   {% seo %}
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/images/website-logos/icon-apple-touch.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/images/website-logos/icon-favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/images/website-logos/icon-favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="{{ site.baseurl }}/assets/images/website-logos/icon-apple-touch.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="{{ site.baseurl }}/assets/images/website-logos/icon-favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="{{ site.baseurl }}/assets/images/website-logos/icon-favicon-16.png">
   <link rel="manifest" href="{{ site.baseurl }}/site.webmanifest">
   {%- if page.style -%}
   <link rel="stylesheet" href="{{ page.style | relative_url }}">
