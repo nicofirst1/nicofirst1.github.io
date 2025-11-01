@@ -4,11 +4,14 @@
     radial-gradient(circle at bottom right, rgba(253, 186, 116, 0.5), transparent 60%);
 }
 
-.publications_intro .page_intro_inner,
-.publications .page_section {
+.publications_section {
+  width: min(1080px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 2.75rem 0;
+}
+
+.publications_section .publications {
   width: 100%;
-  margin: 0;
-  padding-inline: clamp(2rem, 6vw, 4rem);
 }
 
 body.dark .publications_intro .page_intro_bg {
