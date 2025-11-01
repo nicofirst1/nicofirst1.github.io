@@ -3,7 +3,7 @@ title: CAIRNE | SIG-ELS Membership
 subtitle: Special Interest Group on Ethical, Legal, and Social Aspects of AI
 layout: projects
 custom_id: cairne_sig
-tag: current
+tag: past
 image: /assets/images/projects/ethics_group.jpg
 button_link: https://cairne.eu/sig-els/#:~:text=The%20CAIRNE%20Special%20Interest%20Group%20on%20Ethical%2C%20Legal%20and%20Social,CAIRNE%20community%20and%20the%20public
 button_name: Click to Learn More

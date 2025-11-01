@@ -2,7 +2,7 @@
 title: CorpusCompass
 subtitle: Lead Developer
 custom_id: corpuscompass
-tag: current
+tag: past
 image: /assets/images/projects/corpusCompassLogo.jpg
 layout: projects
 button_link: https://www.corpuscompass.com/
