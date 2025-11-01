@@ -2,7 +2,7 @@
 title: "Mapping the EU AI Landscape (Part 3): Can you Train on my Data?"
 slug: a
 tag: BlogPost
-image: /assets/images/news/eu_landscape/eu_landscape_p3.png
+image: /assets/images/blog/eu_landscape/eu_landscape_p3.png
 date: 2024.10.22
 ---
 

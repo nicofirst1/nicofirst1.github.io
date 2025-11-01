@@ -1,6 +1,6 @@
 ---
 title: Research Scientist
-image: /assets/images/basis_logo.png
+image: /assets/images/work/basis_logo.png
 period: 10/2022 - 04/2023
 order: 3
 ---

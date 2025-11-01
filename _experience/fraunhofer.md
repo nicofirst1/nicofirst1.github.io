@@ -1,6 +1,6 @@
 ---
 title: Research Scientist
-image: /assets/images/fraunhofer_iais.png
+image: /assets/images/work/fraunhofer_iais.png
 period: 03/2024 - Ongoing
 order: 5
 ---

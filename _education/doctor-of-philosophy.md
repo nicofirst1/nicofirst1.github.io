@@ -1,6 +1,6 @@
 ---
 title: Doctor of Philosophy
-image: /assets/images/sapienza_logo.png
+image: /assets/images/work/sapienza_logo.png
 period: 2020 - 2024
 order: 3
 ---
