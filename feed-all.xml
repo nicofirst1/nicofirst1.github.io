@@ -1,0 +1,52 @@
+---
+layout: none
+permalink: /feed-all.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  {% assign blog_collection = site.collections | where: 'label', 'blog' | first %}
+  {% assign blog_docs = blog_collection.docs | default: site.posts %}
+  {% assign blog_docs = blog_docs | where_exp: 'doc', 'doc.published != false' %}
+  {% assign blog_docs = blog_docs | where_exp: 'doc', 'doc.draft != true' %}
+
+  {% assign news_collection = site.collections | where: 'label', 'news' | first %}
+  {% assign news_docs = news_collection.docs | default: site.news %}
+  {% assign news_docs = news_docs | where_exp: 'doc', 'doc.published != false' %}
+  {% assign news_docs = news_docs | where_exp: 'doc', 'doc.draft != true' %}
+
+  {% assign projects_collection = site.collections | where: 'label', 'projects' | first %}
+  {% assign project_docs = projects_collection.docs | default: site.projects %}
+  {% assign project_docs = project_docs | where_exp: 'doc', 'doc.published != false' %}
+  {% assign project_docs = project_docs | where_exp: 'doc', 'doc.draft != true' %}
+
+  {% assign combined = blog_docs | concat: news_docs | concat: project_docs %}
+  {% assign combined = combined | where_exp: 'doc', 'doc.exclude_from_feed != true' %}
+  {% assign combined = combined | sort: 'date' | reverse %}
+  {% assign combined = combined | slice: 0, 30 %}
+  {% assign latest_item = combined | first %}
+  {% assign feed_updated = site.time %}
+  {% if latest_item %}
+    {% assign feed_updated = latest_item.date | default: site.time %}
+  {% endif %}
+
+  <title>{{ site.title | default: "Website" }} – All Updates</title>
+  <link href="{{ '/feed-all.xml' | absolute_url }}" rel="self" />
+  <link href="{{ '/' | absolute_url }}" rel="alternate" />
+  <updated>{{ feed_updated | date_to_xmlschema }}</updated>
+  <id>{{ '/feed-all.xml' | absolute_url }}</id>
+
+  {% for item in combined %}
+    {% assign summary_source = item.excerpt | default: item.description | default: item.content %}
+    {% assign summary_text = summary_source | strip_html | strip_newlines | replace: '  ', ' ' | strip %}
+    <entry>
+      <title>{{ item.title | escape }}</title>
+      <link href="{{ item.url | absolute_url }}" />
+      <id>{{ item.url | absolute_url }}</id>
+      <updated>{{ item.date | date_to_xmlschema }}</updated>
+      <author>
+        <name>{{ item.author | default: site.author | default: site.title | escape }}</name>
+      </author>
+      <summary>{{ summary_text | truncate: 200 | escape }}</summary>
+    </entry>
+  {% endfor %}
+</feed>
