@@ -1,0 +1,42 @@
+---
+layout: none
+permalink: /feed-blog.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  {% assign blog_collection = site.collections | where: 'label', 'blog' | first %}
+  {% if blog_collection %}
+    {% assign blog_docs = blog_collection.docs %}
+  {% else %}
+    {% assign blog_docs = site.posts %}
+  {% endif %}
+  {% assign blog_docs = blog_docs | where_exp: 'doc', 'doc.published != false' %}
+  {% assign blog_docs = blog_docs | where_exp: 'doc', 'doc.draft != true' %}
+  {% assign blog_docs = blog_docs | where_exp: 'doc', 'doc.exclude_from_feed != true' %}
+  {% assign blog_docs = blog_docs | sort: 'date' | reverse %}
+  {% assign blog_docs = blog_docs | slice: 0, 20 %}
+  {% assign latest_blog = blog_docs | first %}
+  {% assign feed_updated = site.time %}
+  {% if latest_blog %}
+    {% assign feed_updated = latest_blog.date | default: site.time %}
+  {% endif %}
+  <title>{{ site.title | default: "Website" }} – Blog</title>
+  <link href="{{ '/feed-blog.xml' | absolute_url }}" rel="self" />
+  <link href="{{ '/' | absolute_url }}" rel="alternate" />
+  <updated>{{ feed_updated | date_to_xmlschema }}</updated>
+  <id>{{ '/feed-blog.xml' | absolute_url }}</id>
+  {% for post in blog_docs %}
+    {% assign summary_source = post.description | default: post.content %}
+    {% assign summary_text = summary_source | strip_html | strip_newlines | replace: '  ', ' ' | strip %}
+    <entry>
+      <title>{{ post.title | escape }}</title>
+      <link href="{{ post.url | absolute_url }}" />
+      <id>{{ post.url | absolute_url }}</id>
+      <updated>{{ post.date | date_to_xmlschema }}</updated>
+      <author>
+        <name>{{ post.author | default: site.author | default: site.title | escape }}</name>
+      </author>
+      <summary>{{ summary_text | truncate: 200 | escape }}</summary>
+    </entry>
+  {% endfor %}
+</feed>

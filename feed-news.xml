@@ -1,0 +1,42 @@
+---
+layout: none
+permalink: /feed-news.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  {% assign news_collection = site.collections | where: 'label', 'news' | first %}
+  {% if news_collection %}
+    {% assign news_docs = news_collection.docs %}
+  {% else %}
+    {% assign news_docs = site.news %}
+  {% endif %}
+  {% assign news_docs = news_docs | where_exp: 'doc', 'doc.published != false' %}
+  {% assign news_docs = news_docs | where_exp: 'doc', 'doc.draft != true' %}
+  {% assign news_docs = news_docs | where_exp: 'doc', 'doc.exclude_from_feed != true' %}
+  {% assign news_docs = news_docs | sort: 'date' | reverse %}
+  {% assign news_docs = news_docs | slice: 0, 20 %}
+  {% assign latest_news = news_docs | first %}
+  {% assign feed_updated = site.time %}
+  {% if latest_news %}
+    {% assign feed_updated = latest_news.date | default: site.time %}
+  {% endif %}
+  <title>{{ site.title | default: "Website" }} – News</title>
+  <link href="{{ '/feed-news.xml' | absolute_url }}" rel="self" />
+  <link href="{{ '/' | absolute_url }}" rel="alternate" />
+  <updated>{{ feed_updated | date_to_xmlschema }}</updated>
+  <id>{{ '/feed-news.xml' | absolute_url }}</id>
+  {% for item in news_docs %}
+    {% assign summary_source = item.excerpt | default: item.content %}
+    {% assign summary_text = summary_source | strip_html | strip_newlines | replace: '  ', ' ' | strip %}
+    <entry>
+      <title>{{ item.title | escape }}</title>
+      <link href="{{ item.url | absolute_url }}" />
+      <id>{{ item.url | absolute_url }}</id>
+      <updated>{{ item.date | date_to_xmlschema }}</updated>
+      <author>
+        <name>{{ item.author | default: site.author | default: site.title | escape }}</name>
+      </author>
+      <summary>{{ summary_text | truncate: 200 | escape }}</summary>
+    </entry>
+  {% endfor %}
+</feed>
