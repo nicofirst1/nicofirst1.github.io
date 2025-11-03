@@ -2,6 +2,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
 
+  <!-- Mailchimp Signup Form JS -->
   <script id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/a4ec8d76c6a8f3dbf860aed02/2254c462cd60bbbb345158f12.js");
   </script>
 
@@ -27,6 +28,34 @@
       console.log("Google Analytics is disabled on localhost");
     }
   </script>
+
+  <!-- Bot detection script -->
+      <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // Track whether we’ve seen any human activity
+    let humanDetected = false;
+    const markHuman = () => { humanDetected = true; };
+
+    // List of events that only humans perform
+    ['mousemove', 'scroll', 'keydown', 'touchstart', 'click'].forEach(event =>
+      window.addEventListener(event, markHuman, { once: true })
+    );
+
+    // Wait a few seconds, then assume it’s a bot if nothing happened
+    setTimeout(() => {
+      if (!humanDetected) {
+        gtag('event', 'likely_bot', {
+          event_category: 'bot_detection',
+          event_label: 'no interaction after 8s',
+          non_interaction: true
+        });
+      }
+    }, 8000); // 8 seconds = enough time for human movement
+  </script>
+
+
 
   {% seo %}
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
