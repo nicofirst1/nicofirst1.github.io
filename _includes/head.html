@@ -32,57 +32,7 @@
 
 
   <!-- Bot + Human detection script -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-
-    let humanDetected = false;
-    let botFlagged = false;
-
-    // Fires when a human action is detected
-    function markHuman() {
-      if (humanDetected) return;
-      humanDetected = true;
-      // Send the confirmed human event
-      gtag('event', 'confirmed_human', {
-        event_category: 'bot_detection',
-        event_label: 'user interacted',
-        non_interaction: false
-      });
-    }
-
-    // Fires when a likely bot is detected (no human action)
-    function markBot(reason) {
-      if (botFlagged || humanDetected) return;
-      botFlagged = true;
-      gtag('event', 'likely_bot', {
-        event_category: 'bot_detection',
-        event_label: reason,
-        non_interaction: true
-      });
-    }
-
-    // Detect any human-like actions
-    ['mousemove', 'scroll', 'keydown', 'touchstart', 'click'].forEach(event =>
-      window.addEventListener(event, markHuman, { once: true })
-    );
-
-    // Early exit detection: if the page becomes hidden before any human action
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'hidden' && !humanDetected) {
-        markBot('page hidden before interaction');
-      }
-    });
-
-    // Timeout-based fallback (no human activity within 3 seconds)
-    setTimeout(() => {
-      if (!humanDetected) {
-        markBot('no interaction after 8s');
-      }
-    }, 8000); // reduce to 8 seconds for quicker bot identification
-  </script>
-
-
+  <script src="/assets/js/bot_detection.js"></script>
 
   {% seo %}
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
