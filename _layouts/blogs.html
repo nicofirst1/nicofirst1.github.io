@@ -26,6 +26,14 @@ layout: default
             Reading ease: <strong>…</strong>
           </a>
         </span>
+        <span class="post_metrics_item inline-flex items-center gap-1">
+          {% if page.untracked-views %}
+            {% assign extra_count = page.untracked-views %}
+          {% else %}
+            {% assign extra_count = 0 %}
+          {% endif %}
+          <a href="https://hits.sh/nicofirst1.github.io{{ page.url }}"><img alt="Views" src="https://hits.sh/nicofirst1.github.io{{ page.url | remove: '/' }}.svg?style=flat-square&label=Views&color=8e4b31&labelColor=7f1d1d&extraCount={{ extra_count }}"/></a>
+        </span>
       </div>
 
       {%- if page.image -%}
