@@ -1,13 +1,13 @@
-<section class="hero_section">
+<section class="hero_section" data-gsap-section="hero">
     <div class="hero_bg" aria-hidden="true">
         <div class="hero_wash"></div>
-        <div class="hero_scribble hero_scribble--one"></div>
-        <div class="hero_scribble hero_scribble--two"></div>
+        <div class="hero_scribble hero_scribble--one" style="will-change: transform;"></div>
+        <div class="hero_scribble hero_scribble--two" style="will-change: transform;"></div>
     </div>
 
     <div class="container mx-auto px-6 lg:px-12 py-16 md:py-24">
         <div class="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-            <div class="hero_content">
+            <div class="hero_content" style="will-change: transform, opacity;">
                 {% if page.greeting %}
                     <p class="hero_greeting">{{ page.greeting }}</p>
                 {% endif %}
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <div class="hero_visual">
+            <div class="hero_visual" style="will-change: transform, opacity;">
                 <div class="hero_portrait_wrap">
                     <div class="hero_portrait_frame">
                         <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">

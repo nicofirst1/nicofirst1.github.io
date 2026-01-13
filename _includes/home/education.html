@@ -7,7 +7,7 @@
   {% assign section_blurb = "Academic foundations spanning reinforcement learning, multi-agent systems, and socio-technical design principles." %}
 {% endif %}
 
-<section class="experience_section py-20" id="{{ include.data }}">
+<section class="experience_section py-20" id="{{ include.data }}" data-gsap-section="experience">
     <div class="container mx-auto px-6 lg:px-10">
         <div class="section_header text-center">
             <span class="section_kicker text-sm uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">Trajectory</span>
@@ -20,9 +20,9 @@
         <div class="experience_grid mt-12 grid gap-8 lg:grid-cols-2">
             {%- assign ed = site[include.data] | sort: 'order' | reverse -%}
             {%- for i in ed -%}
-                <article class="experience_card">
+                <article class="experience_card" style="will-change: transform, opacity;">
                     <div class="experience_card_inner">
-                        <div class="experience_logo">
+                        <div class="experience_logo" style="will-change: transform, opacity;">
                             <div class="logo_blur" aria-hidden="true"></div>
                             <img src="{{ i.image | relative_url }}" alt="{{ i.title }}" loading="lazy" class="logo_image">
                         </div>

@@ -652,3 +652,65 @@ body.dark .experience_copy a:hover {
     padding: 1.6rem;
   }
 }
+
+/* ===========================================
+   GSAP Scroll Animation Enhancements
+   =========================================== */
+
+/* Hero title word animation setup */
+.hero_title .hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+
+/* Ensure smooth transitions for animated elements */
+[data-gsap-section] {
+  position: relative;
+}
+
+/* Performance optimizations for scrolling */
+.hero_scribble,
+.activity_backdrop,
+.hero_portrait_frame,
+.hero_content,
+.hero_visual,
+.activity_card,
+.experience_card,
+.experience_logo {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth opacity transitions */
+.hero_description,
+.section_header p,
+.activity_summary {
+  transition: opacity 0.3s ease-out;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-word,
+  .hero_portrait_frame,
+  .activity_card,
+  .experience_card {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero_scribble,
+  .activity_backdrop {
+    transform: none !important;
+  }
+
+  [style*="will-change"] {
+    will-change: auto !important;
+  }
+}
+
+/* GSAP animations will handle visibility - no need to hide content on load */
