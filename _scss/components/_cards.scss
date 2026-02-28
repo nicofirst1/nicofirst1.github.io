@@ -240,3 +240,38 @@ body.dark .article_card_cta {
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
   }
 }
+
+/* ===========================================
+   GSAP Animation Enhancements
+   =========================================== */
+
+.project_card,
+.article_card,
+.news_list_item {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.project_card_media img,
+.article_card_media img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Accessibility - respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .project_card,
+  .article_card,
+  .news_list_item {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .project_card:hover,
+  .article_card:hover,
+  .news_list_item:hover {
+    transform: none !important;
+  }
+}

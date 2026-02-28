@@ -297,6 +297,204 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ===========================================
+    // LISTING PAGES - Blog, News, Projects
+    // ===========================================
+
+    // Page intro section animations (used on listing pages)
+    const pageIntro = document.querySelector('.page_intro');
+    if (pageIntro) {
+        // Background fade in
+        const pageIntroBg = pageIntro.querySelector('.page_intro_bg');
+        if (pageIntroBg) {
+            gsap.from(pageIntroBg, {
+                opacity: 0,
+                duration: 1.2,
+                ease: 'power2.out'
+            });
+        }
+
+        // Title slide in from left
+        const pageIntroTitle = pageIntro.querySelector('.page_intro_title');
+        if (pageIntroTitle) {
+            gsap.from(pageIntroTitle, {
+                x: -50,
+                opacity: 0,
+                duration: 1,
+                delay: 0.2,
+                ease: 'power3.out'
+            });
+        }
+
+        // Text fade in
+        const pageIntroText = pageIntro.querySelector('.page_intro_text');
+        if (pageIntroText) {
+            gsap.from(pageIntroText, {
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.5,
+                ease: 'power2.out'
+            });
+        }
+    }
+
+    // Search bar fade in
+    const listingSearch = document.querySelector('.listing_search');
+    if (listingSearch) {
+        gsap.from(listingSearch, {
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+            delay: 0.7,
+            ease: 'power2.out'
+        });
+    }
+
+    // Article/News cards stagger animation
+    const articleCards = document.querySelectorAll('.article_card, .news_list_item');
+    if (articleCards.length > 0) {
+        articleCards.forEach((card, index) => {
+            gsap.from(card, {
+                y: 60,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.8 + (index * 0.1),
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 90%',
+                    end: 'top 60%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+    }
+
+    // Project cards stagger animation
+    const projectCards = document.querySelectorAll('.project_card');
+    if (projectCards.length > 0) {
+        projectCards.forEach((card, index) => {
+            gsap.from(card, {
+                y: 60,
+                scale: 0.95,
+                opacity: 0,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 90%',
+                    end: 'top 60%',
+                    scrub: 1
+                }
+            });
+        });
+    }
+
+    // Projects group headers
+    const projectsGroupHeaders = document.querySelectorAll('.projects_group_header');
+    projectsGroupHeaders.forEach(header => {
+        gsap.from(header, {
+            x: -30,
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: header,
+                start: 'top 85%',
+                end: 'top 60%',
+                scrub: 1
+            }
+        });
+    });
+
+    // ===========================================
+    // DETAIL PAGES - Blog Posts, News, Projects
+    // ===========================================
+
+    const detailPage = document.querySelector('[data-gsap-section="detail-page"]');
+    if (detailPage) {
+        // Title animation
+        const detailTitle = detailPage.querySelector('h1');
+        if (detailTitle) {
+            gsap.from(detailTitle, {
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                delay: 0.2,
+                ease: 'power3.out'
+            });
+        }
+
+        // Tag and date fade in
+        const detailMeta = detailPage.querySelectorAll('b, .text-sm');
+        detailMeta.forEach((meta, index) => {
+            gsap.from(meta, {
+                opacity: 0,
+                duration: 0.6,
+                delay: 0.5 + (index * 0.1),
+                ease: 'power2.out'
+            });
+        });
+
+        // Post metrics (blogs only)
+        const postMetrics = detailPage.querySelector('.post_metrics');
+        if (postMetrics) {
+            gsap.from(postMetrics, {
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.8,
+                ease: 'power2.out'
+            });
+        }
+
+        // Hero image reveal
+        const postImage = detailPage.querySelector('.post-image, .project-image');
+        if (postImage) {
+            gsap.from(postImage, {
+                scale: 0.95,
+                opacity: 0,
+                duration: 1,
+                delay: 1,
+                ease: 'power3.out'
+            });
+        }
+
+        // Content fade in on scroll
+        const pageContent = detailPage.querySelector('.page_content');
+        if (pageContent) {
+            // Animate paragraphs and headings within content
+            const contentElements = pageContent.querySelectorAll('p, h2, h3, h4, ul, ol, blockquote, pre, img');
+            contentElements.forEach((element, index) => {
+                gsap.from(element, {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 85%',
+                        end: 'top 60%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+            });
+        }
+
+        // Prev/Next navigation
+        const prevNext = document.querySelector('.prev_next');
+        if (prevNext) {
+            gsap.from(prevNext.querySelectorAll('a'), {
+                y: 20,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: prevNext,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        }
+    }
+
+    // ===========================================
     // PERFORMANCE OPTIMIZATION
     // ===========================================
 
@@ -321,7 +519,7 @@ document.addEventListener('DOMContentLoaded', function() {
             trigger.kill();
         });
         // Reset all elements to visible state
-        gsap.set('.hero_greeting, .hero-word, .hero_subtitle, .hero_description, .hero_list ul li, .hero_actions .btn, .hero_social, .hero_portrait_frame, .activity_card, .experience_card', {
+        gsap.set('.hero_greeting, .hero-word, .hero_subtitle, .hero_description, .hero_list ul li, .hero_actions .btn, .hero_social, .hero_portrait_frame, .activity_card, .experience_card, .article_card, .news_list_item, .project_card, .page_intro_title, .page_intro_text', {
             opacity: 1,
             y: 0,
             x: 0,

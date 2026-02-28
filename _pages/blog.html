@@ -10,16 +10,16 @@ intro_blurb: >
 
 {% assign blog_sorted = site.blog | sort: 'date' | reverse %}
 
-<section class="page_intro blog_intro">
-    <div class="page_intro_bg" aria-hidden="true"></div>
+<section class="page_intro blog_intro" data-gsap-section="page-intro">
+    <div class="page_intro_bg" aria-hidden="true" style="will-change: opacity;"></div>
     <div class="page_intro_inner">
-        <h1 class="page_intro_title">{{ page.intro_title | default: page.title }}</h1>
-        <p class="page_intro_text">{{ page.intro_blurb }}</p>
+        <h1 class="page_intro_title" style="will-change: transform, opacity;">{{ page.intro_title | default: page.title }}</h1>
+        <p class="page_intro_text" style="will-change: opacity;">{{ page.intro_blurb }}</p>
     </div>
 </section>
 
-<section class="articles_section page_section blog_articles">
-     <div class="listing_search">
+<section class="articles_section page_section blog_articles" data-gsap-section="articles">
+     <div class="listing_search" style="will-change: opacity;">
         <label for="blog-search-input" class="listing_search_label">Search posts</label>
         <input type="search" id="blog-search-input" class="listing_search_input" placeholder="Type to filter blog..." autocomplete="off">
         <p id="blog-search-empty" class="listing_search_empty">No posts found.</p>

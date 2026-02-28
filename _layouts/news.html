@@ -1,23 +1,23 @@
 ---
 layout: default
 ---
-<main class="news-post min-h-[80vh] flex flex-col gap-6">
+<main class="news-post min-h-[80vh] flex flex-col gap-6" data-gsap-section="detail-page">
   <section class="detail_section">
 
     <div class="container pb-6">
-      <h1 class="text-5xl font-bold">
+      <h1 class="text-5xl font-bold" style="will-change: transform, opacity;">
         {{page.title}}
       </h1>
-      <b>{{page.tag}}</b>
-      <p class="text-sm mb-3">{{page.date | date: "%b %d, %Y" }}</p>
+      <b style="will-change: opacity;">{{page.tag}}</b>
+      <p class="text-sm mb-3" style="will-change: opacity;">{{page.date | date: "%b %d, %Y" }}</p>
 
       {%- if page.image -%}
-      <div class="post-image">
+      <div class="post-image" style="will-change: transform, opacity;">
         <img src="{{page.image}}" alt="hero image">
       </div>
       {%- endif -%}
 
-      <div class="page_content">
+      <div class="page_content" style="will-change: opacity;">
           {{ content }}
       </div>
 

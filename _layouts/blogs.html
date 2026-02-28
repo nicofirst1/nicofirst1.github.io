@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<main class="news-post min-h-[80vh] flex flex-col gap-6">
+<main class="news-post min-h-[80vh] flex flex-col gap-6" data-gsap-section="detail-page">
   <section class="detail_section">
-    <div id="reading-progress" class="reading-progress"></div>
+    <div id="reading-progress" class="reading-progress" style="will-change: width;"></div>
 
     <div class="container pb-6">
       {% assign plain_text = content | strip_html %}
@@ -13,12 +13,12 @@ layout: default
       {% if reading_time_minutes < 1 %}
         {% assign reading_time_minutes = 1 %}
       {% endif %}
-      <h1 class="text-5xl font-bold">
+      <h1 class="text-5xl font-bold" style="will-change: transform, opacity;">
           {{page.title}}
       </h1>
-      <b>{{page.tag}}</b>
-      <p class="text-sm mb-3">{{page.date | date: "%b %d, %Y" }}</p>
-      <div class="post_metrics flex flex-wrap items-center gap-3 text-sm text-slate-600 dark:text-slate-300 mb-4" data-post-metrics data-word-count="{{ word_count }}" data-reading-time="{{ reading_time_minutes }}">
+      <b style="will-change: opacity;">{{page.tag}}</b>
+      <p class="text-sm mb-3" style="will-change: opacity;">{{page.date | date: "%b %d, %Y" }}</p>
+      <div class="post_metrics flex flex-wrap items-center gap-3 text-sm text-slate-600 dark:text-slate-300 mb-4" data-post-metrics data-word-count="{{ word_count }}" data-reading-time="{{ reading_time_minutes }}" style="will-change: opacity;">
         <span class="post_metrics_item inline-flex items-center gap-1" data-word-count-text><strong>{{ word_count }}</strong> words</span>
         <span class="post_metrics_item inline-flex items-center gap-1" data-reading-time-text><strong>{{ reading_time_minutes }}</strong> min read</span>
         <span class="post_metrics_item inline-flex items-center gap-1" data-reading-ease>
@@ -37,12 +37,12 @@ layout: default
       </div>
 
       {%- if page.image -%}
-      <div class="post-image">
+      <div class="post-image" style="will-change: transform, opacity;">
         <img src="{{page.image}}" alt="hero image">
       </div>
       {%- endif -%}
 
-      <div class="page_content">
+      <div class="page_content" style="will-change: opacity;">
           {{ content }}
       </div>
 

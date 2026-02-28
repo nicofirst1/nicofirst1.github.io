@@ -18,28 +18,28 @@ past_blurb: >
 {% assign current_projects = projects_sorted | where: 'tag', 'current' %}
 {% assign past_projects = projects_sorted | where: 'tag', 'past' %}
 
-<section class="page_intro projects_intro">
-    <div class="page_intro_bg" aria-hidden="true"></div>
+<section class="page_intro projects_intro" data-gsap-section="page-intro">
+    <div class="page_intro_bg" aria-hidden="true" style="will-change: opacity;"></div>
     <div class="page_intro_inner">
-        <h1 class="page_intro_title">{{ page.intro_title | default: page.title }}</h1>
-        <p class="page_intro_text">
+        <h1 class="page_intro_title" style="will-change: transform, opacity;">{{ page.intro_title | default: page.title }}</h1>
+        <p class="page_intro_text" style="will-change: opacity;">
             {{ page.intro_blurb }}
         </p>
     </div>
 </section>
 
-<section class="projects_section page_section">
-       <div class="listing_search">
+<section class="projects_section page_section" data-gsap-section="projects">
+       <div class="listing_search" style="will-change: opacity;">
         <label for="projects-search-input" class="listing_search_label">Search projects</label>
         <input type="search" id="projects-search-input" class="listing_search_input" placeholder="Type to filter projects..." autocomplete="off">
         <p id="projects-search-empty" class="listing_search_empty">No projects found.</p>
     </div>
     <div class="projects_group">
-        <div class="projects_group_header">
+        <div class="projects_group_header" style="will-change: transform, opacity;">
             <h2>{{ page.current_label | default: "Current projects" }}</h2>
             <p>{{ page.current_blurb }}</p>
         </div>
-        <div class="projects_grid">
+        <div class="projects_grid" style="will-change: transform;">
             {% if current_projects.size > 0 %}
                 {% for post in current_projects %}
                     {% include project_card.html post=post %}
@@ -51,11 +51,11 @@ past_blurb: >
     </div>
 
     <div class="projects_group">
-        <div class="projects_group_header">
+        <div class="projects_group_header" style="will-change: transform, opacity;">
             <h2>{{ page.past_label | default: "Past projects" }}</h2>
             <p>{{ page.past_blurb }}</p>
         </div>
-        <div class="projects_grid">
+        <div class="projects_grid" style="will-change: transform;">
             {% if past_projects.size > 0 %}
                 {% for post in past_projects %}
                     {% include project_card.html post=post %}

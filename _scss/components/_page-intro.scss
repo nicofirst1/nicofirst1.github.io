@@ -92,3 +92,26 @@ body.dark .page_intro_text {
     padding: 2.3rem 0;
   }
 }
+
+/* ===========================================
+   GSAP Animation Enhancements
+   =========================================== */
+
+.page_intro,
+.page_intro_bg,
+.page_intro_title,
+.page_intro_text {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Accessibility - respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .page_intro_title,
+  .page_intro_text,
+  .page_intro_bg {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
