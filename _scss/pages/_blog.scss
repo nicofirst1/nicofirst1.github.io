@@ -105,3 +105,79 @@ body.dark .page_content hr {
     transition: none;
   }
 }
+
+/* ── Footnote scroll offset ────────────────────────────────────────────── */
+
+// Kramdown renders footnotes as .footnotes ol li[id^="fn:"]
+// Match the same offset used for headings so the sticky header doesn't cover them
+.footnotes ol li {
+  scroll-margin-top: clamp(4rem, 10vh, 6rem);
+}
+
+/* ── Footnote tooltips ─────────────────────────────────────────────────── */
+
+// Style the inline superscript links
+.page_content sup a[href^="#fn:"] {
+  color: var(--color-accent, #c2410c);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-accent-dark, #9a3412);
+    outline: none;
+  }
+}
+
+// The floating tooltip bubble
+#footnote-tooltip {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  visibility: hidden;
+  max-width: min(420px, calc(100vw - 24px));
+  padding: 0.65rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  pointer-events: auto;
+
+  // Light theme
+  background: #fff8f0;
+  border: 1px solid rgba(194, 65, 12, 0.25);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  color: #1e293b;
+
+  // Fade-in
+  opacity: 0;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: var(--color-accent, #c2410c);
+    text-decoration: underline;
+  }
+}
+
+body.dark #footnote-tooltip {
+  background: #1e2535;
+  border-color: rgba(251, 146, 60, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  color: #e2e8f0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #footnote-tooltip {
+    transition: none;
+  }
+}
