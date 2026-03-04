@@ -9,7 +9,10 @@ User-agent: CCBot             # Common Crawl
 Disallow: /
 
 User-agent: ClaudeBot         # Anthropic
-Disallow: /
+Allow: /
+
+User-agent: PerplexityBot     # Perplexity
+Allow: /
 
 User-agent: Google-Extended   # Google’s training/grounding control
 Disallow: /
