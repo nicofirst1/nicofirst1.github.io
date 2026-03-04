@@ -328,7 +328,7 @@
         return '#dc2626';                 // red
       }
 
-      var BAR_W = 120;  // px, bar chart width
+      var BAR_W = 140;  // px, bar chart width
 
       var panels = posDigits.map(function (digits, pos) {
         var wrap = document.createElement('div');
@@ -337,7 +337,7 @@
 
         // Title
         var title = document.createElement('div');
-        title.style.cssText = 'font-size:13px;font-weight:700;color:#78350f;';
+        title.style.cssText = 'font-size:15px;font-weight:700;color:#78350f;';
         title.textContent = 'Position ' + (pos + 1);
         wrap.appendChild(title);
 
@@ -373,7 +373,7 @@
 
         // Stability label under drum
         var stabilityEl = document.createElement('div');
-        stabilityEl.style.cssText = 'font-size:10px;font-weight:600;color:#92400e;text-align:center;min-height:14px;font-variant-numeric:tabular-nums;';
+        stabilityEl.style.cssText = 'font-size:12px;font-weight:600;color:#92400e;text-align:center;min-height:16px;font-variant-numeric:tabular-nums;';
         wrap.appendChild(stabilityEl);
 
         // Bar chart — dynamic sorted list, re-rendered on each update
@@ -388,7 +388,7 @@
         };
       });
 
-      var BAR_ROW_H = 10;  // px per bar row
+      var BAR_ROW_H = 13;  // px per bar row
 
       function updateChart(p) {
         if (p.total === 0) return;
@@ -418,7 +418,7 @@
           barRow.style.cssText = 'display:flex;align-items:center;gap:4px;position:relative;';
 
           var lbl = document.createElement('span');
-          lbl.style.cssText = 'font-size:10px;color:#92400e;width:10px;text-align:right;font-variant-numeric:tabular-nums;' + (isTop ? 'font-weight:700;' : '');
+          lbl.style.cssText = 'font-size:12px;color:#92400e;width:12px;text-align:right;font-variant-numeric:tabular-nums;' + (isTop ? 'font-weight:700;' : '');
           lbl.textContent = d;
 
           var track = document.createElement('div');
@@ -431,12 +431,12 @@
           track.appendChild(fill);
 
           var countLbl = document.createElement('span');
-          countLbl.style.cssText = 'font-size:9px;color:#92400e;width:22px;text-align:right;font-variant-numeric:tabular-nums;' + (isTop ? 'font-weight:700;' : '');
+          countLbl.style.cssText = 'font-size:11px;color:#92400e;width:28px;text-align:right;font-variant-numeric:tabular-nums;' + (isTop ? 'font-weight:700;' : '');
           countLbl.textContent = count > 0 ? count : '';
 
           // Bracket arm: right edge of countLbl, only for rank 0 and 1
           var bracketEl = document.createElement('span');
-          bracketEl.style.cssText = 'width:14px;font-size:9px;color:#92400e;text-align:center;flex-shrink:0;';
+          bracketEl.style.cssText = 'width:16px;font-size:11px;color:#92400e;text-align:center;flex-shrink:0;';
           if (isTop)    bracketEl.textContent = '─┐';
           if (isSecond) bracketEl.textContent = '─┘';
 
@@ -451,8 +451,8 @@
             var ratioRow = document.createElement('div');
             ratioRow.style.cssText = 'display:flex;justify-content:flex-end;align-items:center;height:6px;';
             var ratioLbl = document.createElement('span');
-            ratioLbl.style.cssText = 'font-size:9px;font-weight:700;font-variant-numeric:tabular-nums;' +
-              'color:' + topColor + ';width:14px;text-align:center;';
+            ratioLbl.style.cssText = 'font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;' +
+              'color:' + topColor + ';width:16px;text-align:center;';
             ratioLbl.textContent = ratio + 'x';
             ratioRow.appendChild(ratioLbl);
             p.chartWrap.appendChild(ratioRow);
@@ -710,7 +710,7 @@
       el.appendChild(panels);
 
       // ── Panel A: Ranked drop-off chart ────────────────────────────────────────
-      var WA = 440, HA = 260;
+      var WA = 500, HA = 300;
       var mgA = { top: 12, right: 16, bottom: 42, left: 48 };
 
       var chartA = document.createElement('div');
@@ -718,7 +718,7 @@
       panels.appendChild(chartA);
 
       var titleA = document.createElement('div');
-      titleA.style.cssText = 'font-size:16px;font-weight:700;color:#78350f;margin-bottom:6px;padding-left:' + mgA.left + 'px;';
+      titleA.style.cssText = 'font-size:16px;font-weight:700;color:#78350f;margin-bottom:6px;text-align:center;padding-left:' + mgA.left + 'px;padding-right:' + mgA.right + 'px;';
       titleA.textContent = 'All 10,000 codes ranked by likelihood';
       chartA.appendChild(titleA);
 
@@ -817,7 +817,7 @@
 
       // Zoom buttons
       var zoomRow = document.createElement('div');
-      zoomRow.style.cssText = 'display:flex;gap:6px;margin-top:4px;padding-left:' + mgA.left + 'px;';
+      zoomRow.style.cssText = 'display:flex;gap:6px;margin-top:4px;justify-content:center;padding-left:' + mgA.left + 'px;padding-right:' + mgA.right + 'px;';
       chartA.appendChild(zoomRow);
 
       function makeSmBtn(label, active) {
@@ -860,14 +860,14 @@
       }).on('mouseleave', function () { tipA.style('opacity', 0); });
 
       // ── Panel B: 10×10 attack zone heatmap ───────────────────────────────────
-      var CELL = 28, HM_PAD = 38;
+      var CELL = 32, HM_PAD = 42;
 
       var chartB = document.createElement('div');
       chartB.style.cssText = 'flex:1;min-width:180px;position:relative;';
       panels.appendChild(chartB);
 
       var titleB = document.createElement('div');
-      titleB.style.cssText = 'font-size:16px;font-weight:700;color:#78350f;margin-bottom:6px;padding-left:' + HM_PAD + 'px;';
+      titleB.style.cssText = 'font-size:16px;font-weight:700;color:#78350f;margin-bottom:6px;text-align:center;padding-left:' + HM_PAD + 'px;';
       titleB.textContent = 'Attack zone: 4-?-?-7';
       chartB.appendChild(titleB);
       var WB   = CELL * 10 + HM_PAD;
@@ -940,20 +940,6 @@
         .attr('text-anchor', 'middle').attr('font-size', 13).attr('fill', COL.tick)
         .text('position 2 digit');
 
-      // ── Stats bar ─────────────────────────────────────────────────────────────
-      var statsBar = document.createElement('div');
-      statsBar.style.cssText = [
-        'background:rgba(255,247,237,0.9);border:1px solid rgba(194,65,12,0.2);',
-        'border-radius:8px;padding:12px 18px;',
-        'font-size:14px;color:#78350f;line-height:1.7;',
-      ].join('');
-      statsBar.innerHTML = [
-        'True code <strong>4-7-4-7</strong> ranks <strong>#' + trueEntry.rank + '</strong> / 10,000. ',
-        'The 100-combination attack zone (teal) catches it in ',
-        '<strong>~73%</strong> of bootstrap resamples (median rank: 44).',
-      ].join('');
-      el.appendChild(statsBar);
-
     }).catch(function (err) {
       console.error('[bike_steal] Failed to load LockDigits.csv:', err);
       d3.select(el).append('p')
@@ -978,8 +964,8 @@
       var p7 = freq2[7] / actualN;
 
       // Phase 2: Layout
-      var W  = 520, H = 300;
-      var mg = { top: 20, right: 140, bottom: 50, left: 52 };
+      var W  = 660, H = 380;
+      var mg = { top: 20, right: 160, bottom: 50, left: 56 };
       var w  = W - mg.left - mg.right;
       var h  = H - mg.top  - mg.bottom;
 
