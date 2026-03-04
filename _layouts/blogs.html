@@ -26,6 +26,7 @@ layout: default
             Reading ease: <strong>…</strong>
           </a>
         </span>
+        {% if jekyll.environment == "production" %}
         <span class="post_metrics_item inline-flex items-center gap-1">
           {% if page.untracked-views %}
             {% assign extra_count = page.untracked-views %}
@@ -34,6 +35,7 @@ layout: default
           {% endif %}
           <a href="https://hits.sh/nicofirst1.github.io{{ page.url }}"><img alt="Views" src="https://hits.sh/nicofirst1.github.io{{ page.url | remove: '/' }}.svg?style=flat-square&label=Views&color=8e4b31&labelColor=7f1d1d&extraCount={{ extra_count }}"/></a>
         </span>
+        {% endif %}
       </div>
 
       {%- if page.image -%}
@@ -77,6 +79,5 @@ layout: default
 {%- include zoom.html -%}
 
 <script src="{{ 'assets/js/post_metrics.js' | relative_url }}"></script>
-<!-- Load the custom JavaScript file from the js directory -->
 <script src="{{ 'assets/js/reading_progress.js' | relative_url }}"></script>
 <script src="{{ 'assets/js/footnote-tooltips.js' | relative_url }}"></script>
