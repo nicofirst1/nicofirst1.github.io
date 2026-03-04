@@ -1,0 +1,14 @@
+---
+layout: blogs
+---
+
+{{ content }}
+
+<script src="https://distill.pub/template.v2.js"></script>
+
+{% if page.viz_scripts %}
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+{% for script in page.viz_scripts %}
+<script src="{{ script | relative_url }}"></script>
+{% endfor %}
+{% endif %}
