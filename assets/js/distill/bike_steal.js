@@ -1014,17 +1014,17 @@
 
       // Phase 4: Static chart elements
       // CI bands (digit 7 first = behind)
-      g.append('path').datum(band7).attr('fill', '#3b82f6').attr('opacity', 0.15).attr('d', areaGen);
+      g.append('path').datum(band7).attr('fill', '#16a34a').attr('opacity', 0.15).attr('d', areaGen);
       g.append('path').datum(band4).attr('fill', '#c2410c').attr('opacity', 0.15).attr('d', areaGen);
 
       // Mean lines
-      g.append('path').datum(band7).attr('fill', 'none').attr('stroke', '#3b82f6').attr('stroke-width', 2).attr('opacity', 0.9).attr('d', lineGen);
+      g.append('path').datum(band7).attr('fill', 'none').attr('stroke', '#16a34a').attr('stroke-width', 2).attr('opacity', 0.9).attr('d', lineGen);
       g.append('path').datum(band4).attr('fill', 'none').attr('stroke', '#c2410c').attr('stroke-width', 2).attr('opacity', 0.9).attr('d', lineGen);
 
       // 10% reference line
       g.append('line')
         .attr('x1', 0).attr('x2', w).attr('y1', yScale(0.10)).attr('y2', yScale(0.10))
-        .attr('stroke', COL.ref).attr('stroke-width', 1).attr('stroke-dasharray', '5,3');
+        .attr('stroke', '#9ca3af').attr('stroke-width', 1.5).attr('stroke-dasharray', '6,4');
       g.append('text')
         .attr('x', w + 4).attr('y', yScale(0.10) + 4)
         .attr('font-size', 11).attr('fill', COL.tick).text('10%');
@@ -1063,7 +1063,7 @@
       // Legend
       g.append('rect').attr('x', 4).attr('y', 6).attr('width', 14).attr('height', 4).attr('fill', '#c2410c');
       g.append('text').attr('x', 22).attr('y', 10).attr('font-size', 12).attr('fill', COL.tick).text('digit 4 (mode)');
-      g.append('rect').attr('x', 4).attr('y', 20).attr('width', 14).attr('height', 4).attr('fill', '#3b82f6');
+      g.append('rect').attr('x', 4).attr('y', 20).attr('width', 14).attr('height', 4).attr('fill', '#16a34a');
       g.append('text').attr('x', 22).attr('y', 24).attr('font-size', 12).attr('fill', COL.tick).text('digit 7 (true)');
 
       // Phase 5: Cursor line (on top)
@@ -1098,21 +1098,30 @@
       ciRow.appendChild(ciLabel4);
 
       var ciLabel7 = document.createElement('span');
-      ciLabel7.style.cssText = 'color:#3b82f6;font-weight:600;';
+      ciLabel7.style.cssText = 'color:#16a34a;font-weight:600;';
       ciRow.appendChild(ciLabel7);
 
       // Phase 7: Cursor update + init
+      // Slider is 0–1000 (integer steps); map to log scale 10–5000
+      var LOG_MIN = Math.log10(10), LOG_MAX = Math.log10(5000);
+      function sliderToN(v) { return Math.round(Math.pow(10, LOG_MIN + (LOG_MAX - LOG_MIN) * v / 1000)); }
+      function nToSlider(N) { return Math.round((Math.log10(N) - LOG_MIN) / (LOG_MAX - LOG_MIN) * 1000); }
+
+      slider.min   = '0';
+      slider.max   = '1000';
+      slider.value = String(nToSlider(actualN));
+
       function updateCursor(N) {
         var cx  = xScale(Math.max(10, Math.min(5000, N)));
         var se4 = Math.sqrt(p4 * (1 - p4) / N);
         var se7 = Math.sqrt(p7 * (1 - p7) / N);
         cursorLine.attr('x1', cx).attr('x2', cx);
-        sliderLabel.textContent = 'N\u00a0=\u00a0' + Math.round(N);
+        sliderLabel.textContent = 'N\u00a0=\u00a0' + N;
         ciLabel4.textContent = 'Digit 4: ' + Math.round(Math.max(0, p4 - 1.96 * se4) * 100) + '% \u2013 ' + Math.round(Math.min(1, p4 + 1.96 * se4) * 100) + '%';
         ciLabel7.textContent = 'Digit 7: ' + Math.round(Math.max(0, p7 - 1.96 * se7) * 100) + '% \u2013 ' + Math.round(Math.min(1, p7 + 1.96 * se7) * 100) + '%';
       }
 
-      slider.addEventListener('input', function () { updateCursor(+this.value); });
+      slider.addEventListener('input', function () { updateCursor(sliderToN(+this.value)); });
       updateCursor(actualN);
 
     }).catch(function (err) {
