@@ -10,3 +10,7 @@
 - title: Linkedin
   link: https://www.linkedin.com/in/nicolo-brandizzi-ph-d-04091b153/
   icon: svg/linkedin.svg
+
+- title: RSS Feed
+  link: /feed.xml
+  icon: svg/rss.svg
