@@ -54,6 +54,43 @@ page_id: publications
 
     bibtexify('{{site.baseurl}}/assets/data/publications.bib', 'pubTable', options);
     document.getElementById('pubTable').style.width = '100%';
+
+    // Add copy button when bibtex popup opens
+    $(document).on('click', '.biblink', function () {
+        setTimeout(function () {
+            var $info = $('.bibinfo.open');
+            var $pre = $info.find('pre');
+            if ($info.length && !$pre.find('.bibcopy').length) {
+                // Move bibclose inside pre so it's visible above the header
+                $pre.prepend($info.find('.bibclose'));
+                // Add copy button inside pre
+                var $btn = $('<button class="bibcopy" title="Copy BibTeX"></button>');
+                $btn.on('click', function (e) {
+                    e.stopPropagation();
+                    var text = $pre.find('code').text();
+                    navigator.clipboard.writeText(text).then(function () {
+                        $btn.addClass('copied');
+                        setTimeout(function () { $btn.removeClass('copied'); }, 2000);
+                    });
+                });
+                $pre.prepend($btn);
+            }
+        }, 0);
+    });
+
+    // Close bibtex overlay by clicking background or pressing Escape
+    $(document).on('click', '.bibinfo.open', function (e) {
+        if (!$(e.target).closest('pre').length) {
+            $(".bibinfo.open").removeClass("open").addClass("hidden");
+            $("#shutter").hide();
+        }
+    });
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape') {
+            $(".bibinfo.open").removeClass("open").addClass("hidden");
+            $("#shutter").hide();
+        }
+    });
 });
 </script>
   
