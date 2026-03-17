@@ -1,6 +1,7 @@
 - title: Email
-  link: mailto:nicolo.brandizzi@iais.fraunhofer.de
+  link: "#email"
   icon: svg/email.svg
+  email_link: true
 
 - title: GitHub
   link: https://github.com/nicofirst1

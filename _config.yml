@@ -45,6 +45,9 @@ defaults:
   - scope: { path: "_blog", type: blog }
     values: { layout: "blogs" }
 
+# Email obfuscation: to change, run: echo -n "your@email.com" | base64
+email_b64: "bmljb2xvLmJyYW5kaXp6aUBpYWlzLmZyYXVuaG9mZXIuZGU="
+
 exclude:
   - node_modules
   - _site

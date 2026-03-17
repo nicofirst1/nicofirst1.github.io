@@ -4,8 +4,20 @@
         <p class="site_footer_note">© {{ 'now' | date: "%Y" }} Dr. Nicolo' Brandizzi — exploring responsible AI.</p>
         <div class="site_footer_links">
             {% for s in site.data.social %}
-                <a href="{{ s.link }}" class="site_footer_link" target="_blank" rel="noopener">{% include {{ s.icon }} %}</a>
+                <a href="{{ s.link }}" class="site_footer_link" target="_blank" rel="noopener"{% if s.email_link %} data-email="{{ site.email_b64 }}"{% endif %}>{% include {{ s.icon }} %}</a>
             {% endfor %}
         </div>
     </div>
 </footer>
+<script>
+(function(){
+  var els = document.querySelectorAll('[data-email]');
+  for (var i = 0; i < els.length; i++) {
+    try {
+      var addr = atob(els[i].getAttribute('data-email'));
+      els[i].href = 'mailto:' + addr;
+      els[i].removeAttribute('data-email');
+    } catch(e) {}
+  }
+})();
+</script>

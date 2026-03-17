@@ -47,7 +47,7 @@
                         </a>
                     {% endif %}
                     {% if page.secondary_cta %}
-                        <a href="{{ page.secondary_cta.url | relative_url }}" class="btn btn-secondary">
+                        <a href="{{ page.secondary_cta.url | relative_url }}" class="btn btn-secondary"{% if page.secondary_cta.email_cta %} data-email="{{ site.email_b64 }}"{% endif %}>
                             {{ page.secondary_cta.label }}
                         </a>
                     {% endif %}
@@ -57,7 +57,7 @@
                     <span class="hero_social_label">Find me elsewhere</span>
                     <div class="hero_social_links">
                         {%- for s in site.data.social -%}
-                            <a href="{{ s.link }}" class="social_item" target="_blank" aria-label="{{ s.title }}">
+                            <a href="{{ s.link }}" class="social_item" target="_blank" aria-label="{{ s.title }}"{% if s.email_link %} data-email="{{ site.email_b64 }}"{% endif %}>
                                 {%- include {{ s.icon }} -%}
                             </a>
                         {%- endfor -%}

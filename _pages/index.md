@@ -18,7 +18,8 @@ primary_cta:
   url: /projects
 secondary_cta:
   label: Say hello
-  url: mailto:nicolo.brandizzi@iais.fraunhofer.de
+  url: "#email"
+  email_cta: true
 page_id: home
 permalink: /
 ---
