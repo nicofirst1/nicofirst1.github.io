@@ -1,0 +1,78 @@
+{% comment %}
+  JSON-LD structured data for rich snippets.
+  Outputs Person schema on homepage, BlogPosting on blog posts,
+  and WebSite schema on all pages.
+{% endcomment %}
+
+{% comment %} ---- WebSite schema (all pages) ---- {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "description": "{{ site.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.title }}"
+  }
+}
+</script>
+
+{% if page.page_id == 'home' %}
+{% comment %} ---- Person schema (homepage) ---- {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dr. Nicolo' Brandizzi",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "image": "{{ site.url }}{{ site.baseurl }}/assets/images/profile_picture.jpg",
+  "jobTitle": "AI Researcher",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Fraunhofer IAIS",
+    "url": "https://www.iais.fraunhofer.de"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Sapienza University of Rome"
+  },
+  "sameAs": [
+    "https://scholar.google.com/citations?hl=en&user=7brL8DoAAAAJ",
+    "https://orcid.org/0000-0002-3191-6623",
+    "https://github.com/nicofirst1",
+    "https://www.linkedin.com/in/nicolo-brandizzi-ph-d-04091b153/"
+  ],
+  "knowsAbout": ["Artificial Intelligence", "Reinforcement Learning", "Multi-Agent Systems", "Responsible AI"]
+}
+</script>
+{% endif %}
+
+{% if page.layout == 'blogs' or page.layout == 'blogs_distill' %}
+{% comment %} ---- BlogPosting schema (blog posts) ---- {% endcomment %}
+{% assign plain_text = page.content | strip_html %}
+{% assign word_count = plain_text | number_of_words %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title | escape }}",
+  "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+  {% if page.image %}"image": "{{ site.url }}{{ site.baseurl }}{{ page.image }}",{% endif %}
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "wordCount": {{ word_count }},
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Nicolo' Brandizzi",
+    "url": "{{ site.url }}{{ site.baseurl }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Dr. Nicolo' Brandizzi"
+  }{% if page.description %},
+  "description": "{{ page.description | escape }}"{% elsif page.subtitle %},
+  "description": "{{ page.subtitle | escape }}"{% endif %}
+}
+</script>
+{% endif %}
