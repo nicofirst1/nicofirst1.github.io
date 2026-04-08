@@ -22,14 +22,21 @@
       if (host === "localhost" || host === "127.0.0.1") return;
 
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
+      window.gtag = function() { dataLayer.push(arguments); };
       gtag('js', new Date());
+
+      // Disable automatic page_view — bot_detection.js fires it after human confirmation
+      gtag('config', 'G-W2MPFHELZG', { send_page_view: false });
+
+      // Default visitor_type to 'unknown' until classified
+      gtag('set', 'user_properties', { visitor_type: 'unknown' });
 
       var gaScript = document.createElement('script');
       gaScript.async = true;
       gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
       document.head.appendChild(gaScript);
-      gaScript.onload = function () { gtag('config', 'G-W2MPFHELZG'); };
+
+      window.gaReady = true;
     })();
   </script>
 

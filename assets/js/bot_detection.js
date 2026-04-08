@@ -101,6 +101,9 @@
         detection.humanDetected = true;
         const score = calculateHumanScore();
 
+        // Set user-scoped property so all reports can filter by visitor_type
+        gtag('set', 'user_properties', { visitor_type: 'human' });
+
         gtag('event', 'confirmed_human', {
             event_category: 'bot_detection',
             event_label: reason,
@@ -111,7 +114,8 @@
             non_interaction: false
         });
 
-        // Human confirmed — event sent to GA
+        // Fire the deferred page_view now that we know it's a human
+        gtag('event', 'page_view');
     }
 
     // Mark as likely bot
@@ -121,6 +125,8 @@
         detection.botFlagged = true;
         const score = calculateHumanScore();
         const botIndicators = checkBotIndicators();
+
+        gtag('set', 'user_properties', { visitor_type: 'bot' });
 
         gtag('event', 'likely_bot', {
             event_category: 'bot_detection',
@@ -132,7 +138,7 @@
             non_interaction: true
         });
 
-        // Bot flagged — event sent to GA
+        // No page_view fired — bot sessions won't inflate page view counts
     }
 
     // Mouse movement tracking
@@ -225,12 +231,15 @@
                 markBot('no interaction after 8s, low score');
             } else {
                 // Uncertain - user might just be reading
+                gtag('set', 'user_properties', { visitor_type: 'uncertain' });
                 gtag('event', 'uncertain_visitor', {
                     event_category: 'bot_detection',
                     event_label: 'passive behavior',
                     human_score: score,
                     non_interaction: true
                 });
+                // Still fire page_view — give uncertain visitors the benefit of the doubt
+                gtag('event', 'page_view');
             }
         }
     }, 8000);
