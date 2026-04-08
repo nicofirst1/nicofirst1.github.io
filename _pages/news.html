@@ -11,15 +11,15 @@ intro_blurb: >
 {% assign news_sorted = site.news | sort: 'date' | reverse %}
 
 <section class="page_intro news_intro" data-gsap-section="page-intro">
-    <div class="page_intro_bg" aria-hidden="true" style="will-change: opacity;"></div>
+    <div class="page_intro_bg" aria-hidden="true"></div>
     <div class="page_intro_inner">
-        <h1 class="page_intro_title" style="will-change: transform, opacity;">{{ page.intro_title | default: page.title }}</h1>
-        <p class="page_intro_text" style="will-change: opacity;">{{ page.intro_blurb }}</p>
+        <h1 class="page_intro_title">{{ page.intro_title | default: page.title }}</h1>
+        <p class="page_intro_text">{{ page.intro_blurb }}</p>
     </div>
 </section>
 
 <section class="articles_section page_section news_articles" data-gsap-section="articles">
-    <div class="listing_search" style="will-change: opacity;">
+    <div class="listing_search">
         <label for="news-search-input" class="listing_search_label">Search updates</label>
         <input type="search" id="news-search-input" class="listing_search_input" placeholder="Type to filter news..." autocomplete="off">
         <p id="news-search-empty" class="listing_search_empty">No updates found.</p>

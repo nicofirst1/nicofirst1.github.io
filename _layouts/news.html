@@ -5,19 +5,19 @@ layout: default
   <section class="detail_section">
 
     <div class="container pb-6">
-      <h1 class="text-5xl font-bold" style="will-change: transform, opacity;">
+      <h1 class="text-5xl font-bold">
         {{page.title}}
       </h1>
-      <b style="will-change: opacity;">{{page.tag}}</b>
-      <p class="text-sm mb-3" style="will-change: opacity;">{{page.date | date: "%b %d, %Y" }}</p>
+      <b>{{page.tag}}</b>
+      <p class="text-sm mb-3">{{page.date | date: "%b %d, %Y" }}</p>
 
       {%- if page.image -%}
-      <div class="post-image" style="will-change: transform, opacity;">
-        <img src="{{page.image}}" alt="hero image">
+      <div class="post-image">
+        <img src="{{page.image}}" alt="hero image" loading="lazy">
       </div>
       {%- endif -%}
 
-      <div class="page_content" style="will-change: opacity;">
+      <div class="page_content">
           {{ content }}
       </div>
 

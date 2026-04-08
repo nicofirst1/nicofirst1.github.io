@@ -6,7 +6,7 @@
 <article class="project_card" data-search-text="{{ search_text | replace: '\"', ' ' | escape }}">    <a href="{{ item.url | relative_url }}" class="project_card_link">
         {% if item.image %}
             <div class="project_card_media">
-                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy">
             </div>
         {% endif %}
         <div class="project_card_body">

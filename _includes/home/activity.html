@@ -12,7 +12,7 @@
 {% assign total_pages = sorted_items.size | divided_by: page_size | ceil %}
 
 <section id="activity" class="activity activity_section relative py-20" data-total-pages="{{ total_pages }}" data-gsap-section="activity">
-    <div class="activity_backdrop absolute inset-0" style="will-change: transform;" aria-hidden="true"></div>
+    <div class="activity_backdrop absolute inset-0" aria-hidden="true"></div>
     <div class="container relative mx-auto px-6 lg:px-10">
         <div class="section_header mx-auto max-w-3xl text-center">
             <span class="section_kicker text-sm uppercase tracking-[0.4em] text-indigo-500 dark:text-indigo-300">What I've been up to lately</span>
@@ -31,7 +31,7 @@
                             {% for item in sorted_items limit: page_size offset: offset %}
                                 {% assign summary = item.subtitle | default: item.description | default: item.excerpt %}
                                 {% assign summary = summary | strip_html | truncate: 130 %}
-                                <article class="activity_card group h-full" style="will-change: transform, opacity;">
+                                <article class="activity_card group h-full">
                                     <a href="{{ item.url | relative_url }}" class="flex h-full flex-col">
                                         <div class="activity_media relative overflow-hidden rounded-3xl">
                                             <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy" class="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]">
