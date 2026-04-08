@@ -22,7 +22,7 @@ body.dark .site_footer_bg {
 .site_footer_inner {
   position: relative;
   z-index: 1;
-  width: min($container-md, calc(100% - $sp-12));
+  width: min($container-max, calc(100% - $sp-12));
   margin: 0 auto;
   display: flex;
   flex-direction: column;

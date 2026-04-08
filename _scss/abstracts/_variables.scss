@@ -127,10 +127,8 @@ $sp-24:  6rem;     // 96px
 // CONTAINER WIDTHS
 // ------------------------------------------
 
-$container-sm:  1020px;  // activity carousel
-$container-md:  1080px;  // page sections, footer
-$container-lg:  1120px;  // header
-$container-xl:  1200px;  // global container
+$container-sm:   1020px;  // activity carousel (narrower, 3-card layout)
+$container-max:  1120px;  // everything else: header, footer, page sections, global
 
 // ------------------------------------------
 // TYPOGRAPHY

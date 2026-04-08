@@ -54,7 +54,7 @@ body.dark .site_header_bg {
   align-items: center;
   justify-content: space-between;
   gap: $sp-6;
-  width: min($container-lg, calc(100% - $sp-10));
+  width: min($container-max, calc(100% - $sp-10));
   margin: 0 auto;
 }
 
