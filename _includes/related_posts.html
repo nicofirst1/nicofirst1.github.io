@@ -1,0 +1,26 @@
+{% comment %}
+  Related Posts — shows up to 3 posts from the same collection,
+  excluding the current page, ordered by date (newest first).
+{% endcomment %}
+
+{% assign all_posts = site.blog | sort: 'date' | reverse %}
+{% assign related = "" | split: "" %}
+
+{% for post in all_posts %}
+  {% if post.url != page.url %}
+    {% if related.size < 3 %}
+      {% assign related = related | push: post %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if related.size > 0 %}
+<aside class="related_posts" aria-label="Related posts">
+  <h2 class="related_posts_heading">Keep reading</h2>
+  <div class="related_posts_grid">
+    {% for post in related %}
+      {% include blog_card.html post=post %}
+    {% endfor %}
+  </div>
+</aside>
+{% endif %}

@@ -55,6 +55,28 @@ body.dark .projects_section {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+// Featured card spans 2 columns on wider screens
+.projects_grid--current .project_card--featured {
+  grid-column: span 2;
+}
+
+@media (max-width: $bp-md) {
+  .projects_grid--current .project_card--featured {
+    grid-column: span 1;
+  }
+}
+
+// Past section is visually quieter
+.projects_group--past .project_card {
+  opacity: 0.82;
+  transition: opacity $transition-base, transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &:hover,
+  &:focus-within {
+    opacity: 1;
+  }
+}
+
 .projects_empty {
   font-size: $fs-base;
   color: #a16207;

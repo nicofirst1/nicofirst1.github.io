@@ -86,8 +86,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function scheduleAutoSlide() {
         if (autoSlideTimer) clearInterval(autoSlideTimer);
-        autoSlideTimer = setInterval(() => nextPage(true), 9000);
+        autoSlideTimer = setInterval(() => nextPage(true), 15000);
     }
+
+    // Pause auto-advance on hover/focus
+    carousel.addEventListener('mouseenter', () => {
+        if (autoSlideTimer) clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+    });
+    carousel.addEventListener('mouseleave', () => {
+        scheduleAutoSlide();
+    });
 
     function nextPage(fromAuto = false) {
         if (isAnimating) return;

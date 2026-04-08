@@ -3,7 +3,7 @@
 {% assign summary = summary_source | strip_html | truncate: 140 %}
 {% assign content_text = item.content | strip_html | truncate: 160 %}
 {% assign search_text = item.title | append: ' ' | append: summary | append: ' ' | append: content_text %}
-<article class="project_card" data-search-text="{{ search_text | replace: '\"', ' ' | escape }}">    <a href="{{ item.url | relative_url }}" class="project_card_link">
+<article class="project_card{% if include.featured %} project_card--featured{% endif %}" data-search-text="{{ search_text | replace: '\"', ' ' | escape }}">    <a href="{{ item.url | relative_url }}" class="project_card_link">
         {% if item.image %}
             <div class="project_card_media">
                 {% if item.image contains '.mp4' %}

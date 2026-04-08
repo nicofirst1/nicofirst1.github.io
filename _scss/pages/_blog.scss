@@ -181,3 +181,91 @@ body.dark #footnote-tooltip {
     transition: none;
   }
 }
+
+/* ── Blog breadcrumb ──────────────────────────────────────────────────── */
+
+.blog_breadcrumb {
+  margin-bottom: $sp-6;
+}
+
+.blog_breadcrumb_link {
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+  letter-spacing: $ls-wide;
+  text-transform: uppercase;
+  color: $orange-600;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover,
+  &:focus-visible {
+    color: $brown-800;
+  }
+}
+
+body.dark .blog_breadcrumb_link {
+  color: $yellow-300;
+
+  &:hover,
+  &:focus-visible {
+    color: $yellow-100;
+  }
+}
+
+/* ── Related posts ────────────────────────────────────────────────────── */
+
+.related_posts {
+  max-width: $container-max;
+  margin: $sp-12 auto 0;
+  padding: 0 clamp($sp-6, 5vw, $sp-14);
+}
+
+.related_posts_heading {
+  font-size: $fs-xl;
+  font-weight: $fw-bold;
+  color: $brown-800;
+  margin: 0 0 $sp-8;
+}
+
+body.dark .related_posts_heading {
+  color: $yellow-200;
+}
+
+.related_posts_grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.related_posts_grid .article_card_link {
+  grid-template-columns: 1fr;
+}
+
+// Match cards to the warm page gradient instead of stark white
+.related_posts_grid .article_card {
+  background: rgba($cream-50, 0.95);
+  border-color: rgba($orange-400, 0.22);
+  box-shadow: 0 22px 55px -45px rgba($orange-500, 0.35);
+}
+
+.related_posts_grid .article_card:hover,
+.related_posts_grid .article_card:focus-within {
+  box-shadow: 0 30px 70px -45px rgba($orange-500, 0.45);
+  border-color: rgba($orange-400, 0.4);
+}
+
+body.dark .related_posts_grid .article_card {
+  background: rgba($slate-800, 0.9);
+  border-color: rgba($yellow-400, 0.22);
+  box-shadow: 0 22px 55px -45px rgba($indigo-500, 0.4);
+}
+
+@media (max-width: $bp-md) {
+  .related_posts {
+    padding: 0 1.4rem;
+  }
+
+  .related_posts_grid {
+    grid-template-columns: 1fr;
+  }
+}

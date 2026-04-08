@@ -39,10 +39,10 @@ past_blurb: >
             <h2>{{ page.current_label | default: "Current projects" }}</h2>
             <p>{{ page.current_blurb }}</p>
         </div>
-        <div class="projects_grid">
+        <div class="projects_grid projects_grid--current">
             {% if current_projects.size > 0 %}
                 {% for post in current_projects %}
-                    {% include project_card.html post=post %}
+                    {% include project_card.html post=post featured=forloop.first %}
                 {% endfor %}
             {% else %}
                 <p class="projects_empty">More projects coming soon.</p>
@@ -50,7 +50,7 @@ past_blurb: >
         </div>
     </div>
 
-    <div class="projects_group">
+    <div class="projects_group projects_group--past">
         <div class="projects_group_header">
             <h2>{{ page.past_label | default: "Past projects" }}</h2>
             <p>{{ page.past_blurb }}</p>

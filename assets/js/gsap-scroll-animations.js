@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.from('.hero_greeting', {
         y: 30,
         opacity: 0,
-        duration: 1,
+        duration: 0.6,
         ease: 'power3.out',
-        delay: 0.2
+        delay: 0.1
     });
 
     // Hero title - staggered word reveal
@@ -39,10 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
         gsap.to('.hero-word', {
             y: 0,
             opacity: 1,
-            duration: 0.8,
-            stagger: 0.1,
+            duration: 0.5,
+            stagger: 0.07,
             ease: 'power3.out',
-            delay: 0.4
+            delay: 0.25
         });
     }
 
@@ -50,55 +50,55 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.from('.hero_subtitle', {
         y: 20,
         opacity: 0,
-        duration: 0.8,
+        duration: 0.6,
         ease: 'power2.out',
-        delay: 0.8
+        delay: 0.5
     });
 
     // Hero description
     gsap.from('.hero_description', {
         y: 20,
         opacity: 0,
-        duration: 0.8,
+        duration: 0.6,
         ease: 'power2.out',
-        delay: 1
+        delay: 0.65
     });
 
     // Hero highlights list - staggered items
     gsap.from('.hero_list ul li', {
         x: -20,
         opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
+        duration: 0.4,
+        stagger: 0.07,
         ease: 'power2.out',
-        delay: 1.2
+        delay: 0.8
     });
 
     // Hero actions (buttons)
     gsap.from('.hero_actions .btn', {
         y: 20,
         opacity: 0,
-        duration: 0.6,
-        stagger: 0.15,
+        duration: 0.4,
+        stagger: 0.1,
         ease: 'power2.out',
-        delay: 1.4
+        delay: 0.95
     });
 
     // Hero social links
     gsap.from('.hero_social', {
         opacity: 0,
-        duration: 0.8,
+        duration: 0.5,
         ease: 'power2.out',
-        delay: 1.6
+        delay: 1.1
     });
 
     // Hero portrait - scale and fade in
     gsap.from('.hero_portrait_frame', {
         scale: 0.9,
         opacity: 0,
-        duration: 1.2,
+        duration: 0.8,
         ease: 'power3.out',
-        delay: 0.6
+        delay: 0.3
     });
 
     // Hero background scribbles - parallax effect
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (pageIntroBg) {
             gsap.from(pageIntroBg, {
                 opacity: 0,
-                duration: 1.2,
+                duration: 0.8,
                 ease: 'power2.out'
             });
         }
@@ -316,8 +316,8 @@ document.addEventListener('DOMContentLoaded', function() {
             gsap.from(pageIntroTitle, {
                 x: -50,
                 opacity: 0,
-                duration: 1,
-                delay: 0.2,
+                duration: 0.7,
+                delay: 0.15,
                 ease: 'power3.out'
             });
         }
@@ -327,8 +327,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (pageIntroText) {
             gsap.from(pageIntroText, {
                 opacity: 0,
-                duration: 0.8,
-                delay: 0.5,
+                duration: 0.6,
+                delay: 0.35,
                 ease: 'power2.out'
             });
         }
@@ -413,8 +413,8 @@ document.addEventListener('DOMContentLoaded', function() {
             gsap.from(detailTitle, {
                 y: 30,
                 opacity: 0,
-                duration: 1,
-                delay: 0.2,
+                duration: 0.7,
+                delay: 0.15,
                 ease: 'power3.out'
             });
         }

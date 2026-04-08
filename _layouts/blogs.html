@@ -7,6 +7,9 @@ layout: default
     <div id="reading-progress" class="reading-progress"></div>
 
     <div class="container pb-6">
+      <nav class="blog_breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/blog/' | relative_url }}" class="blog_breadcrumb_link">&larr; All posts</a>
+      </nav>
       {% assign plain_text = content | strip_html %}
       {% assign word_count = plain_text | number_of_words %}
       {% assign reading_time_minutes = word_count | plus: 199 | divided_by: 200 %}
@@ -67,6 +70,7 @@ layout: default
 </div>
 
   </article>
+  {% include related_posts.html %}
   <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both">
     {%- if page.previous -%}
       <a href="{{page.previous.url}}" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← {{page.previous.title}}</a>
