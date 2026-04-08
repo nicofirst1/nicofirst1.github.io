@@ -6,22 +6,18 @@ page_id: euai_graph
 ---
 
 
-<section class="graph" style="display: flex; width: 100vw; height: 100vh; margin: 0; padding: 0;">
-    
-    
+<section class="graph graph_layout">
     <!-- Sidebar for node information -->
     <div id="info-sidebar" class="info-sidebar">
-        <div id="resize-handle" style="width: 5px; height: 100%; background: #ccc; cursor: ew-resize; float: right;"></div>
+        <div id="resize-handle" class="graph_resize_handle"></div>
         <h2 class="font-bold text-3xl">Node Information</h2>
-        <h7 id="node-info-title">(Click on a Node to check its information. Click on the background to restore colors. If nothing works, reload)</h7>
+        <p id="node-info-title" class="text-sm">(Click on a Node to check its information. Click on the background to restore colors. If nothing works, reload)</p>
         <hr>
         <div id="node-info-content"></div>
     </div>
-    
-    <br>
 
     <!-- Graph Container for D3 Visualization -->
-    <div id="graph-container" style="flex: 1; width: 100%; height: 100%;"></div>
+    <div id="graph-container" class="graph_container"></div>
 </section>
 
 

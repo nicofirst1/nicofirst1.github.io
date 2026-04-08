@@ -2,6 +2,7 @@ lang: en
 url: "https://nicofirst1.github.io"
 baseurl: "" # user site => empty
 title: "Nicolo' Brandizzi"
+description: "Personal website of Dr. Nicolo' Brandizzi — AI researcher exploring reinforcement learning, multi-agent systems, and responsible AI."
 
 plugins:
   - jekyll-postcss-v2

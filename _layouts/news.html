@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<main class="news-post min-h-[80vh] flex flex-col gap-6" data-gsap-section="detail-page">
-  <section class="detail_section">
+<div class="news-post min-h-[80vh] flex flex-col gap-6" data-gsap-section="detail-page">
+  <article class="detail_section">
 
     <div class="container pb-6">
       <h1 class="text-5xl font-bold">
@@ -13,7 +13,7 @@ layout: default
 
       {%- if page.image -%}
       <div class="post-image">
-        <img src="{{page.image}}" alt="hero image" loading="lazy">
+        <img src="{{page.image}}" alt="{{ page.title }}" loading="lazy">
       </div>
       {%- endif -%}
 
@@ -31,7 +31,7 @@ layout: default
     </div>
   
 
-  </section>
+  </article>
   <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both">
     {%- if page.previous -%}
       <a href="{{page.previous.url}}" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← {{page.previous.title}}</a>
@@ -40,5 +40,5 @@ layout: default
       <a href="{{page.next.url}}" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">{{page.next.title}} →</a>
     {%- endif -%}
   </div>
-</main>
+</div>
 {%- include zoom.html -%}
