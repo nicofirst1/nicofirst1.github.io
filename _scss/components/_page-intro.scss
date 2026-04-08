@@ -1,51 +1,51 @@
 .page_intro {
   position: relative;
   overflow: hidden;
-  padding: 5.5rem 0 3.5rem;
+  padding: $sp-24 0 $sp-14;
 }
 
 .page_intro_bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(254, 243, 199, 0.65), rgba(253, 186, 116, 0.35));
+  background: linear-gradient(135deg, rgba($cream-100, 0.65), rgba(253, 186, 116, 0.35));
   pointer-events: none;
   z-index: 0;
 }
 
 .page_intro_actions {
   display: inline-flex;
-  gap: 1rem;
+  gap: $sp-4;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 1.5rem;
+  margin-top: $sp-6;
 }
 .page_intro_meta {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.24em;
+  gap: $sp-3;
+  font-size: $fs-xs;
+  letter-spacing: $ls-wider;
   text-transform: uppercase;
-  color: #be123c;
-  font-weight: 600;
+  color: $red-700;
+  font-weight: $fw-semibold;
 }
 .page_intro_meta span + span::before {
   content: "•";
-  margin: 0 0.5rem;
+  margin: 0 $sp-2;
   color: currentColor;
 }
 
 body.dark .page_intro_bg {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.78));
+  background: linear-gradient(135deg, rgba($slate-900, 0.92), rgba($slate-800, 0.78));
 }
 
 body.dark .page_intro_meta {
-  color: rgba(253, 224, 71, 0.75);
+  color: $dark-label;
 }
 .page_intro_inner {
   position: relative;
   z-index: 1;
-  width: min(1080px, calc(100% - 3rem));
+  width: min($container-md, calc(100% - $sp-12));
   margin: 0 auto;
   display: grid;
   gap: 1.4rem;
@@ -54,42 +54,42 @@ body.dark .page_intro_meta {
 .page_intro_title {
   font-size: clamp(2.6rem, 5vw, 3.75rem);
   line-height: 1.07;
-  letter-spacing: -0.02em;
+  letter-spacing: $ls-tight;
   margin: 0;
-  color: #7c2d12;
+  color: $brown-800;
   max-width: 16ch;
 }
 
 .page_intro_text {
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-size: $fs-md;
+  line-height: $lh-relaxed;
   max-width: 60ch;
-  color: #7f1d1d;
+  color: $red-900;
   margin: 0;
 }
 
 body.dark .page_intro_title {
-  color: #fef3c7;
+  color: $yellow-100;
 }
 
 body.dark .page_intro_text {
-  color: rgba(253, 224, 71, 0.78);
+  color: rgba($yellow-400, 0.78);
 }
 
 .page_section {
-  width: min(1080px, calc(100% - 3rem));
+  width: min($container-md, calc(100% - $sp-12));
   margin: 0 auto;
-  padding: 2.75rem 0;
+  padding: $sp-12 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: $bp-md) {
   .page_intro {
-    padding: 6rem 0 3.5rem;
+    padding: $sp-24 0 $sp-14;
   }
 
   .page_section {
-    width: calc(100% - 2.5rem);
-    padding: 2.3rem 0;
+    width: calc(100% - $sp-10);
+    padding: $sp-10 0;
   }
 }
 

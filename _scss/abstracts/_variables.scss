@@ -1,6 +1,191 @@
 // _variables.scss
-$backgroundColor: #ffffff;
-$bodyColor: #000000;
-$bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+// ============================================
+// Design Tokens — single source of truth
+// ============================================
 
-// Add any additional variables for colors, spacing, etc.
+// ------------------------------------------
+// COLOR PALETTE — Raw values
+// ------------------------------------------
+
+// Warm neutrals (light mode foundations)
+$cream-50:    #fff7ed;
+$cream-100:   #fef3c7;
+$cream-200:   #fde68a;
+$rose-50:     #fef2f2;
+
+// Slate scale (dark mode foundations + text)
+$slate-900:   #0f172a;
+$slate-800:   #1e293b;
+$slate-700:   #334155;
+$slate-600:   #475569;
+$slate-500:   #64748b;
+$slate-300:   #cbd5e1;
+$slate-200:   #e2e8f0;
+$slate-100:   #f1f5f9;
+$slate-50:    #f8fafc;
+
+// Brown scale (warm text on light bg)
+$brown-900:   #44210a;
+$brown-800:   #7c2d12;
+$brown-700:   #9a3412;
+$brown-600:   #a85517;
+
+// Orange accent
+$orange-500:  #f97316;
+$orange-400:  #fb923c;
+$orange-600:  #ea580c;
+
+// Yellow accent
+$yellow-400:  #facc15;
+$yellow-300:  #fde68a;
+$yellow-200:  #fef08a;
+$yellow-100:  #fef3c7;
+
+// Rose/pink accent
+$rose-600:    #e11d48;
+$rose-500:    #f43f5e;
+$rose-400:    #fb7185;
+$rose-300:    #fda4af;
+
+// Red accent
+$red-800:     #9f1239;
+$red-700:     #be123c;
+$red-600:     #dc2626;
+$red-900:     #7f1d1d;
+
+// Pink accent
+$pink-500:    #ec4899;
+$pink-300:    #f9a8d4;
+
+// Indigo/purple accent
+$indigo-600:  #4f46e5;
+$indigo-500:  #6366f1;
+$indigo-300:  #a5b4fc;
+$purple-400:  #c4b5fd;
+$purple-500:  #d946ef;
+
+// ------------------------------------------
+// SEMANTIC COLORS — Light mode
+// ------------------------------------------
+
+$body-bg:           #ffffff;
+$body-text:         $brown-900;
+$body-font:         -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$heading-color:     $brown-800;
+$meta-color:        $orange-600;
+$label-color:       $red-700;
+$link-color:        #b91c1c;
+$link-hover:        $red-900;
+
+$card-bg:           rgba(255, 247, 237, 0.95);
+$card-title:        $brown-800;
+$card-meta:         $orange-600;
+
+$section-bg:        $slate-50;
+
+$site-gradient-light: linear-gradient(180deg, $cream-50 0%, $rose-50 35%, $cream-50 70%, $cream-100 100%);
+
+// ------------------------------------------
+// SEMANTIC COLORS — Dark mode
+// ------------------------------------------
+
+$dark-body-text:    $yellow-100;
+$dark-heading:      $yellow-200;
+$dark-meta:         $yellow-300;
+$dark-label:        rgba($yellow-300, 0.75);
+$dark-link:         $pink-300;
+$dark-link-hover:   $indigo-300;
+$dark-muted:        $slate-200;
+$dark-card-title:   $yellow-200;
+
+$dark-bg-1:         $slate-900;
+$dark-bg-2:         #111827;
+$dark-bg-3:         #1f2937;
+
+$site-gradient-dark: linear-gradient(180deg, $slate-900 0%, $dark-bg-2 45%, $dark-bg-3 85%);
+
+// ------------------------------------------
+// SPACING SCALE (base: 4px / 0.25rem)
+// ------------------------------------------
+
+$sp-1:   0.25rem;  // 4px
+$sp-2:   0.5rem;   // 8px
+$sp-3:   0.75rem;  // 12px
+$sp-4:   1rem;     // 16px
+$sp-5:   1.25rem;  // 20px
+$sp-6:   1.5rem;   // 24px
+$sp-8:   2rem;     // 32px
+$sp-10:  2.5rem;   // 40px
+$sp-12:  3rem;     // 48px
+$sp-14:  3.5rem;   // 56px
+$sp-16:  4rem;     // 64px
+$sp-20:  5rem;     // 80px
+$sp-24:  6rem;     // 96px
+
+// ------------------------------------------
+// CONTAINER WIDTHS
+// ------------------------------------------
+
+$container-sm:  1020px;  // activity carousel
+$container-md:  1080px;  // page sections, footer
+$container-lg:  1120px;  // header
+$container-xl:  1200px;  // global container
+
+// ------------------------------------------
+// TYPOGRAPHY
+// ------------------------------------------
+
+// Font sizes (mobile → desktop via responsive)
+$fs-xs:    0.75rem;   // 12px — smallest meta
+$fs-sm:    0.85rem;   // ~14px — meta, labels
+$fs-base:  1rem;      // 16px — body
+$fs-md:    1.1rem;    // ~18px — lead text
+$fs-lg:    1.25rem;   // 20px — h4-level
+$fs-xl:    1.5rem;    // 24px — h3-level
+$fs-2xl:   1.875rem;  // 30px — h2
+$fs-3xl:   2.25rem;   // 36px — h1
+
+// Font weights
+$fw-normal:    400;
+$fw-medium:    500;
+$fw-semibold:  600;
+$fw-bold:      700;
+
+// Line heights
+$lh-tight:     1.2;    // headings
+$lh-snug:      1.35;   // subheadings
+$lh-normal:    1.55;   // body text
+$lh-relaxed:   1.7;    // readable paragraphs
+
+// Letter spacing
+$ls-tight:     -0.02em;  // large headlines
+$ls-normal:    0;
+$ls-wide:      0.16em;   // uppercase labels
+$ls-wider:     0.22em;   // section kickers
+
+// ------------------------------------------
+// BORDER RADIUS
+// ------------------------------------------
+
+$radius-sm:    6px;
+$radius-md:    14px;
+$radius-lg:    22px;
+$radius-xl:    32px;
+$radius-full:  9999px;  // pills/circles
+
+// ------------------------------------------
+// TRANSITIONS
+// ------------------------------------------
+
+$transition-fast:   0.2s ease;
+$transition-base:   0.3s ease;
+
+// ------------------------------------------
+// BREAKPOINTS
+// ------------------------------------------
+
+$bp-sm:   600px;
+$bp-md:   768px;
+$bp-lg:   1024px;
+$bp-xl:   1200px;

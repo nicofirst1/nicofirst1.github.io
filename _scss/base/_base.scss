@@ -1,21 +1,21 @@
 // _base.scss
 body {
-  background: $backgroundColor;
-  color: $bodyColor;
-  font-family: $bodyFont;
+  background: $body-bg;
+  color: $body-text;
+  font-family: $body-font;
 }
 
 .site_body {
   min-height: 100vh;
-  background: linear-gradient(180deg, #fff7ed 0%, #fef2f2 35%, #fff7ed 70%, #fef3c7 100%);
-  color: #44210a;
+  background: $site-gradient-light;
+  color: $brown-900;
 }
 
 .site_body.dark,
 .dark .site_body,
 body.dark {
-  background: linear-gradient(180deg, #0f172a 0%, #111827 45%, #1f2937 85%);
-  color: #fef3c7;
+  background: $site-gradient-dark;
+  color: $dark-body-text;
 }
 
 
@@ -31,7 +31,7 @@ body.dark {
   padding-top: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: $bp-md) {
   .site_main {
     padding-top: 0;
   }
@@ -41,13 +41,13 @@ body.dark {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: $container-xl;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .container_activity {
-  max-width: 1020px;
+  max-width: $container-sm;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -61,13 +61,13 @@ body.dark {
 /* Global link colors */
 .page_content a:not(.heading_anchor_link),
 .education a {
-  color: #b91c1c;
+  color: $link-color;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: $fw-medium;
 }
 
 .page_content a:not(.heading_anchor_link):hover,
 .education a:hover {
-  color: #7f1d1d;
+  color: $link-hover;
   text-decoration: none;
 }

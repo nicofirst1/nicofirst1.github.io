@@ -8,7 +8,7 @@
 }
 
 body.dark .hero_section {
-  background: linear-gradient(180deg, #0f172a, #1e1b4b);
+  background: linear-gradient(180deg, $slate-900, #1e1b4b);
 }
 
 .hero_bg {
@@ -64,50 +64,50 @@ body.dark .hero_scribble {
 .hero_greeting {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1rem;
-  border-radius: 9999px;
+  gap: $sp-2;
+  padding: 0.45rem $sp-4;
+  border-radius: $radius-full;
   background: rgba(251, 191, 36, 0.2);
   color: #c2410c;
-  font-size: 0.85rem;
+  font-size: $fs-sm;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: $fw-semibold;
 }
 
 body.dark .hero_greeting {
-  background: rgba(248, 250, 252, 0.12);
+  background: rgba($slate-50, 0.12);
   color: #fcd34d;
 }
 
 .hero_title {
-  margin-top: 1.5rem;
+  margin-top: $sp-6;
   font-size: clamp(2.8rem, 6vw, 3.9rem);
   line-height: 1.05;
-  color: #0f172a;
-  letter-spacing: -0.02em;
-  font-weight: 700;
+  color: $slate-900;
+  letter-spacing: $ls-tight;
+  font-weight: $fw-bold;
 }
 
 body.dark .hero_title {
-  color: #e2e8f0;
+  color: $slate-200;
 }
 
 .hero_subtitle {
-  margin-top: 1rem;
+  margin-top: $sp-4;
   font-size: 1.3rem;
-  color: #9f1239;
+  color: $red-800;
 }
 
 body.dark .hero_subtitle {
-  color: rgba(226, 232, 240, 0.78);
+  color: rgba($slate-200, 0.78);
 }
 
 .hero_description {
   margin-top: 1.75rem;
-  font-size: 1.1rem;
+  font-size: $fs-md;
   line-height: 1.75;
-  color: #334155;
+  color: $slate-700;
 }
 
 .hero_description p {
@@ -115,26 +115,26 @@ body.dark .hero_subtitle {
 }
 
 .hero_description p + p {
-  margin-top: 1rem;
+  margin-top: $sp-4;
 }
 
 body.dark .hero_description {
-  color: rgba(226, 232, 240, 0.86);
+  color: rgba($slate-200, 0.86);
 }
 
 .hero_list {
   margin-top: 2.25rem;
   padding: 1.75rem;
-  border-radius: 1.5rem;
+  border-radius: $sp-6;
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(252, 211, 77, 0.35);
   box-shadow: 0 18px 45px -38px rgba(248, 172, 140, 0.9);
 }
 
 .hero_list_label {
-  margin-bottom: 1rem;
-  font-weight: 600;
-  color: #be123c;
+  margin-bottom: $sp-4;
+  font-weight: $fw-semibold;
+  color: $red-700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.78rem;
@@ -142,7 +142,7 @@ body.dark .hero_description {
 
 .hero_list ul {
   display: grid;
-  gap: 1rem;
+  gap: $sp-4;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -153,57 +153,57 @@ body.dark .hero_description {
   align-items: flex-start;
   gap: 0.9rem;
   font-size: 1.05rem;
-  color: #334155;
+  color: $slate-700;
 }
 
 .hero_list_icon {
-  font-size: 1.1rem;
+  font-size: $fs-md;
   line-height: 1.1;
-  color: #ec4899;
+  color: $pink-500;
   margin-top: 0.1rem;
 }
 
 body.dark .hero_list {
-  background: rgba(15, 23, 42, 0.65);
-  border-color: rgba(248, 250, 252, 0.1);
+  background: rgba($slate-900, 0.65);
+  border-color: rgba($slate-50, 0.1);
   box-shadow: 0 28px 60px -44px rgba(148, 163, 184, 0.6);
 }
 
 body.dark .hero_list_label {
-  color: #f9a8d4;
+  color: $pink-300;
 }
 
 body.dark .hero_list li {
-  color: rgba(226, 232, 240, 0.85);
+  color: rgba($slate-200, 0.85);
 }
 
 .hero_actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
-  margin-top: 2.5rem;
+  gap: $sp-4;
+  margin-top: $sp-10;
 }
 
 .hero_social {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.25rem;
+  gap: $sp-5;
   margin-top: 2.75rem;
 }
 
 .hero_social_label {
   font-size: 0.84rem;
-  letter-spacing: 0.22em;
+  letter-spacing: $ls-wider;
   text-transform: uppercase;
-  color: #64748b;
+  color: $slate-500;
 }
 
 .hero_social_links {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: $sp-3;
 }
 
 .hero_social .social_item {
@@ -215,7 +215,7 @@ body.dark .hero_list li {
   border-radius: 50%;
   border: 1px solid rgba(148, 163, 184, 0.28);
   background: rgba(255, 255, 255, 0.82);
-  transition: transform 0.2s ease, border-color 0.25s ease, background 0.25s ease;
+  transition: transform $transition-fast, border-color 0.25s ease, background 0.25s ease;
 }
 
 .hero_social .social_item:hover {
@@ -234,7 +234,7 @@ body.dark .hero_social_label {
 }
 
 body.dark .hero_social .social_item {
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba($slate-900, 0.7);
   border-color: rgba(148, 163, 184, 0.35);
 }
 
@@ -252,7 +252,7 @@ body.dark .hero_social .social_item {
 .hero_portrait_frame {
   position: relative;
   border-radius: 2.75rem;
-  padding: 1rem;
+  padding: $sp-4;
   background: rgba(255, 255, 255, 0.86);
   box-shadow: 0 32px 70px -45px rgba(248, 172, 140, 0.85);
 }
@@ -260,7 +260,7 @@ body.dark .hero_social .social_item {
 .hero_portrait_frame::after {
   content: "";
   position: absolute;
-  inset: 1.5rem;
+  inset: $sp-6;
   border-radius: 2rem;
   border: 1px dashed rgba(248, 113, 113, 0.45);
   pointer-events: none;
@@ -279,18 +279,18 @@ body.dark .hero_portrait_frame {
 }
 
 body.dark .hero_portrait_frame::after {
-  border-color: rgba(165, 180, 252, 0.3);
+  border-color: rgba($indigo-300, 0.3);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $bp-lg) {
   .hero_portrait_wrap {
     max-width: 360px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $bp-md) {
   .hero_section {
-    padding-top: 1rem;
+    padding-top: $sp-4;
   }
 
   .hero_scribble {
@@ -302,7 +302,7 @@ body.dark .hero_portrait_frame::after {
   }
 
   .hero_portrait_frame {
-    padding: 0.75rem;
+    padding: $sp-3;
   }
 }
 
@@ -313,7 +313,7 @@ body.dark .hero_portrait_frame::after {
 }
 
 body.dark .activity_section {
-  background: linear-gradient(180deg, #0b1222, #111827);
+  background: linear-gradient(180deg, #0b1222, $dark-bg-2);
 }
 
 .activity_backdrop {
@@ -351,18 +351,18 @@ body.dark .activity_backdrop {
 .activity_tag {
   position: absolute;
   inset: auto auto 1.2rem 1.2rem;
-  background: rgba(248, 250, 252, 0.86);
-  color: #fb7185;
-  padding: 0.4rem 1rem;
-  border-radius: 9999px;
+  background: rgba($slate-50, 0.86);
+  color: $rose-400;
+  padding: 0.4rem $sp-4;
+  border-radius: $radius-full;
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: $fw-semibold;
 }
 
 .activity_body {
-  padding: 1.8rem 1.9rem 2rem;
+  padding: 1.8rem 1.9rem $sp-8;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -372,56 +372,56 @@ body.dark .activity_backdrop {
   font-size: 0.82rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #fb7185;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+  color: $rose-400;
+  font-weight: $fw-semibold;
+  margin-bottom: $sp-3;
 }
 
 .activity_title {
   font-size: 1.4rem;
-  font-weight: 600;
-  color: #0f172a;
-  line-height: 1.35;
+  font-weight: $fw-semibold;
+  color: $slate-900;
+  line-height: $lh-snug;
   margin: 0;
 }
 
 .activity_summary {
   margin-top: 0.9rem;
-  color: #475569;
+  color: $slate-600;
   line-height: 1.65;
   font-size: 0.98rem;
   flex: 1;
 }
 
 .activity_link {
-  color: #d946ef;
+  color: $purple-500;
 }
 
 body.dark .activity_card {
   border-color: rgba(168, 85, 247, 0.22);
-  background: rgba(15, 23, 42, 0.78);
+  background: rgba($slate-900, 0.78);
   box-shadow: 0 30px 80px -52px rgba(129, 140, 248, 0.55);
 }
 
 body.dark .activity_tag {
   background: rgba(129, 140, 248, 0.18);
-  color: #f9a8d4;
+  color: $pink-300;
 }
 
 body.dark .activity_meta {
-  color: #f9a8d4;
+  color: $pink-300;
 }
 
 body.dark .activity_title {
-  color: #e2e8f0;
+  color: $slate-200;
 }
 
 body.dark .activity_summary {
-  color: rgba(226, 232, 240, 0.78);
+  color: rgba($slate-200, 0.78);
 }
 
 body.dark .activity_link {
-  color: #c4b5fd;
+  color: $purple-400;
 }
 
 .carousel-control-prev,
@@ -429,87 +429,87 @@ body.dark .activity_link {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 3rem;
-  height: 3rem;
+  width: $sp-12;
+  height: $sp-12;
   border-radius: 50%;
   border: 1px solid rgba(148, 163, 184, 0.4);
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 22px 45px -35px rgba(249, 168, 212, 0.75);
+  box-shadow: 0 22px 45px -35px rgba($pink-300, 0.75);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
-  color: #fb7185;
+  color: $rose-400;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   transform: translateY(-50%) scale(1.05);
-  border-color: rgba(236, 72, 153, 0.55);
+  border-color: rgba($pink-500, 0.55);
 }
 
 .carousel-control-prev {
-  left: -1rem;
+  left: -$sp-4;
 }
 
 .carousel-control-next {
-  right: -1rem;
+  right: -$sp-4;
 }
 
 body.dark .carousel-control-prev,
 body.dark .carousel-control-next {
-  background: rgba(15, 23, 42, 0.85);
-  color: #f9a8d4;
+  background: rgba($slate-900, 0.85);
+  color: $pink-300;
   border-color: rgba(129, 140, 248, 0.35);
   box-shadow: 0 24px 60px -42px rgba(129, 140, 248, 0.6);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $bp-lg) {
   .carousel-control-prev {
-    left: -0.5rem;
+    left: -$sp-2;
   }
 
   .carousel-control-next {
-    right: -0.5rem;
+    right: -$sp-2;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $bp-md) {
   .activity_section {
-    background: #fff7ed;
+    background: $cream-50;
   }
 
   .carousel-control-prev,
   .carousel-control-next {
     position: static;
     transform: none;
-    margin-top: 2.5rem;
+    margin-top: $sp-10;
   }
 
   .carousel_control_wrapper {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: $sp-4;
   }
 }
 
 .experience_section {
-  background: #f8fafc;
+  background: $slate-50;
 }
 
 body.dark .experience_section {
-  background: linear-gradient(180deg, #0f172a, #111827);
+  background: linear-gradient(180deg, $slate-900, $dark-bg-2);
 }
 
 .experience_card {
   position: relative;
   overflow: hidden;
   border-radius: 1.65rem;
-  border: 1px solid rgba(203, 213, 225, 0.45);
+  border: 1px solid rgba($slate-300, 0.45);
   background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 18px 48px -30px rgba(148, 163, 184, 0.55);
-  transition: transform 0.28s ease, box-shadow 0.3s ease;
+  transition: transform 0.28s ease, box-shadow $transition-base;
 }
 
 .experience_card:hover {
@@ -535,7 +535,7 @@ body.dark .experience_section {
   position: absolute;
   inset: -25%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(248, 250, 252, 0.95), transparent 70%);
+  background: radial-gradient(circle, rgba($slate-50, 0.95), transparent 70%);
   filter: blur(12px);
   opacity: 0.75;
   transition: transform 0.35s ease, opacity 0.35s ease;
@@ -560,27 +560,27 @@ body.dark .experience_section {
 
 .experience_meta {
   font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  letter-spacing: $ls-wider;
   text-transform: uppercase;
-  color: #f97316;
-  font-weight: 600;
+  color: $orange-500;
+  font-weight: $fw-semibold;
 }
 
 .experience_info h3 {
   margin-top: 0.6rem;
   font-size: 1.45rem;
-  color: #0f172a;
+  color: $slate-900;
 }
 
 .experience_copy {
-  margin-top: 0.75rem;
+  margin-top: $sp-3;
   font-size: 0.96rem;
   line-height: 1.6;
-  color: #475569;
+  color: $slate-600;
 }
 
 .experience_copy ul {
-  margin: 0.5rem 0 0;
+  margin: $sp-2 0 0;
   padding-left: 1.2rem;
   list-style: disc;
 }
@@ -592,7 +592,7 @@ body.dark .experience_section {
 .experience_copy a {
   color: #c026d3;
   text-decoration: underline;
-  font-weight: 500;
+  font-weight: $fw-medium;
 }
 
 .experience_copy a:hover {
@@ -601,25 +601,25 @@ body.dark .experience_section {
 
 body.dark .experience_card {
   border-color: rgba(148, 163, 184, 0.3);
-  background: rgba(15, 23, 42, 0.78);
+  background: rgba($slate-900, 0.78);
   box-shadow: 0 26px 60px -45px rgba(79, 70, 229, 0.45);
 }
 
 body.dark .logo_image {
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba($slate-900, 0.9);
   box-shadow: 0 24px 55px -38px rgba(99, 102, 241, 0.55);
 }
 
 body.dark .experience_meta {
-  color: #fb7185;
+  color: $rose-400;
 }
 
 body.dark .experience_info h3 {
-  color: #e2e8f0;
+  color: $slate-200;
 }
 
 body.dark .experience_copy {
-  color: rgba(226, 232, 240, 0.78);
+  color: rgba($slate-200, 0.78);
 }
 
 body.dark .experience_copy a {
@@ -630,7 +630,7 @@ body.dark .experience_copy a:hover {
   color: rgba(253, 224, 71, 0.7);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $bp-lg) {
   .experience_card_inner {
     grid-template-columns: 1fr;
     text-align: center;
@@ -642,10 +642,10 @@ body.dark .experience_copy a:hover {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $bp-md) {
   .experience_section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: $sp-16;
+    padding-bottom: $sp-16;
   }
 
   .experience_card_inner {
@@ -688,7 +688,7 @@ body.dark .experience_copy a:hover {
 .hero_description,
 .section_header p,
 .activity_summary {
-  transition: opacity 0.3s ease-out;
+  transition: opacity $transition-base;
 }
 
 /* Reduce motion for accessibility */

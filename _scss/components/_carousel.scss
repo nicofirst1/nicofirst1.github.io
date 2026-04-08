@@ -1,7 +1,7 @@
 // _carousel.scss
 .container_activity {
   position: relative;
-  max-width: 1020px;
+  max-width: $container-sm;
   margin: 0 auto;
   padding: 0;
   overflow: visible;
@@ -30,12 +30,12 @@
 
 .carousel-item .grid {
   display: grid;
-  gap: 1.6rem;
+  gap: $sp-6;
 }
 
-@media (max-width: 767px) {
+@media (max-width: #{$bp-md - 1px}) {
   .carousel-item .grid {
-    gap: 1.25rem;
+    gap: $sp-5;
   }
 
   .carousel-item .grid > *:not(:first-child) {
@@ -49,16 +49,16 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 3rem;
-  height: 3rem;
+  width: $sp-12;
+  height: $sp-12;
   border-radius: 50%;
-  border: 1px solid rgba(251, 146, 60, 0.4);
+  border: 1px solid rgba($orange-400, 0.4);
   background-color: rgba(255, 255, 255, 0.88);
-  color: #9a3412;
+  color: $brown-700;
   font-size: 1.35rem;
   cursor: pointer;
-  box-shadow: 0 20px 40px -28px rgba(190, 24, 93, 0.45);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 20px 40px -28px rgba($rose-600, 0.45);
+  transition: transform $transition-base, border-color $transition-base, box-shadow $transition-base;
   z-index: 10;
   display: inline-flex;
   align-items: center;
@@ -68,8 +68,8 @@
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   transform: translateY(-50%) scale(1.05);
-  border-color: rgba(244, 63, 94, 0.45);
-  box-shadow: 0 26px 55px -30px rgba(244, 63, 94, 0.52);
+  border-color: rgba($rose-500, 0.45);
+  box-shadow: 0 26px 55px -30px rgba($rose-500, 0.52);
 }
 
 .carousel-control-prev:active,
@@ -78,29 +78,29 @@
 }
 
 .carousel-control-prev {
-  left: -1rem;
+  left: -$sp-4;
 }
 
 .carousel-control-next {
-  right: -1rem;
+  right: -$sp-4;
 }
 
 @media (max-width: 991px) {
   .carousel-control-prev {
-    left: -0.5rem;
+    left: -$sp-2;
   }
 
   .carousel-control-next {
-    right: -0.5rem;
+    right: -$sp-2;
   }
 }
 
 body.dark .carousel-control-prev,
 body.dark .carousel-control-next {
-  background-color: rgba(15, 23, 42, 0.88);
-  color: #fde68a;
-  border-color: rgba(253, 224, 71, 0.32);
-  box-shadow: 0 22px 55px -32px rgba(253, 224, 71, 0.45);
+  background-color: rgba($slate-900, 0.88);
+  color: $yellow-300;
+  border-color: rgba($yellow-400, 0.32);
+  box-shadow: 0 22px 55px -32px rgba($yellow-400, 0.45);
 }
 
 body.dark .carousel-control-prev:hover,
@@ -108,15 +108,15 @@ body.dark .carousel-control-next:hover {
   box-shadow: 0 28px 60px -34px rgba(245, 158, 11, 0.52);
 }
 
-@media (max-width: 767px) {
+@media (max-width: #{$bp-md - 1px}) {
   .carousel-control-prev,
   .carousel-control-next {
     top: auto;
-    bottom: -3.5rem;
+    bottom: -$sp-14;
     transform: none;
     width: 2.75rem;
     height: 2.75rem;
-    box-shadow: 0 20px 40px -30px rgba(15, 23, 42, 0.6);
+    box-shadow: 0 20px 40px -30px rgba($slate-900, 0.6);
   }
 
   .carousel-control-prev:hover,

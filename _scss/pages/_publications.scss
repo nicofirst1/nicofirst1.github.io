@@ -5,7 +5,7 @@
 }
 
 .publications_section {
-  width: min(1080px, calc(100% - 3rem));
+  width: min($container-md, calc(100% - $sp-12));
   margin: 0 auto;
   padding: 2.75rem 0;
 }
@@ -22,19 +22,19 @@ body.dark .publications_intro .page_intro_bg {
 .publications_links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: $sp-4;
 }
 
 .publications_link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: $sp-2;
   padding: 0.85rem 1.6rem;
-  border-radius: 9999px;
+  border-radius: $radius-full;
   border: 1px solid rgba(248, 113, 113, 0.35);
   background: rgba(255, 255, 255, 0.75);
-  color: #9a3412;
-  font-weight: 600;
+  color: $brown-700;
+  font-weight: $fw-semibold;
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -46,12 +46,12 @@ body.dark .publications_intro .page_intro_bg {
 
 .publications_link:hover {
   transform: translateY(-2px);
-  border-color: rgba(236, 72, 153, 0.5);
-  box-shadow: 0 18px 35px -28px rgba(236, 72, 153, 0.45);
+  border-color: rgba($pink-500, 0.5);
+  box-shadow: 0 18px 35px -28px rgba($pink-500, 0.45);
 }
 
 body.dark .publications_link {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba($slate-900, 0.8);
   border-color: rgba(253, 224, 71, 0.3);
   color: rgba(253, 224, 71, 0.85);
 }
@@ -73,7 +73,7 @@ body.dark .publications_link:hover {
   padding: 20px 10px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $bp-md) {
   .bibtable thead th {
     padding: 20px 20px;
   }
@@ -83,7 +83,7 @@ body.dark .publications_link:hover {
   padding: 10px 5px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $bp-md) {
   .bibtable td {
     padding: 10px 16px;
   }
@@ -145,7 +145,7 @@ body.dark .publications_link:hover {
 }
 
 .dataTables_filter input {
-  max-width: 600px;
+  max-width: $bp-sm;
   padding: 5px 10px;
   border: 1px solid #dde;
   outline-color: transparent !important;

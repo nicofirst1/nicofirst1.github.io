@@ -14,38 +14,38 @@ body.dark .projects_intro .page_intro_bg {
   background: linear-gradient(180deg, rgba(255, 251, 235, 0.95), rgba(255, 247, 237, 0.85));
   border-radius: 40px;
   box-shadow: 0 45px 90px -60px rgba(248, 113, 113, 0.45);
-  padding: 3.5rem 0;
-  margin-top: -1.5rem;
+  padding: $sp-14 0;
+  margin-top: -$sp-6;
 }
 
 body.dark .projects_section {
-  background: linear-gradient(180deg, rgba(17, 24, 39, 0.85), rgba(15, 23, 42, 0.78));
+  background: linear-gradient(180deg, rgba($dark-bg-2, 0.85), rgba($slate-900, 0.78));
   box-shadow: 0 45px 100px -70px rgba(79, 70, 229, 0.5);
 }
 
 .projects_group + .projects_group {
   margin-top: 3.75rem;
-  padding-top: 3.5rem;
+  padding-top: $sp-14;
   border-top: 1px dashed rgba(248, 113, 113, 0.25);
 }
 
 .projects_group_header {
   display: grid;
   gap: 0.85rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: $sp-10;
 }
 
 .projects_group_header h2 {
   margin: 0;
   font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-  color: #7c2d12;
+  color: $brown-800;
 }
 
 .projects_group_header p {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #9a3412;
+  font-size: $fs-base;
+  line-height: $lh-relaxed;
+  color: $brown-700;
   max-width: 60ch;
 }
 
@@ -56,7 +56,7 @@ body.dark .projects_section {
 }
 
 .projects_empty {
-  font-size: 1rem;
+  font-size: $fs-base;
   color: #a16207;
   font-style: italic;
 }
@@ -66,7 +66,7 @@ body.dark .projects_group + .projects_group {
 }
 
 body.dark .projects_group_header h2 {
-  color: #fef3c7;
+  color: $yellow-100;
 }
 
 body.dark .projects_group_header p {
@@ -77,14 +77,14 @@ body.dark .projects_empty {
   color: rgba(253, 224, 71, 0.7);
 }
 
-@media (max-width: 768px) {
+@media (max-width: $bp-md) {
   .projects_section {
-    padding: 3rem 0;
+    padding: $sp-12 0;
     border-radius: 28px;
   }
 
   .projects_group + .projects_group {
-    margin-top: 3rem;
-    padding-top: 3rem;
+    margin-top: $sp-12;
+    padding-top: $sp-12;
   }
 }

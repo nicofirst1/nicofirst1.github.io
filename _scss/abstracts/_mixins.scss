@@ -2,9 +2,9 @@
 
 @mixin respond-to($media) {
   @if $media == "small" {
-    @media (max-width: 767.5px) { @content; }
+    @media (max-width: #{$bp-md - 0.5px}) { @content; }
   } @else if $media == "medium" {
-    @media (min-width: 768px) { @content; }
+    @media (min-width: $bp-md) { @content; }
   }
 }
 

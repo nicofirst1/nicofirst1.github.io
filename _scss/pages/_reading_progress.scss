@@ -5,14 +5,14 @@
   left: 0;
   height: 4px;
   width: 0;
-  background: linear-gradient(90deg, #f97316, #fb7185);
+  background: linear-gradient(90deg, $orange-500, $rose-400);
   z-index: 9999;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
   transition: width 0.1s ease-out; // smooth movement
 
   // Optional: light/dark mode variants if you're using Tailwind's dark class toggle
   body.dark & {
-    background: linear-gradient(90deg, #facc15, #f97316);
+    background: linear-gradient(90deg, $yellow-400, $orange-500);
     box-shadow: 0 0 4px rgba(253, 224, 71, 0.25);
   }
 }

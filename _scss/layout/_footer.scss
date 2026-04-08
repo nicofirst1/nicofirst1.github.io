@@ -3,8 +3,8 @@
 .site_footer {
   position: relative;
   overflow: hidden;
-  padding: 3.5rem 0;
-  margin-top: 5rem;
+  padding: $sp-14 0;
+  margin-top: $sp-20;
 }
 
 .site_footer_bg {
@@ -16,24 +16,24 @@
 }
 
 body.dark .site_footer_bg {
-  background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(30, 41, 59, 0.85));
+  background: linear-gradient(135deg, rgba($dark-bg-2, 0.9), rgba($slate-800, 0.85));
 }
 
 .site_footer_inner {
   position: relative;
   z-index: 1;
-  width: min(1080px, calc(100% - 3rem));
+  width: min($container-md, calc(100% - $sp-12));
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: $sp-8;
   align-items: center;
   text-align: center;
-  color: #7c2d12;
+  color: $brown-800;
 }
 
 .site_footer_note {
-  font-size: 0.95rem;
+  font-size: $fs-sm;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0;
@@ -41,7 +41,7 @@ body.dark .site_footer_bg {
 
 .site_footer_links {
   display: flex;
-  gap: 1rem;
+  gap: $sp-4;
 }
 
 .site_footer_link {
@@ -51,42 +51,42 @@ body.dark .site_footer_bg {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(234, 88, 12, 0.35);
+  border: 1px solid rgba($orange-600, 0.35);
   background: rgba(255, 255, 255, 0.82);
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  transition: transform $transition-base, border-color $transition-base, background $transition-base;
 }
 
 .site_footer_link:hover {
   transform: translateY(-3px);
-  border-color: rgba(244, 63, 94, 0.55);
-  background: rgba(255, 247, 237, 0.9);
+  border-color: rgba($rose-500, 0.55);
+  background: rgba($cream-50, 0.9);
 }
 
 .site_footer_link svg {
   width: 20px;
   height: 20px;
-  color: #9a3412;
+  color: $brown-700;
 }
 
 body.dark .site_footer_inner {
-  color: #fef3c7;
+  color: $yellow-100;
 }
 
 body.dark .site_footer_link {
-  border-color: rgba(253, 224, 71, 0.35);
-  background: rgba(15, 23, 42, 0.82);
+  border-color: rgba($yellow-400, 0.35);
+  background: rgba($slate-900, 0.82);
 }
 
 body.dark .site_footer_link svg {
-  color: #fde68a;
+  color: $yellow-300;
 }
 
-@media (max-width: 600px) {
+@media (max-width: $bp-sm) {
   .site_footer {
-    padding: 3rem 0;
+    padding: $sp-12 0;
   }
 
   .site_footer_links {
-    gap: 0.75rem;
+    gap: $sp-3;
   }
 }
