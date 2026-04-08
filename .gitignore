@@ -4,7 +4,7 @@ _site
 .jekyll-metadata
 .bundle
 .vscode
-
+client_secret.json
 
 *.DS_Store
 
@@ -36,6 +36,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.sublime-workspace
+.claude
 
 # Output of coverage tools
 coverage/

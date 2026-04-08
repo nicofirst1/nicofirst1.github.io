@@ -1,43 +1,6 @@
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-
-  <!-- Mailchimp Signup Form JS -->
-  <script id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/a4ec8d76c6a8f3dbf860aed02/2254c462cd60bbbb345158f12.js");
-  </script>
-
-
-  <!-- Conditionally load Google Analytics -->
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" && host !== "127.0.0.1") {
-      // Google Analytics Global Site Tag (gtag.js)
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-
-      var gaScript = document.createElement('script');
-      gaScript.async = true;
-      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
-      document.head.appendChild(gaScript);
-
-      gaScript.onload = function () {
-        gtag('config', 'G-W2MPFHELZG');
-      };
-    } else {
-      console.log("Google Analytics is disabled on localhost");
-    }
-
-  </script>
-
-
-  <!-- Bot + Human detection script -->
-  <script src="/assets/js/bot_detection.js"></script>
-
-  <!-- GSAP and ScrollTrigger for scroll animations -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="/assets/js/gsap-scroll-animations.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {% seo %}
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
@@ -51,4 +14,33 @@
   {%- if page.style -%}
   <link rel="stylesheet" href="{{ page.style | relative_url }}">
   {%- endif -%}
+
+  <!-- Conditionally load Google Analytics (non-localhost only) -->
+  <script>
+    (function() {
+      var host = window.location.hostname;
+      if (host === "localhost" || host === "127.0.0.1") return;
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W2MPFHELZG';
+      document.head.appendChild(gaScript);
+      gaScript.onload = function () { gtag('config', 'G-W2MPFHELZG'); };
+    })();
+  </script>
+
+  <!-- Bot + Human detection (deferred — no need to block rendering) -->
+  <script src="/assets/js/bot_detection.js" defer></script>
+
+  <!-- Mailchimp Signup Form (deferred) -->
+  <script defer src="https://chimpstatic.com/mcjs-connected/js/users/a4ec8d76c6a8f3dbf860aed02/2254c462cd60bbbb345158f12.js"></script>
+
+  <!-- GSAP and ScrollTrigger for scroll animations -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="/assets/js/gsap-scroll-animations.js" defer></script>
 </head>

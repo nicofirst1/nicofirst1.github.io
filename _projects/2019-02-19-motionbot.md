@@ -3,7 +3,7 @@ title: MotionBot
 subtitle: An easy to implement project for home-made security system
 custom_id: motionbot
 tag: past
-image: /assets/images/projects/motionbot.gif
+image: /assets/images/projects/motionbot.mp4
 button_link: https://github.com/nicofirst1/MotionBot
 button_name: Get Code
 layout: projects

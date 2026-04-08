@@ -20,11 +20,11 @@
         <div class="experience_grid mt-12 grid gap-8 lg:grid-cols-2">
             {%- assign ed = site[include.data] | sort: 'order' | reverse -%}
             {%- for i in ed -%}
-                <article class="experience_card" style="will-change: transform, opacity;">
+                <article class="experience_card">
                     <div class="experience_card_inner">
-                        <div class="experience_logo" style="will-change: transform, opacity;">
+                        <div class="experience_logo">
                             <div class="logo_blur" aria-hidden="true"></div>
-                            <img src="{{ i.image | relative_url }}" alt="{{ i.title }}" loading="lazy" class="logo_image">
+                            {% include picture.html src=i.image alt=i.title class="logo_image" loading="lazy" %}
                         </div>
                         <div class="experience_info">
                             <div class="experience_meta">

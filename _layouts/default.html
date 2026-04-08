@@ -3,8 +3,9 @@
 {%- include head.html -%}
 
 <body class="site_body">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   {%- include header.html -%}
-  <main class="site_main{% if page.page_id == 'home' %} site_main--home{% endif %}">
+  <main id="main-content" class="site_main{% if page.page_id == 'home' %} site_main--home{% endif %}">
     {{ content }}
   </main>
   {%- include footer.html -%}

@@ -598,8 +598,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function selectRandomNode(data) {
   const randomNode = data.nodes[Math.floor(Math.random() * data.nodes.length)];
-  console.log("Selected random node")
-  console.log(randomNode);
 
   // simulate click on the random node
   d3.select(`#node-${randomNode.id}`).dispatch('click');  

@@ -111,7 +111,7 @@
             non_interaction: false
         });
 
-        console.log('Human detected:', reason, 'Score:', score);
+        // Human confirmed — event sent to GA
     }
 
     // Mark as likely bot
@@ -132,7 +132,7 @@
             non_interaction: true
         });
 
-        console.log('Bot detected:', reason, 'Score:', score, 'Indicators:', botIndicators);
+        // Bot flagged — event sent to GA
     }
 
     // Mouse movement tracking

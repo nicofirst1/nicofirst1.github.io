@@ -247,9 +247,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Apply to specific text elements that should brighten on scroll
     const textElements = document.querySelectorAll('.hero_description, .section_header p, .activity_summary');
     textElements.forEach(element => {
-        // Start with reduced opacity
-        element.style.willChange = 'opacity';
-
         gsap.fromTo(element,
             {
                 opacity: 0.6
@@ -507,14 +504,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 250);
     });
 
-    // Log initialization
-    console.log('GSAP ScrollTrigger animations initialized');
-    console.log('Total ScrollTriggers:', ScrollTrigger.getAll().length);
-
-    // Optional: Reduce motion for users who prefer it
+    // Reduce motion for users who prefer it
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
-        console.log('Reduced motion preference detected - simplifying animations');
+        // Reduced motion preference — kill scroll triggers and reset elements
         ScrollTrigger.getAll().forEach(trigger => {
             trigger.kill();
         });
