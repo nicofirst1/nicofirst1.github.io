@@ -1,0 +1,11 @@
+{% comment %}
+  Responsive picture element with WebP fallback.
+  Usage: {% include picture.html src=item.image alt=item.title class="my-class" loading="lazy" %}
+{% endcomment %}
+{% assign img_src = include.src | relative_url %}
+{% assign img_ext = include.src | split: '.' | last %}
+{% assign webp_src = include.src | replace: img_ext, 'webp' | relative_url %}
+<picture>
+  <source srcset="{{ webp_src }}" type="image/webp">
+  <img src="{{ img_src }}" alt="{{ include.alt | escape }}"{% if include.class %} class="{{ include.class }}"{% endif %}{% if include.loading %} loading="{{ include.loading }}"{% endif %}>
+</picture>

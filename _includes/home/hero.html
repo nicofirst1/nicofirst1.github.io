@@ -68,7 +68,7 @@
             <div class="hero_visual">
                 <div class="hero_portrait_wrap">
                     <div class="hero_portrait_frame">
-                        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+                        {% include picture.html src=page.image alt=page.title %}
                     </div>
                 </div>
             </div>

@@ -6,7 +6,13 @@
 <article class="project_card" data-search-text="{{ search_text | replace: '\"', ' ' | escape }}">    <a href="{{ item.url | relative_url }}" class="project_card_link">
         {% if item.image %}
             <div class="project_card_media">
-                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy">
+                {% if item.image contains '.mp4' %}
+                <video autoplay loop muted playsinline>
+                    <source src="{{ item.image | relative_url }}" type="video/mp4">
+                </video>
+                {% else %}
+                {% include picture.html src=item.image alt=item.title loading="lazy" %}
+                {% endif %}
             </div>
         {% endif %}
         <div class="project_card_body">

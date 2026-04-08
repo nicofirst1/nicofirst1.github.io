@@ -34,7 +34,13 @@
                                 <article class="activity_card group h-full">
                                     <a href="{{ item.url | relative_url }}" class="flex h-full flex-col">
                                         <div class="activity_media relative overflow-hidden rounded-3xl">
-                                            <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy" class="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]">
+                                            {% if item.image contains '.mp4' %}
+                                            <video autoplay loop muted playsinline class="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]">
+                                                <source src="{{ item.image | relative_url }}" type="video/mp4">
+                                            </video>
+                                            {% else %}
+                                            {% include picture.html src=item.image alt=item.title class="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" loading="lazy" %}
+                                            {% endif %}
                                             <div class="activity_tag">
                                                 <span>
                                                     {% if item.collection %}

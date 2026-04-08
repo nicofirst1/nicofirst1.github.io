@@ -24,7 +24,7 @@
                     <div class="experience_card_inner">
                         <div class="experience_logo">
                             <div class="logo_blur" aria-hidden="true"></div>
-                            <img src="{{ i.image | relative_url }}" alt="{{ i.title }}" loading="lazy" class="logo_image">
+                            {% include picture.html src=i.image alt=i.title class="logo_image" loading="lazy" %}
                         </div>
                         <div class="experience_info">
                             <div class="experience_meta">
