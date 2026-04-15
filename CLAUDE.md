@@ -35,6 +35,16 @@ The `visitor_type` custom dimension must be registered in GA4 Admin > Custom def
 - Scope: **User**
 - Event parameter: `visitor_type`
 
+## Google Search Console (GSC)
+
+MCP server `gsc` (package: `mcp-search-console` via `uvx`, [AminForou/mcp-gsc](https://github.com/AminForou/mcp-gsc)). Configured in `.mcp.json` with OAuth using `client_secret.json` (gitignored).
+
+**Properties:**
+- `sc-domain:nicolobrandizzi.com` — primary (domain property, owner)
+- `https://nicofirst1.github.io/` — old property, 301-redirects to new domain
+
+Use `list_properties` to confirm property URLs before querying. The `site_url` parameter must match exactly (e.g. `sc-domain:nicolobrandizzi.com`, not `https://nicolobrandizzi.com`).
+
 ## Build
 
 Jekyll site with PostCSS (Tailwind). SCSS lives in `_scss/`, design tokens in `_scss/abstracts/_variables.scss`.

@@ -5,6 +5,7 @@ _site
 .bundle
 .vscode
 client_secret.json
+.mcp.json
 
 *.DS_Store
 
