@@ -7,7 +7,12 @@
     };
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
-    
+
+    // Humans rarely react to a freshly-loaded page faster than this.
+    const MIN_INTERACTION_TIME = 1500;
+    // Below this, bot indicators outweigh the interaction signals.
+    const MIN_HUMAN_SCORE = 60;
+
     // Check for common bot indicators
     function checkBotIndicators() {
         const indicators = [];
@@ -98,8 +103,22 @@
     function markHuman(reason) {
         if (detection.humanDetected || detection.botFlagged) return;
 
-        detection.humanDetected = true;
+        // Gate B: a real user does not interact this fast on a fresh page.
+        // Defer — the 8s timeout will reclassify these sessions.
+        const timeSinceStart = Date.now() - detection.startTime;
+        if (timeSinceStart < MIN_INTERACTION_TIME) {
+            return;
+        }
+
         const score = calculateHumanScore();
+
+        // Gate A: stealth bot signals can outweigh interaction. Re-route to bot.
+        if (score < MIN_HUMAN_SCORE) {
+            markBot('low score despite interaction: ' + reason + ' (score=' + score + ')');
+            return;
+        }
+
+        detection.humanDetected = true;
 
         // Set user-scoped property so all reports can filter by visitor_type
         gtag('set', 'user_properties', { visitor_type: 'human' });
@@ -170,8 +189,12 @@
             position: window.scrollY
         });
 
-        if (scrollCount >= 2) {
-            markHuman('scroll interaction');
+        // Gate C: scroll alone is the dominant headless-bot pattern.
+        // Require co-occurring mouse or touch movement before trusting it.
+        const hasMouseMove = detection.signals.some(s => s.type === 'mousemove');
+        const hasTouch = detection.signals.some(s => s.type === 'touchstart');
+        if (scrollCount >= 2 && (hasMouseMove || hasTouch)) {
+            markHuman('scroll + movement interaction');
         }
     }
 
@@ -227,6 +250,21 @@
     setTimeout(() => {
         if (!detection.humanDetected && !detection.botFlagged) {
             const score = calculateHumanScore();
+
+            // Headless pattern: single-type signal burst, all fired before the
+            // dwell window closed. Real users have varied, sustained interaction.
+            const hasSignals = detection.signals.length > 0;
+            const signalTypes = hasSignals
+                ? new Set(detection.signals.map(s => s.type)).size
+                : 0;
+            const allEarly = hasSignals &&
+                detection.signals.every(s => s.timestamp < MIN_INTERACTION_TIME);
+
+            if (hasSignals && allEarly && signalTypes === 1) {
+                markBot('rapid single-type burst');
+                return;
+            }
+
             if (score < 40) {
                 markBot('no interaction after 8s, low score');
             } else {

@@ -5,9 +5,6 @@ custom_id: ai-mental-wellbeing
 tag: current
 image: /assets/images/projects/ai-mental-wellbeing.jpg
 layout: projects
-button_link: https://forms.gle/u24g89FdK48hFSF88
-button_name: Fill Out the Survey
-layout: projects
 
 ---
 ### Addressing Mental Health in AI Research
@@ -23,14 +20,26 @@ Looking at the literature, I felt both validated and angry. Here’s what I foun
 - Over 20% of postdocs show signs of moderate to severe clinical depression, which is three times higher than in the general population (Max Planck Survey Report, 2022).
 - 50% of academics experience mental health issues such as anxiety, psychological distress, depression, and burnout (Halat D. et al., 2023).
 
-#### Taking Action
-Statistics on academic mental health are concerning, but they don't necessarily capture the specific pressures faced by researchers in rapidly evolving fields like AI. This is especially important to consider because the fast pace of progress, constant innovation, and pressure to publish can significantly impact mental well-being.
-So we're conducting a survey with the CNR IRIB Messina - Istituto per la Ricerca e l'Innovazione Biomedica del CNR (David Vagni) to understand these challenges for researchers. By sharing your experiences, you can help us gather the necessary data to develop support systems and raise awareness. The survey takes about 20 minutes and is completely confidential: https://lnkd.in/dbDNFX2e 
+#### Initial Results
+In September 2025 we presented our first findings as a poster in the Human-centered AI Systems session at the [Lamarr Institute Conference](https://events.lamarr-institute.org/event/155/contributions/384/), under the title *Neurodivergence in AI Research: Traits, Stress, and Well-being* — co-authored with David Vagni (CNR IRIB, Messina) and Marco Cadavero (University of Bologna).
 
+We surveyed 408 AI professionals and compared them against two reference groups: 155 highly-educated autistic adults and 72 academics from other research fields. The headline numbers were striking:
 
+- **20.8%** of AI professionals reported high levels of autistic traits.
+- **41.2%** reported ADHD symptoms.
+
+Both rates are substantially above general-population estimates. Beyond prevalence, we used path analysis to ask *which* traits drive distress, not just how much distress exists:
+
+- High stress was the direct driver of depression and anxiety in AI professionals.
+- Difficulties with social communication, behavioral rigidity, and sensory sensitivities significantly pushed stress upward.
+- Low social confidence independently predicted depression symptoms.
+- Higher self-reported effort was associated with *lower* depression — a paradoxical protective effect.
+- ADHD symptoms mattered, but their effect on distress was largely indirect once specific autistic-trait facets were accounted for.
+
+The takeaway: the AI research ecosystem is sustained in large part by neurodivergent people, and generic wellness programs miss the trait-specific dynamics that actually shape their well-being. Building resilient, genuinely human-centered AI research environments requires targeted neuroinclusion strategies, not one-size-fits-all mental-health initiatives.
 
 ###### References
-- • Evans, T., Bira, L., Gastelum, J. et al. (2018). Evidence for a mental health crisis in graduate education. Nat Biotechnol 36, 282–284. [https://doi.org/10.1038/nbt.4089](https://doi.org/10.1038/nbt.4089)
-- • Spotlight on 2017. Santa Monica, CA: RAND Corporation, 2018. [https://www.rand.org/pubs/corporate_pubs/CP531-2017.html](https://www.rand.org/pubs/corporate_pubs/CP531-2017.html).
-- • Russell, N. J., Schaare, H. L., Bellón Lara, B., Dang, Y., Feldmeier-Krause, A., Meemken, M.-T., et al. (2023). Max Planck PostdocNet Survey Report 2022. [doi:10.17617/2.3507886](https://doi.org/10.17617/2.3507886).
-- • Hammoudi Halat D, Soltani A, Dalli R, Alsarraj L, Malki A. Understanding and Fostering Mental Health and Well-Being among University Faculty: A Narrative Review. J Clin Med. 2023 Jun 30;12(13):4425. [doi:10.3390/jcm12134425](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10342374/). PMID: 37445459; PMCID: PMC10342374.
+- Evans, T., Bira, L., Gastelum, J. et al. (2018). Evidence for a mental health crisis in graduate education. Nat Biotechnol 36, 282–284. [https://doi.org/10.1038/nbt.4089](https://doi.org/10.1038/nbt.4089)
+- Spotlight on 2017. Santa Monica, CA: RAND Corporation, 2018. [https://www.rand.org/pubs/corporate_pubs/CP531-2017.html](https://www.rand.org/pubs/corporate_pubs/CP531-2017.html).
+- Russell, N. J., Schaare, H. L., Bellón Lara, B., Dang, Y., Feldmeier-Krause, A., Meemken, M.-T., et al. (2023). Max Planck PostdocNet Survey Report 2022. [doi:10.17617/2.3507886](https://doi.org/10.17617/2.3507886).
+- Hammoudi Halat D, Soltani A, Dalli R, Alsarraj L, Malki A. Understanding and Fostering Mental Health and Well-Being among University Faculty: A Narrative Review. J Clin Med. 2023 Jun 30;12(13):4425. [doi:10.3390/jcm12134425](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10342374/). PMID: 37445459; PMCID: PMC10342374.
