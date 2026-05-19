@@ -25,6 +25,7 @@ permalink: /
 ---
 
 {% include home/hero.html %}
+{% include home/featured_blog.html %}
 {% include home/activity.html %}
 {% include home/education.html data='experience' title='Recent roles & collaborations' %}
 {% include home/education.html data='education' title='Learning journey' %}

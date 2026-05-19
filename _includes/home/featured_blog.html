@@ -1,0 +1,56 @@
+{% assign recent_posts = site.blog | sort: 'date' | reverse %}
+{% assign featured = recent_posts[0] %}
+{% assign secondary_posts = recent_posts | slice: 1, 2 %}
+
+<section class="featured_blog_section" data-gsap-section="featured-blog">
+    <div class="container mx-auto px-6 lg:px-10">
+        <div class="section_header mx-auto max-w-3xl text-center">
+            <span class="section_kicker text-sm uppercase tracking-[0.4em]">Latest from the blog</span>
+            <p class="mt-4 text-base md:text-lg text-slate-600 dark:text-slate-300">
+                Long reads on AI policy, data governance, and the occasional side quest.
+            </p>
+        </div>
+
+        <div class="featured_blog_grid mt-14">
+            <!-- Large featured card -->
+            <article class="featured_blog_card featured_blog_card--large group">
+                <a href="{{ featured.url | relative_url }}" class="flex h-full flex-col">
+                    <div class="featured_blog_media overflow-hidden rounded-3xl">
+                        {% include picture.html src=featured.image alt=featured.title class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" loading="lazy" %}
+                    </div>
+                    <div class="featured_blog_body">
+                        <p class="featured_blog_meta">{{ featured.date | date: "%b %d, %Y" }}{% if featured.content %} &middot; {{ featured.content | number_of_words | divided_by: 200 | plus: 1 }} min read{% endif %}</p>
+                        <h3 class="featured_blog_title">{{ featured.title }}</h3>
+                        {% if featured.description %}
+                            <p class="featured_blog_desc">{{ featured.description }}</p>
+                        {% endif %}
+                        <span class="featured_blog_link">Read article &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Two smaller cards -->
+            {% for post in secondary_posts %}
+            <article class="featured_blog_card featured_blog_card--small group">
+                <a href="{{ post.url | relative_url }}" class="flex h-full flex-col">
+                    <div class="featured_blog_media overflow-hidden rounded-3xl">
+                        {% include picture.html src=post.image alt=post.title class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" loading="lazy" %}
+                    </div>
+                    <div class="featured_blog_body">
+                        <p class="featured_blog_meta">{{ post.date | date: "%b %d, %Y" }}{% if post.content %} &middot; {{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read{% endif %}</p>
+                        <h3 class="featured_blog_title">{{ post.title }}</h3>
+                        {% if post.description %}
+                            <p class="featured_blog_desc">{{ post.description | truncate: 120 }}</p>
+                        {% endif %}
+                        <span class="featured_blog_link">Read article &rarr;</span>
+                    </div>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="{{ '/blog' | relative_url }}" class="btn btn-outline">Browse all posts</a>
+        </div>
+    </div>
+</section>
