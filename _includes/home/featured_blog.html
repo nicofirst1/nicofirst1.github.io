@@ -1,4 +1,7 @@
-{% assign recent_posts = site.blog | sort: 'date' | reverse %}
+{% comment %} Featured posts (frontmatter `featured: true`) lead, padded with most-recent posts. {% endcomment %}
+{% assign featured_posts = site.blog | where: 'featured', true | sort: 'date' | reverse %}
+{% assign other_posts = site.blog | where_exp: 'p', 'p.featured != true' | sort: 'date' | reverse %}
+{% assign recent_posts = featured_posts | concat: other_posts %}
 {% assign featured = recent_posts[0] %}
 {% assign secondary_posts = recent_posts | slice: 1, 2 %}
 
