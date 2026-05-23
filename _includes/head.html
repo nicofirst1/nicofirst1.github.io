@@ -2,7 +2,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {% seo %}
+  {% comment %} For blog posts, omit the "| Site Title" suffix so the headline fits in SERPs.
+       og:title and twitter:title still use page.title via jekyll-seo-tag. {% endcomment %}
+  {% if page.layout == 'blogs' or page.layout == 'blogs_distill' %}
+    <title>{{ page.title | escape }}</title>
+    {% seo title=false %}
+  {% else %}
+    {% seo %}
+  {% endif %}
+  {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   {% include jsonld.html %}
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">

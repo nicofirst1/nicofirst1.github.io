@@ -53,14 +53,20 @@
 {% comment %} ---- BlogPosting schema (blog posts) ---- {% endcomment %}
 {% assign plain_text = page.content | strip_html %}
 {% assign word_count = plain_text | number_of_words %}
+{% assign modified_date = page.last_modified_at | default: page.date %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "{{ page.title | escape }}",
   "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
+  },
   {% if page.image %}"image": "{{ site.url }}{{ site.baseurl }}{{ page.image }}",{% endif %}
   "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ modified_date | date_to_xmlschema }}",
   "wordCount": {{ word_count }},
   "author": {
     "@type": "Person",
@@ -73,6 +79,48 @@
   }{% if page.description %},
   "description": "{{ page.description | escape }}"{% elsif page.subtitle %},
   "description": "{{ page.subtitle | escape }}"{% endif %}
+}
+</script>
+{% endif %}
+
+{% comment %} ---- BreadcrumbList schema for blog / news / project pages ---- {% endcomment %}
+{% assign crumb_label = nil %}
+{% assign crumb_path = nil %}
+{% if page.layout == 'blogs' or page.layout == 'blogs_distill' %}
+  {% assign crumb_label = 'Blog' %}
+  {% assign crumb_path = '/blog/' %}
+{% elsif page.layout == 'news' %}
+  {% assign crumb_label = 'News' %}
+  {% assign crumb_path = '/news/' %}
+{% elsif page.layout == 'projects' or page.layout == 'music' %}
+  {% assign crumb_label = 'Projects' %}
+  {% assign crumb_path = '/projects/' %}
+{% endif %}
+{% if crumb_label %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}{{ site.baseurl }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ crumb_label }}",
+      "item": "{{ site.url }}{{ site.baseurl }}{{ crumb_path }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title | escape }}",
+      "item": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
+    }
+  ]
 }
 </script>
 {% endif %}

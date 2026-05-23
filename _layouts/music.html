@@ -34,7 +34,11 @@ layout: default
 
 
     
-      {% if page.description %}
+      {% if page.intro %}
+      <div class="mb-6 clear-both">
+        {{ page.intro }}
+      </div>
+    {% elsif page.description %}
       <div class="mb-6 clear-both">
         {{ page.description }}
       </div>
