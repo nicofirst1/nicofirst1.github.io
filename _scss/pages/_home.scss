@@ -847,3 +847,99 @@ body.dark .experience_copy a:hover {
 }
 
 /* GSAP animations will handle visibility - no need to hide content on load */
+
+/* EU AI Policy card */
+.eu_card_section {
+  margin: 3.5rem 0;
+}
+
+.eu_card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #003399 0%, #1a3fb4 100%);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 51, 153, 0.18);
+  border: 1px solid rgba(255, 204, 0, 0.55);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 51, 153, 0.28);
+    border-color: #FFCC00;
+  }
+}
+
+.eu_card_flag {
+  flex-shrink: 0;
+  width: 60px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.eu_flag_svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.eu_card_body {
+  min-width: 0;
+}
+
+.eu_card_kicker {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #FFCC00;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.eu_card_title {
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: #f5f7ff;
+  margin: 0;
+  font-weight: 500;
+}
+
+.eu_card_cta {
+  flex-shrink: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #FFCC00;
+  white-space: nowrap;
+  padding-left: 0.5rem;
+  transition: transform 220ms ease;
+}
+
+.eu_card:hover .eu_card_cta {
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .eu_card {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.85rem 1rem;
+  }
+
+  .eu_card_cta {
+    grid-column: 1 / -1;
+    padding-left: 0;
+    text-align: right;
+  }
+
+  .eu_card_title {
+    font-size: 0.92rem;
+  }
+}
