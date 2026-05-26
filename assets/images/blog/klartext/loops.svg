@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 500" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+  <defs>
+    <marker id="lMain" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#c2410c"/>
+    </marker>
+    <marker id="lRetry" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#be123c"/>
+    </marker>
+    <marker id="lPass" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#15803d"/>
+    </marker>
+  </defs>
+
+  <rect x="2" y="2" width="1236" height="496" rx="20" fill="#fffaf4" stroke="#f0d9c4" stroke-width="2"/>
+  <text x="620" y="42" text-anchor="middle" fill="#7c2d12" font-size="22" font-weight="700">KlarText: two bounded loops, nested</text>
+
+  <!-- ===== Loop A enclosure: STYLE (raised) ===== -->
+  <text x="210" y="122" fill="#c2410c" font-size="13" font-weight="700" letter-spacing="1">STYLE LOOP</text>
+  <rect x="205" y="130" width="432" height="160" rx="20" fill="#fdeee1" stroke="#f97316" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <!-- style retry arc (Supervisor -> Translator) -->
+  <path d="M540 172 C 540 150, 300 150, 300 172" fill="none" stroke="#be123c" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round" marker-end="url(#lRetry)"/>
+  <text x="420" y="143" text-anchor="middle" fill="#be123c" font-size="11.5" font-weight="600">reject + rule report · up to 3×</text>
+
+  <!-- ===== Loop B enclosure: RETENTION (lowered) ===== -->
+  <text x="1030" y="328" text-anchor="end" fill="#be123c" font-size="13" font-weight="700" letter-spacing="1">RETENTION LOOP</text>
+  <rect x="603" y="336" width="432" height="150" rx="20" fill="#fdeaec" stroke="#be123c" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <!-- normal process arrows -->
+  <line x1="131" y1="214" x2="226" y2="214" stroke="#c2410c" stroke-width="2.5" marker-end="url(#lMain)"/>
+  <line x1="370" y1="214" x2="466" y2="214" stroke="#c2410c" stroke-width="2.5" marker-end="url(#lMain)"/>
+  <line x1="770" y1="404" x2="866" y2="404" stroke="#c2410c" stroke-width="2.5" marker-end="url(#lMain)"/>
+
+  <!-- pass transitions (green) -->
+  <path d="M548 256 C 600 320, 650 360, 700 362" fill="none" stroke="#15803d" stroke-width="2.5" marker-end="url(#lPass)"/>
+  <text x="595" y="318" text-anchor="end" fill="#15803d" font-size="12" font-weight="600">style ok</text>
+  <line x1="1010" y1="404" x2="1046" y2="404" stroke="#15803d" stroke-width="2.5" marker-end="url(#lPass)"/>
+
+  <!-- retention retry arc (Answerer -> Supervisor), crosses up into Loop A -->
+  <path d="M876 362 C 780 300, 670 276, 600 256" fill="none" stroke="#be123c" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round" marker-end="url(#lRetry)"/>
+  <text x="868" y="284" text-anchor="middle" fill="#be123c" font-size="12" font-weight="600">facts dropped → rewrite · up to 3×</text>
+
+  <!-- input -->
+  <g>
+    <rect x="25" y="172" width="106" height="84" rx="12" fill="#ffffff" stroke="#94714f" stroke-width="2"/>
+    <text x="78" y="210" text-anchor="middle" fill="#44210a" font-size="15" font-weight="700">Original</text>
+    <text x="78" y="232" text-anchor="middle" fill="#7c2d12" font-size="12">Amtsdeutsch</text>
+  </g>
+
+  <!-- Loop A nodes -->
+  <g>
+    <rect x="230" y="172" width="140" height="84" rx="14" fill="#ffffff" stroke="#f97316" stroke-width="2"/>
+    <text x="300" y="210" text-anchor="middle" fill="#44210a" font-size="19" font-weight="700">Translator</text>
+    <text x="300" y="234" text-anchor="middle" fill="#7c2d12" font-size="12.5">drafts</text>
+  </g>
+  <g>
+    <rect x="470" y="172" width="140" height="84" rx="14" fill="#ffffff" stroke="#be123c" stroke-width="2"/>
+    <text x="540" y="210" text-anchor="middle" fill="#44210a" font-size="19" font-weight="700">Supervisor</text>
+    <text x="540" y="234" text-anchor="middle" fill="#7c2d12" font-size="12.5">checks rules</text>
+  </g>
+
+  <!-- Loop B nodes -->
+  <g>
+    <rect x="630" y="362" width="140" height="84" rx="14" fill="#ffffff" stroke="#ea580c" stroke-width="2"/>
+    <text x="700" y="400" text-anchor="middle" fill="#44210a" font-size="19" font-weight="700">Questioner</text>
+    <text x="700" y="424" text-anchor="middle" fill="#7c2d12" font-size="12.5">asks from original</text>
+  </g>
+  <g>
+    <rect x="870" y="362" width="140" height="84" rx="14" fill="#ffffff" stroke="#9f1239" stroke-width="2"/>
+    <text x="940" y="400" text-anchor="middle" fill="#44210a" font-size="19" font-weight="700">Answerer</text>
+    <text x="940" y="424" text-anchor="middle" fill="#7c2d12" font-size="12.5">answers from output</text>
+  </g>
+
+  <!-- output -->
+  <g>
+    <rect x="1050" y="349" width="165" height="110" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="1132" y="376" text-anchor="middle" fill="#c2410c" font-size="14" font-weight="700" letter-spacing="2">OUTPUT</text>
+    <text x="1068" y="406" fill="#44210a" font-size="13.5">• Leichte Sprache</text>
+    <text x="1068" y="430" fill="#44210a" font-size="13.5">• rule score updates</text>
+    <text x="1068" y="454" fill="#44210a" font-size="13.5">• readability score</text>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 470" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+  <rect x="2" y="2" width="856" height="466" rx="20" fill="#fffaf4" stroke="#f0d9c4" stroke-width="2"/>
+
+  <text x="430" y="40" text-anchor="middle" fill="#7c2d12" font-size="20" font-weight="700">How the system compares to a human translator</text>
+  <text x="430" y="64" text-anchor="middle" fill="#7c2d12" font-size="13">per-rule score difference on Klexikon</text>
+
+  <text x="450" y="96" text-anchor="end" fill="#be123c" font-size="12" font-weight="600">← system trails human</text>
+  <text x="490" y="96" text-anchor="start" fill="#15803d" font-size="12" font-weight="600">system leads human →</text>
+
+  <!-- zero axis -->
+  <line x1="470" y1="112" x2="470" y2="392" stroke="#94714f" stroke-width="1.5"/>
+  <text x="470" y="410" text-anchor="middle" fill="#7c2d12" font-size="11">0</text>
+
+  <!-- rows: positive (green) -->
+  <g fill="#15803d">
+    <rect x="470" y="117" width="176" height="26" rx="4"/>
+    <rect x="470" y="165" width="152" height="26" rx="4"/>
+    <rect x="470" y="213" width="104" height="26" rx="4"/>
+    <rect x="470" y="261" width="40" height="26" rx="4"/>
+  </g>
+  <!-- rows: negative (red) -->
+  <g fill="#be123c">
+    <rect x="350" y="309" width="120" height="26" rx="4"/>
+    <rect x="310" y="357" width="160" height="26" rx="4"/>
+  </g>
+
+  <!-- rule labels -->
+  <g fill="#44210a" font-size="14">
+    <text x="24" y="135">Split complex sentences</text>
+    <text x="24" y="183">Sentence fragments</text>
+    <text x="24" y="231">Positive language</text>
+    <text x="24" y="279">Avoid subjunctive</text>
+    <text x="24" y="327">Use verbs</text>
+    <text x="24" y="375">Simple words</text>
+  </g>
+
+  <!-- value labels -->
+  <g font-size="13" font-weight="700">
+    <text x="654" y="135" fill="#15803d">+22%</text>
+    <text x="630" y="183" fill="#15803d">+19%</text>
+    <text x="582" y="231" fill="#15803d">+13%</text>
+    <text x="518" y="279" fill="#15803d">+5%</text>
+    <text x="342" y="327" text-anchor="end" fill="#be123c">-15%</text>
+    <text x="302" y="375" text-anchor="end" fill="#be123c">-20%</text>
+  </g>
+
+  <text x="430" y="440" text-anchor="middle" fill="#7c2d12" font-size="12">Tied on the other rules. The human reference is a children's-encyclopedia simplification, so read these as directional.</text>
+</svg>
