@@ -1,28 +1,38 @@
-# My Website
-Available at [nicofirst1.github.io](https://nicofirst1.github.io/)
+# nicolobrandizzi.com
 
+Personal website of **Dr. Nicolò Brandizzi** — AI researcher.
 
-## Compiling and Installing
+🌐 Live at **[nicolobrandizzi.com](https://nicolobrandizzi.com/)**
 
-On mac you will need to run the following:
+Built with [Jekyll](https://jekyllrb.com/), SCSS, and Tailwind (via PostCSS), hosted on GitHub Pages.
+
+## Local development
+
+Requires Ruby (3.3), Bundler, and Node (20).
+
 ```bash
-brew install yarn node
-bundle
+bundle install        # install Ruby gems (first time)
+npm install           # install Node deps for Tailwind/PostCSS (first time)
+bundle exec jekyll serve   # serve locally with live reload
 ```
 
-## Information
-The website is made with [Jekyll](https://jekyllrb.com/). To start the server in a local configuration source your ruby (e.g. `chruby ruby-3.3.1`) and run
-`bundle exec jekyll serve`
-While in the current directory.
+Tailwind CSS is compiled from `css/tailwind.css` to `dist/styles.css`:
 
-If you have some dependency issue you first need to install them with:
 ```bash
-bundle install 
+npm run build
 ```
 
+## Deployment
 
+Deployment is **automatic**. Every push to `master` triggers the
+"Build & Deploy Jekyll" GitHub Actions workflow
+([`.github/workflows/jekyll.yml`](.github/workflows/jekyll.yml)), which builds
+the site and publishes it to GitHub Pages. No manual build or `/docs` commit is
+needed.
 
-1. `yarn && bundle` or `npm i && bundle` - only the first time
-2. after some edits
-     - `jekyll b -d docs`
-     - `git push`
+## Structure
+
+- `_blog/`, `_news/`, `_projects/` — content collections
+- `_education/`, `_experience/`, `_certificates/` — data collections
+- `_scss/` — styles, with design tokens in `_scss/abstracts/_variables.scss`
+- `assets/` — images, JS (including custom bot-detection for clean analytics)
