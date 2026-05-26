@@ -5,72 +5,33 @@
       <stop offset="0.55" stop-color="#3d1908"/>
       <stop offset="1" stop-color="#2a1106"/>
     </linearGradient>
-    <marker id="arrMain" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="loopArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="#fdba74"/>
-    </marker>
-    <marker id="arrRetry" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 z" fill="#fb7185"/>
     </marker>
   </defs>
 
   <rect width="1200" height="630" fill="url(#bg)"/>
 
   <!-- kicker -->
-  <text x="60" y="64" fill="#fdba74" font-size="22" font-weight="700" letter-spacing="6">KLARTEXT</text>
-  <text x="60" y="92" fill="#f8d9bf" font-size="16" letter-spacing="3" opacity="0.85">AMTSDEUTSCH → LEICHTE SPRACHE · A LOOP THAT KNOWS WHEN TO STOP</text>
+  <rect x="80" y="74" width="44" height="4" rx="2" fill="#f97316"/>
+  <text x="80" y="118" fill="#fdba74" font-size="25" font-weight="700" letter-spacing="6">KLARTEXT<tspan fill="#e9c4a8" letter-spacing="3" font-weight="600">   ·   FRAUNHOFER IAIS</tspan></text>
 
-  <!-- retry arc: style gate (Supervisor -> Translator), above -->
-  <path d="M465 269 C 465 150, 195 150, 195 269" fill="none" stroke="#fb7185" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round" marker-end="url(#arrRetry)"/>
-  <text x="330" y="142" fill="#fda4af" font-size="16" font-weight="600" text-anchor="middle">retry · style fails</text>
+  <!-- title -->
+  <text x="78" y="282" fill="#fff7ed" font-size="92" font-weight="800" letter-spacing="-1">Agents that know</text>
+  <text x="78" y="384" fill="#fdba74" font-size="92" font-weight="800" letter-spacing="-1">when to stop</text>
 
-  <!-- input arrow -->
-  <line x1="44" y1="315" x2="103" y2="315" stroke="#fdba74" stroke-width="3" marker-end="url(#arrMain)"/>
+  <!-- subline + descriptor -->
+  <text x="82" y="462" fill="#f8d9bf" font-size="31" font-weight="600">Amtsdeutsch  →  Leichte Sprache</text>
+  <text x="82" y="506" fill="#cca588" font-size="22">A bounded, auditable four-agent translator.</text>
 
-  <!-- straight arrows between nodes -->
-  <line x1="283" y1="315" x2="373" y2="315" stroke="#fdba74" stroke-width="3" marker-end="url(#arrMain)"/>
-  <line x1="553" y1="315" x2="643" y2="315" stroke="#fdba74" stroke-width="3" marker-end="url(#arrMain)"/>
-  <line x1="823" y1="315" x2="913" y2="315" stroke="#fdba74" stroke-width="3" marker-end="url(#arrMain)"/>
-
-  <!-- output arrow -->
-  <line x1="1093" y1="315" x2="1156" y2="315" stroke="#fdba74" stroke-width="3" marker-end="url(#arrMain)"/>
-
-  <!-- nodes -->
-  <!-- n1 Translator -->
+  <!-- quiet loop motif (bottom-right) -->
   <g>
-    <rect x="107" y="269" width="176" height="92" rx="16" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-    <circle cx="131" cy="299" r="7" fill="#f97316"/>
-    <text x="148" y="305" fill="#44210a" font-size="22" font-weight="700">Translator</text>
-    <text x="123" y="338" fill="#7c2d12" font-size="14">drafts the rewrite</text>
-  </g>
-  <!-- n2 Supervisor -->
-  <g>
-    <rect x="377" y="269" width="176" height="92" rx="16" fill="#fff7ed" stroke="#be123c" stroke-width="2"/>
-    <circle cx="401" cy="299" r="7" fill="#be123c"/>
-    <text x="418" y="305" fill="#44210a" font-size="22" font-weight="700">Supervisor</text>
-    <text x="393" y="338" fill="#7c2d12" font-size="14">deterministic rules</text>
-  </g>
-  <!-- n3 Questioner -->
-  <g>
-    <rect x="647" y="269" width="176" height="92" rx="16" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-    <circle cx="671" cy="299" r="7" fill="#ea580c"/>
-    <text x="688" y="305" fill="#44210a" font-size="22" font-weight="700">Questioner</text>
-    <text x="663" y="338" fill="#7c2d12" font-size="14">asks of the original</text>
-  </g>
-  <!-- n4 Answerer -->
-  <g>
-    <rect x="917" y="269" width="176" height="92" rx="16" fill="#fff7ed" stroke="#9f1239" stroke-width="2"/>
-    <circle cx="941" cy="299" r="7" fill="#9f1239"/>
-    <text x="958" y="305" fill="#44210a" font-size="22" font-weight="700">Answerer</text>
-    <text x="933" y="338" fill="#7c2d12" font-size="14">answers from output</text>
-  </g>
-
-  <!-- retry arc: retention gate (Answerer -> Supervisor), below -->
-  <path d="M1005 361 C 1005 488, 465 488, 465 361" fill="none" stroke="#fb7185" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round" marker-end="url(#arrRetry)"/>
-  <text x="735" y="512" fill="#fda4af" font-size="16" font-weight="600" text-anchor="middle">retry · facts dropped</text>
-
-  <!-- iteration pill -->
-  <g>
-    <rect x="345" y="556" width="510" height="42" rx="21" fill="#7c2d12" stroke="#f97316" stroke-width="1.5"/>
-    <text x="600" y="583" fill="#ffedd5" font-size="17" font-weight="600" text-anchor="middle">hard cap · 3 × 3 = 9 iterations, then hand to a human</text>
+    <line x1="946" y1="546" x2="1126" y2="546" stroke="#9a6b48" stroke-width="3"/>
+    <circle cx="946"  cy="546" r="8" fill="#fdba74"/>
+    <circle cx="1006" cy="546" r="8" fill="#fdba74"/>
+    <circle cx="1066" cy="546" r="8" fill="#fdba74"/>
+    <circle cx="1126" cy="546" r="8" fill="#fdba74"/>
+    <path d="M1126 540 C 1126 500, 946 500, 946 540" fill="none" stroke="#fb7185" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round" marker-end="url(#loopArr)"/>
+    <text x="1036" y="582" text-anchor="middle" fill="#b08862" font-size="15" letter-spacing="1">bounded loop</text>
   </g>
 </svg>
