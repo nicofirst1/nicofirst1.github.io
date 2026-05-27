@@ -133,8 +133,11 @@
             non_interaction: false
         });
 
-        // Fire the deferred page_view now that we know it's a human
-        gtag('event', 'page_view');
+        // Fire the deferred page_view now that we know it's a human.
+        // Event-scoped visitor_type tags THIS page_view only, so reports can
+        // filter to humans without the user-scoped property's cross-session
+        // smear (which retro-labels a user's zero-pageview bounces too).
+        gtag('event', 'page_view', { visitor_type: 'human' });
     }
 
     // Mark as likely bot
@@ -277,7 +280,7 @@
                     non_interaction: true
                 });
                 // Still fire page_view — give uncertain visitors the benefit of the doubt
-                gtag('event', 'page_view');
+                gtag('event', 'page_view', { visitor_type: 'uncertain' });
             }
         }
     }, 8000);
