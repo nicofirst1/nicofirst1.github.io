@@ -29,6 +29,21 @@ module Jekyll
           %(This chart is interactive on the original post — <a href="#{full_url}">explore it live here</a>.</p>)
       end
 
+      # 2.5) footnotes can't survive import as clickable (Substack strips the target
+      #      ids), so flatten kramdown footnotes to plain numbered endnotes under a
+      #      "Notes" heading — numbers are kept, dead in-page links removed.
+      # drop the author's manual "Footnotes" heading (we add our own "Notes")
+      html = html.gsub(%r{<h[1-3][^>]*id="footnotes"[^>]*>.*?</h[1-3]>\s*}mi, '')
+      html = html.gsub(%r{<h[1-3][^>]*>\s*Footnotes\s*</h[1-3]>\s*}mi, '')
+      # reference markers: keep the number, drop the dead link
+      html = html.gsub(%r{<sup[^>]*id="fnref:[^"]*"[^>]*>\s*<a[^>]*href="#fn:[^"]*"[^>]*>([^<]*)</a>\s*</sup>}mi) do
+        "<sup>#{Regexp.last_match(1)}</sup>"
+      end
+      # the endnotes block: label it, drop list-item ids and the dead back-links
+      html = html.gsub('<div class="footnotes" role="doc-endnotes">', '<hr /><h3>Notes</h3><div class="footnotes">')
+      html = html.gsub(%r{<li id="fn:[^"]*"[^>]*>}mi, '<li>')
+      html = html.gsub(%r{\s*<a[^>]*class="reversefootnote"[^>]*>.*?</a>}mi, '')
+
       # 3) absolutize root-relative asset/link URLs (skip anchors and protocol-relative)
       html = html.gsub(%r{(src|href)="/(?![/])}, %(\\1="#{base}/))
       html = html.gsub(%r{srcset="/(?![/])}, %(srcset="#{base}/))
