@@ -58,8 +58,18 @@ layout: default
         </a>
       </div>
       {% endif %}
+
+      {% if page.substack_url %}
+      <p class="text-right mt-4 text-sm">
+        <a href="{{ page.substack_url }}" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+          Read &amp; discuss this on Substack →
+        </a>
+      </p>
+      {% endif %}
     </div>
-  
+
+    {% include subscribe.html %}
+
     <div class="text-center my-10 py-5 border-t border-b border-gray-200 dark:border-gray-700">
   <p class="text-lg mb-4 font-sans">
     If you like my work, consider buying me a coffee to support future posts.

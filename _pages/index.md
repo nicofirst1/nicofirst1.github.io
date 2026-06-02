@@ -30,3 +30,4 @@ permalink: /
 {% include home/activity.html %}
 {% include home/education.html data='experience' title='Recent roles & collaborations' %}
 {% include home/education.html data='education' title='Learning journey' %}
+{% include subscribe.html %}

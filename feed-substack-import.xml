@@ -1,0 +1,42 @@
+---
+layout: none
+permalink: /feed-substack-import.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | default: "Website" }} – Blog (full content, for import)</title>
+    <link>{{ '/' | absolute_url }}</link>
+    <atom:link href="{{ '/feed-substack-import.xml' | absolute_url }}" rel="self" type="application/rss+xml" />
+    <description>{{ site.description | escape }}</description>
+    <language>{{ site.lang | default: 'en' }}</language>
+    {% assign blog_collection = site.collections | where: 'label', 'blog' | first %}
+    {% if blog_collection %}
+      {% assign blog_docs = blog_collection.docs %}
+    {% else %}
+      {% assign blog_docs = site.posts %}
+    {% endif %}
+    {% assign blog_docs = blog_docs | where_exp: 'doc', 'doc.published != false' %}
+    {% assign blog_docs = blog_docs | where_exp: 'doc', 'doc.draft != true' %}
+    {% assign blog_docs = blog_docs | sort: 'date' | reverse %}
+    {% for post in blog_docs %}
+      {% comment %} absolutize root-relative asset/link URLs so Substack can fetch them {% endcomment %}
+      {% capture abs %}{{ site.url }}{{ site.baseurl }}/{% endcapture %}
+      {% assign body = post.content | replace: 'src="/', 'src="REPLACE_SRC' | replace: 'srcset="/', 'srcset="REPLACE_SRCSET' | replace: 'href="/', 'href="REPLACE_HREF' %}
+      {% assign body = body | replace: 'REPLACE_SRC', abs | replace: 'REPLACE_SRCSET', abs | replace: 'REPLACE_HREF', abs %}
+      <item>
+        <title>{{ post.title | escape }}</title>
+        <link>{{ post.url | absolute_url }}</link>
+        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <author>{{ post.author | default: site.author | default: site.title | escape }}</author>
+        <description>{{ post.description | default: post.title | strip_html | strip_newlines | escape }}</description>
+        {% if post.image %}<enclosure url="{{ post.image | absolute_url }}" type="image/jpeg" />{% endif %}
+        <content:encoded><![CDATA[{% if post.image %}<p><img src="{{ post.image | absolute_url }}" alt="{{ post.title | escape }}" /></p>{% endif %}{{ body }}]]></content:encoded>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

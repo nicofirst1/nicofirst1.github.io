@@ -62,3 +62,18 @@ CI/CD runs via GitHub Actions ("Build & Deploy Jekyll" workflow).
 - `_news/` — news items (layout: `news`), permalink: `/news/:slug/`
 - `_projects/` — projects (layout: `projects`), permalink: `/projects/:title/`
 - `_education/`, `_experience/`, `_certificates/` — data collections (no output)
+
+When drafting or editing blog posts (or any published prose), follow the learned patterns in `.claude/skills/learned/`: `blog-writing-style.md` (voice, balance, interaction) and `verify-claims-with-research-agent.md` (fact-check claims before publishing).
+
+## Substack syndication (canonical-back)
+
+Distribution strategy: real humans are ~95% Direct (network-driven), SEO is effectively dead. So the **site is canonical**, Substack is the distribution engine. Publication URL lives in `_config.yml` (`substack:`) — single source of truth, consumed by `_includes/subscribe.html` (subscribe CTA on post pages + homepage) and `_data/social.yml` (footer icon).
+
+**Bulk back-catalog import:** Substack's Settings → Imports reads an **RSS feed**, not single-post URLs. The public `feed-blog.xml` carries only 200-char summaries, so a dedicated full-content feed `feed-substack-import.xml` exists (RSS 2.0, `content:encoded`, absolute asset/link URLs, all posts). Point Substack's importer at `https://nicolobrandizzi.com/feed-substack-import.xml`. After importing, verify each post's canonical points back to the site; the import feed can be deleted once the back-catalog is in.
+
+**Per-new-post workflow:**
+1. Publish on nicolobrandizzi.com first (canonical lives here via `jekyll-seo-tag`).
+2. In Substack, create the post via the editor and either paste the body or pull it in, then **set the editor's Canonical URL field to the site post URL**. Review fidelity (images, code blocks, footnotes), publish web-only, then send as email + share to Notes.
+3. Add `substack_url: <substack post URL>` to the post's front matter — `_layouts/blogs.html` renders a "Read & discuss this on Substack" backlink (Substack hosts the comment community).
+
+Never rank content by raw page-views while the `page_view` under-fire bug is open — use session/human-event counts.

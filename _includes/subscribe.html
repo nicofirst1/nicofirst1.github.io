@@ -1,0 +1,11 @@
+{% if site.substack %}
+<div class="text-center my-10 py-6 border-t border-b border-gray-200 dark:border-gray-700">
+  <p class="text-lg mb-1 font-sans font-semibold">Get new posts by email</p>
+  <p class="text-sm mb-4 text-slate-600 dark:text-slate-300 max-w-md mx-auto">
+    Essays on AI research, governance, and the systems where they meet — straight to your inbox. No spam.
+  </p>
+  <a href="{{ site.substack }}/subscribe" target="_blank" rel="noopener noreferrer" class="capitalize btn btn-primary inline-block">
+    Subscribe on Substack
+  </a>
+</div>
+{% endif %}
