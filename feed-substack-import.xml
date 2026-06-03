@@ -14,7 +14,7 @@ sitemap: false
     <description>{{ site.description | escape }}</description>
     <language>{{ site.lang | default: 'en' }}</language>
     {% comment %} ── TEST MODE: import only one post. Set test_slug to '' to import all posts. ── {% endcomment %}
-    {% assign test_slug = 'bike-steal' %}
+    {% assign test_slug = '' %}
     {% assign blog_collection = site.collections | where: 'label', 'blog' | first %}
     {% if blog_collection %}
       {% assign blog_docs = blog_collection.docs %}
