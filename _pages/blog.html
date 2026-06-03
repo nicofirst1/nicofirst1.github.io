@@ -41,7 +41,8 @@ intro_blurb: >
     initListingSearch({
       inputSelector: '#blog-search-input',
       cardsSelector: '.blog_articles .article_card',
-      emptySelector: '#blog-search-empty'
+      emptySelector: '#blog-search-empty',
+      indexUrl: '{{ "/search-index.json" | relative_url }}'
     });
   });
 </script>

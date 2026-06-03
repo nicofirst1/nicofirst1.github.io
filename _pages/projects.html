@@ -72,7 +72,8 @@ past_blurb: >
     initListingSearch({
       inputSelector: '#projects-search-input',
       cardsSelector: '.projects_section .project_card',
-      emptySelector: '#projects-search-empty'
+      emptySelector: '#projects-search-empty',
+      indexUrl: '{{ "/search-index.json" | relative_url }}'
     });
   });
 </script>

@@ -1,8 +1,8 @@
 {% assign item = include.post %}
 {% assign summary_source = item.description | default: item.subtitle | default: item.excerpt %}
 {% assign summary = summary_source | strip_html | truncate: 120 %}
-{% assign content_text = item.content | strip_html | truncate: 160 %}
-{% assign search_text = item.title | append: ' ' | append: summary | append: ' ' | append: content_text %}
+{% comment %} Full body is searched via /search-index.json (loaded lazily by listing_search.js); the card only carries title + summary. {% endcomment %}
+{% assign search_text = item.title | append: ' ' | append: summary %}
 <article class="news_list_item" data-search-text="{{ search_text | replace: '\"', ' ' | escape }}">    <a href="{{ item.url | relative_url }}" class="news_list_link">
         <div class="news_list_meta">
             <span class="news_list_date">{{ item.date | date: "%b %d, %Y" }}</span>

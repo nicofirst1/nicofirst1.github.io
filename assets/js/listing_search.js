@@ -10,6 +10,11 @@
     return card.textContent || '';
   }
 
+  function cardUrl(card) {
+    var link = card.querySelector('a[href]');
+    return link ? link.getAttribute('href') : null;
+  }
+
   function setHidden(card, hiddenClass, hide) {
     if (!card) return;
     if (hide) {
@@ -50,9 +55,37 @@
     var cache = cards.map(function (card) {
       return {
         card: card,
+        url: cardUrl(card),
         text: normalise(extractor(card))
       };
     });
+
+    // Lazy full-text index: cards only carry title + summary; the full post
+    // bodies live in a JSON index fetched the first time the user searches.
+    var fullTextByUrl = null;   // null = not loaded yet
+    var indexPromise = null;
+
+    function ensureIndex() {
+      if (!options.indexUrl) return Promise.resolve();
+      if (indexPromise) return indexPromise;
+      indexPromise = fetch(options.indexUrl)
+        .then(function (res) { return res.ok ? res.json() : []; })
+        .then(function (list) {
+          fullTextByUrl = {};
+          (list || []).forEach(function (item) {
+            if (item && item.url) fullTextByUrl[item.url] = normalise(item.text);
+          });
+        })
+        .catch(function () { fullTextByUrl = {}; });   // degrade to title+summary
+      return indexPromise;
+    }
+
+    function haystackFor(entry) {
+      if (fullTextByUrl && entry.url && fullTextByUrl[entry.url]) {
+        return entry.text + ' ' + fullTextByUrl[entry.url];
+      }
+      return entry.text;
+    }
 
     function applyFilter(query) {
       var normalised = normalise(query.trim());
@@ -64,12 +97,18 @@
         return;
       }
 
+      // Pull in the full-text index on first real query, then re-run.
+      if (options.indexUrl && !fullTextByUrl) {
+        ensureIndex().then(function () { applyFilter(input.value); });
+      }
+
       var parts = normalised.split(/\s+/).filter(Boolean);
       var matches = 0;
 
       cache.forEach(function (entry) {
+        var haystack = haystackFor(entry);
         var isMatch = parts.every(function (token) {
-          return entry.text.indexOf(token) !== -1;
+          return haystack.indexOf(token) !== -1;
         });
         setHidden(entry.card, hiddenClass, !isMatch);
         if (isMatch) matches += 1;
@@ -77,6 +116,10 @@
 
       toggleEmpty(empty, matches === 0);
     }
+
+    // Warm the index as soon as the user focuses the box, so the body is
+    // usually ready by the time they finish typing.
+    input.addEventListener('focus', ensureIndex);
 
     var handler = debounce(function () {
       applyFilter(input.value);

@@ -1,8 +1,8 @@
 {% assign item = include.post %}
 {% assign summary_source = item.subtitle | default: item.description | default: item.excerpt %}
 {% assign summary = summary_source | strip_html | truncate: 140 %}
-{% assign content_text = item.content | strip_html | truncate: 160 %}
-{% assign search_text = item.title | append: ' ' | append: summary | append: ' ' | append: content_text %}
+{% comment %} Full body is searched via /search-index.json (loaded lazily by listing_search.js); the card only carries title + summary. {% endcomment %}
+{% assign search_text = item.title | append: ' ' | append: summary %}
 <article class="project_card{% if include.featured %} project_card--featured{% endif %}" data-search-text="{{ search_text | replace: '\"', ' ' | escape }}">    <a href="{{ item.url | relative_url }}" class="project_card_link">
         {% if item.image %}
             <div class="project_card_media">

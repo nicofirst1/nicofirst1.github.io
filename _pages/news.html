@@ -40,7 +40,8 @@ intro_blurb: >
     initListingSearch({
       inputSelector: '#news-search-input',
       cardsSelector: '.news_articles .news_list_item',
-      emptySelector: '#news-search-empty'
+      emptySelector: '#news-search-empty',
+      indexUrl: '{{ "/search-index.json" | relative_url }}'
     });
   });
 </script>
