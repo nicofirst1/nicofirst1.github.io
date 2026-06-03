@@ -49,8 +49,12 @@ Use `list_properties` to confirm property URLs before querying. The `site_url` p
 
 Jekyll site with PostCSS (Tailwind). SCSS lives in `_scss/`, design tokens in `_scss/abstracts/_variables.scss`.
 
+**Ruby version: use `chruby 3.3.1` first.** The system Ruby (2.6) can't install the native gems (`rake`, `sass-embedded`), so `bundle install` / `bundle exec jekyll` fail. Switch with chruby before any build:
+
 ```bash
-# Local dev (requires Ruby + bundler + Node)
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+chruby 3.3.1            # ruby 3.3.1
+bundle install         # first time only
 bundle exec jekyll serve
 ```
 
