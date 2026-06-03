@@ -11,11 +11,12 @@ body.dark .projects_intro .page_intro_bg {
 }
 
 .projects_section {
-  background: linear-gradient(180deg, rgba(255, 251, 235, 0.95), rgba(255, 247, 237, 0.85));
-  border-radius: 40px;
-  box-shadow: 0 45px 90px -60px rgba(248, 113, 113, 0.45);
+  // Match the news/blog listing background; square the top (no rounded corners
+  // overlapping the intro) and drop the negative margin that caused the messy seam.
+  background: linear-gradient(180deg, rgba(255, 247, 237, 0.96), rgba(254, 243, 199, 0.92));
+  border-radius: 0 0 $radius-xl $radius-xl;
+  box-shadow: 0 40px 80px -55px rgba(248, 113, 113, 0.35);
   padding: $sp-14 0;
-  margin-top: -$sp-6;
 }
 
 body.dark .projects_section {
@@ -102,7 +103,7 @@ body.dark .projects_empty {
 @media (max-width: $bp-md) {
   .projects_section {
     padding: $sp-12 0;
-    border-radius: 28px;
+    border-radius: 0 0 28px 28px;
   }
 
   .projects_group + .projects_group {
