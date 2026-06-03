@@ -257,6 +257,9 @@ body.dark .nav_toggle span {
   display: flex;
   align-items: center;
   justify-content: center;
+  // Cancel the global `li { margin-bottom }` — in a flex row it pushes the
+  // nav text ~8px above center.
+  margin: 0;
 }
 
 .site_nav_link {
