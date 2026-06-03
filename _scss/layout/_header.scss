@@ -25,7 +25,9 @@
   top: 0;
   z-index: 40;
   width: 100%;
-  padding: 0.8rem 0;
+  // No vertical padding: the darker background band hugs the content row
+  // (the brand/logo's own spacing provides breathing room).
+  padding: 0;
   transition: box-shadow $transition-base, background $transition-base, transform $transition-base;
   backdrop-filter: blur(12px);
 }
@@ -334,7 +336,12 @@ body.menu-open {
 
   .site_nav_link {
     color: $brown-800;
-    padding: $sp-3 0;
+    padding: $sp-2 0;
+  }
+
+  /* Hug the underline to the text (was floating ~15px below it) */
+  .site_nav_link::after {
+    bottom: 0.15rem;
   }
 
   body.dark .site_nav_link {
