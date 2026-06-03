@@ -15,6 +15,39 @@
   box-shadow: 0 14px 30px -20px rgba($orange-500, 0.65);
 }
 
+// Outline "download data" button used in posts (was inline-styled, dark-blind).
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: $radius-sm;
+  color: $link-color;                        // #b91c1c
+  border: 1px solid rgba(185, 28, 28, 0.35);
+  transition: color $transition-snappy, border-color $transition-snappy,
+    background $transition-snappy, filter $transition-snappy;
+}
+.download-btn:hover {
+  background: rgba(185, 28, 28, 0.08);
+  border-color: rgba(185, 28, 28, 0.6);
+  filter: brightness(1.05);
+}
+body.dark .download-btn {
+  color: $accent-hot-dark;                   // bright, readable on dark
+  border-color: rgba($accent-hot-dark, 0.5);
+}
+body.dark .download-btn:hover {
+  background: rgba($accent-hot-dark, 0.12);
+  border-color: rgba($accent-hot-dark, 0.75);
+}
+@media (prefers-reduced-motion: reduce) {
+  .download-btn { transition: none; }
+  .download-btn:hover { filter: none; }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

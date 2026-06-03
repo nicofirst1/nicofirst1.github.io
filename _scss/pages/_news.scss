@@ -249,10 +249,10 @@
 /* Dark Mode Overrides for News Post */
 /* Blanket dark link colour, but excludes button-styled anchors so they keep
    their own text colour (.btn → #431407, .read-more-btn → #431407, .eu_card → #fff). */
-.dark a:not(.btn):not(.read-more-btn):not(.eu_card) {
+.dark a:not(.btn):not(.read-more-btn):not(.eu_card):not(.download-btn) {
   color: #9ae1ff;
 }
-.dark a:not(.btn):not(.read-more-btn):not(.eu_card):hover {
+.dark a:not(.btn):not(.read-more-btn):not(.eu_card):not(.download-btn):hover {
   color: #7fcdff;
 }
 
