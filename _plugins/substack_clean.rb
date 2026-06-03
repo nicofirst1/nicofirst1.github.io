@@ -44,6 +44,22 @@ module Jekyll
       html = html.gsub(%r{<li id="fn:[^"]*"[^>]*>}mi, '<li>')
       html = html.gsub(%r{\s*<a[^>]*class="reversefootnote"[^>]*>.*?</a>}mi, '')
 
+      # 2.7) inject the syndication backlink. Substack self-canonicalizes (no
+      #      canonical-back field exists), so attribution lives in the body. Place
+      #      it AFTER the TL;DR so it doesn't get pulled into Substack's email
+      #      preview/snippet: insert just before the first <h2> (which in our
+      #      posts follows the TL;DR blockquote); fall back to after the TL;DR
+      #      blockquote, then after the first paragraph.
+      backlink = %(<p><em>\u{1F4CD} Originally published at ) +
+                 %(<a href="#{full_url}">nicolobrandizzi.com</a>.</em></p>\n)
+      if html =~ /<h2[\s>]/i
+        html = html.sub(/<h2[\s>]/i) { "#{backlink}#{Regexp.last_match(0)}" }
+      elsif html =~ %r{</blockquote>}i
+        html = html.sub(%r{</blockquote>}i) { "#{Regexp.last_match(0)}\n#{backlink}" }
+      else
+        html = html.sub(%r{</p>}i) { "#{Regexp.last_match(0)}\n#{backlink}" }
+      end
+
       # 3) absolutize root-relative asset/link URLs (skip anchors and protocol-relative)
       html = html.gsub(%r{(src|href)="/(?![/])}, %(\\1="#{base}/))
       html = html.gsub(%r{srcset="/(?![/])}, %(srcset="#{base}/))

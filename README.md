@@ -8,13 +8,20 @@ Built with [Jekyll](https://jekyllrb.com/), SCSS, and Tailwind (via PostCSS), ho
 
 ## Local development
 
-Requires Ruby (3.3), Bundler, and Node (20).
+Requires Ruby (3.3), Bundler, and Node (20). Ruby is managed with
+[chruby](https://github.com/postmodern/chruby) — the pinned version lives in
+[`.ruby-version`](.ruby-version) (3.3.1). Select it before running anything so
+you're not on system Ruby (2.6):
 
 ```bash
-bundle install        # install Ruby gems (first time)
-npm install           # install Node deps for Tailwind/PostCSS (first time)
-bundle exec jekyll serve   # serve locally with live reload
+chruby 3.3.1               # activate the project Ruby (first, every new shell)
+bundle install            # install Ruby gems (first time)
+npm install               # install Node deps for Tailwind/PostCSS (first time)
+bundle exec jekyll serve  # serve locally with live reload at http://127.0.0.1:4000
 ```
+
+> `chruby` with no argument lists installed Rubies; `chruby 3.3.1` activates it.
+> If 3.3.1 isn't installed: `ruby-install 3.3.1` (Homebrew: `brew install chruby ruby-install`).
 
 Tailwind CSS is compiled from `css/tailwind.css` to `dist/styles.css`:
 
