@@ -681,16 +681,29 @@ body.dark .experience_section {
 
 .experience_card_inner {
   display: grid;
-  gap: 1.4rem;
+  gap: 1.1rem 1.4rem;
   padding: 1.85rem;
-  grid-template-columns: minmax(84px, 0.3fr) minmax(0, 1fr);
-  align-items: start;
+  // Logo shrinks to its intrinsic width; meta/title sit beside it, copy spans below
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "logo info"
+    "copy copy";
+  align-items: center;
 }
 
 .experience_logo {
+  grid-area: logo;
   position: relative;
   display: flex;
   justify-content: center;
+}
+
+.experience_info {
+  grid-area: info;
+}
+
+.experience_copy {
+  grid-area: copy;
 }
 
 .logo_blur {
@@ -735,16 +748,21 @@ body.dark .experience_section {
 }
 
 .experience_copy {
-  margin-top: $sp-3;
+  margin-top: 0;
   font-size: 0.96rem;
   line-height: 1.6;
   color: $slate-600;
+  // Copy sits under the logo/meta row, centered in the card
+  text-align: center;
 }
 
 .experience_copy ul {
+  // Center the list block but keep bullet text left-aligned for readability
+  display: inline-block;
   margin: $sp-2 0 0;
   padding-left: 1.2rem;
   list-style: disc;
+  text-align: left;
 }
 
 .experience_copy li {
@@ -796,6 +814,10 @@ body.dark .experience_copy a:hover {
 @media (max-width: $bp-lg) {
   .experience_card_inner {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "info"
+      "copy";
     text-align: center;
     padding: 1.75rem;
   }
