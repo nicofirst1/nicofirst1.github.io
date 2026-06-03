@@ -40,6 +40,7 @@ Thumbs.db
 .claude
 CLAUDE.md
 
+
 # Output of coverage tools
 coverage/
 
@@ -57,4 +58,4 @@ _site/
 _pages/euai_graph2.html
 assets/css/euai_graph2.scss
 docs/
-
+_drafts/
