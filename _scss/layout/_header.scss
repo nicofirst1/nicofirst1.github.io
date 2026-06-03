@@ -35,8 +35,10 @@
 .site_header_bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba($cream-100, 0.65), rgba(254, 215, 170, 0.4));
-  opacity: 0.92;
+  // Keep the alpha high + even so the short band fills as a clean rectangle
+  // (a low-opacity corner read as an unwanted rounded fade).
+  background: linear-gradient(135deg, rgba($cream-100, 0.88), rgba(254, 215, 170, 0.82));
+  opacity: 1;
   pointer-events: none;
   transition: opacity $transition-base;
 }
