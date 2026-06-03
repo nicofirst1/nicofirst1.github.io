@@ -16,6 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mark body as GSAP loaded
     document.body.classList.add('gsap-loaded');
 
+    // Skip the entrance choreography on Back/Forward navigation. When the page
+    // is reloaded from a back nav (e.g. returning from /projects), replaying the
+    // ~1s staggered intro reads as slow. All content is visible by default, so
+    // returning here before any gsap.from() leaves the page painted instantly.
+    // Fresh/forward visits still get the full animation.
+    var navEntry = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || null;
+    if (navEntry && navEntry.type === 'back_forward') {
+        return;
+    }
+
     // ===========================================
     // HERO SECTION ANIMATIONS
     // ===========================================
