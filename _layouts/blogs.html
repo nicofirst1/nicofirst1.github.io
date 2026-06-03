@@ -77,32 +77,18 @@ layout: default
     </div>
 
     <div class="post_cta my-10 py-6 border-t border-b border-gray-200 dark:border-gray-700">
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 text-center">
-        <div class="flex-1 flex flex-col items-center">
-          {% include subscribe.html bare=true %}
-        </div>
-        <div class="hidden sm:block self-stretch w-px bg-gray-200 dark:bg-gray-700" aria-hidden="true"></div>
-        <div class="flex-1 flex flex-col items-center">
-          <p class="text-base mb-4 font-sans max-w-xs">
-            If you like my work, consider buying me a coffee to support future posts.
-          </p>
-          <a href="https://coff.ee/nicofirst1" target="_blank" rel="noopener noreferrer" class="inline-block">
-            <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=nicofirst1&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" alt="Buy Me A Coffee" class="h-[51px] w-[217px]" loading="lazy">
-          </a>
-        </div>
+      <div class="flex flex-col items-center justify-center text-center">
+        <p class="text-base mb-4 font-sans max-w-xs">
+          If you like my work, consider buying me a coffee to support future posts.
+        </p>
+        <a href="https://coff.ee/nicofirst1" target="_blank" rel="noopener noreferrer" class="inline-block">
+          <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=nicofirst1&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" alt="Buy Me A Coffee" class="h-[51px] w-[217px]" loading="lazy">
+        </a>
       </div>
     </div>
 
   </article>
   {% include related_posts.html %}
-  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both">
-    {%- if page.previous -%}
-      <a href="{{page.previous.url}}" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← {{page.previous.title}}</a>
-    {%- endif -%}
-    {%- if page.next -%}
-      <a href="{{page.next.url}}" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">{{page.next.title}} →</a>
-    {%- endif -%}
-  </div>
 </div>
 {%- include zoom.html -%}
 

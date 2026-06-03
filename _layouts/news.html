@@ -32,13 +32,19 @@ layout: default
   
 
   </article>
-  <div class="prev_next flex gap-8 justify-center flex-wrap mb-12 mt-auto pt-6 border-t clear-both">
+  <nav class="prev_next mt-auto mb-12 pt-6 border-t border-slate-200 dark:border-slate-700 clear-both grid grid-cols-1 sm:grid-cols-2 gap-4">
     {%- if page.previous -%}
-      <a href="{{page.previous.url}}" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">← {{page.previous.title}}</a>
+      <a href="{{page.previous.url}}" class="flex flex-col gap-1 rounded-xl border border-slate-200 dark:border-slate-700 px-5 py-3 shadow-sm hover:shadow-md transition-shadow sm:col-start-1">
+        <span class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">&larr; Previous</span>
+        <span class="font-medium line-clamp-2 text-slate-900 dark:text-slate-100">{{page.previous.title}}</span>
+      </a>
     {%- endif -%}
     {%- if page.next -%}
-      <a href="{{page.next.url}}" class="block w-fit py-3 px-6 border shadow-md hover:shadow-lg">{{page.next.title}} →</a>
+      <a href="{{page.next.url}}" class="flex flex-col gap-1 rounded-xl border border-slate-200 dark:border-slate-700 px-5 py-3 shadow-sm hover:shadow-md transition-shadow sm:col-start-2 sm:text-right">
+        <span class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">Next &rarr;</span>
+        <span class="font-medium line-clamp-2 text-slate-900 dark:text-slate-100">{{page.next.title}}</span>
+      </a>
     {%- endif -%}
-  </div>
+  </nav>
 </div>
 {%- include zoom.html -%}
