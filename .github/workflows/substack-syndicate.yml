@@ -81,7 +81,7 @@ jobs:
                 `   \`\`\``,
                 `3. Review the draft: images load, footnotes render as a **Notes** endnote block, and the "📍 Originally published at nicolobrandizzi.com" line sits just under the TL;DR.`,
                 `4. Publish web-only, then send as email + share to Notes.`,
-                `5. Add \`substack_url: <the Substack post URL>\` to the post front matter (\`${f}\`) so the site renders the "Read & discuss this on Substack" backlink.`,
+                `5. The site→Substack backlink is **automatic** — the \`Substack backlinks\` workflow probes the post's Substack URL daily and adds it to \`_data/substack.yml\` once live. Run that workflow manually (Actions → Substack backlinks → Run workflow) to publish the backlink immediately.`,
                 ``,
                 `> _Substack self-canonicalizes — there is no canonical-back, and that's expected. Attribution is the in-body backlink. See \`CLAUDE.md\` → Substack syndication._`,
               ].join('\n');

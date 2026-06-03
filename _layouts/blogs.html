@@ -59,9 +59,17 @@ layout: default
       </div>
       {% endif %}
 
+      {% comment %} Substack backlink: explicit front-matter URL wins; otherwise
+         auto-derived for posts confirmed live in _data/substack.yml (Substack
+         reuses the site slug). {% endcomment %}
       {% if page.substack_url %}
+        {% assign substack_link = page.substack_url %}
+      {% elsif site.data.substack contains page.slug %}
+        {% assign substack_link = site.substack | append: '/p/' | append: page.slug %}
+      {% endif %}
+      {% if substack_link %}
       <p class="text-right mt-4 text-sm">
-        <a href="{{ page.substack_url }}" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+        <a href="{{ substack_link }}" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
           Read &amp; discuss this on Substack →
         </a>
       </p>

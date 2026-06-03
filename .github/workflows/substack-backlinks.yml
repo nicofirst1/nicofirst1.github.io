@@ -1,0 +1,65 @@
+name: Substack backlinks
+
+# Substack's public RSS feed does NOT list imported posts, so we can't read live
+# URLs from it. Instead we probe each post's expected Substack URL directly:
+# Substack reuses the site slug, so <publication>/p/<slug> returns 200 once a post
+# is live (a non-existent slug 302-redirects away). The confirmed-live slugs are
+# written to _data/substack.yml, which _layouts/blogs.html turns into the
+# "Read & discuss on Substack" backlink. New posts self-add once syndicated.
+on:
+  schedule:
+    - cron: "17 6 * * *"   # daily at 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: substack-backlinks
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Probe Substack for live posts
+        run: |
+          set -euo pipefail
+          BASE="$(grep -E '^substack:' _config.yml | sed -E 's/^substack:[[:space:]]*"?([^"#[:space:]]+)"?.*/\1/')"
+          echo "Publication: $BASE"
+          tmp="$(mktemp)"
+          {
+            echo "# Auto-maintained by .github/workflows/substack-backlinks.yml — do not edit by hand."
+            echo "# Slugs of posts confirmed live on Substack (HTTP 200 at <_config substack>/p/<slug>)."
+            echo "# Substack reuses the site slug, so the backlink URL is <_config substack> + /p/ + slug."
+            echo "# _layouts/blogs.html renders the \"Read & discuss on Substack\" link for slugs listed here."
+          } > "$tmp"
+          for f in _blog/*.md; do
+            slug="$(grep -m1 -E '^slug:' "$f" | sed -E 's/^slug:[[:space:]]*"?([^"#[:space:]]+)"?.*/\1/')"
+            [ -z "$slug" ] && continue
+            code="$(curl -s -o /dev/null -w '%{http_code}' "$BASE/p/$slug" || echo 000)"
+            if [ "$code" = "200" ]; then
+              echo "- $slug" >> "$tmp"
+              echo "live  : $slug"
+            else
+              echo "skip $code: $slug"
+            fi
+          done
+          mkdir -p _data
+          mv "$tmp" _data/substack.yml
+
+      - name: Commit if changed
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- _data/substack.yml; then
+            echo "No changes to _data/substack.yml."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/substack.yml
+          git commit -m "chore: refresh Substack backlinks (probe live posts)"
+          git push
