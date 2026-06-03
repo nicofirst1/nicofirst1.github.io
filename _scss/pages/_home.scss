@@ -768,7 +768,8 @@ body.dark .experience_card {
 }
 
 body.dark .logo_image {
-  background: rgba($slate-900, 0.9);
+  // Keep the logo chip light so dark logo art stays legible on dark bg
+  background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 24px 55px -38px rgba(99, 102, 241, 0.55);
 }
 

@@ -9,23 +9,35 @@
             </span>
         </a>
 
-        <button class="nav_toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-target="siteNav">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <div class="header_right">
+            <nav class="site_nav" id="siteNav" aria-label="Primary">
+                <ul class="site_nav_list">
+                    {% for n in site.data.navigation %}
+                        <li>
+                            <a href="{{ n.link | relative_url }}" class="site_nav_link{% if n.page_id == page.page_id %} is-active{% endif %}">
+                                {{ n.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
 
-        <nav class="site_nav" id="siteNav" aria-label="Primary">
-            <ul class="site_nav_list">
-                {% for n in site.data.navigation %}
-                    <li>
-                        <a href="{{ n.link | relative_url }}" class="site_nav_link{% if n.page_id == page.page_id %} is-active{% endif %}">
-                            {{ n.title }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </nav>
+            <button class="theme_toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+                <svg class="theme_icon theme_icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="theme_icon theme_icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                </svg>
+            </button>
+
+            <button class="nav_toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-target="siteNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </div>
 </header>
 
@@ -71,5 +83,35 @@
 
         handleScroll();
         window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // Dark-mode toggle. The initial class is set pre-paint in default.html;
+        // here we only handle clicks and keep aria-pressed in sync.
+        const themeToggle = document.getElementById('themeToggle');
+        const syncTheme = () => {
+            if (themeToggle) {
+                themeToggle.setAttribute('aria-pressed', String(document.body.classList.contains('dark')));
+            }
+        };
+        syncTheme();
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const isDark = document.body.classList.toggle('dark');
+                try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+                syncTheme();
+            });
+        }
+
+        // Follow OS changes only while the visitor hasn't made an explicit choice.
+        const mql = window.matchMedia('(prefers-color-scheme: dark)');
+        const onSchemeChange = (e) => {
+            let saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (err) {}
+            if (saved) return;
+            document.body.classList.toggle('dark', e.matches);
+            syncTheme();
+        };
+        if (mql.addEventListener) mql.addEventListener('change', onSchemeChange);
+        else if (mql.addListener) mql.addListener(onSchemeChange);
     })();
 </script>

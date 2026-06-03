@@ -45,9 +45,8 @@
   box-shadow: 0 26px 55px -22px rgba(248, 113, 113, 0.75);
 }
 
-body.dark .btn-primary {
-  color: $dark-bg-3;
-}
+// The orange→yellow gradient is identical in both themes, so the warm dark-brown
+// text (#431407) gives the strongest contrast in dark mode too — no override needed.
 
 .btn-secondary {
   background: rgba(255, 255, 255, 0.85);

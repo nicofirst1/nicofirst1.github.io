@@ -3,6 +3,18 @@
 {%- include head.html -%}
 
 <body class="site_body">
+  {%- comment %} Set the theme before first paint to avoid a flash. Honours a saved
+       choice, otherwise follows the OS (prefers-color-scheme). {% endcomment -%}
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark'
+                         : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.body.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   {%- include header.html -%}
   <main id="main-content" class="site_main{% if page.page_id == 'home' %} site_main--home{% endif %}">
