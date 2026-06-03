@@ -2,18 +2,3 @@
 # Slugs of posts confirmed live on Substack (HTTP 200 at <_config substack>/p/<slug>).
 # Substack reuses the site slug, so the backlink URL is <_config substack> + /p/ + slug.
 # _layouts/blogs.html renders the "Read & discuss on Substack" link for slugs listed here.
-- ai-risks
-- china-eu-ai
-- horizon-analysis
-- eu-and-research
-- data-strategy
-- data-strategy-questions
-- ai-factories
-- polai-graph
-- ai-gigafactories-tool
-- pravda-grooming
-- rl-reasoning-llm
-- sota-trap
-- bike-steal
-- klartext-leichte-sprache
-- poolside-model-factory
