@@ -304,8 +304,13 @@ body.dark .hero_portrait_frame::after {
 }
 
 @media (max-width: $bp-lg) {
+  // Grid has collapsed to one column: lift the portrait above the text block
+  .hero_visual {
+    order: -1;
+  }
+
   .hero_portrait_wrap {
-    max-width: 360px;
+    max-width: 280px;
   }
 }
 
@@ -320,6 +325,10 @@ body.dark .hero_portrait_frame::after {
 
   .hero_list {
     padding: 1.4rem;
+  }
+
+  .hero_portrait_wrap {
+    max-width: 200px;
   }
 
   .hero_portrait_frame {
