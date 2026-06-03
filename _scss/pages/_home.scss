@@ -82,11 +82,12 @@ body.dark .hero_greeting {
 
 .hero_title {
   margin-top: $sp-6;
-  font-size: clamp(2.8rem, 6vw, 3.9rem);
-  line-height: 1.05;
+  font-family: $display-font;
+  font-size: clamp(3rem, 6.4vw, 4.2rem);  // condensed face reads smaller — bump slightly
+  line-height: 1.02;
   color: $slate-900;
-  letter-spacing: $ls-tight;
-  font-weight: $fw-bold;
+  letter-spacing: 0.005em;  // condensed display: near-normal tracking, not the tight body value
+  font-weight: 400;         // Anton is single-weight and inherently heavy
 }
 
 body.dark .hero_title {
@@ -159,7 +160,7 @@ body.dark .hero_description {
 .hero_list_icon {
   font-size: $fs-md;
   line-height: 1.1;
-  color: $pink-500;
+  color: $accent-hot;  // single dominant hot accent (Fireship red)
   margin-top: 0.1rem;
 }
 
@@ -173,6 +174,10 @@ body.dark .hero_list_label {
   color: $pink-300;
 }
 
+body.dark .hero_list_icon {
+  color: $accent-hot-dark;  // brighter hot accent for dark bg
+}
+
 body.dark .hero_list li {
   color: rgba($slate-200, 0.85);
 }
@@ -183,6 +188,15 @@ body.dark .hero_list li {
   align-items: center;
   gap: $sp-4;
   margin-top: $sp-10;
+}
+
+// Snappy Fireship-style flicker on the homepage hero CTAs (scoped — global buttons untouched)
+.hero_actions .btn {
+  transition: transform $transition-snappy, box-shadow $transition-snappy,
+    filter $transition-snappy, background $transition-snappy, border-color $transition-snappy;
+}
+.hero_actions .btn:hover {
+  filter: brightness(1.08);
 }
 
 .hero_social {
@@ -215,13 +229,15 @@ body.dark .hero_list li {
   border-radius: 50%;
   border: 1px solid rgba(148, 163, 184, 0.28);
   background: rgba(255, 255, 255, 0.82);
-  transition: transform $transition-fast, border-color 0.25s ease, background 0.25s ease;
+  transition: transform $transition-snappy, border-color $transition-snappy,
+    background $transition-snappy, filter $transition-snappy;
 }
 
 .hero_social .social_item:hover {
   transform: translateY(-2px);
-  border-color: rgba(248, 113, 113, 0.55);
-  background: rgba(254, 226, 226, 0.92);
+  filter: brightness(1.1);  // fast Fireship-style flicker
+  border-color: rgba($accent-hot, 0.6);
+  background: rgba($accent-hot, 0.1);
 }
 
 .hero_social .social_item svg {
@@ -236,6 +252,11 @@ body.dark .hero_social_label {
 body.dark .hero_social .social_item {
   background: rgba($slate-900, 0.7);
   border-color: rgba(148, 163, 184, 0.35);
+}
+
+body.dark .hero_social .social_item:hover {
+  border-color: rgba($accent-hot-dark, 0.7);
+  background: rgba($accent-hot-dark, 0.14);
 }
 
 .hero_visual {
@@ -461,6 +482,14 @@ body.dark .activity_backdrop {
 
 .section_header .section_kicker {
   letter-spacing: 0.28em;
+}
+
+// Homepage section titles use the chunky display face (largest headings only).
+// Tailwind utilities still drive size/spacing; we only swap the family + weight.
+.section_header h2 {
+  font-family: $display-font;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 .activity_card {
@@ -838,6 +867,17 @@ body.dark .experience_copy a:hover {
 
   .hero_scribble,
   .activity_backdrop {
+    transform: none !important;
+  }
+
+  // Kill the snappy brightness flicker for reduced-motion users
+  .hero_social .social_item,
+  .hero_actions .btn {
+    transition: none !important;
+  }
+  .hero_social .social_item:hover,
+  .hero_actions .btn:hover {
+    filter: none !important;
     transform: none !important;
   }
 

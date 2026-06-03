@@ -1,0 +1,33 @@
+// _fonts.scss
+// Self-hosted web fonts (no third-party requests — see CLAUDE.md privacy/perf note).
+// Latin (+ latin-ext) subsets downloaded from Google Fonts (gstatic). All SIL OFL.
+
+// Anton — chunky condensed display. Used ONLY on the largest headings.
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/anton-regular.woff2") format("woff2");
+  // U+0000-00FF covers basic Latin incl. accents (à, ò, é…)
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2212;
+}
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/anton-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+// Fira Code — code / terminal accents. 400 covers regular + medium needs (Google
+// serves byte-identical latin files for 400 & 500, so one face is enough).
+@font-face {
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url("/assets/fonts/fira-code-regular.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2212;
+}

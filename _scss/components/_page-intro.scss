@@ -52,9 +52,10 @@ body.dark .page_intro_meta {
 }
 
 .page_intro_title {
-  font-size: clamp(2.6rem, 5vw, 3.75rem);
-  line-height: 1.07;
-  letter-spacing: $ls-tight;
+  font-family: $display-font;  // chunky condensed display, shared by inner-page hero titles for brand consistency
+  font-size: clamp(2.8rem, 5.2vw, 4rem);  // condensed face reads smaller — bump slightly
+  line-height: 1.04;
+  letter-spacing: 0.005em;  // near-normal tracking for the condensed display face
   margin: 0;
   color: $brown-800;
   max-width: 16ch;

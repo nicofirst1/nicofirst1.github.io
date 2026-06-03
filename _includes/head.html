@@ -14,6 +14,9 @@
   {% include jsonld.html %}
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  {%- comment %} Preload the display font — it's above the fold on the homepage hero {% endcomment -%}
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="{{ '/assets/fonts/anton-regular.woff2' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="apple-touch-icon" sizes="180x180"
     href="{{ site.baseurl }}/assets/images/website-logos/icon-apple-touch.png">

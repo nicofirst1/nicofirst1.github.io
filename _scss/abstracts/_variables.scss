@@ -78,6 +78,10 @@ $label-color:       $red-700;
 $link-color:        #b91c1c;
 $link-hover:        $red-900;
 
+// Hot accent — single dominant accent borrowed from Fireship (#ed203d).
+// Used sparingly on the homepage showcase (hero social, list icon, kickers).
+$accent-hot:        #ed203d;
+
 $card-bg:           rgba(255, 247, 237, 0.95);
 $card-title:        $brown-800;
 $card-meta:         $orange-600;
@@ -98,6 +102,7 @@ $dark-link:         $pink-300;
 $dark-link-hover:   $indigo-300;
 $dark-muted:        $slate-200;
 $dark-card-title:   $yellow-200;
+$accent-hot-dark:   #ff4d63;   // brighter hot accent for contrast on dark bg
 
 $dark-bg-1:         $slate-900;
 $dark-bg-2:         #111827;
@@ -133,6 +138,10 @@ $container-max:  1120px;  // everything else: header, footer, page sections, glo
 // ------------------------------------------
 // TYPOGRAPHY
 // ------------------------------------------
+
+// Font families (self-hosted — see base/_fonts.scss)
+$display-font: "Anton", "Arial Narrow", "Helvetica Neue Condensed", system-ui, sans-serif; // chunky condensed display, largest headings only
+$mono-font:    "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;       // code / terminal accents
 
 // Font sizes (mobile → desktop via responsive)
 $fs-xs:    0.75rem;   // 12px — smallest meta
@@ -178,6 +187,7 @@ $radius-full:  9999px;  // pills/circles
 
 $transition-fast:   0.2s ease;
 $transition-base:   0.3s ease;
+$transition-snappy: 0.12s ease;  // homepage micro-interactions (Fireship-style snappy feel)
 
 // ------------------------------------------
 // BREAKPOINTS

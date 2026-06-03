@@ -95,15 +95,34 @@
   background-color: #333;
 }
 
-/* Code Blocks */
+/* Code — Fira Code mono accent with a warm, on-brand chip */
 .news-post pre,
 .news-post code {
-  background-color: #f6f8fa;
-  padding: $sp-2;
-  border-radius: 5px;
-  font-size: 0.95rem;
+  font-family: $mono-font;
+  font-size: 0.9rem;
+  border-radius: $radius-sm;
+}
+
+/* Inline code: warm cream chip */
+.news-post code {
+  padding: 0.12em 0.4em;
+  background-color: rgba($cream-100, 0.6);
+  border: 1px solid rgba($orange-500, 0.18);
+  color: $brown-800;
+}
+
+/* Block code: roomier, scrollable; reset the chip on nested <code> */
+.news-post pre {
+  padding: $sp-4;
+  background-color: rgba($cream-50, 0.85);
+  border: 1px solid rgba($orange-500, 0.15);
   overflow-x: auto;
-  font-family: 'Courier New', Courier, monospace;
+}
+.news-post pre code {
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
 }
 
 /* Lists */
@@ -236,10 +255,20 @@
   color: #9ae1ff;
 }
 
-.dark .news-post pre,
 .dark .news-post code {
-  background-color: $dark-bg-3;
+  background-color: rgba($slate-50, 0.06);
+  border-color: rgba($yellow-300, 0.18);
+  color: $yellow-100;
+}
+.dark .news-post pre {
+  background-color: rgba(0, 0, 0, 0.28);
+  border-color: rgba($yellow-300, 0.15);
   color: $slate-200;
+}
+.dark .news-post pre code {
+  background: none;
+  border: none;
+  color: inherit;
 }
 
 .dark .news-post li {
