@@ -1,0 +1,24 @@
+// CV page: inline PDF embed on desktop, native-viewer card on mobile.
+// The visibility toggle lives here (not as Tailwind hidden/md:* utilities) so
+// it can never be dropped by content-purge and the embed stays reliable on desktop.
+
+.section_cv {
+  .cv_embed {
+    display: block;
+  }
+
+  .cv_card {
+    display: none;
+  }
+
+  // Phones: inline <object> PDFs rasterize to a blurry preview, so swap to the card.
+  @media (max-width: 767px) {
+    .cv_embed {
+      display: none;
+    }
+
+    .cv_card {
+      display: block;
+    }
+  }
+}
