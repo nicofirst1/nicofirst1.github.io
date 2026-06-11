@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Blog
-description: NICOLO' BRANDIZZI - Blog posts
+description: >
+  Essays and research updates from Dr. Nicolo' Brandizzi on AI, reinforcement learning, governance, and the systems shaping both.
+image: /assets/images/profile_picture.jpg
 page_id: blog
 intro_title: Blog Posts
 intro_blurb: >
@@ -27,7 +29,7 @@ intro_blurb: >
     <div class="articles_grid">
         {% if blog_sorted.size > 0 %}
             {% for post in blog_sorted %}
-                {% include blog_card.html post=post %}
+                {% include blog_card.html post=post heading='h2' %}
             {% endfor %}
         {% else %}
             <p class="articles_empty">Fresh writing coming soon.</p>

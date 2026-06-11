@@ -1,23 +1,8 @@
 {% comment %}
   JSON-LD structured data for rich snippets.
-  Outputs Person schema on homepage, BlogPosting on blog posts,
-  and WebSite schema on all pages.
+  Outputs Person schema on homepage and BlogPosting on blog posts.
+  WebSite schema comes from jekyll-seo-tag (homepage) — don't duplicate it here.
 {% endcomment %}
-
-{% comment %} ---- WebSite schema (all pages) ---- {% endcomment %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "{{ site.title }}",
-  "url": "{{ site.url }}{{ site.baseurl }}",
-  "description": "{{ site.description }}",
-  "author": {
-    "@type": "Person",
-    "name": "{{ site.title }}"
-  }
-}
-</script>
 
 {% if page.page_id == 'home' %}
 {% comment %} ---- Person schema (homepage) ---- {% endcomment %}
