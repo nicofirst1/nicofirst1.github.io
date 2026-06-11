@@ -57,7 +57,7 @@
                     <span class="hero_social_label">Find me elsewhere</span>
                     <div class="hero_social_links">
                         {%- for s in site.data.social -%}
-                            <a href="{{ s.link }}" class="social_item" target="_blank" aria-label="{{ s.title }}"{% if s.email_link %} data-email="{{ site.email_b64 }}"{% endif %}>
+                            <a href="{{ s.link }}" class="social_item"{% unless s.email_link %} target="_blank" rel="noopener"{% endunless %} aria-label="{{ s.title }}"{% if s.email_link %} data-email="{{ site.email_b64 }}"{% endif %}>
                                 {%- include {{ s.icon }} -%}
                             </a>
                         {%- endfor -%}

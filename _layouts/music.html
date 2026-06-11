@@ -77,7 +77,7 @@ layout: default
                       <h3 class="text-xl font-semibold mb-2 song-title">
                         {{ songFile.title }}
                         {% if songFile.genre %}
-                          <span style="font-size: 0.9em; color: #666;">({{ songFile.genre }})</span>
+                          <span class="song-note">({{ songFile.genre }})</span>
                         {% endif %}
                       </h3>
 
@@ -93,7 +93,7 @@ layout: default
                         <source src="{{ songFile.audio_url | relative_url | absolute_url }}" type="audio/mp3" />
                         Your browser does not support the audio element!
                       </audio>
-                      <span style="font-size: 0.9em; color: #666;">(Click lyrics to see explanation)</span>
+                      <span class="song-note">(Click lyrics to see explanation)</span>
 
                       <!-- LYRICS (left) + EXPLANATION (right) -->
                       <div class="lyrics-explanation-row">

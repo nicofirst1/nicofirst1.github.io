@@ -36,7 +36,7 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: rgba(254, 202, 202, 0.35);
+  background: rgba($red-200, 0.35);
 }
 
 .project_card_media::after {
@@ -92,7 +92,7 @@
 .project_card_summary {
   font-size: $fs-base;
   line-height: $lh-normal;
-  color: #78350f;
+  color: $amber-900;
   margin: 0;
 }
 
@@ -184,7 +184,7 @@ body.dark .project_card_cta {
   padding: $sp-6 $sp-8 $sp-8;
   display: grid;
   gap: $sp-3;
-  color: #9d174d;
+  color: $pink-800;
   text-align: left;
 }
 
@@ -216,7 +216,7 @@ body.dark .project_card_cta {
   font-size: $fs-sm;
   letter-spacing: $ls-wide;
   text-transform: uppercase;
-  color: #c026d3;
+  color: $fuchsia-600;
 }
 
 body.dark .article_card {

@@ -20,10 +20,10 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: $fs-sm;
   font-weight: $fw-semibold;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: $sp-2 $sp-4;
   border-radius: $radius-sm;
   color: $link-color;                        // #b91c1c
   border: 1px solid rgba(185, 28, 28, 0.35);

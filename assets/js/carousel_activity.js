@@ -143,9 +143,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Attach next/prev functions to global scope for buttons
-    window.nextPage = nextPage;
-    window.prevPage = prevPage;
+    // Prev/next buttons (no inline onclick — keeps CSP-friendly)
+    const prevBtn = activitySection.querySelector('.carousel-control-prev');
+    const nextBtn = activitySection.querySelector('.carousel-control-next');
+    if (prevBtn) prevBtn.addEventListener('click', () => prevPage());
+    if (nextBtn) nextBtn.addEventListener('click', () => nextPage());
 
     carouselItems[0].classList.add('active');
     carouselItems[0].style.display = 'block';
