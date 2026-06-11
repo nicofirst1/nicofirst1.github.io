@@ -7,6 +7,10 @@
   {% if page.layout == 'blogs' or page.layout == 'blogs_distill' %}
     <title>{{ page.title | escape }}</title>
     {% seo title=false %}
+  {% elsif page.page_id == 'home' %}
+    {% comment %} page.title and site.title both contain the name — avoid "Name | Name" {% endcomment %}
+    <title>Dr. Nicolo' Brandizzi — AI Researcher</title>
+    {% seo title=false %}
   {% else %}
     {% seo %}
   {% endif %}

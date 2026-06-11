@@ -43,7 +43,8 @@ layout: default
 
       {%- if page.image -%}
       <div class="post-image">
-        {% include picture.html src=page.image alt=page.title loading="lazy" %}
+        {% comment %} Above the fold — load eagerly with high priority {% endcomment %}
+        {% include picture.html src=page.image alt=page.title fetchpriority="high" %}
       </div>
       {%- endif -%}
 
