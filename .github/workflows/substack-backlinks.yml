@@ -37,17 +37,32 @@ jobs:
             echo "# Substack reuses the site slug, so the backlink URL is <_config substack> + /p/ + slug."
             echo "# _layouts/blogs.html renders the \"Read & discuss on Substack\" link for slugs listed here."
           } > "$tmp"
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125 Safari/537.36"
+          n_live=0; n_403=0
           for f in _blog/*.md; do
             slug="$(grep -m1 -E '^slug:' "$f" | sed -E 's/^slug:[[:space:]]*"?([^"#[:space:]]+)"?.*/\1/')"
             [ -z "$slug" ] && continue
-            code="$(curl -s -o /dev/null -w '%{http_code}' "$BASE/p/$slug" || echo 000)"
+            code="$(curl -s -o /dev/null -A "$UA" -w '%{http_code}' "$BASE/p/$slug" || echo 000)"
             if [ "$code" = "200" ]; then
               echo "- $slug" >> "$tmp"
               echo "live  : $slug"
+              n_live=$((n_live + 1))
             else
               echo "skip $code: $slug"
+              [ "$code" = "403" ] && n_403=$((n_403 + 1))
             fi
           done
+          # A real missing slug 302-redirects; 403 means Substack is blocking this
+          # runner's IP, so the probe is unreliable — bail out, keep the old file.
+          if [ "$n_403" -gt 0 ]; then
+            echo "::error::$n_403 probes returned 403 (runner IP blocked) — keeping existing _data/substack.yml"
+            exit 1
+          fi
+          old_live="$(grep -c '^- ' _data/substack.yml 2>/dev/null || echo 0)"
+          if [ "$n_live" -eq 0 ] && [ "$old_live" -gt 0 ]; then
+            echo "::error::probe found 0 live posts but $old_live were previously live — refusing to wipe _data/substack.yml"
+            exit 1
+          fi
           mkdir -p _data
           mv "$tmp" _data/substack.yml
 
