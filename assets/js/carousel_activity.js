@@ -14,11 +14,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const carousel = document.querySelector('.carousel-inner');
     if (!carousel || carouselItems.length === 0) return;
 
-    const setCarouselHeight = (item) => {
-        if (!item) return;
-        const targetHeight = item.offsetHeight;
-        if (targetHeight) {
-            carousel.style.height = `${targetHeight}px`;
+    // Lock the carousel to the tallest page so the height (and the arrows,
+    // anchored at 50% of it) stays put while paging.
+    const setCarouselHeight = () => {
+        let max = 0;
+        carouselItems.forEach((item) => {
+            const inlineDisplay = item.style.display;
+            item.style.visibility = 'hidden';
+            item.style.display = 'block';
+            max = Math.max(max, item.offsetHeight);
+            item.style.display = inlineDisplay;
+            item.style.visibility = '';
+        });
+        if (max) {
+            carousel.style.height = `${max}px`;
         }
     };
 
@@ -40,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
         nextItem.style.top = '0';
         nextItem.style.left = '0';
         nextItem.style.width = '100%';
-        setCarouselHeight(nextItem);
 
         requestAnimationFrame(() => {
             currentItem.style.transform = `translateX(${isNext ? '-8%' : '8%'})`;
@@ -79,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function() {
             nextItem.style.left = '';
             nextItem.style.width = '';
             nextItem.classList.add('active');
-            setCarouselHeight(nextItem);
             isAnimating = false;
         }, animationDuration);
     }
@@ -151,10 +158,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     carouselItems[0].classList.add('active');
     carouselItems[0].style.display = 'block';
-    setCarouselHeight(carouselItems[0]);
-    window.addEventListener('resize', () => {
-        const activeItem = document.querySelector('.carousel-item.active');
-        setCarouselHeight(activeItem);
-    });
+    setCarouselHeight();
+    // Re-measure once fonts/images have settled, and on viewport changes.
+    window.addEventListener('load', setCarouselHeight);
+    window.addEventListener('resize', setCarouselHeight);
     scheduleAutoSlide();
 });
