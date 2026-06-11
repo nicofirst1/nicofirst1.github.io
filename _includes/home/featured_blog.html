@@ -8,7 +8,8 @@
 <section class="featured_blog_section" data-gsap-section="featured-blog">
     <div class="container mx-auto px-6 lg:px-10">
         <div class="section_header mx-auto max-w-3xl text-center">
-            <span class="section_kicker text-sm uppercase tracking-[0.4em]">Latest from the blog</span>
+            <h2 class="sr-only">Latest from the blog</h2>
+            <span class="section_kicker text-sm uppercase tracking-[0.4em]" aria-hidden="true">Latest from the blog</span>
             <p class="mt-4 text-base md:text-lg text-slate-600 dark:text-slate-300">
                 Long reads on AI policy, data governance, and the occasional side quest.
             </p>
@@ -53,7 +54,7 @@
         </div>
 
         <div class="mt-12 text-center">
-            <a href="{{ '/blog' | relative_url }}" class="btn btn-outline">Browse all posts</a>
+            <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">Browse all posts</a>
         </div>
     </div>
 </section>

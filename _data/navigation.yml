@@ -1,18 +1,18 @@
-- title: home  
+- title: home
   link: /
   page_id: home
-- title: projects  
-  link: /projects
+- title: projects
+  link: /projects/
   page_id: projects
-- title: publications  
-  link: /publications
+- title: publications
+  link: /publications/
   page_id: publications
-- title: CV  
-  link: /cv
+- title: CV
+  link: /cv/
   page_id: cv
 - title: news
-  link: /news
+  link: /news/
   page_id: news
-- title: Blog
-  link: /blog
+- title: blog
+  link: /blog/
   page_id: blog
