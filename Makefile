@@ -7,6 +7,9 @@ CHRUBY := source /opt/homebrew/opt/chruby/share/chruby/chruby.sh && chruby 3.3.1
 serve: ## chruby 3.3.1 + jekyll serve with live reload
 	$(CHRUBY) && bundle exec jekyll serve --livereload
 
+drafts: ## serve with unpublished _blog/ posts visible (published: false)
+	$(CHRUBY) && bundle exec jekyll serve --livereload --unpublished
+
 build: ## production-style build into _site
 	$(CHRUBY) && bundle exec jekyll build
 

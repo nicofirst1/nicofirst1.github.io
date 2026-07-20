@@ -39,6 +39,8 @@ Thumbs.db
 *.sublime-workspace
 .claude
 CLAUDE.md
+AGENTS.md
+agents.md
 
 
 # Output of coverage tools
