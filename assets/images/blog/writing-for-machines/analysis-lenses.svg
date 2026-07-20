@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" role="img" aria-labelledby="al-title al-desc" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="al-title">One file, read through three lenses</title>
+  <desc id="al-desc">A single SKILL.md document on the left fans out into three panels on the right, each a different reading of the same file. The language panel keeps the words, with some highlighted. The structure panel keeps only the layout skeleton: a heading, bullets, and a code block. The time panel places the file as a single point on a timeline.</desc>
+
+  <!-- the file -->
+  <rect x="24" y="112" width="66" height="80" rx="5" fill="#fff" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="32" y="122" width="40" height="7" rx="2" fill="#334155"/>
+  <g stroke="#cbd5e1" stroke-width="1.5"><path d="M32,138 h50"/><path d="M32,148 h40"/><path d="M32,158 h50"/></g>
+  <rect x="32" y="168" width="50" height="16" rx="2" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="57" y="208" text-anchor="middle" font-size="10.5" fill="#64748b">one SKILL.md</text>
+
+  <!-- beams -->
+  <path d="M90,152 Q182,150 272,58" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <path d="M90,152 Q182,151 272,150" fill="none" stroke="#0d9488" stroke-width="2.5"/>
+  <path d="M90,152 Q182,152 272,242" fill="none" stroke="#d97706" stroke-width="2.5"/>
+
+  <!-- language -->
+  <text x="272" y="16" font-size="11.5"><tspan font-weight="700" fill="#2563eb">LANGUAGE</tspan><tspan fill="#64748b"> · the words</tspan></text>
+  <rect x="272" y="22" width="164" height="72" rx="8" fill="#2563eb" fill-opacity="0.05" stroke="#2563eb" stroke-width="1.3"/>
+  <rect x="284" y="32" width="50" height="6" rx="2" fill="#cbd5e1"/>
+  <g stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"><path d="M288,48 h140"/><path d="M288,62 h110"/></g>
+  <g fill="#2563eb"><rect x="288" y="45.5" width="12" height="5" rx="1"/><rect x="312" y="45.5" width="9" height="5" rx="1"/><rect x="352" y="45.5" width="14" height="5" rx="1"/><rect x="288" y="59.5" width="10" height="5" rx="1"/><rect x="326" y="59.5" width="14" height="5" rx="1"/></g>
+
+  <!-- structure -->
+  <text x="272" y="108" font-size="11.5"><tspan font-weight="700" fill="#0d9488">STRUCTURE</tspan><tspan fill="#64748b"> · the layout</tspan></text>
+  <rect x="272" y="114" width="164" height="72" rx="8" fill="#0d9488" fill-opacity="0.06" stroke="#0d9488" stroke-width="1.3"/>
+  <rect x="284" y="124" width="54" height="7" rx="2" fill="#0d9488"/>
+  <g fill="#0d9488"><circle cx="290" cy="146" r="2.2"/><circle cx="290" cy="158" r="2.2"/></g>
+  <g stroke="#5eead4" stroke-width="1.6"><path d="M300,146 h96"/><path d="M300,158 h74"/></g>
+  <rect x="372" y="140" width="54" height="26" rx="3" fill="none" stroke="#5eead4" stroke-width="1.5"/>
+
+  <!-- time -->
+  <text x="272" y="200" font-size="11.5"><tspan font-weight="700" fill="#d97706">TIME</tspan><tspan fill="#64748b"> · when it was written</tspan></text>
+  <rect x="272" y="206" width="164" height="72" rx="8" fill="#d97706" fill-opacity="0.06" stroke="#d97706" stroke-width="1.3"/>
+  <path d="M288,244 h140" stroke="#d97706" stroke-width="2"/>
+  <g stroke="#d97706" stroke-width="1.5"><path d="M312,238 v6"/><path d="M340,238 v6"/><path d="M368,238 v6"/><path d="M396,238 v6"/></g>
+  <rect x="349" y="226" width="10" height="13" rx="2" fill="#fff" stroke="#d97706" stroke-width="1.3"/>
+  <circle cx="354" cy="244" r="4.5" fill="#d97706"/>
+</svg>

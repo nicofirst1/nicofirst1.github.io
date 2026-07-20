@@ -1,0 +1,89 @@
+<div class="automixer-demo" style="border:1px solid #e5e7eb;border-radius:12px;padding:1rem 1.25rem;margin:1.75rem 0;font-family:inherit;background:#fff;color:#111827;">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem;">
+    <strong id="am-title" style="font-size:.95rem;">Static mixture (AutoMixer)</strong>
+    <div role="group" aria-label="Mixture mode" style="display:inline-flex;border:1px solid #d1d5db;border-radius:999px;overflow:hidden;font-size:.8rem;">
+      <button id="am-static" type="button" style="border:0;padding:.4rem .9rem;cursor:pointer;background:#111827;color:#fff;">Static</button>
+      <button id="am-adaptive" type="button" style="border:0;padding:.4rem .9rem;cursor:pointer;background:#fff;color:#111827;">Adaptive</button>
+    </div>
+  </div>
+  <svg id="am-svg" viewBox="0 0 600 325" width="100%" role="img" aria-labelledby="am-desc" style="display:block;">
+    <desc id="am-desc">An interactive figure. A triangle is the data-mixture simplex over three buckets (Web, Code, Education). Clicking Adaptive extrudes a training-time axis so the static single point lifts into 3D and travels along a path through the triangle over time. Drag to rotate.</desc>
+    <g id="am-scene"></g>
+  </svg>
+  <p id="am-caption" style="font-size:.82rem;color:#6b7280;margin:.5rem 0 0;"></p>
+  <div id="am-legend" style="display:flex;gap:1rem;flex-wrap:wrap;font-size:.78rem;margin-top:.5rem;color:#374151;"></div>
+  <p style="font-size:.72rem;color:#9ca3af;margin:.5rem 0 0;">Illustrative: the corners are three example data buckets and the path shape is invented, not Poolside's published mixture.</p>
+</div>
+<script>
+(function(){
+  var NS="http://www.w3.org/2000/svg";
+  var svg=document.getElementById("am-svg"),scene=document.getElementById("am-scene"),title=document.getElementById("am-title"),cap=document.getElementById("am-caption"),legend=document.getElementById("am-legend"),bS=document.getElementById("am-static"),bA=document.getElementById("am-adaptive");
+  var cx=300,cy=158,S=205,tS=0.45,phiMax=62*Math.PI/180,yawBaseMax=22*Math.PI/180;
+  var corners=[{n:"Web",p:[0,0],c:"#60a5fa"},{n:"Code",p:[1,0],c:"#34d399"},{n:"Education",p:[0.5,0.866],c:"#f59e0b"}];
+  var STAT=[0.5,0.3,0.2];
+  var CTRL=[[0.50,0.30,0.20],[0.34,0.30,0.36],[0.46,0.22,0.32],[0.28,0.34,0.38],[0.40,0.26,0.34],[0.22,0.30,0.48],[0.34,0.22,0.44],[0.18,0.32,0.50],[0.26,0.24,0.50],[0.20,0.20,0.60]],nC=CTRL.length;
+  function cr(a,b,c,d,u){return 0.5*((2*b)+(-a+c)*u+(2*a-5*b+4*c-d)*u*u+(-a+3*b-3*c+d)*u*u*u);}
+  function mix(s){var f=s*(nC-1),i=Math.floor(f),u=f-i;if(i>=nC-1){i=nC-2;u=1;}var i0=Math.max(0,i-1),i2=Math.min(nC-1,i+1),i3=Math.min(nC-1,i+2),w=[0,0,0],sum=0;for(var k=0;k<3;k++){var v=cr(CTRL[i0][k],CTRL[i][k],CTRL[i2][k],CTRL[i3][k],u);if(v<0)v=0;w[k]=v;sum+=v;}for(var k=0;k<3;k++)w[k]/=sum;return w;}
+  function bary(w){return [w[1]+0.5*w[2],0.866*w[2]];}
+  function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  var T=0,Tt=0,yawBase=0,dragX=0,dragY=0,mode=0,dragging=false,lastX=0,lastY=0;
+  function proj(u,v,w){var X0=u-0.5,Y0=v-0.2887,Z0=w*tS,yaw=yawBase+dragX,pitch=Math.max(-1.05,Math.min(1.05,T*phiMax+dragY)),ct=Math.cos(yaw),st=Math.sin(yaw),Xr=X0*ct+Z0*st,Zr=-X0*st+Z0*ct,Yp=Y0*Math.cos(pitch)+Zr*Math.sin(pitch);return [cx+Xr*S,cy-Yp*S];}
+  var cenF=[0.5,0.2887];
+  var floor=el("path",{fill:"#f3f4f6",stroke:"#d1d5db","stroke-width":"1"});scene.appendChild(floor);
+  var axis=el("line",{stroke:"#9ca3af","stroke-width":"1.5","stroke-dasharray":"3 3"});scene.appendChild(axis);
+  var axisLab=el("text",{"font-size":"11",fill:"#6b7280","text-anchor":"middle"});axisLab.textContent="training time";scene.appendChild(axisLab);
+  var path=el("path",{fill:"none",stroke:"#2563eb","stroke-width":"3","stroke-linecap":"round","stroke-linejoin":"round"});scene.appendChild(path);
+  var cdots=[],clabs=[];
+  corners.forEach(function(c){
+    cdots.push(scene.appendChild(el("circle",{r:3.5,fill:c.c})));
+    var tx=el("text",{"font-size":"11",fill:"#374151"});tx.textContent=c.n;clabs.push(scene.appendChild(tx));
+    var item=document.createElement("span");item.style.display="inline-flex";item.style.alignItems="center";item.style.gap=".35rem";
+    var sw=document.createElement("span");sw.style.width="12px";sw.style.height="12px";sw.style.borderRadius="3px";sw.style.background=c.c;sw.style.display="inline-block";
+    item.appendChild(sw);item.appendChild(document.createTextNode(c.n));legend.appendChild(item);
+  });
+  var ghost=el("circle",{r:4,fill:"#9ca3af"});scene.appendChild(ghost);
+  var glow=el("circle",{r:11,fill:"#2563eb","fill-opacity":"0.18"});scene.appendChild(glow);
+  var marker=el("circle",{r:6,fill:"#111827",stroke:"#fff","stroke-width":"2"});scene.appendChild(marker);
+  var mlab=el("text",{"font-size":"11",fill:"#111827","font-weight":"600"});mlab.textContent="one fixed mixture";scene.appendChild(mlab);
+  function render(tA){
+    var d="";corners.forEach(function(c,i){var s=proj(c.p[0],c.p[1],0);d+=(i?"L":"M")+s[0]+","+s[1]+" ";});floor.setAttribute("d",d+"Z");
+    var cs=proj(cenF[0],cenF[1],0);
+    corners.forEach(function(c,i){
+      var b=proj(c.p[0],c.p[1],0);cdots[i].setAttribute("cx",b[0]);cdots[i].setAttribute("cy",b[1]);
+      var dx=b[0]-cs[0],dy=b[1]-cs[1],L=Math.sqrt(dx*dx+dy*dy)||1;
+      clabs[i].setAttribute("x",b[0]+dx/L*20);clabs[i].setAttribute("y",b[1]+dy/L*20+(dy>0?6:0));
+      clabs[i].setAttribute("text-anchor",dx/L<-0.3?"end":(dx/L>0.3?"start":"middle"));
+    });
+    var a0=proj(cenF[0],cenF[1],0),a1=proj(cenF[0],cenF[1],1);
+    axis.setAttribute("x1",a0[0]);axis.setAttribute("y1",a0[1]);axis.setAttribute("x2",a1[0]);axis.setAttribute("y2",a1[1]);
+    axis.setAttribute("opacity",T);axisLab.setAttribute("opacity",T);axisLab.setAttribute("x",a1[0]);axisLab.setAttribute("y",a1[1]-7);
+    var pd="";for(var q=0;q<=64;q++){var w=mix(q/64),p=bary(w),s=proj(p[0],p[1],q/64);pd+=(q?"L":"M")+s[0]+","+s[1]+" ";}
+    path.setAttribute("d",pd);path.setAttribute("opacity",(mode===1?1:0)*T);
+    var sp=bary(STAT),g=proj(sp[0],sp[1],0);ghost.setAttribute("cx",g[0]);ghost.setAttribute("cy",g[1]);ghost.setAttribute("opacity",mode===1?0.55*T:0);
+    var mp;if(mode===1){var w=mix(tA),pp=bary(w);mp=proj(pp[0],pp[1],tA);}else{mp=proj(sp[0],sp[1],0);}
+    marker.setAttribute("cx",mp[0]);marker.setAttribute("cy",mp[1]);glow.setAttribute("cx",mp[0]);glow.setAttribute("cy",mp[1]);glow.setAttribute("opacity",mode===1?T:0.35);mlab.setAttribute("x",mp[0]+11);mlab.setAttribute("y",mp[1]+4);mlab.setAttribute("opacity",mode===1?0:1);
+  }
+  function setMode(mm){
+    mode=mm;var on=mm===1;Tt=on?1:0;dragX=0;dragY=0;
+    title.textContent=on?"Adaptive: the point lifts into time and traverses the simplex":"Static: one fixed mixture, a single point in the triangle";
+    cap.textContent=on?"The time axis pops up: the mixture is no longer one point but a path, winding through the triangle as training proceeds. Drag to rotate in any direction.":"What AutoMixer optimizes: one fixed mixture, a single point on the 2D simplex. Click Adaptive to add the time axis.";
+    bA.style.background=on?"#111827":"#fff";bA.style.color=on?"#fff":"#111827";
+    bS.style.background=on?"#fff":"#111827";bS.style.color=on?"#111827":"#fff";
+  }
+  svg.style.touchAction="none";svg.style.cursor="grab";
+  svg.addEventListener("pointerdown",function(e){dragging=true;lastX=e.clientX;lastY=e.clientY;svg.style.cursor="grabbing";if(svg.setPointerCapture)svg.setPointerCapture(e.pointerId);});
+  svg.addEventListener("pointermove",function(e){if(!dragging)return;var r=svg.getBoundingClientRect();dragX-=(e.clientX-lastX)/r.width*2.4;dragX=Math.max(-0.9,Math.min(0.9,dragX));dragY-=(e.clientY-lastY)/r.height*2.4;dragY=Math.max(-1.5,Math.min(0.4,dragY));lastX=e.clientX;lastY=e.clientY;});
+  svg.addEventListener("pointerup",function(){dragging=false;svg.style.cursor="grab";});
+  svg.addEventListener("pointercancel",function(){dragging=false;});
+  function frame(ts){
+    T+=(Tt-T)*0.09;
+    yawBase+=((mode===1?yawBaseMax:0)-yawBase)*0.09;
+    var ph=(ts/4800)%2,tA=ph<1?ph:2-ph;
+    render(tA);
+    requestAnimationFrame(frame);
+  }
+  bS.addEventListener("click",function(){setMode(0);});
+  bA.addEventListener("click",function(){setMode(1);});
+  setMode(0);requestAnimationFrame(frame);
+})();
+</script>
