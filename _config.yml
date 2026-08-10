@@ -8,7 +8,6 @@ substack: "https://nicolobrandizzi.substack.com" # syndication target; update if
 plugins:
   - jekyll-postcss-v2
   - jekyll-seo-tag
-  - jekyll-feed
   - jekyll-sitemap
   - jekyll-redirect-from
 
