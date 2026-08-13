@@ -2,7 +2,7 @@
 title: CAIRNE | R2Net Kernel Member
 subtitle: Rising Researchers Network
 custom_id: r2netKernel
-tag: current
+tag: past
 image: /assets/images/projects/r2net_kernel.jpg
 button_link: https://claire-ai.org/r2network/
 button_name: Join us!
