@@ -20,7 +20,7 @@ The European AI agenda is easy to caricature ("regulation-first, innovation-last
 
 ## Funding: where the money goes (and where it leaks)
 
-European AI research is well-funded by global standards. The harder question is whether the funding is *coordinated* enough to produce results greater than the sum of its parts.
+European AI research is well-funded by global standards. The harder question is whether the funding is _coordinated_ enough to produce results greater than the sum of its parts.
 
 - [Horizon AI fragmentation: budget overlaps and missed efficiency]({% link _blog/3.horizon-fragmentation.md %}) — analysis of Horizon Europe project data showing where overlapping mandates eat into the effective budget.
 

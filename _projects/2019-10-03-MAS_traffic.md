@@ -7,7 +7,6 @@ image: /assets/images/projects/mas-traffic.jpg
 button_link: https://github.com/nicofirst1/MAS-Traffic-Control
 button_name: Get Code
 layout: projects
-
 ---
 
 ### Summary
@@ -18,8 +17,7 @@ We simulate various scenarios such as: selfishness vs cooperativeness in AAs, be
 
 ### Introduction
 
-Autonomous car are being introduces in various countries. In 2019 a total of 1,400 autonomous car have been registered in the US only. With the rising of this kind of technologies some research is needed to study and simulate the interaction between autonomous car and humans.
-State of the art
+Autonomous car are being introduces in various countries. In 2019 a total of 1,400 autonomous car have been registered in the US only. With the rising of this kind of technologies some research is needed to study and simulate the interaction between autonomous car and humans. State of the art
 
 In "Simulating Autonomous and Human-Driven Vehicles in Traffic Intersections" the authors study the interaction between Autonomous Agents [AA] and Human Agents [HA], using different field of views and reaction times for both type of drivers. However, their simulation shows barely any difference between both types of drivers, from which they conclude that these two properties field of view and reaction time are not the most distinctive properties.
 

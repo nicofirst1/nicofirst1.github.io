@@ -1,11 +1,11 @@
---- 
+---
 layout: default
 title: Dr. Nicolo' Brandizzi
 subtitle: "Building bridges between data, language, and society."
 image: /assets/images/profile_picture.jpg
 greeting: "Benvenuti"
 description: >
- My work moves between AI, data governance, and social systems. I’m interested in how structure and meaning evolve when humans and machines learn together. This site is a record of the work, collaborations, and side investigations that follow from that curiosity.
+  My work moves between AI, data governance, and social systems. I’m interested in how structure and meaning evolve when humans and machines learn together. This site is a record of the work, collaborations, and side investigations that follow from that curiosity.
 
 hero_highlights_title: Things that light me up lately
 hero_highlights:
@@ -24,10 +24,4 @@ page_id: home
 permalink: /
 ---
 
-{% include home/hero.html %}
-{% include home/featured_blog.html %}
-{% include home/eu_policy_card.html %}
-{% include home/activity.html %}
-{% include home/education.html data='experience' title='Recent roles & collaborations' %}
-{% include home/education.html data='education' title='Learning journey' %}
-{% include subscribe.html %}
+{% include home/hero.html %} {% include home/featured_blog.html %} {% include home/eu_policy_card.html %} {% include home/activity.html %} {% include home/education.html data='experience' title='Recent roles & collaborations' %} {% include home/education.html data='education' title='Learning journey' %} {% include subscribe.html %}

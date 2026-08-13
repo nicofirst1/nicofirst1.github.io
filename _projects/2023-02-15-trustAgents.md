@@ -7,9 +7,7 @@ image: /assets/images/projects/trustyouragent.png
 button_link: https://sites.google.com/diag.uniroma1.it/trust-your-agents/home
 button_name: Go To Website
 layout: projects
-
 ---
-
 
 ## Overview
 

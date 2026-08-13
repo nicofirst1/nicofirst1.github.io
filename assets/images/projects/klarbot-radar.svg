@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-60 -12 560 334" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+<circle cx="150.0" cy="158.0" r="32.5" fill="none" stroke="#e2e2e2" stroke-width="1"/>
+<circle cx="150.0" cy="158.0" r="65.0" fill="none" stroke="#e2e2e2" stroke-width="1"/>
+<circle cx="150.0" cy="158.0" r="97.5" fill="none" stroke="#e2e2e2" stroke-width="1"/>
+<circle cx="150.0" cy="158.0" r="130.0" fill="none" stroke="#e2e2e2" stroke-width="1"/>
+<line x1="150.0" y1="158.0" x2="150.0" y2="28.0" stroke="#cfcfcf" stroke-width="1"/>
+<text x="150.0" y="10.4" text-anchor="middle" font-size="12.5" font-weight="600" fill="#555">FRE</text>
+<line x1="150.0" y1="158.0" x2="273.6" y2="117.8" stroke="#cfcfcf" stroke-width="1"/>
+<text x="288.5" y="113.0" text-anchor="start" font-size="12.5" font-weight="600" fill="#555">SARI</text>
+<line x1="150.0" y1="158.0" x2="226.4" y2="263.2" stroke="#cfcfcf" stroke-width="1"/>
+<text x="235.6" y="279.8" text-anchor="start" font-size="12.5" font-weight="600" fill="#555">BLEU</text>
+<line x1="150.0" y1="158.0" x2="73.6" y2="263.2" stroke="#cfcfcf" stroke-width="1"/>
+<text x="64.4" y="279.8" text-anchor="end" font-size="12.5" font-weight="600" fill="#555">BERTScore-P</text>
+<line x1="150.0" y1="158.0" x2="26.4" y2="117.8" stroke="#cfcfcf" stroke-width="1"/>
+<text x="11.5" y="113.0" text-anchor="end" font-size="12.5" font-weight="600" fill="#555">Meaning</text>
+<polygon points="150.0,57.6 243.5,127.6 151.1,159.5 82.2,251.3 50.3,125.6" stroke="#CC79A7" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+<polygon points="150.0,33.7 256.1,123.5 179.6,198.7 85.8,246.3 27.4,118.1" stroke="#009E73" stroke-width="1.7" stroke-dasharray="1.5 2.5" fill="none" stroke-linejoin="round"/>
+<polygon points="150.0,28.0 253.5,124.4 170.6,186.3 95.0,233.6 37.5,121.4" stroke="#0072B2" stroke-width="1.7" stroke-dasharray="8 3 1.5 3" fill="none" stroke-linejoin="round"/>
+<polygon points="150.0,64.4 273.6,117.8 226.4,263.2 83.9,249.0 34.3,120.4" stroke="#D55E00" stroke-width="1.7" stroke-dasharray="7 4" fill="none" stroke-linejoin="round"/>
+<polygon points="150.0,31.6 266.4,120.2 207.3,236.9 73.6,263.2 26.4,117.8" stroke="#111111" stroke-width="2.6" fill="#111111" fill-opacity="0.12" stroke-linejoin="round"/>
+<circle cx="150.0" cy="31.6" r="2.4" fill="#111111"/>
+<circle cx="266.4" cy="120.2" r="2.4" fill="#111111"/>
+<circle cx="207.3" cy="236.9" r="2.4" fill="#111111"/>
+<circle cx="73.6" cy="263.2" r="2.4" fill="#111111"/>
+<circle cx="26.4" cy="117.8" r="2.4" fill="#111111"/>
+<line x1="345" y1="92" x2="375" y2="92" stroke="#111111" stroke-width="2.6" stroke-linecap="round"/>
+<text x="383" y="96" font-size="13" font-weight="700" fill="#333">Klarbot</text>
+<line x1="345" y1="118" x2="375" y2="118" stroke="#D55E00" stroke-width="2" stroke-dasharray="7 4" stroke-linecap="round"/>
+<text x="383" y="122" font-size="13" font-weight="400" fill="#333">ELGEPA-8b</text>
+<line x1="345" y1="144" x2="375" y2="144" stroke="#0072B2" stroke-width="2" stroke-dasharray="8 3 1.5 3" stroke-linecap="round"/>
+<text x="383" y="148" font-size="13" font-weight="400" fill="#333">erlesen-13b</text>
+<line x1="345" y1="170" x2="375" y2="170" stroke="#009E73" stroke-width="2" stroke-dasharray="1.5 2.5" stroke-linecap="round"/>
+<text x="383" y="174" font-size="13" font-weight="400" fill="#333">erlesen-7b</text>
+<line x1="345" y1="196" x2="375" y2="196" stroke="#CC79A7" stroke-width="2" stroke-linecap="round"/>
+<text x="383" y="200" font-size="13" font-weight="400" fill="#333">German4all</text>
+<text x="345" y="68" font-size="11.5" fill="#888">outer ring = best per axis</text>
+</svg>

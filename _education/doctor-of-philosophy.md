@@ -4,6 +4,7 @@ image: /assets/images/work/sapienza_logo.png
 period: 2020 - 2024
 order: 3
 ---
+
 #### Ph.D. in Computer Science
 
 - I succesfully defended my Ph.D. on the 6th of May 2024 ([read more here](/news/phd_thesis/){: target="_blank"})
