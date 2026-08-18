@@ -1,0 +1,259 @@
+// _speaking.scss — private speaker page (/speaking/, noindex)
+// Reuses the site's page-intro + card visual language; no new tokens.
+
+.speaking_intro .page_intro_bg {
+  background: radial-gradient(circle at top left, rgba(253, 230, 138, 0.55), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(253, 186, 116, 0.5), transparent 60%);
+}
+
+body.dark .speaking_intro .page_intro_bg {
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.25), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.28), transparent 60%);
+}
+
+.speaking_intro_copy {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.speaking_intro_photo {
+  order: -1;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: $radius-xl;
+  box-shadow: 0 24px 45px -32px rgba($orange-500, 0.55);
+  justify-self: start;
+}
+
+body.dark .speaking_intro_photo {
+  box-shadow: 0 24px 48px -34px rgba($indigo-500, 0.6);
+}
+
+@media (min-width: $bp-md) {
+  .speaking_intro_inner {
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 0.7fr);
+    align-items: center;
+  }
+
+  .speaking_intro_photo {
+    order: 0;
+    width: 100%;
+    height: auto;
+    max-width: 230px;
+    aspect-ratio: 1;
+    justify-self: end;
+  }
+}
+
+// --- Section headers (talks / writing / contact) ---
+.speaking_talks_head {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: $sp-8;
+}
+
+.speaking_talks_head h2 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: $lh-snug;
+  color: $brown-800;
+  margin: 0;
+}
+
+.speaking_talks_head p {
+  font-size: $fs-md;
+  line-height: $lh-relaxed;
+  max-width: 62ch;
+  color: $red-900;
+  margin: 0;
+}
+
+body.dark .speaking_talks_head h2 {
+  color: $yellow-100;
+}
+
+body.dark .speaking_talks_head p {
+  color: rgba($yellow-400, 0.78);
+}
+
+// --- Talk cards ---
+.speaking_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $sp-6;
+}
+
+@media (min-width: $bp-md) {
+  .speaking_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.speaking_card {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-3;
+  padding: $sp-6 $sp-8 $sp-8;
+  border-radius: $radius-xl;
+  border: 1px solid rgba(251, 191, 36, 0.28);
+  background: linear-gradient(160deg, rgba($cream-50, 0.95), rgba(254, 215, 170, 0.75));
+  box-shadow: 0 30px 60px -48px rgba($orange-500, 0.4);
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+  height: 100%;
+}
+
+.speaking_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 40px 65px -45px rgba($orange-500, 0.5);
+  border-color: rgba($orange-400, 0.45);
+}
+
+.speaking_card--lead {
+  border-color: rgba($orange-400, 0.5);
+  background: linear-gradient(160deg, rgba(254, 215, 170, 0.95), rgba(253, 186, 116, 0.6));
+}
+
+.speaking_card_kicker {
+  font-size: $fs-sm;
+  letter-spacing: $ls-wide;
+  text-transform: uppercase;
+  color: $orange-600;
+  font-weight: $fw-semibold;
+  margin: 0;
+}
+
+.speaking_card_title {
+  font-size: 1.35rem;
+  line-height: $lh-snug;
+  font-weight: $fw-semibold;
+  color: $brown-800;
+  margin: 0;
+}
+
+.speaking_card_body {
+  font-size: $fs-base;
+  line-height: $lh-relaxed;
+  color: $amber-900;
+  margin: 0;
+}
+
+.speaking_card_fit {
+  margin: $sp-2 0 0;
+  padding-top: $sp-3;
+  border-top: 1px solid rgba(251, 191, 36, 0.3);
+  font-size: $fs-sm;
+  line-height: $lh-normal;
+  color: $red-800;
+}
+
+.speaking_card_fit span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: $ls-wide;
+  font-weight: $fw-semibold;
+  color: $orange-600;
+  margin-bottom: 0.15rem;
+}
+
+body.dark .speaking_card {
+  background: linear-gradient(160deg, rgba($slate-800, 0.92), rgba($slate-800, 0.82));
+  border-color: rgba($yellow-400, 0.22);
+  box-shadow: 0 30px 70px -50px rgba($indigo-500, 0.45);
+}
+
+body.dark .speaking_card--lead {
+  border-color: rgba($yellow-400, 0.42);
+}
+
+body.dark .speaking_card_kicker {
+  color: $yellow-300;
+}
+
+body.dark .speaking_card_title {
+  color: $yellow-200;
+}
+
+body.dark .speaking_card_body {
+  color: rgba($yellow-400, 0.72);
+}
+
+body.dark .speaking_card_fit {
+  border-top-color: rgba($yellow-400, 0.2);
+  color: rgba($yellow-400, 0.62);
+}
+
+body.dark .speaking_card_fit span {
+  color: $yellow-300;
+}
+
+// --- Writing anchors + contact ---
+.speaking_writing ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin: 0;
+}
+
+.speaking_writing li {
+  font-size: $fs-base;
+  line-height: $lh-relaxed;
+  color: $red-900;
+}
+
+.speaking_writing li + li {
+  margin-top: $sp-3;
+}
+
+.speaking_writing li::marker {
+  color: $orange-500;
+}
+
+.speaking_writing a {
+  color: $link-color;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: $fw-semibold;
+  transition: color $transition-fast;
+}
+
+.speaking_writing a:hover {
+  color: $link-hover;
+}
+
+body.dark .speaking_writing a {
+  color: $dark-link;
+}
+
+body.dark .speaking_writing a:hover {
+  color: $dark-link-hover;
+}
+
+.speaking_writing_more {
+  margin-top: $sp-5;
+  font-size: $fs-base;
+  color: $red-900;
+}
+
+body.dark .speaking_writing li,
+body.dark .speaking_writing_more {
+  color: rgba($yellow-400, 0.75);
+}
+
+.speaking_contact_affil {
+  margin-top: $sp-5;
+  font-size: $fs-sm;
+  letter-spacing: $ls-wide;
+  text-transform: uppercase;
+  color: $red-700;
+}
+
+body.dark .speaking_contact_affil {
+  color: rgba($yellow-400, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .speaking_card,
+  .speaking_card:hover {
+    transform: none !important;
+  }
+}

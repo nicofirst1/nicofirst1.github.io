@@ -1,0 +1,120 @@
+---
+layout: default
+title: Speaking
+permalink: /speaking/
+page_id: speaking
+description: "Nicolo' Brandizzi on trust in human-AI teams and multi-agent systems, LLM reasoning, Europe's AI infrastructure, and data quality. Available for podcasts, panels, talks, and workshops."
+image: /assets/images/profile_picture.jpg
+noindex: true
+sitemap: false
+---
+
+<section class="page_intro speaking_intro">
+  <div class="page_intro_bg" aria-hidden="true"></div>
+  <div class="page_intro_inner speaking_intro_inner">
+    <div class="speaking_intro_copy">
+      <h1 class="page_intro_title">Speaking</h1>
+      <p class="page_intro_text">
+        I am Nicolo' Brandizzi, a research scientist at Fraunhofer IAIS. I work on how people and AI systems
+        collaborate: reinforcement learning, multi-agent systems, and the problem of trusting an agent you did
+        not write yourself. I have worked on it from my PhD through the multi-agent systems I build today, and it
+        sits next to my other role helping coordinate Europe's push to build its own AI infrastructure. What I
+        bring to a talk comes from building these systems and studying them.
+      </p>
+      <div class="page_intro_meta">
+        <span>Podcasts</span><span>Panels</span><span>Talks</span><span>Workshops</span>
+      </div>
+      <div class="page_intro_actions">
+        <a href="#" data-email="{{ site.email_b64 }}" class="read-more-btn">Invite me to speak</a>
+      </div>
+    </div>
+    <img class="speaking_intro_photo" src="{{ '/assets/images/profile_picture.jpg' | relative_url }}" alt="Nicolo' Brandizzi">
+  </div>
+</section>
+
+<section class="page_section speaking_talks">
+  <div class="speaking_talks_head">
+    <h2>What I talk about</h2>
+    <p>Four topics drawn from my research and the systems I build, each one ready as a talk, a podcast, or a workshop.</p>
+  </div>
+
+  <div class="speaking_grid">
+    <article class="speaking_card speaking_card--lead">
+      <p class="speaking_card_kicker">Talk · podcast · workshop</p>
+      <h3 class="speaking_card_title">Orchestrating agents is mostly saying no</h3>
+      <p class="speaking_card_body">
+        Multi-agent systems fail in predictable ways: infinite refinement, agents grading their own work, no
+        place for a human to step in. I build them to stay bounded, with hard iteration caps, deterministic
+        scoring, and a human gate. It draws on my PhD in reinforcement learning, an AFOSR-funded project (US
+        Air Force research) on trust in human-AI teams, and Klarbot, a system I built with those limits
+        designed in.
+      </p>
+      <p class="speaking_card_fit"><span>Good fit for</span> AI-engineering and agentic-AI podcasts, LLMOps conferences, applied-ML audiences.</p>
+    </article>
+
+    <article class="speaking_card">
+      <p class="speaking_card_kicker">Talk · podcast</p>
+      <h3 class="speaking_card_title">Teaching machines to think</h3>
+      <p class="speaking_card_body">
+        Reinforcement learning gets the credit for teaching language models to reason. I think that is too
+        generous: some of what looks like new reasoning is the model surfacing what it already knew. This talk
+        separates where RL's gains are real from where the story gets oversold, in plain language from my own
+        field.
+      </p>
+      <p class="speaking_card_fit"><span>Good fit for</span> ML research podcasts, university seminars, technical AI audiences.</p>
+    </article>
+
+    <article class="speaking_card">
+      <p class="speaking_card_kicker">Talk · panel</p>
+      <h3 class="speaking_card_title">Europe's AI Factories, from the inside</h3>
+      <p class="speaking_card_body">
+        Europe is spending billions to build its own AI compute and data infrastructure. I co-wrote one of
+        those proposals, the €25M JUPITER AI Factory, and I also ran the numbers and found large overlaps
+        between projects meant to complement each other. So I can argue both sides: why sovereign
+        infrastructure matters, and why it fragments without something like a CERN for AI to coordinate it.
+      </p>
+      <p class="speaking_card_fit"><span>Good fit for</span> EU policy and AI-sovereignty panels, EuroHPC and research-funding events, European tech-strategy shows.</p>
+    </article>
+
+    <article class="speaking_card">
+      <p class="speaking_card_kicker">Workshop · talk</p>
+      <h3 class="speaking_card_title">Data quality for AI, from a 700-terabyte pipeline</h3>
+      <p class="speaking_card_body">
+        AI projects often fail before training starts, on data problems nobody measured. I co-led the data work
+        for a multilingual European LLM, a 700-terabyte pipeline across 24 languages, and I now teach it to
+        research teams. The workshop is practical: how to define quality, where it breaks, and how to test a
+        data-quality tool instead of trusting it at face value.
+      </p>
+      <p class="speaking_card_fit"><span>Good fit for</span> data teams, internal trainings, public-sector digitization, universities.</p>
+    </article>
+  </div>
+</section>
+
+<section class="page_section speaking_writing">
+  <div class="speaking_talks_head">
+    <h2>Recent writing</h2>
+    <p>I am glad to build an episode around something I have written. A few starting points:</p>
+  </div>
+  <ul>
+    <li><a href="{% link _blog/14.klartext_leichte_sprache.md %}">Engineering Agents That Know When to Stop</a> on building Klarbot with the limits designed in.</li>
+    <li><a href="{% link _blog/11.rl_llm_reasoning.md %}">Teaching Machines to Think</a> on what reinforcement learning does and does not add to LLM reasoning.</li>
+    <li><a href="{% link _blog/7.eu_ai_factories.md %}">AI Factories: Europe's EuroHPC Supercomputer Plan</a> on the compute-and-data infrastructure race.</li>
+    <li><a href="{% link _blog/12.reproducability_trap.md %}">The SOTA Trap</a> on reproducibility and who benefits when a benchmark becomes the target.</li>
+    <li><a href="{% link _blog/17.writing-for-machines.md %}">Writing for Machines</a> on how AI changes what we write and who we write for.</li>
+  </ul>
+  <p class="speaking_writing_more">
+    The full archive is on the <a href="{{ '/blog/' | relative_url }}">blog</a>, and my EU policy writing is collected in the
+    <a href="{{ '/eu-ai-policy/' | relative_url }}">EU AI Policy field guide</a>.
+  </p>
+</section>
+
+<section class="page_section speaking_contact">
+  <div class="speaking_talks_head">
+    <h2>Get in touch</h2>
+    <p>The quickest way to reach me is email.</p>
+  </div>
+  <div class="page_intro_actions">
+    <a href="#" data-email="{{ site.email_b64 }}" class="read-more-btn">Email me about a talk or an episode</a>
+  </div>
+  <p class="speaking_contact_affil">Fraunhofer IAIS · Lamarr Institute for Machine Learning and Artificial Intelligence.</p>
+</section>
