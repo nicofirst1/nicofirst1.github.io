@@ -55,13 +55,15 @@ jobs:
           # A real missing slug 302-redirects; 403 means Substack is blocking this
           # runner's IP, so the probe is unreliable — bail out, keep the old file.
           if [ "$n_403" -gt 0 ]; then
-            echo "::error::$n_403 probes returned 403 (runner IP blocked) — keeping existing _data/substack.yml"
-            exit 1
+            echo "::warning::$n_403 probes returned 403 (runner IP blocked) — keeping existing _data/substack.yml"
+            rm -f "$tmp"
+            exit 0
           fi
           old_live="$(grep -c '^- ' _data/substack.yml 2>/dev/null || echo 0)"
           if [ "$n_live" -eq 0 ] && [ "$old_live" -gt 0 ]; then
-            echo "::error::probe found 0 live posts but $old_live were previously live — refusing to wipe _data/substack.yml"
-            exit 1
+            echo "::warning::probe found 0 live posts but $old_live were previously live — keeping existing _data/substack.yml"
+            rm -f "$tmp"
+            exit 0
           fi
           mkdir -p _data
           mv "$tmp" _data/substack.yml
