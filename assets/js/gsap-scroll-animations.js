@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // HERO SECTION ANIMATIONS
     // ===========================================
 
-    // Hero greeting, title, subtitle and portrait animate transform only: an
-    // opacity:0 start would hide the LCP element until GSAP loads from the CDN.
+    // Hero greeting, subtitle and portrait animate transform only: an opacity:0
+    // start would hide the LCP element until GSAP loads from the CDN.
     gsap.from('.hero_greeting', {
         y: 30,
         duration: 0.6,
@@ -44,10 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (heroTitle) {
         // Split title into words for stagger effect
         const words = heroTitle.textContent.trim().split(' ');
-        heroTitle.innerHTML = words.map(word => `<span class="hero-word" style="display: inline-block;">${word}</span>`).join(' ');
+        heroTitle.innerHTML = words.map(word => `<span class="hero-word" style="display: inline-block; opacity: 0;">${word}</span>`).join(' ');
 
-        gsap.from('.hero-word', {
-            y: 20,
+        // CSS (.hero_title .hero-word) starts the words hidden, so reveal with .to
+        gsap.to('.hero-word', {
+            y: 0,
+            opacity: 1,
             duration: 0.5,
             stagger: 0.07,
             ease: 'power3.out',
