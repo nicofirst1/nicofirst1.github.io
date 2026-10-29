@@ -25,10 +25,6 @@
   {% if own_ld %}{{ seo_html | split: '<script type="application/ld+json">' | first }}<!-- End Jekyll SEO tag -->{% else %}{{ seo_html }}{% endif %}
   {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   {% include jsonld.html %}
-  {%- comment %} Homepage LCP image: same srcset/sizes as the hero <picture> in _includes/home/hero.html {% endcomment -%}
-  {% if page.page_id == 'home' %}<link rel="preload" as="image" type="image/webp" fetchpriority="high"
-    imagesrcset="{{ '/assets/images/profile_picture-480.webp' | relative_url }} 480w, {{ '/assets/images/profile_picture.webp' | relative_url }} 960w"
-    imagesizes="(min-width: 768px) 420px, 90vw">{% endif %}
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://chimpstatic.com" crossorigin>
