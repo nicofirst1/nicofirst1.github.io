@@ -78,7 +78,7 @@ layout: default
 
       <aside class="author_card mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 text-sm" aria-label="About the author">
         <p class="font-semibold">Dr. Nicolo' Brandizzi</p>
-        <p class="mt-1 text-slate-600 dark:text-slate-300">AI researcher at Fraunhofer IAIS, writing on AI infrastructure, reproducibility and data governance.</p>
+        <p class="mt-1 text-slate-600 dark:text-slate-300">{{ page.author_note | default: "AI researcher at Fraunhofer IAIS, writing on AI infrastructure, reproducibility and data governance." | markdownify | remove: '<p>' | remove: '</p>' | replace: '<a ', '<a class="underline hover:no-underline" ' | strip }}</p>
         <p class="mt-2">
           <a href="{{ '/cv/' | relative_url }}" class="underline hover:no-underline">CV</a> &middot;
           <a href="https://scholar.google.com/citations?hl=en&user=7brL8DoAAAAJ" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">Google Scholar</a> &middot;
