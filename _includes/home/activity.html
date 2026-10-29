@@ -35,7 +35,7 @@
                                     <a href="{{ item.url | relative_url }}" class="flex h-full flex-col">
                                         <div class="activity_media relative overflow-hidden rounded-3xl">
                                             {% if item.image contains '.mp4' %}
-                                            <video autoplay loop muted playsinline class="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]">
+                                            <video loop muted playsinline preload="none" data-lazy poster="{{ item.image | replace: '.mp4', '-poster.webp' | relative_url }}" class="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]">
                                                 <source src="{{ item.image | relative_url }}" type="video/mp4">
                                             </video>
                                             {% else %}

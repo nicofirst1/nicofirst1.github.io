@@ -7,7 +7,7 @@
         {% if item.image %}
             <div class="project_card_media">
                 {% if item.image contains '.mp4' %}
-                <video autoplay loop muted playsinline>
+                <video loop muted playsinline preload="none" data-lazy poster="{{ item.image | replace: '.mp4', '-poster.webp' | relative_url }}">
                     <source src="{{ item.image | relative_url }}" type="video/mp4">
                 </video>
                 {% else %}
