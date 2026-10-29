@@ -20,7 +20,7 @@
       "@id": {{ website_id | jsonify }},
       "url": {{ site_root | jsonify }},
       "name": {{ person_name | jsonify }},
-      "description": {{ site.description | jsonify }},
+      "description": {{ page.description | default: site.description | strip | jsonify }},
       "inLanguage": "en",
       "publisher": { "@id": {{ person_id | jsonify }} }
     },

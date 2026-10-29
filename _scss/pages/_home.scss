@@ -734,6 +734,7 @@ body.dark .experience_section {
   position: relative;
   z-index: 1;
   width: clamp(70px, 18vw, 92px);
+  height: auto; // overrides the height attribute; aspect-ratio keeps the square
   aspect-ratio: 1 / 1;
   border-radius: 18px;
   padding: 0.65rem;

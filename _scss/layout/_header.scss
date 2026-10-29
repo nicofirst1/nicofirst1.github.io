@@ -163,8 +163,8 @@ body.dark .brand_tagline {
 
 .nav_toggle {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(248, 113, 113, 0.4);
   background: rgba(255, 255, 255, 0.85);
@@ -201,8 +201,8 @@ body.dark .brand_tagline {
 // Dark-mode toggle — mirrors the circular .nav_toggle, with a hot-accent hover.
 .theme_toggle {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(148, 163, 184, 0.28);
   background: rgba(255, 255, 255, 0.85);
@@ -391,12 +391,12 @@ body.menu-open {
 
   .site_nav_link {
     color: $brown-800;
-    padding: $sp-2 0;
+    padding: $sp-3 0; // 44px+ tap target
   }
 
   /* Hug the underline to the text (was floating ~15px below it) */
   .site_nav_link::after {
-    bottom: 0.15rem;
+    bottom: calc(0.15rem + #{$sp-1});
   }
 
   body.dark .site_nav_link {
