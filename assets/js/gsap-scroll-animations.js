@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // HERO SECTION ANIMATIONS
     // ===========================================
 
-    // Hero content fade in and slide up
+    // Hero greeting, title, subtitle and portrait animate transform only: an
+    // opacity:0 start would hide the LCP element until GSAP loads from the CDN.
     gsap.from('.hero_greeting', {
         y: 30,
-        opacity: 0,
         duration: 0.6,
         ease: 'power3.out',
         delay: 0.1
@@ -44,11 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (heroTitle) {
         // Split title into words for stagger effect
         const words = heroTitle.textContent.trim().split(' ');
-        heroTitle.innerHTML = words.map(word => `<span class="hero-word" style="display: inline-block; opacity: 0;">${word}</span>`).join(' ');
+        heroTitle.innerHTML = words.map(word => `<span class="hero-word" style="display: inline-block;">${word}</span>`).join(' ');
 
-        gsap.to('.hero-word', {
-            y: 0,
-            opacity: 1,
+        gsap.from('.hero-word', {
+            y: 20,
             duration: 0.5,
             stagger: 0.07,
             ease: 'power3.out',
@@ -59,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hero subtitle
     gsap.from('.hero_subtitle', {
         y: 20,
-        opacity: 0,
         duration: 0.6,
         ease: 'power2.out',
         delay: 0.5
@@ -102,10 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 1.1
     });
 
-    // Hero portrait - scale and fade in
+    // Hero portrait - scale in
     gsap.from('.hero_portrait_frame', {
         scale: 0.9,
-        opacity: 0,
         duration: 0.8,
         ease: 'power3.out',
         delay: 0.3

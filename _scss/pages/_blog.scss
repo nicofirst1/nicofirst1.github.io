@@ -82,6 +82,31 @@ body.dark .blog_articles {
   transform: translateY(0);
 }
 
+// Keep wide content inside the column on phones (mobile horizontal scroll).
+.page_content {
+  overflow-wrap: anywhere;
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  iframe {
+    max-width: 100%;
+  }
+
+  pre {
+    overflow-x: auto;
+  }
+
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
 .page_content ul,
 .page_content ol {
   font-size: 1.05rem;

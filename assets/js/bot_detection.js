@@ -225,11 +225,11 @@
     }
 
     // Event listeners
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('click', handleClick);
     window.addEventListener('keydown', handleKeydown);
-    window.addEventListener('touchstart', handleTouch);
+    window.addEventListener('touchstart', handleTouch, { passive: true });
 
     // Page visibility change (early exit detection)
     document.addEventListener('visibilitychange', () => {

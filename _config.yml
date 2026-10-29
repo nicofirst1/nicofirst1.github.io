@@ -2,6 +2,9 @@ lang: en
 url: "https://nicolobrandizzi.com"
 baseurl: "" # user site => empty
 title: "Nicolo' Brandizzi"
+author:
+  name: "Nicolo' Brandizzi"
+  url: "https://nicolobrandizzi.com/"
 description: "Personal website of Dr. Nicolo' Brandizzi — AI researcher exploring reinforcement learning, multi-agent systems, and responsible AI."
 substack: "https://nicolobrandizzi.substack.com" # syndication target; update if a different subdomain is claimed
 

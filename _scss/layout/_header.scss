@@ -113,6 +113,46 @@ body.dark .brand_logo {
   color: $brown-600;
 }
 
+// Phones: one compact row. Drop the tagline and let the name truncate
+// instead of wrapping to several lines in the sticky header.
+@media (max-width: $bp-sm) {
+  .site_header_container {
+    gap: $sp-3;
+  }
+
+  .site_brand {
+    min-width: 0;
+    gap: $sp-2;
+  }
+
+  .brand_logo {
+    flex: none;
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand_copy {
+    min-width: 0;
+  }
+
+  .brand_name {
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand_tagline {
+    display: none;
+  }
+
+  .header_right {
+    flex: none;
+    gap: $sp-2;
+  }
+}
+
 body.dark .brand_name {
   color: $slate-200;
 }

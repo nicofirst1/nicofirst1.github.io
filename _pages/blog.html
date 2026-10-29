@@ -24,7 +24,7 @@ intro_blurb: >
      <div class="listing_search">
         <label for="blog-search-input" class="listing_search_label">Search posts</label>
         <input type="search" id="blog-search-input" class="listing_search_input" placeholder="Type to filter blog..." autocomplete="off">
-        <p id="blog-search-empty" class="listing_search_empty">No posts found.</p>
+        <p id="blog-search-empty" class="listing_search_empty" data-message="No posts found." role="status"></p>
     </div>
     <div class="articles_grid">
         {% if blog_sorted.size > 0 %}

@@ -20,7 +20,7 @@ layout: default
           {{page.title}}
       </h1>
       <b>{{page.tag}}</b>
-      <p class="text-sm mb-3">{{page.date | date: "%b %d, %Y" }}</p>
+      <p class="text-sm mb-3">By <a href="{{ '/' | relative_url }}" rel="author">Dr. Nicolo' Brandizzi</a> &middot; <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>{% if page.last_modified_at %} &middot; Updated <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%b %d, %Y" }}</time>{% endif %}</p>
       <div class="post_metrics flex flex-wrap items-center gap-3 text-sm text-slate-600 dark:text-slate-300 mb-4" data-post-metrics data-word-count="{{ word_count }}" data-reading-time="{{ reading_time_minutes }}">
         <span class="post_metrics_item inline-flex items-center gap-1" data-word-count-text><strong>{{ word_count }}</strong> words</span>
         <span class="post_metrics_item inline-flex items-center gap-1" data-reading-time-text><strong>{{ reading_time_minutes }}</strong> min read</span>
@@ -36,7 +36,7 @@ layout: default
           {% else %}
             {% assign extra_count = 0 %}
           {% endif %}
-          <a href="https://hits.sh/nicofirst1.github.io{{ page.url }}"><img alt="Views" src="https://hits.sh/nicofirst1.github.io{{ page.url | remove: '/' }}.svg?style=flat-square&label=Views&color=8e4b31&labelColor=7f1d1d&extraCount={{ extra_count }}"/></a>
+          <a href="https://hits.sh/nicofirst1.github.io{{ page.url }}"><img alt="Views" height="20" src="https://hits.sh/nicofirst1.github.io{{ page.url | remove: '/' }}.svg?style=flat-square&label=Views&color=8e4b31&labelColor=7f1d1d&extraCount={{ extra_count }}"/></a>
         </span>
         {% endif %}
       </div>
@@ -75,6 +75,16 @@ layout: default
         </a>
       </p>
       {% endif %}
+
+      <aside class="author_card mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 text-sm" aria-label="About the author">
+        <p class="font-semibold">Dr. Nicolo' Brandizzi</p>
+        <p class="mt-1 text-slate-600 dark:text-slate-300">AI researcher at Fraunhofer IAIS, writing on AI infrastructure, reproducibility and data governance.</p>
+        <p class="mt-2">
+          <a href="{{ '/cv/' | relative_url }}" class="underline hover:no-underline">CV</a> &middot;
+          <a href="https://scholar.google.com/citations?hl=en&user=7brL8DoAAAAJ" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">Google Scholar</a> &middot;
+          <a href="https://orcid.org/0000-0002-3191-6623" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">ORCID</a>
+        </p>
+      </aside>
     </div>
 
     <div class="post_cta my-10 py-6 border-t border-b border-gray-200 dark:border-gray-700">

@@ -4,20 +4,34 @@
 
   {% comment %} For blog posts, omit the "| Site Title" suffix so the headline fits in SERPs.
        og:title and twitter:title still use page.title via jekyll-seo-tag. {% endcomment %}
-  {% if page.layout == 'blogs' or page.layout == 'blogs_distill' %}
-    <title>{{ page.title | escape }}</title>
-    {% seo title=false %}
-  {% elsif page.page_id == 'home' %}
-    {% comment %} page.title and site.title both contain the name — avoid "Name | Name" {% endcomment %}
-    <title>Dr. Nicolo' Brandizzi — AI Researcher</title>
-    {% seo title=false %}
-  {% else %}
-    {% seo %}
+  {% comment %} jsonld.html owns the structured data on these pages; cut seo-tag's JSON-LD
+       (always its last block) so each carries a single, @id-linked graph. {% endcomment %}
+  {% assign own_ld = false %}
+  {% if page.page_id == 'home' or page.page_id == 'blog' or page.page_id == 'projects' or page.page_id == 'news' or page.page_id == 'cv' or page.layout == 'blogs' or page.layout == 'blogs_distill' %}
+    {% assign own_ld = true %}
   {% endif %}
+  {% capture seo_html %}
+    {% if page.layout == 'blogs' or page.layout == 'blogs_distill' %}
+      <title>{{ page.title | escape }}</title>
+      {% seo title=false %}
+    {% elsif page.page_id == 'home' %}
+      {% comment %} page.title and site.title both contain the name — avoid "Name | Name" {% endcomment %}
+      <title>Dr. Nicolo' Brandizzi — AI Researcher</title>
+      {% seo title=false %}
+    {% else %}
+      {% seo %}
+    {% endif %}
+  {% endcapture %}
+  {% if own_ld %}{{ seo_html | split: '<script type="application/ld+json">' | first }}<!-- End Jekyll SEO tag -->{% else %}{{ seo_html }}{% endif %}
   {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   {% include jsonld.html %}
+  {%- comment %} Homepage LCP image: same srcset/sizes as the hero <picture> in _includes/home/hero.html {% endcomment -%}
+  {% if page.page_id == 'home' %}<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+    imagesrcset="{{ '/assets/images/profile_picture-480.webp' | relative_url }} 480w, {{ '/assets/images/profile_picture.webp' | relative_url }} 960w"
+    imagesizes="(min-width: 768px) 420px, 90vw">{% endif %}
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://chimpstatic.com" crossorigin>
   {%- comment %} Preload the display font — it's above the fold on the homepage hero {% endcomment -%}
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="{{ '/assets/fonts/anton-regular.woff2' | relative_url }}">

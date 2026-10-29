@@ -21,7 +21,7 @@
                 {% endif %}
 
                 <div class="hero_description">
-                    {{ page.description | markdownify }}
+                    {{ page.hero_intro | default: page.description | markdownify }}
                 </div>
 
                 {% if page.hero_highlights %}

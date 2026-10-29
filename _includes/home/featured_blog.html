@@ -20,11 +20,11 @@
             <article class="featured_blog_card featured_blog_card--large group">
                 <a href="{{ featured.url | relative_url }}" class="flex h-full flex-col">
                     <div class="featured_blog_media overflow-hidden rounded-3xl">
-                        {% include picture.html src=featured.image alt=featured.title class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" loading="lazy" %}
+                        {% include picture.html src=featured.image alt=featured.title class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" loading="lazy" width="800" height="500" %}
                     </div>
                     <div class="featured_blog_body">
                         <p class="featured_blog_meta">{{ featured.date | date: "%b %d, %Y" }}{% if featured.content %} &middot; {{ featured.content | number_of_words | divided_by: 200 | plus: 1 }} min read{% endif %}</p>
-                        <h3 class="featured_blog_title">{{ featured.title }}</h3>
+                        <p class="featured_blog_title">{{ featured.title }}</p>
                         {% if featured.description %}
                             <p class="featured_blog_desc">{{ featured.description }}</p>
                         {% endif %}
@@ -38,11 +38,11 @@
             <article class="featured_blog_card featured_blog_card--small group">
                 <a href="{{ post.url | relative_url }}" class="flex h-full flex-col">
                     <div class="featured_blog_media overflow-hidden rounded-3xl">
-                        {% include picture.html src=post.image alt=post.title class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" loading="lazy" %}
+                        {% include picture.html src=post.image alt=post.title class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" loading="lazy" width="800" height="500" %}
                     </div>
                     <div class="featured_blog_body">
                         <p class="featured_blog_meta">{{ post.date | date: "%b %d, %Y" }}{% if post.content %} &middot; {{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read{% endif %}</p>
-                        <h3 class="featured_blog_title">{{ post.title }}</h3>
+                        <p class="featured_blog_title">{{ post.title }}</p>
                         {% if post.description %}
                             <p class="featured_blog_desc">{{ post.description | truncate: 120 }}</p>
                         {% endif %}

@@ -11,7 +11,7 @@
                     <source src="{{ item.image | relative_url }}" type="video/mp4">
                 </video>
                 {% else %}
-                {% include picture.html src=item.image alt=item.title loading="lazy" %}
+                {% include picture.html src=item.image alt=item.title loading="lazy" width="800" height="600" %}
                 {% endif %}
             </div>
         {% endif %}

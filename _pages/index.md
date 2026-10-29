@@ -5,6 +5,8 @@ subtitle: "Building bridges between data, language, and society."
 image: /assets/images/profile_picture.jpg
 greeting: "Benvenuti"
 description: >
+  Dr. Nicolo' Brandizzi, AI researcher at Fraunhofer IAIS. Writing on EU AI Factories, reproducibility, data governance and agents.
+hero_intro: >
   My work moves between AI, data governance, and social systems. I’m interested in how structure and meaning evolve when humans and machines learn together. This site is a record of the work, collaborations, and side investigations that follow from that curiosity.
 
 hero_highlights_title: Things that light me up lately

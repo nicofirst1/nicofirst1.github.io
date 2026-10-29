@@ -1,0 +1,20 @@
+---
+sitemap: false
+---
+# Nicolo' Brandizzi
+
+> Personal website of Dr. Nicolo' Brandizzi, AI researcher at Fraunhofer IAIS. Essays and projects on EU AI Factories, reproducibility, data governance and agents.
+
+## Main pages
+
+- [Home]({{ site.url }}/): who I am and what I work on
+- [CV]({{ site.url }}/cv/): curriculum vitae
+- [Publications]({{ site.url }}/publications/): papers and talks
+- [Projects]({{ site.url }}/projects/): research projects and collaborations
+
+## Blog
+
+{% assign posts = site.blog | where_exp: 'p', 'p.published != false' | sort: 'date' | reverse -%}
+{% for p in posts -%}
+- [{{ p.title }}]({{ site.url }}{{ p.url }}){% if p.description %}: {{ p.description | strip_newlines | strip }}{% endif %}
+{% endfor %}

@@ -1,10 +1,15 @@
 ---
 layout: default
-title: CURRICULUM VITAE
+title: "CV: AI Researcher at Fraunhofer IAIS"
+h1: Curriculum Vitae
+description: Curriculum vitae of Dr. Nicolo' Brandizzi, AI researcher at Fraunhofer IAIS and alumnus of Sapienza University of Rome.
 page_id: cv
 ---
 <section class="w-full px-5 section_cv">
-    <h1 class="text-center text-3xl md:text-5xl font-bold mt-16 md:mt-20">{{page.title}}</h1>
+    <h1 class="text-center text-3xl md:text-5xl font-bold mt-16 md:mt-20">{{ page.h1 | default: page.title }}</h1>
+    <p class="mx-auto mt-4 max-w-3xl text-center text-base md:text-lg">
+      Dr. Nicolo' Brandizzi is an AI researcher at Fraunhofer IAIS and an alumnus of Sapienza University of Rome. Work spans AI, data governance and European AI infrastructure.
+    </p>
 
     {%- assign cv_pdf = site.baseurl | append: "/assets/data/NicoloBrandizziCV.pdf" -%}
 

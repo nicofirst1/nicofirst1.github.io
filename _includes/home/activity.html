@@ -39,7 +39,7 @@
                                                 <source src="{{ item.image | relative_url }}" type="video/mp4">
                                             </video>
                                             {% else %}
-                                            {% include picture.html src=item.image alt=item.title class="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" loading="lazy" %}
+                                            {% include picture.html src=item.image alt=item.title class="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" loading="lazy" width="800" height="416" %}
                                             {% endif %}
                                             <div class="activity_tag">
                                                 <span>

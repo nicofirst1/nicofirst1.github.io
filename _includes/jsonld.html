@@ -1,83 +1,139 @@
 {% comment %}
-  JSON-LD structured data for rich snippets.
-  Outputs Person schema on homepage and BlogPosting on blog posts.
-  WebSite schema comes from jekyll-seo-tag (homepage) — don't duplicate it here.
+  JSON-LD structured data, one @graph per page type, linked by @id.
+  Owns the structured data for: homepage (WebSite + Person + ProfilePage), /blog/ (Blog),
+  /projects/ (CollectionPage), /cv/ (ProfilePage) and blog posts (BlogPosting).
+  head.html strips jekyll-seo-tag's own JSON-LD on exactly these pages so each carries a single block;
+  every other page keeps seo-tag's default. Strings go through `jsonify` so quotes and entities stay valid.
 {% endcomment %}
+{% assign site_root = site.url | append: site.baseurl | append: '/' %}
+{% assign person_id = site_root | append: '#person' %}
+{% assign website_id = site_root | append: '#website' %}
+{% assign person_name = "Nicolo' Brandizzi" %}
 
 {% if page.page_id == 'home' %}
-{% comment %} ---- Person schema (homepage) ---- {% endcomment %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Dr. Nicolo' Brandizzi",
-  "url": "{{ site.url }}{{ site.baseurl }}",
-  "image": "{{ site.url }}{{ site.baseurl }}/assets/images/profile_picture.jpg",
-  "jobTitle": ["AI Researcher", "Head of Data"],
-  "affiliation": [
+  "@graph": [
     {
-      "@type": "Organization",
-      "name": "Fraunhofer IAIS",
-      "url": "https://www.iais.fraunhofer.de"
+      "@type": "WebSite",
+      "@id": {{ website_id | jsonify }},
+      "url": {{ site_root | jsonify }},
+      "name": {{ person_name | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "inLanguage": "en",
+      "publisher": { "@id": {{ person_id | jsonify }} }
     },
     {
-      "@type": "Organization",
-      "name": "Spec Kitty",
-      "url": "https://spec-kitty.ai/"
+      "@type": "Person",
+      "@id": {{ person_id | jsonify }},
+      "name": {{ person_name | jsonify }},
+      "alternateName": ["Nicolò Brandizzi", "Nicolo Brandizzi", "Dr. Nicolo' Brandizzi"],
+      "honorificPrefix": "Dr.",
+      "url": {{ site_root | jsonify }},
+      "image": {{ site_root | append: 'assets/images/profile_picture.jpg' | jsonify }},
+      "jobTitle": ["AI Researcher", "Head of Data"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Fraunhofer IAIS",
+        "url": "https://www.iais.fraunhofer.de"
+      },
+      "affiliation": [
+        {
+          "@type": "Organization",
+          "name": "Fraunhofer IAIS",
+          "url": "https://www.iais.fraunhofer.de"
+        },
+        {
+          "@type": "Organization",
+          "name": "Spec Kitty",
+          "url": "https://spec-kitty.ai/"
+        }
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Sapienza University of Rome"
+      },
+      "sameAs": [
+        "https://scholar.google.com/citations?hl=en&user=7brL8DoAAAAJ",
+        "https://orcid.org/0000-0002-3191-6623",
+        "https://github.com/nicofirst1",
+        "https://www.linkedin.com/in/nicolo-brandizzi-ph-d-04091b153/"{% if site.substack %},
+        {{ site.substack | jsonify }}{% endif %}
+      ],
+      "knowsAbout": ["Artificial Intelligence", "Reinforcement Learning", "Multi-Agent Systems", "Responsible AI"]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": {{ site_root | append: '#profilepage' | jsonify }},
+      "url": {{ site_root | jsonify }},
+      "isPartOf": { "@id": {{ website_id | jsonify }} },
+      "mainEntity": { "@id": {{ person_id | jsonify }} }
     }
-  ],
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "Sapienza University of Rome"
-  },
-  "sameAs": [
-    "https://scholar.google.com/citations?hl=en&user=7brL8DoAAAAJ",
-    "https://orcid.org/0000-0002-3191-6623",
-    "https://github.com/nicofirst1",
-    "https://www.linkedin.com/in/nicolo-brandizzi-ph-d-04091b153/"
-  ],
-  "knowsAbout": ["Artificial Intelligence", "Reinforcement Learning", "Multi-Agent Systems", "Responsible AI"]
+  ]
 }
 </script>
-{% endif %}
 
-{% if page.layout == 'blogs' or page.layout == 'blogs_distill' %}
-{% comment %} ---- BlogPosting schema (blog posts) ---- {% endcomment %}
+{% elsif page.page_id == 'cv' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": {{ site_root | append: 'cv/#profilepage' | jsonify }},
+  "url": {{ site_root | append: 'cv/' | jsonify }},
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "isPartOf": { "@id": {{ website_id | jsonify }} },
+  "mainEntity": { "@id": {{ person_id | jsonify }}, "@type": "Person", "name": {{ person_name | jsonify }} }
+}
+</script>
+
+{% elsif page.page_id == 'blog' or page.page_id == 'projects' or page.page_id == 'news' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": {% if page.page_id == 'blog' %}"Blog"{% else %}"CollectionPage"{% endif %},
+  "@id": {{ page.url | absolute_url | append: '#' | append: page.page_id | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "inLanguage": "en",
+  "isPartOf": { "@id": {{ website_id | jsonify }} },
+  "publisher": { "@id": {{ person_id | jsonify }} }
+}
+</script>
+
+{% elsif page.layout == 'blogs' or page.layout == 'blogs_distill' %}
 {% assign plain_text = page.content | strip_html %}
 {% assign word_count = plain_text | number_of_words %}
 {% assign modified_date = page.last_modified_at | default: page.date %}
+{% assign post_url = page.url | absolute_url %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "{{ page.title | escape }}",
-  "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
-  },
-  {% if page.image %}"image": "{{ site.url }}{{ site.baseurl }}{{ page.image }}",{% endif %}
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ modified_date | date_to_xmlschema }}",
+  "@id": {{ post_url | append: '#article' | jsonify }},
+  "url": {{ post_url | jsonify }},
+  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ post_url | jsonify }} },
+  "headline": {{ page.title | jsonify }},
+  {% if page.image %}"image": {{ page.image | absolute_url | jsonify }},{% endif %}
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ modified_date | date_to_xmlschema | jsonify }},
   "wordCount": {{ word_count }},
-  "author": {
-    "@type": "Person",
-    "name": "Dr. Nicolo' Brandizzi",
-    "url": "{{ site.url }}{{ site.baseurl }}"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Dr. Nicolo' Brandizzi"
-  }{% if page.description %},
-  "description": "{{ page.description | escape }}"{% elsif page.subtitle %},
-  "description": "{{ page.subtitle | escape }}"{% endif %}
+  "inLanguage": "en",
+  "author": { "@type": "Person", "@id": {{ person_id | jsonify }}, "name": {{ person_name | jsonify }}, "url": {{ site_root | jsonify }} },
+  "publisher": { "@id": {{ person_id | jsonify }} },
+  "isPartOf": { "@id": {{ site_root | append: 'blog/#blog' | jsonify }} }{% if page.description %},
+  "description": {{ page.description | jsonify }}{% elsif page.subtitle %},
+  "description": {{ page.subtitle | jsonify }}{% endif %}
 }
 </script>
 {% endif %}
 
-{% comment %} ---- BreadcrumbList schema for blog / news / project pages ---- {% endcomment %}
+{% comment %} ---- BreadcrumbList for blog / news / project pages and the blog / projects hubs ---- {% endcomment %}
 {% assign crumb_label = nil %}
 {% assign crumb_path = nil %}
+{% assign crumb_leaf = true %}
 {% if page.layout == 'blogs' or page.layout == 'blogs_distill' %}
   {% assign crumb_label = 'Blog' %}
   {% assign crumb_path = '/blog/' %}
@@ -87,6 +143,10 @@
 {% elsif page.layout == 'projects' or page.layout == 'music' %}
   {% assign crumb_label = 'Projects' %}
   {% assign crumb_path = '/projects/' %}
+{% elsif page.page_id == 'blog' or page.page_id == 'projects' %}
+  {% assign crumb_label = page.title %}
+  {% assign crumb_path = page.url %}
+  {% assign crumb_leaf = false %}
 {% endif %}
 {% if crumb_label %}
 <script type="application/ld+json">
@@ -98,20 +158,20 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "{{ site.url }}{{ site.baseurl }}/"
+      "item": {{ site_root | jsonify }}
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "{{ crumb_label }}",
-      "item": "{{ site.url }}{{ site.baseurl }}{{ crumb_path }}"
-    },
+      "name": {{ crumb_label | jsonify }},
+      "item": {{ crumb_path | absolute_url | jsonify }}
+    }{% if crumb_leaf %},
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "{{ page.title | escape }}",
-      "item": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
-    }
+      "name": {{ page.title | jsonify }},
+      "item": {{ page.url | absolute_url | jsonify }}
+    }{% endif %}
   ]
 }
 </script>

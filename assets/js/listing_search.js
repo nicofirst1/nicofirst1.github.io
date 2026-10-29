@@ -29,6 +29,8 @@
   function toggleEmpty(emptyEl, show) {
     if (!emptyEl) return;
     emptyEl.classList.toggle('is-visible', show);
+    // Message lives in data-message so it is not part of the server HTML
+    emptyEl.textContent = show ? emptyEl.dataset.message : '';
   }
 
   function debounce(fn, delay) {
